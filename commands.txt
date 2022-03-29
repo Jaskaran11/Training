@@ -128,6 +128,24 @@ commands.txt
 --------------------------------------------------------
 
 
+git log
+commit 91db505893522158a73c9cfd6a767c8e4853a292 (HEAD -> master, origin/master)
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 03:43:22 2022 +0530
+
+    used push command
+
+commit 5c8b9a800969f6eaf9525f6c4cad4ccff01aef94
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 03:37:18 2022 +0530
+
+    Added file of git commands
+
+purpose:view all the changes made in the git
+
+------------------------------------------------------------------
+
+
 
 
 
