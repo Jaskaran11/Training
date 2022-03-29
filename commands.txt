@@ -89,3 +89,47 @@ purpose-to include all the files On branch master
 
 -----------------------------------------------------------
 
+git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   commands.txt
+
+-------------------------------------------------------
+
+it commit -m "added git command file"
+[master (root-commit) ac3eb66] added git command file
+ 1 file changed, 91 insertions(+)
+ create mode 100644 commands.txt
+purpose:purpose:commit with final message
+
+--------------------------------------------------------
+
+ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.19 KiB | 1.19 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Jaskaran11/Training.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+purpose of push:to push the new branch into the remote repository
+
+--------------------------------------------------------
+ git ls-files
+commands.txt
+ purpose: List all the files which are being tracked by your repository
+
+--------------------------------------------------------
+
+
+
+
+
+
+
