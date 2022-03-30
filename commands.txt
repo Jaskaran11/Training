@@ -154,7 +154,6 @@ purpose:to create a new branch
 
 git checkout master1
 Switched to branch 'master1'
-<<<<<<< HEAD
 purpose:to switch to a new branch as name specified
 
 ------------------------------------------------------------------
@@ -168,12 +167,17 @@ purpose:matches the file to previous commit
 git rm --cached index.html
 rm 'index.html'
 purpose:to remove the file from staging area
-=======
-purpose:to switch to a new branch
->>>>>>> master1
 
 ------------------------------------------------------------------
 
+ git merge master2
+Updating e5f18e7..8bc4c37
+Fast-forward
+ app.js       | 1 +
+ commands.txt | 4 ++++
+ 2 files changed, 5 insertions(+)
+ create mode 100644 app.js
+purpose:for merging into master branch
 
 
 
