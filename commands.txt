@@ -344,6 +344,33 @@ Generating ssh key
 
 -----------------------------------------------------
 
+git remote -v
+origin  git@github.com:Jaskaran11/Training.git (fetch)
+origin  git@github.com:Jaskaran11/Training.git (push)
+
+------------------------------------------------------
+
+$ git remote add origin https://github.com/Jaskaran11/Training
+ Purpose- Add remote Repo to the local Rel machine and connect it.
+
+------------------------------------------------------
+
+ git stash                        
+purpose:it stashes changes you've made to your working copy so you can work on something else, and then come back and re-apply them.
+
+------------------------------------------------------
+
+$ git fetch   :Purpose-used to get files from the remote repository to the local repository but not into the working directory
+$ git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 647 bytes | 58.00 KiB/s, done.
+From https://github.com/Jaskaran11/LocalPush
+   c31bf7b..288dedd  master     -> origin/master
+
+--------------------------------------------------------
 
 
 
