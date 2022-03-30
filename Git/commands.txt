@@ -461,4 +461,47 @@ Date:   Wed Mar 30 18:25:20 2022 +0530
 commit 259ffabcf76ea3077cbd4044fbb9af7c57b0c2d9 (master3)
 purpose:display the commits by authors as given in the pattern
 
+------------------------------------------------
+
+Creating a new branch called features
+ git branch features
+
+git checkout features
+Switched to branch 'features'
+ git commit -m "modifiefd html file"
+[features a395112] modifiefd html file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+made some changes
+
+git push origin features
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 746 bytes | 746.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'features' on GitHub by visiting:
+remote:      https://github.com/Jaskaran11/Training/pull/new/features
+remote:
+To https://github.com/Jaskaran11/Training.git
+ * [new branch]      features -> features
+pushed the new branch to github
+
+ Create a pull request on GitHub (a pull request lets teammates do code reviews).
+
+Merge the feature branch into the main branch (by opening the pull request in the browser
+and clicking the "Merge pull request")
+Shows the log in local repo and asks if to merge them
+
+After merging, update the local repository (so that it stays in sync with the remote repository
+on GitHub).
+
+ git pull origin features
+From https://github.com/Jaskaran11/Training
+ * branch            features   -> FETCH_HEAD
+Already up to date.
+
+--------------------------------------------------------------------
 
