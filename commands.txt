@@ -263,5 +263,25 @@ purpose:to see git command
 
 ----------------------------------------------
 
+git diff
+diff --git a/example.txt b/example.txt
+index 32f95c0..df8298f 100644
+--- a/example.txt
++++ b/example.txt
+@@ -1 +1 @@
+-hi
+\ No newline at end of file
++hi..how n
+\ No newline at end of file
+purpose:tells the difference between staging and working directory
+
+------------------------------------------------
+
+git checkout -b master3
+Switched to a new branch 'master3'
+purpose:shortcut to create a new brancha nd switch it
+
+---------------------------------------------------
+
 
 
