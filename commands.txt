@@ -179,7 +179,21 @@ Fast-forward
  create mode 100644 app.js
 purpose:for merging into master branch
 
+------------------------------------------------------
 
+ git clone https://github.com/elm/html.git
+Cloning into 'html'...
+remote: Enumerating objects: 1559, done.
+remote: Total 1559 (delta 0), reused 0 (delta 0), pack-reused 1559
+Receiving objects: 100% (1559/1559), 468.24 KiB | 1013.00 KiB/s, done.
+Resolving deltas: 100% (767/767), done.
+purpose:Creating a copy of remote repository on local system
+-----------------------------------------------------
+
+touch .gitignore
+purpose:the files that you do not want to commit are put here
+
+-----------------------------------------------------
 
 
 
