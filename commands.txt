@@ -372,5 +372,32 @@ From https://github.com/Jaskaran11/LocalPush
 
 --------------------------------------------------------
 
+git fork                            purpose: Creating a copy of remote repository on your github account
 
+--------------------------------------------------------
+
+ 
+ git commit --amend             purpose:is a convenient way to modify the most recent commit
+[master e87874d] remote command
+ Date: Wed Mar 30 20:14:13 2022 +0530
+ 1 file changed, 27 insertions(+)
+---------------------------------------------------------
+
+ git stash                        purpose:it stashes changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.
+
+---------------------------------------------------------
+
+git Cherry picking in Git means to choose a commit from one branch and apply it onto another.
+Git CherryPick <hashcode>  
+
+
+Commit Only related files in one Commit
+
+git commit -p index.html   
+#add on a patch level ie one by one add to staging area changes in the file
+
+Commit Message: Subject Should be concise
+                Body should explain in detail (Reason, Diffrence, Remrkable concept)
+
+----------------------------------------------------------
 
