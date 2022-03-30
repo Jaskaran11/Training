@@ -1,0 +1,508 @@
+ git version
+git version 2.35.1.windows.2
+purpose:This command allows you to see the current version of the git installed in your computer
+
+----------------------------------------------------------
+
+Why git?
+*Keeps Track of Code History
+*Each developer gets their own local repository ,complete with a full history of commits
+*Revert the code files back to their previous state
+*You can visit any snapshot at a time
+
+----------------------------------------------------------
+
+ git config --global user.name
+Jaskaran Singh
+purpose:For configuring the name 
+
+ git config --global user.email
+jksingh112021@gmail.com
+purpose:To setup the email
+
+----------------------------------------------------------
+
+ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Jaskaran Singh
+user.email=jksingh112021@gmail.com
+
+purpose:will show all the configuration
+
+----------------------------------------------------------
+
+ git init
+Initialized empty Git repository in C:/Users/jksin/Desktop/Git/.git/
+purpose:Initialize a git repository in the folder
+
+-----------------------------------------------------------
+
+ls -la .git
+total 11
+drwxr-xr-x 1 Jaskaran 197121   0 Mar 30 03:00 ./
+drwxr-xr-x 1 Jaskaran 197121   0 Mar 30 03:00 ../
+-rw-r--r-- 1 Jaskaran 197121  23 Mar 30 03:00 HEAD
+-rw-r--r-- 1 Jaskaran 197121 130 Mar 30 03:00 config
+-rw-r--r-- 1 Jaskaran 197121  73 Mar 30 03:00 description
+drwxr-xr-x 1 Jaskaran 197121   0 Mar 30 03:00 hooks/
+drwxr-xr-x 1 Jaskaran 197121   0 Mar 30 03:00 info/
+drwxr-xr-x 1 Jaskaran 197121   0 Mar 30 03:00 objects/
+drwxr-xr-x 1 Jaskaran 197121   0 Mar 30 03:00 refs/
+
+purpose:list everything inside of git
+
+----------------------------------------------------------
+
+git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        commands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+purpose:displays the state of the working directory and the staging area.
+
+-----------------------------------------------------------
+
+git add commands.txt[filename]
+purpose:to track files[staging area]
+
+
+git add . -  
+purpose-to include all the files On branch master
+
+-----------------------------------------------------------
+
+git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   commands.txt
+
+-------------------------------------------------------
+
+it commit -m "added git command file"
+[master (root-commit) ac3eb66] added git command file
+ 1 file changed, 91 insertions(+)
+ create mode 100644 commands.txt
+purpose:purpose:commit with final message
+
+--------------------------------------------------------
+
+ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.19 KiB | 1.19 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Jaskaran11/Training.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+purpose of push:to push the new branch into the remote repository
+
+--------------------------------------------------------
+ git ls-files
+commands.txt
+ purpose: List all the files which are being tracked by your repository
+
+--------------------------------------------------------
+
+
+git log
+commit 91db505893522158a73c9cfd6a767c8e4853a292 (HEAD -> master, origin/master)
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 03:43:22 2022 +0530
+
+    used push command
+
+commit 5c8b9a800969f6eaf9525f6c4cad4ccff01aef94
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 03:37:18 2022 +0530
+
+    Added file of git commands
+
+purpose:view all the changes made in the git
+
+------------------------------------------------------------------
+
+ git branch
+* master
+purpose:to see the branches
+
+ git branch master1
+purpose:to create a new branch
+
+git checkout master1
+Switched to branch 'master1'
+purpose:to switch to a new branch as name specified
+
+------------------------------------------------------------------
+
+ git checkout -f index.html
+Updated 1 path from the index
+purpose:matches the file to previous commit
+
+-------------------------------------------------------------------
+
+git rm --cached index.html
+rm 'index.html'
+purpose:to remove the file from staging area
+
+------------------------------------------------------------------
+
+ git merge master2
+Updating e5f18e7..8bc4c37
+Fast-forward
+ app.js       | 1 +
+ commands.txt | 4 ++++
+ 2 files changed, 5 insertions(+)
+ create mode 100644 app.js
+purpose:for merging into master branch
+
+------------------------------------------------------
+
+ git clone https://github.com/elm/html.git
+Cloning into 'html'...
+remote: Enumerating objects: 1559, done.
+remote: Total 1559 (delta 0), reused 0 (delta 0), pack-reused 1559
+Receiving objects: 100% (1559/1559), 468.24 KiB | 1013.00 KiB/s, done.
+Resolving deltas: 100% (767/767), done.
+purpose:Creating a copy of remote repository on local system
+-----------------------------------------------------
+
+touch .gitignore
+purpose:the files that you do not want to commit are put here
+
+-----------------------------------------------------
+
+
+git ls-files
+.gitignore
+app.js
+commands.txt
+index.html
+purpose:List all the files which are being tracked by your repository
+
+------------------------------------------------------
+
+ git pull git@github.com:Jaskaran11/Training.git
+From github.com:Jaskaran11/Training
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+purpose::fetches the new commits and merges these into your local branch.
+
+-------------------------------------------------------
+
+ git help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+purpose:to see git command
+
+----------------------------------------------
+
+git diff
+diff --git a/example.txt b/example.txt
+index 32f95c0..df8298f 100644
+--- a/example.txt
++++ b/example.txt
+@@ -1 +1 @@
+-hi
+\ No newline at end of file
++hi..how n
+\ No newline at end of file
+purpose:tells the difference between staging and working directory
+
+------------------------------------------------
+
+git checkout -b master3
+Switched to a new branch 'master3'
+purpose:shortcut to create a new brancha nd switch it
+
+---------------------------------------------------
+
+git reset
+Unstaged changes after reset:
+D       example.txt
+purpose:when we want to move the repository back to a previous commit 
+
+---------------------------------------------------
+
+git commit -a -m "reset command"
+[master cbdf2a2] reset command
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+ delete mode 100644 example.txt
+purpose:to skip the staging area
+
+----------------------------------------------------
+
+ssh-keygen -t rsa -b 4096 -C "jksingh112021@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/jksin/.ssh/id_rsa):
+/c/Users/jksin/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/jksin/.ssh/id_rsa
+Your public key has been saved in /c/Users/jksin/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:ruo19OhYZKM0j5h26tRg4Amiehveh2+Z9QBrx3l/T74 jksingh112021@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|                 |
+|                 |
+|+                |
+|=..   .          |
+|.oo o =+S.       |
+|.. * Oo=* .      |
+|. B =o*=o+ .    .|
+| = *.==o  . . .o |
+| .=.==+      . E+|
++----[SHA256]-----+
+
+$ ls -al ~/.ssh
+total 30
+drwxr-xr-x 1 Jaskaran 197121    0 Mar 24 03:10 ./
+drwxr-xr-x 1 Jaskaran 197121    0 Mar 30 18:33 ../
+-rw-r--r-- 1 Jaskaran 197121 3389 Mar 30 19:05 id_rsa
+-rw-r--r-- 1 Jaskaran 197121  749 Mar 30 19:05 id_rsa.pub
+-rw-r--r-- 1 Jaskaran 197121  656 Mar 24 03:10 known_hosts
+-rw-r--r-- 1 Jaskaran 197121   92 Mar 24 03:10 known_hosts.old
+
+
+eval "$(ssh-agent -s)"
+Agent pid 1985
+
+ clip < ~/.ssh/id_rsa.pub
+
+$ ssh -T git@github.com
+Hi Jaskaran11! You've successfully authenticated, but GitHub does not provide shell access.
+
+Generating ssh key
+
+-----------------------------------------------------
+
+git remote -v
+origin  git@github.com:Jaskaran11/Training.git (fetch)
+origin  git@github.com:Jaskaran11/Training.git (push)
+
+------------------------------------------------------
+
+$ git remote add origin https://github.com/Jaskaran11/Training
+ Purpose- Add remote Repo to the local Rel machine and connect it.
+
+------------------------------------------------------
+
+ git stash                        
+purpose:it stashes changes you've made to your working copy so you can work on something else, and then come back and re-apply them.
+
+------------------------------------------------------
+
+$ git fetch   :Purpose-used to get files from the remote repository to the local repository but not into the working directory
+$ git fetch origin
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 647 bytes | 58.00 KiB/s, done.
+From https://github.com/Jaskaran11/LocalPush
+   c31bf7b..288dedd  master     -> origin/master
+
+--------------------------------------------------------
+
+git fork                            purpose: Creating a copy of remote repository on your github account
+
+--------------------------------------------------------
+
+ 
+ git commit --amend             purpose:is a convenient way to modify the most recent commit
+[master e87874d] remote command
+ Date: Wed Mar 30 20:14:13 2022 +0530
+ 1 file changed, 27 insertions(+)
+---------------------------------------------------------
+
+ git stash                        purpose:it stashes changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.
+
+---------------------------------------------------------
+
+git Cherry picking in Git means to choose a commit from one branch and apply it onto another.
+Git CherryPick <hashcode>  
+
+
+Commit Only related files in one Commit
+
+git commit -p index.html   
+#add on a patch level ie one by one add to staging area changes in the file
+
+Commit Message: Subject Should be concise
+                Body should explain in detail (Reason, Diffrence, Remrkable concept)
+
+----------------------------------------------------------
+git log --author="@gmail.com"
+commit bbe19c5e5ff4a359cf49d832b4f86bafecf3c456
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:27:55 2022 +0530
+
+    amend command
+
+commit 2b2103a7eaa71db63e65a68e70aec6ed504b3cc6
+Merge: e87874d 7b04fe6
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:26:55 2022 +0530
+
+    Merge branch 'master' of github.com:Jaskaran11/Training
+
+commit e87874d329844dcba70530adcf1802aea04509a6
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:14:13 2022 +0530
+
+    remote command
+
+commit 7b04fe68ec4a3e6a8161f557391f106b81b7e617
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:14:13 2022 +0530
+
+    remote command
+
+commit 94775066cddbf7a095d0f7df1139ffec61aef3c6
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 19:09:04 2022 +0530
+
+    ssh key command
+
+commit f15d4ecfccba62b2233ab1bbc144633ab0d048de
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:34:51 2022 +0530
+
+    fixed
+
+commit 94dfd8be90c34844854f4227b636aff367576746
+Merge: cbdf2a2 4eff15e
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:33:09 2022 +0530
+
+    Merge github.com:Jaskaran11/Training
+
+commit cbdf2a2f9b4f6215641b9225791a9b371f7c474b
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:31:30 2022 +0530
+
+    reset command
+
+commit 4c0145e4b4db8370f8c728b12de63959f2424d67
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:25:20 2022 +0530
+
+    diff command
+
+commit 259ffabcf76ea3077cbd4044fbb9af7c57b0c2d9 (master3)
+purpose:display the commits by authors as given in the pattern
+
+-----------------------------------------------------
+
+Creating a new branch called features
+ git branch features
+
+git checkout features
+Switched to branch 'features'
+ git commit -m "modifiefd html file"
+[features a395112] modifiefd html file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+made some changes
+
+git push origin features
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 746 bytes | 746.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'features' on GitHub by visiting:
+remote:      https://github.com/Jaskaran11/Training/pull/new/features
+remote:
+To https://github.com/Jaskaran11/Training.git
+ * [new branch]      features -> features
+pushed the new branch to github
+
+ Create a pull request on GitHub (a pull request lets teammates do code reviews).
+
+Merge the feature branch into the main branch (by opening the pull request in the browser
+and clicking the "Merge pull request")
+Shows the log in local repo and asks if to merge them
+
+After merging, update the local repository (so that it stays in sync with the remote repository
+on GitHub).
+
+ git pull origin features
+From https://github.com/Jaskaran11/Training
+ * branch            features   -> FETCH_HEAD
+Already up to date.
+
+---------------------------------------------------------------------
+
+
+
