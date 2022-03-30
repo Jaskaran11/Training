@@ -158,6 +158,18 @@ purpose:to switch to a new branch as name specified
 
 ------------------------------------------------------------------
 
+ git checkout -f index.html
+Updated 1 path from the index
+purpose:matches the file to previous commit
+
+-------------------------------------------------------------------
+
+git rm --cached index.html
+rm 'index.html'
+purpose:to remove the file from staging area
+
+------------------------------------------------------------------
+
 
 
 
