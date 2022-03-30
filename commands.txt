@@ -283,5 +283,14 @@ purpose:shortcut to create a new brancha nd switch it
 
 ---------------------------------------------------
 
+git reset
+Unstaged changes after reset:
+D       example.txt
+purpose:when we want to move the repository back to a previous commit 
+
+---------------------------------------------------
+
+
+
 
 
