@@ -195,6 +195,13 @@ purpose:the files that you do not want to commit are put here
 
 -----------------------------------------------------
 
+git ls-files
+.gitignore
+app.js
+commands.txt
+index.html
+purpose:List all the files which are being tracked by your repository
+-----------------------------------------------------------------
 
 
 
