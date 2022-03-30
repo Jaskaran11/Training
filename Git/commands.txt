@@ -515,3 +515,6 @@ GitLab Flow - this strategy is like an extension of GitHub Flow with master and 
           branches to better support SaaS and mobile projects.
 OneFlow	- Formulated by Adam Ruka, OneFlow proposes to be a simplification of GitFlow with the use of rebase options some consider controversial.
 
+----------------------------------------------------------------------
+
+The biggest difference between Git reflog vs. log is that the log is a public accounting of the repository's commit history while the reflog is a private, workspace-specific accounting of the repo's local commits.
