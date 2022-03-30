@@ -290,7 +290,13 @@ purpose:when we want to move the repository back to a previous commit
 
 ---------------------------------------------------
 
+git commit -a -m "reset command"
+[master cbdf2a2] reset command
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+ delete mode 100644 example.txt
+purpose:to skip the staging area
 
+----------------------------------------------------
 
 
 
