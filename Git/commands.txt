@@ -401,3 +401,64 @@ Commit Message: Subject Should be concise
 
 ----------------------------------------------------------
 
+git log --author="@gmail.com"
+commit bbe19c5e5ff4a359cf49d832b4f86bafecf3c456
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:27:55 2022 +0530
+
+    amend command
+
+commit 2b2103a7eaa71db63e65a68e70aec6ed504b3cc6
+Merge: e87874d 7b04fe6
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:26:55 2022 +0530
+
+    Merge branch 'master' of github.com:Jaskaran11/Training
+
+commit e87874d329844dcba70530adcf1802aea04509a6
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:14:13 2022 +0530
+
+    remote command
+
+commit 7b04fe68ec4a3e6a8161f557391f106b81b7e617
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 20:14:13 2022 +0530
+
+    remote command
+
+commit 94775066cddbf7a095d0f7df1139ffec61aef3c6
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 19:09:04 2022 +0530
+
+    ssh key command
+
+commit f15d4ecfccba62b2233ab1bbc144633ab0d048de
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:34:51 2022 +0530
+
+    fixed
+
+commit 94dfd8be90c34844854f4227b636aff367576746
+Merge: cbdf2a2 4eff15e
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:33:09 2022 +0530
+
+    Merge github.com:Jaskaran11/Training
+
+commit cbdf2a2f9b4f6215641b9225791a9b371f7c474b
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:31:30 2022 +0530
+
+    reset command
+
+commit 4c0145e4b4db8370f8c728b12de63959f2424d67
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Wed Mar 30 18:25:20 2022 +0530
+
+    diff command
+
+commit 259ffabcf76ea3077cbd4044fbb9af7c57b0c2d9 (master3)
+purpose:display the commits by authors as given in the pattern
+
+
