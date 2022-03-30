@@ -145,6 +145,21 @@ purpose:view all the changes made in the git
 
 ------------------------------------------------------------------
 
+ git branch
+* master
+purpose:to see the branches
+
+ git branch master1
+purpose:to create a new branch
+
+git checkout master1
+Switched to branch 'master1'
+purpose:to switch to a new branch as name specified
+
+------------------------------------------------------------------
+
+
+
 
 
 
