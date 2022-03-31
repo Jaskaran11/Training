@@ -518,3 +518,32 @@ OneFlow	- Formulated by Adam Ruka, OneFlow proposes to be a simplification of Gi
 ----------------------------------------------------------------------
 
 The biggest difference between Git reflog vs. log is that the log is a public accounting of the repository's commit history while the reflog is a private, workspace-specific accounting of the repo's local commits.
+
+---------------------------------------------------------------------
+git reflog
+216c457 (HEAD -> master) HEAD@{0}: reset: moving to HEAD
+216c457 (HEAD -> master) HEAD@{1}: reset: moving to HEAD
+216c457 (HEAD -> master) HEAD@{2}: commit: resolving merge conflict
+8fde4a2 HEAD@{3}: commit: added new branch
+a36adc2 HEAD@{4}: pull origin master: Fast-forward
+e8f3b9e HEAD@{5}: checkout: moving from features to master
+2c16e3b (features) HEAD@{6}: pull origin master: Merge made by the 'ort' strategy.
+ce12534 HEAD@{7}: commit: added new branch
+a395112 (origin/features) HEAD@{8}: commit: modifiefd html file
+89f89e5 HEAD@{9}: commit: html file added
+e8f3b9e HEAD@{10}: checkout: moving from master to features
+e8f3b9e HEAD@{11}: pull origin: Fast-forward
+cdcde14 HEAD@{12}: commit: log command
+7eafc08 HEAD@{13}: reset: moving to FETCH_HEAD
+d20c425 HEAD@{14}: reset: moving to HEAD
+d20c425 HEAD@{15}: commit: fixed
+5c30c52 HEAD@{16}: reset: moving to HEAD
+5c30c52 HEAD@{17}: commit: added a change
+52e5560 HEAD@{18}: reset: moving to HEAD
+52e5560 HEAD@{19}: commit: made changes
+28b7c9a HEAD@{20}: commit: log command
+aeff4fd HEAD@{21}: pull: Fast-forward
+purpose:
+The git reflog command is used for Git to record updates made to the tip of branches
+
+--------------------------------------------------------------------------------
