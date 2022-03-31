@@ -547,3 +547,68 @@ purpose:
 The git reflog command is used for Git to record updates made to the tip of branches
 
 --------------------------------------------------------------------------------
+
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git (master)
+$ mkdir git1
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git (master)
+$ cd git1
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git init
+Initialized empty Git repository in C:/Users/jksin/Desktop/Git/git1/.git/
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ ls
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ ls -a
+./  ../  .git/
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git remote add origin https://github.com/Shubham0197/Training.git
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git pull origin
+remote: Enumerating objects: 112, done.
+remote: Counting objects: 100% (112/112), done.
+remote: Compressing objects: 100% (82/82), done.
+remote: Total 112 (delta 23), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (112/112), 28.17 KiB | 1.34 MiB/s, done.
+Resolving deltas: 100% (23/23), done.
+From https://github.com/Shubham0197/Training
+ * [new branch]      main       -> origin/main
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git remote add shubham https://github.com/Shubham0197/Training.git
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git pull shubham
+From https://github.com/Shubham0197/Training
+ * [new branch]      main       -> shubham/main
+You asked to pull from the remote 'shubham', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ git pull shubham main
+From https://github.com/Shubham0197/Training
+ * branch            main       -> FETCH_HEAD
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
+$ ls
+README.md  git/
+
+
