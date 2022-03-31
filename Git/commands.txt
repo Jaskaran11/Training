@@ -611,4 +611,10 @@ Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git/git1 (master)
 $ ls
 README.md  git/
 
+------------------------------------------------------------
+
+Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git (master)
+$ git branch -D temp
+Deleted branch temp (was 216c457).
+
 
