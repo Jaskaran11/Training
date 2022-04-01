@@ -1,0 +1,24 @@
+What is a Database?
+A database is information that is set up for easy access, management and updating.Databases are used for storing, maintaining and accessing any sort of data. They collect information on people, places or things. That information is gathered in one place so that it can be observed and analyzed. Databases can be thought of as an organized collection of information.
+
+PostgreSql-
+It is a powerful, open source object-relational database system.PostgreSQL runs on all major operating systems.PostgreSQL supports a large part of the SQL standard.It is a highly stable database management system, backed by more than 20 years of community development which has contributed to its high levels of resilience, integrity, and correctness.
+
+
+
+postgres=# select version();
+                          version
+------------------------------------------------------------
+ PostgreSQL 14.2, compiled by Visual C++ build 1914, 64-bit
+(1 row)
+
+postgres-# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+(3 rows)
