@@ -89,3 +89,39 @@ test=# \c test1;
 You are now connected to database "test1" as user "postgres".
 
 
+Table synatx - 
+
+CREATE TABLE table_name(
+Column name + data type + constraints if any
+)
+
+test=# create table person (
+test(# id int,
+test(# first_name varchar(50),
+test(# last_name varchar(50),
+test(# gender varchar(7),
+test(# date_of_birth DATE );
+CREATE TABLE
+
+
+#to view table
+test=# \d
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+----------
+ public | person | table | postgres
+(1 row)
+
+
+test=# \d person
+                         Table "public.person"
+    Column     |         Type          | Collation | Nullable | Default
+---------------+-----------------------+-----------+----------+---------
+ id            | integer               |           |          |
+ first_name    | character varying(50) |           |          |
+ last_name     | character varying(50) |           |          |
+ gender        | character varying(7)  |           |          |
+ date_of_birth | date                  |           |          |
+
+
+
