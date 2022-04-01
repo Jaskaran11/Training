@@ -96,11 +96,12 @@ Column name + data type + constraints if any
 )
 
 test=# create table person (
-test(# id int,
-test(# first_name varchar(50),
-test(# last_name varchar(50),
-test(# gender varchar(7),
-test(# date_of_birth DATE );
+test(# id int not null primary key,
+test(# first_name varchar(50) not null,
+test(# last_name varchar(50) not null,
+test(# gender varchar(7) not null,
+test(# date_of_birth date not null,
+test(# email varchar(150)  );
 CREATE TABLE
 
 
@@ -113,15 +114,120 @@ test=# \d
 (1 row)
 
 
-test=# \d person
-                         Table "public.person"
-    Column     |         Type          | Collation | Nullable | Default
----------------+-----------------------+-----------+----------+---------
- id            | integer               |           |          |
- first_name    | character varying(50) |           |          |
- last_name     | character varying(50) |           |          |
- gender        | character varying(7)  |           |          |
- date_of_birth | date                  |           |          |
 
+test=# \d person;
+                          Table "public.person"
+    Column     |          Type          | Collation | Nullable | Default
+---------------+------------------------+-----------+----------+---------
+ id            | integer                |           | not null |
+ first_name    | character varying(50)  |           | not null |
+ last_name     | character varying(50)  |           | not null |
+ gender        | character varying(7)   |           | not null |
+ date_of_birth | date                   |           | not null |
+ email         | character varying(150) |           |          |
+Indexes:
+    "person_pkey" PRIMARY KEY, btree (id)
+
+
+#to delete a table
+test=# drop table person;
+DROP TABLE
+
+
+test=# \dt
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+----------
+ public | person | table | postgres
+(1 row)
+
+
+#inserting values into table
+
+test=# insert into person (id, first_name, last_name, gender, date_of_birth)
+test-# values(1,'John','Smith','Male',date '2000-11-04');
+INSERT 0 1
+test=# insert into person (id, first_name,last_name, gender, date_of_birth, email)
+test-# values(2,'Jessica','Jones','Female',date '1999-05-05','jessica@gmail.com');
+INSERT 0 1
+test=# insert into person (id,first_name,last_name,gender,date_of_birth,email)
+test-# values(3,'David','Ayers','Male',date '1999=06-07','david@gmail.com');
+INSERT 0 1
+test=# insert into person (id,first_name,last_name,gender,date_of_birth,email)
+test-# values(4,'Chris','Evans','Male',date '1998-07-11','chris@gmail.com');
+INSERT 0 1
+test=# insert into person (id,first_name,last_name,gender,date_of_birth,email)
+test-# values(5,'Hela','Ray','Female',date '1996-09-12','hela@gmail.com');
+INSERT 0 1
+
+
+ SELECT statement is used to fetch the data from a database table,
+test=# select * from person;
+ id | first_name | last_name | gender | date_of_birth |       email
+----+------------+-----------+--------+---------------+-------------------
+  1 | John       | Smith     | Male   | 2000-11-04    | john@gmail.com
+  2 | Jessica    | Jones     | Female | 1999-05-05    | jessica@gmail.com
+  3 | David      | Ayers     | Male   | 1999-06-07    | david@gmail.com
+  4 | Chris      | Evans     | Male   | 1998-07-11    | chris@gmail.com
+  5 | Hela       | Ray       | Female | 1996-09-12    | hela@gmail.com
+(5 rows)
+
+
+test=# select first_name, last_name from person;
+ first_name | last_name
+------------+-----------
+ John       | Smith
+ Jessica    | Jones
+ David      | Ayers
+ Chris      | Evans
+ Hela       | Ray
+(5 rows)
+
+
+test=# select * from person order by first_name;
+ id | first_name | last_name | gender | date_of_birth |       email
+----+------------+-----------+--------+---------------+-------------------
+  4 | Chris      | Evans     | Male   | 1998-07-11    | chris@gmail.com
+  3 | David      | Ayers     | Male   | 1999-06-07    | david@gmail.com
+  5 | Hela       | Ray       | Female | 1996-09-12    | hela@gmail.com
+  2 | Jessica    | Jones     | Female | 1999-05-05    | jessica@gmail.com
+  1 | John       | Smith     | Male   | 2000-11-04    | john@gmail.com
+(5 rows)
+
+
+
+test=# select * from person order by id DESC;
+ id | first_name | last_name | gender | date_of_birth |       email
+----+------------+-----------+--------+---------------+-------------------
+  5 | Hela       | Ray       | Female | 1996-09-12    | hela@gmail.com
+  4 | Chris      | Evans     | Male   | 1998-07-11    | chris@gmail.com
+  3 | David      | Ayers     | Male   | 1999-06-07    | david@gmail.com
+  2 | Jessica    | Jones     | Female | 1999-05-05    | jessica@gmail.com
+  1 | John       | Smith     | Male   | 2000-11-04    | john@gmail.com
+(5 rows)
+
+
+
+test=# select * from person where gender='Female';
+ id | first_name | last_name | gender | date_of_birth |       email
+----+------------+-----------+--------+---------------+-------------------
+  2 | Jessica    | Jones     | Female | 1999-05-05    | jessica@gmail.com
+  5 | Hela       | Ray       | Female | 1996-09-12    | hela@gmail.com
+
+
+
+test=# SELECT 1<2;
+ ?column?
+----------
+ t
+(1 row)
+
+ Select * from person where last_name in ('Jones','Evans','Ray');
+ id | first_name | last_name | gender | date_of_birth |       email
+----+------------+-----------+--------+---------------+-------------------
+  2 | Jessica    | Jones     | Female | 1999-05-05    | jessica@gmail.com
+  4 | Chris      | Evans     | Male   | 1998-07-11    | chris@gmail.com
+  5 | Hela       | Ray       | Female | 1996-09-12    | hela@gmail.com
+(3 rows)
 
 
