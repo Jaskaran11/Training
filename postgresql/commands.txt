@@ -231,3 +231,122 @@ test=# SELECT 1<2;
 (3 rows)
 
 
+
+
+WHERE CLAUSE - used to specify a condition while fetching the data from single table or joining with multiple tables.
+
+syntax:SELECT column1, column2, columnN
+                             FROM table_name
+                             WHERE [search_condition]
+test=# select * from person where first_name like 'J%';
+ id | first_name | last_name | gender | date_of_birth |       email
+----+------------+-----------+--------+---------------+-------------------
+  1 | John       | Smith     | Male   | 2000-11-04    | john@gmail.com
+  2 | Jessica    | Jones     | Female | 1999-05-05    | jessica@gmail.com
+(2 rows)
+
+
+
+test=# create table company (
+test(# id int not null primary key,
+test(# name varchar(55) not null,
+test(# age int not null,
+test(# address varchar(55) not null,
+test(# salary int not null,
+test(# join_date date not null );
+CREATE TABLE
+test=# \d
+          List of relations
+ Schema |  Name   | Type  |  Owner
+--------+---------+-------+----------
+ public | company | table | postgres
+ public | person  | table | postgres
+ public | teacher | table | postgres
+(3 rows)
+
+
+test=# insert into company (id,name,age,address,salary,join_date)
+test-# values(1,'Paul',23,'Texas',10000,'2001-07-13'),
+test-# (2,'Rahul',34,'California',85000,'2007-08-11'),
+test-# (3,'Nitin',33,'Rich-Mond',45000,'2010-12-13'),
+test-# (4,'Joe',45,'Texas',90000,'2000-11-05');
+INSERT 0 4
+test=# select * from company;
+ id | name  | age |  address   | salary | join_date
+----+-------+-----+------------+--------+------------
+  1 | Paul  |  23 | Texas      |  10000 | 2001-07-13
+  2 | Rahul |  34 | California |  85000 | 2007-08-11
+  3 | Nitin |  33 | Rich-Mond  |  45000 | 2010-12-13
+  4 | Joe   |  45 | Texas      |  90000 | 2000-11-05
+(4 rows)
+
+select * from company where age>=25 or salary>=65000;
+ id | name  | age |  address   | salary | join_date
+----+-------+-----+------------+--------+------------
+  2 | Rahul |  34 | California |  85000 | 2007-08-11
+  3 | Nitin |  33 | Rich-Mond  |  45000 | 2010-12-13
+  4 | Joe   |  45 | Texas      |  90000 | 2000-11-05
+(3 rows)
+
+
+
+
+#Update query with where clause;
+                 
+                  syntax:UPDATE table_name
+                  SET column1 = value1, column2 = value2...., columnN = valueN
+                  WHERE [condition];
+
+update company set join_date = '2002-07-03' where id=3;
+UPDATE 1
+test=# select * from company;
+ id | name  | age |  address   | salary | join_date
+----+-------+-----+------------+--------+------------
+  1 | Paul  |  23 | Texas      |  10000 | 2001-07-13
+  2 | Rahul |  34 | California |  85000 | 2007-08-11
+  4 | Joe   |  45 | Texas      |  90000 | 2000-11-05
+  3 | Nitin |  33 | Rich-Mond  |  45000 | 2002-07-03
+(4 rows)
+
+
+ #Delete query 
+
+          syntax: DELETE FROM table_name  WHERE condition;
+           delete from company where id=2;
+
+ id | name  | age |  address  | salary | join_date
+----+-------+-----+-----------+--------+------------
+  1 | Paul  |  23 | Texas     |  10000 | 2001-07-13
+  4 | Joe   |  45 | Texas     |  90000 | 2000-11-05
+  3 | Nitin |  33 | Rich-Mond |  45000 | 2002-07-03
+
+
+#ORDER by:ORDER BY clause is used to sort the data in ascending or descending order.
+              
+                   syntax:SELECT column-list
+                          FROM table_name
+                          [WHERE condition]
+                          [ORDER BY column1, column2, .. columnN] [ASC | DESC];
+
+                    test=# select * from company order by name, salary asc;
+ id | name  | age |  address  | salary | join_date
+----+-------+-----+-----------+--------+------------
+  4 | Joe   |  45 | Texas     |  90000 | 2000-11-05
+  3 | Nitin |  33 | Rich-Mond |  45000 | 2002-07-03
+  1 | Paul  |  23 | Texas     |  10000 | 2001-07-13
+
+
+29.GROUP BY: GROUP BY clause is used in collaboration with the SELECT statement to group together those rows in a table that have identical data.
+
+                                        syntax:SELECT column-list
+                                               FROM table_name
+                                               WHERE [ conditions ]
+                                               GROUP BY column1, column2....columnN
+                                               ORDER BY column1, column2....columnN
+                                         test=# select address, count(*) from company group by address;
+  address  | count
+-----------+-------
+ Rich-Mond |     1
+ Texas     |     2
+(2 rows)
+
