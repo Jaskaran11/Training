@@ -2,8 +2,9 @@ What is a Database?
 A database is information that is set up for easy access, management and updating.Databases are used for storing, maintaining and accessing any sort of data. They collect information on people, places or things. That information is gathered in one place so that it can be observed and analyzed. Databases can be thought of as an organized collection of information.
 
 PostgreSql-
-It is a powerful, open source object-relational database system.PostgreSQL runs on all major operating systems.PostgreSQL supports a large part of the SQL standard.It is a highly stable database management system, backed by more than 20 years of community development which has contributed to its high levels of resilience, integrity, and correctness.
-
+It is a powerful, open source object-relational database system.PostgreSQL runs on all major operating systems.PostgreSQL supports a large part of the SQL standard.
+It is a highly stable database management system, backed by more than 20 years of community development which has contributed to its high levels of resilience, integrity, and correctness.
+It uses the SQL language.
 
 
 postgres=# select version();
@@ -22,3 +23,69 @@ postgres-# \l
  template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
            |          |          |                    |                    | postgres=CTc/postgres
 (3 rows)
+
+
+postgres=# create database test;
+CREATE DATABASE
+
+test-#
+Here # shows I am Super User
+test=>
+" => " have rights to the database
+
+postgres-# \?
+General
+  \copyright             show PostgreSQL usage and distribution terms
+  \crosstabview [COLUMNS] execute query and display results in crosstab
+  \errverbose            show most recent error message at maximum verbosity
+  \g [(OPTIONS)] [FILE]  execute query (and send results to file or |pipe);
+                         \g with no arguments is equivalent to a semicolon
+  \gdesc                 describe result of query, without executing it
+  \gexec                 execute query, then execute each value in its result
+  \gset [PREFIX]         execute query and store results in psql variables
+  \gx [(OPTIONS)] [FILE] as \g, but forces expanded output mode
+  \q                     quit psql
+  \watch [SEC]           execute query every SEC seconds
+
+Help
+  \? [commands]          show help on backslash commands
+  \? options             show help on psql command-line options
+  \? variables           show help on special variables
+  \h [NAME]              help on syntax of SQL commands, * for all commands
+
+Query Buffer
+  \e [FILE] [LINE]       edit the query buffer (or file) with external editor
+  \ef [FUNCNAME [LINE]]  edit function definition with external editor
+  \ev [VIEWNAME [LINE]]  edit view definition with external editor
+  \p                     show the contents of the query buffer
+  \r                     reset (clear) the query buffer
+  \w FILE                write query buffer to file
+
+Input/Output
+  \copy ...              perform SQL COPY with data stream to the client host
+-- More  --
+
+
+#To see current date
+# select current_date;
+ current_date
+--------------
+ 2022-04-01
+
+
+#running an arithmetic operation
+postgres=# select 2+2;
+ ?column?
+----------
+        4
+(1 row)
+
+#to permanently delete a database;
+ drop database test1;
+DROP DATABASE
+
+#to change database
+test=# \c test1;
+You are now connected to database "test1" as user "postgres".
+
+
