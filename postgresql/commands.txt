@@ -504,3 +504,68 @@ test=# select emp_id,name,dept from company right outer join department on compa
       7 |       | Finance
 (3 rows)
 
+#Inheritance - its is a concept in which the table inherits all column from its parent table . 
+In PostgreSQL, a table can inherit from zero or more other tables.
+
+
+test=# create table city(
+test(# name text,
+test(# population real,
+test(# elevation int
+test(# );
+CREATE TABLE
+test=# create table capitals(
+test(# state char(2) unique not null
+test(# ) inherits(city);
+CREATE TABLE
+test=# \d capitals
+                  Table "public.capitals"
+   Column   |     Type     | Collation | Nullable | Default
+------------+--------------+-----------+----------+---------
+ name       | text         |           |          |
+ population | real         |           |          |
+ elevation  | integer      |           |          |
+ state      | character(2) |           | not null |
+Indexes:
+    "capitals_state_key" UNIQUE CONSTRAINT, btree (state)
+Inherits: city
+
+
+test=# insert into capitals values('chandigarh',1111,123,'PB');
+INSERT 0 1
+test=# insert into city values('ambala',123,221);
+INSERT 0 1
+test=# select * from capitals;
+    name    | population | elevation | state
+------------+------------+-----------+-------
+ chandigarh |       1111 |       123 | PB
+(1 row)
+
+
+test=# select * from city;
+    name    | population | elevation
+------------+------------+-----------
+ ambala     |        123 |       221
+ chandigarh |       1111 |       123
+(2 rows)
+
+
+#SQL syntax
+#Lexical Structure
+sequence of tokens terminated by ;
+Tokens can be hayward , identifier, constants or literal or special symbol
+#Identifier
+They identify name of tables columns or other db objects called names
+starts with [9-2) followed by any alphabet, digit unserscore or $
+They are case insensitive
+convention  is to write key words in upper case and names in lower case
+#then there is : the delimited identifier or quoted identifier
+It is token in quotes whiuch is never treated as keyword
+Then can contain ny character except 0
+they are case sensitive
+
+#Constants
+There are three implicitly typed constants for use in Postgres: strings, integers, and floating point numbers. 
+Strings in SQL are arbitrary sequences of ASCII characters bounded by single quotes ("'", e.g. 'This is a string'). 
+Integer constants in SQL are collection of ASCII digits with no decimal point. Legal values range from -2147483648 to +2147483647.
+Floating point constants consist of an integer part, a decimal point, and a fraction part or scientific notation
