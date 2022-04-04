@@ -1,0 +1,101 @@
+PostgreSQL built-in functions, also called as Aggregate functions, are used for performing processing on string or numeric data. 
+
+#To count the number of rows 
+
+test=# select count(*) from company;
+ count
+-------
+     4
+(1 row)
+
+                             ^
+test=# select count(*) from capitals where name='chandigarh';
+ count
+-------
+     1
+(1 row)
+
+
+test=#
+
+
+                 ^
+test=# select * from city where name = 'ambala';
+  name  | population | elevation
+--------+------------+-----------
+ ambala |        123 |       221
+(1 row)
+
+
+
+# The PostgreSQL MAX aggregate function allows us to select the highest (maximum) value for a certain column.
+
+test=# select max(salary) from company;
+  max
+-------
+ 85000
+(1 row)
+
+
+#The PostgreSQL MIN aggregate function allows us to select the lowest (minimum) value for a certain column.
+
+test=# select min(age) from company;
+ min
+-----
+  23
+(1 row)
+
+
+# Can see max and min in same time
+test=# select max(age),min(age) from company;
+ max | min
+-----+-----
+  27 |  23
+(1 row)
+
+
+
+
+test=# select name, max(elevation) from city group by name;
+    name    | max
+------------+-----
+ ambala     | 221
+ chandigarh | 123
+(2 rows)
+
+
+#The PostgreSQL AVG aggregate function selects the average value for certain table column.
+
+
+test=# select avg(salary) from company;
+        avg
+--------------------
+ 43500.000000000000
+(1 row)
+
+
+#the PostgreSQL SUM aggregate function allows selecting the total for a numeric column.
+
+
+test=# select sum(age) from company;
+ sum
+-----
+ 100
+(1 row)
+
+test=# select sum(elevation) from city group by name;
+ sum
+-----
+ 221
+ 123
+(2 rows)
+
+
+
+#The PostgreSQL ARRAY aggregate function puts input values, including nulls, concatenated into an array.
+test=# select array_agg(salary) from company;
+        array_agg
+--------------------------
+ {4000,20000,65000,85000}
+(1 row)
+
