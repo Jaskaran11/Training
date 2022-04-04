@@ -350,3 +350,33 @@ test=# select * from company;
  Texas     |     2
 (2 rows)
 
+
+#Views in SQL are kind of virtual tables. A view also has rows and columns as they are in a real table in the database.
+
+The basic CREATE VIEW syntax is as follows −
+
+CREATE [TEMP | TEMPORARY] VIEW view_name AS
+SELECT column1, column2.....
+FROM table_name
+WHERE [condition];
+
+
+
+test=# create VIEW myview as
+test-# select name,age,address,salary
+test-# from company;
+CREATE VIEW
+
+       ^
+test=#  select * from myview;
+ name  | age |  address  | salary
+-------+-----+-----------+--------
+ Paul  |  23 | Texas     |  10000
+ Joe   |  45 | Texas     |  90000
+ Nitin |  33 | Rich-Mond |  45000
+(3 rows)
+
+
+#to drop a view-
+test=# drop view myview;
+DROP VIEW
