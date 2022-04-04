@@ -380,3 +380,39 @@ test=#  select * from myview;
 #to drop a view-
 test=# drop view myview;
 DROP VIEW
+
+#primary key-A primary key is a column or a group of columns used to identify a row uniquely in a table.
+
+test=# insert into person(id,first_name,last_name,gender,date_of_birth,email) values (1,'John','Smith','Male','2000-11-04','john@gmail.com');
+ERROR:  duplicate key value violates unique constraint "person_pkey"
+DETAIL:  Key (id)=(1) already exists.
+
+to remove the primary key
+test=# ALTER TABLE person DROP CONSTRAINT person_pkey;
+ALTER TABLE
+
+to add the primary key
+ ALTER TABLE person ADD PRIMARY KEY (id);
+ALTER TABLE
+
+#Unique Constraints - A UNIQUE CONSTRAINT is used to maintain the individuality of the values that we store into a field or a column of the table. 
+It is compatible with a group of column constraints or column constraints and a table constraint.
+
+test=# ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email);
+ALTER TABLE
+
+test=# \d person;
+                          Table "public.person"
+    Column     |          Type          | Collation | Nullable | Default
+---------------+------------------------+-----------+----------+---------
+ id            | integer                |           | not null |
+ first_name    | character varying(50)  |           | not null |
+ last_name     | character varying(50)  |           | not null |
+ gender        | character varying(7)   |           | not null |
+ date_of_birth | date                   |           | not null |
+ email         | character varying(150) |           |          |
+Indexes:
+    "person_pkey" PRIMARY KEY, btree (id)
+    "unique_email_address" UNIQUE CONSTRAINT, btree (email)
+
+
