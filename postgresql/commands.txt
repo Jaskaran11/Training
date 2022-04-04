@@ -416,3 +416,91 @@ Indexes:
     "unique_email_address" UNIQUE CONSTRAINT, btree (email)
 
 
+#A foreign key constraint specifies that the values in a column (or a group of columns) must match the values appearing in some row of another table. 
+It maintains the referential integrity between two related tables. 
+They are called foreign keys because the constraints are foreign; that is, outside the table.
+                   ^
+test=# create table company1(
+test(# id int primary key not null,
+test(# name varchar(50) not null,
+test(# age int not null,
+test(# address varchar(50),
+test(# salary int
+test(# );
+CREATE TABLE
+
+
+test=# create table department1(
+test(# id int primary key not null,
+test(# dept varchar(50) not null,
+test(# emp_id int references company1(id)
+test(# );
+CREATE TABLE
+test=# select * from department1;
+ id | dept | emp_id
+----+------+--------
+(0 rows)
+
+
+test=# \d department1;
+                   Table "public.department1"
+ Column |         Type          | Collation | Nullable | Default
+--------+-----------------------+-----------+----------+---------
+ id     | integer               |           | not null |
+ dept   | character varying(50) |           | not null |
+ emp_id | integer               |           |          |
+Indexes:
+    "department1_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "department1_emp_id_fkey" FOREIGN KEY (emp_id) REFERENCES company1(id)
+
+
+
+# Transactions
+It is fundamental concept of Database systems.
+It bundles multiple steps into one for all or nothing operation.
+it help to provide atomicity propertty of datatbase ie if some failure occurs that prevents the transaction from completing, then none of the steps affect the database at all
+A transactional database guarantees that all the updates made by a transaction are logged in permanent storage (i.e.,on disk) before the transaction is reported complete.
+a transaction is set up by surrounding the SQL commands of the transaction with
+BEGIN and COMMIT commands.
+if in between donot want to complete transanction just issue command rollback
+ A group of statements surrounded by BEGIN and COMMIT is sometimes
+called a transaction block
+
+Use "savepoint" and "rollback to" to control transaction inmore granural fashion.
+
+
+#The PostgreSQL Joins clause is used to combine records from two or more tables in a database. A JOIN is a means for combining fields from two tables by using values common to each.
+
+1.(INNER) JOIN: Returns records that have matching values in both tables
+
+test=# select emp_id,name,dept from company inner join department on company.id=department.emp_id;
+ emp_id | name  |    dept
+--------+-------+-------------
+      1 | Paul  | It Billing
+      2 | Allen | Engineering
+(2 rows)
+
+
+2.LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+test=# select emp_id,name,dept from company left outer join department on company.id=department.emp_id;
+ emp_id | name  |    dept
+--------+-------+-------------
+      1 | Paul  | It Billing
+      2 | Allen | Engineering
+        | David |
+        | Mark  |
+        | Teddy |
+(5 rows)
+
+3.RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+
+
+test=# select emp_id,name,dept from company right outer join department on company.id=department.emp_id;
+ emp_id | name  |    dept
+--------+-------+-------------
+      1 | Paul  | It Billing
+      2 | Allen | Engineering
+      7 |       | Finance
+(3 rows)
+
