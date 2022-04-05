@@ -574,4 +574,33 @@ they are case sensitive
 There are three implicitly typed constants for use in Postgres: strings, integers, and floating point numbers. 
 Strings in SQL are arbitrary sequences of ASCII characters bounded by single quotes ("'", e.g. 'This is a string'). 
 Integer constants in SQL are collection of ASCII digits with no decimal point. Legal values range from -2147483648 to +2147483647.
-Floating point constants consist of an integer part, a decimal point, and a fraction part or scientific notation
+
+
+---------------------------------------------------------------------------------------
+
+Set Operations
+
+UNION
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+test=# select first_name from person union select name from teacher;
+ first_name
+------------
+ Joe
+ Hela
+ David
+ Chris
+ Jessica
+ John
+(6 rows)
+
+Union All- combine the results of two SELECT statements including duplicate rows
+
+test=# select name from capitals union all select name from city;
+    name
+------------
+ chandigarh
+ ambala
+ chandigarh
+(3 rows)
+
