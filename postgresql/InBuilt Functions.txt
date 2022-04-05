@@ -454,9 +454,355 @@ test=# SELECT TAN(90);
 (1 row)
 
 
+#ASCII -  function returns an ASCII code value of a character.
+
+
+test=# select ascii('a');
+ ascii
+-------
+    97
+(1 row)
+
+
+test=# select ascii('c');
+ ascii
+-------
+    99
+(1 row)
+
+
+#BIT_LENGTH()-Returns length of argument in bits
+
+
+test=# SELECT BIT_LENGTH('b');
+ bit_length
+------------
+          8
+(1 row)
+
+
+test=# SELECT BIT_LENGTH('f');
+ bit_length
+------------
+          8
+(1 row)
+test=# SELECT BIT_LENGTH('fsassad');
+ bit_length
+------------
+         56
+(1 row)
+
+#CHAR_LENGTH()-Returns number of characters in argument
+
+
+test=# select char_length('asadf');
+ char_length
+-------------
+           5
+(1 row)
+
+
+test=# select char_length('adawe345');
+ char_length
+-------------
+           8
+(1 row)
+
+
+#CONCAT_WS() - Returns concatenate with separator,first argument is the separator for the rest of the arguments
+
+test=# select concat_ws('abc','32432','dse','1222');
+     concat_ws
+--------------------
+ 32432abcdseabc1222
+(1 row)
+
+
+#CONCAT()-Returns concatenated string
+test=# select concat('sss','12','sed');
+  concat
+----------
+ sss12sed
+(1 row)
+
+
+#LOWER() - -Returns the argument in lowercase
+test=# SELECT LOWER('ASCD');
+ lower
+-------
+ ascd
+(1 row)
+
+
+#LEFT()- Returns the leftmost number of characters as specified
+test=# SELECT LEFT('asdsaddfewrwwe213',5);
+ left
+-------
+ asdsa
+(1 row)
+
+
+#Returns the length of the word
+test=# select length('asbdkakd');
+ length
+--------
+      8
+(1 row)
 
 
 
+LPAD()- Returns the string argument, left-padded with the specified string
+test=# select lpad('we',5,'23');
+ lpad
+-------
+ 232we
+(1 row)
 
 
+#LTRIM()-Removes leading spaces
+
+test=# select ltrim('   bsdd'     );
+ ltrim
+-------
+ bsdd
+(1 row)
+
+
+
+#POSITION()-A synonym for LOCATE()
+
+
+test=# select position('4' IN '231324999');
+ position
+----------
+        6
+(1 row)
+
+
+#QUOTE()-Escapes the argument for use in an SQL statement
+
+test=# select quote_ident('hi there');
+ quote_ident
+-------------
+ "hi there"
+(1 row)
+
+
+test=# SELECT QUOTE_LITERAL(43.6);
+ quote_literal
+---------------
+ '43.6'
+(1 row)
+
+
+test=# SELECT QUOTE_NULLABLE(55.6);
+ quote_nullable
+----------------
+ '55.6'
+(1 row)
+
+	REGEXP
+Pattern matching using regular expressions
+Regular Expression
+RoadBlock
+
+
+#REPEAT()-Repeats a string the specified number of times
+test=# select repeat('hi',5);
+   repeat
+------------
+ hihihihihi
+(1 row)
+
+
+
+#REPLACE()- Replaces occurrences of a specified string
+
+test=# select replace('12345','3','5');
+ replace
+---------
+ 12545
+(1 row)
+
+
+#REVERSE()-Reverse the characters in a string
+
+test=# select reverse('abcde12');
+ reverse
+---------
+ 21edcba
+(1 row)
+
+
+#RIGHT()-Returns the specified rightmost number of characters
+
+                     ^
+test=# select right('NJADNS',3);
+ right
+-------
+ DNS
+(1 row)
+
+
+
+#RPAD()- Appends string the specified number of timesIf str is longer than len, the return value is shortened to len characters
+
+test=# select rpad('ab',5,'#');
+ rpad
+-------
+ ab###
+(1 row)
+
+
+test=# select rpad('tqwew',3,'%');
+ rpad
+------
+ tqw
+(1 row)
+
+
+#RTRIM()- Removes trailing spaces
+
+test=# select rtrim('abcdefghi                ');
+   rtrim
+-----------
+ abcdefghi
+(1 row)
+
+
+
+#SUBSTRING(), SUBSTR()-Returns the substring as specified
+SUBSTRING(str,pos), SUBSTRING(str FROM pos), SUBSTRING(str,pos,len), SUBSTRING(str FROM pos FOR len)
+
+                         ^
+test=# select substring('lenovo',4);
+ substring
+-----------
+ ovo
+(1 row)
+
+
+test=# select substring('hithere',5,6);
+ substring
+-----------
+ ere
+(1 row)
+
+
+
+TRIM()-Removes leading and trailing spaces
+TRIM([{BOTH | LEADING | TRAILING} [remstr] FROM] str), TRIM([remstr FROM] str)
+
+
+test=# select trim('       dell       ');
+ btrim
+-------
+ dell
+(1 row)
+
+
+test=# select trim(both 'yyy' from 'xyzyyy');
+ btrim
+-------
+ xyz
+(1 row)
+
+
+test=# select trim(trailing 'xyz' from 'xyzabcxyz');
+ rtrim
+--------
+ xyzabc
+(1 row)
+
+
+			   
+#UPPER()- Converts to uppercase
+test=# select upper('nike');
+ upper
+-------
+ NIKE
+(1 row)
+
+
+AUTO INCREMENT
+PostgreSQL has the data types smallserial, serial and bigserial; these are not true types, but merely a notational convenience for creating unique identifier columns.
+The type name serial creates an integer columns. The type name bigserial creates a bigint column. bigserial should be used if you anticipate the use of more than 231 identifiers over the lifetime of the table.
+ The type name smallserial creates a smallint column.
+
+
+test=# create table company2(
+test(# id serial primary key,
+test(# name text not null,
+test(# age int not null,
+test(# address char(40),
+test(# salary real
+test(# );
+CREATE TABLE
+test=# insert into company2 (name,age,address,salary)
+test-# values ('Rohit',34,'Ambala',30000.0);
+INSERT 0 1
+test=# insert into company2 (name,age,address,salary)
+test-# values ('Rohan',35,'Patiala',35000.0);
+INSERT 0 1
+test=# insert into company2 (name,age,address,salary)
+test-# values ('Joe',45,'Chandigarh',56000.0);
+INSERT 0 1
+test=# insert into company2 (name,age,address,salary)
+test-# values ('Sai',55,'faridabad',66000.0),('Mark',44;'Mohali',76000.0);
+ERROR:  syntax error at or near ";"
+LINE 2: values ('Sai',55,'faridabad',66000.0),('Mark',44;'Mohali',76...
+                                                        ^
+test=# insert into company2 (name,age,address,salary)
+test-# values ('Sai',55,'faridabad',66000.0),('Mark',44,'Mohali',76000.0);
+INSERT 0 2
+test=# select * from company2;
+ id | name  | age |                 address                  | salary
+----+-------+-----+------------------------------------------+--------
+  1 | Rohit |  34 | Ambala                                   |  30000
+  2 | Rohan |  35 | Patiala                                  |  35000
+  3 | Joe   |  45 | Chandigarh                               |  56000
+  4 | Sai   |  55 | faridabad                                |  66000
+  5 | Mark  |  44 | Mohali                                   |  76000
+(5 rows)
+
+
+
+#Creating a user in DB
+test=# create user jas with password'abc';
+CREATE ROLE
+test=# drop user jas;
+DROP ROLE
+
+
+
+Different Priveleges commands command be given 
+ privileges in PostgreSQL are −
+SELECT,INSERT,UPDATE,DELETE,TRUNCATE,REFERENCES,TRIGGER,
+CREATE,CONNECT,TEMPORAY,EXECUTE, and USAGE
+
+Grant and Revoke are the commands to give privelege to the users
+privilege − values could be: SELECT, INSERT, UPDATE, DELETE, RULE, ALL.
+
+object − The name of an object(table, view, sequence) to which to grant/revoke access
+
+PUBLIC − A short form representing all users.
+
+GROUP group − A group to whom to grant privileges.
+
+username − The name of a user to whom to grant privileges. PUBLIC is a short form representing all users.
+
+
+GRANT privilege [, ...]
+ON object [, ...]
+TO { PUBLIC | GROUP group | username }
+
+REVOKE privilege [, ...]
+ON object [, ...]
+FROM { PUBLIC | GROUP groupname | username }
+
+
+test=# grant all on company to jas;
+GRANT
+test=# revoke all on company from jas;
+REVOKE
 
