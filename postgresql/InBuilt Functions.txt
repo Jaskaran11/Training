@@ -99,3 +99,364 @@ test=# select array_agg(salary) from company;
  {4000,20000,65000,85000}
 (1 row)
 
+
+
+Numeric Functions
+
+
+The ABS() function returns the absolute value of X.
+
+test=# select abs(4);
+ abs
+-----
+   4
+(1 row)
+
+
+
+ACOS(X) - This function returns the arccosine of X. The value of X must range between -1 and 1 or NULL will be returned.
+
+test=# select acos(0.1);
+        acos
+--------------------
+ 1.4706289056333368
+(1 row)
+
+test=# select acos(2);
+ERROR:  input is out of range
+
+ASIN(X) - The ASIN() function returns the arcsine of X. The value of X must be in the range of -1 to 1 or NULL is returned.
+
+test=# select asin(0.5);
+        asin
+--------------------
+ 0.5235987755982989
+(1 row)
+
+
+test=# select asin(0);
+ asin
+------
+    0
+(1 row)
+
+
+ATAN(X) - This function returns the arctangent of X.
+
+test=# select atan(1);
+        atan
+--------------------
+ 0.7853981633974483
+(1 row)
+
+
+ATAN2(Y,X) - This function returns the arctangent of the two arguments: X and Y. 
+It is similar to the arctangent of Y/X, except that the signs of both are used to find the quadrant of the result.
+
+test=# select atan2(5,6);
+       atan2
+--------------------
+ 0.6947382761967031
+(1 row)
+
+
+CEIL(X) / CEILING(X) - These functions return the smallest integer value that is not smaller than X. 
+
+
+test=# select ceiling(4.5);
+ ceiling
+---------
+       5
+(1 row)
+
+
+test=# select ceil(-7.65);
+ ceil
+------
+   -7
+(1 row)
+
+
+test=# select ceil(8.9);
+ ceil
+------
+    9
+(1 row)
+
+Floor(x)-  Return the bigger integer value just smaller than arg
+
+
+test=# select floor (3.444);
+ floor
+-------
+     3
+(1 row)
+
+
+test=# select floor(-8.45555);
+ floor
+-------
+    -9
+(1 row)
+
+
+GREATEST(n1,n2,n3,..........)- Give the greates vlue from the no of parameters.
+
+test=# select greatest(12,34,5,6,788,987,43,-56);
+ greatest
+----------
+      987
+(1 row)
+
+
+LEAST(N1,N2,N3,N4,......) - gives the least values from the no of parameters.
+
+
+test=# select least(1,2,34,5,67,-1,0);
+ least
+-------
+    -1
+(1 row)
+
+
+COS(X)
+This function returns the cosine of X. The value of X is given in radians.
+
+test=# select cos(45);
+        cos
+--------------------
+ 0.5253219888177297
+(1 row)
+
+
+test=# select cos(60);
+         cos
+---------------------
+ -0.9524129804151563
+(1 row)
+
+
+COT(X)
+This function returns the cotangent of X. 
+
+test=# select cot(45);
+        cot
+--------------------
+ 0.6173696237835551
+(1 row)
+
+
+test=# select cot(1);
+        cot
+--------------------
+ 0.6420926159343306
+(1 row)
+
+
+DEGREES(X)
+This function returns the value of X converted from radians to degrees.
+
+
+test=# select degrees(pi());
+ degrees
+---------
+     180
+(1 row)
+
+test=# select degrees(2);
+      degrees
+--------------------
+ 114.59155902616465
+(1 row)
+
+
+EXP(X)
+This function returns the value of e (the base of the natural logarithm) raised to the power of X.
+
+test=# select exp(5);
+        exp
+-------------------
+ 148.4131591025766
+(1 row)
+
+
+test=# select exp(1);
+        exp
+-------------------
+ 2.718281828459045
+(1 row)
+
+
+
+pi() - returns the value of pi
+
+
+
+test=# select pi();
+        pi
+-------------------
+ 3.141592653589793
+(1 row)
+
+
+LOG(X) / LOG(B,X)
+The single argument version of the function will return the natural logarithm of X. If it is called with two arguments, it returns the logarithm of X for an arbitrary base B.
+
+test=# select log(45);
+        log
+--------------------
+ 1.6532125137753437
+(1 row)
+
+
+
+test1=# SELECT LOG(1);
+ log
+-----
+   0
+(1 row)
+
+
+test=# select log(90);
+        log
+-------------------
+ 1.954242509439325
+(1 row)
+
+
+test=# select log(2,45321);
+        log
+--------------------
+ 15.467892073874788
+(1 row)
+
+
+MOD(N,M)
+This function returns the remainder of N divided by M.
+
+
+test=# SELECT MOD(47,8);
+ mod
+-----
+   7
+(1 row)
+
+
+POW(X,Y) / POWER(X,Y)
+These two functions return the value of X raised to the power of Y.
+
+
+test=# SELECT POWER(4,4);
+ power
+-------
+   256
+(1 row)
+
+
+RADIANS(X)
+This function returns the value of X, converted from degrees to radians.
+
+
+test=# SELECT RADIANS(90);
+      radians
+--------------------
+ 1.5707963267948966
+(1 row)
+
+ROUND(X) / ROUND(X,D)
+This function returns X rounded to the nearest integer.
+
+test=# SELECT ROUND(9.00009);
+ round
+-------
+     9
+(1 row)
+
+
+test=# SELECT ROUND(4.555,2);
+ round
+-------
+  4.56
+(1 row)
+
+
+SIGN(X)
+This function returns the sign of X (negative, zero, or positive) as -1, 0, or 1.
+
+
+test=# SELECT SIGN(-9.65);
+ sign
+------
+   -1
+(1 row)
+
+
+
+test=# SELECT SIGN(-0);
+ sign
+------
+    0
+(1 row)
+
+
+test=# SELECT SIGN(3.34);
+ sign
+------
+    1
+(1 row)
+
+
+
+SIN(X)
+This function returns the sine of X.
+
+
+test=# SELECT SIN(90);
+        sin
+--------------------
+ 0.8939966636005579
+(1 row)
+
+
+SQRT(X)
+This function returns the non-negative square root of X. 
+
+
+test=# SELECT SQRT(9);
+ sqrt
+------
+    3
+(1 row)
+
+
+test=# SELECT SQRT(16);
+ sqrt
+------
+    4
+(1 row)
+
+TAN(X)
+This function returns the tangent of the argument X, which is expressed in radians.
+
+
+
+test=# SELECT TAN(45);
+        tan
+--------------------
+ 1.6197751905438615
+(1 row)
+
+
+test=# SELECT TAN(90);
+        tan
+--------------------
+ -1.995200412208242
+(1 row)
+
+
+
+
+
+
+
+
