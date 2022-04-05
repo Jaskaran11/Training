@@ -806,3 +806,59 @@ GRANT
 test=# revoke all on company from jas;
 REVOKE
 
+
+TRUNCATE TABLE command is used to delete complete data from an existing table and drop data to delete data with schema.
+TRUNCATE is transaction-safe with respect to the data in the tables: the truncation will be safely rolled back if the surrounding transaction does not commit.
+
+truncate table company2;
+TRUNCATE TABLE
+
+
+RENAME-The RENAME statement is used to rename one or more tables or columns.
+test=# alter table teacher rename to principle;
+ALTER TABLE
+
+
+
+BEGIN - The BEGIN TRANSACTION command is used to start the transaction.
+
+test=# begin;
+BEGIN
+
+The COMMIT command saves all the transactions to the database since the last COMMIT or ROLLBACK command.
+test=*# delete from teacher where id=4;
+DELETE 1
+test=*# commit;
+COMMIT
+test=# select * from teacher;
+ id |  name   | subject  | date_of_birth | salary
+----+---------+----------+---------------+--------
+  1 | Joe     | Maths    | 2007-12-13    |   5000
+  2 | Prakash | English  | 2000-11-04    |   3000
+  3 | Rohit   | Computer | 1999-11-06    |   4000
+(3 rows)
+
+The ROLLBACK command is used to undo transactions since the last COMMIT or ROLLBACK command was issued.
+
+test=*# delete from teacher where salary = 5000; rollback;
+DELETE 1
+ROLLBACK
+test=# select * from teacher;
+ id | name | subject | date_of_birth | salary
+----+------+---------+---------------+--------
+  1 | Joe  | Maths   | 2007-12-13    |   5000
+(1 row)
+
+
+The SAVEPOINT command defines a new savepoint within the current transaction.
+
+
+test=# savepoint sp1;
+ERROR:  SAVEPOINT can only be used in transaction blocks
+test=# begin;
+BEGIN
+test=*# savepoint sp1;
+SAVEPOINT
+test=*# release savepoint sp1;
+RELEASE
+

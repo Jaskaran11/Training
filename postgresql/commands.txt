@@ -6,6 +6,12 @@ It is a powerful, open source object-relational database system.PostgreSQL runs 
 It is a highly stable database management system, backed by more than 20 years of community development which has contributed to its high levels of resilience, integrity, and correctness.
 It uses the SQL language.
 
+Commands in postgresql-
+The DDL (Data Definition Language) commands are used to define the database. Example: CREATE, DROP, ALTER, TRUNCATE, COMMENT, RENAME.
+The DML (Data Manipulation Language) commands deal with the manipulation of data present in the database. Example: SELECT, INSERT, UPDATE, DELETE.
+The DCL (Data Control Language) commands deal with the permissions, rights and other controls of the database system. Example: GRANT, INVOKE.
+The TCL (Transaction Control Language) commands deal with the transaction of the database.Example: BEGIN, COMMIT, ROLLBACK.
+
 
 postgres=# select version();
                           version
