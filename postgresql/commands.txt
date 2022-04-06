@@ -940,3 +940,79 @@ test=# select * from audit;
       1 | 2022-04-07 01:05:05.679206+05:30
 (1 row)
 
+--------------------------------------------
+
+The COALESCE function returns the first non-NULL expression in the specified list. If all the arguments are NULL then it will return NULL as its output. 
+
+                                  ^
+test=# select coalesce(join_date,'21-01-2011') from company;
+  coalesce
+------------
+ 2007-12-13
+ 2011-01-21
+ 2007-12-13
+ 2007-12-13
+(4 rows)
+
+---------------------------------------------------
+Assert
+provides the ASSERT statement for inserting important debugging checks in the PL/pgSQL code
+
+Syntax: assert condition [, message]; 
+condition: The condition is a boolean expression that is supposed to return true. 
+If the condition returns true, the assert statement does nothing and the program continues to run.
+However, if the condition is evaluated to false or null, then an ASSERT_FAILURE exception is raised. 
+(If we encounter an error while evaluating the condition, it is reported as a normal error.)
+ 
+message: The message is an optional part which is an expression whose result (if not null) replaces the default error message text  “assertion failed”, should the condition fail.
+
+       
+test=# create or replace function agecheckup(agein int)
+test-# returns char(50) as $allowed$
+test$# declare
+test$#
+test$# begin
+test$# assert agein>20,'age low';
+test$#
+test$# end;
+test$# $allowed$ language plpgsql;
+CREATE FUNCTION
+test=# select agecheckup(35);
+ERROR:  control reached end of function without RETURN
+CONTEXT:  PL/pgSQL function agecheckup(integer)
+test=# select agecheckup(19);
+ERROR:  age low
+CONTEXT:  PL/pgSQL function agecheckup(integer) line 5 at ASSERT
+test=#
+
+-----------------------------------------------------
+
+postgresql cast operator
+it converts a value from one type to another
+ syntax
+ CAST ( expression AS target_type );
+test=# select
+test-# cast ('199' as integer);
+ int4
+------
+  199
+(1 row)
+
+test=# select
+test-# cast('07-APR-2022' as date);
+    date
+------------
+ 2022-04-07
+(1 row)
+
+
+test1=# SELECT
+test1-#    CAST('true' AS BOOLEAN),
+test1-#    CAST('false' as BOOLEAN),
+test1-#    CAST('T' as BOOLEAN),
+test1-#    CAST('F' as BOOLEAN);
+ bool | bool | bool | bool
+------+------+------+------
+ t    | f    | t    | f
+(1 row)
+
