@@ -1016,3 +1016,42 @@ test1-#    CAST('F' as BOOLEAN);
  t    | f    | t    | f
 (1 row)
 
+----------------------
+
+
+Function over loading 
+PostgreSQL allows more than one function to have the same name, as long as the arguments are different. When a function is called, PostgreSQL determines the exact function is being called based on the input arguments.
+
+
+test=# create or replace function agecheck(agein int)
+test-# returns int as $allowed$
+test$# declare
+test$# ageno int;
+test$# begin
+test$# select count(*) into ageno from company where age>agein;
+test$# return ageno;
+test$# end;
+test$# $allowed$ language plpgsql;
+CREATE FUNCTION
+test=# create or replace function agecheck(agein int,ageout int)
+test-# returns int as $allowed$
+test$# declare
+test$# ageno int;
+test$# begin
+test$# select count(*) into ageno from company where age between agein and ageout;
+test$# return ageno;
+test$# end;
+test$# $allowed$ language plpgsql;
+CREATE FUNCTION
+test=# select count(*) from company where age between 25 and 30;
+ count
+-------
+     3
+(1 row)
+
+
+test=# select agecheck(27);
+ agecheck
+----------
+        0
+(1 row)
