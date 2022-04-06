@@ -720,3 +720,90 @@ test-# INNER JOIN Employees emp on pay.employeeID = emp.employeeID;
  Tony      | Tory     |   5000
  Sam       | Salley   |   5000
 (8 rows)
+
+-------------------------------------------
+
+Fetch clause
+Similair to limit used to get only portion of rows
+Syntax:
+OFFSET start { ROW | ROWS }
+FETCH { FIRST | NEXT } [ row_count ] { ROW | ROWS } ONLY
+
+
+test=# select * from Employees fetch next 2 row only;
+ employeeid | name
+------------+-------
+          1 | Asmar
+          2 | Ali
+(2 rows)
+
+show the second row
+
+test=# select * from Employees offset 1 row fetch next 1 row only;
+ employeeid | name
+------------+------
+          2 | Ali
+(1 row)
+
+#to show the connected database
+test=# \c
+You are now connected to database "test" as user "postgres".
+ -------------------------------
+
+#Indexes
+Indexes are special lookup tables that the database search engine can use to speed up data retrieval. Simply put, an index is a pointer to data in a table. 
+Speeds up select query with where clause but also slows down data input with insert and update query.
+Create Indexes
+test=# create index abc on company(name,age);
+CREATE INDEX
+
+Types of index:
+Single-Column Indexes index created based on only one column in table.
+test=# create index ab on company(name);
+CREATE INDEX
+
+Multicolumn Indexes  index created based on multiple column in table.
+test=# create index abc on company(name,age);
+CREATE INDEX
+
+Unique index
+used for data integrity as it does not allow any duplicated to be inserted into the table.
+test=# create unique index uni on company(name);
+CREATE INDEX
+
+
+Partial index - index made over a subset of table it is defined by conditional expression and index contains rows whcih satisfy that condition.
+
+Implicit Indexes
+Implicit indexes are indexes that are automatically created by the database server when an object is created. Indexes are automatically created for primary key constraints and unique constraints.
+
+test=# \d company
+                       Table "public.company"
+  Column   |         Type          | Collation | Nullable | Default
+-----------+-----------------------+-----------+----------+---------
+ id        | integer               |           | not null |
+ name      | character varying(55) |           | not null |
+ age       | integer               |           | not null |
+ address   | character varying(55) |           |          |
+ salary    | integer               |           |          |
+ join_date | date                  |           |          |
+Indexes:
+    "company_pkey" PRIMARY KEY, btree (id)
+    "ab" btree (name)
+    "abc" btree (name, age)
+    "uni" UNIQUE, btree (name)
+
+
+
+ Drop index - deletes the index
+test=# drop index abc;
+DROP INDEX
+
+#When should we avoid Indexes?
+It should not be used on small tables.
+Tables that have frequent, large batch update or insert operations.
+It should not be used on columns that contain a high number of NULL values.
+Columns that are frequently manipulated should not be indexed.
+
+
+
