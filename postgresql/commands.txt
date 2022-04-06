@@ -805,5 +805,138 @@ Tables that have frequent, large batch update or insert operations.
 It should not be used on columns that contain a high number of NULL values.
 Columns that are frequently manipulated should not be indexed.
 
+Functions/Stored Procedures
+They allows to perform operations that would take several queries and loops into a single funtion in db
+allows the reusability and other application can diretly run them without any middlelayer
+Functions can be magein different languages like SQL, PL/pgSQL, C, Python, etc.
+General syntax
 
+CREATE [OR REPLACE] FUNCTION function_name (arguments) 
+RETURNS return_datatype AS $variable_name$
+   DECLARE
+      declaration;
+      [...]
+   BEGIN
+      < function_body >
+      [...]
+      RETURN { variable_name | value }
+   END; LANGUAGE plpgsql;
+   
+here 
+
+[OR REPLACE] option allows modifying an existing function.
+
+The function must contain a return statement.
+
+RETURN clause specifies that data type you are going to return from the function. The return_datatype can be a base, composite, or domain type, or can reference the type of a table column.
+
+function-body contains the executable part.
+
+The AS keyword is used for creating a standalone function.
+
+plpgsql is the name of the language that the function is implemented in. Here, we use this option for PostgreSQL, it Can be SQL, C, internal, or the name of a user-defined procedural language. For backward compatibility, the name can be enclosed by single quotes.
+
+So creating standalone function to find the max age in the company table
+test1=# CREATE OR REPLACE FUNCTION maxage()
+test1-# RETURNS integer AS $maxage$
+test1$# declare
+test1$# mage integer;
+test1$# BEGIN
+test1$#    SELECT max(age) into mage FROM COMPANY;
+test1$#    RETURN mage;
+test1$# END;
+test1$# $maxage$ LANGUAGE plpgsql;
+CREATE FUNCTION
+
+Calling Function
+Positional notation.
+test1=# select maxage();
+ maxage
+--------
+     32
+(1 row)
+
+Named notation
+
+mix of both positonal argument can  not be after named argument
+
+
+test1=# CREATE OR REPLACE FUNCTION totalRecords ()
+test1-# RETURNS integer AS $total$
+test1$# declare
+test1$# total integer;
+test1$# BEGIN
+test1$#    SELECT count(*) into total FROM COMPANY;
+test1$#    RETURN total;
+test1$# END;
+test1$# $total$ LANGUAGE plpgsql;
+CREATE FUNCTION
+
+test1=# select totalRecords();
+ totalrecords
+--------------
+            7
+(1 row)
+
+
+
+Creating funtion to send the no of employees above certain age; 
+
+
+create or replace function agecheck(agein int)
+returns int as $allowed$
+declare
+ageno int;
+begin
+select count(*) into ageno from company where age>agein;
+return ageno;
+end;
+$allowed$ language plpgsql;
+
+
+Named notation
+
+test1=# select agecheck(agein=> 28);
+ agecheck
+----------
+
+PostgreSQL Triggers are database callback functions, which are automatically performed/invoked when a specified database event occurs.
+postgreSQL trigger can be specified to fire
+Before the operation is attempted on a row 
+After the operation has completed
+Instead of the operation
+
+testdb=# CREATE TABLE info(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+
+testdb=# CREATE TABLE AUDIT(
+   EMP_ID INT NOT NULL,
+   ENTRY_DATE TEXT NOT NULL
+);
+
+test=# CREATE OR REPLACE FUNCTION auditlogfunc() RETURNS TRIGGER AS $example_table$
+test$#    BEGIN
+test$#       INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp);
+test$#       RETURN NEW;
+test$#    END;
+test$# $example_table$ LANGUAGE plpgsql;
+CREATE FUNCTION
+
+
+
+test=# create trigger ex_trigger after insert on info for each row execute procedure auditlogfunc();
+CREATE TRIGGER
+test=# insert into info
+test-# values(1,'rahul',32,'cali',2000.0);
+INSERT 0 1
+test=# select * from audit;
+ emp_id |            entry_date
+--------+----------------------------------
+      1 | 2022-04-07 01:05:05.679206+05:30
+(1 row)
 
