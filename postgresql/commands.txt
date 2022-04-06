@@ -604,3 +604,119 @@ test=# select name from capitals union all select name from city;
  chandigarh
 (3 rows)
 
+---------------------------
+
+ The purpose of JOIN was to merge two tables column wise rather the merging the rows like the union operator.
+ In many scenarios we need to merge the content of multiple tables in order to get the necessary insight. 
+The JOIN helps a database user to see the complex information in an easier table form which makes it easy to analyze.
+
+      
+test=# CREATE TABLE Employees (
+test(#    employeeID INT PRIMARY KEY,
+test(#    name VARCHAR (255) NOT NULL
+test(# );
+CREATE TABLE
+test=# INSERT INTO Employees (
+test(#    employeeID,
+test(#    name
+test(# ) VALUES (1, 'Asmar'), (2, 'Ali'), (3, 'Hassan'), (4, 'Anna'), (5, 'Sau'), (6, 'Kelsie'), (7, 'Tory'),
+test-# (8, 'Salley');
+INSERT 0 8
+
+test-# CREATE TABLE Customer (
+test(#    customerID INT PRIMARY KEY,
+test(#    name VARCHAR (200)
+test(# );
+CREATE TABLE
+test=# INSERT INTO Customer (
+test(#    customerID,
+test(#    name
+test(# )
+test-# VALUES (1, 'Ahmed'), (2, 'Moeez'), (3, 'Hussain'), (4, 'Abid'), (5, 'Sia'), (6, 'Kait'), (7, 'Tony'), (8, 'Sam');
+INSERT 0 8
+test=# CREATE TABLE Payment (
+test(#    paymentID INT PRIMARY KEY,
+test(#    customerID INT,
+test(#    employeeID INT, amount INT,
+test(#    FOREIGN KEY (employeeID)
+test(#    REFERENCES Employees (employeeID)
+test(#    ON DELETE CASCADE,
+test(#    FOREIGN KEY (customerID)
+test(#    REFERENCES Customer (customerID)
+test(#    ON DELETE CASCADE
+test(# );
+CREATE TABLE
+test=# INSERT INTO Payment (
+test(#    paymentID, customerID, employeeID, amount
+test(# )
+test-# VALUES (1,2,1,2000), (2,1,2,3000), (3,4,3,3000), (4,5,4,4000), (5,3,5,4000), (6,6,6,5000),
+test-#         (7,7,7,5000), (8,8,8,5000);
+INSERT 0 8
+test=# select * from payment;
+ paymentid | customerid | employeeid | amount
+-----------+------------+------------+--------
+         1 |          2 |          1 |   2000
+         2 |          1 |          2 |   3000
+         3 |          4 |          3 |   3000
+         4 |          5 |          4 |   4000
+         5 |          3 |          5 |   4000
+         6 |          6 |          6 |   5000
+         7 |          7 |          7 |   5000
+         8 |          8 |          8 |   5000
+(8 rows)
+
+
+
+
+#JOIN USING TWO TABLE
+test=# select cust.name,pay.amount
+test-# from Customer cust
+test-# INNER JOIN Payment pay ON pay.customerID = cust.customerID;
+  name   | amount
+---------+--------
+ Moeez   |   2000
+ Ahmed   |   3000
+ Abid    |   3000
+ Sia     |   4000
+ Hussain |   4000
+ Kait    |   5000
+ Tony    |   5000
+ Sam     |   5000
+(8 rows)
+              
+test=# select emp.name , pay.amount
+test-# from employees emp
+test-# inner join payment pay on pay.employeeID = emp.employeeID;
+  name  | amount
+--------+--------
+ Asmar  |   2000
+ Ali    |   3000
+ Hassan |   3000
+ Anna   |   4000
+ Sau    |   4000
+ Kelsie |   5000
+ Tory   |   5000
+ Salley |   5000
+(8 rows)
+
+#JOIN USING THREE TABLES
+
+test=# select
+test-# cust.name as cust_name,
+test-# emp.name as emp_name,
+test-# pay.amount
+test-# from
+test-# customer cust
+test-# INNER JOIN Payment pay on pay.customerID = cust.customerID
+test-# INNER JOIN Employees emp on pay.employeeID = emp.employeeID;
+ cust_name | emp_name | amount
+-----------+----------+--------
+ Moeez     | Asmar    |   2000
+ Ahmed     | Ali      |   3000
+ Abid      | Hassan   |   3000
+ Sia       | Anna     |   4000
+ Hussain   | Sau      |   4000
+ Kait      | Kelsie   |   5000
+ Tony      | Tory     |   5000
+ Sam       | Salley   |   5000
+(8 rows)
