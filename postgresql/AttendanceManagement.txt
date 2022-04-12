@@ -144,3 +144,195 @@ attendance=# select * from Employee;
 -------------+-----------+--------+-----+------------+---------------
            1 | Joe Stark | Male   |  33 | 1234567891 | joe@gmail.com
 (1 row)
+
+
+
+attendance=# insert into employee
+attendance-# values(3,'Sasha Calle','Female',23,1209657387,'scalle@gmail.com'),
+attendance-# (4,'Clark Kent','Male',35,2376890876,'clarkk@yahoo.com'),
+attendance-# (5,'Lisa Ray','Female',55,1232345678,'ray@yahoo.com');
+ERROR:  integer out of range
+attendance=# insert into employee
+attendance-# values(3,'Sasha Calle','Female',23,1209657387,'scalle@gmail.com');
+INSERT 0 1
+attendance=# insert into employee
+attendance-# values(4,'Clark Kent','Male',33,1230000011,'ckent@yahoo.com');
+INSERT 0 1
+attendance=# insert into employee
+attendance-# values(5,'Lisa Ray','Female',55,0000112234,'lray@yahoo.com');
+INSERT 0 1
+attendance=# select * from employee;
+ employee_id |    name     | gender | age |   mobile   |      email
+-------------+-------------+--------+-----+------------+------------------
+           1 | Joe Stark   | Male   |  33 | 1234567891 | joe@gmail.com
+           2 | Virat Kohli | Male   |  35 | 1290876543 | virat@gmail.com
+           3 | Sasha Calle | Female |  23 | 1209657387 | scalle@gmail.com
+           4 | Clark Kent  | Male   |  33 | 1230000011 | ckent@yahoo.com
+           5 | Lisa Ray    | Female |  55 |     112234 | lray@yahoo.com
+(5 rows)
+
+
+attendance=# insert into Department
+attendance-# values (1,'Marketing Department');
+INSERT 0 1
+attendance=# insert into Department
+attendance-# values (2,'Engineering Department'),
+attendance-# (3,'Accounting Department');
+ERROR:  value too long for type character varying(20)
+attendance=# insert into Department
+attendance-# values (2,'Engineering Department');
+ERROR:  value too long for type character varying(20)
+attendance=# insert into Department
+attendance-# values (2,'Engineering');
+INSERT 0 1
+attendance=# insert into Department
+attendance-# values (3,'Accounting Dept');
+INSERT 0 1
+attendance=# insert into Department
+attendance-# values (4,'Designing Dept') , (5, 'HR Management');
+INSERT 0 2
+attendance=# select * from Department;
+ dept_id |   department_name
+---------+----------------------
+       1 | Marketing Department
+       2 | Engineering
+       3 | Accounting Dept
+       4 | Designing Dept
+       5 | HR Management
+(5 rows)
+
+
+attendance=# update Department set department_name='Engineering Dept' where dept_id=2;
+UPDATE 1
+attendance=# select * from Department;'
+ dept_id |   department_name
+---------+----------------------
+       1 | Marketing Department
+       3 | Accounting Dept
+       4 | Designing Dept
+       5 | HR Management
+       2 | Engineering Dept
+(5 rows)
+
+
+
+attendance=# insert into Job_Title
+attendance-# values(768,'Creative Director',1);
+INSERT 0 1
+attendance=# insert into Jon_Title
+attendance-# values(832,'Accountant',2),
+attendance-# (324,'Production artist',3),
+attendance-# (222,'HR Manager',4),
+attendance-# (111,'Front-End Developer',5);
+ERROR:  relation "jon_title" does not exist
+LINE 1: insert into Jon_Title
+                    ^
+attendance=# insert into Job_Title
+attendance-# values(832,'Accountant',2),
+attendance-# (324,'Production artist',3),
+attendance-# (222,'HR Manager',4),
+attendance-# (111,'Front-End Developer',5);
+INSERT 0 4
+attendance=# select * from Job_Title;
+ job_id |      job_title      | dept_id
+--------+---------------------+---------
+    768 | Creative Director   |       1
+    832 | Accountant          |       2
+    324 | Production artist   |       3
+    222 | HR Manager          |       4
+    111 | Front-End Developer |       5
+(5 rows)
+
+
+attendance=# select Department.department_name,Job_Title.job_title
+attendance-# from Department
+attendance-# INNER JOIN Job_Title
+attendance-# ON Department.dept_ID=Job_Title.dept_ID;
+   department_name    |      job_title
+----------------------+---------------------
+ Marketing Department | Creative Director
+ Engineering Dept     | Accountant
+ Accounting Dept      | Production artist
+ Designing Dept       | HR Manager
+ HR Management        | Front-End Developer
+(5 rows)
+
+attendance=# insert into Duty_Duration
+attendance-# values(11,1,768,'08:00:00','17:00:00');
+ERROR:  null value in column "date" of relation "duty_duration" violates not-null constraint
+DETAIL:  Failing row contains (11, 1, 768, 08:00:00, 17:00:00, null).
+attendance=# insert into Duty_Duration
+attendance-# values(11,1,768,'08:00:00','17:00:00','01-02-2022');
+INSERT 0 1
+attendance=# insert into Duty_Duration
+attendance-# values(22,2,832,'09:30:00','18:30:00','02-02-2022');
+INSERT 0 1
+attendance=# insert into Duty_Duration
+attendance-# values(33,3,324,'09:27:00','18:30:00','02-02-2022');
+INSERT 0 1
+attendance=# insert into Duty_Duration
+attendance-# values(44,4,222,'09:26:13','18:30:33','01-02-2022');
+INSERT 0 1
+attendance=# insert into Duty_Duration
+attendance-# values(55,5,111,'09:17:23','18:20:40','03-02-2022');
+INSERT 0 1
+attendance=# select * from Duty_Duration;
+ duty_id | employee_id | job_id | start_at |  end_at  |    date
+---------+-------------+--------+----------+----------+------------
+      11 |           1 |    768 | 08:00:00 | 17:00:00 | 2022-02-01
+      22 |           2 |    832 | 09:30:00 | 18:30:00 | 2022-02-02
+      33 |           3 |    324 | 09:27:00 | 18:30:00 | 2022-02-02
+      44 |           4 |    222 | 09:26:13 | 18:30:33 | 2022-02-01
+      55 |           5 |    111 | 09:17:23 | 18:20:40 | 2022-02-03
+(5 rows)
+
+attendance=# alter table Leave alter column date drop not null;
+ALTER TABLE
+attendance=# \d Leave
+                  Table "public.leave"
+   Column    |  Type   | Collation | Nullable | Default
+-------------+---------+-----------+----------+---------
+ leave_id    | integer |           | not null |
+ employee_id | integer |           | not null |
+ job_id      | integer |           | not null |
+ date        | date    |           |          |
+
+
+
+attendance=# insert into Leave
+attendance-# values(8324,1,768);
+INSERT 0 1
+attendance=# select * from Leave;
+ leave_id | employee_id | job_id | date
+----------+-------------+--------+------
+     8324 |           1 |    768 |
+(1 row)
+
+
+attendance=# insert into Leave
+attendance-# values(1879,2,832,'10-02-2022');
+INSERT 0 1
+attendance=# insert into Leave
+attendance-# values(1678,3,324,'16-03-2022');
+INSERT 0 1
+attendance=# insert into Leave
+attendance-# values(1679,4,222,'01-04-2022');
+INSERT 0 1
+attendance=# insert into Leave
+attendance-# values(1700,5,111,'03-02-2022');
+INSERT 0 1
+attendance=# select * from Leave;
+ leave_id | employee_id | job_id |    date
+----------+-------------+--------+------------
+     8324 |           1 |    768 |
+     1879 |           2 |    832 | 2022-02-10
+     1678 |           3 |    324 | 2022-03-16
+     1679 |           4 |    222 | 2022-04-01
+     1700 |           5 |    111 | 2022-02-03
+(5 rows)
+
+
+
+
+
+
