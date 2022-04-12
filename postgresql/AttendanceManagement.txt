@@ -1,0 +1,146 @@
+
+attendance=# create table Employee(
+attendance(# employee_ID int primary key,
+attendance(# name varchar(55) not null,
+attendance(# gender varchar(10) not null,
+attendance(# age int not null,
+attendance(# mobile int,
+attendance(# email varchar(55) not null
+attendance(# );
+CREATE TABLE
+attendance=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner
+--------+----------+-------+----------
+ public | employee | table | postgres
+(1 row)
+
+
+attendance=# create table Department(
+attendance(# dept_ID serial primary key,
+attendance(# department_name varchar(20) not null
+attendance(# );
+CREATE TABLE
+
+
+attendance=# create table Job_Title(
+attendance(# job_ID serial primary key,
+attendance(# job_title varchar(30) not null,
+attendance(# dept_id int,
+attendance(# FOREIGN KEY (dept_id) REFERENCES Department(dept_ID)
+attendance(# );
+CREATE TABLE
+attendance=# \d Job_Title
+                                       Table "public.job_title"
+  Column   |         Type          | Collation | Nullable |                  Default
+-----------+-----------------------+-----------+----------+-------------------------------------------
+ job_id    | integer               |           | not null | nextval('job_title_job_id_seq'::regclass)
+ job_title | character varying(30) |           | not null |
+ dept_id   | integer               |           |          |
+Indexes:
+    "job_title_pkey" PRIMARY KEY, btree (job_id)
+Foreign-key constraints:
+    "job_title_dept_id_fkey" FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+
+        ^
+attendance=# create table Leave(
+attendance(# leave_ID int primary key,
+attendance(# employee_ID int not null,
+attendance(# job_ID int not null,
+attendance(# Date date not null,
+attendance(# FOREIGN KEY (employee_ID) REFERENCES Employee(employee_ID),
+attendance(# FOREIGN KEY (job_ID) REFERENCES Job_Title(job_ID)
+attendance(# );
+CREATE TABLE
+attendance=# \d Leave
+                  Table "public.leave"
+   Column    |  Type   | Collation | Nullable | Default
+-------------+---------+-----------+----------+---------
+ leave_id    | integer |           | not null |
+ employee_id | integer |           | not null |
+ job_id      | integer |           | not null |
+ date        | date    |           | not null |
+Indexes:
+    "leave_pkey" PRIMARY KEY, btree (leave_id)
+Foreign-key constraints:
+    "leave_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
+    "leave_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_title(job_id)
+
+attendance=# create table Duty_Duration(
+attendance(# duty_ID int primary key not null,
+attendance(# employee_ID int not null,
+attendance(# job_ID int not null,
+attendance(# start_at TIME NOT NULL,
+attendance(# end_at TIME NOT NULL,
+attendance(# Date date not null,
+attendance(# FOREIGN KEY (employee_ID) REFERENCES Employee(employee_ID),
+attendance(# FOREIGN KEY (job_ID) REFERENCES Job_Title(job_ID)
+attendance(# );
+CREATE TABLE
+attendance=# \d Duty_Duration
+                     Table "public.duty_duration"
+   Column    |          Type          | Collation | Nullable | Default
+-------------+------------------------+-----------+----------+---------
+ duty_id     | integer                |           | not null |
+ employee_id | integer                |           | not null |
+ job_id      | integer                |           | not null |
+ start_at    | time without time zone |           | not null |
+ end_at      | time without time zone |           | not null |
+ date        | date                   |           | not null |
+Indexes:
+    "duty_duration_pkey" PRIMARY KEY, btree (duty_id)
+Foreign-key constraints:
+    "duty_duration_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
+    "duty_duration_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_title(job_id)
+
+
+attendance=# create table Attendance_Reports(
+attendance(# reprt_ID int primary key not null,
+attendance(# employee_ID int not null,
+attendance(# duty_ID int not null,
+attendance(# job_ID int not null,
+attendance(# leave_ID int not null,
+attendance(# Date date not null,
+attendance(# FOREIGN KEY (employee_ID) REFERENCES Employee(employee_ID),
+attendance(# FOREIGN KEY (duty_ID) REFERENCES Duty_Duration(duty_ID),
+attendance(# FOREIGN KEY (job_ID) REFERENCES Job_Title(job_ID),
+attendance(# FOREIGN KEY (leave_ID) REFERENCES Leave(leave_ID)
+attendance(# );
+CREATE TABLE
+attendance=# \d Attendance_Reports
+           Table "public.attendance_reports"
+   Column    |  Type   | Collation | Nullable | Default
+-------------+---------+-----------+----------+---------
+ reprt_id    | integer |           | not null |
+ employee_id | integer |           | not null |
+ duty_id     | integer |           | not null |
+ job_id      | integer |           | not null |
+ leave_id    | integer |           | not null |
+ date        | date    |           | not null |
+Indexes:
+    "attendance_reports_pkey" PRIMARY KEY, btree (reprt_id)
+Foreign-key constraints:
+    "attendance_reports_duty_id_fkey" FOREIGN KEY (duty_id) REFERENCES duty_duration(duty_id)
+    "attendance_reports_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
+    "attendance_reports_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_title(job_id)
+    "attendance_reports_leave_id_fkey" FOREIGN KEY (leave_id) REFERENCES leave(leave_id)
+
+
+
+attendance=# insert into Employee
+attendance-# values(1,'Joe Stark','Male',33,98776262,'joe@gmail.com');
+INSERT 0 1
+attendance=# select * from Employee;
+ employee_id |   name    | gender | age |  mobile  |     email
+-------------+-----------+--------+-----+----------+---------------
+           1 | Joe Stark | Male   |  33 | 98776262 | joe@gmail.com
+(1 row)
+
+
+attendance=# update Employee set mobile=1234567891 where employee_id=1;
+UPDATE 1
+attendance=# select * from Employee;
+ employee_id |   name    | gender | age |   mobile   |     email
+-------------+-----------+--------+-----+------------+---------------
+           1 | Joe Stark | Male   |  33 | 1234567891 | joe@gmail.com
+(1 row)
