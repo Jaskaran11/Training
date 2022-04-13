@@ -333,6 +333,113 @@ attendance=# select * from Leave;
 
 
 
+attendance=# select employee.Name,leave.date
+attendance-# from Employee
+attendance-# INNER JOIN leave
+attendance-# on employee.employee_ID=leave.employee_ID;
+    name     |    date
+-------------+------------
+ Joe Stark   |
+ Virat Kohli | 2022-02-10
+ Sasha Calle | 2022-03-16
+ Clark Kent  | 2022-04-01
+ Lisa Ray    | 2022-02-03
+(5 rows)
+
+
+attendance=# select employee.name,duty_duration.start_at,leave.date
+attendance-# from employee
+attendance-# inner join duty_duration on employee.employee_ID=duty_duration.employee_ID
+attendance-# inner join leave on employee.employee_ID=leave.employee_ID;
+    name     | start_at |    date
+-------------+----------+------------
+ Joe Stark   | 08:00:00 |
+ Virat Kohli | 09:30:00 | 2022-02-10
+ Sasha Calle | 09:27:00 | 2022-03-16
+ Clark Kent  | 09:26:13 | 2022-04-01
+ Lisa Ray    | 09:17:23 | 2022-02-03
+(5 rows)
+
+
+attendance=# select employee.name,duty_duration.start_at,duty_duration.date
+attendance-# from employee
+attendance-# INNER JOIN duty_duration on employee.employee_ID=duty_duration.employee_ID;
+    name     | start_at |    date
+-------------+----------+------------
+ Joe Stark   | 08:00:00 | 2022-02-01
+ Virat Kohli | 09:30:00 | 2022-02-02
+ Sasha Calle | 09:27:00 | 2022-02-02
+ Clark Kent  | 09:26:13 | 2022-02-01
+ Lisa Ray    | 09:17:23 | 2022-02-03
+(5 rows) 
+
+
+attendance=# alter table leave rename column date to leave_date;
+ALTER TABLE
+
+attendance=# select * from leave;
+ leave_id | employee_id | job_id | leave_date
+----------+-------------+--------+------------
+     8324 |           1 |    768 |
+     1879 |           2 |    832 | 2022-02-10
+     1678 |           3 |    324 | 2022-03-16
+     1679 |           4 |    222 | 2022-04-01
+     1700 |           5 |    111 | 2022-02-03
+(5 rows)
+
+
+attendance=# alter table attendance_reports
+attendance-# add salary int;
+ALTER TABLE
+attendance=# select * from attendance_reports;
+ reprt_id | employee_id | duty_id | job_id | leave_id | date | salary
+----------+-------------+---------+--------+----------+------+--------
+(0 rows)
+
+
+attendance=# alter table attendance_reports
+attendance-# add total_labor int;
+ALTER TABLE
 
 
 
+attendance=# insert into attendance_reports
+attendance-# values(10003,4,44,222,1679,'2022-02-03',30000,18);
+INSERT 0 1
+attendance=# select * from attendance_reports;
+ report_id | employee_id | duty_id | job_id | leave_id |    date    | salary | total_labor
+-----------+-------------+---------+--------+----------+------------+--------+-------------
+     10000 |           1 |      11 |    768 |     8324 | 2022-02-03 |  12000 |          18
+     10001 |           2 |      22 |    832 |     1879 | 2022-02-03 |  20000 |          19
+     10002 |           3 |      33 |    324 |     1678 | 2022-02-03 |  21000 |        19.5
+     10003 |           4 |      44 |    222 |     1679 | 2022-02-03 |  30000 |          18
+(4 rows)
+
+
+attendance=# insert into attendance_reports
+attendance-# values(10004,5,55,111,1700,'2022-02-03',40000,10);
+INSERT 0 1
+attendance=# select * from attendance_reports;
+ report_id | employee_id | duty_id | job_id | leave_id |    date    | salary | total_labor
+-----------+-------------+---------+--------+----------+------------+--------+-------------
+     10000 |           1 |      11 |    768 |     8324 | 2022-02-03 |  12000 |          18
+     10001 |           2 |      22 |    832 |     1879 | 2022-02-03 |  20000 |          19
+     10002 |           3 |      33 |    324 |     1678 | 2022-02-03 |  21000 |        19.5
+     10003 |           4 |      44 |    222 |     1679 | 2022-02-03 |  30000 |          18
+     10004 |           5 |      55 |    111 |     1700 | 2022-02-03 |  40000 |          10
+(5 rows)
+
+
+
+attendance=# select employee.name,employee.age,duty_duration.start_at,leave.leave_date
+attendance-# from employee
+attendance-# INNER JOIN duty_duration ON employee.employee_id=duty_duration.employee_id
+attendance-# INNER JOIN leave ON employee.employee_id=leave.employee_id;
+    name     | age | start_at | leave_date
+-------------+-----+----------+------------
+ Joe Stark   |  33 | 08:00:00 |
+ Virat Kohli |  35 | 09:30:00 | 2022-02-10
+ Sasha Calle |  23 | 09:27:00 | 2022-03-16
+ Clark Kent  |  33 | 09:26:13 | 2022-04-01
+ Lisa Ray    |  55 | 09:17:23 | 2022-02-03
+(5 rows)
