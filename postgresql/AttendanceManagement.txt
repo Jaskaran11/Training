@@ -443,3 +443,31 @@ attendance-# INNER JOIN leave ON employee.employee_id=leave.employee_id;
  Clark Kent  |  33 | 09:26:13 | 2022-04-01
  Lisa Ray    |  55 | 09:17:23 | 2022-02-03
 (5 rows)
+
+
+#inner join on 4 tables
+
+attendance=# select employee.name,employee.age,employee.email,duty_duration.start_at,leave.leave_date,attendance_reports.salary
+attendance-# from employee
+attendance-# INNER JOIN duty_duration ON employee.employee_id=duty_duration.employee_id
+attendance-# INNER JOIN leave ON employee.employee_id=leave.employee_id
+attendance-# INNER JOIN attendance_reports ON employee.employee_id=attendance_reports.employee_id;
+    name     | age |      email       | start_at | leave_date | salary
+-------------+-----+------------------+----------+------------+--------
+ Joe Stark   |  33 | joe@gmail.com    | 08:00:00 |            |  12000
+ Virat Kohli |  35 | virat@gmail.com  | 09:30:00 | 2022-02-10 |  20000
+ Sasha Calle |  23 | scalle@gmail.com | 09:27:00 | 2022-03-16 |  21000
+ Clark Kent  |  33 | ckent@yahoo.com  | 09:26:13 | 2022-04-01 |  30000
+ Lisa Ray    |  55 | lray@yahoo.com   | 09:17:23 | 2022-02-03 |  40000
+(5 rows)
+
+
+#to display count with age
+attendance=# select count(*),age from employee group by age;
+ count | age
+-------+-----
+     1 |  35
+     2 |  33
+     1 |  55
+     1 |  23
+(4 rows)
