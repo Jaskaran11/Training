@@ -54,6 +54,11 @@ itsachec :0       :0               12:39   ?xdm?  17:05   0.00s /usr/lib/gdm3/g
  whoami (who you are logged in)
 itsacheckmate
 
+--------------------------------------------
+
+Name -       ls
+Purpose-    lists all the files int the present working directory
+ls commands
 ls (displays directories and files visible under pwd)
 Desktop    Downloads  Pictures  snap       Training
 Documents  Music      Public    Templates  Videos
@@ -169,5 +174,246 @@ drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Templates
 -rw-rw-r-- 1 itsacheckmate itsacheckmate   16 Apr 19 15:09 temp.txt
 drwxrwxr-x 6 itsacheckmate itsacheckmate 4096 Apr 19 13:21 Training
 drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Videos
+
+itsacheckmate@itscheckmate:~$ sudo su - (to become the root user)
+
+[sudo] password for itsacheckmate: 
+root@itscheckmate:~# 
+
+itsacheckmate@itscheckmate:~$ sudo su -
+[sudo] password for itsacheckmate: 
+
+root@itscheckmate:~# chown root / index.html
+root@itscheckmate:~# ls
+index.html  snap
+
+root@itscheckmate:~# exit
+logout
+itsacheckmate@itscheckmate:~$ 
+
+-------------------------------------------------------
+
+Name -       Chmod
+Purpose-      Change the access mode of the file i.e what user have the permission on the file 
+wether they can edit it, or read or execute the file or the directory .
+
+Reference   Class     Description
+u          owner      file's owner
+
+g          group      users who are members of
+                      the file's group
+
+o          others     users who are neither the
+                      file's owner nor members of 
+                      the file's group
+
+a          all       All three of the above, same as ugo
+Then there is operator which specify how the modes of files should be adjusted
+Operator  Description
++         Adds the specified modes to the
+          specified classes
+
+-         Removes the specified modes from 
+          the specified classes
+
+=         The modes specified are to be made
+          the exact modes for the specified 
+          classes
+and the the modes which indicate which permission is to be granted
+r       Permission to read the file.
+w       Permission to write (or delete) the file.
+x       Permission to execute the file, or, in
+        the case of a directory, search it.
+
+the very first column represents the type of the file 
+if its is a directory  'd' or if its a file the  '-'
+then the folling 3set of letter represents the permission of the file owner
+rwx =all three permission or rw- = only the read and write permission 
+
+Then the following set off 3 letters are the group permission and other user permission
+respectively 
+if the directory has only x permission it means that there is premission to search the directory
+
+root@itscheckmate:~# chmod 777 index.html (Everyone can access the file will have read,write and execute permissions)
+
+chmod 755 - the owner will have read,write and execute permissions while other users will have only read and execute permissions -
+root@itscheckmate:~# chmod 755 index.html 
+root@itscheckmate:~# ls -l
+total 4
+-rwxr-xr-x 1 root root    0 Apr 19 15:30 index.html
+drwxr-xr-x 3 root root 4096 Apr 14 23:18 snap
+
+chmod 766 - sets permissions so that, owner can read, can write and can execute. (G)roup can read, can write and can't execute. (O)thers can read, can write and can't execute.
+root@itscheckmate:~# chmod 766 index.html
+root@itscheckmate:~# ls -l
+total 4
+-rwxrw-rw- 1 root root    0 Apr 19 15:30 index.html
+drwxr-xr-x 3 root root 4096 Apr 14 23:18 snap
+
+------------------------------------------------------------------
+
+pwd - Prints working directory
+It has 2 options 
+		pwd -L: Prints the symbolic path. it is default command shwon by pwd 
+					Also by the $pwd variable value is shown
+		pwd -P: Prints the actual path.It is the path shown by /bin/pwd
+
+itsacheckmate@itscheckmate:~$ pwd
+/home/itsacheckmate
+itsacheckmate@itscheckmate:~$ pwd -L
+/home/itsacheckmate
+itsacheckmate@itscheckmate:~$ pwd -P
+/home/itsacheckmate
+
+---------------------------------------------
+
+Name -       shutdown
+Purpose-    used to shutdown the system in a safe way.
+Examples- syntax shutdown [OPTIONS] [TIME] [MESSAGE]
+					sudo shutdown
+					to shutdown the system at a specified time
+
+It has 2 different formats
+schedule a system shutdown at 7am:
+
+tsacheckmate@itscheckmate:~$ sudo shutdown 7:00
+[sudo] password for itsacheckmate: 
+Shutdown scheduled for Wed 2022-04-20 07:00:00 IST, use 'shutdown -c' to cancel.
+
+to broadcast a custom message-
+itsacheckmate@itscheckmate:~$ sudo shutdown +10 "System upgrade"
+Shutdown scheduled for Tue 2022-04-19 18:43:00 IST, use 'shutdown -c' to cancel.
+
+this is to halt your system using -H option
+
+shutdown -H
+It means means stopping all CPUs and powering off also makes sure the main power is disconnected.
+itsacheckmate@itscheckmate:~$ shutdown -h
+Shutdown scheduled for Tue 2022-04-19 18:38:46 IST, use 'shutdown -c' to cancel.
+itsacheckmate@itscheckmate:~$ means stopping all CPUs and powering off also makes sure the main power is disconnected.
+
+sudo shutdown -c
+ cannot specify a time argument, but can still broadcast a message 
+
+
+shutdown -P
+How to reboot using shutdown
+For reboot, the option is -r.
+
+itsacheckmate@itscheckmate:~$ sudo shutdown -c "cancelling the reboot of the system"
+
+-------------------------------------------------------
+
+Name-clear screen
+It is used to clear the screen of the terminal.
+
+--------------------------------------------------------
+
+ps command - ps command is used to list the currently running processes and their PIDs along with some other information depends on different options.
+
+itsacheckmate@itscheckmate:~$ ps
+    PID TTY          TIME CMD
+  19768 pts/1    00:00:00 bash
+  33030 pts/1    00:00:00 ps
+
+-------------------------------------------------
+
+ps 
+
+--------------------------------------------------
+
+touch - The touch command is a standard command used in UNIX/Linux operating system which is used to create, change and modify timestamps of a file. It is used to create a file without any content.
+
+itsacheckmate@itscheckmate:~$ touch temporary
+itsacheckmate@itscheckmate:~$ ls
+Desktop    Downloads  Pictures  snap  Templates  temp.txt  Videos
+Documents  Music      Public    temp  temporary  Training
+
+to create the multiple files
+touch File1_name File2_name File3_name 
+
+itsacheckmate@itscheckmate:~$ touch temp1 temp2
+itsacheckmate@itscheckmate:~$ ls
+Desktop    Downloads  Pictures  snap  temp1  Templates  temp.txt  Videos
+Documents  Music      Public    temp  temp2  temporary  Training
+
+touch -c : This command is used to check whether a file is created or not.
+itsacheckmate@itscheckmate:~$ touch -c redhat
+itsacheckmate@itscheckmate:~$ ls
+Desktop    Downloads  Pictures  snap  temp1  Templates  temp.txt  Videos
+Documents  Music      Public    temp  temp2  temporary  Training
+
+touch -c-d : This is used to update access and modification time.
+itsacheckmate@itscheckmate:~$ touch -c -d "17 April" temp1
+
+touch -m : This is used to change the modification time only. It only updates last modification time.
+itsacheckmate@itscheckmate:~$ touch -m temp1
+itsacheckmate@itscheckmate:~$ ll
+total 104
+drwxr-xr-x 19 itsacheckmate itsacheckmate 4096 Apr 19 19:12 ./
+drwxr-xr-x  3 root          root          4096 Apr 14 17:46 ../
+-rw-------  1 itsacheckmate itsacheckmate  540 Apr 19 13:10 .bash_history
+-rw-r--r--  1 itsacheckmate itsacheckmate  220 Apr 14 17:46 .bash_logout
+-rw-r--r--  1 itsacheckmate itsacheckmate 3771 Apr 14 17:46 .bashrc
+drwxrwxr-x 14 itsacheckmate itsacheckmate 4096 Apr 19  2022 .cache/
+drwx------ 13 itsacheckmate itsacheckmate 4096 Apr 19 13:37 .config/
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Desktop/
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Documents/
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 19 12:44 Downloads/
+-rw-rw-r--  1 itsacheckmate itsacheckmate   63 Apr 19 13:00 .gitconfig
+drwx------  3 itsacheckmate itsacheckmate 4096 Apr 19 13:57 .gnupg/
+drwxr-xr-x  3 itsacheckmate itsacheckmate 4096 Apr 14 23:18 .local/
+drwx------  5 itsacheckmate itsacheckmate 4096 Apr 19  2022 .mozilla/
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Music/
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Pictures/
+drwx------  3 itsacheckmate itsacheckmate 4096 Apr 19 12:46 .pki/
+-rw-r--r--  1 itsacheckmate itsacheckmate  807 Apr 14 17:46 .profile
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Public/
+drwx------  3 itsacheckmate itsacheckmate 4096 Apr 19 12:27 snap/
+drwx------  2 itsacheckmate itsacheckmate 4096 Apr 19 13:08 .ssh/
+-rw-r--r--  1 itsacheckmate itsacheckmate    0 Apr 19 12:15 .sudo_as_admin_successful
+-rw-rw-r--  1 itsacheckmate itsacheckmate    1 Apr 19 15:06 temp
+-rw-rw-r--  1 itsacheckmate itsacheckmate    0 Apr 19 19:18 temp1
+-rw-rw-r--  1 itsacheckmate itsacheckmate    0 Apr 19 19:12 temp2
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Templates/
+-rw-rw-r--  1 itsacheckmate itsacheckmate    0 Apr 19 19:11 temporary
+-rw-rw-r--  1 itsacheckmate itsacheckmate   16 Apr 19 15:09 temp.txt
+drwxrwxr-x  6 itsacheckmate itsacheckmate 4096 Apr 19 13:21 Training/
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Videos/
+
+touch -r : This command is used to use the timestamp of another file.
+itsacheckmate@itscheckmate:~$ touch -r temp1 temp2
+itsacheckmate@itscheckmate:~$ stat temp1
+  File: temp1
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 10305h/66309d	Inode: 1188051     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 2022-04-17 00:00:00.000000000 +0530
+Modify: 2022-04-19 19:18:37.485721738 +0530
+Change: 2022-04-19 19:18:37.485721738 +0530
+ Birth: -
+itsacheckmate@itscheckmate:~$ stat temp2
+  File: temp2
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 10305h/66309d	Inode: 1190609     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/itsacheckmate)   Gid: ( 1000/itsacheckmate)
+Access: 2022-04-17 00:00:00.000000000 +0530
+Modify: 2022-04-19 19:18:37.485721738 +0530
+Change: 2022-04-19 19:19:29.041601731 +0530
+ Birth: -
+
+
+ 
+locate
+find
+grep
+sudo
+kill
+ping
+wget
+top 
+history
+echo
+zip,unzip
 
 
