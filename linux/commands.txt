@@ -54,4 +54,120 @@ itsachec :0       :0               12:39   ?xdm?  17:05   0.00s /usr/lib/gdm3/g
  whoami (who you are logged in)
 itsacheckmate
 
+ls (displays directories and files visible under pwd)
+Desktop    Downloads  Pictures  snap       Training
+Documents  Music      Public    Templates  Videos
+
+ls -R(it goes a step further to display files in sub-directories of the pwd)
+.:
+Desktop    Downloads  Pictures  snap       Training
+Documents  Music      Public    Templates  Videos
+
+./Desktop:
+
+./Documents:
+
+./Downloads:
+slack-desktop-4.25.0-amd64.deb
+
+./Music:
+
+./Pictures:
+
+./Public:
+
+./snap:
+snap-store
+
+./snap/snap-store:
+547  558  common  current
+
+./snap/snap-store/547:
+
+./snap/snap-store/558:
+
+./snap/snap-store/common:
+
+./Templates:
+
+./Training:
+ Git   linux   postgresql   README.md  'Untitled Diagram.drawio'
+
+./Training/Git:
+commands.txt
+
+./Training/linux:
+commands.txt
+
+./Training/postgresql:
+ AttendanceManagement.txt  'ER Diagram of AMS.drawio.png'
+ commands.txt              'InBuilt Functions.txt'
+
+./Videos:
+
+ ls -a (displays hidden files in pwd)
+.              .cache     .gitconfig  Pictures  .ssh
+..             .config    .gnupg      .pki      .sudo_as_admin_successful
+.bash_history  Desktop    .local      .profile  Templates
+.bash_logout   Documents  .mozilla    Public    Training
+.bashrc        Downloads  Music       snap      Videos
+
+ls -al (it gives a detailed list ofthe displayed files and directories with extra information such as size etc)
+total 96
+drwxr-xr-x 19 itsacheckmate itsacheckmate 4096 Apr 19 13:11 .
+drwxr-xr-x  3 root          root          4096 Apr 14 17:46 ..
+-rw-------  1 itsacheckmate itsacheckmate  540 Apr 19 13:10 .bash_history
+-rw-r--r--  1 itsacheckmate itsacheckmate  220 Apr 14 17:46 .bash_logout
+-rw-r--r--  1 itsacheckmate itsacheckmate 3771 Apr 14 17:46 .bashrc
+drwxrwxr-x 14 itsacheckmate itsacheckmate 4096 Apr 19  2022 .cache
+drwx------ 13 itsacheckmate itsacheckmate 4096 Apr 19 13:37 .config
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Desktop
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Documents
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 19 12:44 Downloads
+-rw-rw-r--  1 itsacheckmate itsacheckmate   63 Apr 19 13:00 .gitconfig
+drwx------  3 itsacheckmate itsacheckmate 4096 Apr 19 13:57 .gnupg
+drwxr-xr-x  3 itsacheckmate itsacheckmate 4096 Apr 14 23:18 .local
+drwx------  5 itsacheckmate itsacheckmate 4096 Apr 19  2022 .mozilla
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Music
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Pictures
+drwx------  3 itsacheckmate itsacheckmate 4096 Apr 19 12:46 .pki
+-rw-r--r--  1 itsacheckmate itsacheckmate  807 Apr 14 17:46 .profile
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Public
+drwx------  3 itsacheckmate itsacheckmate 4096 Apr 19 12:27 snap
+drwx------  2 itsacheckmate itsacheckmate 4096 Apr 19 13:08 .ssh
+-rw-r--r--  1 itsacheckmate itsacheckmate    0 Apr 19 12:15 .sudo_as_admin_successful
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Templates
+drwxrwxr-x  6 itsacheckmate itsacheckmate 4096 Apr 19 13:21 Training
+drwxr-xr-x  2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Videos
+
+
+itsacheckmate@itscheckmate:~$ cd Downloads (to change directory)
+itsacheckmate@itscheckmate:~/Downloads$ 
+
+itsacheckmate@itscheckmate:~/Downloads$ cd (changes to the home directory)
+itsacheckmate@itscheckmate:~$ 
+
+itsacheckmate@itscheckmate:~$ cd / (takes you to the root directory of the linux os)
+itsacheckmate@itscheckmate:/$ 
+
+itsacheckmate@itscheckmate:~$ cat > temp.txt (create a file called temp)
+
+itsacheckmate@itscheckmate:~$ cat temp.txt (display the contents of the file)
+hello , wassup!
+
+itsacheckmate@itscheckmate:~$ ls -l (Outputs the file and file permissions needed to access the target file)
+total 48
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Desktop
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Documents
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 19 12:44 Downloads
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Music
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Pictures
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Public
+drwx------ 3 itsacheckmate itsacheckmate 4096 Apr 19 12:27 snap
+-rw-rw-r-- 1 itsacheckmate itsacheckmate    1 Apr 19 15:06 temp
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Templates
+-rw-rw-r-- 1 itsacheckmate itsacheckmate   16 Apr 19 15:09 temp.txt
+drwxrwxr-x 6 itsacheckmate itsacheckmate 4096 Apr 19 13:21 Training
+drwxr-xr-x 2 itsacheckmate itsacheckmate 4096 Apr 14 23:18 Videos
+
 
