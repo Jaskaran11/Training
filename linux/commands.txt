@@ -9,8 +9,168 @@ It manages the system resources such as RAM,Disk,Processor, output devices etc.
 
 Basic commands
 
-#System Information
+Name - create a folder
+purpose - creation of folder
+itsacheckmate@itscheckmate:~$ mkdir linuxfolder
+itsacheckmate@itscheckmate:~$ ls
+Desktop    Downloads    Music     Public  temp   temp2      temporary  Training
+Documents  linuxfolder  Pictures  snap    temp1  Templates  temp.txt   Videos
 
+mkdir -v - displays message for every directory created
+itsacheckmate@itscheckmate:~$ mkdir -v linuxtemp
+mkdir: created directory 'linuxtemp'
+
+-p flag => enables commands to create parent directory as necessary
+itsacheckmate@itscheckmate:~$ mkdir -v -p a/b/c
+mkdir: created directory 'a'
+mkdir: created directory 'a/b'
+mkdir: created directory 'a/b/c'
+
+-m option => It is used to set the file mode/permission of the folder created
+itsacheckmate@itscheckmate:~$ mkdir -m a=rx abc
+itsacheckmate@itscheckmate:~$ mkdir -v -m o=r abcd
+mkdir: created directory 'abcd'
+
+-----------------------------------------------------------
+
+Name - Change Directory
+purpose navigate the directory in the linux terminal
+itsacheckmate@itscheckmate:~$ cd Desktop
+
+cd ~ => used to change the directory to home directory
+tsacheckmate@itscheckmate:~/Desktop$ cd ~
+itsacheckmate@itscheckmate:~$ 
+cd .. => goes one directory back
+d "dir name" or cd dir\ name => this used to navigate to the directory with the white spaces
+
+-------------------------------------------------------------
+
+
+Name -       Delete Folder
+Purpose-  Deletes the folder  
+Examples- rmdir is used to remove the emplty folder  
+-p =>option each of the directory argument is treated as a pathname of which all
+ components will be removed, if they are already empty, starting from the last component
+-v/-verbose => this option will show the verbose info
+–ignore-fail-on-non-empty => this option will not report failure if the direcotry is not empty
+
+itsacheckmate@itscheckmate:~$ rmdir linuxfolder
+
+itsacheckmate@itscheckmate:~$ rmdir ab
+itsacheckmate@itscheckmate:~$ rmdir ab
+rmdir: failed to remove 'ab': No such file or directory
+itsacheckmate@itscheckmate:~$ rmdir -v a
+rmdir: removing directory, 'a'
+rmdir: failed to remove 'a': Directory not empty(only remove empty)
+
+--------------------------------------------------------
+
+rm - it is the remove command which deletes the objects such as files,directories , symbolic links etc.And, if the command has been executed it cant be undone.
+itsacheckmate@itscheckmate:~$ rm temp.txt
+
+rm -i=> this asks before deleting the file
+itsacheckmate@itscheckmate:~$ rm -i temp1
+rm: remove regular empty file 'temp1'?
+rm -f a.txt => if the file is write protected it foces to delete it but wont work in the write protected directories
+-r (recursive option) - it will perform a tree-walk and will delete all the files and sub-directories recursively normally rm donot delete directory but using this option it will delete the directory.
+
+--------------------------------------
+Rename Folder
+Purpose-   Rename the named files according to regular expression perlexpr, can change name of multiple files
+rename -s => it is going to ingnore the symbolic links
+rename -v => verbose will show the files which is being renamed
+rename -n=>if the user want  to see only final change
+rename -o =>will not overwrite existing files
+rename -V => shows the version
+rename -help=> help message and exit
+
+rename [options] expression replacement file...
+
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ rename -v 's/a1/b' a.txt
+Substitution replacement not terminated at (user-supplied code).
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ rename -v 's/a1/b/' a.txt
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ ls
+a1.txt  aa1.txt  aa.txt  a.txt
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ rename -v 's/a1/b/' a1.txt
+a1.txt renamed as b.txt
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ rename -n 's/a*/b/' a1.txt
+rename(a1.txt, b1.txt)
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ rename -n 's/a*/b/' *.txt
+rename(aa1.txt, b1.txt)
+aa.txt not renamed: b.txt already exists
+a.txt not renamed: b.txt already exists
+rename(b.txt, bb.txt)
+itsacheckmate@itsacheckmate:~/Training/Linux/practice$ ls
+aa1.txt  aa.txt  a.txt  b.txt
+
+-----------------------------------------------
+Moving
+mv stands for move. mv is used to move one or more files or directories from one place to another in a file system like UNIX. It has two distinct functions: 
+(i) It renames a file or folder. 
+(ii) It moves a group of files to a different directory. 
+
+mv [Option] source destination
+options 
+-i =interactive it just ask for user confirmation 
+-f = force moves the write protected files or the write protected destination file
+-n = no clobber  prevents the overwriting of the existing files
+-b = backup creates the backup of the existing file that is going to be overwritten
+
+itsacheckmate@itscheckmate:~$ mv a geek.txt
+
+itsacheckmate@itscheckmate:~$ mv -n abc geek.txt
+mv: cannot move 'abc' to 'geek.txt/abc': Permission denied
+
+itsacheckmate@itsacheckmate:~ mv -b b.txt geek.txt
+itsacheckmate@itsacheckmate:~ls
+aa1.txt  aa.txt  geek.txt  geek.txt~
+itsacheckmate@itsacheckmate:~ mv -i aa.txt geek.txt
+mv: overwrite 'geek.txt'? n
+itsacheckmate@itsacheckmate:~ ls
+aa1.txt  aa.txt  geek.txt  geek.txt~
+
+------------------------------------------
+
+Copy
+cp stands for copy. This command is used to copy files or group of files or directory. It creates an exact image of a file on a disk with different file name. cp command require at least two filenames in its arguments.
+-r = recursive copying used to copy directory and all the files in it to other directory
+-i = interactive with this option it asks the user confirmation
+-b = backup creates the destination file backup in the same folder but different name and formats
+-f = force used to copy write protected destination files 
+-p = preserve it preserves the chracteristics of the souce file int destination like last modification date and time
+itsacheckmate@itscheckmate:~/Practise$ touch a.txt
+itsacheckmate@itscheckmate:~/Practise$ cp a.txt b.txt
+itsacheckmate@itscheckmate:~/Practise$ ls
+a.txt  b.txt
+
+itsacheckmate@itscheckmate:~/Practise$ cp -i a.txt b.txt
+cp: overwrite 'b.txt'? y
+itsacheckmate@itscheckmate:~/Practise$ cat b.txt
+HI
+itsacheckmate@itscheckmate:~/Practise$ cp -b a.txt b.txt
+itsacheckmate@itscheckmate:~/Practise$ ls
+a.txt  b.txt  b.txt~
+$ ls -l b.txt
+-r-xr-xr-x+ 1 User User 3 Nov 24 08:45 b.txt
+
+User, group and others doesn't have writing permission.
+
+Without -f option, command not executed
+$ cp a.txt b.txt
+cp: cannot create regular file 'b.txt': Permission denied
+
+With -f option, command executed successfully
+$ cp -f a.txt b.txt
+root@itscheckmate:/home/itsacheckmate/Practise# ls -l a.txt
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 3 Apr 20 13:58 a.txt
+root@itscheckmate:/home/itsacheckmate/Practise# cp -p a.txt c.txt
+root@itscheckmate:/home/itsacheckmate/Practise# ls -l c.txt
+-rw-rw-r-- 1 itsacheckmate itsacheckmate 3 Apr 20 13:58 c.txt
+
+
+-----------------------------------------
+
+#System Information
 uname -a (Display Linux system information)
 Linux itscheckmate 5.13.0-39-generic #44~20.04.1-Ubuntu SMP Thu Mar 24 16:43:35 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -316,9 +476,7 @@ itsacheckmate@itscheckmate:~$ ps
   19768 pts/1    00:00:00 bash
   33030 pts/1    00:00:00 ps
 
--------------------------------------------------
 
-ps 
 
 --------------------------------------------------
 
@@ -402,6 +560,8 @@ Modify: 2022-04-19 19:18:37.485721738 +0530
 Change: 2022-04-19 19:19:29.041601731 +0530
  Birth: -
 
+-------------------------------------------------------------
+
 
  
 locate
@@ -413,6 +573,7 @@ ping
 wget
 top 
 history
+
 echo
 zip,unzip
 
