@@ -45,7 +45,6 @@ d "dir name" or cd dir\ name => this used to navigate to the directory with the 
 
 -------------------------------------------------------------
 
-
 Name -       Delete Folder
 Purpose-  Deletes the folder  
 Examples- rmdir is used to remove the emplty folder  
@@ -563,18 +562,212 @@ Change: 2022-04-19 19:19:29.041601731 +0530
 -------------------------------------------------------------
 
 
- 
-locate
+Name -       echo
+Purpose-    Used to display line of text/string that are passed as an argument
+Examples-  echo [option] [string]
+options   -e -> to enable the interpretation of the blackslash escapes
+ \b : it removes all the spaces in between the text
+ \c : suppress trailing new line with backspace interpretor ‘-e‘ to continue without emitting new line.
+In above example, text after \c is not printed and omitted trailing new line.
+\n : this option creates new line from where it is used.
+\t : this option is used to create horizontal tab spaces.
+ \r : carriage return with backspace interpretor ‘-e‘ to have specified carriage return in output.
+In the above example, text before \r is not printed.
+\a : alert return with backspace interpretor ‘-e‘ to have sound alert.
+
+This command when executed, it will produce an alert sound or Bel .
+			 -n -> option is used to omit echoing triling newline
+			 itsacheckmate@itsacheckmate:~/tmp$ echo -n "Geeks for Geeks"
+Geeks for Geeksitsacheckmate@itsacheckmate:~/tmp$
+			 echo * -> prints all the files and folder , similiar to ls
+			 itsacheckmate@itsacheckmate:~/tmp$ echo *
+git-2.35.3 git.tar.gz tmp
+
+------------------------------------------------------------------
+
+locate command in Linux is used to find the files by name. 
+locate [OPTION]... PATTERN...
+itsacheckmate@itscheckmate:/home$ locate sample.txt
+/usr/share/perl5/auto/share/dist/File-ShareDir/sample.txt
+/usr/share/perl5/auto/share/dist/File-ShareDir/subdir/sample.txt
+
+
+----------------------------------------------------------------
+
+history command is used to view the previously executed command. 
+
+itsacheckmate@itscheckmate:/$ history 5
+  224  cd /home
+  225  locate sample.txt
+  226  cd ..
+  227  history
+  228  history 5
+
+the most recent command can be viewed using !!
+history 5
+  224  cd /home
+  225  locate sample.txt
+  226  cd ..
+  227  history
+  228  history 5
+
+History can also be removed using history -d event_number
+itsacheckmate@itscheckmate:/$ history 5
+  224  cd /home
+  225  locate sample.txt
+  226  cd ..
+  227  history
+  228  history 5
+itsacheckmate@itscheckmate:/$ history -d 224
+itsacheckmate@itscheckmate:/$ history 5
+  225  cd ..
+  226  history
+  227  history 5
+  228  history -d 224
+  229  history 5
+itsacheckmate@itsch
+
+The whole history can be removed using history -c option.
+itsacheckmate@itscheckmate:/$ history -c
+itsacheckmate@itscheckmate:/$ history
+    1  history
+
+---------------------------
+
+echo command in linux is used to display line of text/string that are passed as an argument . 
+echo [option] [string]
+echo [string]
+options   -e -> to enable the interpretation of the blackslash escapes
+ \b : it removes all the spaces in between the text
+ \c : suppress trailing new line with backspace interpretor ‘-e‘ to continue without emitting new line.
+In above example, text after \c is not printed and omitted trailing new line.
+\n : this option creates new line from where it is used.
+\t : this option is used to create horizontal tab spaces.
+ \r : carriage return with backspace interpretor ‘-e‘ to have specified carriage return in output.
+In the above example, text before \r is not printed.
+\a : alert return with backspace interpretor ‘-e‘ to have sound alert.
+
+
+itsacheckmate@itscheckmate:~$ echo "itsacheckmate"
+itsacheckmate
+itsacheckmate@itscheckmate:~$ echo -e "Its \ba \bcheckmate"
+Itsacheckmate
+itsacheckmate@itscheckmate:~$ echo -e "Hello \cthere"
+Hello itsacheckmate@itscheckmate:~$ echo -e "Hi \nthere \nwassup"
+Hi 
+there 
+wassup
+itsacheckmate@itscheckmate:~$ echo -e "Geeks \rfor Geeks"
+for Geeks
+itsacheckmate@itscheckmate:~$ echo *
+abc abcd a.txt b.txt Desktop Documents Downloads geek.txt linuxtemp Music Pictures Practise Public snap sym.png temp1 temp2 Templates temporary Training Videos
+itsacheckmate@itscheckmate:~$ echo -e "Its \va \vcheckmate"
+Its 
+    a 
+      checkmate
+
+
+
+-----------------------------
+
+Name -       man
+Purpose-    used to display the user manual of any command it is the detailed view of the command
+Examples- $man [OPTION]... [COMMAND NAME]..
+Every manual is divided into the following sections:
+
+Executable programs or shell commands
+System calls (functions provided by the kernel)
+Library calls (functions within program libraries
+Games
+Special files (usually found in /dev)
+File formats and conventions eg /etc/passwd
+Miscellaneous (including macro packages and conventions), e.g. groff(7)
+System administration commands (usually only for root)
+Kernel routines [Non standard]
+#man printf
+#man 2 printf --> used to the 2nd section of the manual
+-f option -> it gives the section in which the gives command is present
+man -f ls
+itsacheckmate@itscheckmate:~$ man -f rm
+rm (1)               - remove files or directories
+
+itsacheckmate@itsacheckmate:~$ 
+
+-a option -> diplay all available into manula pages in succession
+man -a ls
+itsacheckmate@itsacheckmate:~$ man -a mkdir
+--Man-- next: mkdir(2) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+
+shows the man in 2 times as 2 manual
+-k option -> this option searches all the occurence of the searched command in the manual and returns the section no. where it is found
+itsacheckmate@itsacheckmate:~$ man -k mkdir
+gvfs-mkdir (1)       - (unknown subject)
+mkdir (1)            - make directories
+mkdir (2)            - create a directory
+mkdirat (2)          - create a directory
+
+-w option -> this returns the loaction oin which the manual page of a given command  is present 
+itsacheckmate@itsacheckmate:~$ man -w mkdir
+/usr/share/man/man1/mkdir.1.gz
+itsacheckmate@itsacheckmate:~$ man -w ls
+/usr/share/man/man1/ls.1.gz
+
+-I option -> command in case sensitive 
+
+---------------------------------------------------
+Name -       kill
+Purpose-   is a built-in command which is used to terminate processes manually. 
+kill command sends a signal to a process which terminates the process 
+Examples-
+Options: 
+
+kill -l :To display all the available signals you can use below command option:
+kill pid : To show how to use a PID with the kill command.
+kill -s : To show how to send signal to processes.
+kill -L :This command is used to list available signals in a table format.
+itsacheckmate@itsacheckmate:~/Training$ kill -L
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX	
+
+-----------------------------------------------------
+
+PING (Packet Internet Groper) command is used to check the network connectivity between host and server/host. 
+itsacheckmate@itscheckmate:~/Practise$ ping -V
+ping from iputils s20190709
+itsacheckmate@itscheckmate:~/Practise$ ping www.geeksforgeeks.org
+PING a1991.dscr.akamai.net (23.52.171.81) 56(84) bytes of data.
+64 bytes from a23-52-171-81.deploy.static.akamaitechnologies.com (23.52.171.81): icmp_seq=1 ttl=52 time=86.3 ms
+64 bytes from a23-52-171-81.deploy.static.akamaitechnologies.com (23.52.171.81): icmp_seq=2 ttl=52 time=84.6 ms
+64 bytes from a23-52-171-81.deploy.static.akamaitechnologies.com (23.52.171.81): icmp_seq=3 ttl=52 time=86.6 ms
+64 bytes from a23-52-171-81.deploy.static.akamaitechnologies.com (23.52.171.81): icmp_seq=4 ttl=52 time=82.9 ms
+^C
+--- a1991.dscr.akamai.net ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 82.870/85.082/86.582/1.476 ms
+
+
+
+grep - 
+
 find
-grep
+
 sudo
-kill
+
 ping
 wget
 top 
-history
 
-echo
 zip,unzip
 
 
