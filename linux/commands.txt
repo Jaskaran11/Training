@@ -889,16 +889,112 @@ MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.  12334.8 avail Mem
  -----------------------------------------------------------
 grep - 
 
-find
+---------------------------------------------------------------------------------------------
+Name -       find
+Purpose-    Used to find files and directories and perform subsequent operations on them
+Examples-  
+find [where to start searching from ] [-options] [what to find]
+Options :
 
-sudo
+-exec CMD: The file being searched which meets the above criteria and returns 0 for as its exit status for successful command execution.
+-ok CMD : It works same as -exec except the user is prompted first.
+-inum N : Search for files with inode number ‘N’.
+-links N : Search for files with ‘N’ links.
+-name demo : Search for files that are specified by ‘demo’.
+-newer file : Search for files that were modified/created after ‘file’.
+-perm octal : Search for the file if permission is ‘octal’.
+-print : Display the path name of the files found by using the rest of the criteria.
+-empty : Search for empty files and directories.
+-size +N/-N : Search for files of ‘N’ blocks; ‘N’ followed by ‘c’can be used to measure size in characters; ‘+N’ means size > ‘N’ blocks and ‘-N’ means size < 'N' blocks.
+-user name : Search for files owned by user name or ID ‘name’.
+\(expr \) : True if ‘expr’ is true; used for grouping criteria combined with OR or AND.
+! expr : True if ‘expr’ is false.
+find . -name *txt
 
-ping
-wget
+-iname =files irrespective of upper and lower case
+-newer file: search for file that are created after the 'file'
+-user name :search for the file owned by user name 
+-perm permission : search for the file with permission specified.
+itsacheckmate@itsacheckmate:~$ touch file.txt file1.txt file.php img.jpg
+itsacheckmate@itsacheckmate:~$ find . -name file.txt
+./file.txt
+itsacheckmate@itsacheckmate:~$ find . -name file10.txt
+itsacheckmate@itsacheckmate:~$ find . -iname FILE.txt
+./file.txt
+itsacheckmate@itsacheckmate:~$ find ./Training -newer index.html
+./Training
+./Training/.git
+./Training/.git/logs/HEAD
+./Training/.git/logs/refs/heads/main
+./Training/.git/logs/refs/remotes/origin/main
+./Training/.git/index
+itsacheckmate@itsacheckmate:~$ find . -user root
+./tmp/git-2.35.3/gitweb/static/gitweb.js
+./tmp/git-2.35.3/gitweb/GITWEB-BUILD-OPTIONS
+./tmp/git-2.35.3/gitweb/gitweb.cgi
+
+itsacheckmate@itsacheckmate:~$ find ./Training  -perm 664
+./Training/.git/logs/HEAD
+./Training/.git/logs/refs/heads/main
+./Training/.git/logs/refs/remotes/origin/main
+./Training/.git/logs/refs/remotes/origin/HEAD
+./Training/.git/packed-refs
+
+itsacheckmate@itsacheckmate:~$ find . -size +50M
+./Downloads/google-chrome-stable_current_amd64.deb
+./Downloads/Telegram Desktop/Ghosts.2021.S01E17.YouthTrendx.mkv
+./d.zip
 
 
-zip,unzip
+---------------------------------
 
+Name -       sudo(Super User Do)
+Purpose-    Used as a prefix of some command that only superuser are allowed to run
+These users who can use the sudo command need to have an entry in the 
+sudoers file located at “/etc/sudoers”
+
+------------------------------------------------------------
+Wget is the non-interactive network downloader which is used to download files from the server even when the user has not logged on to the system and it can work in the background without hindering the current process. 
+ 
+Syntax - wget [option] [URL]
+ 
+ 
+
+----------------------------------------------------------------
+
+
+Name -       zip/unzip
+Purpose-   it is a compression and file packaging utility for Unix
+Examples-
+Syntax = zip [options] zipfile files_list
+$zip myfile.zip filename.txt
+itsacheckmate@itsacheckmate:~$ zip my.zip url.txt
+  adding: url.txt (deflated 9%)
+  
+  to unzip use command=>  unzip filename 
+  itsacheckmate@itsacheckmate:~$ unzip my.zip
+Archive:  my.zip
+replace url.txt? [y]es, [n]o, [A]ll, [N]one, [r]ename: n
+
+if to remove file from zipp then use -d command
+$zip –d filename.zip file.txt
+ to update or add the file in the existing zip use -u option
+ zip -u my.zip url.txt
+itsacheckmate@itsacheckmate:~$ zip -u my.zip url.txt
+itsacheckmate@itsacheckmate:~$ zip -u my.zip newfile
+  adding: newfile (stored 0%)
+  
+  if to remove file after zipping it use -m option 
+  zip -m my.zip url.txt
+  
+  to zip the whole directory use recursive option -r  
+  zip -r my.zip Training
+  
+  
+  -x is used to exclude the files while zipping the current directory
+  zip –x filename.zip file_to_be_excluded
+  
+  -v is the verbose to print all the status are the command is run
 
 
 ---------------------------------------------------------------
