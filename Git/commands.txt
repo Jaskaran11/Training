@@ -613,8 +613,107 @@ README.md  git/
 
 ------------------------------------------------------------
 
-Jaskaran@DESKTOP-CNFU6G5 MINGW64 ~/Desktop/Git (master)
-$ git branch -D temp
-Deleted branch temp (was 216c457).
+Aliases are used to create shorter commands that map to longer commands. Aliases enable more efficient workflows by requiring fewer keystrokes to execute a command.
+itsacheckmate@itscheckmate:~/Training$ git config --global alias.co checkout
+itsacheckmate@itscheckmate:~/Training$ git config --global alias.br branch
+itsacheckmate@itscheckmate:~/Training$ git config --global alias.ci commit
+itsacheckmate@itscheckmate:~/Training$ git config --global alias.st status
+itsacheckmate@itscheckmate:~/Training$ git st
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+itsacheckmate@itscheckmate:~/Training$ git co
+Your branch is up to date with 'origin/master'.
+itsacheckmate@itscheckmate:~/Training$ git br
+* master
+
+#diff commands
+
+itsacheckmate@itscheckmate:~/Training$ git diff
+diff --git a/Git/commands.txt b/Git/commands.txt
+index 656388f..99121d5 100644
+--- a/Git/commands.txt
++++ b/Git/commands.txt
+@@ -612,9 +612,22 @@ $ ls
+ README.md  git/
+ 
+ ------------------------------------------------------------
++Aliases are used to create shorter commands that map to longer commands. Aliases enable more efficient workflows by requiring fewer keystrokes to execute a command. 
++
++itsacheckmate@itscheckmate:~/Training$ git config --global alias.co checkout
++itsacheckmate@itscheckmate:~/Training$ git config --global alias.br branch
++itsacheckmate@itscheckmate:~/Training$ git config --global alias.ci commit
++itsacheckmate@itscheckmate:~/Training$ git config --global alias.st status
++itsacheckmate@itscheckmate:~/Training$ git st
++On branch master
++Your branch is up to date with 'origin/master'.
++
++nothing to commit, working tree clean
++itsacheckmate@itscheckmate:~/Training$ git co
++Your branch is up to date with 'origin/master'.
++itsacheckmate@itscheckmate:~/Training$ git br
+
+
+----------------------------------------------------------------
+
+git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.
+
+itsacheckmate@itscheckmate:~/Training/Git$ touch temp.txt
+itsacheckmate@itscheckmate:~/Training/Git$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   commands.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	temp.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+itsacheckmate@itscheckmate:~/Training/Git$ git stash -- temp.txt
+Saved working directory and index state WIP on master: b78d036 used commands like grep,wget
+
+itsacheckmate@itscheckmate:~/Training/Git$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   commands.txt
+	
+	
+#You can reapply previously stashed changes with git stash pop:
+itsacheckmate@itscheckmate:~/Training$ git stash pop
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Git/commands.txt
+	new file:   Git/temp.txt
+
+
+itsacheckmate@itscheckmate:~/Training/Git$ git stash -- temp.txt
+Saved working directory and index state WIP on master: b78d036 used commands like grep,wget
+itsacheckmate@itscheckmate:~/Training/Git$ git stash list
+stash@{0}: WIP on master: b78d036 used commands like grep,wget
+itsacheckmate@itscheckmate:~/Training/Git$ ls
+commands.txt
+itsacheckmate@itscheckmate:~/Training/Git$ touch style.ss
+itsacheckmate@itscheckmate:~/Training/Git$ rm style.ss
+itsacheckmate@itscheckmate:~/Training/Git$ touch style.css
+itsacheckmate@itscheckmate:~/Training/Git$ git stash save "added a css file"
+Saved working directory and index state On master: added a css file
+itsacheckmate@itscheckmate:~/Training/Git$ git stash list
+stash@{0}: On master: added a css file
+stash@{1}: WIP on master: b78d036 used commands like grep,wget
+
+
+
 
 
