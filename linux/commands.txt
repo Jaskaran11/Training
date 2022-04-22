@@ -1160,5 +1160,58 @@ To use this command in the whole file use % before the command
 :%s/searchword/replaceword/gc
 
 --------------------------------
+Creating user 
+
+itsacheckmate@itscheckmate:~$ sudo useradd Jaskaran
+[sudo] password for itsacheckmate: 
+itsacheckmate@itscheckmate:~$ sudo passwd jaskaran
+passwd: user 'jaskaran' does not exist
+itsacheckmate@itscheckmate:~$ sudo passwd Jaskaran
+New password: 
+Retype new password: 
+passwd: password updated successfully
+
+Adding user to the Group
+itsacheckmate@itscheckmate:~$ sudo usermod -g itsacheckmate
+Usage: usermod [options] LOGIN
+itsacheckmate@itscheckmate:~$ sudo usermod -a -G itsacheckmate
+
+create alias in linux
+alias name='command'
+itsacheckmate@itscheckmate:~$ alias tr='cd ~/Training'
+itsacheckmate@itscheckmate:~$ tr
+
+
+  deleting alias--  unalias name
+
+  list all alias-- alias
+
+itsacheckmate@itscheckmate:~/Training$ alias tr='./itsacheckmate/Training'
+itsacheckmate@itscheckmate:~/Training$ cd tr
+bash: cd: tr: No such file or directory
+
+itsacheckmate@itscheckmate:~/Training$ alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias tr='./itsacheckmate/Training'
+
+itsacheckmate@itscheckmate:~/Training$ unalias
+unalias: usage: unalias [-a] name [name ...]
+
+itsacheckmate@itscheckmate:~/Training$ alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
 
 
