@@ -713,7 +713,13 @@ itsacheckmate@itscheckmate:~/Training/Git$ git stash list
 stash@{0}: On master: added a css file
 stash@{1}: WIP on master: b78d036 used commands like grep,wget
 
+--------------------------------------------------------------
 
+#creating a merge conflict
+itsacheckmate@itscheckmate:~/Training$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
 
-
+nothing to commit, working tree clean
+itsacheckmate@itscheckmate:~/Training$
 
