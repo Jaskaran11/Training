@@ -737,3 +737,124 @@ Your branch is up to date with 'origin/master'.
 
 creating a merge conflict to solve
 >>>>>>> 4e9329dcd19899d33275c0d090e56f096583c2ba
+
+------------------------------------------
+
+Git Rebase:
+Rebasing is a process to reapply commits on top of another base trip. 
+It is used to apply a sequence of commits from distinct branches into a final commit. 
+It is an alternative of git merge command. It is a linear process of merging.
+Synatx:
+$git rebase <branch name>  
+$ git status  
+$git rebase --continue  
+
+Rebase Branch:
+$ git checkout features-dev
+$ git rebase master
+n Git, the term rebase is referred to as the process of moving or combining a sequence of commits to a new base commit. 
+When we perform the git interactive rebase command, it will open your default text editor with the above output.
+
+The options it contains are listed below:
+Pick
+Reword
+Edit
+Squash
+Fixup
+Exec
+Break
+Drop
+Label
+Reset
+Merge
+
+Pick (-p):
+Pick stands here that the commit is included. Order of the commits depends upon the order of the pick commands during rebase. 
+If you do not want to add a commit, you have to delete the entire line.
+Reword (-r):
+The reword is quite similar to pick command. The reword option paused the rebase process and provides a chance to alter the commit message. 
+It does not affect any changes made by the commit.
+Edit (-e):
+The edit option allows for amending the commit. The amending means, commits can be added or changed entirely. 
+We can also make additional commits before rebase continue command. It allows us to split a large commit into the smaller commit; moreover, we can remove erroneous changes made in a commit.
+Squash (-s):
+The squash option allows you to combine two or more commits into a single commit. 
+It also allows us to write a new commit message for describing the changes.
+Fixup (-f):
+It is quite similar to the squash command. 
+It discarded the message of the commit to be merged. The older commit message is used to describe both changes.
+Exec (-x):
+The exec option allows you to run arbitrary shell commands against a commit.
+Break (-b):
+The break option stops the rebasing at just position. It will continue rebasing later with 'git rebase --continue' command.
+Drop (-d):
+The drop option is used to remove the commit.
+Label (-l):
+The label option is used to mark the current head position with a name.
+Reset (-t):
+The reset option is used to reset head to a label.
+
+itsacheckmate@itscheckmate:~/Training/Git$ git commit -am "commiting all the unsaved changes to practise rebase commands"
+[features-dev d4e14bb] commiting all the unsaved changes to practise rebase commands
+ 2 files changed, 1 insertion(+)
+ create mode 100644 Git/1.txt
+ create mode 100644 Git/app.js
+
+The reset option is used to reset head to a label.
+
+itsacheckmate@itsacheckmate:~/Training-Repository$ git commit -am 'Committing all the unsaved changes to practise rebase.'
+[Branch2 1c370c3] Committing all the unsaved changes to practise rebase commands.
+ 2 files changed, 788 insertions(+)
+ create mode 100644 gitcheatsheet
+itsacheckmate@itsacheckmate:~/Training-Repository$ git rebase main
+Auto-merging linux/linux
+CONFLICT (add/add): Merge conflict in linux/linux
+Auto-merging new.txt
+CONFLICT (add/add): Merge conflict in new.txt
+error: could not apply e9c4211... Adding linux and new.txt file in stash
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply e9c4211... Adding linux and new.txt file in stash
+itsacheckmate@itsacheckmate:~/Training-Repository$ git add .
+itsacheckmate@itsacheckmate:~/Training-Repository$ git rebase --continue
+[detached HEAD 043f5be] Adding linux and new.txt file in stash
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+Successfully rebased and updated refs/heads/Branch2.
+itsacheckmate@itsacheckmate:~/Training-Repository$ git log
+commit 0a03b3b1208623c312975a64348117152378bc43 (HEAD -> Branch2)
+Author: Jaskaran Singh <ksingh112021@gmail.com>
+Date:   Fri Apr 22 14:13:21 2022 +0530
+
+    Committing all the unsaved changes to practise rebase commands.
+
+commit 043f5be188d17ad3d47b3a107c55cfcc276c2bd3
+Author: Jaskaran Singh <jksingh112021@gmail.com>>
+Date:   Fri Apr 22 12:43:16 2022 +0530
+
+    Adding linux and new.txt file in stash
+
+commit 1ecd30de6188e2338cc088ccbb6f873854433a5d
+Author: Jaskaran Singh <jksingh112021@gmail.com>>
+Date:   Fri Apr 22 12:38:50 2022 +0530
+
+    Conflict resolved which occured due to stash
+
+commit f00ac4ca91bbb17c9d5e274f145b2545fff1af4b
+Author: Jaskaran SIngh <jksingh112021@gmail.com>>
+Date:   Fri Apr 22 12:23:59 2022 +0530
+
+
+[2]+  Stopped                 git log
+itsacheckmate@itsacheckmate:~/Training-Repository$ git commit -am 'Practising rebase in git'
+[Branch2 d95c121] Practising rebase in git
+ 1 file changed, 46 insertions(+)
+itsacheckmate@itsacheckmate:~/Training-Repository$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+itsacheckmate@itsacheckmate:~/Training-Repository$ git rebase Branch2
+Successfully rebased and updated refs/heads/main.
+
+
+
