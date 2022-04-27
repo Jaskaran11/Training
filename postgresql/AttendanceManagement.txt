@@ -265,11 +265,8 @@ CREATE TABLE
 ams=# alter table attendance add foreign key (employee_id) references employee(id);
 ALTER TABLE
 ams=# insert into attendance
-ams-# values(10001,1,'2011-10-10','09:01:00','05:30:00');
+ams-# values(10001,1,'2011-10-10','09:01:00','17:30:00');
 INSERT 0 1
-ams=# insert into attendance
-values(10001,1,'2011-10-10','09:00:10','05:35:00'),
-ams-# (^C
 ams=# select * from attendance;
   id   | employee_id |    date    | start_at |  end_at  
 -------+-------------+------------+----------+----------
@@ -277,22 +274,23 @@ ams=# select * from attendance;
 (1 row)
 
 ams=# insert into attendance 
-ams-# values(10002,2,'2011-10-10','09:00:10','05:30:01'),
-ams-# (10003,3,'2011-10-10','09:00:20','05:30:10'),
-ams-# (10004,4,'2011-10-10','09:01:15','05:31:00');
+ams-# values(10002,2,'2011-10-10','09:00:10','17:30:01'),
+ams-# (10003,3,'2011-10-10','09:00:20','17:30:10'),
+ams-# (10004,4,'2011-10-10','09:01:15','17:31:00');
 INSERT 0 3
 ams=# insert into attendance
-ams-# values(10005,5,'2011-10-10','09:02:10','05:32:01');
+ams-# values(10005,5,'2011-10-10','09:02:10','17:32:01');
 INSERT 0 1
-ams=# select * from attendance;
+aams=# select * from attendance;
   id   | employee_id |    date    | start_at |  end_at  
 -------+-------------+------------+----------+----------
- 10001 |           1 | 2011-10-10 | 09:01:00 | 05:30:00
- 10002 |           2 | 2011-10-10 | 09:00:10 | 05:30:01
- 10003 |           3 | 2011-10-10 | 09:00:20 | 05:30:10
- 10004 |           4 | 2011-10-10 | 09:01:15 | 05:31:00
- 10005 |           5 | 2011-10-10 | 09:02:10 | 05:32:01
+ 10001 |           1 | 2011-10-10 | 09:01:00 | 17:30:00
+ 10002 |           2 | 2011-10-10 | 09:00:10 | 17:30:01
+ 10003 |           3 | 2011-10-10 | 09:00:20 | 17:30:10
+ 10004 |           4 | 2011-10-10 | 09:01:15 | 17:31:00
+ 10005 |           5 | 2011-10-10 | 09:02:10 | 17:32:01
 (5 rows)
+
 
 ams=# 
 
@@ -330,19 +328,18 @@ ams-# on employee.id=qualification.employee_id;
  Rock Lee     | 1985-07-10 | BSC     | 2007-06-10
 (5 rows)
 
-                                                             ^
-ams=# select employee.name,employee.dob,employee.city,employee.country,qualification.name as qualification,department.name as Department,attendance.start_at,attendance.end_at,attendance.date
+ ams=# select employee.name,employee.dob,employee.city,employee.country,qualification.name as qualification,department.name as Department,attendance.start_at,attendance.end_at,attendance.date
 from employee
 inner join qualification on employee.id=qualification.employee_id
 inner join department on employee.id=department.employee_id
 inner join attendance on employee.id=attendance.employee_id;
      name     |    dob     |    city    |  country  | qualification |        department         | start_at |  end_at  |    date    
 --------------+------------+------------+-----------+---------------+---------------------------+----------+----------+------------
- Clark Kent   | 1980-05-11 | Faridabad  | India     | MBA           | Account Department        | 09:01:00 | 05:30:00 | 2011-10-10
- Sasha Calle  | 1982-04-23 | Rionegro   | Colombia  | Diploma       | Sales Department          | 09:00:10 | 05:30:01 | 2011-10-10
- Rohit Sharma | 1980-08-01 | Chandigarh | India     | MBA           | Human Resource Management | 09:00:20 | 05:30:10 | 2011-10-10
- Lisa Ray     | 1982-01-19 | Vectis     | Australia | BE            | Engineering Department    | 09:01:15 | 05:31:00 | 2011-10-10
- Rock Lee     | 1985-07-10 | Nagano     | Japan     | BSC           | Marketing Department      | 09:02:10 | 05:32:01 | 2011-10-10
+ Clark Kent   | 1980-05-11 | Faridabad  | India     | MBA           | Account Department        | 09:01:00 | 17:30:00 | 2011-10-10
+ Sasha Calle  | 1982-04-23 | Rionegro   | Colombia  | Diploma       | Sales Department          | 09:00:10 | 17:30:01 | 2011-10-10
+ Rohit Sharma | 1980-08-01 | Chandigarh | India     | MBA           | Human Resource Management | 09:00:20 | 17:30:10 | 2011-10-10
+ Lisa Ray     | 1982-01-19 | Vectis     | Australia | BE            | Engineering Department    | 09:01:15 | 17:31:00 | 2011-10-10
+ Rock Lee     | 1985-07-10 | Nagano     | Japan     | BSC           | Marketing Department      | 09:02:10 | 17:32:01 | 2011-10-10
 
 
 ams=# select max(salary) from employee;
@@ -423,17 +420,46 @@ ams=# select count(*) from employee where country='India';
 
 
 ams=# select employee.name,employee.dob,employee.country,qualification.name as Qualification_name,qualification.percentage,department.name as Department_name,attendance.date,attendance.start_at,attendance.end_at     
-from employee                                                    
-inner join qualification on employee.id=qualification.employee_id
-inner join department on employee.id=department.employee_id
-inner join attendance on employee.id=attendance.employee_id;
+ams-# from employee                                                    
+ams-# inner join qualification on employee.id=qualification.employee_id
+ams-# inner join department on employee.id=department.employee_id
+ams-# inner join attendance on employee.id=attendance.employee_id;
      name     |    dob     |  country  | qualification_name | percentage |      department_name      |    date    | start_at |  end_at  
 --------------+------------+-----------+--------------------+------------+---------------------------+------------+----------+----------
- Clark Kent   | 1980-05-11 | India     | MBA                |      71.50 | Account Department        | 2011-10-10 | 09:01:00 | 05:30:00
- Sasha Calle  | 1982-04-23 | Colombia  | Diploma            |      69.50 | Sales Department          | 2011-10-10 | 09:00:10 | 05:30:01
- Rohit Sharma | 1980-08-01 | India     | MBA                |      79.50 | Human Resource Management | 2011-10-10 | 09:00:20 | 05:30:10
- Lisa Ray     | 1982-01-19 | Australia | BE                 |      82.50 | Engineering Department    | 2011-10-10 | 09:01:15 | 05:31:00
- Rock Lee     | 1985-07-10 | Japan     | BSC                |      75.60 | Marketing Department      | 2011-10-10 | 09:02:10 | 05:32:01
+ Clark Kent   | 1980-05-11 | India     | MBA                |      71.50 | Account Department        | 2011-10-10 | 09:01:00 | 17:30:00
+ Sasha Calle  | 1982-04-23 | Colombia  | Diploma            |      69.50 | Sales Department          | 2011-10-10 | 09:00:10 | 17:30:01
+ Rohit Sharma | 1980-08-01 | India     | MBA                |      79.50 | Human Resource Management | 2011-10-10 | 09:00:20 | 17:30:10
+ Lisa Ray     | 1982-01-19 | Australia | BE                 |      82.50 | Engineering Department    | 2011-10-10 | 09:01:15 | 17:31:00
+ Rock Lee     | 1985-07-10 | Japan     | BSC                |      75.60 | Marketing Department      | 2011-10-10 | 09:02:10 | 17:32:01
 (5 rows)
+
+ams=# select employee.name,employee.dob,employee.salary,qualification.name as Qualification_name,department.name as Department_name
+from employee
+inner join qualification on employee.id=qualification.employee_id
+inner join department on employee.id=department.employee_id;
+     name     |    dob     | salary | qualification_name |      department_name      
+--------------+------------+--------+--------------------+---------------------------
+ Clark Kent   | 1980-05-11 |  23000 | MBA                | Account Department
+ Sasha Calle  | 1982-04-23 |  25000 | Diploma            | Sales Department
+ Rohit Sharma | 1980-08-01 |  32000 | MBA                | Human Resource Management
+ Lisa Ray     | 1982-01-19 |  30000 | BE                 | Engineering Department
+ Rock Lee     | 1985-07-10 |  21000 | BSC                | Marketing Department
+
+#employee who joined the company on same date
+ams=# select * from employee e where hire_date in
+(select hire_date from employee where e.id != id);
+ id |    name     | gender | salary |    address     |   city    | country  |    dob     |   mobile   | hire_date  
+----+-------------+--------+--------+----------------+-----------+----------+------------+------------+------------
+  1 | Clark Kent  | Male   |  23000 | #123,Sector 20 | Faridabad | India    | 1980-05-11 | 9123456743 | 2010-06-12
+  2 | Sasha Calle | Female |  25000 | 24th Street    | Rionegro  | Colombia | 1982-04-23 | 1234567890 | 2010-06-12
+(2 rows)
+
+
+#list employees who joined in the month of may
+ams=# select * from employee where to_char(hire_date,'MM')='05';
+ id |     name     | gender | salary |    address     |    city    | country |    dob     |   mobile   | hire_date  
+----+--------------+--------+--------+----------------+------------+---------+------------+------------+------------
+  3 | Rohit Sharma | Male   |  32000 | #324,Sector 17 | Chandigarh | India   | 1980-08-01 | 9567234561 | 2008-05-23
+(1 row)
 
 
