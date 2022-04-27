@@ -344,3 +344,96 @@ inner join attendance on employee.id=attendance.employee_id;
  Lisa Ray     | 1982-01-19 | Vectis     | Australia | BE            | Engineering Department    | 09:01:15 | 05:31:00 | 2011-10-10
  Rock Lee     | 1985-07-10 | Nagano     | Japan     | BSC           | Marketing Department      | 09:02:10 | 05:32:01 | 2011-10-10
 
+
+ams=# select max(salary) from employee;
+  max  
+-------
+ 32000
+(1 row)
+
+ams=# select min(salary) from employee;
+  min  
+-------
+ 21000
+(1 row)
+
+
+ams=# select avg(salary) from employee;
+        avg         
+--------------------
+ 26200.000000000000
+(1 row)
+
+               
+ams=# select gender,count(*) from employee group by gender;
+ gender | count 
+--------+-------
+ Female |     2
+ Male   |     3
+(2 rows)
+
+
+ams=# select name from employee order by salary;
+     name     
+--------------
+ Rock Lee
+ Clark Kent
+ Sasha Calle
+ Lisa Ray
+ Rohit Sharma
+(5 rows)
+
+ams=# select name from qualification order by percentage;
+  name   
+---------
+ Diploma
+ MBA
+ BSC
+ MBA
+ BE
+(5 rows)
+
+ams=# select name,dob from employee order by salary offset 1 rows;
+     name     |    dob     
+--------------+------------
+ Clark Kent   | 1980-05-11
+ Sasha Calle  | 1982-04-23
+ Lisa Ray     | 1982-01-19
+ Rohit Sharma | 1980-08-01
+(4 rows)
+
+
+
+#to know the current age 
+ams=# select date_part('year',age(dob)),* from employee;
+ date_part | id |     name     | gender | salary |      address       |    city    |  country  |    dob     |   mobile   | hire_date  
+-----------+----+--------------+--------+--------+--------------------+------------+-----------+------------+------------+------------
+        41 |  1 | Clark Kent   | Male   |  23000 | #123,Sector 20     | Faridabad  | India     | 1980-05-11 | 9123456743 | 2010-06-12
+        40 |  2 | Sasha Calle  | Female |  25000 | 24th Street        | Rionegro   | Colombia  | 1982-04-23 | 1234567890 | 2010-06-12
+        41 |  3 | Rohit Sharma | Male   |  32000 | #324,Sector 17     | Chandigarh | India     | 1980-08-01 | 9567234561 | 2008-05-23
+        40 |  4 | Lisa Ray     | Female |  30000 | 56 Walter Crescent | Vectis     | Australia | 1982-01-19 | 2345678123 | 2009-06-05
+        36 |  5 | Rock Lee     | Male   |  21000 | 149-1071,Fujitsuka | Nagano     | Japan     | 1985-07-10 | 1287563482 | 2011-09-08
+(5 rows)
+
+ams=# select count(*) from employee where country='India';
+ count 
+-------
+     2
+(1 row)
+
+
+ams=# select employee.name,employee.dob,employee.country,qualification.name as Qualification_name,qualification.percentage,department.name as Department_name,attendance.date,attendance.start_at,attendance.end_at     
+from employee                                                    
+inner join qualification on employee.id=qualification.employee_id
+inner join department on employee.id=department.employee_id
+inner join attendance on employee.id=attendance.employee_id;
+     name     |    dob     |  country  | qualification_name | percentage |      department_name      |    date    | start_at |  end_at  
+--------------+------------+-----------+--------------------+------------+---------------------------+------------+----------+----------
+ Clark Kent   | 1980-05-11 | India     | MBA                |      71.50 | Account Department        | 2011-10-10 | 09:01:00 | 05:30:00
+ Sasha Calle  | 1982-04-23 | Colombia  | Diploma            |      69.50 | Sales Department          | 2011-10-10 | 09:00:10 | 05:30:01
+ Rohit Sharma | 1980-08-01 | India     | MBA                |      79.50 | Human Resource Management | 2011-10-10 | 09:00:20 | 05:30:10
+ Lisa Ray     | 1982-01-19 | Australia | BE                 |      82.50 | Engineering Department    | 2011-10-10 | 09:01:15 | 05:31:00
+ Rock Lee     | 1985-07-10 | Japan     | BSC                |      75.60 | Marketing Department      | 2011-10-10 | 09:02:10 | 05:32:01
+(5 rows)
+
+
