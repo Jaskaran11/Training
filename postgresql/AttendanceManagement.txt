@@ -1,473 +1,346 @@
-
-attendance=# create table Employee(
-attendance(# employee_ID int primary key,
-attendance(# name varchar(55) not null,
-attendance(# gender varchar(10) not null,
-attendance(# age int not null,
-attendance(# mobile int,
-attendance(# email varchar(55) not null
-attendance(# );
+ams=# create table Employee(
+ams(# id int primary key not null,
+ams(# name varchar(55) not null,
+ams(# gender varchar(55) not null,
+ams(# salary int not null,
+ams(# address varchar(30) ,
+ams(# city varchar(30) not null,
+ams(# country varchar(30) not null,
+ams(# DOB date not null,
+ams(# mobile varchar(10),
+ams(# hire_date date not null
+ams(# );
 CREATE TABLE
-attendance=# \d
-          List of relations
- Schema |   Name   | Type  |  Owner
---------+----------+-------+----------
- public | employee | table | postgres
-(1 row)
+ams-# values(1,'Clark Kent','Male',23000,'#123,Sector 20','Faridabad','India','1990-05-11','9123456743','2010-06-12');
+INSERT 0 1
+ams=# select * from ams;
+ERROR:  relation "ams" does not exist
+LINE 1: select * from ams;
+                      ^
+ams=# select * from employee;
+ams-# values(2,'Sasha Calle','Female',25000,'24th Street','Rionegro','Colombia','1992-04-23','1234567890','2010-06-12');
+INSERT 0 1
+ams=# insert into employee
+ams-# values(3,'Rohit Sharma','Male',32000,'#324,Sector 17','Chandigarh','India','1889-08-01','9567234561','2008-05-23');
+INSERT 0 1
+ams-# values(4,'Lisa Ray','Female',30000,'56 Walter Crescent','Vectis','Australia','1992-01-19','2345678123','2009-06-05');
+INSERT 0 1
+ams=# insert into employee
+ams-# values(5,'Rock Lee','Male',21000,'149-1071,Fujitsuka','Nagano','Japan','1995-07-09','1287563482','2011-09-08');
+INSERT 0 1
+ams=# select 
+ams-# 
+ams-# ^C
+ams=# select * from employee;
+ id |     name     | gender | salary |      address       |    city    |  country  |    dob     |   mobile   | hire_date  
+----+--------------+--------+--------+--------------------+------------+-----------+------------+------------+------------
+  1 | Clark Kent   | Male   |  23000 | #123,Sector 20     | Faridabad  | India     | 1990-05-11 | 9123456743 | 2010-06-12
+  2 | Sasha Calle  | Female |  25000 | 24th Street        | Rionegro   | Colombia  | 1992-04-23 | 1234567890 | 2010-06-12
+  3 | Rohit Sharma | Male   |  32000 | #324,Sector 17     | Chandigarh | India     | 1889-08-01 | 9567234561 | 2008-05-23
+  4 | Lisa Ray     | Female |  30000 | 56 Walter Crescent | Vectis     | Australia | 1992-01-19 | 2345678123 | 2009-06-05
+  5 | Rock Lee     | Male   |  21000 | 149-1071,Fujitsuka | Nagano     | Japan     | 1995-07-09 | 1287563482 | 2011-09-08
+(5 rows)
 
-
-attendance=# create table Department(
-attendance(# dept_ID serial primary key,
-attendance(# department_name varchar(20) not null
-attendance(# );
+ams=# insert into qualification
+ams-# ^C
+ams=# create table qualification(
+ams(# id int primary key not null,
+ams(# employee
+ams(# ^C
+ams=# create table qualification(
+ams(# id int primary key not null,
+ams(# employee_id int not null,
+ams(# name varchar(50) not null,
+ams(# precentage numeric(5,2),
+ams(# year_of_passing date
+ams(# );
 CREATE TABLE
+ams=# alter table qualification
+ams-# add foreign key (employee_id) references employee(id);
+ALTER TABLE
+ams=# insert into qualification
+ams-# values(01,1,'MBA',71.5,'2006-06-01');
+INSERT 0 1
+ams=# insert into qualification 
+ams-# values(02,2,'Diploma',69.5,'2003-05-05');
+INSERT 0 1
+ams=# alter table employee update dob='1980-05-11' where id=1;
+ERROR:  syntax error at or near "update"
+LINE 1: alter table employee update dob='1980-05-11' where id=1;
+                             ^
+ams=# update employee set dob=1980-05-11' where id=1;
+ams'# ^C
+ams=# update employee set dDOB='1980-05-11' where id=1;
+ERROR:  column "ddob" of relation "employee" does not exist
+LINE 1: update employee set dDOB='1980-05-11' where id=1;
+                            ^
+ams=# update employee set DOB='1980-05-11' where id=1;
+UPDATE 1
+ams=# update employee set DOB='1982-04-23' where id=2;
+UPDATE 1
+ams=# update employee set DOB='1985-08-01' where id=3;
+UPDATE 1
+ams=# update employee set DOB='1980-08-01' where id=3;
+UPDATE 1
+ams=# update employee set DOB='1982-08-01' where id=4;
+UPDATE 1
+ams=# update employee set DOB='1985-07-09' where id=5;
+UPDATE 1
+ams=# update employee set DOB='1982-01-19' where id=4;
+UPDATE 1
+ams=# select 
+ams-# * from employee;
+ id |     name     | gender | salary |      address       |    city    |  country  |    dob     |   mobile   | hire_date  
+----+--------------+--------+--------+--------------------+------------+-----------+------------+------------+------------
+  1 | Clark Kent   | Male   |  23000 | #123,Sector 20     | Faridabad  | India     | 1980-05-11 | 9123456743 | 2010-06-12
+  2 | Sasha Calle  | Female |  25000 | 24th Street        | Rionegro   | Colombia  | 1982-04-23 | 1234567890 | 2010-06-12
+  3 | Rohit Sharma | Male   |  32000 | #324,Sector 17     | Chandigarh | India     | 1980-08-01 | 9567234561 | 2008-05-23
+  5 | Rock Lee     | Male   |  21000 | 149-1071,Fujitsuka | Nagano     | Japan     | 1985-07-09 | 1287563482 | 2011-09-08
+  4 | Lisa Ray     | Female |  30000 | 56 Walter Crescent | Vectis     | Australia | 1982-01-19 | 2345678123 | 2009-06-05
+(5 rows)
 
-
-attendance=# create table Job_Title(
-attendance(# job_ID serial primary key,
-attendance(# job_title varchar(30) not null,
-attendance(# dept_id int,
-attendance(# FOREIGN KEY (dept_id) REFERENCES Department(dept_ID)
-attendance(# );
-CREATE TABLE
-attendance=# \d Job_Title
-                                       Table "public.job_title"
-  Column   |         Type          | Collation | Nullable |                  Default
------------+-----------------------+-----------+----------+-------------------------------------------
- job_id    | integer               |           | not null | nextval('job_title_job_id_seq'::regclass)
- job_title | character varying(30) |           | not null |
- dept_id   | integer               |           |          |
-Indexes:
-    "job_title_pkey" PRIMARY KEY, btree (job_id)
-Foreign-key constraints:
-    "job_title_dept_id_fkey" FOREIGN KEY (dept_id) REFERENCES department(dept_id)
-
+ams=# insert into qualification
+ams-# ;
+ERROR:  syntax error at or near ";"
+LINE 2: ;
         ^
-attendance=# create table Leave(
-attendance(# leave_ID int primary key,
-attendance(# employee_ID int not null,
-attendance(# job_ID int not null,
-attendance(# Date date not null,
-attendance(# FOREIGN KEY (employee_ID) REFERENCES Employee(employee_ID),
-attendance(# FOREIGN KEY (job_ID) REFERENCES Job_Title(job_ID)
-attendance(# );
-CREATE TABLE
-attendance=# \d Leave
-                  Table "public.leave"
-   Column    |  Type   | Collation | Nullable | Default
--------------+---------+-----------+----------+---------
- leave_id    | integer |           | not null |
- employee_id | integer |           | not null |
- job_id      | integer |           | not null |
- date        | date    |           | not null |
-Indexes:
-    "leave_pkey" PRIMARY KEY, btree (leave_id)
-Foreign-key constraints:
-    "leave_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
-    "leave_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_title(job_id)
-
-attendance=# create table Duty_Duration(
-attendance(# duty_ID int primary key not null,
-attendance(# employee_ID int not null,
-attendance(# job_ID int not null,
-attendance(# start_at TIME NOT NULL,
-attendance(# end_at TIME NOT NULL,
-attendance(# Date date not null,
-attendance(# FOREIGN KEY (employee_ID) REFERENCES Employee(employee_ID),
-attendance(# FOREIGN KEY (job_ID) REFERENCES Job_Title(job_ID)
-attendance(# );
-CREATE TABLE
-attendance=# \d Duty_Duration
-                     Table "public.duty_duration"
-   Column    |          Type          | Collation | Nullable | Default
--------------+------------------------+-----------+----------+---------
- duty_id     | integer                |           | not null |
- employee_id | integer                |           | not null |
- job_id      | integer                |           | not null |
- start_at    | time without time zone |           | not null |
- end_at      | time without time zone |           | not null |
- date        | date                   |           | not null |
-Indexes:
-    "duty_duration_pkey" PRIMARY KEY, btree (duty_id)
-Foreign-key constraints:
-    "duty_duration_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
-    "duty_duration_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_title(job_id)
-
-
-attendance=# create table Attendance_Reports(
-attendance(# reprt_ID int primary key not null,
-attendance(# employee_ID int not null,
-attendance(# duty_ID int not null,
-attendance(# job_ID int not null,
-attendance(# leave_ID int not null,
-attendance(# Date date not null,
-attendance(# FOREIGN KEY (employee_ID) REFERENCES Employee(employee_ID),
-attendance(# FOREIGN KEY (duty_ID) REFERENCES Duty_Duration(duty_ID),
-attendance(# FOREIGN KEY (job_ID) REFERENCES Job_Title(job_ID),
-attendance(# FOREIGN KEY (leave_ID) REFERENCES Leave(leave_ID)
-attendance(# );
-CREATE TABLE
-attendance=# \d Attendance_Reports
-           Table "public.attendance_reports"
-   Column    |  Type   | Collation | Nullable | Default
--------------+---------+-----------+----------+---------
- reprt_id    | integer |           | not null |
- employee_id | integer |           | not null |
- duty_id     | integer |           | not null |
- job_id      | integer |           | not null |
- leave_id    | integer |           | not null |
- date        | date    |           | not null |
-Indexes:
-    "attendance_reports_pkey" PRIMARY KEY, btree (reprt_id)
-Foreign-key constraints:
-    "attendance_reports_duty_id_fkey" FOREIGN KEY (duty_id) REFERENCES duty_duration(duty_id)
-    "attendance_reports_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(employee_id)
-    "attendance_reports_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_title(job_id)
-    "attendance_reports_leave_id_fkey" FOREIGN KEY (leave_id) REFERENCES leave(leave_id)
-
-
-
-attendance=# insert into Employee
-attendance-# values(1,'Joe Stark','Male',33,98776262,'joe@gmail.com');
-INSERT 0 1
-attendance=# select * from Employee;
- employee_id |   name    | gender | age |  mobile  |     email
--------------+-----------+--------+-----+----------+---------------
-           1 | Joe Stark | Male   |  33 | 98776262 | joe@gmail.com
-(1 row)
-
-
-attendance=# update Employee set mobile=1234567891 where employee_id=1;
-UPDATE 1
-attendance=# select * from Employee;
- employee_id |   name    | gender | age |   mobile   |     email
--------------+-----------+--------+-----+------------+---------------
-           1 | Joe Stark | Male   |  33 | 1234567891 | joe@gmail.com
-(1 row)
-
-
-
-attendance=# insert into employee
-attendance-# values(3,'Sasha Calle','Female',23,1209657387,'scalle@gmail.com'),
-attendance-# (4,'Clark Kent','Male',35,2376890876,'clarkk@yahoo.com'),
-attendance-# (5,'Lisa Ray','Female',55,1232345678,'ray@yahoo.com');
-ERROR:  integer out of range
-attendance=# insert into employee
-attendance-# values(3,'Sasha Calle','Female',23,1209657387,'scalle@gmail.com');
-INSERT 0 1
-attendance=# insert into employee
-attendance-# values(4,'Clark Kent','Male',33,1230000011,'ckent@yahoo.com');
-INSERT 0 1
-attendance=# insert into employee
-attendance-# values(5,'Lisa Ray','Female',55,0000112234,'lray@yahoo.com');
-INSERT 0 1
-attendance=# select * from employee;
- employee_id |    name     | gender | age |   mobile   |      email
--------------+-------------+--------+-----+------------+------------------
-           1 | Joe Stark   | Male   |  33 | 1234567891 | joe@gmail.com
-           2 | Virat Kohli | Male   |  35 | 1290876543 | virat@gmail.com
-           3 | Sasha Calle | Female |  23 | 1209657387 | scalle@gmail.com
-           4 | Clark Kent  | Male   |  33 | 1230000011 | ckent@yahoo.com
-           5 | Lisa Ray    | Female |  55 |     112234 | lray@yahoo.com
+ams=# select                                          
+* from employee;
+ id |     name     | gender | salary |      address       |    city    |  country  |    dob     |   mobile   | hire_date  
+----+--------------+--------+--------+--------------------+------------+-----------+------------+------------+------------
+  1 | Clark Kent   | Male   |  23000 | #123,Sector 20     | Faridabad  | India     | 1980-05-11 | 9123456743 | 2010-06-12
+  2 | Sasha Calle  | Female |  25000 | 24th Street        | Rionegro   | Colombia  | 1982-04-23 | 1234567890 | 2010-06-12
+  3 | Rohit Sharma | Male   |  32000 | #324,Sector 17     | Chandigarh | India     | 1980-08-01 | 9567234561 | 2008-05-23
+  5 | Rock Lee     | Male   |  21000 | 149-1071,Fujitsuka | Nagano     | Japan     | 1985-07-09 | 1287563482 | 2011-09-08
+  4 | Lisa Ray     | Female |  30000 | 56 Walter Crescent | Vectis     | Australia | 1982-01-19 | 2345678123 | 2009-06-05
 (5 rows)
 
+ams=# update employee set DOB='1985-07-10' where id=5;
+UPDATE 1
+ams=# select                                          
+* from employee;
+ id |     name     | gender | salary |      address       |    city    |  country  |    dob     |   mobile   | hire_date  
+----+--------------+--------+--------+--------------------+------------+-----------+------------+------------+------------
+  1 | Clark Kent   | Male   |  23000 | #123,Sector 20     | Faridabad  | India     | 1980-05-11 | 9123456743 | 2010-06-12
+  2 | Sasha Calle  | Female |  25000 | 24th Street        | Rionegro   | Colombia  | 1982-04-23 | 1234567890 | 2010-06-12
+  3 | Rohit Sharma | Male   |  32000 | #324,Sector 17     | Chandigarh | India     | 1980-08-01 | 9567234561 | 2008-05-23
+  4 | Lisa Ray     | Female |  30000 | 56 Walter Crescent | Vectis     | Australia | 1982-01-19 | 2345678123 | 2009-06-05
+  5 | Rock Lee     | Male   |  21000 | 149-1071,Fujitsuka | Nagano     | Japan     | 1985-07-10 | 1287563482 | 2011-09-08
+(5 rows)
 
-attendance=# insert into Department
-attendance-# values (1,'Marketing Department');
-INSERT 0 1
-attendance=# insert into Department
-attendance-# values (2,'Engineering Department'),
-attendance-# (3,'Accounting Department');
-ERROR:  value too long for type character varying(20)
-attendance=# insert into Department
-attendance-# values (2,'Engineering Department');
-ERROR:  value too long for type character varying(20)
-attendance=# insert into Department
-attendance-# values (2,'Engineering');
-INSERT 0 1
-attendance=# insert into Department
-attendance-# values (3,'Accounting Dept');
-INSERT 0 1
-attendance=# insert into Department
-attendance-# values (4,'Designing Dept') , (5, 'HR Management');
+ams=# select 
+* from qualification;
+ id | employee_id |  name   | precentage | year_of_passing 
+----+-------------+---------+------------+-----------------
+  1 |           1 | MBA     |      71.50 | 2006-06-01
+  2 |           2 | Diploma |      69.50 | 2003-05-05
+(2 rows)
+
+ams=# update qualifcation set id=1001 where employee_id=1l
+ams-# ^C
+ams=# update qualification set id=1001 where employee_id=1;
+UPDATE 1
+ams=# update qualification set id=1002 where employee_id=2;
+UPDATE 1
+ams=# select                                               
+* from qualification;
+  id  | employee_id |  name   | precentage | year_of_passing 
+------+-------------+---------+------------+-----------------
+ 1001 |           1 | MBA     |      71.50 | 2006-06-01
+ 1002 |           2 | Diploma |      69.50 | 2003-05-05
+(2 rows)
+
+ams=# insert into qualification
+ams-# values(1003,3,'MBA',79.5,'2005-06-10'),
+ams-# (1004,4,'BE',82.5,'2005-05-10');
 INSERT 0 2
-attendance=# select * from Department;
- dept_id |   department_name
----------+----------------------
-       1 | Marketing Department
-       2 | Engineering
-       3 | Accounting Dept
-       4 | Designing Dept
-       5 | HR Management
+ams=# insert into qualification
+ams-# values(1005,5,'BSC',75.6',2007-06-10');
+ERROR:  syntax error at or near "',2007-06-10'"
+LINE 2: values(1005,5,'BSC',75.6',2007-06-10');
+                                ^
+ams=# insert into qualification
+values(1005,5,'BSC',75.6,2007-06-10');
+ams'# ^C
+ams=# insert into qualification
+values(1005,5,'BSC',75.6,'2007-06-10');
+INSERT 0 1
+ams=# select * from department;
+ERROR:  relation "department" does not exist
+LINE 1: select * from department;
+                      ^
+ams=# select * from qualification;
+  id  | employee_id |  name   | precentage | year_of_passing 
+------+-------------+---------+------------+-----------------
+ 1001 |           1 | MBA     |      71.50 | 2006-06-01
+ 1002 |           2 | Diploma |      69.50 | 2003-05-05
+ 1003 |           3 | MBA     |      79.50 | 2005-06-10
+ 1004 |           4 | BE      |      82.50 | 2005-05-10
+ 1005 |           5 | BSC     |      75.60 | 2007-06-10
 (5 rows)
 
-
-attendance=# update Department set department_name='Engineering Dept' where dept_id=2;
-UPDATE 1
-attendance=# select * from Department;'
- dept_id |   department_name
----------+----------------------
-       1 | Marketing Department
-       3 | Accounting Dept
-       4 | Designing Dept
-       5 | HR Management
-       2 | Engineering Dept
+ams=# select employee.name,qualification.name as qname
+ams-# from employee
+ams-# inner join qualification on employee.id=qualification.employee_id;
+     name     |  qname  
+--------------+---------
+ Clark Kent   | MBA
+ Sasha Calle  | Diploma
+ Rohit Sharma | MBA
+ Lisa Ray     | BE
+ Rock Lee     | BSC
 (5 rows)
 
-
-
-attendance=# insert into Job_Title
-attendance-# values(768,'Creative Director',1);
+ams=# create table department(
+ams(# id int primary key not null,
+ams(# employee_id int not null,
+ams(# name varchar(55) not null
+ams(# );
+CREATE TABLE
+ams=# insert into department
+ams-# values(101,1,'Account Department),
+ams'# (102,2,'Sales Department');
+ams'# ;
+ams'# ^C
+ams=# insert into department
+ams-# values(101,1,'Account Department'),
+ams-# (102,2,'Sales Department');
+INSERT 0 2
+ams=# insert into department
+values(103,3,'Human Resource Management'),
+(104,4,'Engineering Department');
+INSERT 0 2
+ams=# insert into department
+values(105,5,'Marketing Department');
 INSERT 0 1
-attendance=# insert into Jon_Title
-attendance-# values(832,'Accountant',2),
-attendance-# (324,'Production artist',3),
-attendance-# (222,'HR Manager',4),
-attendance-# (111,'Front-End Developer',5);
-ERROR:  relation "jon_title" does not exist
-LINE 1: insert into Jon_Title
-                    ^
-attendance=# insert into Job_Title
-attendance-# values(832,'Accountant',2),
-attendance-# (324,'Production artist',3),
-attendance-# (222,'HR Manager',4),
-attendance-# (111,'Front-End Developer',5);
-INSERT 0 4
-attendance=# select * from Job_Title;
- job_id |      job_title      | dept_id
---------+---------------------+---------
-    768 | Creative Director   |       1
-    832 | Accountant          |       2
-    324 | Production artist   |       3
-    222 | HR Manager          |       4
-    111 | Front-End Developer |       5
+ams=# select * from department;
+ id  | employee_id |           name            
+-----+-------------+---------------------------
+ 101 |           1 | Account Department
+ 102 |           2 | Sales Department
+ 103 |           3 | Human Resource Management
+ 104 |           4 | Engineering Department
+ 105 |           5 | Marketing Department
 (5 rows)
 
-
-attendance=# select Department.department_name,Job_Title.job_title
-attendance-# from Department
-attendance-# INNER JOIN Job_Title
-attendance-# ON Department.dept_ID=Job_Title.dept_ID;
-   department_name    |      job_title
-----------------------+---------------------
- Marketing Department | Creative Director
- Engineering Dept     | Accountant
- Accounting Dept      | Production artist
- Designing Dept       | HR Manager
- HR Management        | Front-End Developer
-(5 rows)
-
-attendance=# insert into Duty_Duration
-attendance-# values(11,1,768,'08:00:00','17:00:00');
-ERROR:  null value in column "date" of relation "duty_duration" violates not-null constraint
-DETAIL:  Failing row contains (11, 1, 768, 08:00:00, 17:00:00, null).
-attendance=# insert into Duty_Duration
-attendance-# values(11,1,768,'08:00:00','17:00:00','01-02-2022');
-INSERT 0 1
-attendance=# insert into Duty_Duration
-attendance-# values(22,2,832,'09:30:00','18:30:00','02-02-2022');
-INSERT 0 1
-attendance=# insert into Duty_Duration
-attendance-# values(33,3,324,'09:27:00','18:30:00','02-02-2022');
-INSERT 0 1
-attendance=# insert into Duty_Duration
-attendance-# values(44,4,222,'09:26:13','18:30:33','01-02-2022');
-INSERT 0 1
-attendance=# insert into Duty_Duration
-attendance-# values(55,5,111,'09:17:23','18:20:40','03-02-2022');
-INSERT 0 1
-attendance=# select * from Duty_Duration;
- duty_id | employee_id | job_id | start_at |  end_at  |    date
----------+-------------+--------+----------+----------+------------
-      11 |           1 |    768 | 08:00:00 | 17:00:00 | 2022-02-01
-      22 |           2 |    832 | 09:30:00 | 18:30:00 | 2022-02-02
-      33 |           3 |    324 | 09:27:00 | 18:30:00 | 2022-02-02
-      44 |           4 |    222 | 09:26:13 | 18:30:33 | 2022-02-01
-      55 |           5 |    111 | 09:17:23 | 18:20:40 | 2022-02-03
-(5 rows)
-
-attendance=# alter table Leave alter column date drop not null;
+ams=# create table attendance(
+ams(# id int primary key not null,
+ams(# ^C
+ams=# alter table department add foreign key (employee_id) references employee(id);
 ALTER TABLE
-attendance=# \d Leave
-                  Table "public.leave"
-   Column    |  Type   | Collation | Nullable | Default
--------------+---------+-----------+----------+---------
- leave_id    | integer |           | not null |
- employee_id | integer |           | not null |
- job_id      | integer |           | not null |
- date        | date    |           |          |
+ams=# \d department;
+                      Table "public.department"
+   Column    |         Type          | Collation | Nullable | Default 
+-------------+-----------------------+-----------+----------+---------
+ id          | integer               |           | not null | 
+ employee_id | integer               |           | not null | 
+ name        | character varying(55) |           | not null | 
+Indexes:
+    "department_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "department_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(id)
 
+ams=# \d qualification;
+                       Table "public.qualification"
+     Column      |         Type          | Collation | Nullable | Default 
+-----------------+-----------------------+-----------+----------+---------
+ id              | integer               |           | not null | 
+ employee_id     | integer               |           | not null | 
+ name            | character varying(50) |           | not null | 
+ precentage      | numeric(5,2)          |           |          | 
+ year_of_passing | date                  |           |          | 
+Indexes:
+    "qualification_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "qualification_employee_id_fkey" FOREIGN KEY (employee_id) REFERENCES employee(id)
 
-
-attendance=# insert into Leave
-attendance-# values(8324,1,768);
+ams=# create table attendance(
+ams(# id int primary key not null,
+ams(# employee_id int not null,
+ams(# date date,
+ams(# start_at time,
+ams(# end_at time
+ams(# );
+CREATE TABLE
+ams=# alter table attendance add foreign key (employee_id) references employee(id);
+ALTER TABLE
+ams=# insert into attendance
+ams-# values(10001,1,'2011-10-10','09:01:00','05:30:00');
 INSERT 0 1
-attendance=# select * from Leave;
- leave_id | employee_id | job_id | date
-----------+-------------+--------+------
-     8324 |           1 |    768 |
+ams=# insert into attendance
+values(10001,1,'2011-10-10','09:00:10','05:35:00'),
+ams-# (^C
+ams=# select * from attendance;
+  id   | employee_id |    date    | start_at |  end_at  
+-------+-------------+------------+----------+----------
+ 10001 |           1 | 2011-10-10 | 09:01:00 | 05:30:00
 (1 row)
 
-
-attendance=# insert into Leave
-attendance-# values(1879,2,832,'10-02-2022');
+ams=# insert into attendance 
+ams-# values(10002,2,'2011-10-10','09:00:10','05:30:01'),
+ams-# (10003,3,'2011-10-10','09:00:20','05:30:10'),
+ams-# (10004,4,'2011-10-10','09:01:15','05:31:00');
+INSERT 0 3
+ams=# insert into attendance
+ams-# values(10005,5,'2011-10-10','09:02:10','05:32:01');
 INSERT 0 1
-attendance=# insert into Leave
-attendance-# values(1678,3,324,'16-03-2022');
-INSERT 0 1
-attendance=# insert into Leave
-attendance-# values(1679,4,222,'01-04-2022');
-INSERT 0 1
-attendance=# insert into Leave
-attendance-# values(1700,5,111,'03-02-2022');
-INSERT 0 1
-attendance=# select * from Leave;
- leave_id | employee_id | job_id |    date
-----------+-------------+--------+------------
-     8324 |           1 |    768 |
-     1879 |           2 |    832 | 2022-02-10
-     1678 |           3 |    324 | 2022-03-16
-     1679 |           4 |    222 | 2022-04-01
-     1700 |           5 |    111 | 2022-02-03
+ams=# select * from attendance;
+  id   | employee_id |    date    | start_at |  end_at  
+-------+-------------+------------+----------+----------
+ 10001 |           1 | 2011-10-10 | 09:01:00 | 05:30:00
+ 10002 |           2 | 2011-10-10 | 09:00:10 | 05:30:01
+ 10003 |           3 | 2011-10-10 | 09:00:20 | 05:30:10
+ 10004 |           4 | 2011-10-10 | 09:01:15 | 05:31:00
+ 10005 |           5 | 2011-10-10 | 09:02:10 | 05:32:01
 (5 rows)
 
+ams=# 
 
+#JOINS
 
-attendance=# select employee.Name,leave.date
-attendance-# from Employee
-attendance-# INNER JOIN leave
-attendance-# on employee.employee_ID=leave.employee_ID;
-    name     |    date
--------------+------------
- Joe Stark   |
- Virat Kohli | 2022-02-10
- Sasha Calle | 2022-03-16
- Clark Kent  | 2022-04-01
- Lisa Ray    | 2022-02-03
+ams=# select employee.name,employee.dob,qualfication.name,qualification.year_of_passing
+ams-# from employee
+ams-# inner join employee on e^C
+ams=# select employee.name,employee.dob,qualification.name,qualification.year_of_passing
+ams-# from employee
+ams-# inner join qualification
+ams-# on employee.id=qualification.employee_id;
+     name     |    dob     |  name   | year_of_passing 
+--------------+------------+---------+-----------------
+ Clark Kent   | 1980-05-11 | MBA     | 2006-06-01
+ Sasha Calle  | 1982-04-23 | Diploma | 2003-05-05
+ Rohit Sharma | 1980-08-01 | MBA     | 2005-06-10
+ Lisa Ray     | 1982-01-19 | BE      | 2005-05-10
+ Rock Lee     | 1985-07-10 | BSC     | 2007-06-10
 (5 rows)
 
-
-attendance=# select employee.name,duty_duration.start_at,leave.date
-attendance-# from employee
-attendance-# inner join duty_duration on employee.employee_ID=duty_duration.employee_ID
-attendance-# inner join leave on employee.employee_ID=leave.employee_ID;
-    name     | start_at |    date
--------------+----------+------------
- Joe Stark   | 08:00:00 |
- Virat Kohli | 09:30:00 | 2022-02-10
- Sasha Calle | 09:27:00 | 2022-03-16
- Clark Kent  | 09:26:13 | 2022-04-01
- Lisa Ray    | 09:17:23 | 2022-02-03
+ams=# select employee.name,employee.dob,qualfication.name,qualification.year_of_passing
+ams-# from employee
+ams-# inner join employee on e^C
+ams=# select employee.name,employee.dob,qualification.name,qualification.year_of_passing
+ams-# from employee
+ams-# inner join qualification
+ams-# on employee.id=qualification.employee_id;
+     name     |    dob     |  name   | year_of_passing 
+--------------+------------+---------+-----------------
+ Clark Kent   | 1980-05-11 | MBA     | 2006-06-01
+ Sasha Calle  | 1982-04-23 | Diploma | 2003-05-05
+ Rohit Sharma | 1980-08-01 | MBA     | 2005-06-10
+ Lisa Ray     | 1982-01-19 | BE      | 2005-05-10
+ Rock Lee     | 1985-07-10 | BSC     | 2007-06-10
 (5 rows)
 
+                                                             ^
+ams=# select employee.name,employee.dob,employee.city,employee.country,qualification.name as qualification,department.name as Department,attendance.start_at,attendance.end_at,attendance.date
+from employee
+inner join qualification on employee.id=qualification.employee_id
+inner join department on employee.id=department.employee_id
+inner join attendance on employee.id=attendance.employee_id;
+     name     |    dob     |    city    |  country  | qualification |        department         | start_at |  end_at  |    date    
+--------------+------------+------------+-----------+---------------+---------------------------+----------+----------+------------
+ Clark Kent   | 1980-05-11 | Faridabad  | India     | MBA           | Account Department        | 09:01:00 | 05:30:00 | 2011-10-10
+ Sasha Calle  | 1982-04-23 | Rionegro   | Colombia  | Diploma       | Sales Department          | 09:00:10 | 05:30:01 | 2011-10-10
+ Rohit Sharma | 1980-08-01 | Chandigarh | India     | MBA           | Human Resource Management | 09:00:20 | 05:30:10 | 2011-10-10
+ Lisa Ray     | 1982-01-19 | Vectis     | Australia | BE            | Engineering Department    | 09:01:15 | 05:31:00 | 2011-10-10
+ Rock Lee     | 1985-07-10 | Nagano     | Japan     | BSC           | Marketing Department      | 09:02:10 | 05:32:01 | 2011-10-10
 
-attendance=# select employee.name,duty_duration.start_at,duty_duration.date
-attendance-# from employee
-attendance-# INNER JOIN duty_duration on employee.employee_ID=duty_duration.employee_ID;
-    name     | start_at |    date
--------------+----------+------------
- Joe Stark   | 08:00:00 | 2022-02-01
- Virat Kohli | 09:30:00 | 2022-02-02
- Sasha Calle | 09:27:00 | 2022-02-02
- Clark Kent  | 09:26:13 | 2022-02-01
- Lisa Ray    | 09:17:23 | 2022-02-03
-(5 rows) 
-
-
-attendance=# alter table leave rename column date to leave_date;
-ALTER TABLE
-
-attendance=# select * from leave;
- leave_id | employee_id | job_id | leave_date
-----------+-------------+--------+------------
-     8324 |           1 |    768 |
-     1879 |           2 |    832 | 2022-02-10
-     1678 |           3 |    324 | 2022-03-16
-     1679 |           4 |    222 | 2022-04-01
-     1700 |           5 |    111 | 2022-02-03
-(5 rows)
-
-
-attendance=# alter table attendance_reports
-attendance-# add salary int;
-ALTER TABLE
-attendance=# select * from attendance_reports;
- reprt_id | employee_id | duty_id | job_id | leave_id | date | salary
-----------+-------------+---------+--------+----------+------+--------
-(0 rows)
-
-
-attendance=# alter table attendance_reports
-attendance-# add total_labor int;
-ALTER TABLE
-
-
-
-attendance=# insert into attendance_reports
-attendance-# values(10003,4,44,222,1679,'2022-02-03',30000,18);
-INSERT 0 1
-attendance=# select * from attendance_reports;
- report_id | employee_id | duty_id | job_id | leave_id |    date    | salary | total_labor
------------+-------------+---------+--------+----------+------------+--------+-------------
-     10000 |           1 |      11 |    768 |     8324 | 2022-02-03 |  12000 |          18
-     10001 |           2 |      22 |    832 |     1879 | 2022-02-03 |  20000 |          19
-     10002 |           3 |      33 |    324 |     1678 | 2022-02-03 |  21000 |        19.5
-     10003 |           4 |      44 |    222 |     1679 | 2022-02-03 |  30000 |          18
-(4 rows)
-
-
-attendance=# insert into attendance_reports
-attendance-# values(10004,5,55,111,1700,'2022-02-03',40000,10);
-INSERT 0 1
-attendance=# select * from attendance_reports;
- report_id | employee_id | duty_id | job_id | leave_id |    date    | salary | total_labor
------------+-------------+---------+--------+----------+------------+--------+-------------
-     10000 |           1 |      11 |    768 |     8324 | 2022-02-03 |  12000 |          18
-     10001 |           2 |      22 |    832 |     1879 | 2022-02-03 |  20000 |          19
-     10002 |           3 |      33 |    324 |     1678 | 2022-02-03 |  21000 |        19.5
-     10003 |           4 |      44 |    222 |     1679 | 2022-02-03 |  30000 |          18
-     10004 |           5 |      55 |    111 |     1700 | 2022-02-03 |  40000 |          10
-(5 rows)
-
-
-
-attendance=# select employee.name,employee.age,duty_duration.start_at,leave.leave_date
-attendance-# from employee
-attendance-# INNER JOIN duty_duration ON employee.employee_id=duty_duration.employee_id
-attendance-# INNER JOIN leave ON employee.employee_id=leave.employee_id;
-    name     | age | start_at | leave_date
--------------+-----+----------+------------
- Joe Stark   |  33 | 08:00:00 |
- Virat Kohli |  35 | 09:30:00 | 2022-02-10
- Sasha Calle |  23 | 09:27:00 | 2022-03-16
- Clark Kent  |  33 | 09:26:13 | 2022-04-01
- Lisa Ray    |  55 | 09:17:23 | 2022-02-03
-(5 rows)
-
-
-#inner join on 4 tables
-
-attendance=# select employee.name,employee.age,employee.email,duty_duration.start_at,leave.leave_date,attendance_reports.salary
-attendance-# from employee
-attendance-# INNER JOIN duty_duration ON employee.employee_id=duty_duration.employee_id
-attendance-# INNER JOIN leave ON employee.employee_id=leave.employee_id
-attendance-# INNER JOIN attendance_reports ON employee.employee_id=attendance_reports.employee_id;
-    name     | age |      email       | start_at | leave_date | salary
--------------+-----+------------------+----------+------------+--------
- Joe Stark   |  33 | joe@gmail.com    | 08:00:00 |            |  12000
- Virat Kohli |  35 | virat@gmail.com  | 09:30:00 | 2022-02-10 |  20000
- Sasha Calle |  23 | scalle@gmail.com | 09:27:00 | 2022-03-16 |  21000
- Clark Kent  |  33 | ckent@yahoo.com  | 09:26:13 | 2022-04-01 |  30000
- Lisa Ray    |  55 | lray@yahoo.com   | 09:17:23 | 2022-02-03 |  40000
-(5 rows)
-
-
-#to display count with age
-attendance=# select count(*),age from employee group by age;
- count | age
--------+-----
-     1 |  35
-     2 |  33
-     1 |  55
-     1 |  23
-(4 rows)
