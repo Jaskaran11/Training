@@ -1,0 +1,154 @@
+. The following relations keep track of airline flight information: 
+ 
+Flights(flno: integer, from: string, to: string, distance: integer, departs: 
+time, 
+arrives: time, price: integer) 
+Aircraft(aid: integer, aname: string, cruisingrange: integer) 
+Certified(eid: integer, aid: integer) 
+Employees(eid: integer, ename: string, salary: integer) 
+ 
+ =>Insertion of data
+ 
+ airline=# select * from flights;
+ flno |   source    | destination | distance | departs  | arrives  | price 
+------+-------------+-------------+----------+----------+----------+-------
+    1 | barcelona   | madrid      |      600 | 07:00:00 | 11:00:00 | 60000
+    3 | madison     | new york    |     1500 | 10:00:00 | 19:00:00 | 50000
+    4 | seatle      | new york    |     1200 | 09:00:00 | 15:00:00 | 25000
+    5 | madrid      | malaga      |     4000 | 11:00:00 | 02:45:00 | 12000
+    6 | madison     | honolulu    |     1300 | 09:30:00 | 18:00:00 | 50000
+    7 | honolulu    | new york    |     2000 | 11:00:00 | 18:00:00 | 35000
+    8 | los angeles | madison     |     1200 | 14:00:00 | 18:00:00 | 30000
+    9 | new york    | madison     |     1000 | 12:30:00 | 06:00:00 | 90000
+   10 | illinois    | california  |      500 | 12:00:00 | 15:00:00 | 40000
+    2 | los angeles | chicago     |      700 | 12:00:00 | 02:30:00 |  7000
+(10 rows)
+
+
+airline=# select * from aircraft;
+ aid |    aname     | cruisingrange 
+-----+--------------+---------------
+  11 | hurricane    |          5000
+  12 | spice        |           700
+  13 | boeingalpha  |           400
+  14 | falcon       |          6000
+  15 | tupolev      |           900
+  16 | smartenginge |          1200
+  17 | mistubishi   |          1000
+  18 | mirrage      |          3000
+  19 | boeing       |          1200
+  20 | tupolev      |          9000
+(10 rows)
+
+airline=# select * from certified;
+ id | eid | aid 
+----+-----+-----
+  1 | 101 |  11
+  2 | 101 |  12
+  3 | 104 |  13
+  4 | 104 |  14
+  5 | 105 |  14
+  6 | 106 |  15
+  7 | 107 |  16
+  8 | 105 |  18
+  9 | 105 |  19
+ 10 | 105 |  20
+(10 rows)
+
+
+airline=# select * from employees;
+ eid | ename  | salary 
+-----+--------+--------
+ 101 | Rohit  | 120000
+ 102 | Sam    |  75000
+ 103 | Lee    |  90000
+ 104 | Itachi |  80000
+ 105 | Edward |  30000
+ 106 | John   |  80000
+ 107 | Bruce  |  40000
+ 108 | Tony   |  55000
+ 109 | Thomas |  60000
+ 110 | Martha |  80000
+(10 rows)
+
+
+------------------------------------------------------------------
+
+Q1.Find the names of aircraft such that all pilots certified to operate them earn 
+more than $80,000.
+
+Ans.airline=# select aname from aircraft where aid in (select aid from certified where eid in (select eid from employees where salary>80000));
+    aname    
+-------------
+ hurricane
+ boeingalpha
+(2 rows)
+
+Q2.For each pilot who is certified for more than three aircraft, find the eid and the 
+maximum cruisingrange of the aircraft for which she or he is certified.
+
+airline=# select eid,max(cruisingrange) as "maxcr"
+from certified as c,
+aircraft as a
+where c.aid=a.aid
+group by c.eid
+having count(c.eid)>3;
+ eid | maxcr 
+-----+-------
+ 105 |  9000
+(1 row)
+
+Q3.Find the names of pilots whose salary is less than the price of the cheapest 
+route from Los Angeles to Honolulu.
+airline=# select ename from employees where salary < (select min(price) from flights where source='los angeles' and destination='honolulu');
+ ename  
+--------
+ Edward
+ Bruce
+ Tony
+(3 rows)
+
+
+Q4.. For all aircraft with cruisingrange over 1000 miles, find the name of the 
+aircraft and the average salary of all pilots certified for this aircraft.
+airline=# select aname,avg(salary) as "Average Salary" from employees,aircraft,certified
+where cruisingrange>1000 and certified.eid=employees.eid and certified.aid=aircraft.aid group by aname;
+    aname     |   Average Salary    
+--------------+---------------------
+ hurricane    | 120000.000000000000
+ falcon       |  55000.000000000000
+ smartenginge |  40000.000000000000
+ tupolev      |  30000.000000000000
+ mirrage      |  30000.000000000000
+ boeing       |  30000.000000000000
+(6 rows)
+
+Q5.Find the names of pilots certified for some Boeing aircraft.
+
+airline=# select e.ename from employees as e
+inner join certified as c 
+on c.eid=e.eid
+inner join aircraft as a 
+on c.aid=a.aid
+where a.aname='boeing';
+ ename  
+--------
+ Edward
+(1 row)
+
+Q6.Find the aids of all aircraft that can be used on routes from Los Angeles to 
+Chicago.
+
+airline=# select aid from aircraft where cruisingrange>(select distance from flights where source like 'los angeles' and destination like 'chicago');
+ aid 
+-----
+  11
+  14
+  18
+  20
+(4 rows)
+
+Q7.Identify the routes that can be piloted by every pilot who makes more than 
+$100,000. 
+
+
