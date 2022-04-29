@@ -1,0 +1,89 @@
+Ruby is a perfect Object Oriented Programming Language. The features of the object-oriented programming language include −
+    Data Encapsulation
+    Data Abstraction
+    Polymorphism
+    Inheritance
+
+
+#check ruby version
+itsacheckmate@itscheckmate:~$ ruby -v
+ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
+
+#Basic code practise
+
+itsacheckmate@itscheckmate:~$ irb
+3.0.0 :001 > 
+
+
+
+#3.0.0 :024 > puts "hello world"
+hello world
+ => nil 
+
+# multiple line
+3.0.0 :001"> puts <<EOF
+3.0.0 :002"> this is the first line
+3.0.0 :003"> this is the second line
+3.0.0 :004"> EOF
+3.0.0 :005"> 
+this is the first line
+this is the second line
+ => nil
+3.0.0 :007'> print <<'EOC'
+3.0.0 :008'> echo hi there
+3.0.0 :010 > EOC
+echo hi there
+ => nil 
+ 
+#In Ruby, nil is a special value that denotes the absence of any value. Nil is an object of NilClass. nil is Ruby's way of referring to nothing or void. 
+ 
+ 
+ 
+ Ruby Begin ==> Declares code to be called before the program is run
+ Ruby END Statement==>Declares to be called at the end of the program
+ 
+#puts "This line will run in between the code"
+
+END{
+    puts "This line will run after "
+}
+BEGIN{
+    puts "This line will run first."
+}
+
+Output - [Running] ruby "/home/itsacheckmate/Practise/test.rb"
+This line will run first.
+This line will run in between the code
+This line will run after 
+
+3.0.0 :001'> print <<'EOC'
+3.0.0 :002'> echo hi there
+3.0.0 :003'> echo lo there
+3.0.0 :004'> EOC
+echo hi there
+echo lo there
+ => nil 
+
+
+print <<"foo", <<"bar"  
+	I said foo.
+foo
+	I said bar.
+bar
+
+#Comments in ruby
+3.0.0 :006 > #this is a comment
+ => nil 
+3.0.0 :007 > name = "Jaskaran" #This is a comment
+ => "Jaskaran" 
+ 
+ #another way of comment
+ =begin
+    this is a comment
+    this is also a comment
+    this is a comment too
+rescue => exception
+    
+end
+
+
