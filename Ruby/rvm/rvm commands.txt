@@ -1,0 +1,308 @@
+Install dependencies-
+ sudo apt-get update
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+pg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+Install RVM stable with ruby:
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+check version:
+itsacheckmate@itscheckmate:~$ rvm --version
+rvm 1.29.12 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+
+use rvm:
+itsacheckmate@itscheckmate:~$ source /home/itsacheckmate/.rvm/scripts/rvm
+
+
+Commands of rvm:
+1.itsacheckmate@itscheckmate:~$ rvm help
+Ruby enVironment Manager 1.29.12 (latest) (c) 2009-2020 Michal Papis, Piotr Kuczynski, Wayne E. Seguin
+
+
+
+Usage:
+ 
+    rvm [--debug][--trace][--nice] <command> <options>
+
+  for example:
+
+    rvm list                # list installed interpreters 
+    rvm list known          # list available interpreters
+    rvm install <version>   # install ruby interpreter
+    rvm use <version>       # switch to specified ruby interpreter
+    rvm remove <version>    # remove ruby interpreter (alias: delete)
+    rvm get <version>       # upgrade rvm: stable, master
+
+Available commands:
+
+  rvm has a number of common commands, listed below. Additional information about any command
+  can be found by executing `rvm help <command>`. 
+
+  ruby installation
+      fetch                   # download binary or sources for selected ruby version
+      install                 # install ruby interpreter
+      list                    # show currently installed ruby interpreters
+      list known              # list available interpreters
+      mount                   # install ruby from external locations
+      patchset                # tools related to managing ruby patchsets
+      pkg                     # install a dependency package
+      reinstall               # reinstall ruby and run gem pristine on all gems
+      remove                  # remove ruby and downloaded sources (alias: delete)
+      requirements            # installs dependencies for building ruby
+      uninstall               # uninstall ruby, keeping it's sources
+      upgrade                 # upgrade to another ruby version, migrating gems
+
+  running different ruby versions
+      current                 # print current ruby version and name of used gemsets
+      do                      # runs a command against specified and/or all rubies
+      gemdir                  # display path to current gem directory ($GEM_HOME)
+      use <version>           # switch to given (and already installed) ruby version
+      use default             # switch to default ruby, or system if none is set
+      use system              # switch to system ruby
+      wrapper                 # creates wrapper executables for a given ruby & gemset
+
+  managing gemsets
+      gemset                  # manage gemsets 
+      migrate                 # migrate all gemsets from one ruby to another
+
+  rvm configuration
+      alias                   # define aliases for `rvm use`
+      autolibs                # tweak settings for installing dependencies automatically 
+      group                   # tools for managing groups in multiuser installations
+      rvmrc                   # tools related to managing .rvmrc trust & loading gemsets
+
+  rvm maintenance
+      implode                 # removes the rvm installation completely
+      cleanup                 # remove stale source files & data associated with rvm
+      cron                    # manage setup for using ruby in cron
+      docs                    # tools to make installing ri and rdoc docs easier
+      get                     # upgrades RVM to latest head, stable or branched version
+      osx-ssl-certs           # helps update OpenSSL certs installed by rvm on OS X
+      reload                  # reload rvm source itself
+      reset                   # remove all default and system settings
+      snapshot                # backup/restore rvm installation
+
+  troubleshooting
+      config-get              # display values for RbConfig::CONFIG variables
+      debug                   # additional information helping to discover issues
+      export                  # set temporary env variable in the current shell
+      fix-permissions         # repairs broken permissions
+      repair                  # lets you repair parts of your environment, such as
+                              # wrappers, env files and similar (general maintenance)
+      rubygems                # switches version of rubygems for the current ruby
+      tools                   # general information about the ruby env
+      unexport                # undo changes made to the environment by `rvm export`
+      user                    # tools for managing RVM mixed mode in multiuser installs
+
+   information and documentation
+      info                    # show the environment information for current ruby
+      disk-usage              # display disk space occupied by rvm
+      notes                   # display notes with operating system specifics
+      version                 # display rvm version (equal to `rvm -v`)
+
+   additional global options
+      --debug                 # toggle debug mode on for very verbose output
+      --trace                 # toggle trace mode on to see EVERYTHING rvm is doing
+      --nice                  # process niceness (increase the value on slow computers, default 0)
+
+For additional documentation please visit https://rvm.io
+
+
+2.itsacheckmate@itscheckmate:~$ rvm use 3.0.0
+Using /home/itsacheckmate/.rvm/gems/ruby-3.0.0
+
+3.itsacheckmate@itscheckmate:~$ rvm list known
+# MRI Rubies
+[ruby-]1.8.6[-p420]
+[ruby-]1.8.7[-head] # security released on head
+[ruby-]1.9.1[-p431]
+[ruby-]1.9.2[-p330]
+[ruby-]1.9.3[-p551]
+[ruby-]2.0.0[-p648]
+[ruby-]2.1[.10]
+[ruby-]2.2[.10]
+[ruby-]2.3[.8]
+[ruby-]2.4[.10]
+[ruby-]2.5[.8]
+[ruby-]2.6[.6]
+[ruby-]2.7[.2]
+[ruby-]3[.0.0]
+ruby-head
+
+# for forks use: rvm install ruby-head-<name> --url https://github.com/github/ruby.git --branch 2.2
+
+# JRuby
+jruby-1.6[.8]
+jruby-1.7[.27]
+jruby-9.1[.17.0]
+jruby[-9.2.14.0]
+jruby-head
+
+# Rubinius
+rbx-1[.4.3]
+rbx-2.3[.0]
+rbx-2.4[.1]
+rbx-2[.5.8]
+rbx-3[.107]
+rbx-4[.20]
+rbx-5[.0]
+rbx-head
+
+# TruffleRuby
+truffleruby[-20.3.0]
+
+# Opal
+opal
+
+# Minimalistic ruby implementation - ISO 30170:2012
+mruby-1.0.0
+mruby-1.1.0
+mruby-1.2.0
+mruby-1.3.0
+mruby-1[.4.1]
+mruby-2.0.1
+mruby-2[.1.1]
+mruby[-head]
+
+# Ruby Enterprise Edition
+ree-1.8.6
+ree[-1.8.7][-2012.02]
+
+# Topaz
+topaz
+
+# MagLev
+maglev-1.0.0
+maglev-1.1[RC1]
+maglev[-1.2Alpha4]
+maglev-head
+
+# Mac OS X Snow Leopard Or Newer
+macruby-0.10
+macruby-0.11
+macruby[-0.12]
+macruby-nightly
+macruby-head
+
+# IronRuby
+ironruby[-1.1.3]
+ironruby-head
+
+4.installing older version
+itsacheckmate@itscheckmate:~$ rvm install 2.7 (installing other version)
+Searching for binary rubies, this might take some time.
+Found remote file https://rvm_io.global.ssl.fastly.net/binaries/ubuntu/20.04/x86_64/ruby-2.7.2.tar.bz2
+Checking requirements for ubuntu.
+Requirements installation successful.
+ruby-2.7.2 - #configure
+ruby-2.7.2 - #download
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 21.3M  100 21.3M    0     0  2294k      0  0:00:09  0:00:09 --:--:-- 2383k
+ruby-2.7.2 - #validate archive
+ruby-2.7.2 - #extract
+ruby-2.7.2 - #validate binary
+ruby-2.7.2 - #setup
+ruby-2.7.2 - #gemset created /home/itsacheckmate/.rvm/gems/ruby-2.7.2@global
+ruby-2.7.2 - #importing gemset /home/itsacheckmate/.rvm/gemsets/global.gems...
+ruby-2.7.2 - #generating global wrappers........
+ruby-2.7.2 - #gemset created /home/itsacheckmate/.rvm/gems/ruby-2.7.2
+ruby-2.7.2 - #importing gemsetfile /home/itsacheckmate/.rvm/gemsets/default.gems evaluated to empty gem list
+ruby-2.7.2 - #generating default wrappers........
+itsacheckmate@itscheckmate:~$ rvm list
+=> ruby-2.7.2 [ x86_64 ]
+ * ruby-3.0.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+itsacheckmate@itscheckmate:~$ rvm use 2.7.2
+Using /home/itsacheckmate/.rvm/gems/ruby-2.7.2
+
+5.itsacheckmate@itscheckmate:~$ rvm list    (will show current versions of ruby)
+=> ruby-2.7.2 [ x86_64 ]
+ * ruby-3.0.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+5.itsacheckmate@itscheckmate:~$ rvm use 3.0.0
+Using /home/itsacheckmate/.rvm/gems/ruby-3.0.0
+itsacheckmate@itscheckmate:~$ rvm list
+   ruby-2.7.2 [ x86_64 ]
+=* ruby-3.0.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+6.itsacheckmate@itscheckmate:~$ rvm remove 2.7 (uninstall the version)
+ruby-2.7.2 - #removing rubies/ruby-2.7.2..
+ruby-2.7.2 - #removing gems....
+ruby-2.7.2 - #removing wrappers....
+ruby-2.7.2 - #removing environments....
+Using /home/itsacheckmate/.rvm/gems/ruby-3.0.0
+
+7.itsacheckmate@itscheckmate:~$ rvm current    (see current version)
+ruby-3.0.0
+
+8.itsacheckmate@itscheckmate:~$ rvm info
+
+ruby-3.0.0:
+
+  system:
+    uname:        "Linux itscheckmate 5.13.0-40-generic #45~20.04.1-Ubuntu SMP Mon Apr 4 09:38:31 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux"
+    name:         "Ubuntu"
+    version:      "20.04"
+    architecture: "x86_64"
+    bash:         "/usr/bin/bash => GNU bash, version 5.0.17(1)-release (x86_64-pc-linux-gnu)"
+    zsh:          " => not installed"
+    remote_path:  "ubuntu/20.04/x86_64"
+
+  rvm:
+    version:      "1.29.12 (latest)"
+    updated:      "1 hour 40 minutes 27 seconds ago"
+    path:         "/home/itsacheckmate/.rvm"
+    autolibs:     "[4] Allow RVM to use package manager if found, install missing dependencies, install package manager (only OS X)."
+
+  ruby:
+    interpreter:  "ruby"
+    version:      "3.0.0p0"
+    date:         "2020-12-25"
+    platform:     "x86_64-linux"
+    patchlevel:   "2020-12-25 revision 95aff21468"
+    full_version: "ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]"
+
+  homes:
+    gem:          "/home/itsacheckmate/.rvm/gems/ruby-3.0.0"
+    ruby:         "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0"
+
+  binaries:
+    ruby:         "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/ruby"
+    irb:          "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb"
+    gem:          "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/gem"
+    rake:         "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/rake"
+
+  environment:
+    PATH:         "/home/itsacheckmate/.rvm/gems/ruby-3.0.0/bin:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global/bin:/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin:/home/itsacheckmate/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    GEM_HOME:     "/home/itsacheckmate/.rvm/gems/ruby-3.0.0"
+    GEM_PATH:     "/home/itsacheckmate/.rvm/gems/ruby-3.0.0:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global"
+    MY_RUBY_HOME: "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0"
+    IRBRC:        "/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/.irbrc"
+    RUBYOPT:      ""
+    gemset:       ""
+
+9.itsacheckmate@itscheckmate:~$ rvm env
+export PATH="/home/itsacheckmate/.rvm/gems/ruby-3.0.0/bin:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global/bin:/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin:$PATH"
+export GEM_HOME='/home/itsacheckmate/.rvm/gems/ruby-3.0.0'
+export GEM_PATH='/home/itsacheckmate/.rvm/gems/ruby-3.0.0:/home/itsacheckmate/.rvm/gems/ruby-3.0.0@global'
+export MY_RUBY_HOME='/home/itsacheckmate/.rvm/rubies/ruby-3.0.0'
+export IRBRC='/home/itsacheckmate/.rvm/rubies/ruby-3.0.0/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
+export RUBY_VERSION='ruby-3.0.0'
+
+10.
+
