@@ -499,5 +499,276 @@ Running] ruby "/home/itsacheckmate/Practise/test.rb"
 [7, 8, 9]
 
 
+#Ruby if,else-if etc 
+if(condition)  
+    # code if the condition is true 
+else  
+ # code if the condition is false  
+end  
+
+3.0.0 :051 > a=15
+ => 15 
+3.0.0 :052 > if a>=18
+3.0.0 :053 >   puts "you are eligible to vote"
+3.0.0 :054 > else
+3.0.0 :055 >   puts "not eligible to vote"
+3.0.0 :056 > end
+not eligible to vote
+ => nil 
 
 
+
+=>if...else Statement
+Syntax
+
+if conditional [then]
+   code...
+[elsif conditional [then]
+   code...]...
+[else
+   code...]
+end
+
+1.x=1
+if x>2
+    puts "x is greater than 2"
+elsif x<=2 and x!=0
+    puts "x is 1"
+else
+    puts "cant guess the number"
+end
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+x is 1
+
+2.a=88
+if a<50
+    puts "student is fail"
+elsif a>=50 && a<=60
+    puts "Student gets D grade"
+    elsif a>=60 && a<=70
+        puts "student gets c grade"
+        elsif a>=70 && a<=80
+            puts "student gets b grade"
+        elsif a>=80 && a<=90
+        puts "student gets a grade"
+        elsif a>=90 && a<=100
+            puts "student gets a+ grade"
+end
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+student gets a grade
+
+
+=>Ruby unless Statement
+Syntax
+unless conditional [then]
+   code
+[else
+   code ]
+end
+
+3.0.0 :045 > x=1
+ => 1 
+3.0.0 :046 > unless x>=2
+3.0.0 :047 >   puts "x is less than 2"
+3.0.0 :048 > else
+3.0.0 :049 >   puts "x is greater than 2"
+3.0.0 :050 > end
+x is less than 2
+ => nil
+
+
+=>Ruby case Statement
+Syntax
+
+case expression
+[when expression [, expression ...] [then]
+   code ]...
+[else
+   code ]
+end
+
+$age =13
+case $age
+when 0 .. 2
+    puts "baby"
+when 3 .. 6
+    puts "little child"
+when 7 .. 12
+    puts "child"
+when 13 .. 18
+    puts "youth"
+else
+    puts "adult"
+end
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+youth
+
+#Ruby while Statement
+Syntax
+
+while conditional [do]
+   code
+end
+
+$i=0
+$num =10
+
+while $i<$num do
+    puts("Inside the loop i=#$i")
+    $i += 1
+end
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Inside the loop i=0
+Inside the loop i=1
+Inside the loop i=2
+Inside the loop i=3
+Inside the loop i=4
+Inside the loop i=5
+Inside the loop i=6
+Inside the loop i=7
+Inside the loop i=8
+Inside the loop i=9
+
+=>Ruby until Statement
+
+until conditional [do]
+   code
+end
+
+$i =0 
+$num = 5
+until $i > $num do
+    puts("Inside the loop i = #$i")
+    $i += 1;
+end
+
+*Ruby until modifier
+Syntax
+
+code until conditional
+
+OR
+
+begin
+   code
+end until conditional
+
+$i = 0
+$num = 5
+begin
+    
+puts("Inside the loop i = #$i")
+$i += 1
+end until $i > $num
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Inside the loop i = 0
+Inside the loop i = 1
+Inside the loop i = 2
+Inside the loop i = 3
+Inside the loop i = 4
+Inside the loop i = 5
+
+=>Ruby for Statement
+Syntax
+
+for variable [, variable ...] in expression [do]
+   code
+end
+
+for i in 0 .. 5
+    puts "Value of local var is #{i}"
+end
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Value of local var is 0
+Value of local var is 1
+Value of local var is 2
+Value of local var is 3
+Value of local var is 4
+Value of local var is 5
+
+
+arr = ["mumbai","chandigarh","faridabad"]
+for i in arr do
+    puts i
+end
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+mumbai
+chandigarh
+faridabad
+
+=>Ruby break Statement
+Syntax
+
+break
+
+for i in 0 .. 5
+    if i>2 then
+        break
+    end
+    puts "value is #{i}"
+end
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+value is 0
+value is 1
+value is 2
+
+=>Ruby next Statement
+Syntax
+
+next
+
+for i in 0 ..5
+    if i<2 then 
+        next
+    end
+    puts "value of i is #{i}"
+end
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+value of i is 2
+value of i is 3
+value of i is 4
+value of i is 5
+
+=>Ruby redo Statement
+Syntax
+
+redo
+
+for i in 0..5
+    if i < 2 then
+        puts "value of local #{i}"
+        redo
+    end
+end
+[Done] exited with code=0 in 0.039 seconds
+
+value of local 0
+value of local 0
+value of local 0
+value of local 0
+-------------
+infinite loop
+
+
+=>Ruby redo Statement
+Syntax
+
+redo
+
+for i in 0 .. 5
+    if i<2 then
+        puts "value of local is #{i}"
+        redo
+    end
+end
+
+value of local 0
+value of local 0
+value of local 0
+value of local 0
+-------------
+infinite loop
