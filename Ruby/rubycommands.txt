@@ -151,7 +151,7 @@ Address is: Mohali
 
 #Four type of variables in Ruby
 
-1.Global Variable - Starts with $ sign.
+1.Global Variable - Starts with $ sign.Global Variable has global scope and accessible from anywhere in the program.
 $global_variable=10
 class Class1
     def print_global
@@ -175,7 +175,7 @@ class2obj.print_global
 Global variable in Class1 is 10
 Global variable in Class2 is 10
 
-2.Instance Variables-It begins with @.
+2.Instance Variables-It begins with @.its content is restricted to whatever the object itself refers to. Two separate objects, even though they belong to the same class, are allowed to have different values for their instance variables.
 
 class Customer1
     def initialize(id,name,addr)
@@ -243,12 +243,260 @@ Customer name Paul
 Customer address Mysore
 Total number of customers: 2
 
-Local Variables: A local variable name always starts with a lowercase letter(a-z) or underscore (_). 
+4.Local Variables: A local variable name always starts with a lowercase letter(a-z) or underscore (_). 
 eg 3.0.0 :035 > _age=19
  => 19 
 3.0.0 :037"> name="jaskaran"
  => "jaskaran" 
+ 
+ 
+5. Ruby Constants
+Constants begin with UpperCase Letter
+If they are defined withing class then they can be accessed within
+that module only.
+And if constants are defined outside class or module then it is treated as 
+globally accessable
+Refrencing an uninitialized constants will produce an error
 
+
+ #Variables in ruby
+ class Example 
+    VAR1=100
+    VAR2=200
+    def show
+        puts "value of first constant #{VAR1}"
+        puts "valye of second constant #{VAR2}"
+    end
+end
+
+
+obj=Example.new()
+obj.show
+
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+value of first constant 100
+valye of second constant 200
+
+#Operators in Ruby
+1.Addition+
+a=19
+b=4
+puts a+b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+23
+
+2.Subtraction - Subtracts right hand operand from left hand operand.
+a=20
+b=5
+puts a-b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+15
+
+3.Multiplication *
+a=20
+b=5
+puts a*b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+100
+
+4.Divsion /
+a=20
+b=5
+puts a/b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+4
+
+5.Modulus %
+a=23
+b=6
+puts a/b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+3
+
+6.Exponent **
+a=3
+b=2
+puts a**b
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+9
+
+#Comparison Operators
+1.==
+a=3
+b=2
+puts a==b
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+false
+
+2.!=
+a=3
+b=2
+puts a!=b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+true
+
+3.>
+a=3
+b=2
+puts a>b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+true
+
+4.<
+a=3
+b=2
+puts a<b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+false
+
+5.<=
+a=3
+b=5
+puts a<=b
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+true
+
+6.>=
+a=3
+b=5
+puts a>=b
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+false
+
+7.<=>
+a=5
+b=5
+puts a<=>b
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+0
+
+8.eql? - checks both value and data type
+a=5
+b=5.0
+puts a.eql?(b)
+
+#Assignment Operators
+1.=Assigns value from right side operand to left side operand
+a=10
+b=20
+c=a+b
+puts c
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+30
+
+2.+= Add AND assignment operator, 
+a=10
+c=1
+c+=a
+puts c
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+11
+
+[Done] exited with code=0 in 0.043 seconds
+
+3.-=Subtract AND assignment operator,
+a=10
+c=1
+c-=a
+puts c
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+-9
+
+4.*=Multiply AND assignment operator
+a=10
+c=2
+c*=a
+puts c
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+20
+
+5./= Divide AND assignment operator
+a=10
+c=20
+c/=a
+puts c
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+2
+
+6.%= Modulus AND assignment operator
+a=6
+c=20
+c%=a
+puts c
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+2
+
+7.*= Exponent AND assignment operator
+a=3
+c=2
+c**=a
+puts c
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+8
+
+#Ruby Logical Operators
+
+1.and operator- if both the operands are true, then the condition becomes true.
+a=true
+b=true
+
+puts (a and b)
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+true
+
+2.or operator - . If any of the two operands are true, then the condition becomes true.
+a=true
+b=false
+
+puts (a or b)
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+true
+
+3.Called Logical NOT Operator. Use to reverses the logical state of its operand. 
+a=false
+b=true
+
+puts !(a && b)
+
+
+#Ruby Ternary Operator
+?:  Conditonal expression
+If Condition is true ? Then value X : Otherwise value Y
+score=50
+result=score>40?'Pass':'Fail'
+puts result
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Pass
+
+
+Ruby Range Operator
+It is used to create a range of successive values - 
+consisting of a start value, an end value, and a 
+range of values in between.
+
+The two-dot form creates an inclusive range, 
+while the three-dot form creates a range that 
+excludes the specified high value.
+so 1..10 is 1,2,3,4,5,6,7,8,9,10
+and 1...10 is 1,2,3,4,5,6,7,8,9
+
+$, =", "
+range_op=(7 ..10).to_a
+puts "#{range_op}"
+
+range_op1=(7 ... 10).to_a
+puts "#{range_op1}"
+Running] ruby "/home/itsacheckmate/Practise/test.rb"
+[7, 8, 9, 10]
+[7, 8, 9]
 
 
 
