@@ -958,5 +958,216 @@ Traceback (most recent call last):
 NoMethodError (undefined method `sam' for main:Object)
 3.0.0 :030 > sample "windows","32","m","bca"
 
+=> Ruby Blocks
+
+A block is the same thing as a method, but it does not belong to an object.
+A block consists of chunks of code.You assign a name to a block.
+The code in the block is always enclosed within braces ({}).
+We invoke a block by using the yield statement.
+Syntax
+
+block_name {
+   statement1
+   statement2
+   ..........
+}
+3.0.0 :001 > def test
+3.0.0 :002 >   puts "You are in the method"
+3.0.0 :003 >   yield
+3.0.0 :004 >   puts "You are again back to the method"
+3.0.0 :005 >   yield
+3.0.0 :006 > end
+ => :test 
+3.0.0 :007 > test {puts "You are in the block"}
+You are in the method
+You are in the block
+You are again back to the method
+You are in the block
+ => nil 
+
+The yield statement is written followed by parameters.
+  You can even pass more than one parameter. In the block, 
+  you place a variable between two vertical lines (||) to 
+  accept the parameters. Therefore, in the preceding code,
+   the yield 5 statement passes the value 5 as a parameter 
+   to the test block.
+   
+   3.0.0 :009 > def test
+3.0.0 :010 >   yield 5
+3.0.0 :011 >   puts "you are in the method test"
+3.0.0 :012 >   yield 100
+3.0.0 :013 > end
+ => :test 
+3.0.0 :014 > test {|i| puts "You are the block #{i}"}
+You are the block 5
+you are in the method test
+You are the block 100
+ => nil 
+ 
+ if you want to pass more than one parameters, then the yield statement becomes - 
+ yield a, b==>
+ 3.0.0 :032 > def test
+3.0.0 :033 >   yield 70,100
+3.0.0 :034 >   puts "You are in the method test"
+3.0.0 :035 >   yield 1000
+3.0.0 :036 > end
+ => :test 
+3.0.0 :037 > test {|i,j| puts "You are in the block #{i} and #{j}"}
+You are in the block 70 and 100
+You are in the method test
+You are in the block 1000 and 
+ => nil 
+
+But if the last argument of a method is preceded by &,
+      then you can pass a block to this method and this 
+      block will be assigned to the last parameter. In case
+          both * and & are present in the argument list, & 
+          should come later.
+          
+          3.0.0 :042 > def test(&block)
+3.0.0 :043 >   block.call
+3.0.0 :044 > end
+ => :test 
+Hello World!
+ => nil 
+
+#Module Ruby
+A Module is a collection of methods, constants, and class variables.
+You cannot inherit modules or you can’t create a subclass of a module.
+Objects cannot be created from a module.
+Modules are used as namespaces and as mixins.
+All the classes are modules, but all the modules are not classes.
+The name of a module must start with a capital letter.
+
+Syntax:
+
+module Module_name
+
+   # statements to be executed
+
+end
+
+3.0.0 :069 > module Trig
+3.0.0 :070 >   PI = 3.141592654
+3.0.0 :071 >   def Trig.sin(x)
+3.0.0 :072 >     # ..
+3.0.0 :073 >   end
+3.0.0 :074 >   def Trig.cos(x)
+3.0.0 :075 >     # ..
+3.0.0 :076 >   end
+3.0.0 :077 > end
+ => :cos 
+
+module Gfg
+    C=10;
+    def Gfg.portal
+        puts "Welcome!"
+    end
+    
+    def Gfg.tutorial
+        puts "Ruby tutorial"
+    end
+    def Gfg.topic
+        puts "Topic - Module"
+    end
+end
+
+puts Gfg::C
+
+Gfg.portal
+Gfg.tutorial
+Gfg.topic
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+10
+Welcome!
+Ruby tutorial
+Topic - Module
+
+include statement
+embed a module in a class. To embed a module in a class,
+ you use the include statement in the class
+applying method
+
+module=>
+module Week
+    FIRST_DAY = "Sunday"
+    def Week.weeks_in_month
+        puts "You have four weeks in a month"
+    end
+    def Week.weeks_in_year
+        puts "You have 52 weeks in a year"
+    end
+end
 
 
+code-->
+class Decade
+    include Week
+    no_of_yrs=10
+    def no_of_months
+        puts Week::FIRST_DAY
+        number=10*12
+        puts number
+    end
+end
+d1=Decade.new
+puts Week::FIRST_DAY
+Week.weeks_in_month
+Week.weeks_in_year
+d1.no_of_months
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Sunday
+You have four weeks in a month
+You have 52 weeks in a year
+Sunday
+120
+
+[Done] exited with code=0 in 0.038 seconds
+
+#Mixins in Ruby
+Ruby does not support multiple inheritance.Mixins give you a wonderfully controlled way of adding functionality to classes.
+to apply multiple inheritence in ruby mixins facility is provided
+
+module A
+    def a1
+        puts "Method a1 of module A"
+    end
+    def a2
+        puts "Method a2 of module A"
+    end
+end
+module B                           
+    def b1 
+        puts "Method b1 of module B"
+    end
+    def b2
+        puts "Method b2 of module B"
+    end
+end
+
+class Sample
+    include A
+    include B
+    def s1
+
+    end
+end
+samp=Sample.new
+samp.a1
+samp.a2
+samp.b1
+samp.b2
+samp.s1
+
+
+[Running] ruby "/home/itsacheckmate/Practise/tempCodeRunnerFile.rb"
+Method a1 of module A
+Method a2 of module A
+Method b1 of module B
+Method b2 of module B
+
+[Done] exited with code=0 in 0.047 seconds
+
+The class sample can access all four methods a1,a2,b1 and b2 therefore class Sample inherits
+from both the modules.
