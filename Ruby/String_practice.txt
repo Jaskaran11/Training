@@ -1,0 +1,30 @@
+
+String:
+
+It has an arbitrary Sequence of bytes representing text or binay data
+It can be created using 
+String::new
+or as literals
+
+Expression Substitution
+
+Expression substitution is a means of embedding the value of any Ruby expression into a string using #{ and } −
+3.0.0 :001 > x,y,z=12,36,72
+ => [12, 36, 72] 
+3.0.0 :002 > puts "the value of x is #{x}."
+the value of x is 12.
+ => nil 
+3.0.0 :003 > exit
+itsacheckmate@itscheckmate:~$ irb
+3.0.0 :001 > x,y,z=12,36,72
+ => [12, 36, 72] 
+3.0.0 :002"> puts "the value of x is #{x}."
+the value of x is 12.
+ => nil 
+3.0.0 :003 > puts "the sum of x and y is #{x+y}"
+the sum of x and y is 48
+ => nil 
+3.0.0 :004"> puts "the average was #{ (x+y+x)/3}."
+the average was 20.
+ => nil 
+
