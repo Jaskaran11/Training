@@ -1219,3 +1219,189 @@ collection = collection.collect
 The collect method need not always be associated with a block.
  The collect method returns the entire collection,
  regardless of whether it is an array or a hash.
+ 
+ #Iterators in Ruby
+Iterators” is the object-oriented concept in Ruby.
+In more simple words, iterators are the methods which are supported by collections(Arrays, Hashes etc.). 
+Collections are the objects which store a group of data members.
+Ruby iterators return all the elements of a collection one after another.
+
+There are many iterators in Ruby as follows: 
+1.Each Iterator
+2.Collect Iterator
+3.Times Iterator
+4.Upto Iterator
+5.Downto Iterator
+6.Step Iterator
+7.Each_Line Iterator
+
+
+1.Each Iterator: This iterator returns all the elements of an array or a hash. Each iterator returns each value one by one. 
+Syntax:
+3.0.0 :001 > (0..9).each do |i|
+3.0.0 :002 >   puts i
+3.0.0 :003 > end
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ => 0..9 
+3.0.0 :004 > a = ['J', 'A', 'S', 'K', 'A', 'R', 'A', 'N']
+ => ["J", "A", "S", "K", "A", "R", "A", "N"] 
+3.0.0 :005 > puts "\n"
+
+ => nil 
+3.0.0 :006 > a.each do|arr|
+3.0.0 :007 >   puts arr
+3.0.0 :008 > end
+J
+A
+S
+K
+A
+R
+A
+N
+ => ["J", "A", "S", "K", "A", "R", "A", "N"] 
+ 
+ 2.    Collect Iterator: This iterator returns all the elements of a collection. The collect iterator returns an entire collection, regardless of whether it is an array or hash.
+    Syntax: 
+    
+Collection = collection.collect
+
+3.0.0 :001 > a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+3.0.0 :002 > b = a.collect{ |y| (5*y) }
+ => [5, 10, 15, 20, 25, 30, 35, 40, 45, 50] 
+3.0.0 :003 > puts b
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+ => nil 
+
+3.Times Iterator: In this iterator, a loop is implanted with the specific number of time. The loop is initially started from zero and runs until the one less than the specified number.
+    Syntax:
+     
+
+t.times do |variable_name|
+
+# code to be execute
+
+end
+
+3.0.0 :004 > 7.times do |i|
+3.0.0 :005 >   puts i
+3.0.0 :006 > end
+0
+1
+2
+3
+4
+5
+6
+ => 7 
+ 
+ 4.Upto Iterator: This iterator follows top to bottom approach. It includes both the top and bottom variable in the iteration.
+     Syntax: 
+     
+
+top.upto(bottom) do |variable_name|
+
+# code to execute
+
+end
+
+3.0.0 :007 > 4.upto(7) do |n|
+3.0.0 :008 >   puts n
+3.0.0 :009 > end
+4
+5
+6
+7
+ => 4 
+3.0.0 :010 > 7.upto(4) do |n|
+3.0.0 :011 >   puts n
+3.0.0 :012 > end
+ => 7 
+
+
+5.    Downto Iterator: This iterator follows bottom to top approach. It includes both the top and bottom variable in the iteration. 
+    Syntax: 
+     
+
+top.downto(bottom) do |variable_name|
+
+# code to execute
+
+end
+
+3.0.0 :013 > 10.downto(5) do |n|
+3.0.0 :014 >   puts n
+3.0.0 :015 > end
+10
+9
+8
+7
+6
+5
+ => 10 
+3.0.0 :016 > 4.downto(7) do |n|
+3.0.0 :017 >   puts n
+3.0.0 :018 > end
+ => 4 
+
+    6.Step Iterator: Ruby step iterator is used to iterate where the user has to skip a specified range. 
+    Syntax: 
+     
+
+Collection.step(rng) do |variable_name|
+
+# code to be executed
+
+end 
+
+3.0.0 :019 > (0..100).step(20) do|i|
+3.0.0 :020 >   puts i
+3.0.0 :021 > end
+0
+20
+40
+60
+80
+100
+ => 0..100
+ 
+ 7.Each_line Iterator: Ruby each_line iterator is used to iterate over a new line in the string. 
+    Syntax:
+     
+
+string.each_line do |variable_name|
+
+# code to be executed
+
+end
+
+3.0.0 :025 > "Today\nis\na\nrainyday".each_line do|i|
+3.0.0 :026 >   puts i
+3.0.0 :027 > end
+Today
+is
+a
+rainyday
+ => "Today\nis\na\nrainyday" 
+
+
+
