@@ -1,0 +1,31 @@
+Arrays are ordered,integer-indexed collections of any object.
+
+Array indexing starts at 0, as in C or Java. A negative index is assumed to be relative to the end of the array—that is, an index of -1 indicates the last element of the array, -2 is the next to last element in the array
+
+A new array can be created by using the literal constructor []
+It can contain different type of objects.
+3.0.0 :001 > ary = [1, "two", 3.0]
+ => [1, "two", 3.0] 
+ 
+
+we can create array also by using Array.new
+with zero,one(initial size of array),or 2 arguments(initial size nd object)
+3.0.0 :002 > ary = Array.new
+ => [] 
+3.0.0 :003 > Array.new(3)
+ => [nil, nil, nil] 
+3.0.0 :004 > Array.new(3, true)
+ => [true, true, true] 
+
+to create an array with separate objects a block can be passed instead
+3.0.0 :001 > Array.new(4) {|i| i.to_s}
+ => ["0", "1", "2", "3"] 
+3.0.0 :002 > Array.new(6) {|i| i.to_s}
+ => ["0", "1", "2", "3", "4", "5"] 
+
+=> to use multi-dimensional arrays
+3.0.0 :003 > empty = Array.new(3) {Array.new(3)}
+ => [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]] 
+ 
+ 
+
