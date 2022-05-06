@@ -1,5 +1,4 @@
-
-String:
+In Ruby, string is a sequence of one or more characters. It may consist of numbers, letters, or symbols. Here strings are the objects, and apart from other languages, strings are mutable, i.e. strings can be changed in place instead of creating new strings.
 
 It has an arbitrary Sequence of bytes representing text or binay data
 It can be created using 
@@ -27,4 +26,523 @@ the sum of x and y is 48
 3.0.0 :004"> puts "the average was #{ (x+y+x)/3}."
 the average was 20.
  => nil 
+
+The only difference between using single and double quotes is that the double quotes will interpolates the variables but single quotes can’t interpolate.
+str1="Jas"
+str2='Jas'
+puts "Interpolating str1: #{str1}"
+puts 'Cannot Interpolate str2: #{str2}'
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Interpolating str1: Jas
+Cannot Interpolate str2: #{str2}
+[Done] exited with code=0 in 0.062 seconds
+
+
+ Check if the string is empty
+
+ we can define an empty string as a string of zero length.
+ A blank string is a string that has either zero-length, 
+ or is composed ONLY of white space characters.
+ 3.0.0 :015 > a.size == 0
+ => false 
+ 3.0.0 :016 > c = String.new
+ => "" 
+3.0.0 :017 > c.size == 0
+ => true 
+
+The to_s method on the string interpolation block, it itell the object to cinvert itself into a string.
+3.0.0 :025 > name+a.to_s
+ => "Jaskaranabcd" 
+ 3.0.0 :025 > name+a.to_s
+ => "Jaskaranabcd" 
+ 
+ #Substring extract
+ A substring is a smaller part of string
+ one way to extract substring is using the index no.
+ 3.0.0 :036 > name[4]
+ => "a" 
+3.0.0 :037 > name[2,6]
+ => "skaran" 
+3.0.0 :038 > name[0,5]
+ => "Jaska" 
+
+If only one character is written then that particular character is picked and if there are 2 number in bracket then the character from that index to the number of character in the second number is picked.
+
+if we use negative range
+for eg - it is starting from the given index to the second to last character
+ syntax variable[index..-2]
+3.0.0 :039 > name[3..-1]
+ => "karan" 
+3.0.0 :040 > name[6..-1]
+ => "an" 
+3.0.0 :041 > name [7..-1]
+ => "n" 
+3.0.0 :042 > name [7..-2]
+ => "" 
+
+If we want to remove or replace the strings we can assign the value 
+ to the above substring
+ 
+ 3.0.0 :045 > welcome = "welcome"
+ => "welcome" 
+3.0.0 :046 > welcome[3] = "d"
+ => "d" 
+3.0.0 :047 > welcome
+ => "weldome" 
+
+.0.0 :048 > welcome[0,2]=""
+ => "" 
+3.0.0 :049 > welcome
+ => "ldome" 
+3.0.0 :050 > welcome.size
+ => 5 
+
+3.0.0 :051 > p welcome
+"ldome"
+ => "ldome" 
+
+
+#If we want to find out that a string contains another string
+
+3.0.0 :052"> day = "Today is Friday"
+ => "Today is Friday" 
+3.0.0 :053 > day.include?("today")
+ => false 
+3.0.0 :054 > day.include?("Today")
+ => true 
+
+It is case-sensitive
+
+#we can also use the index method here
+3.0.0 :055 > day.index("is")
+ => 6 
+
+Above methods looks for the partial words too . 
+and index will also tell the index of first match also.
+
+#How to pad a ruby string
+
+One way to pad a string is to use the rjust method with 2 arguments
+3.0.0 :062 > welcome.rjust(10)
+ => "     ldome" 
+3.0.0 :063 > welcome.rjust(19,"*")
+ => "**************ldome" 
+
+
+ Compare Strings ignoring characters
+ As string comparsion is case sensitive to make sure the two 
+ strings  comparing are same or not 
+ So the The common way to do that is to make both sides of the
+  equation downcase or upcase
+  
+  3.0.0 :065 > day="day"
+ => "day" 
+3.0.0 :066 > dAY="DAY"
+ => "DAY" 
+3.0.0 :067 > day.upcase == dAY.upcase
+ => true 
+ 
+ 
+#
+ Casecmp
+ it compares for the substring gives ans 0,1,-1
+for equal ,greater or smaller string
+
+3.0.0 :068 > day.casecmp("asdf")
+ => 1 
+3.0.0 :069 > day.casecmp("aydf")
+ => 1 
+3.0.0 :070 > day.casecmp("day")
+ => 0 
+3.0.0 :071 > day.casecmp("ab")
+ => 1 
+3.0.0 :072 > day.casecmp("a")
+ => 1 
+3.0.0 :073 > day.casecmp("b")
+ => 1 
+ 
+ 3.0.0 :077 > 'day'.casecmp(day)
+ => 0 
+3.0.0 :078 > 'dayq'.casecmp(day)
+ => 1 
+3.0.0 :079 > 'da'.casecmp(day)
+ => -1
+ 
+ #Casecmp ? 
+ 
+ true,false or nil
+ 
+ 3.0.0 :081 > '1'.casecmp?(day)
+ => false 
+3.0.0 :082 > 'day'.casecmp?(day)
+ => true 
+3.0.0 :083 > ''.casecmp?(day)
+ => false 
+3.0.0 :084 > 'daya'.casecmp?(day)
+ => false 
+ 
+ #trim a string and remove white space
+ 
+ Strip method is used to remove space from string
+ 
+ 3.0.0 :085"> galaxy = "      "
+ => "      " 
+3.0.0 :086 > galaxy.strip
+ => "" 
+
+If you only want to remove the white space from one of the sides (left / right) you can use
+  the lstrip & rstrip methods instead.
+  
+  3.0.0 :091 > galaxy = "    b   "
+ => "    b   " 
+3.0.0 :092 > galaxy.lstrip
+ => "b   " 
+3.0.0 :093 > galaxy.rstrip
+ => "    b" 
+
+
+#Prefix and Suffix
+
+can use the start_with? method to check if a string starts with a specific prefix
+
+3.0.0 :094 > string = "ruby programming"
+ => "ruby programming" 
+3.0.0 :095"> string.start_with? "ruby"
+ => true 
+ 
+ we can also use the end_with? method to check if a string ends with the suffix
+ 3.0.0 :096 > string.end_with? "programming"
+ => true 
+
+ and delete_prefix & delete_suffix methods to delete accordingly
+ 
+ #Convert the string to array
+ Taking a string and breaking it down into an array of characters
+  using "split" methods
+  
+  
+It split the string based on the spaces  by default 
+
+3.0.0 :097 > name
+ => "Jaskaran" 
+3.0.0 :098 > name.split
+ => ["Jaskaran"] 
+3.0.0 :099 > name = " J a s k a r a n"
+ => " J a s k a r a n" 
+3.0.0 :100 > name.split
+ => ["J", "a", "s", "k", "a", "r", "a", "n"] 
+
+ but this can be split based on other delimiter
+ like ','
+ 
+ 3.0.0 :101"> csv = "a,s,d,f,g,h"
+ => "a,s,d,f,g,h" 
+3.0.0 :102 > csv.split
+ => ["a,s,d,f,g,h"] 
+
+3.0.0 :105 > name.split("r")
+ => [" J a s k a ", " a n"] 
+ 
+ #Convert an array to the string
+ 
+ to take an array of strings and join them
+ to make a single big string
+ use  == join method
+ 
+ 3.0.0 :106 > arr = ["Today","is","a","rainy","day"]
+ => ["Today", "is", "a", "rainy", "day"] 
+3.0.0 :107 > puts arr
+Today
+is
+a
+rainy
+day
+ => nil 
+3.0.0 :108 > arr.join
+ => "Todayisarainyday" 
+ 
+ Special caracter can be give to join to add between different elements
+while joining
+3.0.0 :109 > arr=["hi","how","are","you"]
+ => ["hi", "how", "are", "you"] 
+3.0.0 :110 > arr.join("/")
+ => "hi/how/are/you" 
+
+#Convert a string into integer
+
+To convert an string to a integer, we can use the built-in to_i method in Ruby.
+
+The to_i method takes the string as a argument and converts it to number, if a given string is not valid number then it returns 0.
+
+3.0.0 :113 > str = "100"
+ => "100" 
+3.0.0 :114 > num = str.to_i
+ => 100 
+3.0.0 :115 > puts num
+100
+ => nil 
+ 
+ Only number are converted in this, otherwise zero is printed
+ 3.0.0 :116 > str = "JAS"
+ => "JAS" 
+3.0.0 :117 > num = str.to_i
+ => 0 
+
+#To check if a string is a number
+f the string is made fully of number
+ can use regex to compare the string
+using match? method
+
+3.0.0 :126 > if "89".match(/89/)
+3.0.0 :127 >   puts "match found!"
+3.0.0 :128 > end
+match found!
+ => nil 
+
+#How to append characters 
+Strings can be appended to add on the string it same as stringconcatenation.
+It can be done using << method
+
+3.0.0 :129 > y=""
+ => "" 
+3.0.0 :130"> y << "hello"
+ => "hello" 
+3.0.0 :131 > y << "hi"
+ => "hellohi" 
+3.0.0 :132 > y << " how"
+ => "hellohi how"
+ 
+ #Not to use += for every string concatenation because that will create a new string every time,which is not good overall for performance
+ 
+ 
+ #How to iterate over a character of strings
+ 
+ 1.we can use the each_char method
+ 
+ 3.0.0 :134 > y.each_char{ |ch| puts ch}
+h
+e
+l
+l
+o
+h
+i
+ 
+h
+o
+w
+ => "hellohi how"
+ 
+ 2.we can use the chars method to convert the string into array of characters and then can use "each" on this array to iterate over
+ 
+ 3.0.0 :135 > array_char=y.chars
+ => ["h", "e", "l", "l", "o", "h", "i", " ", "h", "o", "w"] 
+
+
+#To convert a string to upper , lowe case or capitalize it
+using 
+upcase method
+downcase method
+capitalize method
+
+3.0.0 :138 > cricketer.upcase
+ => "YUVRAJ SINGH" 
+3.0.0 :139 > cricketer.downcase
+ => "yuvraj singh" 
+3.0.0 :140 > cricketer.capitalize
+ => "Yuvraj singh
+ 
+ #Create a multiline string
+ We can create a multi-line string in 2 ways
+ 
+ 1.Using the heredocs:
+ 3.0.0 :142"> x = <<-STRING
+3.0.0 :143"> hello
+3.0.0 :144"> there
+3.0.0 :145"> how
+3.0.0 :146"> are
+3.0.0 :147"> you
+3.0.0 :148"> today
+3.0.0 :149"> STRING
+ => "hello\nthere\nhow\nare\nyou\ntoday\n" 
+3.0.0 :150 > x
+ => "hello\nthere\nhow\nare\nyou\ntoday\n" 
+3.0.0 :151 > puts x
+hello
+there
+how
+are
+you
+today
+ => nil 
+
+2.The %Q method
+
+itsacheckmate@itscheckmate:~$ irb
+3.0.0 :001"> multi = %Q( here
+3.0.0 :002"> i am using
+3.0.0 :003"> the multiline
+3.0.0 :004"> comment)
+ => " here\ni am using\nthe multiline\ncomment" 
+3.0.0 :005 > puts multi
+ here
+i am using
+the multiline
+comment
+ => nil 
+
+3.to use the escape sequence \n
+
+3.0.0 :006 > z="using \nthe \nmultiline \nmethod"
+ => "using \nthe \nmultiline \nmethod" 
+3.0.0 :007 > puts z
+using 
+the 
+multiline 
+method
+ => nil 
+ 
+ #Replace the text inside the string using the gsub method
+ 
+ 3.0.0 :009 > string = "hello how are you"
+ => "hello how are you" 
+3.0.0 :010 > string.gsub("are","is")
+ => "hello how is you" 
+
+But it also replaces every occurences of that character
+so it can also be used to remove occurence of that character
+
+3.0.0 :016 > string.gsub("o","")
+ => "hell hw are yu" 
+ 
+ Since gsub returns new string so to create change in that string we have to use gsub!
+ gsub can also be used with regex to find substring to replace
+ 
+ 3.0.0 :018 > string.gsub!(/\s/,",")
+ => "hello,how,are,you" 
+3.0.0 :019 > string
+ => "hello,how,are,you" 
+
+#Remove the last character from a string
+we use the chomp method to remove \n from last by default
+
+3.0.0 :022 > cricketer = "Mahendra Singh Dhoni"
+ => "Mahendra Singh Dhoni" 
+3.0.0 :023 > cricketer.chomp
+ => "Mahendra Singh Dhoni"
+ 
+ 3.0.0 :031 > cricketer.chomp("i")
+ => "Mahendra Singh Dhon" 
+
+#How to change the String Encodings
+
+Strings are stored as a sequence of bytes , they are turned into
+character based on encoding , before we can see them
+eg A is 65
+but there can be complex encoding for different language character like
+UTF-8
+encoding method is used to see it 
+3.0.0 :032 > string.encoding
+ => #<Encoding:UTF-8> 
+
+If some language is not supported by default encoding then it can be
+fixed using this method like
+"abc".force_encoding("UTF-8")
+
+#Counting Characters
+
+=> COunt method can be used to count the number of specified character in string
+ => "hi\nthere how are you" 
+3.0.0 :034 > string.count("e")
+ => 3 
+3.0.0 :035 > string.count("ar")
+ => 3 
+3.0.0 :036 > string.count("a")
+ => 1 
+3.0.0 :037 > string.count("h")
+ => 3 
+
+
+#Public Instance Methods
+
+%this means the formatting of the string
+
+3.0.0 :044 > "%05d" %123
+ => "00123" 
+3.0.0 :045 > "%05a" %123
+ => "0x1.ecp+6" 
+3.0.0 :046 > "%05s" %123
+ => "  123" 
+3.0.0 :047 > "%05e" %123
+ => "1.230000e+02" 
+ 
+ *Copies the string that many number of times
+ 
+ 3.0.0 :050 > name * 1
+ => "Virat" 
+3.0.0 :051 > name * 7
+ => "ViratViratViratViratViratViratVirat" 
+
++is used for string concatenation
+
+ 3.0.0 :054 > name + name
+ => "ViratVirat" 
+3.0.0 :055 > name + "Kohli"
+ => "ViratKohli" 
+ 
+ << is alos used for string concatenation
+ 
+ <=> is used for comparison
+ -1 if other string is larger
+ 0 if the two are equal
+ 1 if the other string is smaller
+ nil if the two are incomparable
+ 
+ 3.0.0 :057 > name <=> "012323"
+ => 1 
+3.0.0 :058 > name <=> "Virat"
+ => 0 
+3.0.0 :059 > name <=> "Vira"
+ => 1 
+3.0.0 :060 > name <=> "Virats"
+ => -1 
+3.0.0 :061 > name <=> ""
+ => 1 
+3.0.0 :063 > name <=> 123
+ => nil 
+ 
+ * == is used to compare the value and length of the two string
+ 
+ 3.0.0 :064 > name == "virat"
+ => false 
+3.0.0 :065"> name == "Virat"
+ => true 
+3.0.0 :066 > name == 231
+ => false 
+
+
+will return false if two same value have different encoding
+
+
+ =~ is used to find the 1st occurence of that string or regex
+ 3.0.0 :067/> name =~ /r/
+ => 2 
+3.0.0 :068 > into = "he is a cricketer #{name}"
+ => "he is a cricketer Virat" 
+3.0.0 :069 > into =~ /\Z/
+ => 23 
+3.0.0 :070 > into =~ /w+\Z/
+ => nil 
+3.0.0 :071 > into =~ /\w+\Z/
+ => 18 
+
+ 
+
+
+
+  
+
+ 
+
 
