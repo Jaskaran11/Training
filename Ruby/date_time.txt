@@ -1,0 +1,402 @@
+#The Time object can be used to get various components of Date and Time.
+
+time = Time.new
+puts "Current Time :" +time.inspect
+puts time.year  => year of date
+puts time.month => month of date
+puts time.day => day of the date
+puts time.wday => day of week
+puts time.yday => 365: day of year
+puts time.hour => 24-hour clock
+puts time.min => 59
+puts time.sec => 59
+puts time.usec => microseconds
+puts time.zone => timezone name
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Current Time :2022-05-09 18:52:58.879488833 +0530
+2022
+5
+9
+1
+129
+18
+52
+58
+879488
+IST
+
+3.0.0 :003 > time1 = Time.new
+ => 2022-05-09 18:58:34.927285646 +0530 
+
+## Time.utc, Time.gm and Time.local Functions:
+These two functions can be used to format date in a standard format as follows-
+3.0.0 :001 > Time.local(2008 ,7 ,8)
+ => 2008-07-08 00:00:00 +0530 
+3.0.0 :002 > Time.local(2010,11,11,9,10)
+ => 2010-11-11 09:10:00 +0530 
+3.0.0 :003 > Time.utc(2008 , 7,8,9,10)
+ => 2008-07-08 09:10:00 UTC 
+3.0.0 :004 > Time.gm(2008,7 , 8 ,9,10,11)
+ => 2008-07-08 09:10:11 UTC 
+
+note: components  in an array
+[sec,min,hour,day,month,year,wday,ydat,isdst,zone]
+
+3.0.0 :006 > time = Time.new
+ => 2022-05-09 20:07:37.276262522 +0530 
+3.0.0 :007 > values = time.to_a
+ => [37, 7, 20, 9, 5, 2022, 1, 129, false, "IST"] 
+ 
+ the array could be passed to time.utc or time.local functions to get different format of dates as follows -
+ 
+ 3.0.0 :008 > time = Time.new
+ => 2022-05-09 20:08:45.559229086 +0530 
+3.0.0 :009 > value = time.to_a
+ => [45, 8, 20, 9, 5, 2022, 1, 129, false, "IST"] 
+3.0.0 :015 > puts Time.utc(*values)
+2022-05-09 20:09:47 UTC
+ => nil 
+
+#following is the way to get time represented internally as seconds
+3.0.0 :018 > time = Time.now.to_i
+ => 1652107294 
+3.0.0 :019 > time = Time.at(time)
+ => 2022-05-09 20:11:34 +0530 
+3.0.0 :021 > time = Time.now.to_f
+ => 1652107321.705263 
+
+#Timezones and daylight savings time:
+3.0.0 :023 > time = Time.new
+ => 2022-05-09 20:12:52.274911739 +0530 
+
+# Here is the interpretation
+time.zone       # => "UTC": return the timezone
+time.utc_offset # => 0: UTC is 0 seconds offset from UTC
+time.zone       # => "PST" (or whatever your timezone is)
+time.isdst      # => false: If UTC does not have DST.
+time.utc?       # => true: if t is in UTC time zone
+time.localtime  # Convert to local timezone.
+time.gmtime     # Convert back to UTC.
+time.getlocal   # Return a new Time object in local zone
+time.getutc     # Return a new Time object in UTC
+
+
+
+3.0.0 :024 > time = Time.new
+ => 2022-05-09 20:13:28.798198515 +0530 
+3.0.0 :025 > time.zone
+ => "IST" 
+3.0.0 :026 > time.utc_offset
+ => 19800 
+3.0.0 :027 > time.isdst
+ => false 
+3.0.0 :028 > time.gmtime
+ => 2022-05-09 14:43:28.798198515 UTC 
+3.0.0 :029 > time.utc?
+ => true 
+3.0.0 :030 > time.localtime
+ => 2022-05-09 20:13:28.798198515 +0530 
+3.0.0 :031 > time.gmtime
+ => 2022-05-09 14:43:28.798198515 UTC 
+3.0.0 :032 > time.getlocal
+ => 2022-05-09 20:13:28.798198515 +0530 
+3.0.0 :033 > time.getutc
+ => 2022-05-09 14:43:28.798198515 UTC 
+
+#formatting times and dates
+this method is strftime,which means 'format time'.
+
+3.0.0 :035 > time =Time.new
+ => 2022-05-09 20:15:50.459021154 +0530 
+3.0.0 :036 > puts time.to_s
+2022-05-09 20:15:50 +0530
+ => nil 
+3.0.0 :037 > puts time.ctime
+Mon May  9 20:15:50 2022
+ => nil 
+3.0.0 :038 > puts time.localtime
+2022-05-09 20:15:50 +0530
+ => nil 
+3.0.0 :039 > puts time.strftime("%Y-%m-%d %H:%M:%S")
+2022-05-09 20:15:50
+ => nil 
+
+# Time Formatting Directives:
+1	
+%a
+The abbreviated weekday name (Sun).
+
+2	
+%A
+The full weekday name (Sunday).
+
+3	
+%b
+The abbreviated month name (Jan).
+
+4	
+%B
+The full month name (January).
+
+5	
+%c
+The preferred local date and time representation.
+
+6	
+%d
+Day of the month (01 to 31).
+
+7	
+%H
+Hour of the day, 24-hour clock (00 to 23).
+
+8	
+%I
+Hour of the day, 12-hour clock (01 to 12).
+
+9	
+%j
+Day of the year (001 to 366).
+
+10	
+%m
+Month of the year (01 to 12).
+
+11	
+%M
+Minute of the hour (00 to 59).
+
+12	
+%p
+Meridian indicator (AM or PM).
+
+13	
+%S
+Second of the minute (00 to 60).
+
+14	
+%U
+Week number of the current year, starting with the first Sunday as the first day of the first week (00 to 53).
+
+15	
+%W
+Week number of the current year, starting with the first Monday as the first day of the first week (00 to 53).
+
+16	
+%w
+Day of the week (Sunday is 0, 0 to 6).
+
+17	
+%x
+Preferred representation for the date alone, no time.
+
+18	
+%X
+Preferred representation for the time alone, no date.
+
+19	
+%y
+Year without a century (00 to 99).
+
+20	
+%Y
+Year with century.
+
+21	
+%Z
+Time zone name.
+
+#Time Arithmetic:
+
+3.0.0 :040 > now = Time.now     #current time
+ => 2022-05-09 20:29:24.850052969 +0530 
+ 
+3.0.0 :041 > past = now -10     # 10 secs ago. time - number => time
+puts past time
+ => 2022-05-09 20:29:14.850052969 +0530
+  
+3.0.0 :042 > future = now + 10 # 10 seconds from now time+number => time
+ => 2022-05-09 20:29:34.850052969 +0530 
+ 
+3.0.0 :043 > diff = future - past   #time - time => number of seconds 
+ => 20.0 
+
+ => 2022-05-09 20:32:01.598088711 +0530 
+3.0.0 :045 > puts time.monday?
+true
+ => nil 
+3.0.0 :046 > puts time.thursday?
+false
+ => nil 
+
+#The date class
+
+3.0.0 :048 > Date.today
+ => #<Date: 2022-05-09 ((2459709j,0s,0n),+0s,2299161j)> 
+3.0.0 :049 > Date.today + 1
+ => #<Date: 2022-05-10 ((2459710j,0s,0n),+0s,2299161j)> 
+3.0.0 :050 > Date.new
+ => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)> 
+
+
+#Date and time parsing:
+
+this method will try to parse any string that looks like a date
+
+3.0.0 :047 > require 'date'
+ => true 
+3.0.0 :048 > Date.today
+ => #<Date: 2022-05-09 ((2459709j,0s,0n),+0s,2299161j)> 
+3.0.0 :049 > Date.today + 1
+ => #<Date: 2022-05-10 ((2459710j,0s,0n),+0s,2299161j)> 
+3.0.0 :050 > Date.new
+ => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)> 
+3.0.0 :051 > Date.parse("10/05/2022")
+ => #<Date: 2022-05-10 ((2459710j,0s,0n),+0s,2299161j)> 
+ => #<Date: 2022-04-11 ((2459681j,0s,0n),+0s,2299161j)> 
+3.0.0 :053 > Date.parse("hello there")
+
+3.0.0 :055 > Date.parse("May I have a cup of coffee, please?")
+ => #<Date: 2022-05-01 ((2459701j,0s,0n),+0s,2299161j)> 
+ 
+ #An iso8601 has the following format:
+ year-month-day
+ 
+  You can use the Date.strptime method & a set of format specifiers to provide your own custom input format. These are the same specifiers that you can use for strftime.
+  
+  3.0.0 :056 > Date.strptime("11 of April", "%d of %B")
+ => #<Date: 2022-04-11 ((2459681j,0s,0n),+0s,2299161j)> 
+ 
+ #TO PARSE USING TIME CLASS
+ 
+ 3.0.0 :057 > require 'time'
+ => true 
+3.0.0 :058 > Time.parse("March 14 18:00")
+ => 2022-03-14 18:00:00 +0530 
+ 3.0.0 :060 > Time.strptime("2 of  March 2021", "%d of %B %Y")
+ => 2021-03-02 00:00:00 +0530 
+ 
+ #Date constants:
+ For example, there is an array with the months of the year and another with the days of the week.
+Date::MONTHNAMES # (index 0 = nil)
+Date::DAYNAMES
+
+3.0.0 :061 > Date::MONTHNAMES
+ => [nil, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] 
+3.0.0 :062 > Date::DAYNAMES
+ => ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] 
+3.0.0 :063 > DateTime.superclass
+ => Date 
+
+#Commercial:
+create a datetime object denoting the given week date
+
+3.0.0 :066 > DateTime.commercial(2020,4,5,4,5,6,'+8')
+ => #<DateTime: 2020-01-24T04:05:06+08:00 ((2458872j,72306s,0n),+28800s,2299161j)> 
+
+# httpdate(string='Mon, 01 Jan -4712 00:00:00 GMT'[, start=Date::ITALY]) → datetime
+Creates a new DateTime object by parsing from a string according to some RFC 2616 format.
+
+ Ruby | DateTime jd() function:
+jd() is a DateTime class method which returns a DateTime object denoting the given chronological Julian day number.
+
+3.0.0 :068 > date_a = DateTime.jd(25351944)
+ => #<DateTime: 64699-03-01T00:00:00+00:00 ((25351944j,0s,0n),+0s,2299161j)> 
+3.0.0 :069 > date_b = DateTime.jd(4678364)
+ => #<DateTime: 8096-10-27T00:00:00+00:00 ((4678364j,0s,0n),+0s,2299161j)> 
+3.0.0 :070"> puts "DateTime jd form : #{date_a}\n\n"
+DateTime jd form : 64699-03-01T00:00:00+00:00
+
+ => nil 
+3.0.0 :071 > puts "DateTime jd form : #{date_b}\n\n"
+DateTime jd form : 8096-10-27T00:00:00+00:00
+
+ => nil
+ 
+ 
+# xmlschema(string='-4712-01-01T00:00:00+00:00'[, start=Date::ITALY]) → datetime
+Creates a new DateTime object by parsing from a string according to some typical XML Schema formats.
+
+3.0.0 :072'> require 'date'
+ => false 
+3.0.0 :073 > require 'time'
+ => false 
+3.0.0 :074 > DateTime.xmlschema('2010-09-03T04:05:06+07:00')
+ => #<DateTime: 2010-09-03T04:05:06+07:00 ((2455442j,75906s,0n),+25200s,2299161j)> 
+
+# min → fixnum
+minute → fixnum
+Returns the minute (0-59).
+
+3.0.0 :075 > DateTime.new(2010,2,3,4,5,6).min
+ => 5 
+ # new_offset([offset=0]) → date
+Duplicates self and resets its offset.
+
+3.0.0 :077 > d.new_offset('+07:00')
+ => #<DateTime: 2020-02-03T13:05:06+07:00 ((2458883j,21906s,0n),+25200s,2299161j)> 
+3.0.0 :078 > DateTime.parse('04pm+0730').offset
+ => (5/16) 
+3.0.0 :079 
+
+# sec → fixnum
+second → fixnum
+Returns the second (0-59).
+
+3.0.0 :078 > DateTime.parse('04pm+0730').offset
+ => (5/16) 
+3.0.0 :079 > DateTime.new(2001,2,3,4,5,6).sec
+ => 6 
+3.0.0 :080 > DateTime.new(2001,2,3,4,5,6).sec_fraction
+ => (0/1) 
+ 
+ # to_s → string
+Returns a string in an ISO 8601 format.
+
+3.0.0 :084 > DateTime.new(2011,2,3,4,5,6,'-7').to_s
+ => "2011-02-03T04:05:06-07:00" 
+ 
+ # zone → string
+Returns the timezone.
+
+3.0.0 :085 > DateTime.parse('04pm+0730').zone
+ => "+07:30" 
+
+# Combination:
+  %c - date and time (%a %b %e %T %Y)
+  %D - Date (%m/%d/%y)
+  %F - The ISO 8601 date format (%Y-%m-%d)
+  %v - VMS date (%e-%b-%Y)
+  %x - Same as %D
+  %X - Same as %T
+  %r - 12-hour time (%I:%M:%S %p)
+  %R - 24-hour time (%H:%M)
+  %T - 24-hour time (%H:%M:%S)
+  %+ - date(1) (%a %b %e %H:%M:%S %Z %Y)
+
+
+ Date (Year, Month, Day):
+  %Y - Year with century (can be negative, 4 digits at least)
+          -0001, 0000, 1995, 2009, 14292, etc.
+  %C - year / 100 (round down.  20 in 2009)
+  %y - year % 100 (00..99)
+
+  %m - Month of the year, zero-padded (01..12)
+          %_m  blank-padded ( 1..12)
+          %-m  no-padded (1..12)
+  %B - The full month name (``January'')
+          %^B  uppercased (``JANUARY'')
+  %b - The abbreviated month name (``Jan'')
+          %^b  uppercased (``JAN'')
+  %h - Equivalent to %b
+
+  %d - Day of the month, zero-padded (01..31)
+          %-d  no-padded (1..31)
+  %e - Day of the month, blank-padded ( 1..31)
+
+  %j - Day of the year (001..366)
+
+
+#ruby program to display current date and time
+
