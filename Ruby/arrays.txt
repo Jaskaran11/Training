@@ -8,7 +8,7 @@ It can contain different type of objects.
  => [1, "two", 3.0] 
  
 
-we can create array also by using Array.new
+#we can create array also by using Array.new
 with zero,one(initial size of array),or 2 arguments(initial size nd object)
 3.0.0 :002 > ary = Array.new
  => [] 
@@ -16,6 +16,19 @@ with zero,one(initial size of array),or 2 arguments(initial size nd object)
  => [nil, nil, nil] 
 3.0.0 :004 > Array.new(3, true)
  => [true, true, true] 
+ 
+#we can also creare array using [] 
+3.0.0 :001 > arr = Array['a','b','c','d','e','f']
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :002 > puts "#{arr}"
+["a", "b", "c", "d", "e", "f"]
+ => nil 
+3.0.0 :003 > puts "Size of arr is: #{arr.size}"
+Size of arr is: 6
+ => nil 
+3.0.0 :004 > puts "Length of arr is: #{arr.length}"
+Length of arr is: 6
+ => nil 
 
 to create an array with separate objects a block can be passed instead
 3.0.0 :001 > Array.new(4) {|i| i.to_s}
@@ -27,5 +40,566 @@ to create an array with separate objects a block can be passed instead
 3.0.0 :003 > empty = Array.new(3) {Array.new(3)}
  => [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]] 
  
- 
+ #Retrieving Multiple Elements from array
+ 3.0.0 :005 > str = ["Virat","Dhoni","Yuvraj"]
+ => ["Virat", "Dhoni", "Yuvraj"]
+ 3.0.0 :008 > puts str[1,2]
+Dhoni
+Yuvraj
+ => nil 
 
+#Obtaining Information about an array
+
+3.0.0 :009 > browsers = ['Chrome','Firefox','Safari','Opera','IE']
+ => ["Chrome", "Firefox", "Safari", "Opera", "IE"] 
+3.0.0 :010 > browsers.length
+ => 5 
+3.0.0 :011 > browsers.count
+ => 5 
+3.0.0 :012 > browsers.empty?
+ => false 
+3.0.0 :013 > browsers.include?('Konqueror')
+ => false 
+
+#add item to array
+3.0.0 :002 > arr = [1,2,3,4,5]
+ => [1, 2, 3, 4, 5] 
+3.0.0 :003 > arr.push(5)
+ => [1, 2, 3, 4, 5, 5] 
+3.0.0 :004 > arr << 6
+ => [1, 2, 3, 4, 5, 5, 6]
+
+to add a item to beginning of an array 
+3.0.0 :005 > arr.unshift(0)
+ => [0, 1, 2, 3, 4, 5, 5, 6] 
+ 
+3.0.0 :006 > arr.insert(3, 'apple')
+ => [0, 1, 2, "apple", 3, 4, 5, 5, 6] 
+3.0.0 :007 > arr.insert(3, 'orange','pear','grapefruit')
+ => [0, 1, 2, "orange", "pear", "grapefruit", "apple", 3, 4, 5, 5, 6] 
+
+
+ #remove item from array
+ 
+ this delete last item 
+ 3.0.0 :009 > arr.pop
+ => 6 
+3.0.0 :010 > arr
+ => [0, 1, 2, "orange", "pear", "grapefruit", "apple", 3, 4, 5, 5] 
+3.0.0 :011 > arr.shift
+ => 0 
+3.0.0 :012 > arr
+ => [1, 2, "orange", "pear", "grapefruit", "apple", 3, 4, 5, 5] 
+
+to delete at particular index
+3.0.0 :013 > arr.delete_at(2)
+ => "orange" 
+3.0.0 :014 > arr.delete(4)
+ => 4 
+
+to remove nil values from array
+ 3.0.0 :015 > arr = ['foo', 0, nil,'bar',7,'bar',nil]
+ => ["foo", 0, nil, "bar", 7, "bar", nil] 
+3.0.0 :016 > arr.compact
+ => ["foo", 0, "bar", 7, "bar"] 
+3.0.0 :017 > arr
+ => ["foo", 0, nil, "bar", 7, "bar", nil] 
+3.0.0 :018 > arr.compact!
+ => ["foo", 0, "bar", 7, "bar"] 
+3.0.0 :019 > arr
+ => ["foo", 0, "bar", 7, "bar"] 
+
+to remove duplicate elemennts
+3.0.0 :020 > arr = [2,5,6,6,5,4,4,2,2,1,1,99,99,88]
+ => [2, 5, 6, 6, 5, 4, 4, 2, 2, 1, 1, 99, 99, 88] 
+3.0.0 :021 > arr.uniq
+ => [2, 5, 6, 4, 1, 99, 88] 
+
+#to iterate over array
+(this operation leaves the array unchanged)
+3.0.0 :023 > arr.each {|a| print a -= 10, " "}
+-9 -8 -7 -6 -5  => [1, 2, 3, 4, 5]
+
+reverse the elements in array
+ 3.0.0 :032]> Words = %w[hi there how are you]
+ => ["hi", "there", "how", "are", "you"] 
+3.0.0 :033"> str = ""
+ => "" 
+3.0.0 :034 > Words.reverse_each {|word| str += "#{word} "}
+ => ["hi", "there", "how", "are", "you"] 
+3.0.0 :035 > p str
+"you are how there hi "
+ => "you are how there hi " 
+3.0.0 :036 > 
+
+=>the map method is used to create a new array based on original array
+3.0.0 :036 > arr.map {|a| 2*a}
+ => [2, 4, 6, 8, 10] 
+3.0.0 :037 > arr
+ => [1, 2, 3, 4, 5] 
+3.0.0 :038 > arr.map! {|a| 2*a}
+ => [2, 4, 6, 8, 10] 
+3.0.0 :039 > arr
+ => [2, 4, 6, 8, 10] 
+
+#non-destructive selection
+3.0.0 :041 > arr.select {|a| a > 3}
+ => [4, 5, 6] 
+3.0.0 :042 > arr.reject{|a| a < 3}
+ => [3, 4, 5, 6] 
+3.0.0 :043 > arr.drop_while {|a| a < 4}
+ => [4, 5, 6] 
+
+#destructive selection
+.0.0 :044 > arr.delete_if {|a| a < 4}
+ => [4, 5, 6] 
+3.0.0 :045 > arr
+ => [4, 5, 6] 
+3.0.0 :046 > arr = [1,2,3,4,5,6]
+ => [1, 2, 3, 4, 5, 6] 
+3.0.0 :047 > arr.keep_if {|a| a < 4}
+ => [1, 2, 3] 
+
+#Public Class Methods
+ [](*args)
+Returns a new array populated with the given objects.
+.0 :048 > Array.[](1, 'a', /^A/)
+ => [1, "a", /^A/] 
+
+When a size and an optional default are sent, an array is created with size copies of default
+
+0 :049 > first_array = ["Rohit","Sam"]
+ => ["Rohit", "Sam"] 
+3.0.0 :050 > second_array = Array.new(first_array)
+ => ["Rohit", "Sam"] 
+3.0.0 :051 > first_array.equal? second_array
+ => false 
+
+0 :052 > Array.new(3) {|index| index ** 2}
+ => [0, 1, 4] 
+ 
+ #Since all the array elements store the same hash,changes to one of them will affect them all.
+ 3.0.0 :055 > a = Array.new(2,Hash.new)
+ => [{}, {}] 
+3.0.0 :056 > a[0]['cat'] = 'feline'
+ => "feline" 
+3.0.0 :057'> a[1]['cat'] = 'felix'
+ => "felix" 
+3.0.0 :058 > a
+ => [{"cat"=>"felix"}, {"cat"=>"felix"}] 
+
+if multiple copies are what you want, you should use the block version which uses the result of that block each time an element of the array needs to be initialized:
+3.0.0 :059 > a = Array.new(2) {Hash.new}
+ => [{}, {}] 
+3.0.0 :060'> a[0]['cat'] = 'feline'
+ => "feline" 
+3.0.0 :061 > a
+ => [{"cat"=>"feline"}, {}] 
+
+#to convert array into object
+3.0.0 :069 > Array.try_convert([1])
+ => [1] 
+3.0.0 :070 > Array.try_convert("1")
+ => nil 
+
+
+#Public Instance Methods
+
+Set Intersection — Returns a new array containing unique elements common to the two arrays. The order is preserved from the original array.
+3.0.0 :071 > [1,1,3,5] & [3,2,1]
+ => [1, 3]
+3.0.0 :072 > ['a','b','b','z'] & ['a','b','c']
+ => ["a", "b"] 
+ 
+Repetition — With a String argument, equivalent to ary.join(str).
+Otherwise, returns a new array built by concatenating the int copies of self.
+
+3.0.0 :073 > [ 1,2,3 ] * 3
+ => [1, 2, 3, 1, 2, 3, 1, 2, 3] 
+3.0.0 :074"> [1,2,3] * ""
+ => "123" 
+3.0.0 :075 
+
+Concatenation — Returns a new array built by concatenating the two arrays together to produce a third array.
+3.0.0 :076 > a = ["hi","hello"]
+ => ["hi", "hello"] 
+3.0.0 :077 > c = a + ["wassup"]
+ => ["hi", "hello", "wassup"] 
+
+#Array Difference
+Returns a new array that is a copy of the original array, removing all occurrences of any item that also appear in other_ary
+ all occurrences of each Integer are removed in the returned array.
+ 
+ 3.0.0 :078 > [1,1,2,3,4,5,3] - [1,3,2]
+ => [4, 5] 
+
+Append—Pushes the given object on to the end of this array. This expression returns the array itself, so several appends may be chained together.
+3.0.0 :080 > a << "c" << [3,4]
+ => [1, 2, "c", [3, 4]] 
+ 
+ Comparison — Returns an integer (-1, 0, or +1) if this array is less than, equal to, or greater than other_ary.
+ 3.0.0 :001 > ["a", "a", "c" ] <=> ["a","b","c"]
+ => -1 
+3.0.0 :002 > [1,2,3,4,5,6] <=> [ 1, 2]
+ => 1 
+3.0.0 :003 > [1,2] <=> [1, :two]
+ => nil 
+
+Equality — Two arrays are equal if they contain the same number of elements and if each element is equal to the corresponding element in other_ary.
+3.0.0 :004 > ["a", "c"] == ["a","c",7]
+ => false 
+3.0.0 :005 > ["a", "c"] == ["a","c"]
+ => true 
+
+3.0.0 :009 > a[1, 3]
+ => ["b", "c", "d"] 
+3.0.0 :010 > a[1..3]
+ => ["b", "c", "d"] 
+3.0.0 :011 > a[1...4]
+ => ["b", "c", "d"] 
+3.0.0 :012 > a[-3,3]
+ => ["c", "d", "e"] 
+3.0.0 :013 > a[5]
+ => nil 
+3.0.0 :014 > a[6 , 1]
+ => nil 
+
+#assoc 
+Searches through an array whose elements are also arrays comparing obj with the first element of each contained array using obj.==.
+3.0.0 :015 > s1 = ["colors","red","blue","green"]
+ => ["colors", "red", "blue", "green"] 
+3.0.0 :016 > s2 = ["letters","a","b","c"]
+ => ["letters", "a", "b", "c"] 
+3.0.0 :017 > s3 = "foo"
+ => "foo" 
+3.0.0 :018 > a.assoc("letters")
+ => nil 
+3.0.0 :019 > a = [s1,s2,s3]
+ => [["colors", "red", "blue", "green"], ["letters", "a", "b", "c"], "foo"] 
+3.0.0 :020 > a.assoc("letters")
+ => ["letters", "a", "b", "c"] 
+3.0.0 :021 > a.assoc("foo")
+ => nil 
+ 
+ #at - return the element at index
+ 3.0.0 :022 > a = ["a","b","c","d","e"]
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :023 > a.at(0)
+ => "a" 
+
+#By using binary search, finds a value from this array which meets the given condition in O(log n) where n is the size of the array.3.0.0 :024 > ary = [0,4,7,10,12]
+ => [0, 4, 7, 10, 12] 
+3.0.0 :025 > ary.bsearch {|x| x >= 4}
+ => 4 
+3.0.0 :026 > ary.bsearch {|x| x>= 6}
+ => 7 
+ 
+ #clear - remove all elements
+ 3.0.0 :029 > a = ["a","b","c","d","e"]
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :030 > a.clear
+ => [] 
+
+ #combination(n) → Enumerator
+When invoked with a block, yields all combinations of length n of elements from the array and then returns the array itself.
+3.0.0 :032 > a.combination(1).to_a
+ => [[1], [2], [3], [4]] 
+3.0.0 :034 > a.combination(2).to_a
+ => [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]] 
+3.0.0 :035 > a.combination(3).to_a
+ => [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]] 
+3.0.0 :036 > a.combination(4).to_a
+ => [[1, 2, 3, 4]] 
+
+# compact → Returns a copy of self with all nil elements removed
+3.0.0 :037 > ["a",nil,"1",nil]
+ => ["a", nil, "1", nil] 
+3.0.0 :038 > ["a",nil,"1",nil].compact
+ => ["a", "1"] 
+3.0.0 :039 > ["a",nil,"1",nil].compact!
+ => ["a", "1"] 
+3.0.0 :040 > ["a","1"].compact!
+ => nil 
+ 
+#concat(other_ary1, other_ary2, ...) → Appends the elements of other_arys to self.
+3.0.0 :043 > a.concat( [5,6,7])
+=> [1, 2, 3, 4, 5, 6, 7] 
+3.0.0 :045 > a.concat(a, a)
+ => [1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7] 
+ 
+ #count - returns the number of elements
+ 3.0.0 :046 > ary = [1,2,4,2]
+ => [1, 2, 4, 2] 
+ 3.0.0 :047 > ary.count
+ => 4 
+3.0.0 :048 > ary.count(2)
+ => 2 
+3.0.0 :049 > ary.count(4)
+ => 1 
+3.0.0 :050 > ary.count {|x| x&2==0}
+ => 2 
+
+#cycle - calls the given block for each element n times or forever if nil is given.
+3.0.0 :053 > a.cycle(2) {|x| puts x}
+a
+b
+c
+a
+b
+c
+ => nil 
+ 
+ # delete(obj) - Deletes all items from self that are equal to obj.
+ 3.0.0 :054 > a = ["a","b","b","b","c"]
+ => ["a", "b", "b", "b", "c"] 
+3.0.0 :055 > a.delete("b")
+ => "b" 
+3.0.0 :056 > a
+ => ["a", "c"] 
+3.0.0 :057 > a.delete("z")
+ => nil 
+
+# delete_at(index) - Deletes the element at the specified index, returning that element, or nil if the index is out of range.
+3.0.0 :060 > a.delete_at(2)
+ => "dog" 
+3.0.0 :061 > a
+ => ["ant", "cat"] 
+3.0.0 :062 > a.delete_at(9)
+ => nil 
+
+#delete_if - delete element for which block evaluates to true
+scores = [ 97,45,75,65]
+ => [97, 45, 75, 65] 
+3.0.0 :064 > scores.
+ scores.delete_if {|score| score < 80 }
+
+#dig - Extracts the nested value specified by the sequence of idx objects by calling dig at each step, returning nil if any intermediate step is nil.
+3.0.0 :074 > a.dig(0, 1, 1)
+ => 3 
+3.0.0 :075 > a.dig(1, 2, 3)
+ => nil 
+ 
+ #drop - Drops first n elements from ary and returns the rest of the elements in an array
+ 3.0.0 :076 > a = [1, 2, 3, 4, 5, 0]
+ => [1, 2, 3, 4, 5, 0] 
+3.0.0 :077 > a.drop(3)
+ => [4, 5, 0] 
+ 
+ 3.0.0 :079 > a.drop_while {|i| i < 3 }
+ => [3, 4, 5, 6] 
+ 
+ #each - Calls the given block once for each element in self, passing that element as a parameter. Returns the array itself.
+ 3.0.0 :080 > a = ["a" , "b", "c"]
+ => ["a", "b", "c"] 
+3.0.0 :081 > a.each {|x| print x, " -- " }
+a -- b -- c --  => ["a", "b", "c"] 
+3.0.0 :082 > a.each_index {|x| print x, " -- " }
+0 -- 1 -- 2 --  => ["a", "b", "c"] 
+
+
+#fetch - Tries to return the element at position index, but throws an IndexError exception if the referenced index lies outside of the array bounds. This error can be prevented by supplying a second argument, which will act as a default value.
+3.0.0 :085 > a = [ 11, 22, 33, 44]
+ => [11, 22, 33, 44] 
+3.0.0 :086 > a.fetch(1)
+ => 22 
+3.0.0 :087 > a.fetch(-1)
+ => 44 
+3.0.0 :088 > a.fetch(4, 'dog')
+ => "dog" 
+
+#fill
+3.0.0 :089 > a = ["","","",""]
+ => ["", "", "", ""] 
+3.0.0 :090 > a.fill("x")
+ => ["x", "x", "x", "x"] 
+3.0.0 :091 > a.fill("z",2, 2)
+ => ["x", "x", "z", "z"] 
+3.0.0 :092 > a.fill("y", 0..1)
+ => ["y", "y", "z", "z"] 
+3.0.0 :093 > a.fill {|i| i*i}
+ => [0, 1, 4, 9] 
+
+#filter - Returns a new array containing all elements of ary for which the given block returns a true value.
+ => [0, 1, 4, 9] 
+3.0.0 :094 > [1,2,3,4,5].select {|num| num.even? }
+ => [2, 4] 
+3.0.0 :095]> a = %w[a b c d e f]
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :096 > a.select {|v| v=~ /[aeiou]/ }
+ => ["a", "e"] 
+
+#first - returns the first element, or the first n elements, of the array.
+3.0.0 :097 > a = ["q", "r", "s", "t"]
+ => ["q", "r", "s", "t"] 
+3.0.0 :098 > a.first
+ => "q" 
+3.0.0 :099 > a.first(2)
+ => ["q", "r"] 
+3.0.0 :100 > 
+
+#flatten - returns a new array that is one-dimensional flattening of self(recursive)
+3.0.0 :100 > s = [1,2,3]
+ => [1, 2, 3] 
+3.0.0 :101 > t=[4,5,6, [7,8]]
+ => [4, 5, 6, [7, 8]] 
+3.0.0 :102 > a=[s,t,9,10]
+ => [[1, 2, 3], [4, 5, 6, [7, 8]], 9, 10] 
+3.0.0 :103 > a.flatten
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+ 
+  include?(object) → true or false click to toggle source
+
+Returns true if the given object is present in self (that is, if any element == object), otherwise returns false.
+3.0.0 :104 > a=["a","b","c"]
+ => ["a", "b", "c"] 
+3.0.0 :105 > a.include?("b")
+ => true 
+3.0.0 :106 > a.include?("z")
+ => false 
+ 
+ #replace - replaces the content
+ 3.0.0 :107 > a = [ "a", "b", "c", "d", "e"]
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :108 > a.replace([ "x", "y", "z" ])
+ => ["x", "y", "z"] 
+ 
+ #insert - insert the value before the element with given index
+ 3.0.0 :110 > a = %w{a b c d }
+ => ["a", "b", "c", "d"] 
+3.0.0 :111 > a.insert(2, 99)
+ => ["a", "b", 99, "c", "d"] 
+
+
+#to_s → string
+Creates a string representation of self, by calling inspect on each element.
+3.0.0 :116 > ['a','b','c'].to_s
+ => "[\"a\", \"b\", \"c\"]" 
+
+# intersection(other_ary1, other_ary2, ...) → new_ary click to toggle source
+Set Intersection — Returns a new array containing unique elements common to self and other_arys. Order is preserved from the original array.
+It compares elements using their hash and eql? methods for efficiency.
+3.0.0 :117 > [1,1,3,5].intersection([3,21])
+ => [3] 
+3.0.0 :118 > ["a", "b", "z"].intersection(["a","b","c"],["b"])
+ => ["b"] 
+
+
+# join(separator=$,) → Returns a string created by converting each element of the array to a string, separated by the given separator.
+
+ 3.0.0 :121 > [ "a", "b", "c"].join
+ => "abc" 
+3.0.0 :122"> ["a,"b","c"].join("-")
+3.0.0 :123">  ^C
+3.0.0 :122 > [ "a", "b" , "c" ].join("-")
+ => "a-b-c" 
+ 
+ # keep_if → Enumerator
+Deletes every element of self for which the given block evaluates to false, and returns self.
+
+3.0.0 :123 > a = %w[a b c d e f]
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :124 > a.keep_if {|v| v =~ /[aeiou]/}
+ => ["a", "e"] 
+3.0.0 :125 > a
+ => ["a", "e"] 
+ 
+ 
+ #last(n) → new_ary
+  Returns the last element(s) of self. If the array is empty, the first form returns nil.
+  3.0.0 :126 > a = [ "w", "x", "y", "z"]
+ => ["w", "x", "y", "z"] 
+3.0.0 :127 > a.last
+ => "z" 
+3.0.0 :128 > a.last(2)
+ => ["y", "z"] 
+
+length - 3.0.0 :129 > [1,2,3,4,5].length
+ => 5 
+3.0.0 :130 > [].length
+ => 0 
+
+#map -  map {|item| block} 
+Invokes the given block once for each element of self.
+Creates a new array containing the values returned by the block.
+3.0.0 :131 > a.map! {|x| x + "!"}
+ => ["w!", "x!", "y!", "z!"] 
+ 
+ #max(n) {|a, b| block} → array
+Returns the object in ary with the maximum value. The first form assumes all objects implement Comparable; the second uses the block to return a <=> b.
+  => ["", "x", "y!", "z!"] 
+3.0.0 :134 > ary = %w(abc abcd abcde)
+ => ["abc", "abcd", "abcde"] 
+3.0.0 :135 > ary.max
+ => "abcde" 
+3.0.0 :136 > ary.max(2)
+ => ["abcde", "abcd"] 
+3.0.0 :137 > ary.max {|a, b| a.length <=> b.length}
+ => "abcde" 
+
+# min(n) {| a,b | block } → array
+Returns the object in ary with the minimum value. The first form assumes all objects implement Comparable; the second uses the block to return a <=> b
+
+3.0.0 :138 > ary = %w(goku vegeta gohan trunks)
+ => ["goku", "vegeta", "gohan", "trunks"] 
+3.0.0 :139 > ary.min
+ => "gohan" 
+3.0.0 :140 > ary.min {|a, b| a.length <=> b.length}
+ => "goku" 
+3.0.0 :141 > ary.min(2)
+ => ["gohan", "goku"] 
+3.0.0 :142 > ary.min(2) {|a, b| a.length <=> b.length}
+ => ["goku", "gohan"] 
+
+
+# pack( aTemplateString ) → 
+Packs the contents of arr into a binary sequence according to the directives in a TemplateString.
+3.0.0 :143 > a = ["a", "b", "c"]
+ => ["a", "b", "c"] 
+3.0.0 :144 > n = [65,66,67]
+ => [65, 66, 67] 
+3.0.0 :145 > a.pack("A3A3A3")
+ => "a  b  c  " 
+3.0.0 :146 > n.pack("ccc")
+ => "ABC" 
+3.0.0 :147
+
+# permutation(n) → Enumerator
+
+When invoked with a block, yield all permutations of length n of the elements of the array, then return the array itself.
+
+If n is not specified, yield all permutations of all elements.
+
+The implementation makes no guarantees about the order in which the permutations are yielded.
+
+If no block is given, an Enumerator is returned instead.
+
+3.0.0 :147 > a = [1,2,3]
+ => [1, 2, 3] 
+3.0.0 :148 > a.permutation.to_a
+ => [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]] 
+3.0.0 :149 > a.permutation(1).to_a
+ => [[1], [2], [3]] 
+3.0.0 :150 > a.permutation(2).to_a
+ => [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]] 
+3.0.0 :151 > a.permutation(3).to_a
+ => [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]] 
+3.0.0 :152 > a.permutation(0).to_a
+ => [[]] 
+3.0.0 :153 > a.permutation(5).to_a
+ => [] 
+
+
+ pop(n) → new_ary
+Removes the last element from self and returns it, or nil if the array is empty.
+If a number n is given, returns an array of the last n elements (or less) just like array.slice!(-n, n) does
+3.0.0 :154 > a = ["a","b","c","d"]
+ => ["a", "b", "c", "d"] 
+3.0.0 :155 > a.pop
+ => "d" 
+3.0.0 :156 > a.pop(2)
+ => ["b", "c"] 
+3.0.0 :157 > a
+ => ["a"] 
+
+
+ 
