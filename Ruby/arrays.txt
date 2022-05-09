@@ -601,5 +601,336 @@ If a number n is given, returns an array of the last n elements (or less) just l
 3.0.0 :157 > a
  => ["a"] 
 
+# product(other_ary, ...) {|p| block} → ary
+Returns an array of all combinations of elements from all arrays.
+The length of the returned array is the product of the length of self and the argument arrays.
 
+3.0.0 :166 > [1,2,3].product([4,5])
+ => [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]] 
+3.0.0 :167 > [1,2].product([1,2])
+ => [[1, 1], [1, 2], [2, 1], [2, 2]] 
+3.0.0 :168 > [1,2].product([3,4],[5,6])
+ => [[1, 3, 5], [1, 3, 6], [1, 4, 5], [1, 4, 6], [2, 3, 5], [2, 3, 6], [2, 4, 5], [2, 4, 6]] 
+3.0.0 :169 > [1,2].product()
+ => [[1], [2]] 
+3.0.0 :170 > [1,2].product([])
+3.0.0 :171 > 
+ => [] 
  
+ #append(obj, ...) → ary
+Append — Pushes the given object(s) on to the end of this array. This expression returns the array itself, so several appends may be chained together.
+3.0.0 :172 > a = ["a","b","c"]
+ => ["a", "b", "c"] 
+3.0.0 :173 > a.push("d","e","f")
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :174 > [1, 2, 3].push(4).push(5)
+ => [1, 2, 3, 4, 5] 
+
+#rassoc - Searches through the array whose elements are also arrays.
+
+ => [[1, "one"], [2, "two"], [3, "three"], ["ii", "two"]] 
+
+3.0.0 :177 > a.rassoc("two")
+ => [2, "two"] 
+3.0.0 :178 > a.rassoc("ii")
+ => nil 
+3.0.0 :179 > a.rassoc("three")
+ => [3, "three"] 
+3.0.0 :180 > a.rassoc("one")
+ => [1, "one"] 
+3.0.0 :181 > 
+
+#Array#reject() : reject() is a Array class method which returns new array containing the items in the array for which the given block is not true
+3.0.0 :181 > a=[18,22,33,3,5,6]
+ => [18, 22, 33, 3, 5, 6] 
+3.0.0 :182 > b = [1,4,1,1,88,9]
+ => [1, 4, 1, 1, 88, 9] 
+3.0.0 :183 > puts " #{a.reject {|num| num > 10 }}"
+ [3, 5, 6]
+ => nil 
+3.0.0 :184 > puts " #{a.reject {|num| num < 10 }}"
+ [18, 22, 33]
+ => nil 
+
+# repeated_combination(n) → Enumerator
+When invoked with a block, yields all repeated combinations of length n of elements from the array and then returns the array itself.
+
+3.0.0 :186 > a.repeated_combination(1).to_a
+ => [[1], [2], [3]] 
+3.0.0 :187 > a.repeated_combination(2).to_a
+ => [[1, 1], [1, 2], [1, 3], [2, 2], [2, 3], [3, 3]] 
+3.0.0 :188 > a.repeated_combination(3).to_a
+ => [[1, 1, 1], [1, 1, 2], [1, 1, 3], [1, 2, 2], [1, 2, 3], [1, 3, 3], [2, 2, 2], [2, 2, 3], [2, 3, 3], [3, 3, 3]] 
+3.0.0 :189 > 
+
+
+#replace(other_ary) → ary click to toggle source
+Replaces the contents of self with the contents of other_ary, truncating or expanding if necessary.
+
+3.0.0 :189 > a=["a","b","c","d","e"]
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :190 > a.replace(["x","y","z"])
+ => ["x", "y", "z"] 
+
+# reverse → Returns a new array containing self's elements in reverse order.
+3.0.0 :197 > ["a","b","c"].reverse
+ => ["c", "b", "a"] 
+3.0.0 :198 > [1].reverse
+ => [1] 
+3.0.0 :199 > a = ["a","b","c"]
+ => ["a", "b", "c"] 
+3.0.0 :200 > a.reverse
+ => ["c", "b", "a"] 
+3.0.0 :201 > a
+ => ["a", "b", "c"] 
+3.0.0 :202 > a.reverse!
+ => ["c", "b", "a"] 
+3.0.0 :203 > a
+ => ["c", "b", "a"] 
+
+3.0.0 :001 > a=["a","b","c"]
+ => ["a", "b", "c"] 
+3.0.0 :002 > a.reverse_each {|x| print x, " "}
+c b a  => ["a", "b", "c"] 
+
+# rindex → Enumerator
+Returns the index of the last object in self == to obj.
+If a block is given instead of an argument, returns the index of the first object for which the block returns true, starting from the last object.
+Returns nil if no match is found.
+
+ => ["a", "b", "b", "b", "c"] 
+3.0.0 :004 > a.rindex("b")
+ => 3 
+3.0.0 :005 > a.rindex("a")
+ => 0 
+3.0.0 :006 > a.rindex {|x| x == "b"}
+ => 3 
+
+# rotate(count=1) → Returns a new array by rotating self so that the element at count is the first element of the new array.
+If count is negative then it rotates in the opposite direction, starting from the end of self where -1 is the last element.
+
+3.0.0 :007 > a = ["a","b","c","d"]
+ => ["a", "b", "c", "d"] 
+3.0.0 :008 > a.rotate
+ => ["b", "c", "d", "a"] 
+3.0.0 :009 > a.rotate(2)
+ => ["c", "d", "a", "b"] 
+3.0.0 :010 > a.rotate(-3)
+ => ["b", "c", "d", "a"] 
+ 
+ 3.0.0 :012 > a.rotate!
+ => ["b", "c", "d", "a"] 
+3.0.0 :013 > a
+ => ["b", "c", "d", "a"] 
+3.0.0 :014 > a.rotate!(3)
+ => ["a", "b", "c", "d"] 
+
+# sample(n, random: rng) → new_ary
+Choose a random element or n random elements from the array.
+The elements are chosen by using random and unique indices into the array in order to ensure that an element doesn't repeat itself unless the array already contained duplicate elements.
+
+3.0.0 :021 > a.sample
+ => 2 
+3.0.0 :022 > a.sample(4)
+ => [4, 1, 2, 3]
+ 
+ # select
+Returns a new array containing all elements of ary for which the given block returns a true value.
+3.0.0 :024 > [1,2,3,4,5].select {|num| num.even?}
+ => [2, 4] 
+3.0.0 :025 > [1,2,3,4,5].select {|num| num.odd?}
+ => [1, 3, 5] 
+3.0.0 :026]> a = %w[ a b c d e f ]
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :027 > a.select {|v| v =~ /[aeiou]/ }
+ => ["a", "e"] 
+
+#shift → obj or nil click to toggle source
+shift(n) → new_ary
+Removes the first element of self and returns it (shifting all other elements down by one). Returns nil if the array is empty.
+
+.0.0 :026]> a = %w[ a b c d e f ]
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :027 > a.select {|v| v =~ /[aeiou]/ }
+ => ["a", "e"] 
+3.0.0 :028 > args = ["-m","-q","filename"]
+ => ["-m", "-q", "filename"] 
+3.0.0 :029 > args.shift
+ => "-m" 
+3.0.0 :030 > args
+ => ["-q", "filename"] 
+3.0.0 :031 > args = ["-m","-q","filename"]
+ => ["-m", "-q", "filename"] 
+3.0.0 :032 > args.shift(2)
+ => ["-m", "-q"] 
+3.0.0 :033 > args
+ => ["filename"] 
+
+#shuffle - returns a new array with elements of self shuffled
+
+3.0.0 :034 > a = [ 1,2,3]
+ => [1, 2, 3] 
+3.0.0 :035 > a.shuffle!
+ => [2, 3, 1] 
+3.0.0 :036 > a
+ => [2, 3, 1] 
+ 
+ .0 :037 > a.shuffle!(random: Random.new(1))
+ => [2, 1, 3] 
+
+#Element Reference — Returns the element at index, or returns a subarray starting at the start index and continuing for length elements, or returns a subarray specified by range of indices.
+Negative indices count backward from the end of the array (-1 is the last element). For start and range cases the starting index is just before an element. Additionally, an empty array is returned when the starting index for an element range is at the end of the array.
+
+3.0.0 :042 > a.slice(1)
+ => "b" 
+3.0.0 :043 > a
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :044 > a.slice(-1)
+ => "f" 
+3.0.0 :045 > a.slice(1,4)
+ => ["b", "c", "d", "e"] 
+3.0.0 :047 > a.slice!(-1)
+ => "f" 
+3.0.0 :048 > a
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :049 > a.slice!(100)
+ => nil 
+
+Sort - Returns a new array created by sorting self.
+3.0.0 :050 > a = ["d","a","e","c","b"]
+ => ["d", "a", "e", "c", "b"] 
+3.0.0 :051 > a.sort
+ => ["a", "b", "c", "d", "e"] 
+3.0.0 :052?> a.sort (|a, b| b<=>a}
+3.0.0 :053?>   ^C
+3.0.0 :052 > a
+ => ["d", "a", "e", "c", "b"] 
+3.0.0 :053 > a.sort.reverse!
+ => ["e", "d", "c", "b", "a"] 
+ 
+3.0.0 :057 > n.sort!
+ => [1, 2, 3, 4, 5, 6] 
+3.0.0 :058 > n.sort! {|a, b| b <=> a}
+ => [6, 5, 4, 3, 2, 1] 
+
+#sum - returns the sum of elements.
+3.0.0 :061 > [].sum(0.0)
+ => 0.0 
+3.0.0 :062 > [1,2,3].sum
+ => 6 
+3.0.0 :063 > [3,4,5,6].sum
+ => 18 
+3.0.0 :064 > [2.5,3.0].sum(0.0) {|e| e * e}
+ => 15.25 
+
+# take(n) → 
+Returns first n elements from the array.
+If a negative number is given, raises an ArgumentError.
+
+3.0.0 :067 > a.take(3)
+ => [1, 2, 3] 
+3.0.0 :068 > a.take(6)
+ => [1, 2, 3, 4, 5, 0] 
+ 
+ 
+ # take_while - pass elements to the block until the block returns nil or false
+then stops iterating and returns an array of all prior elements.
+3.0.0 :069 > a = [1,2,3,4,5,0]
+ => [1, 2, 3, 4, 5, 0] 
+3.0.0 :070 > a.take_while{|i| i < 3}
+ => [1, 2] 
+
+
+#to_h {|item| block } → hash
+Returns the result of interpreting ary as an array of [key, value] pairs.
+
+3.0.0 :071 > [[:foo,:bar], [1,2]].to_h
+ => {:foo=>:bar, 1=>2} 
+ 
+ If a block is given, the results of the block on each element of the array will be used as pairs.
+ 3.0.0 :072 > ["foo","bar"].to_h {|s| [s.ord, s]}
+ => {102=>"foo", 98=>"bar"} 
+ 
+#transpose - Assumes that self is an array of arrays and transposes the rows and columns.
+  => [[1, 2], [3, 4], [5, 6]] 
+3.0.0 :074 > a.transpose
+ => [[1, 3, 5], [2, 4, 6]] 
+
+# union(other_ary1, other_ary2, ...) 
+Set Union — Returns a new array by joining other_arys with self, excluding any duplicates and preserving the order from the given arrays.
+
+ 3.0.0 :077 > ["a","b","c"].union(["a","b","c"])
+ => ["a", "b", "c"] 
+3.0.0 :078 > ["a","b","c"].union(["a","b","c","e","f"])
+ => ["a", "b", "c", "e", "f"] 
+
+#uniq {|item| ...} → new_ary
+Returns a new array by removing duplicate values in self.
+If a block is given, it will use the return value of the block for comparison.
+It compares values using their hash and eql? methods for efficiency.
+self is traversed in order, and the first occurrence is kept.
+
+3.0.0 :079 > a = ["a","a","b","b","c"]
+ => ["a", "a", "b", "b", "c"] 
+3.0.0 :080 > a.uniq
+ => ["a", "b", "c"] 
+3.0.0 :081 > a
+ => ["a", "a", "b", "b", "c"] 
+3.0.0 :082 > a.uniq!
+ => ["a", "b", "c"] 
+3.0.0 :083 > a
+ => ["a", "b", "c"] 
+
+3.0.0 :084 > c = [["student","sam"], ["student","george"], ["teacher","matz"]]
+ => [["student", "sam"], ["student", "george"], ["teacher", "matz"]] 
+3.0.0 :085 > c.uniq! {|s| s.first}
+ => [["student", "sam"], ["teacher", "matz"]] 
+
+#prepend(obj, ...) →
+Prepends objects to the front of self, moving other elements upwards. See also Array#shift for the opposite effect.
+
+3.0.0 :087 > a.unshift("a")
+ => ["a", "b", "c", "d"] 
+3.0.0 :088 > a
+ => ["a", "b", "c", "d"] 
+3.0.0 :089 > a.unshift(1,2)
+ => [1, 2, "a", "b", "c", "d"] 
+ 
+ # values_at(selector, ...) → 
+Returns an array containing the elements in self corresponding to the given selector(s).
+The selectors may be either integer indices or ranges.
+ 3.0.0 :091 > a = %w{ a b c d e f }
+ => ["a", "b", "c", "d", "e", "f"] 
+3.0.0 :093 > a.values_at(1,3,5)
+ => ["b", "d", "f"] 
+3.0.0 :094 > a.values_at(1,6)
+ => ["b", nil] 
+3.0.0 :095 > a.values_at(1..4)
+
+
+#zip(arg, ...) → 
+zip(arg, ...) {|arr| block} → nil
+
+Converts any arguments to arrays, then merges elements of self with corresponding elements from each argument.
+This generates a sequence of ary.size n-element arrays, where n is one more than the count of arguments.
+If the size of any argument is less than the size of the initial array, nil values are supplied.
+If a block is given, it is invoked for each output array, otherwise an array of arrays is returned.
+3.0.0 :096 > a = [4,5,6]
+ => [4, 5, 6] 
+3.0.0 :097 > b = [7,8,9]
+ => [7, 8, 9] 
+3.0.0 :098 > [1,2,3].zip(a,b)
+ => [[1, 4, 7], [2, 5, 8], [3, 6, 9]] 
+3.0.0 :099 > [1,2].zip(a, b)
+ => [[1, 4, 7], [2, 5, 8]] 
+
+
+ary |
+Set Union — Returns a new array by joining ary with other_ary, excluding any duplicates and preserving the order from the given arrays.
+It compares elements using their hash and eql? methods for efficiency.
+
+3.0.0 :100 > ["a","b","c"] | ["c","d","a"]
+ => ["a", "b", "c", "d"] 
+3.0.0 :101 > ["c","d","a"] | ["a","b","c"]
+ => ["c", "d", "a", "b"] 
+
