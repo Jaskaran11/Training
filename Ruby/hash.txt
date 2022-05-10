@@ -1,0 +1,288 @@
+#A hash maps each of its unique keys to a specific value.In simple words, a hash is a collection of unique keys and their values.
+A hash has certain similarities to an array but:
+(1) an array index is always an integer
+(2) a hash key can be any object
+
+#Hash Data Syntax
+
+The older syntax for Hash data uses the “hash rocket",
+3.0.0 :001 > h = {:foo=>0, :bar => 1, :baz => 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+
+we can use a newer JSON-style syntax, where each bareword becomes a Symbol
+3.0.0 :003 > h= {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+ we can also use a string.
+3.0.0 :004 > h = {'foo':0, 'bar':1, 'baz':2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+ and you can mix the styles,but it's an error to try json-style syntax for a key thats not a bareword or string
+3.0.0 :005 > h = {foo:0, :bar =>1, 'baz':2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+
+#Common Uses
+
+use hash to give name to objects
+3.0.0 :006 > person = {name: 'Matz', language: 'Java'}
+ => {:name=>"Matz", :language=>"Java"} 
+
+to give name to method arguments
+3.0.0 :007 > def s_method(hash)
+3.0.0 :008 >   p hash
+3.0.0 :009 > end
+ => :s_method
+3.0.0 :011 > s_method({Apple: 0, Mango:1, Orange: 2})
+{:Apple=>0, :Mango=>1, :Orange=>2}
+ => {:Apple=>0, :Mango=>1, :Orange=>2} 
+
+to initialize a object
+3.0.0 :001 > class Dev
+3.0.0 :002 >   attr_accessor :name, :age
+3.0.0 :003 >   def initialize(hash)
+3.0.0 :004 >     self.name = hash[:name]
+3.0.0 :005 >     self.age = hash[:age]
+3.0.0 :006 >   end
+3.0.0 :007 > end
+ => :initialize 
+3.0.0 :008 > Sam = Dev.new(name: 'Sam', age: '22')
+ => #<Dev:0x0000563310acb1f8 @name="Sam", @age="22"> 
+ 
+ #Creating the hash
+ 
+1.You can create a Hash object explicitly with:
+    A hash literal.
+
+2.You can convert certain objects to Hashes with:
+    Method Hash.
+
+You can create a Hash by calling method Hash.new.
+
+create an empty hash
+3.0.0 :009 > h = Hash.new
+ => {} 
+
+You can create a Hash by calling method Hash.[].
+3.0.0 :011 > h = Hash[]
+ => {} 
+
+creating a hash with initial entries
+3.0.0 :010 > h = {foo:0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+
+to retrieve a hash value
+ => {:jaskaran=>1, :amit=>2, :rohit=>3} 
+3.0.0 :013 > h[:jaskaran]
+ => 1 
+
+to update a hash value or create
+3.0.0 :001 > h ={foo: 0, bar: 1, bax: 2}
+ => {:foo=>0, :bar=>1, :bax=>2} 
+3.0.0 :002 > h[:bat] = 3
+ => 3 
+3.0.0 :003 > h
+ => {:foo=>0, :bar=>1, :bax=>2, :bat=>3} 
+3.0.0 :004 > h[:foo] = 4
+ => 4 
+3.0.0 :005 > h
+ => {:foo=>4, :bar=>1, :bax=>2, :bat=>3} 
+
+to delete a hash entry
+3.0.0 :007 > h.delete(:baz)
+ => 2 
+3.0.0 :008 > h
+ => {:foo=>0, :bar=>1} 
+ 
+ #A Hash object presents its entries in the order of their creation.
+
+0 :009 > h = Hash[foo:0,bar:1]
+ => {:foo=>0, :bar=>1} 
+3.0.0 :010 > h
+ => {:foo=>0, :bar=>1} 
+3.0.0 :011 > h[:baz] = 2
+ => 2 
+3.0.0 :012 > h
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :013 > h[:baz] = 3
+ => 3 
+3.0.0 :014 > h
+ => {:foo=>0, :bar=>1, :baz=>3} 
+ 
+ but re-creating a deleted entry can affect the order:
+3.0.0 :015 > h.delete(:foo)
+ => 0 
+3.0.0 :016 > h
+ => {:bar=>1, :baz=>3} 
+3.0.0 :017 > h[:foo] = 5
+ => 5 
+3.0.0 :018 > h
+ => {:bar=>1, :baz=>3, :foo=>5} 
+
+#Hash keys - two objects as the same hash key when their hash value is identical and the two objects are equal to each other.
+
+=>Modifying a Hash key while it is in use damages the hash's index.
+3.0.0 :019 > a0 = [ :foo, :bar]
+ => [:foo, :bar] 
+3.0.0 :020 > a1 = [ :baz, :bat ]  
+3.0.0 :021 > h = {a0 => 0, a1 => 1}
+3.0.0 :022 > a0.hash
+3.0.0 :023 > h[a0]
+ => 0 
+3.0.0 :024 > h.include?(a0)
+ => true 
+ 
+ =>Modifying array element changes its hash value
+ 3.0.0 :025 > a0[0] = :bam
+ => :bam 
+3.0.0 :026 > a0
+ => [:bam, :bar] 
+3.0.0 :028 > a0.hash
+ => -3366766198896116849
+ 
+ modifying a0[0] changes its hash value
+ 3.0.0 :026 > a0
+ => [:bam, :bar] 
+3.0.0 :028 > a0.hash
+ => -3366766198896116849 
+ 
+ and damages the hash index
+3.0.0 :029 > h.include?(a0)
+ => false 
+3.0.0 :030 > h[a0]
+ => nil 
+
+to repair the hash index we use the method rehash
+3.0.0 :031 > h.rehash
+ => {[:bam, :bar]=>0, [:baz, :bat]=>1} 
+3.0.0 :032 > h.include?(a0)
+ => true 
+3.0.0 :033 > h[a0]
+ => 0 
+
+A String key is always safe. That's because an unfrozen String passed as a key will be replaced by a duplicated and frozen String:
+3.0.0 :001 > s = 'foo'
+ => "foo" 
+3.0.0 :002 > s.frozen?
+ => false 
+3.0.0 :003 > h = {s => 0}
+ => {"foo"=>0} 
+3.0.0 :004 > first_key = h.keys.first
+ => "foo" 
+3.0.0 :005 > first_key.frozen?
+ => true 
+
+#default values
+
+You can retrieve the default value with method default:
+3.0.0 :022 > h = Hash.new
+ => {} 
+3.0.0 :023 > h.default
+ => nil 
+ 
+ You can set the default value by passing an argument to method Hash.new or with method default=
+3.0.0 :024 > h = Hash.new(-1)
+ => {} 
+3.0.0 :025 > h.default
+ => -1 
+3.0.0 :026 > h.default = 0
+ => 0 
+3.0.0 :027 > h.default
+ => 0 
+ 
+ This default value is returned for [], values_at and dig when a key is not found:
+3.0.0 :037 > counts = {foo: 42}
+ => {:foo=>42} 
+3.0.0 :038 > counts.default
+ => nil 
+3.0.0 :039 > counts[:foo]
+ => 42 
+3.0.0 :040 > counts[:bar]
+ => nil 
+3.0.0 :041 > counts.default = 0
+ => 0 
+3.0.0 :042 > counts[:bar]
+ => 0 
+3.0.0 :043 > counts.values_at(:foo, :bar, :baz)
+ => [42, 0, 0] 
+3.0.0 :044 > counts.dig(:bar)
+ => 0 
+
+. It is not advised to set the default value to a mutable object:
+3.0.0 :046 > synonyms[:hello]
+ => [] 
+3.0.0 :048 > synonyms[:hello] << :hi
+ => [:hi] 
+3.0.0 :049 > synonyms.default
+ => [:hi] 
+3.0.0 :050 > synonyms[:world] << :universe
+ => [:hi, :universe] 
+3.0.0 :051 > synonyms[:world]
+ => [:hi, :universe] 
+3.0.0 :052 > synonyms.keys
+ => [] 
+
+Default Proc - To use a mutable object as default, it is recommended to use a default proc
+3.0.0 :053 > h = Hash.new
+ => {} 
+3.0.0 :054 > h.default_proc
+ => nil 
+3.0.0 :055 > h = Hash.new { |hash, key| "Default value for #{key}" }
+ => {} 
+3.0.0 :056 > h.default_proc.class
+ => Proc 
+3.0.0 :057 > h.default_proc = proc { |hash,key| "Default value for #{key.inspect
+}"}
+ => #<Proc:0x000056292138a3d8 (irb):57> 
+3.0.0 :058 > h.default_proc.class
+ => Proc 
+3.0.0 :059
+
+#Public Class Methods
+
+Hash[] → new_empty_hash
+Hash[hash] → new_hash
+Hash[ [*2_element_arrays] ] → new_hash
+Hash[*objects] → new_hash
+Returns a new Hash object populated with the given objects, if any.
+With no argument, returns a new empty Hash.
+
+3.0.0 :059 > h = {foo: 0,bar: 1,baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :060 > Hash[h]
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :061 > Hash[ [ [:foo, 0], [:bar, 1] ] ]
+ => {:foo=>0, :bar=>1} 
+3.0.0 :062 > Hash[:foo, 0], [:bar, 1]
+3.0.0 :063 > Hash[:foo, 0,:bar, 1]
+ => {:foo=>0, :bar=>1}
+
+
+ new(default_value = nil) → new_hash 
+new {|hash, key| ... } → new_hash
+Returns a new empty Hash object.
+The initial default value and initial default proc for the new hash depend on which form above was used.
+If neither an argument nor a block given, initializes both the default value and the default proc to nil:
+
+3.0.0 :064 > h = Hash.new
+ => {} 
+3.0.0 :065 > h.default
+ => nil 
+3.0.0 :066 > h.default_proc
+ => nil 
+3.0.0 :067 > h = Hash.new(false)
+ => {} 
+3.0.0 :068 > h.default
+ => false 
+3.0.0 :069 > h.default_proc
+ => nil 
+3.0.0 :070 > h = Hash.new {|hash, key| "Default value for #{key}" }
+ => {} 
+3.0.0 :071 > h.default
+ => nil 
+3.0.0 :072 > h.default_proc.class
+ => Proc 
+3.0.0 :073 > h[:nosuch]
+ => "Default value for nosuch" 
+ 
+ 
+
