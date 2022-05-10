@@ -284,5 +284,658 @@ If neither an argument nor a block given, initializes both the default value and
 3.0.0 :073 > h[:nosuch]
  => "Default value for nosuch" 
  
+ruby2_keywords_hash(hash) → Duplicates a given hash and adds a ruby2_keywords flag. 
+This method is not for casual use; debugging, researching, and some truly necessary cases like deserialization of arguments.
+3.0.0 :001 > h = {k: 1}
+ => {:k=>1} 
+3.0.0 :002 > h = Hash.ruby2_keywords_hash(h)
+ => {:k=>1} 
+3.0.0 :003 > def foo(k: 42)
+3.0.0 :004 >   k 
+3.0.0 :005 > end
+ => :foo 
+3.0.0 :006 > foo(*[h])
+ => 1 
+
+ ruby2_keywords_hash?(hash) → Checks if a given hash is flagged by Module#ruby2_keywords (or Proc#ruby2_keywords). 
+ This method is not for casual use; debugging, researching, and some truly necessary cases like serialization of arguments.
+ 3.0.0 :007 > ruby2_keywords def foo(*args)
+3.0.0 :008 >   Hash.ruby2_keywords_hash?(args.last)
+3.0.0 :009 > end
+ => nil 
+3.0.0 :010 > foo(k: 1)
+ => true 
+3.0.0 :011 > foo(k: 2)
+ => true 
+3.0.0 :012 > foo({k: 1})
+ => false 
+
+#Public Instance Methods
+
+ hash < other_hash → 
+Returns true if hash is a proper subset of other_hash, false otherwise
+3.0.0 :013 > h1 = {hi:1 , hello:2}
+ => {:hi=>1, :hello=>2} 
+3.0.0 :014 > h2 = {hi:1 , hello:2, wassup:3}
+ => {:hi=>1, :hello=>2, :wassup=>3} 
+3.0.0 :015 > h1 < h2
+ => true 
+3.0.0 :016 > h2 > h1
+ => true 
+3.0.0 :017 > h2 < h1
+ => false 
+
+ hash <= other_hash → Returns true if hash is a subset of other_hash, false otherwise:
+  3.0.0 :018 > h1 <= h2
+ => true 
+3.0.0 :019 > h2 <= h1
+ => false 
+
+ hash == object → true or false click to toggle source
+
+Returns true if all of the following are true:
+    object is a Hash object
+    hash and object have the same keys (regardless of order).
+    For each key key, hash[key] == object[key].
+
+3.0.0 :020 > h1 = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :021 > h2 = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :022 > h1 == h2
+ => true 
+3.0.0 :023 > h3 = {baz:2,bar:1,foo:0}
+ => {:baz=>2, :bar=>1, :foo=>0} 
+3.0.0 :024 > h1 == h3
+ => true 
+
+ hash > Returns true if hash is a proper superset of other_hash, false otherwise:
+ 3.0.0 :025 > h1 = {foo:0, bar:1, baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :026 > h2 = {foo:0,bar:1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :027 > h1 > h2
+ => true 
+3.0.0 :028 > h2 > h1
+ => false 
+
+ hash >= 
+Returns true if hash is a superset of other_hash, false otherwise:
+3.0.0 :029 > h1 = {foo:0 , bar:1, baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :030 > h2 = {foo:0, bar:1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :031 > h1 >= h2
+ => true 
+3.0.0 :032 > h2 >= h1
+ => false 
+
+ hash[key] - Returns the value associated with the given key, if found:
+ 3.0.0 :033 > h = {Naruto:0 , Goku:1,Vegeta:2,Lee:3}
+ => {:Naruto=>0, :Goku=>1, :Vegeta=>2, :Lee=>3} 
+3.0.0 :034 > h[:Lee]
+ => 3 
+3.0.0 :035 > h[:Pain]
+ => nil 
+3.0.0 :036
+
+ hash[key] = value → Associates the given value with the given key; returns value.
+ 3.0.0 :036 > h = {foo: 0,bar:1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :037 > h[:foo] = 2
+ => 2 
+3.0.0 :038 > h
+ => {:foo=>2, :bar=>1} 
+3.0.0 :039 > h.store(:bar, 3)
+ => 3 
+3.0.0 :040 > h
+ => {:foo=>2, :bar=>3} 
+
+if key does not exist add the key and value : the new entry is in last
+3.0.0 :042 > h[:foo] = 2
+ => 2 
+3.0.0 :043 > h.store(:bar, 3)
+ => 3 
+3.0.0 :044 > h
+ => {:foo=>2, :bar=>3} 
+3.0.0 :045 > h.store(:bat, 4)
+ => 4 
+3.0.0 :046 > h
+ => {:foo=>2, :bar=>3, :bat=>4} 
+
+
+ any? - Returns true if any element satisfies a given criterion; false otherwise.
+With no argument and no block, returns true if self is non-empty; false if empty.
+ => {:foo=>2, :bar=>3, :bat=>4} 
+3.0.0 :047 > h = {foo: 0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :048 > h.any?([:bar ,1])
+ => true 
+3.0.0 :049 > h.any?([:bar ,2])
+ => false 
+3.0.0 :050 > h.any?([:baz ,2])
+ => true 
+3.0.0 :051 > h.any? {|key, value| value < 3}
+ => true 
+3.0.0 :052 > h.any? {|key, value| value > 3}
+ => false 
  
+ assoc - If the given key is found, returns a 2-element Array containing that key and its valu
+ 3.0.0 :053 > h = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :054 > h.assoc(:bar)
+ => [:bar, 1] 
+ 
+ clear - removes all hash entries
+ 
+ compact - returns a copy of self with nil-values removed
+ 3.0.0 :055 > h = {foo:0,bar:nil,baz:2}
+ => {:foo=>0, :bar=>nil, :baz=>2} 
+3.0.0 :056 > h1 = h.compact
+ => {:foo=>0, :baz=>2} 
+3.0.0 :057 > h1
+ => {:foo=>0, :baz=>2} 
+
+3.0.0 :059 > h.compact!
+ => {:foo=>0, :baz=>2} 
+3.0.0 :060 > h
+ => {:foo=>0, :baz=>2} 
+ 
+ compare_by_identity - sets self to consider only identity in comparing keys,two keys are considered the same only if they are the same object
+ 3.0.0 :061'> s0 = 'x'
+3.0.0 :062'> s1 = 'x'
+ => "x" 
+3.0.0 :063 > h = {}
+ => {} 
+3.0.0 :064 > h.compare_by_identity
+ => {} 
+3.0.0 :065 > h.compare_by_identity?
+ => true 
+3.0.0 :066 > h[s0] = 0
+ => 0 
+3.0.0 :067 > h[s1] = 1
+ => 1 
+3.0.0 :068 > h
+ => {"x"=>0, "x"=>1} 
+3.0.0 :069 > h.compare_by_identity?
+ => true 
+3.0.0 :070 > h = {}
+ => {} 
+3.0.0 :071 > h
+ => {} 
+3.0.0 :072 > h.compare_by_identity
+ => {} 
+3.0.0 :073 > h.compare_by_identity?
+ => true 
+
+default - returns the default value for the given key
+
+3.0.0 :074 > h= {}
+ => {} 
+3.0.0 :075 > h.default
+ => nil 
+3.0.0 :076 > h = Hash.new{ |hash, key| hash[key] = "No key #{key}"}
+ => {} 
+3.0.0 :077 > h[:foo] = "Hello"
+ => "Hello" 
+3.0.0 :078 > h.default(:foo)
+ => "No key foo" 
+
+Sets the default value to value; returns value:
+3.0.0 :079 > h = {}
+ => {} 
+3.0.0 :080 > h.default
+ => nil 
+3.0.0 :081 > h.default = true
+ => true 
+3.0.0 :082 > h.default
+ => true 
+
+ delete - deletes the entry for the given key and returns its associated value
+ 3.0.0 :090 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :091 > h.delete(:bar)
+ => 1 
+
+3.0.0 :093 > h = {foo:0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :094 > h.delete(:baz) { |key| raise 'Will never happen'}
+ => 2 
+3.0.0 :095 > h
+ => {:foo=>0, :bar=>1} 
+3.0.0 :096 > h = {foo:0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :097 > h.delete(:nosuch) {|key| "key #{key} not found"}
+ => "key nosuch not found" 
+
+delete_if - if a block given, calls the block with each key-value pair,deletes each entry for which the block returns a truthy value
+3.0.0 :098 > h = {foo: 0,bar: 1,baz: 2
+3.0.0 :099 > }
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :100 > h.delete_if {|key, value| value > 0}
+ => {:foo=>0} 
+3.0.0 :101 > h
+ => {:foo=>0} 
+
+dig - find and retuns the object in nested objects that is specified by key and identifiers.
+ => {:foo=>{:bar=>{:baz=>2}}} 
+3.0.0 :103 > h.dig(:foo, :bar)
+ => {:baz=>2} 
+3.0.0 :104 > h.dig(:foo)
+ => {:bar=>{:baz=>2}} 
+3.0.0 :105 > h.dig(:foo, :bar, :baz)
+ => 2 
+3.0.0 :106 > h.dig(:foo, :bar, :bAZ)
+ => nil 
+
+This method will use the default values for keys that are not present:
+.0.0 :102 > h = {foo: {bar: {baz: 2}}}
+ => {:foo=>{:bar=>{:baz=>2}}} 
+3.0.0 :103 > h.dig(:foo, :bar)
+ => {:baz=>2} 
+3.0.0 :104 > h.dig(:foo)
+ => {:bar=>{:baz=>2}} 
+3.0.0 :105 > h.dig(:foo, :bar, :baz)
+ => 2 
+3.0.0 :106 > h.dig(:foo, :bar, :bAZ)
+ => nil 
+3.0.0 :107 > h = {foo: {bar: [:a, :b, :c]}}
+ => {:foo=>{:bar=>[:a, :b, :c]}} 
+3.0.0 :108 > h.dig(:hello)
+ => nil 
+3.0.0 :1
+
+each - Calls the given block with each key-value pairs
+3.0.0 :112 > h.each_pair {|key, value| puts "#{key}: #{value}"}
+foo: 0
+bar: 1
+baz: 2
+ => {:foo=>0, :bar=>1, :baz=>2} 
+
+each_key - calls the given block with each key
+3.0.0 :114 > h = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :115 > h.each_key {|key| puts key}
+foo
+bar
+baz
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+ each_pair - calls the given block with each key-value pair,returns self:
+3.0.0 :117 > h.each_pair {|key, value| puts "#{key}: #{value}"}
+foo: 0
+bar: 1
+baz: 2
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+ each_value - calls the given block with each value
+ 3.0.0 :118 > h = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :119 > h.each_value {|value| puts value }
+0
+1
+2
+ => {:foo=>0, :bar=>1, :baz=>2} 
+ 
+ empty? - returns true if there are no hash entries
+ 3.0.0 :120 > {}.empty?
+ => true 
+3.0.0 :121 > {foo:0}.empty?
+ => false 
+
+
+eql?object - returns true if object is a hash object , hash and object have same keys,for each key key, h[key] eql? object[key].
+3.0.0 :122 > h1 = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :123 > h3 = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :124 > h1.eql?h3
+ => true 
+
+except(*keys) - returns a new hash excluding entries for the given keys -
+3.0.0 :125 > h = { a: 100, b: 200, c:300}
+ => {:a=>100, :b=>200, :c=>300} 
+3.0.0 :126 > h.except(:b)
+ => {:a=>100, :c=>300} 
+
+fetch - returns the value for the given key,if found
+3.0.0 :128 > h = {w:1,x:2,y:3}
+ => {:w=>1, :x=>2, :y=>3} 
+3.0.0 :129 > h.fetch(:x)
+ => 2 
+3.0.0 :130 > {}.fetch(:nosuch, :default)
+ => :default 
+ 
+ fetch_values - returns a new array containing the values associated with the given keys
+ 3.0.0 :131 > h = {w:1,x:2,y:3}
+ => {:w=>1, :x=>2, :y=>3} 
+3.0.0 :132 > h.fetch_values(:x,:y)
+ => [2, 3] 
+
+select - Returns a new Hash object whose entries are those for which the block returns a truthy value:
+3.0.0 :133 > h = {foo: 0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :134 > h.select {|key, value| value<2}
+ => {:foo=>0, :bar=>1}
+ 3.0.0 :136 > h.select! {|key, value| value<2}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :137 > h
+ => {:foo=>0, :bar=>1} 
+ 
+ flatten - returns a new array object that is a 1-dimensional flattening of self.
+ 3.0.0 :137 > h
+ => {:foo=>0, :bar=>1} 
+3.0.0 :138 > h = {foo:0,bar: [:bat, 3], baz:2}
+ => {:foo=>0, :bar=>[:bat, 3], :baz=>2} 
+3.0.0 :139 > h.flatten
+ => [:foo, 0, :bar, [:bat, 3], :baz, 2] 
+3.0.0 :140 > h.flatten(1)
+ => [:foo, 0, :bar, [:bat, 3], :baz, 2] 
+3.0.0 :141 > h = {foo:0 , bar: [:bat, [:baz, [:bat, ]]]}
+ => {:foo=>0, :bar=>[:bat, [:baz, [:bat]]]} 
+3.0.0 :142 > h.flatten(1)
+ => [:foo, 0, :bar, [:bat, [:baz, [:bat]]]] 
+3.0.0 :143 > h.flatten(2)
+ => [:foo, 0, :bar, :bat, [:baz, [:bat]]] 
+3.0.0 :144 > h.flatten(3)
+ => [:foo, 0, :bar, :bat, :baz, [:bat]] 
+3.0.0 :145 > h.flatten(4)
+ => [:foo, 0, :bar, :bat, :baz, :bat] 
+
+hash - returns the integer hash-code for the hash
+3.0.0 :146 > h1 = {foo: 0,bar: 1, baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :147 > h2 = {foo: 0,bar: 1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :148 > h2.hash == h1.hash
+ => true 
+3.0.0 :149 > h1.hash
+ => -4362620052101970319 
+3.0.0 :150 > h2.hash
+ => -4362620052101970319 
+ 
+ replace - replaces the entire content of self with the contents
+ 3.0.0 :151 > h = {x:0,y:1,z:2}
+ => {:x=>0, :y=>1, :z=>2} 
+3.0.0 :152 > h.replace({a:3,b:4})
+ => {:a=>3, :b=>4} 
+3.0.0 :153 > h
+ => {:a=>3, :b=>4} 
+
+inspect = returns a new string containing the hash entries
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :155 > h.inspect
+ => "{:foo=>0, :bar=>1, :baz=>2}" 
+ 
+ invert - returns a new hash object with each key-value pair inverted -
+ 3.0.0 :156 > h = {a:1,b:2,c:3}
+ => {:a=>1, :b=>2, :c=>3} 
+3.0.0 :157 > h1 = h.invert
+ => {1=>:a, 2=>:b, 3=>:c} 
+3.0.0 :158 > h1
+ => {1=>:a, 2=>:b, 3=>:c} 
+
+keep_if=>Calls the block for each key-value pair; retains the entry if the block returns a truthy value; otherwise deletes the entry; returns self.
+
+3.0.0 :159 > h = {a:1,b:2,c:3}
+ => {:a=>1, :b=>2, :c=>3} 
+3.0.0 :161 > h.keep_if {|key, value| key.start_with?('b')}
+ => {:b=>2} 
+
+key - returns the key for the first-found entry with given value
+3.0.0 :001 > h = {foo: 0,bar:2,baz:2}
+ => {:foo=>0, :bar=>2, :baz=>2} 
+3.0.0 :002 > h.key(0)
+ => :foo 
+3.0.0 :004 > h.key(:foo)
+ => nil 
+3.0.0 :005 > h.key(2)
+ => :bar 
+ 
+ keys - returns a new array containing all keys in self
+ 3.0.0 :006 > h = {foo: 0, bar: 1, baz: 2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :007 > h.keys
+ => [:foo, :bar, :baz]
+ 
+ length - returns the count of entries in self
+ 3.0.0 :008 > h.length
+ => 3 
+ 
+ merge-
+ Returns the new Hash formed by merging each of other_hashes into a copy of self.
+Each argument in other_hashes must be a Hash.
+With arguments and no block:
+Returns the new Hash object formed by merging each successive Hash in other_hashes into self.
+Each new-key entry is added at the end.
+Each duplicate-key entry's value overwrites the previous value.
+
+3.0.0 :009 > h = {foo: 0,bar: 1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :010 > h1 = {bat: 3, bar:4}
+ => {:bat=>3, :bar=>4} 
+3.0.0 :011 > h2 = {bam: 5, bat:6}
+ => {:bam=>5, :bat=>6} 
+3.0.0 :012 > h.merge(h1, h2)
+ => {:foo=>0, :bar=>4, :baz=>2, :bat=>6, :bam=>5}
+ 
+ 3.0.0 :013 > h = {goku:1,vegeta:2}
+ => {:goku=>1, :vegeta=>2} 
+3.0.0 :014 > h1 = {itachi:3,sasuke:4}
+ => {:itachi=>3, :sasuke=>4} 
+3.0.0 :015 > h.merge(h1)
+ => {:goku=>1, :vegeta=>2, :itachi=>3, :sasuke=>4} 
+
+3.0.0 :016 > h = {foo: 0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :017 > h1 = {bat:3 ,bar:4}
+ => {:bat=>3, :bar=>4} 
+3.0.0 :018 > h2 = {bam:5,bat:6}
+ => {:bam=>5, :bat=>6} 
+3.0.0 :019 > h3 = h.merge(h1,h2) { |key, old_value, new_value| old_value + new_
+value }
+ => {:foo=>0, :bar=>5, :baz=>2, :bat=>9, :bam=>5} 
+3.0.0 :020 > h3
+ => {:foo=>0, :bar=>5, :baz=>2, :bat=>9, :bam=>5} 
+
+merge! - Merges each of other_hashes into self; returns self.
+3.0.0 :024 > h.merge!(h1)
+ => {:foo=>0, :bar=>4, :baz=>2, :bat=>3} 
+3.0.0 :025 > h
+ => {:foo=>0, :bar=>4, :baz=>2, :bat=>3} 
+
+
+ rassoc -Returns a new 2-element Array consisting of the key and value of the first-found entry whose value is == to value
+  => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :027 > h.rassoc(1)
+ => [:bar, 1] 
+3.0.0 :028 > h.rassoc(2)
+ => [:baz, 2]
+ 
+ reject - Returns a new Hash object whose entries are all those from self for which the block returns false or nil:
+ 
+ 3.0.0 :032 > h1 = h.reject {|key, value| key.start_with?('y') }
+ => {:x=>0, :z=>2} 
+ 
+ 3.0.0 :034 > e=h.reject
+ => #<Enumerator: {:foo=>0, :bar=>1, :baz=>2}:reject> 
+3.0.0 :035 > h1 = e.each { |key, value | key.start_with?('b') }
+ => {:foo=>0} 
+
+
+reject! - returns self
+3.0.0 :036 > h = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :037 > h.reject! {|key, value| value < 2}
+ => {:baz=>2} 
+3.0.0 :038 > h
+ => {:baz=>2} 
+
+3.0.0 :039 > h = {foo:0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :040 > e=h.reject!
+ => #<Enumerator: {:foo=>0, :bar=>1, :baz=>2}:reject!> 
+3.0.0 :041 > e.each {|key, value| key.start_with?('b') }
+ => {:foo=>0} 
+
+replace - Replaces the entire contents of self with the contents of other_hash; returns self:
+3.0.0 :042 > h = {foo: 0, bar:1, baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :043 > h.replace({bat:3,bam:4})
+ => {:bat=>3, :bam=>4} 
+3.0.0 :044 > h
+ => {:bat=>3, :bam=>4} 
+ 
+ shift - Removes the first hash entry; returns a 2-element Array containing the removed key and value:
+ .0.0 :045 > h = {foo: 0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :046 > h.shift
+ => [:foo, 0] 
+3.0.0 :047 > h
+ => {:bar=>1, :baz=>2} 
+
+Slice - Returns a new Hash object containing the entries for the given keys:
+
+3.0.0 :049 > h = {foo:0 , bar:1 , baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :050 > h.slice(:baz, :foo)
+ => {:baz=>2, :foo=>0} 
+ 
+ Store - Associates the given value with the given key; returns value.
+
+If the given key exists, replaces its value with the given value; the ordering is not affected
+
+3.0.0 :051 > h = {foo: 0, bar: 1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :052 > h[:foo] = 2
+ => 2 
+3.0.0 :053 > h.store(:bar, 3)
+ => 3 
+3.0.0 :054 > h
+ => {:foo=>2, :bar=>3} 
+
+If key does not exist, adds the key and value; the new entry is last in the order
+3.0.0 :056 > h = {foo: 0, bar: 1}
+ => {:foo=>0, :bar=>1} 
+3.0.0 :057 > h[:baz] = 2
+ => 2 
+3.0.0 :058 > h.store(:bat, 3)
+ => 3 
+3.0.0 :059 > h
+ => {:foo=>0, :bar=>1, :baz=>2, :bat=>3} 
+
+to_a -> returns a new array of 2-element array objects,each nested array contains a key-value pair from self:
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :061 > h.to_a
+ => [[:foo, 0], [:bar, 1], [:baz, 2]] 
+
+to_h -> For an instance of Hash, returns self.
+
+For a subclass of Hash, returns a new Hash containing the content of self.
+
+When a block is given, returns a new Hash object whose content is based on the block; the block should return a 2-element Array object specifying the key-value pair to be included in the returned Array:
+
+3.0.0 :062 > h = {foo: 0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :063 > h1 = h.to_h {|key, value| [value, key] }
+ => {0=>:foo, 1=>:bar, 2=>:baz} 
+3.0.0 :064 > h1
+ => {0=>:foo, 1=>:bar, 2=>:baz}
+ 
+ to_proc -> Returns a Proc object that maps a key to its value:
+ 3.0.0 :065 > h = {foo: 0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :066 > proc = h.to_proc
+ => #<Proc:0x000055c8d47a9070 (lambda)> 
+3.0.0 :067 > proc.class
+ => Proc 
+3.0.0 :068 > proc.call(:foo)
+ => 0 
+3.0.0 :069 > proc.call(:bar)
+ => 1 
+3.0.0 :070 > proc.call(:nosuch)
+ => nil 
+
+transform_keys ->
+Returns a new Hash object; each entry has:
+    A key provided by the block.
+    The value from self.
+An optional hash argument can be provided to map keys to new keys. Any key not given will be mapped using the provided block, or remain the same if no block is given.
+Transform keys:
+
+3.0.0 :071 > h = {foo: 0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :072 > h1 = h.transform_keys {|key| key.to_s}
+ => {"foo"=>0, "bar"=>1, "baz"=>2} 
+3.0.0 :073 > h1
+ => {"foo"=>0, "bar"=>1, "baz"=>2} 
+3.0.0 :074 > h.transform_keys(foo: :bar,bar: :foo)
+ => {:bar=>0, :foo=>1, :baz=>2} 
+ 
+ 3.0.0 :075 > h.transform_keys(foo: :hello, &:to_s)
+ => {:hello=>0, "bar"=>1, "baz"=>2} 
+ 
+ overwrites value for duplicate keys:
+ 3.0.0 :076 > h = {foo: 0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :077 > h1 = h.transform_keys {|key| :bat}
+ => {:bat=>2} 
+3.0.0 :078 > h1
+ => {:bat=>2} 
+
+transform_values - Returns a new Hash object; each entry has:
+
+    A key from self.
+
+    A value provided by the block.
+
+3.0.0 :079 > h = {foo: 0, bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :080 > h1 = h.transform_
+
+h.transform_keys
+h.transform_keys!
+h.transform_values
+h.transform_values!
+3.0.0 :080 > h1 = h.transform_values {|value| value * 100}
+ => {:foo=>0, :bar=>100, :baz=>200} 
+
+
+transform_values! - returns self,whose keys are unchanged and whose values are determined by the given  block.
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :082 > h.transform_values! {|value| value * 100}
+ => {:foo=>0, :bar=>100, :baz=>200} 
+3.0.0 :083 > h
+ => {:foo=>0, :bar=>100, :baz=>200} 
+
+
+values - returns a new array containing all values in self
+3.0.0 :084 > h.values
+ => [0, 100, 200] 
+
+values_at(*keys) - returns a new array containing values for the given keys.
+
+3.0.0 :085 > h = {foo: 0,bar:1,baz:2}
+ => {:foo=>0, :bar=>1, :baz=>2} 
+3.0.0 :086 > h.values_at(:baz, :foo)
+ => [2, 0] 
+
+default value returned for any key not found is:
+3.0.0 :087 > h.values_at(:hi, :hello)
+ => [nil, nil] 
+
+
+The .has_key? method returns true if the hash has the given key
+3.0.0 :089 > language_creators.has_key?(:javascript)
+ => true 
+3.0.0 :090 > language_creators.has_key?(:java)
+ => false 
+
+The .member? method returns true if the given key is present in the hash
+
+3.0.0 :091 > language_creators.member?(:ruby)
+ => true 
+3.0.0 :092 > language_creators.member?(:Brendan)
+ => false 
+
 
