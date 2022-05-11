@@ -1404,4 +1404,462 @@ rainyday
  => "Today\nis\na\nrainyday" 
 
 
+#Ruby - File I/O
+
+Ruby provides a whole set of I/O-related methods implemented in the Kernel module. All the I/O methods are derived from the class IO.
+The class IO provides all the basic methods, such as read, write, gets, puts, readline, getc, and printf.
+
+puts statement - The puts statement instructs the program to display the value stored in the variable. This will add a new line at the end of each line it writes.
+3.0.0 :001 > val1 = "this is a variable one"
+ => "this is a variable one" 
+3.0.0 :002 > val2 = "this is a variable two"
+ => "this is a variable two" 
+3.0.0 :003 > puts val1
+this is a variable one
+ => nil 
+3.0.0 :004 > puts val2
+this is a variable two
+ => nil 
+ 
+ gets statement - the gets statement is used to take any input from the user from standard screen called stdin.
+ 
+ puts 'Enter your age'
+val = gets
+puts "Your age is #{val}"
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb
+Enter your age
+20
+Your age is 20
+
+
+The putc Statement
+Unlike the puts statement, which outputs the entire string onto the screen, the putc statement can be used to output one character at a time.
+3.0.0 :008"> str = "Helo Ruby!"
+ => "Helo Ruby!" 
+3.0.0 :009 > putc str
+H => "Helo Ruby!" 
+
+The print Statement
+The print statement is similar to the puts statement. The only difference is that the puts statement goes to the next line after printing the contents, whereas with the print statement the cursor is positioned on the same line.
+
+print 'this will print'
+print ' on the same line'
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+this will print on the same line
+[Done] exited with code=0 in 0.04 seconds
+
+#file handling in ruby - 
+It is a way of processing a file such as creating a new file, reading content in a file, writing content to a file, appending content to a file, renaming the file and deleting the file.
+
+Common modes for File Handling
+“r” : Read-only mode for a file.
+“r+” : Read-Write mode for a file.
+“w” : Write-only mode for a file.
+“w+” : Read-Write mode for a file.
+“a” : Write-only mode, if file exists it will append the data otherwise a new file will be created.
+“a+” : Read and Write mode, if file exists it will append the data otherwise a new file will be created.
+
+a text file named sample.txt is created with read and write permissions.The content  "File Handling" is written to the file using syswrite method.
+fileobject = File.new("sample.txt", "w+");
+fileobject.syswrite("File Handling in Ruby language");
+fileobject.close();
+itsacheckmate@itscheckmate:~/Practise$ cat sample.txt 
+File Handling in ruby languageitsacheckmate@itscheckmate:~/Practise$ 
+
+#you can use File.open method to create a new file object and assign that file object to a file.
+however, there is a difference b/w File.open and File.new methods.the difference is that File.open method can be associated with a block,whereas you cannot do the same using the File.new method.
+
+File.open("filename", "mode") do |aFile|
+   # ... process the file
+end
+
+fileobject = File.open("sample.txt","r");
+puts(fileobject.sysread(21)); //reading the first n characters
+fileobject.close();
+fileobject = File.open("sample.txt","r");
+print(fileobject.readlines); //read the values as an array of lines
+puts
+fileobject.close();
+fileobject = File.open("sample.txt","r");
+print(fileobject.read()); //read the entire content from a file
+fileobject.close();
+
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+File Handling in ruby
+["File Handling in ruby language"]
+File Handling in ruby languageitsacheckmate@itscheckmate:~/Practise$
+
+#the sysread method - You can use the method sysread to read the contents of a file. You can open the file in any of the modes when using the method sysread.
+aFile =  File.new("input.txt", "r")
+if aFile
+    content = aFile.sysread(20)
+    puts content
+else
+    puts "Unable to open file!"
+end
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+sample file for test
+
+
+The syswrite Method
+You can use the method syswrite to write the contents into a file
+aFile = File.new("input.txt","r+")
+if aFile
+    aFile.syswrite("ABCDEF")
+else
+    puts "Unable to open file!"
+end
+
+#the each_byte method - this method belongs to the class File.The method each_byte is always associated with a block.
+a_file = File.new("input.txt","r+")
+if a_file
+    a_file.syswrite("abcdef")
+    a_file.each_byte {|ch| putc ch; putc ?. }
+else
+    puts "unable to open file!"
+end
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+ .f.i.l.e. .f.o.r. .t.e.s.t.itsacheckmate@itscheckmate:~/Practise$ 
+ 
+ 
+ #The IO.readlines Method
+ 
+ The class file is a subclass of the class IO.
+ One of the IO class methods is IO.readlines.this method returns the contents of the file line by line.
+ 
+ arr = IO.readlines("input.txt")
+puts arr[0]
+puts arr[1]
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+abcdef
+ file for test
+ 
+ The IO.foreach Method
+This method also returns output line by line. The difference between the method foreach and the method readlines is that the method foreach is associated with a block. However, unlike the method readlines, the method foreach does not return an array.
+
+IO.foreach("input.txt"){|block| puts block}
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+abcdef
+ file for test
+ 
+ #We can rename and delete files with ruby with rename and delete methods
+ File.rename("input.txt","rename.txt")
+ File.delete("rename.txt")
+ 
+ 
+ #Use the chmod method with a mask to change the mode or permissions/access list of a file
+ 
+ file = File.new("test.txt","w")
+file.chmod(0755)
+
+#File Inquiries
+
+1.tests whether a file exists before opening it − File.open("file.rb") if File::exists( "file.rb" )
+
+2. inquire whether the file is really a file - File.file?("sample.txt")
+
+3. finds out if the given file name is a directory - 
+3.0.0 :009 > File::directory?("/usr/local/bin" )
+ => true 
+3.0.0 :010 > File::directory?("Downloads" )
+ => true 
+3.0.0 :011 > File::directory?("File.rb" )
+ => false 
+3.0.0 :012
+
+
+4.finds whether the file is readable, writable or executable -
+3.0.0 :012 > File.readable?("Downloads")
+ => true 
+3.0.0 :013 > File.writable?("Downloads")
+ => true 
+3.0.0 :014 > File.executable?("Downloads")
+ => true 
+
+5.finds whether the file has zero size or not -
+3.0.0 :002 > File.zero?("b.txt")
+ => true 
+ 
+ 6.returns the size of the file-
+3.0.0 :003 > File.size?("b.txt")
+ => nil 
+3.0.0 :004 > File.size?("Downloads")
+ => 4096 
+
+7.command can be used to find out a type of file -
+3.0.0 :005 > File::ftype("Downloads")
+ => "directory" 
+3.0.0 :006 > File::ftype("b.txt")
+ => "file" 
+ 
+ The ftype method identifies the type of the file by returning one of the following − file, directory, characterSpecial, blockSpecial, fifo, link, socket, or unknown.
+ 
+ 8. command can be used to find when a file was created, modified, or last accessed -
+ 3.0.0 :007 > File::ctime("b.txt")
+ => 2022-05-11 16:30:15.692459267 +0530 
+3.0.0 :008 > File::mtime("b.txt")
+ => 2022-05-11 16:30:15.68445929 +0530 
+3.0.0 :009 > File::atime("b.txt")
+ => 2022-05-11 16:30:15.68445929 +0530 
+
+Directories in Ruby - 
+the File class handles files, directories are handled with the Dir class.
+
+1.to change directory within a ruby program - 
+3.0.0 :010 > Dir.chdir("/usr/bin")
+ => 0 
+
+2.to view current directory -
+3.0.0 :011 > puts Dir.pwd
+/usr/bin
+ => nil 
+ 
+ 3.list of the files and directories within a specific directory using Dir.entries-
+ 3.0.0 :012 > puts Dir.entries("/usr/bin").join(' ')
+
+4.Dir.entries returns an array with all the entries within the specified directory. Dir.foreach provides the same feature −
+3.0.0 :016 > Dir.foreach("/usr/bin") do |entry|
+3.0.0 :017 >   puts entry
+3.0.0 :018 > end
+
+The Dir.mkdir can be used to create directories-
+Dir.mkdir("mynewdir")
+3.0.0 :001 > Dir.mkdir("mynewdir")
+ => 0 
+3.0.0 :002 > Dir.chdir("mynewdir")
+ => 0 
+3.0.0 :003 > puts Dir.pwd
+/home/itsacheckmate/mynewdir
+ => nil 
+
+6.to delete the directory - 
+Dir.delete("testdir")
+
+#Creating Files & Temporary Directories - 
+Temporary files are those that might be created briefly during a program's execution but aren't a permanent store of information.
+
+require 'tmpdir'
+tempfilename = File.join(Dir.tmpdir, "tingtong")
+tempfile = File.new(tempfilename, "w")
+tempfile.puts "This is a temporary file"
+tempfile.close
+File.delete(tempfilename)
+
+This code creates a temporary file, writes data to it, and deletes it.
+
+
+
+
+#Exception Handling - In Ruby, exception handling is a process which describes a way to handle the error raised in a program. Here, error means an unwanted or unexpected event, which occurs during the execution of a program, i.e. at run time, that disrupts the normal flow of the program’s instructions. So these types of errors were handled by the rescue block. Ruby also provides a separate class for an exception that is known as an Exception class which contains different types of methods.
+
+Syntax:
+
+begin
+    raise
+      # block where exception raise
+
+    rescue
+      # block where exception rescue
+end
+
+
+begin
+    file = open("/unexistant file")
+    if file
+        puts "File opened successfully"
+    end
+rescue
+    file = STDIN
+end
+print file, "==", STDIN, "\n"
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+#<IO:0x0000558f5b489b90>==#<IO:0x0000558f5b489b90>
+
+
+
+def raise_and_rescue
+    begin   
+        puts 'this is before exception arises'
+
+        raise 'Exception created'
+
+        puts 'after exception'
+
+    rescue
+        puts 'saved'
+    end
+    puts 'outside of the begin block'
+end
+
+raise_and_rescue
+
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+this is before exception arises
+saved
+outside of the begin block
+
+
+retry - you can capture an exception using rescue block and then use retry statement to execute begin block from beginning.
+
+Syntax-
+begin
+   # Exceptions raised by this code will 
+   # be caught by the following rescue clause
+rescue
+   # This block will capture all types of exceptions
+   retry  # This will move control to the beginning of begin
+end
+
+begin
+    
+    raise 'Exception Created!'
+    puts 'After exception'
+    rescue 
+    puts 'finally saved'
+    retry
+end
+
+finally saved
+finally saved
+finally saved
+finally saved
+---
+
+Raise - the raise statement is used to raise an exception.
+Syntax-
+
+raise 
+OR
+raise "Error Message" 
+OR
+raise ExceptionType, "Error Message"
+OR
+raise ExceptionType, "Error Message" condition
+
+the first form simply re-raises the current exception,
+the second form creates a new RunTimeError exception,setting its message to the given string.
+the third form uses the first argument to create an exception and then sets the associated message to the second argument.
+in fourth form it is similar to 3rd but you can add any conditional statement like unless to raise an exception.
+
+
+begin
+    
+puts 'I am before the raise.'
+raise 'An error has occurred'.
+puts 'after the raise'
+rescue
+    puts ' after rescue'
+    
+end
+puts ' after the begin block'
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+I am before the raise.
+ after rescue
+ after the begin block
+ 
+ 
+ begin
+        raise 'A test exception.'
+rescue Exception => e
+    puts e.message
+    puts e.backtrace.inspect
+end
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+A test exception.
+["test.rb:2:in `<main>'"]
+
+
+ensure Statement: This statement ensures that required instructions will execute at the end of the code, whether the exception raise or raised exception is rescued, or the program terminates due to an uncaught exception. This block always gives output. This block is placed over the rescue block.
+
+Syntax:
+
+begin
+     # exception raise
+
+rescue
+    # exception rescue
+
+ensure
+    # this block always executes
+end
+
+begin     
+    puts 'I am not raising an exception.'
+rescue Exception => e
+   puts e.message
+   puts e.backtrace.inspect
+else
+    puts "Congratulations-- no errors!"
+ensure
+    puts "Ensuring execution"
+end
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+I am not raising an exception.
+Congratulations-- no errors!
+Ensuring execution
+
+catch and throw - in Ruby, catch and throw blocks are the lightweight mechanism for error handling and used to jump from the exception when there is no additional work is available in the program.
+The catch block is used to jump out from the nested block and the block is labeled with a name. 
+This block works normally until it encounters with the throw block. catch and throw method will work faster than raise and rescue method. When the throw statement is encountered, 
+Ruby will check the call stack for the catch statement with the related symbol. 
+The throw statement never executes and always return nil.
+
+def promptAndGet(prompt)
+    puts prompt
+    res = readline.chomp
+     throw :quitRequested if res == "!"
+     return res
+end
+
+catch :quitRequested do
+    name = promptAndGet("Name: ")
+    age = promptAndGet("Age: ")
+    city = promptAndGet("City: ")
+end
+promptAndGet("Name:")
+
+itsacheckmate@itscheckmate:~/Practise$ ruby test.rb 
+Name: 
+Jaskaran
+Age: 
+20
+City: 
+Chandigarh
+Name:
+Just Ruby
+
+
+Class Exception
+
+Ruby's standard classes and modules raise exceptions. All the exception classes form a hierarchy, with the class Exception at the top. The next level contains seven different types −
+
+    Interrupt
+    NoMemoryError
+    SignalException
+    ScriptError
+    StandardError
+    SystemExit
+    
+
+There is one other exception at this level, Fatal, but the Ruby interpreter only uses this internally.
+
+3.0.0 :019 > class FileSaveError < StandardError
+3.0.0 :020 >   attr_reader :reason
+3.0.0 :021 >   def initialize(reason)
+3.0.0 :022 >     @reason = reason
+3.0.0 :023 >   end
+3.0.0 :024 > end
+ => :initialize 
+3.0.0 :025 > File.open(path, "w") do |file|
+3.0.0 :026 >   begin
+3.0.0 :027 >     hello hi
+3.0.0 :028 >   rescue
+3.0.0 :029 >     raise FileSaveError.new($!)
+3.0.0 :030 >   end
+3.0.0 :031 > end
+
+
+
 
