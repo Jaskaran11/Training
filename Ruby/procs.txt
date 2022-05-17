@@ -1,0 +1,147 @@
+Procs are basically reusable blocks
+Proc is an essential concept in Ruby and a core of its functional programming features.
+
+3.0.0 :001 > square = Proc.new {|x| x**2}
+ => #<Proc:0x0000558201f0b3f0 (irb):1> 
+3.0.0 :003 > square.call(3)
+ => 9 
+
+3.0.0 :003 > square.call(3)
+ => 9 
+3.0.0 :004 > def gen
+3.0.0 :005 >   ^C
+3.0.0 :004 > def gen_times(factor)
+3.0.0 :005 >   Proc.new{|n| n*factor}
+3.0.0 :006 > end
+ => :gen_times 
+3.0.0 :007 > times3 = gen_times(3)
+ => #<Proc:0x0000558201c37ea8 (irb):5> 
+3.0.0 :008 > times5 = gen_times(5)
+ => #<Proc:0x0000558201fb60e8 (irb):5> 
+3.0.0 :009 > times3.call(12)
+ => 36 
+3.0.0 :010 > times5.call(5)
+ => 25 
+
+people_one = [54, 21, 45, 76, 12, 11, 67, 5]
+people_two = [21, 54, 65, 32, 87, 32, 12, 22]
+
+over_thirty = proc { |age| age > 30 }
+over_twenty = proc { |age| age > 20 }
+
+group_one = people_one.select(&over_thirty)
+group_two = people_two.select(&over_twenty)
+puts group_one
+puts
+puts group_two
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+54
+45
+76
+67
+
+21
+54
+65
+32
+87
+32
+22
+
+3.0.0 :011'> t = Proc.new{ |x,y| puts 'I dont care'}
+ => #<Proc:0x0000558202241e70 (irb):11> 
+3.0.0 :013 > t.call
+I dont care
+  
+ => nil 
+
+
+Here is a summary of how procs and lambdas are different:
+
+Lambdas are defined with -> {} and procs with Proc.new {}.
+Procs return from the current method, while lambdas return from the lambda itself.
+Procs don’t care about the correct number of arguments, while lambdas will raise an exception.
+
+
+
+There are several methods to create a Proc
+
+Use the Proc class constructor:
+proc1 = Proc.new {|x| x**2 }
+
+Use the Kernel#proc method as a shorthand of ::new:
+proc2 = proc {|x| x**2 }
+
+Receiving a block of code into proc argument (note the &):
+    def make_proc(&block)
+      block
+    end
+    proc3 = make_proc {|x| x**2 }
+
+ Construct a proc with lambda semantics using the Kernel#lambda method (see below for explanations about lambdas):
+    lambda1 = lambda {|x| x**2 }
+
+Use the Lambda literal syntax (also constructs a proc with lambda semantics):
+    lambda2 = ->(x) { x**2 }
+
+3.0.0 :018 > p = proc {|x, y| "x=#{x}, y=#{y}"}
+ => #<Proc:0x00005582021b0470 (irb):18> 
+3.0.0 :019 > p.call(1, 2)
+ => "x=1, y=2" 
+3.0.0 :020 > p.call([1, 2])
+3.0.0 :022 > l = lambda{|x, y| "x=#{x}, y=#{y}"}
+ => #<Proc:0x00005582022533f0 (irb):22 (lambda)> 
+3.0.0 :023 > l.call(1, 2)
+ => "x=1, y=2" 
+3.0.0 :024 > l.call([1, 2])
+Traceback (most recent call last):
+        5: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb:23:in `<main>'
+        4: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb:23:in `load'
+
+3.0.0 :030 > l.call(1)
+Traceback (most recent call last):
+        6: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb:23:in `<main>'
+        5: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb:23:in `load'
+        4: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/gems/irb-1.3.0/exe/irb:11:in `<top (required)>'
+        3: from (irb):29:in `<main>'
+        2: from (irb):30:in `rescue in <main>'
+        1: from (irb):22:in `block in <main>'
+ArgumentError (wrong number of arguments (given 1, expected 2))
+
+3.0.0 :031 >  p = proc {|x, y| x}
+ => #<Proc:0x0000558202023058 (ir... 
+3.0.0 :032 > l = lambda {|x, y| x|
+3.0.0 :033 > ^C
+3.0.0 :032 > l = lambda {|x, y| x}
+ => #<Proc:0x00005582021b0ab0 (irb):32 (lambda)> 
+3.0.0 :033 > [[1,2], [3, 4]].map(&p)
+ => [1, 3] 
+3.0.0 :034 > [[1, 2], [4, 3]].map(&l)
+Traceback (most recent call last):
+        6: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb:23:in `<main>'
+        5: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/bin/irb:23:in `load'
+        4: from /home/itsacheckmate/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/gems/irb-1.3.0/exe/irb:11:in `<top (required)>'
+        3: from (irb):34:in `<main>'
+        2: from (irb):34:in `map'
+        1: from (irb):32:in `block in <main>'
+ArgumentError (wrong number of arguments (given 1, expected 2))
+
+Conversion of other objects to procs-
+Any object that implements the to_proc method can be converted into a proc by the & operator, and therefore con be consumed by iterators.
+
+class Greater
+    def initialize(greeting)
+      @greeting = greeting
+    end
+  def to_proc
+    proc {|name| "#{@greeting}, #{name}!"}
+  end
+end
+
+hi = Greater.new("Hi")
+hey = Greater.new("Hey")
+["Bob", "Jane"].map(&hi)
+["Bob", "Jane"].map(&hey)
+
+
