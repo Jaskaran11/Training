@@ -199,3 +199,86 @@ puts l.call('try')
 [Running] ruby "/home/itsacheckmate/Practise/test.rb"
 Theres no such thing
 
+
+#Singleton method
+Ruby singleton method are the methods that can be defined for a specific object i.e. it works only for a single object.this feature is more useful where there is a need for the object to possess some unique behavior or methods.
+
+syntax - 
+
+def Obj.GFG
+#method body
+end
+
+here gfg is the singleton method and ibj is the object
+class Vehicle
+    def wheels
+        puts 'There are many wheels'
+    end
+end
+
+train = Vehicle.new
+car = Vehicle.new
+
+#singleton method for car object
+def car.wheels 
+    puts 'There are four wheels'
+end
+
+puts 'Singleton Method example'
+puts 'Invoke from train object'
+train.wheels 
+puts 'Invoke from car object:'
+car.wheels
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Singleton Method example
+Invoke from train object
+There are many wheels
+Invoke from car object:
+There are four wheels
+
+o1 = String.new
+
+o1 = 'Hello there'
+o2 = String.new 
+
+o2 = 'GoodExample'
+
+def o2.size
+    return 'Size does not matter'
+end
+
+puts 'Singleton method example'
+puts 'Invoke from the object(o1)'
+
+puts o1.size 
+puts 'Invoke from the o2 object:'
+puts o2.size
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Singleton method example
+Invoke from the object(o1)
+11
+Invoke from the o2 object:
+Size does not matter
+
+class Player
+    def play_game
+        rand(1..100) > 50 ? 'Winner!' : 'Loser!'
+    end
+end
+
+bob = Player.new
+boris = Player.new 
+
+def boris.play_game 
+   'Winner' 
+end 
+
+p bob.play_game
+p boris.play_game
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+"Loser!"
+"Winner"
+
+
