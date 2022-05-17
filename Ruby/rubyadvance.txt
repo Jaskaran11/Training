@@ -281,4 +281,104 @@ p boris.play_game
 "Loser!"
 "Winner"
 
+#A Module is a collection of methods, constants,and class variables.module are defined as a class, but with module keyword.
+1.you cannot inherit modules
+2.you cannot create a subclass of module
+3.objects cannot be created from a module
+4.all classes are modules, but all module are not class
+5.name of a module must start with a capital leter
+
+synntax - 
+module Module_name
+#statement to be executed
+end
+
+module Test 
+    C = 10;
+    def Test.portal 
+    puts 'Welcome to portal'
+    end
+    def Test.tutorial
+    puts 'Ruby Tutorial'
+    end
+    def Test.topic
+     puts 'Ruby Module'   
+    end
+end
+
+puts Test::C
+#displaying the value of module constant
+
+Test.portal
+Test.tutorial
+Test.topic
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+10
+Welcome to portal
+Ruby Tutorial
+Ruby Module
+
+A user can access the value of a module constant by using the double colon operator(::) as shown in the above example.
+
+module Test 
+ 
+    def portal 
+    puts 'Welcome to portal'
+    end
+    def tutorial
+    puts 'Ruby Tutorial'
+    end
+    def topic
+     puts 'Ruby Module'   
+    end
+end
+
+class Test1
+    include Test
+    def add
+        x = 30 + 20
+        puts x 
+    end
+end
+
+obj_class = Test1.new
+obj_class.portal 
+obj_class.tutorial
+obj_class.topic 
+
+obj_class.add
+
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Welcome to portal
+Ruby Tutorial
+Ruby Module
+50
+
+Use of Modules: A module is a way categorize the methods and constants so that user can reuse them. Suppose he wants to write two methods and also want to use these methods in multiple programs.
+
+#saving this in 1.rb
+module Test 
+  def Test.portal()
+    puts 'Module method 1'
+  end
+  def Test.tutorial()
+    puts 'MOdule method 2'
+  end
+end
+
+and calling this module from another file
+module Test 
+  def Test.portal()
+    puts 'Module method 1'
+  end
+  def Test.tutorial()
+    puts 'MOdule method 2'
+  end
+end
+[Running] ruby "/home/itsacheckmate/Practise/my1.rb"
+Module method 1
+MOdule method 2
+
 
