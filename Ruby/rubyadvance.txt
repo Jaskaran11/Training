@@ -1,0 +1,201 @@
+Ruby defines methods where you can put number of statements and then you call that method. Similarly, Ruby has a concept of Block.
+A block consists of chunks of code.
+You assign a name to a block.
+The code in the block is always enclosed within braces ({}).
+A block is always invoked from a function with the same name as that of the block. This means that if you have a block with the name test, then you use the function test to invoke this block.
+You invoke a block by using the yield statement.
+When you use the yield keyword, the code inside the block will run & do its work.
+
+Syntax
+
+block_name {
+   statement1
+   statement2
+   ..........
+}
+
+3.0.0 :042 > def test
+3.0.0 :043 >   puts 'You are in the method'
+3.0.0 :044 >   yield
+3.0.0 :045 >   puts 'You are again back to the method'
+3.0.0 :046 >   yield
+3.0.0 :047 > end
+ => :test 
+3.0.0 :048 > test { puts 'You are in the block'}
+You are in the method
+You are in the block
+You are again back to the method
+You are in the block
+ => nil 
+
+3.0.0 :049 > def test
+3.0.0 :050 >   yield 5
+3.0.0 :051 >   puts 'You are in the method test'
+3.0.0 :052 >   yield 100
+3.0.0 :053 > end
+ => :test 
+3.0.0 :054 > test {|i| puts 'You are in the block #{i}'}
+You are in the block #{i}
+You are in the method test
+You are in the block #{i}
+ => nil 
+
+3.0.0 :055 > test {|i| puts "You are in the block #{i}"}
+You are in the block 5
+You are in the method test
+You are in the block 100
+ => nil 
+ 
+ 3.0.0 :056 > def print_once
+3.0.0 :057 >   yield
+3.0.0 :058 > end
+ => :print_once 
+3.0.0 :059 > print_once { puts 'Block is being run' }
+Block is being run
+ => nil 
+3.0.0 :060 > def print_twice
+3.0.0 :061 >   yield
+3.0.0 :062 >   yield
+3.0.0 :063 > end
+ => :print_twice 
+3.0.0 :064 > print_twice { puts 'Hi' }
+Hi
+Hi
+ => nil 
+
+itsacheckmate@itscheckmate:~$ irb
+3.0.0 :001 > def one_two_three
+3.0.0 :002 >   yield 1
+3.0.0 :003 >   yield 2
+3.0.0 :004 >   yield 3
+3.0.0 :005 > end
+ => :one_two_three 
+3.0.0 :006 > one_two_three {|number| puts number * 10}
+10
+20
+30
+ => nil 
+3.0.0 :007 
+
+Blocks can be “explicit” or “implicit”.
+
+Explicit means that you give it a name in your parameter list.
+
+You can pass an explicit block to another method or save it into a variable to use later.
+
+3.0.0 :011 > def explicit_block(&block)
+3.0.0 :011 > def explicit_block(&block)
+3.0.0 :012 >   block.call'
+3.0.0 :013'>   ^C
+3.0.0 :011 > def explicit_block(&block)
+3.0.0 :012 >   block.call
+3.0.0 :013 > end
+ => :explicit_block 
+3.0.0 :014 > explicit_block { puts "Explicit block called " }
+Explicit block called 
+ => nil
+ 
+ BEGIN and END Blocks
+
+Every Ruby source file can declare blocks of code to be run as the file is being loaded (the BEGIN blocks) and after the program has finished executing (the END blocks).
+
+3.0.0 :015 > BEGIN {
+3.0.0 :016 >   puts 'BEGIN code block'
+3.0.0 :017 > }
+BEGIN code block
+ => nil 
+3.0.0 :018 > END {
+3.0.0 :019 >   puts 'END code block'
+3.0.0 :020 > }
+ => nil 
+3.0.0 :021 > puts 'MAIN code block'
+MAIN code block
+ => nil 
+3.0.0 :02
+
+You can check if a block has been passed in with the block_given? method.
+3.0.0 :022 > def do_something_with_block
+3.0.0 :023 >   return 'No block given' unless block_given?
+3.0.0 :024 >   yield 
+3.0.0 :025 > end
+ => :do_something_with_block 
+ 
+#A lambda is a way to define a block & its parameters with some special syntax.
+You can save this lambda into a variable for later use.
+ lambdas are also objects in Ruby.
+Lambdas in Ruby allow us to wrap data and logic in a portable package. 
+
+Syntax to create Lambda function in Ruby:
+
+lambda = lambda {}   
+lambda = ->() {}  
+say_something = -> { puts "This is a lambda" }
+
+3.0.0 :026 > say_something = -> { puts 'This is a lambda
+'}
+ => #<Proc:0x0000558f971aa988 (irb):26 (lambda)> 
+3.0.0 :027 > say_something.call
+This is a lambda
+ => nil 
+
+3.0.0 :028 > lambda_func = lambda {puts 'Hello'}
+ => #<Proc:0x0000558f97253498 (irb):28 (lambda)> 
+3.0.0 :029 > lambda_func
+ => #<Proc:0x0000558f97253498 (irb):28 (lambda)> 
+3.0.0 :030 > lambda_func.class
+ => Proc 
+
+
+We have different ways to call this function. 
+We can use my_lambda.call, my_lambda.() , my_lambda.[] or my_lambda.=== to call the lambda function . 
+ 
+3.0.0 :031 > lambda_func.call
+Hello
+ => nil 
+3.0.0 :032 > lambda_func.()
+Hello
+ => nil 
+3.0.0 :033 > lambda_func.[]
+Hello
+ => nil 
+3.0.0 :034 > lambda_func.===
+Hello
+ => nil 
+ 
+  To pass arguments in the lambda function, we can either use normal lambda syntax or use the literal lambda operator ” -> ” 
+  3.0.0 :035 > lambda_with_args = lambda {| s | puts 'Hello '+ s}
+ => #<Proc:0x0000558f96e5b480 (irb):35 (lambda)>                            ^
+3.0.0 :037 > lambda_with_args.call('HI there')
+Hello HI there
+ => nil 
+
+To use lambda functions along with a normal function, we can pass lambda function as an argument. 
+
+add_10 = lambda { |num| num + 10 }
+
+multiply_2 = lambda { |num| num * 2 }
+
+def using_lambda_with_function(lambda, number)
+    puts lambda.call(number)
+end
+
+using_lambda_with_function(add_10, 10)
+using_lambda_with_function(multiply_2, 20)
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+20
+40
+
+l = lambda do |string|
+    if string == 'try'
+        return 'Theres no such thing'
+    else  
+    return 'Do or do not'
+    end
+end
+
+puts l.call('try')
+
+[Running] ruby "/home/itsacheckmate/Practise/test.rb"
+Theres no such thing
+
