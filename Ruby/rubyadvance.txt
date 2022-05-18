@@ -382,3 +382,106 @@ Module method 1
 MOdule method 2
 
 
+Ruby does not support multiple inheritance directly and instead uses a facility called mixin. Mixins in Ruby allows modules to access instance methods of another one using include method.
+
+module G
+  def g1
+
+  end
+  def g2
+
+  end
+end
+
+module Test
+  def abc
+  end
+  def abc1
+  end
+end
+
+class Practise
+  include G 
+  include Test
+  def s1
+  end
+end
+
+gfg = Practise.new
+gfg.s1 
+gfg.abc 
+gfg.abc1
+gfg.g1 
+gfg.g2
+
+module G
+  def g1
+
+  end
+  def g2
+
+  end
+end
+
+module Test
+  def abc
+  end
+  def abc1
+  end
+end
+
+class Practise
+  include G 
+  include Test
+  def s1
+  end
+end
+
+gfg = Practise.new
+gfg.s1 
+gfg.abc 
+gfg.abc1
+gfg.g1 
+gfg.g2
+
+#module Child_1
+  def a1
+    puts 'this is the first'
+  end
+end
+
+module Child_2
+  def a2
+    puts 'This is the second'
+  end
+end
+
+module Child_3
+  def a3
+    puts 'This is the third'
+  end
+end
+
+class Parent
+  include Child_1
+  include Child_2
+  include Child_3
+  def display
+    puts 'Three modules have been included'
+  end
+end
+
+p = Parent.new
+p.display
+p.a1 
+p.a2
+p.a3
+[Running] ruby "/home/itsacheckmate/Practise/my.rb"
+Three modules have been included
+this is the first
+This is the second
+This is the third
+
+[Done] exited with code=0 in 0.045 seconds
+
+

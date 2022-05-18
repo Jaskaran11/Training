@@ -1860,6 +1860,77 @@ There is one other exception at this level, Fatal, but the Ruby interpreter only
 3.0.0 :030 >   end
 3.0.0 :031 > end
 
+Partition:
+3.0.0 :001 > def split_odds_evens(nums)
+3.0.0 :002 >   odd = []
+3.0.0 :003 >   evens = []
+3.0.0 :004 >   nums.each do |num|
+3.0.0 :006 >       odd << num
+3.0.0 :007 >     else
+3.0.0 :008 >       even << num
+3.0.0 :009 >     end
+3.0.0 :010 >   end
+3.0.0 :011 >   [odd, even]
+3.0.0 :012 > end
+ => :split_odds_evens 
+3.0.0 :013 > def odd_even_short(nums)
+3.0.0 :014 >   nums.partition(&:odd?)
+3.0.0 :015 > end
+ => :odd_even_short 
+3.0.0 :016 > odd_even_short(3)
 
+# select/reject:
+select iterates over an enumerable and returns only the elements that answer the given block. 
+rejects acts the same but opposite, it returns the ones that don’t answer the condition:
+3.0.0 :021 >     result << num if num.odd?
+3.0.0 :022 >   end
+3.0.0 :023 >   result 
+3.0.0 :024 > end
+ => :only_odds 
+3.0.0 :025 > def only_odds_object(nums)
+3.0.0 :026 >   nums.each_with_
 
+nums.each_with_index
+nums.each_with_object
+3.0.0 :025 > def only_odds_object(nums)
+3.0.0 :026 >   nums.each_with_object([]) do |num, arr|
+3.0.0 :027 >     arr << num if num.odd?
+3.0.0 :028 >   end
+3.0.0 :029 > end
+ => :only_odds_object 
+3.0.0 :030 > def only_odds_simple(nums)
+3.0.0 :031 >   nums.select(&:odd?)
+3.0.0 :032 > end
+ => :only_odds_simple 
+3.0.0 :033 > def only_odds(nums)
+3.0.0 :034 >   nums.reject(&:even?)
+3.0.0 :035 > end
+ => :only_odds 
+3.0.0 :036 > 
+
+# any?/all?:
+any? checks that at least one element in an enumerable corresponds to a condition. 
+all? verifies that all elements fit the bill.
+3.0.0 :036 > def all_odds(nums)
+3.0.0 :037 >   nums.each do |num|
+3.0.0 :038 >     return false if num.even?
+3.0.0 :039 >   end
+3.0.0 :040 >   true
+3.0.0 :041 > end
+ => :all_odds 
+3.0.0 :042 > def easier_all_odds?(nums)
+3.0.0 :043 >   nums.all?(&:odd?)
+3.0.0 :044 > end
+ => :easier_all_odds? 
+3.0.0 :045 > def any_greater_than?(nums, x)
+3.0.0 :046 >   nums.each do |num|
+3.0.0 :047 >     return true if num > x
+3.0.0 :048 >   end
+3.0.0 :049 >   return false
+3.0.0 :050 > end
+ => :any_greater_than? 
+3.0.0 :051 > def easier_any_greater_than?(nums, x)
+3.0.0 :052 >   nums.any?{ |num| num > x}
+3.0.0 :053 > end
+ => :easier_any_greater_than? 
 
