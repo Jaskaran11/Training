@@ -484,4 +484,39 @@ This is the third
 
 [Done] exited with code=0 in 0.045 seconds
 
+#Eigen class Practise
+The Eigenclass is called the Singleton class because it is a Class that follows the Singleton pattern.
+The Singleton pattern is simply an object-oriented programming pattern where you make sure to only have 1 and only 1 instance of some class.
+
+=>
+require 'singleton'
+
+class Notsingleton
+  def initialize
+    puts 'This will be printed many times'
+  end
+end
+
+class MySingleton
+  include Singleton
+  def initialize
+    puts 'This will be printed once'
+  end
+end
+
+Notsingleton.new
+Notsingleton.new 
+	
+MySingleton.instance
+MySingleton.instance
+MySingleton.instance
+
+
+[Running] ruby "/home/itsacheckmate/Practise/my.rb"
+This will be printed many times
+This will be printed many times
+This will be printed once
+
+This is useful if you ever want to restrict a class so it never creates more than one instance of itself.
+
 

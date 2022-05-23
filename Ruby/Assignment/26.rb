@@ -8,7 +8,7 @@ def kth_distint_string(arr, k)
   if k <= distinct_string_array.size
     distinct_string_array[k - 1]
     else
-    return ""
+    return " "
   end
 end
 array = ['a', 'b', 'c', 'd', 'a']

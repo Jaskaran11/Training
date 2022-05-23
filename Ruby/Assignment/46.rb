@@ -4,7 +4,7 @@ require 'date'
 
 def valid_date(day, month, year)
   Date.strptime("#{day} #{month} #{year}", '%d %m %Y')
-  rescue Exception => e
+    rescue Exception => e
     puts e.message
     false
     else

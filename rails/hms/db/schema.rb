@@ -10,9 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_095341) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_23_141304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categorization", id: false, force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "reservation_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -24,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_095341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "country"
+    t.index ["name"], name: "index_customers_on_name"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -31,22 +37,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_095341) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.date "date"
-    t.boolean "confirmed"
-    t.date "check_in"
-    t.date "check_out"
+    t.boolean "confirm", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
+    t.time "check_in_hotel"
+    t.time "check_out_hotel"
   end
 
   create_table "rooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.text "name"
     t.string "price"
+    t.integer "customer_id"
+    t.decimal "price_of_food", precision: 5, scale: 2
+    t.string "rooms_type"
+    t.bigint "rooms_id"
+    t.index ["rooms_type", "rooms_id"], name: "index_rooms_on_rooms"
   end
 
+  add_foreign_key "payments", "customers"
+  add_foreign_key "reservations", "customers"
+  add_foreign_key "rooms", "customers"
 end
