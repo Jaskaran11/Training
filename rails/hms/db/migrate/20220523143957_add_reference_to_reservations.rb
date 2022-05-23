@@ -1,0 +1,5 @@
+class AddReferenceToReservations < ActiveRecord::Migration[7.0]
+  def change
+    add_reference :reservations, :room, index: false
+  end
+end

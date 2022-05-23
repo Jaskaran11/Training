@@ -791,5 +791,252 @@ hms_development=# select * from rooms;
 (1 row)
 
 
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_foreign_key_to_reservations_from_customers 
+      invoke  active_record                                 
+      create    db/migrate/20220523112037_add_foreign_key_to_reservations_from_customers.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523112037 AddForeignKeyToReservationsFromCustomers: migrating =========
+-- add_column(:reservations, :customer_id, :integer)        
+   -> 0.0012s                                               
+-- add_foreign_key(:reservations, :customers)
+   -> 0.0013s               
+== 20220523112037 AddForeignKeyToReservationsFromCustomers: migrated (0.0026s) 
+                            
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_foreign_key_to_rooms_from_customers
+      invoke  active_record 
+      create    db/migrate/20220523115445_add_foreign_key_to_rooms_from_customers.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523115445 AddForeignKeyToRoomsFromCustomers: migrating ================
+-- column(:rooms, :customer_id, :integer)
+rails aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+undefined method `column' for #<AddForeignKeyToRoomsFromCustomers:0x00007f9070905760 @name="AddForeignKeyToRoomsFromCustomers", @version=20220523115445, @connection=nil>
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220523115445_add_foreign_key_to_rooms_from_customers.rb:3:in `change'
+
+Caused by:
+NoMethodError: undefined method `column' for #<AddForeignKeyToRoomsFromCustomers:0x00007f9070905760 @name="AddForeignKeyToRoomsFromCustomers", @version=20220523115445, @connection=nil>
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220523115445_add_foreign_key_to_rooms_from_customers.rb:3:in `change'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523115445 AddForeignKeyToRoomsFromCustomers: migrating ================
+-- add_column(:rooms, :customer_id, :integer)
+   -> 0.0010s
+-- add_foreign_key(:rooms, :customers)
+   -> 0.0010s
+== 20220523115445 AddForeignKeyToRoomsFromCustomers: migrated (0.0021s) =======
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_foreign_key_to_payments_from_customers
+      invoke  active_record
+      create    db/migrate/20220523115956_add_foreign_key_to_payments_from_customers.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523115956 AddForeignKeyToPaymentsFromCustomers: migrating =============
+-- add_column(:payments, :customer_id, :integer)
+   -> 0.0012s
+-- add_foreign_key(:payments, :customers)
+   -> 0.0011s
+== 20220523115956 AddForeignKeyToPaymentsFromCustomers: migrated (0.0023s) ====
+
+
+#<Payment:0x00007f21bc65f7e0                                             
+...                                                                      
+3.0.0 :003 > payment
+ => 
+#<Payment:0x00007f21bc65f7e0                                             
+ id: 1,                                                                  
+ paid: true,                                                             
+ date: Mon, 09 May 2022,                                                 
+ created_at: Mon, 23 May 2022 10:08:44.637445000 UTC +00:00,             
+ updated_at: Mon, 23 May 2022 10:08:44.637445000 UTC +00:00,             
+ customer_id: nil>                                                       
+3.0.0 :004 > payment.customer_id = 1
+ => 1 
+3.0.0 :005 > payment
+ => 
+#<Payment:0x00007f21bc65f7e0                                   
+ id: 1,                                                        
+ paid: true,                                                   
+ date: Mon, 09 May 2022,                                       
+ created_at: Mon, 23 May 2022 10:08:44.637445000 UTC +00:00,   
+ updated_at: Mon, 23 May 2022 10:08:44.637445000 UTC +00:00,   
+ customer_id: 1>                                               
+3.0.0 :006 > payment.save 
+  TRANSACTION (0.1ms)  BEGIN
+  Payment Update (0.4ms)  UPDATE "payments" SET "updated_at" = $1, "customer_id" = $2 WHERE "payments"."id" = $3  [["updated_at", "2022-05-23 12:04:22.783564"], ["customer_id", 1], ["id", 1]]                      
+  TRANSACTION (6.5ms)  COMMIT                                  
+ => true                                                       
+3.0.0 :007 > room 
+                                                               
+
+ dependencies-
+    db:create creates the database for the current env
+    db:create:all creates the databases for all envs
+    db:drop drops the database for the current env
+    db:drop:all drops the databases for all envs
+    db:migrate runs migrations for the current env that have not run yet
+    db:migrate:up runs one specific migration
+    db:migrate:down rolls back one specific migration
+    db:migrate:status shows current migration status
+    db:rollback rolls back the last migration
+    db:forward advances the current schema version to the next one
+    db:seed (only) runs the db/seed.rb file
+    db:schema:load loads the schema into the current env's database
+    db:schema:dump dumps the current env's schema (and seems to create the db as well)
+    db:setup runs db:create db:schema:load db:seed
+    db:reset runs db:drop db:setup
+    db:migrate:redo runs (db:migrate:down db:migrate:up) or (db:rollback db:migrate) depending on the specified migration
+ db:migrate:reset runs db:drop db:create db:migrate
+                                                           
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523130159 ChangeProductsPrice: migrating ==============================
+-- change_table(:rooms)
+   -> 0.0060s
+== 20220523130159 ChangeProductsPrice: migrated (0.0061s) =====================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration AddIndexToCustomers
+      invoke  active_record
+      create    db/migrate/20220523133906_add_index_to_customers.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523133906 AddIndexToCustomers: migrating ==============================
+-- add_index(:customers, :name)
+   -> 0.0030s
+== 20220523133906 AddIndexToCustomers: migrated (0.0030s) =====================
+
+                                                             
+Passing Modifiers - 
+
+(See full trace by running task with --trace)
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523135405 AddDetailsToRooms: migrating ================================
+-- add_column(:rooms, :price_of_food, :decimal, {:precision=>5, :scale=>2})
+   -> 0.0011s
+-- add_reference(:rooms, :rooms, {:polymorphic=>true, :null=>true})
+   -> 0.0054s
+== 20220523135405 AddDetailsToRooms: migrated (0.0065s) =======================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration create_join_table
+      invoke  active_record
+      create    db/migrate/20220523140056_create_join_table.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523140056 CreateJoinTable: migrating ==================================
+-- create_join_table(:customers, :reservations, {:column_options=>{:null=>true}, :table_name=>:categorization})
+   -> 0.0017s
+== 20220523140056 CreateJoinTable: migrated (0.0017s) =========================
+
+change_table method
+class ChangeTableOfReservations < ActiveRecord::Migration[7.0]
+  def change
+    change_table :reservations do |t|
+      t.remove :check_in, :check_out
+      t.time :check_in_hotel
+      t.time :check_out_hotel
+      t.rename :confirmed, :confirm
+    end
+  end
+end
+                                                                             
+The add_reference method allows the creation of an appropriately named column.
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523143957 AddReferenceToReservations: migrating =======================
+-- add_reference(:reservations, :room, {:index=>false})
+   -> 0.0010s
+== 20220523143957 AddReferenceToReservations: migrated (0.0011s) ==============
+
+
+Foreign keys can also be removed:
+
+# let Active Record figure out the column name
+remove_foreign_key :accounts, :branches
+
+# remove foreign key for a specific column
+remove_foreign_key :accounts, column: :owner_id
+
+              itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523144430 RemoveForeignKeyFromReservations: migrating =================
+-- remove_foreign_key(:rooms, {:column=>:customer_id})
+   -> 0.0027s
+== 20220523144430 RemoveForeignKeyFromReservations: migrated (0.0027s) ========
+
+3.10 Using reversible
+
+Complex migrations may require processing that Active Record doesn't know how to reverse. You can use reversible to specify what to do when running a migration and what else to do when reverting it.
+
+
+using the db:rollback
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:rollback
+== 20220523151500 ExampleMigration: reverting =================================
+-- execute("    ALTER TABLE distributors\n    DROP CONSTRAINT zipchk\n")
+   -> 0.0012s
+-- drop_table(:distributors)
+   -> 0.0008s
+== 20220523151500 ExampleMigration: reverted (0.0086s) ========================
+
+
+Schema in db folder in Rails project 
+ Schema
+It tends to be faster and less error prone to create a new instance of your applications database by 
+loading the schema file via bin/rails db:schema:load than it is to replay the entire migration history.
+The format of the schema dump generated by Rails is controlled by the config.active_record.schema_format setting in config/application.rb. 
+By default, the format is :ruby, but can also be set to :sql.
+If :ruby is selected, then the schema is stored in db/schema.rb
+The Active Record way claims that intelligence belongs in your models, not in the database. 
+As such, features such as triggers or constraints, which push some of that intelligence back into the database, are not heavily use
+
+Seeing the table of all the migrations done in the project 
+The db/schema.rb or db/structure.sql is a snapshot of the current state of your database 
+and is the authoritative source for rebuilding that database. 
+This makes it possible to delete old migration files.
+When you delete migration files in the db/migrate/ directory, any environment 
+where bin/rails db:migrate was run when those files still existed will hold a reference to the 
+migration timestamp specific to them inside an internal Rails database table named schema_migrations. 
+This table is used to keep track of whether migrations have been executed in a specific environment.
+If you run the bin/rails db:migrate:status command, which displays the status (up or down) of each migration
+itsacheckmate@itsacheckmate:~/Training/Ruby/Rails/rails_lms_project$ rails db:migrate:status
+
+database: 
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate:status
+
+database: hms_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20220523084619  Create customers
+   up     20220523090358  Create rooms
+   up     20220523091950  Add country to customers
+   up     20220523092421  Add name to rooms
+   up     20220523092443  Add price to rooms
+   up     20220523095204  Create payments
+   up     20220523095341  Create reservations
+   up     20220523112037  Add foreign key to reservations from customers
+   up     20220523115445  Add foreign key to rooms from customers
+   up     20220523115956  Add foreign key to payments from customers
+   up     20220523130159  Change products price
+   up     20220523133906  Add index to customers
+   up     20220523134101  Add column to rooms
+   up     20220523134209  Remove column from rooms
+   up     20220523135405  Add details to rooms
+   up     20220523140056  Create join table
+   up     20220523140532  Change table of reservations
+   up     20220523140945  Change column of rooms
+   up     20220523141304  Change column default of reservations
+   up     20220523143957  Add reference to reservations
+   up     20220523144430  Remove foreign key from reservations
+   up     20220523151500  Example migration
+  down    20220523171005  Add initial products
+
+
+By default migrations tell you exactly what they're doing and how long it took. A migration creating a table and adding an index might produce output like this
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220523172159 CreateProducts: migrating ===================================
+-- Created a Table
+   -> and an index!
+-- Waiting a while
+   -> 10.0102s
+   -> 250 rows
+== 20220523172159 CreateProducts: migrated (10.0212s) =========================
 
 

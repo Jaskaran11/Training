@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_141304) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_23_172159) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,12 +32,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_141304) do
     t.index ["name"], name: "index_customers_on_name"
   end
 
+  create_table "distributors", force: :cascade do |t|
+    t.string "zipcode"
+    t.check_constraint "char_length(zipcode::text) = 5", name: "zipchk"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.boolean "paid"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "customer_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_products_on_name"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -48,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_141304) do
     t.integer "customer_id"
     t.time "check_in_hotel"
     t.time "check_out_hotel"
+    t.bigint "room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -64,5 +78,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_141304) do
 
   add_foreign_key "payments", "customers"
   add_foreign_key "reservations", "customers"
-  add_foreign_key "rooms", "customers"
 end
