@@ -1040,3 +1040,20 @@ itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
 == 20220523172159 CreateProducts: migrated (10.0212s) =========================
 
 
+removing timestamps from a column
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration remove_timestamps_from_rooms created_at updated_at
+      invoke  active_record
+      create    db/migrate/20220523175527_remove_timestamps_from_rooms.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:migrate
+== 20220523175527 RemoveTimestampsFromRooms: migrating ========================
+-- remove_column(:rooms, :created_at, :string)
+   -> 0.0010s
+-- remove_column(:rooms, :updated_at, :string)
+   -> 0.0003s
+== 20220523175527 RemoveTimestampsFromRooms: migrated (0.0014s) ===============
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:test:prepare
+
+
+
