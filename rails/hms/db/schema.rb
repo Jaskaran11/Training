@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_24_112847) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_142915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
+  create_table "customers", comment: "these are the customers which are staying at the hotel", force: :cascade do |t|
+    t.string "name", null: false
     t.string "address"
     t.string "gender"
     t.string "mobile"
@@ -39,14 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_112847) do
     t.bigint "customer_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_products_on_name"
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.date "date"
     t.boolean "confirm", default: false
@@ -58,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_112847) do
     t.bigint "room_id"
   end
 
-  create_table "rooms", force: :cascade do |t|
+  create_table "rooms", id: { type: :serial, comment: "these are the rooms allotted to the respective customers" }, force: :cascade do |t|
     t.text "name_of_customer"
     t.string "price"
     t.integer "customer_id"
@@ -70,4 +62,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_112847) do
 
   add_foreign_key "payments", "customers"
   add_foreign_key "reservations", "customers"
+  add_foreign_key "rooms", "customers"
 end
