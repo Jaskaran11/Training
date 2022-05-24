@@ -1,6 +1,13 @@
 itachi:
   name: Itachi
   age: 18
+  rooms: 3
+  payments: 3
+  reservations: 3
+
 david:
   name: David
   age: 23
+  rooms: 4
+  payments: 4
+  reservations: 4

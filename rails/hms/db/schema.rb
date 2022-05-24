@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_24_175657) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_185229) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,10 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_175657) do
     t.decimal "price_of_food", precision: 5, scale: 2
     t.string "rooms_type"
     t.bigint "rooms_id"
+    t.integer "sku"
     t.index ["rooms_type", "rooms_id"], name: "index_rooms_on_rooms"
   end
 
-  add_foreign_key "payments", "customers"
-  add_foreign_key "reservations", "customers"
-  add_foreign_key "rooms", "customers"
 end
