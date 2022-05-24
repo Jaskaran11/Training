@@ -1318,3 +1318,176 @@ ActiveRecord::IrreversibleMigration: ActiveRecord::IrreversibleMigration
 Tasks: TOP => db:rollback
 (See full trace by running task with --trace)
 
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:version
+Current version: 20220524175657
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate 
+== 20220524181038 UpDownReversibleAddingColumn: migrating =====================
+-- add_column(:rooms, :sku, :integer)
+   -> 0.0011s
+-- execute("select * from rooms")
+   -> 0.0004s
+["2", "double room", "1900", nil, nil, nil, nil, nil]
+["1", "A Single room", "1500", 1, nil, nil, nil, nil]
+== 20220524181038 UpDownReversibleAddingColumn: migrated (0.0016s) ============
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:migrate VERSION=20220524175657
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate:status
+
+database: hms_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20220523084619  Create customers
+   up     20220523090358  Create rooms
+   up     20220523091950  Add country to customers
+   up     20220523092421  Add name to rooms
+   up     20220523092443  Add price to rooms
+   up     20220523095204  Create payments
+   up     20220523095341  Create reservations
+   up     20220523112037  Add foreign key to reservations from customers
+   up     20220523115445  Add foreign key to rooms from customers
+   up     20220523115956  Add foreign key to payments from customers
+   up     20220523130159  Change products price
+   up     20220523133906  Add index to customers
+   up     20220523134101  Add column to rooms
+   up     20220523134209  Remove column from rooms
+   up     20220523135405  Add details to rooms
+   up     20220523140056  Create join table
+   up     20220523140532  Change table of reservations
+   up     20220523140945  Change column of rooms
+   up     20220523141304  Change column default of reservations
+   up     20220523143957  Add reference to reservations
+   up     20220523144430  Remove foreign key from reservations
+   up     20220523151500  Example migration
+   up     20220523172159  Create products
+   up     20220523173734  Using column modifiers
+   up     20220523174902  Fix column name
+   up     20220523175527  Remove timestamps from rooms
+   up     20220523175853  Removing join from table
+   up     20220524112847  Remove index from customers
+   up     20220524121824  Add foreign key to rooms
+   up     20220524123050  Remove products
+   up     20220524125850  Adding comment to column
+   up     20220524134917  Changing column default
+   up     20220524135938  Add comment and changing default of column
+   up     20220524141100  Add extension
+   up     20220524141336  Remove extension
+   up     20220524141509  Changing column null
+   up     20220524142252  Add index to rooms
+   up     20220524142403  Rename index
+   up     20220524142557  Remove index rooms
+   up     20220524142915  Change table comment
+   up     20220524161251  Add records to customers
+   up     20220524175657  Add irreversible method
+  down    20220524181038  Up down reversible adding column
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:create
+Database 'hms_development' already exists
+Database 'hms_test' already exists
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:create:all'
+> ^C
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:create:all
+Database 'hms_development' already exists
+Database 'hms_test' already exists
+There is an issue connecting to your database with your username/password, username: hms.
+
+Please check your database configuration to ensure the username/password are valid.
+Couldn't create 'hms_production' database. Please check your configuration.
+rake aborted!
+ActiveRecord::DatabaseConnectionError: There is an issue connecting to your database with your username/password, username: hms.
+
+Please check your database configuration to ensure the username/password are valid.
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_handling.rb:280:in `connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/postgresql_database_tasks.rb:12:in `connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/postgresql_database_tasks.rb:26:in `create'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:122:in `create'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:134:in `block in create_all'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:567:in `block in each_local_configuration'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:563:in `each'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:563:in `each_local_configuration'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:134:in `create_all'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/railties/databases.rake:31:in `block (3 levels) in <main>'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+
+Caused by:
+PG::ConnectionBad: FATAL:  Peer authentication failed for user "hms"
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/pg-1.3.5/lib/pg/connection.rb:637:in `async_connect_or_reset'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/pg-1.3.5/lib/pg/connection.rb:707:in `new'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/pg-1.3.5/lib/pg.rb:69:in `connect'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:78:in `new_client'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_handling.rb:280:in `connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/postgresql_database_tasks.rb:12:in `connection'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/postgresql_database_tasks.rb:26:in `create'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:122:in `create'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:134:in `block in create_all'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:567:in `block in each_local_configuration'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:563:in `each'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:563:in `each_local_configuration'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/tasks/database_tasks.rb:134:in `create_all'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/railties/databases.rake:31:in `block (3 levels) in <main>'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+Tasks: TOP => db:create:all
+(See full trace by running task with --trace)
+
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524190451 CreateProductTableUsingMethodInIt: migrating ================
+-- create_table(:products)
+   -> 0.0036s
+-- create_table(:categories)
+   -> 0.0054s
+-- add_column(:products, :description, :string)
+   -> 0.0005s
+-- rename_column(:products, :categoryid, :category_id)
+   -> 0.0012s
+-- add_timestamps(:categories)
+   -> 0.0009s
+-- change_column_null(:products, :updated_at, true)
+   -> 0.0006s
+-- remove_timestamps(:products)
+   -> 0.0004s
+-- add_foreign_key(:products, :categories)
+   -> 0.0010s
+-- remove_foreign_key(:products, :categories)
+   -> 0.0020s
+-- remove_timestamps(:categories)
+   -> 0.0004s
+-- add_index(:categories, :name)
+   -> 0.0014s
+-- rename_index(:categories, "index_categories_on_name", "index_product_categories_on_name")
+   -> 0.0005s
+-- remove_index(:categories, :name)
+   -> 0.0010s
+-- remove_column(:products, :description)
+   -> 0.0006s
+-- add_reference(:categories, :name, {:index=>true})
+   -> 0.0018s
+-- remove_reference(:categories, :name, {:index=>false})
+   -> 0.0004s
+== 20220524190451 CreateProductTableUsingMethodInIt: migrated (0.0223s) =======
+
+
+
