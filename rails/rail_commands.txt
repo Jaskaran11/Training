@@ -1056,4 +1056,67 @@ itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:migrate
 itsacheckmate@itscheckmate:~/Training/rails/hms$ rake db:test:prepare
 
 
+ If you need to undo several migrations you can provide a STEP parameter:=
+$ bin/rails db:rollback STEP=3
+will revert the last 3 migrations.
+
+itsacheckmate@itscheckmate:~/Training/rails/attendance_management_system$ rails db:rollback STEP=2
+== 20220520134955 AddYearOfPassingToQualifications: reverting =================
+-- remove_column(:qualifications, :year_of_passing, :date)
+   -> 0.0020s
+== 20220520134955 AddYearOfPassingToQualifications: reverted (0.0091s) ========
+
+== 20220520130539 AddEndTimeToAttendance: reverting ===========================
+-- remove_column(:attendances, :end_at, :string)
+   -> 0.0009s
+== 20220520130539 AddEndTimeToAttendance: reverted (0.0010s) ==================
+
+The db:migrate:redo command is a shortcut for doing a rollback and then migrating back up again. As with the db:rollback command, you can use the STEP parameter if you need to go more than one version back, for example:
+
+$ bin/rails db:migrate:redo STEP=3
+
+itsacheckmate@itscheckmate:~/Training/rails/attendance_management_system$ rails db:migrate:redo STEP=1
+== 20220520134955 AddYearOfPassingToQualifications: reverting =================
+-- remove_column(:qualifications, :year_of_passing, :date)
+   -> 0.0010s
+== 20220520134955 AddYearOfPassingToQualifications: reverted (0.0045s) ========
+
+== 20220520134955 AddYearOfPassingToQualifications: migrating =================
+-- add_column(:qualifications, :year_of_passing, :date)
+   -> 0.0012s
+== 20220520134955 AddYearOfPassingToQualifications: migrated (0.0012s) ========
+
+
+Active Record supports the following database column types:
+
+:binary
+:boolean
+:date
+:datetime
+:decimal
+:integer
+:float
+:integer
+:primary_key
+:string
+:text
+:time
+:timestamp
+
+Run "rails destroy migration migration_name" (migration_name is the one use chose while creating migration).
+itsacheckmate@itscheckmate:~/Training/rails/attendance_management_system$ rails destroy migration AddColumnToQualifications
+      invoke  active_record
+      remove    db/migrate/20220524110355_add_column_to_qualifications.rb
+
+
+dropping a specific table
+itsacheckmate@itscheckmate:~/Training/rails/attendance_management_system$ rails g migration DropTempTable
+      invoke  active_record
+      create    db/migrate/20220524111954_drop_temp_table.rb
+itsacheckmate@itscheckmate:~/Training/rails/attendance_management_system$ rails db:migrate 
+== 20220524111954 DropTempTable: migrating ====================================
+-- drop_table(:temp_tables)
+   -> 0.0077s
+== 20220524111954 DropTempTable: migrated (0.0078s) ===========================
+
 
