@@ -1119,4 +1119,177 @@ itsacheckmate@itscheckmate:~/Training/rails/attendance_management_system$ rails 
    -> 0.0077s
 == 20220524111954 DropTempTable: migrated (0.0078s) ===========================
 
+droping index -
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524112847 RemoveIndexFromCustomers: migrating =========================
+-- remove_index(:customers, :name)
+   -> 0.0041s
+== 20220524112847 RemoveIndexFromCustomers: migrated (0.0041s) ================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_foreign_key_to_rooms
+      invoke  active_record
+      create    db/migrate/20220524121824_add_foreign_key_to_rooms.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524121824 AddForeignKeyToRooms: migrating =============================
+-- add_foreign_key(:rooms, :customers)
+   -> 0.0048s
+== 20220524121824 AddForeignKeyToRooms: migrated (0.0048s) ====================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_foreign_key_to_rooms
+      invoke  active_record
+      create    db/migrate/20220524121824_add_foreign_key_to_rooms.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524121824 AddForeignKeyToRooms: migrating =============================
+-- add_foreign_key(:rooms, :customers)
+   -> 0.0048s
+== 20220524121824 AddForeignKeyToRooms: migrated (0.0048s) ====================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:rollback
+== 20220524123050 RemoveProducts: reverting ===================================
+rails aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+uninitialized constant ActiveRecord::Irreversible
+Did you mean?  ActiveRecord::IrreversibleMigration
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524123050_remove_products.rb:7:in `down'
+
+Caused by:
+NameError: uninitialized constant ActiveRecord::Irreversible
+Did you mean?  ActiveRecord::IrreversibleMigration
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524123050_remove_products.rb:7:in `down'
+Tasks: TOP => db:rollback
+(See full trace by running task with --trace)
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate:status
+
+database: hms_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20220523084619  Create customers
+   up     20220523090358  Create rooms
+   up     20220523091950  Add country to customers
+   up     20220523092421  Add name to rooms
+   up     20220523092443  Add price to rooms
+   up     20220523095204  Create payments
+   up     20220523095341  Create reservations
+   up     20220523112037  Add foreign key to reservations from customers
+   up     20220523115445  Add foreign key to rooms from customers
+   up     20220523115956  Add foreign key to payments from customers
+   up     20220523130159  Change products price
+   up     20220523133906  Add index to customers
+   up     20220523134101  Add column to rooms
+   up     20220523134209  Remove column from rooms
+   up     20220523135405  Add details to rooms
+   up     20220523140056  Create join table
+   up     20220523140532  Change table of reservations
+   up     20220523140945  Change column of rooms
+   up     20220523141304  Change column default of reservations
+   up     20220523143957  Add reference to reservations
+   up     20220523144430  Remove foreign key from reservations
+   up     20220523151500  Example migration
+   up     20220523172159  Create products
+   up     20220523173734  Using column modifiers
+   up     20220523174902  Fix column name
+   up     20220523175527  Remove timestamps from rooms
+   up     20220523175853  Removing join from table
+   up     20220524112847  Remove index from customers
+   up     20220524121824  Add foreign key to rooms
+   up     20220524123050  Remove products
+
+
+tsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration adding_comment_to_column                                       
+      invoke  active_record 
+      create    db/migrate/20220524125850_adding_comment_to_column.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524125850 AddingCommentToColumn: migrating ============================
+-- change_column(:rooms, :id, :string, {:comment=>"these are the rooms allotted to the respective customers"})
+   -> 0.0140s               
+== 20220524125850 AddingCommentToColumn: migrated (0.0141s) ===================
+                            
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration changing_column_default                  
+      invoke  active_record
+      create    db/migrate/20220524134917_changing_column_default.rb
+
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_extension
+      invoke  active_record
+      create    db/migrate/20220524141100_add_extension.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524141100 AddExtension: migrating =====================================
+-- extensions()
+   -> 0.0006s
+-- enable_extension(".html")
+rails aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+PG::UndefinedFile: ERROR:  could not open extension control file "/usr/share/postgresql/12/extension/.html.control": No such file or directory
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524141100_add_extension.rb:3:in `change'
+
+Caused by:
+ActiveRecord::StatementInvalid: PG::UndefinedFile: ERROR:  could not open extension control file "/usr/share/postgresql/12/extension/.html.control": No such file or directory
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524141100_add_extension.rb:3:in `change'
+
+Caused by:
+PG::UndefinedFile: ERROR:  could not open extension control file "/usr/share/postgresql/12/extension/.html.control": No such file or directory
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524141100_add_extension.rb:3:in `change'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524141100 AddExtension: migrating =====================================
+-- extensions()
+   -> 0.0009s
+-- enable_extension("uuid-ossp")
+   -> 0.0049s
+== 20220524141100 AddExtension: migrated (0.0058s) ============================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration remove_extension
+      invoke  active_record
+      create    db/migrate/20220524141336_remove_extension.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524141336 RemoveExtension: migrating ==================================
+-- disable_extension("uuid-ossp")
+   -> 0.0026s
+== 20220524141336 RemoveExtension: migrated (0.0026s) =========================
+the null flag indicates whether the value can be NULL
+itsacheckmate@itscheckmate:~/Training/rails/hms$ 
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524141509 ChangingColumnNull: migrating ===============================
+-- change_column_null(:customers, :name, false)
+   -> 0.0010s
+== 20220524141509 ChangingColumnNull: migrated (0.0010s)
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524142252 AddIndexToRooms: migrating ==================================
+-- add_index(:rooms, :name_of_customer)
+   -> 0.0081s
+== 20220524142252 AddIndexToRooms: migrated (0.0081s) =========================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration rename_index
+      invoke  active_record
+      create    db/migrate/20220524142403_rename_index.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524142403 RenameIndex: migrating ======================================
+-- rename_index(:rooms, "index_rooms_on_name_of_customer", "index_rooms_on_users")
+   -> 0.0009s
+== 20220524142403 RenameIndex: migrated (0.0009s) =============================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration RemoveIndexROoms
+      invoke  active_record
+      create    db/migrate/20220524142541_remove_index_r_ooms.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration RemoveIndexRooms
+      invoke  active_record
+      create    db/migrate/20220524142557_remove_index_rooms.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524142557 RemoveIndexRooms: migrating =================================
+-- remove_index(:rooms, :name_of_customer)
+   -> 0.0021s
+== 20220524142557 RemoveIndexRooms: migrated (0.0021s) ========================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ 
+
+ change_table_comment(table_name, comment_or_changes)
+Link
+
+Changes the comment for a table or removes it if nil.
 
