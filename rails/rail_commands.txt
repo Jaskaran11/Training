@@ -1293,3 +1293,28 @@ Link
 
 Changes the comment for a table or removes it if nil.
 
+Fixtures contain data which can be loaded into your database using migrations. For example, to load data into a table named customers.
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g migration add_irreversible_method
+      invoke  active_record
+      create    db/migrate/20220524175657_add_irreversible_method.rb
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
+== 20220524175657 AddIrreversibleMethod: migrating ============================
+-- drop_table(:distributors)
+   -> 0.0015s
+== 20220524175657 AddIrreversibleMethod: migrated (0.0016s) ===================
+
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:rollback
+== 20220524175657 AddIrreversibleMethod: reverting ============================
+rails aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+ActiveRecord::IrreversibleMigration
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524175657_add_irreversible_method.rb:7:in `down'
+
+Caused by:
+ActiveRecord::IrreversibleMigration: ActiveRecord::IrreversibleMigration
+/home/itsacheckmate/Training/rails/hms/db/migrate/20220524175657_add_irreversible_method.rb:7:in `down'
+Tasks: TOP => db:rollback
+(See full trace by running task with --trace)
+
