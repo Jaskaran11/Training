@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_154715) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_25_174801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -46,6 +46,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_154715) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", primary_key: "customer_id", id: :integer, default: nil, force: :cascade do |t|
+    t.string "name", limit: 30, null: false
+    t.integer "age"
+    t.boolean "premium", default: false
+    t.binary "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "notes", default: "No notes recorded"
+  end
+
+  create_table "genres", id: false, force: :cascade do |t|
+    t.text "genre_option"
+    t.integer "genre_id"
+    t.index ["genre_id"], name: "index_genres_on_genre_id", unique: true
   end
 
   create_table "publishers", force: :cascade do |t|
