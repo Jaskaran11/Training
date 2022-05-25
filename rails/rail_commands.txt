@@ -1533,3 +1533,26 @@ class CreateFoodItems < ActiveRecord::Migration[7.0]
   end
 end
 
+
+Fixtures are ActiveRecord Objects
+
+UUID - UUID is an abbreviation for Universal Unique Identifier defined by RFC 4122 and has a size of 128-bit. It is created using internal algorithms that always generate a unique value. PostgreSQL has its own UUID data type and provides modules to generate them.
+
+UUID is a random string in a predefined format. Sample value looks like that:
+ccbb63c0-a8cd-47b7-8445-5d85e9c80977
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails g migration EnableUUID
+      invoke  active_record
+      create    db/migrate/20220525153144_enable_uuid.rb
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
+== 20220525153144 EnableUuid: migrating =======================================
+-- enable_extension("pgcrypto")
+   -> 0.0143s
+== 20220525153144 EnableUuid: migrated (0.0144s) ==============================
+#<Creator:0x000055afcb318028                                   
+ id: "9470a3a1-896a-49da-91e7-2d4ef2187574",                   
+ name: "Jaskaran",                                             
+ created_at: Wed, 25 May 2022 16:09:15.601277000 UTC +00:00,   
+ updated_at: Wed, 25 May 2022 16:09:15.601277000 UTC +00:00>   
+3.0.0 :006 > 
+
