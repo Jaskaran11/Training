@@ -1,13 +1,11 @@
 itachi:
+  id: 3
   name: Itachi
   age: 18
-  rooms: 3
-  payments: 3
-  reservations: 3
+  customer_id: 3
 
 david:
+  id: 4
   name: David
   age: 23
-  rooms: 4
-  payments: 4
-  reservations: 4
+  customer_id: 4

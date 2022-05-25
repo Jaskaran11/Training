@@ -1453,6 +1453,9 @@ Tasks: TOP => db:create:all
 (See full trace by running task with --trace)
 
 
+Image result for what is scaffolding in rails
+Rails scaffolding is a quick way to generate some of the major pieces of an application. If you want to create the models, views, and controllers for a new resource in a single operation, scaffolding is the tool for the job.
+
 itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
 == 20220524190451 CreateProductTableUsingMethodInIt: migrating ================
 -- create_table(:products)
@@ -1489,5 +1492,44 @@ itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate
    -> 0.0004s
 == 20220524190451 CreateProductTableUsingMethodInIt: migrated (0.0223s) =======
 
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails g scaffold food_item title:string food_items:string 
+      invoke  active_record
+      create    db/migrate/20220525073108_create_food_items.rb
+      create    app/models/food_item.rb
+      invoke    test_unit
+      create      test/models/food_item_test.rb
+      create      test/fixtures/food_items.yml
+      invoke  resource_route
+       route    resources :food_items
+      invoke  scaffold_controller
+      create    app/controllers/food_items_controller.rb
+      invoke    erb
+      create      app/views/food_items
+      create      app/views/food_items/index.html.erb
+      create      app/views/food_items/edit.html.erb
+      create      app/views/food_items/show.html.erb
+      create      app/views/food_items/new.html.erb
+      create      app/views/food_items/_form.html.erb
+      create      app/views/food_items/_food_item.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/food_items_controller_test.rb
+      create      test/system/food_items_test.rb
+      invoke    helper
+      create      app/helpers/food_items_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/food_items/index.json.jbuilder
+      create      app/views/food_items/show.json.jbuilder
 
+class CreateFoodItems < ActiveRecord::Migration[7.0]
+  def change
+    create_table :food_items do |t|
+      t.string :title
+      t.string :food_items
+
+      t.timestamps
+    end
+  end
+end
 
