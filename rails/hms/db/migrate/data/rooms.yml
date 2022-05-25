@@ -1,0 +1,10 @@
+tripple_room:
+single_room:
+  rooms_type: single_room
+  price: 1200
+  customer_id: 1
+
+double_room:
+  rooms_type: double_room
+  price: 1600
+  customer_id: 2
