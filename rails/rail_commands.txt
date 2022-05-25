@@ -1556,3 +1556,19 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
  updated_at: Wed, 25 May 2022 16:09:15.601277000 UTC +00:00>   
 3.0.0 :006 > 
 
+book_collection_development=# \d customers;
+                                    Table "public.customers"
+   Column    |              Type              | Collation | Nullable |          Default          
+-------------+--------------------------------+-----------+----------+---------------------------
+ customer_id | integer                        |           | not null | 
+ name        | character varying(30)          |           | not null | 
+ age         | integer                        |           |          | 
+ premium     | boolean                        |           |          | false
+ photo       | bytea                          |           |          | 
+ created_at  | timestamp(6) without time zone |           | not null | 
+ updated_at  | timestamp(6) without time zone |           | not null | 
+ notes       | text                           |           |          | 'No notes recorded'::text
+Indexes:
+    "customers_pkey" PRIMARY KEY, btree (customer_id)
+
+
