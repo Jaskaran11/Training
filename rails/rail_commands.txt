@@ -1818,7 +1818,7 @@ Active Record provides a rich API for accessing data within a database. Below ar
  #<Publisher:0x000055eb2234a540 id: 3, name: "Rider", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Thu, 26 May 2022 10:52:42.679877000 UTC +00:00, lock_version: 6>,
  #<Publisher:0x000055eb2234a338 id: 1, name: "Lioncrest", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Thu, 26 May 2022 10:52:42.681670000 UTC +00:00, lock_version: 2>] 
 
- Delete
+ Delete command
   => #<Publisher:0x000055eb23a743b0 id: nil, name: nil, created_at: nil, updated_at: nil, lock_version: 0> 
 3.0.0 :073 > publisher.name = "Wayne Books"
  => "Wayne Books" 
@@ -1838,4 +1838,26 @@ Active Record provides a rich API for accessing data within a database. Below ar
   TRANSACTION (0.7ms)  COMMIT                                                
  => #<Publisher:0x000055eb239be010 id: 4, name: "Wayne Books", created_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, updated_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, lock_version: 0> 
 3.0.0 :07
+
+ Validations
+ Active Record allows you to validate the state of a model before it gets written into the database. There are several methods that you can use to check your models and validate that an attribute value is not empty, is unique and not already in the database, follows a specific format, and many more.
+
+Validation is a very important issue to consider when persisting to the database, so the methods save and update take it into account when running: they return false when validation fails and they dont actually perform any operations on the database. All of these have a bang counterpart (that is, save! and update!), which are stricter in that they raise the exception ActiveRecord::RecordInvalid if validation fails. A quick example to illustrate:
+
+class User < ApplicationRecord
+  validates :name, presence: true
+end
+Copy
+irb> user = User.new
+irb> user.save
+=> false
+irb> user.save!
+ActiveRecord::RecordInvalid: Validation failed: Name cant be blank
+Copy
+You can learn more about validations in the Active Record Validations guide.
+
+7 Callbacks
+Active Record callbacks allow you to attach code to certain events in the life-cycle 
+of your models. This enables you to add behavior to your models by transparently executing 
+code when those events occur, like when you create a new record, update it, destroy it, and so on. 
 
