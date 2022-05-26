@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_090358) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_171840) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -44,21 +52,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_090358) do
     t.integer "publisher_id"
   end
 
-  create_table "creators", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
+  create_table "customers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers", primary_key: "customer_id", id: :integer, default: nil, force: :cascade do |t|
-    t.string "name", limit: 30, null: false
-    t.integer "age"
-    t.boolean "premium", default: false
-    t.binary "photo"
+  create_table "employees", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "notes", default: "No notes recorded"
-    t.integer "lock_version"
   end
 
   create_table "genres", id: false, force: :cascade do |t|
@@ -72,6 +73,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_090358) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lock_version"
+  end
+
+  create_table "time_entries", force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "customer_id"
+    t.float "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "book_authors", "authors"
