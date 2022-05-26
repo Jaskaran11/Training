@@ -1751,3 +1751,91 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
 3.0.0 :040 > publisher
  => #<Publisher:0x000055eb231bda28 id: 3, name: "Rider", created_at: Thu, 26 May 2022 09:07:19.920557000 UTC +00:00, updated_at: Thu, 26 May 2022 09:21:17.623127000 UTC +00:00, lock_version: 5> 
 
+Active Record provides a rich API for accessing data within a database. Below are a few examples of different data access methods provided by Active Record.
+3.0.0 :040 > publisher
+ => #<Publisher:0x000055eb231bda28 id: 3, name: "Rider", created_at: Thu, 26 May 2022 09:07:19.920557000 UTC +00:00, updated_at: Thu, 26 May 2022 09:21:17.623127000 UTC +00:00, lock_version: 5> 
+3.0.0 :041 > publisher = Publisher.all 
+  Publisher Load (0.5ms)  SELECT "publishers".* FROM "publishers"
+ =>                                                                          
+[#<Publisher:0x000055eb232020d8                                              
+...                                                                          
+3.0.0 :042 > publisher.all
+  Publisher Load (0.7ms)  SELECT "publishers".* FROM "publishers"
+ =>                                                                          
+[#<Publisher:0x000055eb21f1f268                                              
+  id: 1,                                                                     
+  name: "Lioncrest Publishing",                                              
+  created_at: Wed, 25 May 2022 11:46:13.770546000 UTC +00:00,                
+  updated_at: Wed, 25 May 2022 11:46:13.770546000 UTC +00:00,                
+  lock_version: 0>,                                                          
+ #<Publisher:0x000055eb21f1f150 id: 2, name: "Warner Books", created_at: Wed, 25 May 2022 18:37:41.104631000 UTC +00:00, updated_at: Wed, 25 May 2022 18:37:41.104631000 UTC +00:00, lock_version: 0>,
+ #<Publisher:0x000055eb21f1f038 id: 3, name: "Rider", created_at: Thu, 26 May 2022 09:07:19.920557000 UTC +00:00, updated_at: Thu, 26 May 2022 09:21:17.623127000 UTC +00:00, lock_version: 5>] 
+3.0.0 :043 > 
+
+#<Publisher:0x000055eb232020d8                           
+ id: 1,                                                  
+ name: "Lioncrest Publishing",                           
+ created_at: Wed, 25 May 2022 11:46:13.770546000 UTC +00:00,
+ updated_at: Wed, 25 May 2022 11:46:13.770546000 UTC +00:00,
+ lock_version: 0> 
+ 
+ 3.0.0 :044 > lioncrest = publisher.find_by(name: 'Lioncrest Publishing')
+  Publisher Load (0.2ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."name" = $1 LIMIT $2  [["name", "Lioncrest Publishing"], ["LIMIT", 1]]
+ =>                                                                    
+#<Publisher:0x000055eb239bc558                                         
+...                               
+3.0.0 :045 > publisher = Publisher.where(name: 'Lioncrest Building')
+  Publisher Load (0.2ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."name" = $1  [["name", "Lioncrest Building"]]
+ => [] 
+ 
+ Update
+  id: 1,                                                                
+ name: "Lioncrest Publishing",                                         
+ created_at: Wed, 25 May 2022 11:46:13.770546000 UTC +00:00,           
+ updated_at: Wed, 25 May 2022 11:46:13.770546000 UTC +00:00,           
+ lock_version: 0>                            
+3.0.0 :057 > publisher.name = "Lioncrest"
+ => "Lioncrest" 
+3.0.0 :058 > publisher.save 
+  TRANSACTION (0.4ms)  BEGIN
+  Publisher Update (0.3ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" IS NULL  [["name", "Lioncrest"], ["updated_at", "2022-05-26 10:38:47.067877"], ["lock_version", 1], ["id", 1]]
+  TRANSACTION (0.6ms)  COMMIT                                    
+ => true 
+ 
+ 3.0.0 :065 > Publisher.update(:all, created_at: "10-10-20")
+  Publisher Load (0.4ms)  SELECT "publishers".* FROM "publishers"
+  TRANSACTION (0.3ms)  BEGIN                                                                                  
+  Publisher Update (0.7ms)  UPDATE "publishers" SET "created_at" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" IS NULL  [["created_at", "0010-10-20 00:00:00"], ["updated_at", "2022-05-26 10:52:42.669288"], ["lock_version", 1], ["id", 2]]               
+  TRANSACTION (7.0ms)  COMMIT                                                                                 
+  TRANSACTION (0.1ms)  BEGIN                                                                                  
+  Publisher Update (0.2ms)  UPDATE "publishers" SET "created_at" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["created_at", "0010-10-20 00:00:00"], ["updated_at", "2022-05-26 10:52:42.679877"], ["lock_version", 6], ["id", 3], ["lock_version", 5]]
+  TRANSACTION (0.5ms)  COMMIT                                                                                 
+  TRANSACTION (0.2ms)  BEGIN                                                                                  
+  Publisher Update (0.2ms)  UPDATE "publishers" SET "created_at" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["created_at", "0010-10-20 00:00:00"], ["updated_at", "2022-05-26 10:52:42.681670"], ["lock_version", 2], ["id", 1], ["lock_version", 1]]
+  TRANSACTION (0.3ms)  COMMIT                             
+ => 
+[#<Publisher:0x000055eb2234a720 id: 2, name: "Warner Books", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Thu, 26 May 2022 10:52:42.669288000 UTC +00:00, lock_version: 1>,
+ #<Publisher:0x000055eb2234a540 id: 3, name: "Rider", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Thu, 26 May 2022 10:52:42.679877000 UTC +00:00, lock_version: 6>,
+ #<Publisher:0x000055eb2234a338 id: 1, name: "Lioncrest", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Thu, 26 May 2022 10:52:42.681670000 UTC +00:00, lock_version: 2>] 
+
+ Delete
+  => #<Publisher:0x000055eb23a743b0 id: nil, name: nil, created_at: nil, updated_at: nil, lock_version: 0> 
+3.0.0 :073 > publisher.name = "Wayne Books"
+ => "Wayne Books" 
+3.0.0 :074 > publisher.save
+  TRANSACTION (0.3ms)  BEGIN
+  Publisher Create (0.3ms)  INSERT INTO "publishers" ("name", "created_at", "updated_at", "lock_version") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Wayne Books"], ["created_at", "2022-05-26 10:56:14.117301"], ["updated_at", "2022-05-26 10:56:14.117301"], ["lock_version", 0]]                        
+  TRANSACTION (6.6ms)  COMMIT                                                                             
+ => true                                                                                                  
+3.0.0 :075 > publisher
+ => #<Publisher:0x000055eb23a743b0 id: 4, name: "Wayne Books", created_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, updated_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, lock_version: 0> 
+3.0.0 :076 > publisher = Publisher.find_by(name: "Wayne Books")
+  Publisher Load (0.2ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."name" = $1 LIMIT $2  [["name", "Wayne Books"], ["LIMIT", 1]]
+ => #<Publisher:0x000055eb239be010 id: 4, name: "Wayne Books", created_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, updated_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, lock_version: 0> 
+3.0.0 :077 > publisher.destroy
+  TRANSACTION (0.3ms)  BEGIN
+  Publisher Destroy (7.7ms)  DELETE FROM "publishers" WHERE "publishers"."id" = $1 AND "publishers"."lock_version" = $2  [["id", 4], ["lock_version", 0]]
+  TRANSACTION (0.7ms)  COMMIT                                                
+ => #<Publisher:0x000055eb239be010 id: 4, name: "Wayne Books", created_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, updated_at: Thu, 26 May 2022 10:56:14.117301000 UTC +00:00, lock_version: 0> 
+3.0.0 :07
+
