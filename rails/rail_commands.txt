@@ -1606,5 +1606,148 @@ precision that represents the number of significant digits. The range of P is 1 
   5 | Rich Dad Poor Dad |            |        | 123.34 | 2022-05-25 18:30:27.231538 | 2022-05-25 18:30:27.231538 | 2015-05-08     |            2
 (2 rows)
 
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+itsacheckmate@itscheckmate:~/Training/rails/hms$ rails db:migrate RAILS_ENV=test
+== 20220524181038 UpDownReversibleAddingColumn: migrating =====================
+-- add_column(:rooms, :sku, :integer)
+   -> 0.0016s
+-- execute("select * from rooms")
+   -> 0.0003s
+== 20220524181038 UpDownReversibleAddingColumn: migrated (0.0019s) ============
+
+== 20220524185229 RemovingForeignKey: migrating ===============================
+-- remove_foreign_key(:rooms, {:column=>:customer_id})
+   -> 0.0039s
+-- remove_foreign_key(:reservations, {:column=>:customer_id})
+   -> 0.0014s
+-- remove_foreign_key(:payments, {:column=>:customer_id})
+   -> 0.0015s
+== 20220524185229 RemovingForeignKey: migrated (0.0069s) ======================
+
+== 20220524190451 CreateProductTableUsingMethodInIt: migrating ================
+-- create_table(:products)
+   -> 0.0063s
+-- create_table(:categories)
+   -> 0.0019s
+-- add_column(:products, :description, :string)
+   -> 0.0001s
+-- rename_column(:products, :categoryid, :category_id)
+   -> 0.0009s
+-- add_timestamps(:categories)
+   -> 0.0002s
+-- change_column_null(:products, :updated_at, true)
+   -> 0.0001s
+-- remove_timestamps(:products)
+   -> 0.0001s
+-- add_foreign_key(:products, :categories)
+   -> 0.0012s
+-- remove_foreign_key(:products, :categories)
+   -> 0.0013s
+-- remove_timestamps(:categories)
+   -> 0.0001s
+-- add_index(:categories, :name)
+   -> 0.0010s
+-- rename_index(:categories, "index_categories_on_name", "index_product_categories_on_name")
+   -> 0.0001s
+-- remove_index(:categories, :name)
+   -> 0.0008s
+-- remove_column(:products, :description)
+   -> 0.0001s
+-- add_reference(:categories, :name, {:index=>true})
+   -> 0.0009s
+-- remove_reference(:categories, :name, {:index=>false})
+   -> 0.0001s
+== 20220524190451 CreateProductTableUsingMethodInIt: migrated (0.0156s) =======
+
+== 20220525070945 AddForeignKey: migrating ====================================
+-- add_foreign_key(:rooms, :customers)
+   -> 0.0008s
+-- add_foreign_key(:reservations, :customers)
+   -> 0.0005s
+-- add_foreign_key(:payments, :customers)
+   -> 0.0004s
+== 20220525070945 AddForeignKey: migrated (0.0018s) ===========================
+
+== 20220525071555 RemoveColumn: migrating =====================================
+-- remove_column(:rooms, :sku, :integer)
+   -> 0.0002s
+-- remove_column(:rooms, :price_of_food, :decimal)
+   -> 0.0001s
+-- remove_column(:rooms, :rooms_id, :bigint)
+   -> 0.0002s
+== 20220525071555 RemoveColumn: migrated (0.0005s) ============================
+
+== 20220525073108 CreateFoodItems: migrating ==================================
+-- create_table(:food_items)
+   -> 0.0021s
+== 20220525073108 CreateFoodItems: migrated (0.0021s) =========================
+
+== 20220525073704 RemoveTable: migrating ======================================
+-- drop_table(:food_items)
+   -> 0.0005s
+== 20220525073704 RemoveTable: migrated (0.0005s) =============================
+
+== 20220525082355 RemoveTheColumnFromRooms: migrating =========================
+-- remove_column(:rooms, :name_of_customer)
+   -> 0.0002s
+== 20220525082355 RemoveTheColumnFromRooms: migrated (0.0002s) ================
+
+== 20220525094953 AddRevert: migrating ========================================
+-- change_table(:customers)
+   -> 0.0010s
+-- remove_reference(:customers, :rooms)
+   -> 0.0003s
+== 20220525094953 AddRevert: migrated (0.0050s) ===============================
+
+ Locking - 
+ 1.    Optimistic locking is just a mechanism to prevent processes from overwriting changes by another process. Optimistic locking is not a magic wand to manage or auto-merge any conflicting changes. It can only allow users to alert or notify about such conflicting changes.
+    Optimistic locking works by just comparing the value of the "version" column. Thus, optimistic locking is not a real database lock.
  
+ (See full trace by running task with --trace)
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
+  Publisher Update (0.3ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "Michael"], ["updated_at", "2022-05-26 09:12:28.063090"], ["lock_version", 3], ["id", 3], ["lock_version", 2]]                   
+  TRANSACTION (6.7ms)  COMMIT                                         
+ => true                                                              
+3.0.0 :019 > p2.name = "Warner Books"
+ => "Warner Books" 
+3.0.0 :020 > p2.save 
+  TRANSACTION (0.5ms)  BEGIN
+  Publisher Update (0.3ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "Warner Books"], ["updated_at", "2022-05-26 09:12:44.943104"], ["lock_version", 3], ["id", 3], ["lock_version", 2]]  
+  TRANSACTION (0.2ms)  ROLLBACK                           
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/locking/optimistic.rb:108:in `_update_row': Attempted to update a stale object: Publisher. (ActiveRecord::StaleObjectError)    
+
+2.Pessimistic locking assumes that database transaction conflict is very likely to happen. It locks the record until the transaction is done. If the record is currently lock and the other user make a transaction, that second transaction will wait until the lock in first transaction is release.
+
+3.0.0 :023 > p4 = Publisher.lock.find(3)
+  Publisher Load (2.3ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2 FOR UPDATE  [["id", 3], ["LIMIT", 1]]
+ => #<Publisher:0x000055eb237ac010 id: 3, name: "Michael", created_at: Thu, 26 May 2022 09:07:19.920557000 UTC +00:00, updated_at: Thu, 26 May 2022 09:12:28.063090000 UTC +00:00, lock_version: 3> 
+3.0.0 :024 > p4
+ => #<Publisher:0x000055eb237ac010 id: 3, name: "Michael", created_at: Thu, 26 May 2022 09:07:19.920557000 UTC +00:00, updated_at: Thu, 26 May 2022 09:12:28.063090000 UTC +00:00, lock_version: 3> 
+3.0.0 :025 > p4.name="Simon & Schuster"
+ => "Simon & Schuster" 
+3.0.0 :026 > p4.save! #releases the lock
+  TRANSACTION (0.4ms)  BEGIN
+  Publisher Update (0.8ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "Simon & Schuster"], ["updated_at", "2022-05-26 09:19:09.471291"], ["lock_version", 4], ["id", 3], ["lock_version", 3]]
+  TRANSACTION (1.7ms)  COMMIT                                                             
+ => true              
  
+ another method to do pessimistic locking - 
+         
+3.0.0 :023 > p4 = Publisher.lock.find(3)
+3.0.0 :035 > publisher = Publisher.find(3)
+  Publisher Load (0.6ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2  [["id", 3], ["LIMIT", 1]]                         
+ =>                                                                          
+#<Publisher:0x000055eb231bda28                                               
+3.0.0 :036 > publisher.with_lock do 
+3.0.0 :037 >   publisher.name = "Rider"
+3.0.0 :038 >   publisher.save!
+3.0.0 :039 > end
+  TRANSACTION (0.3ms)  BEGIN
+  Publisher Load (0.3ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2 FOR UPDATE  [["id", 3], ["LIMIT", 1]]
+  Publisher Update (0.6ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "Rider"], ["updated_at", "2022-05-26 09:21:17.623127"], ["lock_version", 5], ["id", 3], ["lock_version", 4]]
+  TRANSACTION (7.0ms)  COMMIT                                                
+ => true                                                                     
+3.0.0 :040 > publisher
+ => #<Publisher:0x000055eb231bda28 id: 3, name: "Rider", created_at: Thu, 26 May 2022 09:07:19.920557000 UTC +00:00, updated_at: Thu, 26 May 2022 09:21:17.623127000 UTC +00:00, lock_version: 5> 
+

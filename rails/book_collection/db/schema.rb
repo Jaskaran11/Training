@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_183501) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_090358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_183501) do
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lock_version"
     t.index ["name"], name: "index_authors_on_name"
   end
 
@@ -57,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_183501) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "notes", default: "No notes recorded"
+    t.integer "lock_version"
   end
 
   create_table "genres", id: false, force: :cascade do |t|
@@ -69,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_183501) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lock_version"
   end
 
   add_foreign_key "book_authors", "authors"
