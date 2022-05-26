@@ -84,3 +84,12 @@ production:
   database: book_collection_production
   username: book_collection
   password: <%= ENV["BOOK_COLLECTION_DATABASE_PASSWORD"] %>
+
+
+staging: 
+  <<: *default
+  database: book_collection_staging
+
+sandbox:
+  <<: *default
+  database: book_collection_ecommerce_sandbox

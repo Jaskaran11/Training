@@ -1861,3 +1861,18 @@ Active Record callbacks allow you to attach code to certain events in the life-c
 of your models. This enables you to add behavior to your models by transparently executing 
 code when those events occur, like when you create a new record, update it, destroy it, and so on. 
 
+
+ Staging environment vs Sandbox environment
+Staging environment
+A good staging environment will be a close replica (less the data) of the production system. It is used to test upgrades and patches prior to going to production. This means that it should be a controlled environment where the engineers responsible for the production deployment are allowed to test the rollout instructions.
+
+Access restrictions in a staging environment should be as close to production as possible. I.E. deployment by those engineers who are responsible for deployment. No root (or privileged access for developers).
+
+Sandbox environment
+As the name suggests this typically a playground for the engineering team. It has less restrictions than a staging environment because it is designed to allow the engineers to try out things easily and quickly. A sandbox environment is likely to drift away from the production environment as engineers try out different versions of the product, dependancies, plugins etc.
+
+If you want to perform some data migration/modification on production and you want to be sure that it will not break anything you can always perform a test run using rails console with --sandbox flag.
+
+Access to a sandbox environment typically allows privileged access to any engineer (developer, QA etc.) who are working on the project for easy / quick deployment and debugging.
+
+
