@@ -1,0 +1,124 @@
+Validations are used to ensure that only valid data is saved into your database. For example, it may be important to your application to ensure that every user provides a valid email address and mailing address. Model-level validations are the best way to ensure that only valid data is saved into your database. They are database agnostic, cannot be bypassed by end users, and are convenient to test and maintain. Rails provides built-in helpers for common needs, and allows you to create your own validation methods as well.
+
+3.0.0 :005 > book.title = "The Power of your subconscious mind"
+ => "The Power of your subconscious mind" 
+3.0.0 :006 > book.new_record?
+ => true 
+3.0.0 :007 > book.save
+  TRANSACTION (0.3ms)  BEGIN
+  Book Create (3.1ms)  INSERT INTO "books" ("title", "total_page", "rating", "price", "created_at", "updated_at", "date_published", "publisher_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["title", "The Power of your subconscious mind"], ["total_page", nil], ["rating", nil], ["price", nil], ["created_at", "2022-05-27 08:52:13.257238"], ["updated_at", "2022-05-27 08:52:13.257238"], ["date_published", nil], ["publisher_id", nil]]                       
+  TRANSACTION (0.9ms)  COMMIT                                      
+ => true                                                           
+3.0.0 :008 > book.new_record?
+ => false 
+
+The following methods trigger validations, and will save the object to the database only if the object is valid:
+
+    create
+    create!
+    save
+    save!
+    update
+    update!
+
+The bang versions (e.g. save!) raise an exception if the record is invalid. The non-bang versions don't: save and update return false, and create returns the object.
+
+3.0.0 :009 > book.save!
+ => true 
+
+Skipping Validations - 
+1.increment!
+
+3.0.0 :017 > book.increment!(:total_page)
+  Book Update All (7.4ms)  UPDATE "books" SET "total_page" = COALESCE("total_page", 0) + $1 WHERE "books"."id" = $2  [["total_page", 1], ["id", 6]]
+ =>                                                                                    
+#<Book:0x000056510da1f310                                                              
+ id: 6,                                                                                
+ title: "The Power of the Subconcious mind",                                           
+ total_page: 239,                                                                      
+ rating: nil,                                                                          
+ price: nil,                                                                           
+ created_at: Fri, 27 May 2022 08:52:13.257238000 UTC +00:00,                           
+ updated_at: Fri, 27 May 2022 08:54:06.162250000 UTC +00:00,                           
+ date_published: nil,                                                                  
+ publisher_id: nil>                                                                    
+3.0.0 :018 > 
+    
+2.decrement! -
+3.0.0 :018 > book.decrement!(:total_page)
+  Book Update All (7.6ms)  UPDATE "books" SET "total_page" = COALESCE("total_page", 0) - $1 WHERE "books"."id" = $2  [["total_page", 1], ["id", 6]]
+ =>                                                                                    
+#<Book:0x000056510da1f310                                                              
+ id: 6,                                                                                
+ title: "The Power of the Subconcious mind",                                           
+ total_page: 238,                                                                      
+ rating: nil,                                                                          
+ price: nil,                                                                           
+ created_at: Fri, 27 May 2022 08:52:13.257238000 UTC +00:00,                           
+ updated_at: Fri, 27 May 2022 08:54:06.162250000 UTC +00:00,                           
+ date_published: nil,                                                                  
+ publisher_id: nil> 
+ 
+ valid? and invalid?
+ 
+Before saving an Active Record object, Rails runs your validations. If these validations produce any errors, Rails does not save the object.
+ 
+ 3.0.0 :024 > Author.create(name: "John Doe").valid?
+  TRANSACTION (0.4ms)  BEGIN
+  Author Create (3.3ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "John Doe"], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-05-27 10:00:53.813532"], ["updated_at", "2022-05-27 10:00:53.813532"], ["lock_version", 0]]                    
+  
+  
+  3.0.0 :002 > Customer.create(name: nil).valid?
+  TRANSACTION (0.2ms)  BEGIN
+  Customer Create (7.6ms)  INSERT INTO "customers" ("name", "address", "gender", "mobile", "check_in", "check_out", "created_at", "updated_at", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", nil], ["address", nil], ["gender", nil], ["mobile", nil], ["check_in", nil], ["check_out", nil], ["created_at", "2022-05-27 10:04:16.509013"], ["updated_at", "2022-05-27 10:04:16.509013"], ["country", nil]]                                                 
+  TRANSACTION (0.2ms)  ROLLBACK                                                 
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': PG::NotNullViolation: ERROR:  null value in column "name" violates not-null constraint (ActiveRecord::NotNullViolation)                                                      
+DETAIL:  Failing row contains (23, null, null, null, null, null, null, 2022-05-27 10:04:16.509013, 2022-05-27 10:04:16.509013, null).                           
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': ERROR:  null value in column "name" violates not-null constraint (PG::NotNullViolation)
+DETAIL:  Failing row contains (23, null, null, null, null, null, null, 2022-05-27 10:04:16.509013, 2022-05-27 10:04:16.509013, null).
+
+3.0.0 :009 > c = Customer.new
+ => 
+#<Customer:0x00007f2134479940                                       
+...                                                                 
+3.0.0 :010 > c.errors.size
+ => 0 
+3.0.0 :012 > c.errors.objects.first.full_message
+(irb):12:in `<main>': undefined method `full_message' for nil:NilClass (NoMethodError)                                                                          
+3.0.0 :013 > c.save 
+  TRANSACTION (0.4ms)  BEGIN
+  Customer Create (1.2ms)  INSERT INTO "customers" ("name", "address", "gender", "mobile", "check_in", "check_out", "created_at", "updated_at", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", nil], ["address", nil], ["gender", nil], ["mobile", nil], ["check_in", nil], ["check_out", nil], ["created_at", "2022-05-27 10:12:36.964099"], ["updated_at", "2022-05-27 10:12:36.964099"], ["country", nil]]                                                 
+  TRANSACTION (0.3ms)  ROLLBACK                                                 
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': PG::NotNullViolation: ERROR:  null value in column "name" violates not-null constraint (ActiveRecord::NotNullViolation)                                                      
+DETAIL:  Failing row contains (24, null, null, null, null, null, null, 2022-05-27 10:12:36.964099, 2022-05-27 10:12:36.964099, null).                           
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': ERROR:  null value in column "name" violates not-null constraint (PG::NotNullViolation)
+DETAIL:  Failing row contains (24, null, null, null, null, null, null, 2022-05-27 10:12:36.964099, 2022-05-27 10:12:36.964099, null).
+3.0.0 :014 > 
+
+3.0.0 :014 > c.save!
+  TRANSACTION (0.4ms)  BEGIN
+  Customer Create (0.9ms)  INSERT INTO "customers" ("name", "address", "gender", "mobile", "check_in", "check_out", "created_at", "updated_at", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", nil], ["address", nil], ["gender", nil], ["mobile", nil], ["check_in", nil], ["check_out", nil], ["created_at", "2022-05-27 10:12:36.964099"], ["updated_at", "2022-05-27 10:12:36.964099"], ["country", nil]]                          
+  TRANSACTION (0.2ms)  ROLLBACK                          
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': PG::NotNullViolation: ERROR:  null value in column "name" violates not-null constraint (ActiveRecord::NotNullViolation)                               
+DETAIL:  Failing row contains (25, null, null, null, null, null, null, 2022-05-27 10:12:36.964099, 2022-05-27 10:12:36.964099, null).    
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': ERROR:  null value in column "name" violates not-null constraint (PG::NotNullViolation)
+DETAIL:  Failing row contains (25, null, null, null, null, null, null, 2022-05-27 10:12:36.964099, 2022-05-27 10:12:36.964099, null).
+
+3.0.0 :015 > Customer.create!
+  T3.0.0 :018 > customer.invalid?
+ => false 
+3.0.0 :019 > customer.invalid?(:new)
+ => false 
+RANSACTION (0.3ms)  BEGIN
+  Customer Create (1.3ms)  INSERT INTO "customers" ("name", "address", "gender", "mobile", "check_in", "check_out", "created_at", "updated_at", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", nil], ["address", nil], ["gender", nil], ["mobile", nil], ["check_in", nil], ["check_out", nil], ["created_at", "2022-05-27 10:13:15.766634"], ["updated_at", "2022-05-27 10:13:15.766634"], ["country", nil]]                                 
+  TRANSACTION (0.3ms)  ROLLBACK                                 
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': PG::NotNullViolation: ERROR:  null value in column "name" violates not-null constraint (ActiveRecord::NotNullViolation)                                      
+DETAIL:  Failing row contains (26, null, null, null, null, null, null, 2022-05-27 10:13:15.766634, 2022-05-27 10:13:15.766634, null).           
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': ERROR:  null value in column "name" violates not-null constraint (PG::NotNullViolation)
+DETAIL:  Failing row contains (26, null, null, null, null, null, null, 2022-05-27 10:13:15.766634, 2022-05-27 10:13:15.766634, null).
+
+3.0.0 :018 > customer.invalid?
+ => false 
+3.0.0 :019 > customer.invalid?(:new)
+ => false 
+

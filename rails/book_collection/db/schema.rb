@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_171840) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_27_095622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_171840) do
     t.text "title"
     t.integer "total_page"
     t.float "rating"
-    t.decimal "price", precision: 6, scale: 2
+    t.decimal "price", precision: 5, scale: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date_published"
