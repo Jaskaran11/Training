@@ -153,5 +153,28 @@ If the field does exist in your database, the accept option must be set to or in
  3.0.0 :010 > customer.save!
 /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/validations.rb:80:in `raise_validation_error': Validation failed: Available Accept this (ActiveRecord::RecordInvalid)         
  
+confirmation
+
+You should use this helper when you have two text fields that should receive exactly the same content.
  
- 
+ 3.0.0 :002 > customer.address = "sector 14 Faridabad"
+ => "sector 14 Faridabad" 
+3.0.0 :003 > customer.address_confirmation = "sector 15 faridabad"
+ => "sector 15 faridabad" 
+3.0.0 :004 > customer.valid?
+ => false 
+3.0.0 :005 > customer.errors
+ => #<ActiveModel::Errors [#<ActiveModel::Error attribute=name, type=blank, options={}>, #<ActiveModel::Error attribute=address_confirmation, type=confirmation, options={:attribute=>"Address"}>]>                                        
+3.0.0 :006 > 
+
+comparison
+
+This check will validate a comparison between any two comparable values. The validator requires a compare option be supplied. Each option accepts a value, proc, or symbol. Any class that includes Comparable can be compare.
+
+3.0.0 :002 > c.check_in = "2022/05/10"
+ => "2022/05/10" 
+3.0.0 :003 > c.check_out="2022/05/09"
+ => "2022/05/09" 
+3.0.0 :004 > c.save
+ => false 
+
