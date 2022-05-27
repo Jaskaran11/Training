@@ -122,3 +122,36 @@ DETAIL:  Failing row contains (26, null, null, null, null, null, null, 2022-05-2
 3.0.0 :019 > customer.invalid?(:new)
  => false 
 
+errors[] -
+To verify whether or not a particular attribute of an object is valid, you can use errors[:attribute]. 
+ It returns an array of all the error messages for :attribute. 
+ It only checks to see whether there are errors found on an individual attribute of the object.
+
+.0.0 :001 > customer = Customer.new
+ => #<Customer:0x000055e2d66cdab8 id: nil, name: nil, address: nil, gender: nil, mobile: nil, check_in: nil, check_out: nil, created_at: nil, updated_at: nil, country: nil> 
+3.0.0 :002 > customer.errors[:name]
+ => [] 
+3.0.0 :003 > customer.save
+ => false 
+3.0.0 :004 > customer.save!
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/validations.rb:80:in `raise_validation_error': Validation failed: Name can't be blank (ActiveRecord::RecordInvalid)
+3.0.0 :005 > customer.errors[:name]
+ => ["can't be blank"] 
+3.0.0 :006 > customer.errors.objects.first
+ => #<ActiveModel::Error attribute=name, type=blank, options={}> 
+3.0.0 :007 > customer.errors.objects.first.all
+(irb):7:in `<main>': undefined method `all' for #<ActiveModel::Error attribute=name, type=blank, options={}> (NoMethodError)
+3.0.0 :008 > customer.errors.objects.first.full_message
+ => "Name can't be blank" 
+3.0.0 :010 > Customer.create.errors[:name].any?
+ => true 
+ 
+Acceptance -
+This method validates that a checkbox on the user interface was checked when a form was submitted. This is typically used when the user needs to agree to your application's terms of service, confirm that some text is read, or any similar concept.If you dont have a field for it, the helper will create a virtual attribute. 
+If the field does exist in your database, the accept option must be set to or include true or else the validation will not run.
+ 
+ 3.0.0 :010 > customer.save!
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/validations.rb:80:in `raise_validation_error': Validation failed: Available Accept this (ActiveRecord::RecordInvalid)         
+ 
+ 
+ 
