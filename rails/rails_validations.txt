@@ -178,3 +178,24 @@ This check will validate a comparison between any two comparable values. The val
 3.0.0 :004 > c.save
  => false 
 
+exclusion
+
+This helper validates that the attributes' values are not included in a given set. In fact, this set can be any enumerable object.
+#<Author:0x00007f0fec542308                                            
+ id: 10010,                                                            
+ name: nil,                                                            
+ dob: nil,                                                             
+ gender: nil,                                                          
+ country: nil,                                                         
+ created_at: Fri, 27 May 2022 15:16:02.223858000 UTC +00:00,
+ updated_at: Fri, 27 May 2022 15:16:02.223858000 UTC +00:00,
+ lock_version: 0>      
+3.0.0 :003 > author.country = "ca"
+ => "ca" 
+3.0.0 :004 > author.save
+ => false 
+
+
+3.0.0 :006 > author.errors.objects.first.full_message
+ => "Country ca is reserved." 
+
