@@ -199,3 +199,33 @@ This helper validates that the attributes' values are not included in a given se
 3.0.0 :006 > author.errors.objects.first.full_message
  => "Country ca is reserved." 
 
+
+This helper validates the attributes' values by testing whether they match a given regular expression, which is specified using the :with option.
+
+ 3.0.0 :004 > customer.errors.objects.first.full_message
+ => "Email address is invalid" 
+ 
+  inclusion
+ This helper validates that the attributes values are included in a given set.
+    In fact, this set can be any enumerable object.
+    The inclusion helper has an option :in that receives the set of values that will be accepted. 
+  The :in option has an alias called :within that you can use for the same purpose, if youd like to.
+ 
+ 3.0.0 :002 > a.name = "Mr"
+ => "Mr" 
+3.0.0 :003 > a.valid?
+ => true
+ 
+ 
+  7. presence
+ This helper validates that the specified attributes are not empty.
+It uses the blank? method to check if the value is either nil or a blank string, that is, a string that is either empty or consists of whitespace.
+eg.   has_many :line_items, inverse_of: :order
+
+8. absence
+This helper validates that the specified attributes are absent.
+ It uses the present? method to check if the value is not either nil or a blank string,
+ that is, a string that is either empty or consists of whitespace.
+ 
+ 3.0.0 :010 > book.errors.objects.first.full_message
+
