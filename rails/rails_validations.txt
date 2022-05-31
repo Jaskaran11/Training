@@ -229,3 +229,31 @@ This helper validates that the specified attributes are absent.
  
  3.0.0 :010 > book.errors.objects.first.full_message
 
+ length
+This helper validates the length of the attributes' values. It provides a variety of options, so you can specify length constraints in different ways:
+3.0.0 :009 > c.name = "w"
+ => "w" 
+3.0.0 :010 > c.valid?
+ => false 
+3.0.0 :011 > c.errors.object.first.full_message
+(irb):11:in `<main>': undefined method `object' for #<ActiveModel::Errors [#<ActiveModel::Error attribute=address_confirmation, type=blank, options={}>, #<ActiveModel::Error attribute=check_out, type=blank, options={:count=>nil, :value=>nil}>, #<ActiveModel::Error attribute=name, type=too_short, options={:count=>2}>]> (NoMethodError)
+Did you mean?  objects                                                                      
+3.0.0 :012 > c.address = "sector 10"
+ => "sector 10" 
+3.0.0 :013 > c.gender = "male"
+ => "male" 
+3.0.0 :014 > c.mobile="2313433433"
+ => "2313433433" 
+3.0.0 :015 > c.check_in="2022/05/05"
+ => "2022/05/05" 
+3.0.0 :016 > c.check_out="2022/05/10"
+ => "2022/05/10" 
+3.0.0 :017 > c.country="Faridabad"
+ => "Faridabad" 
+3.0.0 :018 > s.save
+(irb):18:in `<main>': undefined local variable or method `s' for main:Object (NameError)
+3.0.0 :019 > c.save
+ => false 
+3.0.0 :037 > c.errors.objects.first.full_message
+ => "Address is too long (maximum is 10 characters)" 
+ 
