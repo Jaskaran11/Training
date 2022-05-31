@@ -8,4 +8,6 @@ class Customer < ApplicationRecord
   validates :address, length: { maximum: 10 }
   validates :mobile, length: { is: 10 }
   validates :gender, absence: true
+  validates :name, uniqueness: true
+  validates :check_in , uniqueness: {scope: :check_out, case_sensitive: false}
 end

@@ -347,3 +347,32 @@ This helper validates that the specified attributes are absent. It uses the pres
 3.0.0 :013 > customer.gender
  => nil 
 
+ uniqueness
+This helper validates that the attributes value is unique right before the object gets saved. 
+It does not create a uniqueness constraint in the database, so it may happen that two different 
+database connections create two records with the same value for a column that you intend to be unique.
+
+There is a :scope option that you can use to specify one or more attributes that are used to limit the uniqueness check.
+There is also a :case_sensitive option that you can use to define whether the uniqueness constraint will be case sensitive, case insensitive, or respects default database collation.
+The default error message is "has already been taken".
+The scope option to the Rails uniqueness validation rule allows us to specify additional columns to consider when checking for uniqueness. This rule says that “the name of this project must unique, within the scope of this account”.
+ id: 1,                                                                    
+ name: "Jaskaran Singh",                                                   
+ address: "#Sector 20-A Chandigarh",                                       
+ gender: "Male",                                                
+ mobile: "9876573100",                                          
+ check_in: Sun, 01 May 2022,                                    
+ check_out: Tue, 10 May 2022,                                   
+ created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,    
+ updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,    
+ country: "India">                             
+3.0.0 :016 > customer = Customer,new
+(irb):16:in `<main>': undefined local variable or method `new' for main:Object (NameError)
+Did you mean?  next                                             
+3.0.0 :017 > customer = Customer.new
+ => #<Customer:0x000055f0f2428db0 id: nil, name: nil, address: nil, gender: nil, mobile: nil, check_in: nil, check_out: nil, created_at: nil, updated_at: nil, country: nil> 
+3.0.0 :018 > customer.name = "Jaskaran Singh"
+ => "Jaskaran Singh" 
+3.0.0 :022 > customer.errors.messages
+ =>:name=>["has already been taken"]} 
+
