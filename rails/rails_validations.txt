@@ -465,3 +465,18 @@ Loading development environment (Rails 7.0.3)
 3.0.0 :009 > author.valid?(:account_setup)
   Author Exists? (0.8ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."name" = $1 AND "authors"."id" != $2 LIMIT $3  [["name", "Rahul"], ["id", 10011], ["LIMIT", 1]]
  => false     
+ 
+Strict Validations
+You can also specify validations to be strict and raise ActiveModel::StrictValidationFailed when the object is invalid.
+ 
+ Loading development environment (Rails 7.0.3)                                                  
+3.0.0 :001 > Author.new.valid?
+  Author Exists? (0.4ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."email_address" IS NULL LIMIT $1  [["LIMIT", 1]]
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activemodel-7.0.3/lib/active_model/errors.rb:323:in `add': Name can't be blank (ActiveModel::StrictValidationFailed)
+
+class Author < ApplicationRecord
+  validates :token, presence: true, uniqueness: true, strict: TokenGenerationException
+end
+
+
+
