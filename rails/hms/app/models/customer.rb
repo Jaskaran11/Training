@@ -7,4 +7,5 @@ class Customer < ApplicationRecord
   validates :name, length: { minimum: 2 }
   validates :address, length: { maximum: 10 }
   validates :mobile, length: { is: 10 }
+  validates :gender, absence: true
 end

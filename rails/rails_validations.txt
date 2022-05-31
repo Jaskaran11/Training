@@ -320,4 +320,30 @@ Besides :only_integer, this helper also accepts the following options to add con
 3.0.0 :015 > room.errors.objects.first.full_message
  => "Price must be in 1000..5999" 
 
+absence
+This helper validates that the specified attributes are absent. It uses the present? method to check if the value is not either nil or a blank string, that is, a string that is either empty or consists of whitespace.
+#<Customer:0x00007fa32cad3c58                                   
+ id: nil,                                                       
+ name: "Sam",                                                   
+ address: "Faridabad",                                          
+ gender: nil,                                                   
+ mobile: "9876573100",                                          
+ check_in: Tue, 10 May 2022,                                    
+ check_out: Sat, 14 May 2022,                                   
+ created_at: nil,                                               
+ updated_at: nil,                                               
+ country: "India">                                              
+3.0.0 :009 > customer.save
+ => false 
+3.0.0 :010 > customer.errors.objects.first.full_message
+ => "Address confirmation can't be blank" 
+3.0.0 :011 > customer.address_confirmation = "Faridabad"
+ => "Faridabad" 
+3.0.0 :012 > customer.save
+  TRANSACTION (0.3ms)  BEGIN
+  Customer Create (6.0ms)  INSERT INTO "customers" ("name", "address", "gender", "mobile", "check_in", "check_out", "created_at", "updated_at", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "Sam"], ["address", "Faridabad"], ["gender", nil], ["mobile", "9876573100"], ["check_in", "2022-05-10"], ["check_out", "2022-05-14"], ["created_at", "2022-05-31 10:57:14.180986"], ["updated_at", "2022-05-31 10:57:14.180986"], ["country", "India"]]                                
+  TRANSACTION (0.6ms)  COMMIT                                                                       
+ => true                                                                                            
+3.0.0 :013 > customer.gender
+ => nil 
 
