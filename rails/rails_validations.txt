@@ -376,3 +376,92 @@ Did you mean?  next
 3.0.0 :022 > customer.errors.messages
  =>:name=>["has already been taken"]} 
 
+
+ Common Validation Options
+1.The :allow_nil option skips the validation when the value being validated is nil.
+#<Customer:0x0000558cab95f780                                   
+ id: 32,                                                        
+ name: "Uchiha",                                                
+ address: "chd",                                                
+ gender: nil,                 
+ mobile: "9876573100",        
+ check_in: Thu, 05 May 2022,  
+ check_out: Tue, 10 May 2022, 
+ created_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+ updated_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+ country: "india">   
+ 
+ 2.allow_blank - 
+ The :allow_blank option is similar to the :allow_nil option. This option will let validation pass if the attribute's value is blank?, like nil or an empty string for example.
+ 3.0.0 :006 > customer.name = "Jas"
+ => "Jas" 
+3.0.0 :007 > customer.check_out = ""
+ => "" 
+3.0.0 :008 > customer.check_out.valid?
+(irb):8:in `<main>': undefined method `valid?' for nil:NilClass (NoMethodError)
+3.0.0 :009 > customer.save
+  TRANSACTION (0.2ms)  BEGIN
+  Customer Create (0.2ms)  INSERT INTO "customers" ("name", "address", "gender", "mobile", "check_in", "check_out", "created_at", "updated_at", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "Jas"], ["address", nil], ["gender", nil], ["mobile", nil], ["check_in", nil], ["check_out", nil], ["created_at", "2022-05-31 12:58:41.611610"], ["updated_at", "2022-05-31 12:58:41.611610"], ["country", nil]]                                                            
+  TRANSACTION (0.7ms)  COMMIT                                                            
+ => true                                                                                 
+3.0.0 :010 > customer.valid?
+ => true 
+3.0.0 :011 > 
+
+
+.3 :message
+
+. The :message option accepts a String or Proc.
+A String :message value can optionally contain any/all of %{value}, %{attribute}, and %{model} which will be dynamically replaced when validation fails. This replacement is done using the I18n gem, and the placeholders must match exactly, no spaces are allowed.
+A Proc :message value is given two arguments: the object being validated, and a hash with :model, :attribute, and :value key-value pairs.
+
+3.0.0 :007 > customer.errors.messages
+ => 
+{:name=>["must be given please", "is too short (minimum is 2 characters)"],           
+ :address_confirmation=>["can't be blank"],                     
+ :check_in=>["can't be blank", "has already been taken"],       
+ :address=>["City seems wrong"],                                      
+ :mobile=>["is the wrong length (should be 10 characters)"]}    
+3.0.0 :010 > author.name = "David Goggins"
+ => "David Goggins" 
+3.0.0 :011 > author.save
+  TRANSACTION (0.3ms)  BEGIN
+  Author Exists? (7.3ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."name" = $1 LIMIT $2  [["name", "David Goggins"], ["LIMIT", 1]]               
+  TRANSACTION (0.4ms)  ROLLBACK                                        
+ => false                                                              
+3.0.0 :012 > author.errors.messages
+ => 
+{:email_address=>["is invalid"],                                                
+ :name=>["Hey David Goggins, David Goggins is already taken"]}   
+ 
+ :on
+The :on option lets you specify when the validation should happen. The default behavior for all the built-in validation helpers is to be run on save (both when you're creating a new record and when you're updating it). If you want to change it, you can use on: :create to run the validation only when a new record is created or on: :update to run the validation only when a record is updated.
+
+Loading development environment (Rails 7.0.3)                 
+3.0.0 :001 > author = Author.create(email_address: "david@gmail.com")
+  TRANSACTION (0.1ms)  BEGIN
+  Author Exists? (0.3ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."name" IS NULL LIMIT $1  [["LIMIT", 1]]
+  Author Exists? (1.9ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."email_address" = $1 LIMIT $2  [["email_address", "david@gmail.com"], ["LIMIT", 1]]
+  TRANSACTION (0.1ms)  ROLLBACK                               
+ => #<Author:0x000056018cf69f30 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: "david@gmail.com"> 
+3.0.0 :002 > author.errors.messages
+ => {:name=>["Hey ,  is already taken"], :email_address=>["has already been taken"]} 
+ You can also use on: to define custom contexts. Custom contexts need to be triggered explicitly by passing the name of the context to valid?, invalid?, or save.
+ 
+ 3.0.0 :005 > author.email_address = "rahul@gmail.com"
+ => "rahul@gmail.com" 
+3.0.0 :006 > author.name = "Rahul"
+ => "Rahul" 
+3.0.0 :007 > author.save
+  TRANSACTION (0.4ms)  BEGIN
+  Author Exists? (1.0ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."name" = $1 LIMIT $2  [["name", "Rahul"], ["LIMIT", 1]]
+  Author Exists? (2.6ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."email_address" = $1 LIMIT $2  [["email_address", "rahul@gmail.com"], ["LIMIT", 1]]
+  Author Create (8.1ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Rahul"], ["dob", "1990-05-10"], ["gender", nil], ["country", nil], ["created_at", "2022-05-31 13:44:33.340343"], ["updated_at", "2022-05-31 13:44:33.340343"], ["lock_version", 0], ["email_address", "rahul@gmail.com"]]                                     
+  TRANSACTION (1.0ms)  COMMIT                                 
+ => true                                                      
+3.0.0 :008 > author.valid?
+  Author Exists? (0.8ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."name" = $1 AND "authors"."id" != $2 LIMIT $3  [["name", "Rahul"], ["id", 10011], ["LIMIT", 1]]
+ => true                                                      
+3.0.0 :009 > author.valid?(:account_setup)
+  Author Exists? (0.8ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."name" = $1 AND "authors"."id" != $2 LIMIT $3  [["name", "Rahul"], ["id", 10011], ["LIMIT", 1]]
+ => false     
