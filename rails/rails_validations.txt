@@ -479,4 +479,161 @@ class Author < ApplicationRecord
 end
 
 
+Working with Validation Errors
+
+The valid? and invalid? methods only provide a summary status on validity.
+However you can dig deeper into each individual error by using various methods from the errors collection.
+
+1.errors - 
+This returns an instance of the class ActiveModel::Errors containing all errors, each error is represented by an ActiveModel::Error object.
+3.0.0 :001 > author = Author.new
+ => 
+#<Author:0x0000565220b92eb8                                            
+...                                                                    
+3.0.0 :002 > author.valid?
+  Author Exists? (1.4ms)  SELECT 1 AS one FROM "authors" WHERE "authors"."email_address" IS NULL LIMIT $1  [["LIMIT", 1]]                              
+ => false                                                              
+3.0.0 :003 > author.errors.full_messages
+ => ["Email address is invalid", "Email address has already been taken", "Name can't be blank", "Name is too short (minimum is 3 characters)"] 
+
+3.0.0 :004 > author = Author.new(name: "John Doe")
+ => #<Author:0x0000565220a5c558 id: nil, name: "John Doe", dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :005 > author.errors
+ => #<ActiveModel::Errors []> 
+
+2 errors[] -
+errors[] is used when you want to check the error messages for a specific attribute. It returns an array of strings with all error messages for the given attribute, each string with one error message. If there are no errors related to the attribute, it returns an empty array.
+Loading development environment (Rails 7.0.3)                                   
+3.0.0 :001 > author = Author.new(name: "Virat Kohli")
+ => #<Author:0x00007f99c4938ab8 id: nil, name: "Virat Kohli", dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :002 > author.valid?
+ => true 
+3.0.0 :003 > author.errors[:name]
+ => [] 
+3.0.0 :004 >
+
+3.0.0 :004 > author = Author.new(name:  "JD")
+ => #<Author:0x000056376dfec360 id: nil, name: "JD", dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :005 > author.valid?
+ => false 
+3.0.0 :006 > author.errors[:name]
+ => ["is too short (minimum is 3 characters)"] 
+
+3.0.0 :008 > author.valid?
+ => false 
+3.0.0 :009 > author.errors[:name]
+ => ["can't be blank", "is too short (minimum is 3 characters)"] 
+
+3 errors.where and error object - 
+Sometimes we may need more information about each error beside its message. Each error is encapsulated as an ActiveModel::Error object, and where method is the most common way of access.
+where returns an array of error objects, filtered by various degree of conditions.
+
+3.0.0 :010 > author = Author.new
+ => #<Author:0x000056376d93c650 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :011 > author.valid?
+ => false 
+3.0.0 :012 > author.errors.where(:name)
+ => [#<ActiveModel::Error attribute=name, type=blank, options={}>, #<ActiveModel::Error attribute=name, type=too_short, options={:count=>3}>] 
+
+3.0.0 :013 > author.errors.where(:name, :too_short)
+ => [#<ActiveModel::Error attribute=name, type=too_short, options={:count=>3}>] 
+
+You can read various information from these error objects:
+3.0.0 :014 > error = author.errors.where(:name).last
+ => #<ActiveModel::Error attribute=name, type=too_short, options={:count=>3}> 
+3.0.0 :015 > error.attribute
+ => :name 
+3.0.0 :016 > error.type
+ => :too_short 
+3.0.0 :017 > error.options[:count]
+ => 3 
+
+You can also generate the error message:
+3.0.0 :018 > error.message
+ => "is too short (minimum is 3 characters)" 
+3.0.0 :019 > error.full_message
+ => "Name is too short (minimum is 3 characters)" 
+
+The full_message method generates a more user-friendly message, with the capitalized attribute name prepended.
+
+4 errors.add -
+The add method creates the error object by taking the attribute, the error type and additional options hash. This is useful for writing your own validator.
+
+validate do |author|
+    errors.add :name, :too_plain, message: "please type the full name"
+  end
+
+3.0.0 :001 > author = Author.new
+ => #<Author:0x000055f97baf9c70 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :002 > author.valid?
+ => false 
+3.0.0 :003 > author.errors.where(:name).full_message
+(irb):3:in `<main>': undefined method `full_message' for [#<ActiveModel::Error attribute=name, type=too_plain, options={:message=>"please type the full name"}>]:Array (NoMethodError)
+3.0.0 :004 > author.errors.where(:name).first.type
+ => :too_plain 
+3.0.0 :005 > author.errors.where(:name).first.full_message
+ => "Name please type the full name" 
+ 
+5 errors[:base] - 
+You can add errors that are related to the object's state as a whole, instead of being related to a specific attribute. You can add errors to :base when you want to say that the object is invalid, no matter the values of its attributes.
+
+ validate do |author|
+    errors.add :base, :invalid, message: "This person is invalid because ..."
+  end
+
+3.0.0 :001 > author = Author.create
+ => #<Author:0x000055ee95994038 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :002 > author.errors.where(:base).first.full_message
+ => "This person is invalid because ..." 
+
+6 errors.clear -
+The clear method is used when you intentionally want to clear the errors collection. Of course, calling errors.clear upon an invalid object won't actually make it valid: the errors collection will now be empty, but the next time you call valid? or any method that tries to save this object to the database, the validations will run again. If any of the validations fail, the errors collection will be filled again.
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails c
+Loading development environment (Rails 7.0.3)                                              
+3.0.0 :001 > author = Author.new
+ => #<Author:0x00007f94d8a55860 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :002 > author.valid?
+ => false 
+3.0.0 :003 > author.errors.empty?
+ => false 
+3.0.0 :004 > author.errors.clear
+ => [] 
+3.0.0 :005 > author.errors.empty?
+ => true 
+3.0.0 :006 > author.save
+ => false 
+3.0.0 :007 > author.errors.empty?
+ => false 
+ 
+7 errors.size - 
+The size method returns the total number of errors for the object.
+
+.0.0 :008 > author = Author.new
+ => #<Author:0x0000560aa9f1bd00 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :009 > author.valid?
+ => false 
+3.0.0 :010 > author.errors.size?
+(irb):10:in `<main>': undefined method `size?' for #<ActiveModel::Errors [#<ActiveModel::Error attribute=name, type=blank, options={}>, #<ActiveModel::Error attribute=name, type=too_short, options={:count=>3}>]> (NoMethodError)                                                           
+Did you mean?  size                                                                 
+3.0.0 :011 > author.errors.size
+ => 2 
+3.0.0 :012 > author = Author.new
+ => #<Author:0x0000560aaa6940c8 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :013 > author.name = "Chetan Bhagat"
+ => "Chetan Bhagat" 
+3.0.0 :014 > author.dob = "1980/10/11"
+ => "1980/10/11" 
+3.0.0 :015 > author.gender= "Male"
+ => "Male" 
+3.0.0 :016 > author.country = "India"
+ => "India" 
+3.0.0 :017 > author.email_address = "chetan@gmail.com"
+ => "chetan@gmail.com" 
+3.0.0 :018 > author
+ => #<Author:0x0000560aaa6940c8 id: nil, name: "Chetan Bhagat", dob: Sat, 11 Oct 1980, gender: "Male", country: "India", created_at: nil, updated_at: nil, lock_version: 0, email_address: "chetan@gmail.com">                                                                   
+3.0.0 :019 > author.valid?
+ => true 
+3.0.0 :020 > author.errors.size
+ => 0 
 
