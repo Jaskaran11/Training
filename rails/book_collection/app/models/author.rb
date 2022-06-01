@@ -21,5 +21,10 @@ class Author < ApplicationRecord
   #  !name.blank?
   #end
   include ActiveModel::Validations
-  validates_with MyValidator
+  #validates_with MyValidator
+  validates_with AuthorValidator
+
+  validates_each :name, :country do |record, attr, value|
+    record.errors.add(attr, 'Must start with the upper case') if value =~ /\A[[:lower:]]/
+  end
 end
