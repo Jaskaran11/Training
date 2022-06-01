@@ -686,3 +686,21 @@ For multiple conditions define whether or not a validation should happen, an Arr
 Can apply both :if and :unless to the same validation.
 
 
+1 Custom Validators
+Custom validators are classes that inherit from ActiveModel::Validator. These classes must implement the validate method which takes a record as an argument and performs the validation on it. The custom validator is called using the validates_with method.
+3.0.0 :002 > author.name = "Xavier"
+ => "Xavier" 
+3.0.0 :003 > author.valid?
+ => true 
+3.0.0 :004 > author.name = "Cavier"
+ => "Cavier" 
+3.0.0 :005 > author.valid?
+ => false 
+3.0.0 :006 > author.errors[:name]
+ => ["Need a name starting with X please!"] 
+
+The easiest way to add custom validators for validating individual attributes is with the convenient ActiveModel::EachValidator. In this case, the custom validator class must implement a validate_each method which takes three arguments: record, attribute, and value. These correspond to the instance, the attribute to be validated, and the value of the attribute in the passed instance.
+
+3.0.0 :006 > cust.errors[:name]
+ => ["is too short (minimum is 2 characters)", "Please provide full name"] 
+

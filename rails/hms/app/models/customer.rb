@@ -9,7 +9,7 @@ class Customer < ApplicationRecord
   validates :mobile, length: { is: 10 }
   validates :gender, inclusion: { in: %w(male female cantsay),
     message: "%{value} is not  valid" }, allow_nil: true
-  validates :name, uniqueness: true
+  validates :name, presence: true, name: true
   validates :check_in, uniqueness: { scope: :check_out, case_sensitive: false }
   validates :check_out, length: { is: 10 }, allow_blank: true
 end
