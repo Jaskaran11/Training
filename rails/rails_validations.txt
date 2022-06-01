@@ -636,4 +636,53 @@ Did you mean?  size
  => true 
 3.0.0 :020 > author.errors.size
  => 0 
+ 
+Conditional Validation - 
+Sometimes it will make sense to validate an object only when a given predicate is satisfied. You can do that by using the :if and :unless options, which can take a symbol, a Proc or an Array. You may use the :if option when you want to specify when the validation should happen. If you want to specify when the validation should not happen, then you may use the :unless option.
+
+.1 Using a Symbol with :if and :unless
+You can associate the :if and :unless options with a symbol corresponding to the name of a method that will get called right before validation happens. This is the most commonly used option.
+
+
+5.2 Using a Proc with :if and :unless
+
+It is possible to associate :if and :unless with a Proc object which will be called. Using a Proc object gives you the ability to write an inline condition instead of a separate method. This option is best suited for one-liners.
+
+3.0.0 :007 > book = Book.new
+ => #<Book:0x000055b98f578188 id: nil, title: nil, total_page: nil, rating: nil, price: nil, created_at: nil, updated_at: nil, date_published: nil, publisher_id: nil> 
+                              
+3.0.0 :001 > book = Book.new
+ => #<Book:0x000055c67d3738b0 id: nil, title: nil, total_page: nil, rating: nil, price: nil, created_at: nil, updated_at: nil, date_published: nil, publisher_id: nil> 
+3.0.0 :002 > book.title = "Harry Potter"
+ => "Harry Potter" 
+3.0.0 :003 > book.title_confirmation="Harry Potter"
+ => "Harry Potter" 
+3.0.0 :004 > book.valid?
+ => true 
+
+
+ Grouping Conditional validations
+
+Sometimes it is useful to have multiple validations use one condition.
+
+Loading development environment (Rails 7.0.3)
+3.0.0 :001 > author = Author.new
+ => 
+#<Author:0x00007f229ca427a0                                            
+...                                                                    
+3.0.0 :002 > author.valid?
+ => false 
+3.0.0 :003 > author.name = "Sam"
+ => "Sam" 
+3.0.0 :004 > author.valid?
+ => false 
+3.0.0 :005 
+ => {:name_confirmation=>["can't be blank"]} 
+
+
+Combining Validation Conditions
+
+For multiple conditions define whether or not a validation should happen, an Array can be used. 
+Can apply both :if and :unless to the same validation.
+
 
