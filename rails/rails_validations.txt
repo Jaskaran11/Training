@@ -704,3 +704,40 @@ The easiest way to add custom validators for validating individual attributes is
 3.0.0 :006 > cust.errors[:name]
  => ["is too short (minimum is 2 characters)", "Please provide full name"] 
 
+
+ Custom Methods
+
+You can also create methods that verify the state of your models and add errors to the errors collection when they are invalid. You must then register these methods by using the validate class method, passing in the symbols for the validation methods' names.
+
+You can pass more than one symbol for each class method and the respective validations will be run in the same order as they were registered.
+
+The valid? method will verify that the errors collection is empty, so your custom validation methods should add errors to it when you wish validation to fail
+
+ id: nil,                                                                 
+ name: "MS Dhoni",                                                        
+ address: nil,                                                            
+ gender: nil,                                                             
+ mobile: nil,                                                             
+ check_in: Tue, 10 May 2022,                                              
+ check_out: nil,                                                          
+ created_at: nil,                                                         
+ updated_at: nil,                                           
+ country: nil>                                              
+3.0.0 :009 > cust.valid?
+/home/itsacheckmate/Training/rails/hms/app/models/customer.rb:25:in `check_out_cannot_be_less_than_check_in': undefined method `<' for nil:NilClass (NoMethodError)
+3.0.0 :010 > cust.check_out ="2022/05/09"
+ => "2022/05/09" 
+3.0.0 :011 > cust.valid?
+ => false 
+3.0.0 :012 > cust.errors.message
+(irb):12:in `<main>': undefined method `message' for #<ActiveModel::Errors [#<ActiveModel::Error attribute=address_confirmation, type=blank, options={}>, #<ActiveModel::Error attribute=address, type=not_a_number, options={:message=>"%{value} seems wrong", :value=>nil}>, #<ActiveModel::Error attribute=mobile, type=wrong_length, options={:count=>10}>, #<ActiveModel::Error attribute=check_in, type=cant be in the past, options={}>, #<ActiveModel::Error attribute=check_out, type=cant be less than the check-in date, options={}>]> (NoMethodError)                                     
+Did you mean?  messages                                                           
+3.0.0 :013 > cust.errors.messages
+ => 
+{:address_confirmation=>["can't be blank"],                                       
+ :address=>[" seems wrong"],                                                      
+ :mobile=>["is the wrong length (should be 10 characters)"],                      
+ :check_in=>["cant be in the past"],                                              
+ :check_out=>["cant be less than the check-in date"]} 
+ 
+ 
