@@ -37,4 +37,5 @@ class Author < ApplicationRecord
       puts "Age cannot be calculated without date of birth"
     end
   end
+  has_many :books, dependent: :destroy
 end

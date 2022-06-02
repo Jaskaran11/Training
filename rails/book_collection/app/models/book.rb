@@ -7,13 +7,14 @@ class Book < ApplicationRecord
   #validates :title_confirmation, presence: true, if: Proc.new {|book| !book.title.blank? }
   validates :total_page, presence: true, unless: :total_page?
 
-  def total_page?
-    title.blank?
-  end
-  before_validation :remove_whitespaces
+  #def total_page?
+    #title.blank?
+  #end
+  #before_validation :remove_whitespaces
 
-  private
-  def remove_whitespaces
-    title.strip!
-  end
+  #private
+  #def remove_whitespaces
+    #title.strip!
+  #end
+  belongs_to :author
 end
