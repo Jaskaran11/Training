@@ -1,0 +1,18 @@
+1 The Object Life Cycle
+During the normal operation of a Rails application, objects may be created, updated, and destroyed. Active Record provides hooks into this object life cycle so that you can control your application and its data.
+Callbacks allow you to trigger logic before or after an alteration of an object's state.
+
+2 Callbacks Overview
+Callbacks are methods that get called at certain moments of an object's life cycle. With callbacks it is possible to write code that will run whenever an Active Record object is created, saved, updated, deleted, validated, or loaded from the database.
+
+2.1 Callback Registration
+In order to use the available callbacks, you need to register them. You can implement the callbacks as ordinary methods and use a macro-style class method to register them as callbacks:
+3.0.0 :008 > room = Room.new
+ => #<Room:0x0000558d479f7228 id: nil, price: nil, customer_id: nil, type:... 
+3.0.0 :009 > room.save!
+Hello before create here
+  TRANSACTION (0.2ms)  BEGIN                                             
+  Room Create (8.5ms)  INSERT INTO "rooms" ("price", "customer_id", "type") VALUES ($1, $2, $3) RETURNING "id"  [["price", nil], ["customer_id", nil], ["type", nil]]                                                              
+Hello after create here                                            
+  TRANSACTION (0.8ms)  COMMIT                                      
+ => true    
