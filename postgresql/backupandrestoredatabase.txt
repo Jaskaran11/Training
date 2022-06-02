@@ -1,0 +1,231 @@
+itsacheckmate@itscheckmate:~$ sudo -su postgres
+[sudo] password for itsacheckmate: 
+postgres@itscheckmate:/home/itsacheckmate$ cd Downloads/airline_database/folder
+postgres@itscheckmate:/home/itsacheckmate/Downloads/airline_database/folder$ touch 1.txt
+touch: cannot touch '1.txt': Permission denied
+postgres@itscheckmate:/home/itsacheckmate/Downloads/airline_database/folder$ pg_dump airline > airlinedatabase.txt
+postgres@itscheckmate:/home/itsacheckmate/Downloads/airline_database/folder$ psql library < library.sql
+psql: error: FATAL:  database "library" does not exist
+postgres@itscheckmate:/home/itsacheckmate/Downloads/airline_database/folder$ psql
+psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# create database library;
+CREATE DATABASE
+postgres=# exit
+postgres@itscheckmate:/home/itsacheckmate/Downloads/airline_database/folder$ psql library < library.sql
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+CREATE FUNCTION
+ALTER FUNCTION
+CREATE FUNCTION
+ALTER FUNCTION
+CREATE FUNCTION
+ALTER FUNCTION
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+COPY 4
+COPY 3
+COPY 12
+COPY 17
+COPY 2
+COPY 4
+COPY 3
+COPY 10
+COPY 3
+COPY 6
+COPY 6
+COPY 4
+ setval 
+--------
+      4
+(1 row)
+
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+     13
+(1 row)
+
+ setval 
+--------
+      2
+(1 row)
+
+ setval 
+--------
+      4
+(1 row)
+
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+     16
+(1 row)
+
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+      6
+(1 row)
+
+ setval 
+--------
+      6
+(1 row)
+
+ setval 
+--------
+      4
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE TRIGGER
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+postgres@itscheckmate:/home/itsacheckmate/Downloads/airline_database/folder$ psql library
+psql (12.11 (Ubuntu 12.11-0ubuntu0.20.04.1))
+Type "help" for help.
+
+library=# \d
+                      List of relations
+ Schema |             Name             |   Type   |  Owner   
+--------+------------------------------+----------+----------
+ public | author                       | table    | postgres
+ public | author_id_seq                | sequence | postgres
+ public | authorization_type           | table    | postgres
+ public | authorization_type_id_seq    | sequence | postgres
+ public | book                         | table    | postgres
+ public | book_author                  | table    | postgres
+ public | book_id_seq                  | sequence | postgres
+ public | book_type                    | table    | postgres
+ public | book_type_id_seq             | sequence | postgres
+ public | department                   | table    | postgres
+ public | department_id_seq            | sequence | postgres
+ public | fine                         | table    | postgres
+ public | fine_id_seq                  | sequence | postgres
+ public | issue_return_details         | table    | postgres
+ public | issue_return_details_id_seq  | sequence | postgres
+ public | publisher                    | table    | postgres
+ public | publisher_id_seq             | sequence | postgres
+ public | student                      | table    | postgres
+ public | student_class_details        | table    | postgres
+ public | student_class_details_id_seq | sequence | postgres
+ public | student_id_seq               | sequence | postgres
+ public | system_user                  | table    | postgres
+ public | system_user_id_seq           | sequence | postgres
+(23 rows)
+
+
