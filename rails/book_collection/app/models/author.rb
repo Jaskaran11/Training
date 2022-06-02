@@ -24,7 +24,17 @@ class Author < ApplicationRecord
   #validates_with MyValidator
   validates_with AuthorValidator
 
-  validates_each :name, :country do |record, attr, value|
-    record.errors.add(attr, 'Must start with the upper case') if value =~ /\A[[:lower:]]/
+  #validates_each :name, :country do |record, attr, value|
+    #record.errors.add(attr, 'Must start with the upper case') if value =~ /\A[[:lower:]]/
+  #end
+  after_create :display_author_age
+
+  def display_author_age 
+    if self.dob.present?
+      age = Date.today.year - self.dob.year
+      puts "Age of the author is #{age}"
+    else   
+      puts "Age cannot be calculated without date of birth"
+    end
   end
 end

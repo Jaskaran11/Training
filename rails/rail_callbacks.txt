@@ -16,3 +16,36 @@ Hello before create here
 Hello after create here                                            
   TRANSACTION (0.8ms)  COMMIT                                      
  => true    
+ 
+ 
+ Common callbacks
+ 
+ For create/update/delete'
+ -> after_commit / after_rollback
+ 
+ using after_create- 
+ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails c
+Loading development environment (Rails 7.0.3)                 
+
+.com")
+  TRANSACTION (0.3ms)  BEGIN
+  Author Create (3.1ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "JK Rowling"], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-06-02 10:38:08.632473"], ["updated_at", "2022-06-02 10:38:08.632473"], ["lock_version", 0], ["email_address", "jk@gmail.com"]]                                                        
+Age cannot be calculated without date of birth                            
+  TRANSACTION (0.6ms)  COMMIT                                             
+ =>                                                                       
+#<Author:0x0000558c1c917258                                               
+...                           
+
+before_validation:
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails c
+Loading development environment (Rails 7.0.3)                                      
+3.0.0 :001 > book = Book.new
+ => #<Book:0x00007f044ca635e0 id: nil, title: nil, total_page: nil, rating: nil, price: nil, created_at: nil, updated_at: nil, date_published: nil, publisher_id: nil> 
+3.0.0 :002 > book.title = "     Harry potter"
+ => "     Harry potter" 
+3.0.0 :003 > book.total_page = 422
+ => 422 
+3.0.0 :004 > book.valid?
+ => true 
+3.0.0 :005 > book.title
+ => "Harry potter" 
