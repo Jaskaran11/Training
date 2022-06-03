@@ -17,5 +17,5 @@ class Book < ApplicationRecord
     #title.strip!
   #end
   belongs_to :author
-  has_one :genres
+  has_one :genre
 end
