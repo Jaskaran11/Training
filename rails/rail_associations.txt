@@ -228,4 +228,53 @@ adding a new object
   author_id: 10017>] 
 3.0.0 :091 > 
 
-             
+3.0.0 :091 > author.books.size
+ => 3 
+3.0.0 :097 > author.books.empty?
+ => false
+ 
+ 2 Avoiding Name Collisions
+
+You are not free to use just any name for your associations. Because creating an association adds a method with that name to the model, it is a bad idea to give an association a name that is already used for an instance method of ActiveRecord::Base. The association method would override the base method and break things. For instance, attributes or connection are bad names for associations.
+
+3 Updating the Schema
+
+Associations are extremely useful, but they are not magic. You are responsible for maintaining your database schema to match your associations. In practice, this means two things, depending on what sort of associations you are creating. For belongs_to associations you need to create foreign keys, and for has_and_belongs_to_many associations you need to create the appropriate join table.
+1 Creating Foreign Keys for belongs_to Associations
+When you declare a belongs_to association, you need to create foreign keys as appropriate.
+
+2 Creating Join Tables for has_and_belongs_to_many Associations
+
+If you create a has_and_belongs_to_many association, you need to explicitly create the joining table. Unless the name of the join table is explicitly specified by using the :join_table option, Active Record creates the name by using the lexical order of the class names. So a join between author and book models will give the default join table name of "authors_books" because "a" outranks "b" in lexical ordering. 
+
+4 Controlling Association Scope
+
+By default, associations look for objects only within the current module's scope. This can be important when you declare Active Record models within a module.
+
+
+5 Bi-directional Associations
+
+It's normal for associations to work in two directions, requiring declaration on two different models:
+3.0.0 :127 > a
+ => 
+#<Author:0x00007fb4809a0718                                       
+ id: 10017,                                                       
+ name: "Stephen King",                                            
+ dob: Sun, 21 Sep 1947,                                           
+ gender: "Male",                   
+ country: "UK",                    
+ created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+ updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+ lock_version: 0,                  
+ email_address: "stephen@gmail.com"> 
+3.0.0 :128 > b = a.books.first
+  Book Load (0.3ms)  SELECT "books".* FROM "books" WHERE "books"."author_id" = $1 ORDER BY "books"."id" ASC LIMIT $2  [["author_id", 10017], ["LIMIT", 1]]
+ =>                                                                               
+#<Book:0x000055eaa6dcc698                                                         
+...                                                                               
+3.0.0 :129 > a.name == b.author.name
+ => true 
+3.0.0 :130 > a.name = "Stephen King"
+ => "Stephen King" 
+3.0.0 :131 > a.name == b.author.name
+ => true 
