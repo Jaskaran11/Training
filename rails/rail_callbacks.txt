@@ -49,3 +49,6 @@ Loading development environment (Rails 7.0.3)
  => true 
 3.0.0 :005 > book.title
  => "Harry potter" 
+ 
+ after_validation
+
