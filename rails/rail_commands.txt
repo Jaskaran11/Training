@@ -1894,4 +1894,21 @@ Access to a sandbox environment typically allows privileged access to any engine
  => 1                                                                           
 3.0.0 :016 > 
                                                                                 
-                                                    
+Staging area - 
+
+
+The testing environment is an environment in which Rails will perform the tests that you write. This is a slimmer environment in which certain things are disabled such as sending emails, and loading the asset pipeline. The database in the test environment is also generally not persisted between test runs.
+
+Staging environments are setup to mimic most of the functionality of a production environment. The staging 'stack' should be as similar to the production environment as possible; e.g. same hardware, same OS, same installed packages, etc.
+
+Things I generally limit when setting up a staging environment are email sending, I will use a mail interceptor to send all email to my address. Think of the staging environment as a sandbox in which to test changes to your production environment, without actually testing in production.
+
+For most small apps, a staging environment is not always necessary. However, for a large, enterprise level application it is a must as you generally cannot afford any downtime for your production system. With the staging environment you can catch those changes before they are pushed to production.
+
+Sandbox 
+A sandbox is an isolated testing environment that enables users to run programs or open files without affecting the application, system or platform on which they run. Software developers use sandboxes to test new programming code. Cybersecurity professionals use sandboxes to test potentially malicious software.
+In development, a sandbox usually involves a development server and a staging server. The development server is separated from the production environment but may still require basic network access. Developers use this server to upload code and test it as the codebase changes.
+
+The staging server is designed to be an exact replica of production. This server is where quality assurance (QA) tests code before deploying to production. Because the staging environment is the same as the production environment, code that runs without issues in staging should run without issues in production. After code is tested, it’s deployed to production.
+
+                                   
