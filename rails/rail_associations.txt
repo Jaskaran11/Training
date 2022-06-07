@@ -500,4 +500,17 @@ If you set the :dependent option to:
  publisher_id: nil,                                         
  author_id: 2>  
  
- 
+ 6. :primary_key
+By convention, Rails assumes that the id column is used to hold the primary key of its tables. The :primary_key option allows you to specify a different column.
+
+7. :inverse_of
+The :inverse_of option specifies the name of the has_many or has_one association that is the inverse of this association.
+
+8.:touch
+
+If you set the :touch option to true, then the updated_at or updated_on timestamp on the associated object will be set to the current time whenever this object is saved or destroyed:
+3.0.0 :082 > book.save
+  TRANSACTION (0.1ms)  BEGIN
+  Book Update (0.2ms)  UPDATE "books" SET "updated_at" = $1, "date_published" = $2 WHERE "books"."id" = $3  [["updated_at", "2022-06-07 14:17:37.171378"], ["date_published", "2010-01-03"], ["id", 16]]
+  TRANSACTION (6.5ms)  COMMIT                               
+ => true       
