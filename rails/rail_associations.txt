@@ -514,3 +514,13 @@ If you set the :touch option to true, then the updated_at or updated_on timestam
   Book Update (0.2ms)  UPDATE "books" SET "updated_at" = $1, "date_published" = $2 WHERE "books"."id" = $3  [["updated_at", "2022-06-07 14:17:37.171378"], ["date_published", "2010-01-03"], ["id", 16]]
   TRANSACTION (6.5ms)  COMMIT                               
  => true       
+ 
+Polymorphic
+Passing true to the :polymorphic option indicates that this is a polymorphic association. 
+Polymorphic Associations
+With polymorphic associations, a model can belong to more than one other model, on a single association
+to connect to many different model from single belongs_to command
+The database representation of this polymorphism consists of two columns, which represent the ID and the type
+
+      
+      
