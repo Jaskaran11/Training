@@ -282,5 +282,165 @@ It's normal for associations to work in two directions, requiring declaration on
 =>The has_one :through Association
 A has_one :through association sets up a one-to-one connection with another model. This association indicates that the declaring model can be matched with one instance of another model by proceeding through a third model. For example, if each supplier has one account, and each account is associated with one account history, then the supplier model could look like this:
 
+When you declare a belongs_to association, the declaring class automatically gains 8 methods related to the association:
+
+    association
+    association=(associate)
+    build_association(attributes = {})
+    create_association(attributes = {})
+    create_association!(attributes = {})
+    reload_association
+    association_changed?
+    association_previously_changed?
+In all of these methods, association is replaced with the symbol passed as the first argument to belongs_to. so in case of  belongs_to :author
+the methods becomes 
+
+author
+author=
+build_author
+create_author
+create_author!
+reload_author
+author_changed?
+author_previously_changed?
+
+1 association- 
+The association method returns the associated object
+3.0.0 :018 > author.books
+ => 
+[#<Book:0x00007f6eb884a7a0
+  id: 12,
+  title: "IT",
+  total_page: 235,
+  rating: 4.5,
+  price: 0.5234e3,
+  created_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  date_published: Fri, 22 Jan 1999,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x00007f6eb884a070
+  id: 14,
+  title: "The Shining",
+  total_page: 235,
+  rating: 4.5,
+  price: 0.5234e3,
+  created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  date_published: Thu, 22 Jun 2000,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x00007f6eb8849e40
+  id: 15,
+  title: "Creature",
+  total_page: 324,
+  rating: 3.4,
+  price: 0.3455e3,
+  created_at: Fri, 03 Jun 2022 17:44:41.604123000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:44:41.604123000 UTC +00:00,
+  date_published: Thu, 01 Mar 1990,
+  publisher_id: nil,
+  author_id: 10017>] 
+
+2 association=(associate)
+3.0.0 :023 > book.author = author
+ => 
+#<Author:0x000055ae405ff610
+... 
+
+#<Author:0x000055ae405ff610
+... 
+3.0.0 :024 > book.author
+ => 
+#<Author:0x000055ae405ff610                                 
+ id: 10017,                                                 
+ name: "Stephen King",                                      
+ dob: Sun, 21 Sep 1947,                                     
+ gender: "Male",                                            
+ country: "UK",                                             
+ created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+ updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+ lock_version: 0,                                           
+ email_address: "stephen@gmail.com">  
+ 
+3 build_association(attributes = {})
+The build_association method returns a new object of the associated type. This object will be instantiated from the passed attributes, and the link through this object's foreign key will be set, but the associated object will not yet be saved.
+3.0.0 :025 > author = book.build_author(id:10018, name: "Chetan Bhagat")
+ => #<Author:0x00007f6eb84863f8 id: 10018, name: "Chetan Bhagat", dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+
+4 create_association(attributes = {})
+
+The create_association method returns a new object of the associated type. This object will be instantiated from the passed attributes, the link through this object's foreign key will be set, and, once it passes all of the validations specified on the associated model, the associated object will be saved.
+
+ => #<Author:0x000055ae40c2d230 id: 10019, name: "Sam", dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :027 > author = book.create_author(id:10019, name: "Sam")
+  TRANSACTION (0.2ms)  BEGIN
+  Author Create (7.4ms)  INSERT INTO "authors" ("id", "name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 10019], ["name", "Sam"], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-06-07 11:37:52.111172"], ["updated_at", "2022-06-07 11:37:52.111172"], ["lock_version", 0], ["email_address", nil]]                                                                
+Age cannot be calculated without date of birth                                           
+  TRANSACTION (0.8ms)  COMMIT                                                 
+ =>                                                                           
+#<Author:0x000055ae403e8188                                                   
+... 
+
+5 create_association!(attributes = {})
+
+Does the same as create_association above, but raises ActiveRecord::RecordInvalid if the record is invalid.
+3.0.0 :028 > author = book.create_author!(id:10019, name: "Sam")
+  TRANSACTION (0.2ms)  BEGIN
+  Author Create (0.5ms)  INSERT INTO "authors" ("id", "name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["id", 10019], ["name", "Sam"], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-06-07 11:38:41.167230"], ["updated_at", "2022-06-07 11:38:41.167230"], ["lock_version", 0], ["email_address", nil]]                                            
+  TRANSACTION (0.3ms)  ROLLBACK                                      
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "authors_pkey" (ActiveRecord::RecordNotUnique)
+DETAIL:  Key (id)=(10019) already exists.
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params': ERROR:  duplicate key value violates unique constraint "authors_pkey" (PG::UniqueViolation)
+DETAIL:  Key (id)=(10019) already exists.
+
+6 association_changed?
+
+The association_changed? method returns true if a new associated object has been assigned and the foreign key will be updated in the next save.
+#<Author:0x00007f6eb8a57098                                 
+ id: 10017,                                                 
+ name: "Stephen King",                                      
+ dob: Sun, 21 Sep 1947,                                     
+ gender: "Male",                                            
+ country: "UK",                                             
+ created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+ updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+ lock_version: 0,                                           
+ email_address: "stephen@gmail.com">                        
+3.0.0 :036 > book.author_changed?
+ => false 
+3.0.0 :037 
+
+3.0.0 :037 > book.author = Author.second
+  Author Load (7.1ms)  SELECT "authors".* FROM "authors" ORDER BY "authors"."id" ASC LIMIT $1 OFFSET $2  [["LIMIT", 1], ["OFFSET", 1]]
+ =>                                                                         
+#<Author:0x000055ae4094e398                                                 
+...                                                                         
+3.0.0 :038 > book.author_changed?
+ => true 
+ 
+ 7 association_previously_changed?
+
+The association_previously_changed? method returns true if the previous save updated the association to reference a new associate object.
+3.0.0 :041 > book.author_previously_changed?
+ => false 
+
+3.0.0 :042 > book.author = Author.second
+  Author Load (0.6ms)  SELECT "authors".* FROM "authors" ORDER BY "authors"."id" ASC LIMIT $1 OFFSET $2  [["LIMIT", 1], ["OFFSET", 1]]
+ =>                                                                               
+#<Author:0x000055ae408a72f0                                                       
+...                                                                               
+3.0.0 :043 > book.save!
+  TRANSACTION (0.4ms)  BEGIN
+  Book Update (7.6ms)  UPDATE "books" SET "updated_at" = $1, "author_id" = $2 WHERE "books"."id" = $3  [["updated_at", "2022-06-07 11:44:34.090307"], ["author_id", 2], ["id", 15]]
+  TRANSACTION (0.7ms)  COMMIT                                                     
+ => true                                                                          
+3.0.0 :044 > book.author_previously_changed?
+ => true 
+
+8 reload_Associations
+It reloads the cache and get the latest data from the database .
+
+
 
 
