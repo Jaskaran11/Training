@@ -441,6 +441,13 @@ The association_previously_changed? method returns true if the previous save upd
 8 reload_Associations
 It reloads the cache and get the latest data from the database .
 
+=>Choosing Between belongs_to and has_one
 
+If you want to set up a one-to-one relationship between two models, you'll need to add belongs_to to one, and has_one to the other.
+The distinction is in where you place the foreign key (it goes on the table for the class declaring the belongs_to association), but you should give some thought to the actual meaning of the data as well. The has_one relationship says that one of something is yours - that is, that something points back to you. For example, it makes more sense to say that a supplier owns an account than that an account owns a supplier
+
+has_one -> This method should only be used if the other class contains the foreign key.
+
+belongs_to -> This method should only be used if the current class contains the foreign key.
 
 
