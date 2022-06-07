@@ -29,13 +29,13 @@ class Author < ApplicationRecord
   #end
   after_create :display_author_age
 
-  def display_author_age 
-    if self.dob.present?
-      age = Date.today.year - self.dob.year
-      puts "Age of the author is #{age}"
-    else   
-      puts "Age cannot be calculated without date of birth"
-    end
-  end
+  #def display_author_age 
+    #if self.dob.present?
+      #age = Date.today.year - self.dob.year
+      #puts "Age of the author is #{age}"
+    #else   
+      #puts "Age cannot be calculated without date of birth"
+    #end
+  #end
   has_many :books, dependent: :destroy
 end

@@ -16,6 +16,7 @@ class Book < ApplicationRecord
   #def remove_whitespaces
     #title.strip!
   #end
-  belongs_to :author
+  #belongs_to :author, counter_cache: true
+  belongs_to :author, dependent: delete
   has_one :genre
 end
