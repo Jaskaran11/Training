@@ -11,4 +11,6 @@ class Room < ApplicationRecord
     def print_after
       puts "Hello after create here"
     end
+  belongs_to :customer
+  has_one :reservation
 end

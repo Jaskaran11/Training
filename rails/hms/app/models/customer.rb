@@ -31,4 +31,6 @@ class Customer < ApplicationRecord
     errors.add(:customer_id, "is not active") unless 
     customer.active?
   end
+  has_one :room
+  has_one :reservation, through: :room
 end
