@@ -18,7 +18,8 @@ class Book < ApplicationRecord
   # end
   # belongs_to :author, counter_cache: true
   # belongs_to :author, dependent: :delete, validate: true, inverse_of: :books, touch: true
-  belongs_to :author
-  has_many :publishers
-  has_one :genre
+  #belongs_to :author
+  #has_many :publishers
+  #has_one :genre
+  has_and_belongs_to_many :authors
 end

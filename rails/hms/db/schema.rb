@@ -10,14 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_094149) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_100315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories", force: :cascade do |t|
-    t.text "name"
-    t.float "description"
-  end
 
   create_table "customers", comment: "these are the customers which are staying at the hotel", force: :cascade do |t|
     t.string "name", null: false
@@ -57,13 +52,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_094149) do
     t.bigint "room_id"
   end
 
-  create_table "rooms", id: { type: :serial, comment: "these are the rooms allotted to the respective customers" }, force: :cascade do |t|
-    t.string "price"
-    t.integer "customer_id"
+  create_table "room_hotels", force: :cascade do |t|
     t.string "type"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "customer_id"
+    t.index ["customer_id"], name: "index_room_hotels_on_customer_id"
   end
 
   add_foreign_key "payments", "customers"
   add_foreign_key "reservations", "customers"
-  add_foreign_key "rooms", "customers"
+  add_foreign_key "room_hotels", "customers"
 end

@@ -37,7 +37,8 @@ class Author < ApplicationRecord
       #puts "Age cannot be calculated without date of birth"
     #end
   #end
-  has_many :books
+  #has_many :books
   #dependent: :destroy, inverse_of: :author
   #self.primary = 'name'
+  has_and_belongs_to_many :books
 end
