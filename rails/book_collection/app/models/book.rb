@@ -12,11 +12,13 @@ class Book < ApplicationRecord
   #end
   #before_validation :remove_whitespaces
 
-  #private
-  #def remove_whitespaces
-    #title.strip!
-  #end
-  #belongs_to :author, counter_cache: true
-  belongs_to :author, dependent: :delete, validate: true, inverse_of: :books, touch: true
+  # private
+  # def remove_whitespaces
+    # title.strip!
+  # end
+  # belongs_to :author, counter_cache: true
+  # belongs_to :author, dependent: :delete, validate: true, inverse_of: :books, touch: true
+  belongs_to :author
+  has_many :publishers
   has_one :genre
 end

@@ -20,14 +20,14 @@ class Author < ApplicationRecord
   #def name_valid?
   #  !name.blank?
   #end
-  include ActiveModel::Validations
+  # include ActiveModel::Validations
   #validates_with MyValidator
-  validates_with AuthorValidator
+  # validates_with AuthorValidator
 
   #validates_each :name, :country do |record, attr, value|
     #record.errors.add(attr, 'Must start with the upper case') if value =~ /\A[[:lower:]]/
   #end
-  after_create :display_author_age
+  # after_create :display_author_age
 
   #def display_author_age 
     #if self.dob.present?
@@ -37,6 +37,7 @@ class Author < ApplicationRecord
       #puts "Age cannot be calculated without date of birth"
     #end
   #end
-  has_many :books, dependent: :destroy, inverse_of: :author
-  self.primary = 'name'
+  has_many :books
+  #dependent: :destroy, inverse_of: :author
+  #self.primary = 'name'
 end
