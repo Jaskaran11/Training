@@ -1,2 +1,0 @@
-class Pyhsician < ApplicationRecord
-end

@@ -20,6 +20,6 @@ class Book < ApplicationRecord
   # belongs_to :author, dependent: :delete, validate: true, inverse_of: :books, touch: true
   #belongs_to :author
   #has_many :publishers
-  #has_one :genre
+  
   has_and_belongs_to_many :authors
 end

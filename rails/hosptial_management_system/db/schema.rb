@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_175742) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_170817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_175742) do
     t.string "patient_type"
     t.bigint "patient_id"
     t.index ["patient_type", "patient_id"], name: "index_physicians_on_patient"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "name"
+    t.bigint "imageable_id"
+    t.string "imageable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id"
   end
 
 end
