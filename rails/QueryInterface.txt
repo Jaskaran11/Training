@@ -61,3 +61,197 @@ Specifies whether the records should be unique or not
  #<Book:0x000055662441d090 id: nil, title: "Firestarter">,       
  #<Book:0x000055662441cfc8 id: nil, title: "IT">,                
  #<Book:0x000055662441cf00 id: nil, title: "1234">]  
+ 
+  eager_load(*args)-
+Forces eager loading by performing a LEFT OUTER JOIN on args:
+3.0.0 :044 > Author.eager_load(:books)
+  SQL (1.1ms)  SELECT "authors"."id" AS t0_r0, "authors"."name" AS t0_r1, "authors"."dob" AS t0_r2, "authors"."gender" AS t0_r3, "authors"."country" AS t0_r4, "authors"."created_at" AS t0_r5, "authors"."updated_at" AS t0_r6, "authors"."lock_version" AS t0_r7, "authors"."email_address" AS t0_r8, "books"."id" AS t1_r0, "books"."title" AS t1_r1, "books"."total_page" AS t1_r2, "books"."rating" AS t1_r3, "books"."price" AS t1_r4, "books"."created_at" AS t1_r5, "books"."updated_at" AS t1_r6, "books"."date_published" AS t1_r7, "books"."publisher_id" AS t1_r8, "books"."author_id" AS t1_r9 FROM "authors" LEFT OUTER JOIN "authors_books" ON "authors_books"."author_id" = "authors"."id" LEFT OUTER JOIN "books" ON "books"."id" = "authors_books"."book_id"
+
+ extract_associated(association) - 
+Extracts a named association from the relation. The named association is first preloaded, then the individual association records are collected from the relation. Like so:
+
+ from - Specifies the table from which the records will be fetched. For example:
+ 3.0.0 :009 > Book.select('title').from('books')
+  Book Load (0.6ms)  SELECT "books"."title" FROM books
+ =>                                                                                       
+[#<Book:0x00007f18e869cd20 id: nil, title: "1234">,                                       
+ #<Book:0x00007f18e88bd2a8 id: nil, title: "Rich Dad Poor Dad">,
+ #<Book:0x00007f18e88bd168 id: nil, title: "3242334">,
+ #<Book:0x00007f18e88bd0a0 id: nil, title: nil>,
+ #<Book:0x00007f18e88bcfd8 id: nil, title: "">,
+ #<Book:0x00007f18e88bce98 id: nil, title: "IT">,
+ #<Book:0x00007f18e88bcd80 id: nil, title: "The Shining">,
+ #<Book:0x00007f18e88bcab0 id: nil, title: "Harry Potter">,
+ #<Book:0x00007f18e88bc998 id: nil, title: "Firestarter">] 
+3.0.0 :010 > 
+
+ where
+Returns a new relation, which is the result of filtering the current relation according to the conditions in the arguments.
+
+where accepts conditions in one of several formats. In the examples below, the resulting SQL is given as an illustration; the actual query generated may be different depending on the database adapter.
+3.0.0 :019 > Book.where("id = '14'")
+  Book Load (0.4ms)  SELECT "books".* FROM "books" WHERE (id = '14')
+ => 
+[#<Book:0x00007efda445e9f0
+  id: 14,
+  title: "The Shining",
+  total_page: 235,
+  rating: 4.5,
+  price: 0.5234e3,
+  created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  date_published: Thu, 22 Jun 2000,
+  publisher_id: nil,
+  author_id: nil>] 
+  
+  3.0.0 :022 > Author.where(["name = ?","David Goggins"])
+  Author Load (0.6ms)  SELECT "authors".* FROM "authors" WHERE (name = 'David Goggins')
+ =>                                                           
+[#<Author:0x000055f005d1d760                                  
+  id: 1,                                                      
+  name: "David Goggins",                                      
+  dob: Tue, 05 May 1970,                                      
+  gender: "Male",
+  country: "America",
+  created_at: Wed, 25 May 2022 11:47:49.986085000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 13:28:25.048096000 UTC +00:00,
+  lock_version: 1,
+  email_address: "david@gmail.com">] 
+
+ select(*fields) - 
+Works in two unique ways.
+First: takes a block so it can be used just like Array#select.
+
+
+ reverse_order() - 
+Reverse the existing order clause on the relation.
+3.0.0 :028 > Book.order('title ASC').reverse_order
+  Book Load (0.7ms)  SELECT "books".* FROM "books" ORDER BY title DESC
+ =>                                                         
+[#<Book:0x000055f006affdb0                                  
+  id: 8,                                                    
+  title: nil,
+  total_page: nil,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 16:56:24.649145000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 16:56:24.649145000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f006affce8
+  id: 14,
+  title: "The Shining",
+  total_page: 235,
+  rating: 4.5,
+  price: 0.5234e3,
+  created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  date_published: Thu, 22 Jun 2000,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f006affc20
+  id: 5,
+  title: "Rich Dad Poor Dad",
+  total_page: -1,
+  rating: nil,
+  price: 0.499e3,
+  created_at: Wed, 25 May 2022 18:30:27.231538000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 09:21:36.689545000 UTC +00:00,
+  date_published: Fri, 08 May 2015,
+  publisher_id: 2,
+  author_id: nil>,
+ #<Book:0x000055f006affb58
+  id: 12,
+  title: "IT",
+  total_page: 235,
+  rating: 4.5,
+  price: 0.5234e3,
+  created_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  date_published: Fri, 22 Jan 1999,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f006affa90
+  id: 16,
+  title: "Harry Potter",
+  total_page: 342,
+  rating: 4.7,
+  price: 0.42e3,
+  created_at: Tue, 07 Jun 2022 14:17:24.855374000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:08:28.440667000 UTC +00:00,
+  date_published: Sun, 03 Jan 2010,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x000055f006aff9c8
+  id: 17,
+  title: "Firestarter",
+  total_page: 400,
+  rating: 3.9,
+  price: 0.5005e3,
+  created_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  date_published: Sun, 02 May 1999,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x000055f006aff900
+  id: 7,
+  title: "3242334",
+  total_page: nil,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 09:48:18.925743000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 09:48:18.925743000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f006aff838
+  id: 6,
+  title: "1234",
+  total_page: 238,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 08:52:13.257238000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 08:54:06.162250000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f006aff770
+  id: 9,
+  title: "",
+  total_page: nil,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 16:57:48.367344000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 16:57:48.367344000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>] 
+3.0.0 :029 > 
+
+ reselect(*args) - 
+Allows you to change a previously set select statement.
+
+3.0.0 :030 > Book.select(:title).reselect(:total_page)
+  Book Load (0.4ms)  SELECT "books"."total_page" FROM "books"
+ =>                                                                                                 
+[#<Book:0x000055f006a1e108 id: nil, total_page: 238>,                                               
+ #<Book:0x000055f006a1e018 id: nil, total_page: -1>,                                                
+ #<Book:0x000055f006a1df28 id: nil, total_page: nil>,                                               
+ #<Book:0x000055f006a1de10 id: nil, total_page: nil>,                                               
+ #<Book:0x000055f006a1dd20 id: nil, total_page: nil>,                                               
+ #<Book:0x000055f006a1dc30 id: nil, total_page: 235>,                                               
+ #<Book:0x000055f006a1db18 id: nil, total_page: 235>,                                               
+ #<Book:0x000055f006a1da28 id: nil, total_page: 342>,                                               
+ #<Book:0x000055f006a1d938 id: nil, total_page: 400>]   
+ 
+ readonly - Sets readonly attributes for the returned relation. If value is true (default), attempting to update a record will result in an error.
+ 
+ 3.0.0 :034 > book = Book.readonly
+  Book Load (0.8ms)  SELECT "books".* FROM "books"
+ =>                                                                
+[#<Book:0x00005
+ 3.0.0 :036 > book.first.save
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/persistence.rb:1123:in `_raise_readonly_record_error': Book is marked as readonly (ActiveRecord::ReadOnlyRecord)
+
+
