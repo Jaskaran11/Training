@@ -1,0 +1,63 @@
+If you're used to using raw SQL to find database records, then you will generally find that there are better ways to carry out the same operations in Rails. Active Record insulates you from the need to use SQL in most cases.
+
+Active Record will perform queries on the database for you and is compatible with most database systems, including MySQL, MariaDB, PostgreSQL, and SQLite. Regardless of which database system you're using, the Active Record method format will always be the same.
+
+1.annotate - Adds an SQL comment to queries generated from this relation. 
+3.0.0 :004 > Book.annotate("Selecting Book  names").select(:title)
+  Book Load (0.6ms)  SELECT "books"."title" FROM "books" /* Selecting Book  names */
+ =>                                                                                                                   
+[#<Book:0x00007f09a0b0de10 id: nil, title: "1234">,                                                                   
+ #<Book:0x00007f09a0b0dd48 id: nil, title: "Rich Dad Poor Dad">,
+ #<Book:0x00007f09a0b0dc80 id: nil, title: "3242334">,
+ #<Book:0x00007f09a0b0dbb8 id: nil, title: nil>,    
+ #<Book:0x00007f09a0b0daf0 id: nil, title: "">,     
+ #<Book:0x00007f09a0b0da28 id: nil, title: "IT">,   
+ #<Book:0x00007f09a0b0d960 id: nil, title: "The Shining">,
+ #<Book:0x00007f09a0b0d898 id: nil, title: "Harry Potter">,
+ #<Book:0x00007f09a0b0d7d0 id: nil, title: "Firestarter">] 
+
+2.find - 3.0.0 :005 > Author.find(1)
+  Author Load (0.8ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+ =>                                                           
+#<Author:0x0000556624fd7700                                   
+ id: 1,                                                       
+ name: "David Goggins",                                       
+ dob: Tue, 05 May 1970,                                       
+ gender: "Male",                                              
+ country: "America",                                          
+ created_at: Wed, 25 May 2022 11:47:49.986085000 UTC +00:00,  
+ updated_at: Tue, 31 May 2022 13:28:25.048096000 UTC +00:00,  
+ lock_version: 1,                                             
+ email_address: "david@gmail.com">  
+ 
+ 3. create_with(value)
+Sets attributes to be used when creating new records from a relation object.
+3.0.0 :017 > author = Author.where(name: "Robin Sharma")
+  Author Load (1.3ms)  SELECT "authors".* FROM "authors" WHERE "authors"."name" = $1  [["name", "Robin Sharma"]]
+ => []                                                                 
+3.0.0 :018 > author.new.name
+ => "Robin Sharma" 
+3.0.0 :019 > author = authors.create_with(name: "Steve")
+(irb):19:in `<main>': undefined local variable or method `authors' for main:Object (NameError)
+Did you mean?  author                                                                  
+3.0.0 :020 > author = author.create_with(name: "Steve")
+  Author Load (0.4ms)  SELECT "authors".* FROM "authors" WHERE "authors"."name" = $1  [["name", "Robin Sharma"]]
+ => []                                                                                 
+3.0.0 :021 > author.new.name
+ => "Steve" 
+
+4. distinct
+Specifies whether the records should be unique or not
+
+3.0.0 :024 > Book.select(:title).distinct
+  Book Load (1.0ms)  SELECT DISTINCT "books"."title" FROM "books"
+ =>                                                                                
+[#<Book:0x000055662441d540 id: nil, title: nil>,                                   
+ #<Book:0x000055662441d478 id: nil, title: "The Shining">,       
+ #<Book:0x000055662441d3b0 id: nil, title: "3242334">,           
+ #<Book:0x000055662441d2e8 id: nil, title: "Harry Potter">,      
+ #<Book:0x000055662441d220 id: nil, title: "">,                  
+ #<Book:0x000055662441d158 id: nil, title: "Rich Dad Poor Dad">, 
+ #<Book:0x000055662441d090 id: nil, title: "Firestarter">,       
+ #<Book:0x000055662441cfc8 id: nil, title: "IT">,                
+ #<Book:0x000055662441cf00 id: nil, title: "1234">]  
