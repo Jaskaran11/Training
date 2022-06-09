@@ -1086,3 +1086,17 @@ itsacheckmate@itscheckmate:~/Training/rails/dms$ rails g model motorcycle --pare
  => [#<Car:0x00007faf0c351700 id: 1, type: "Car", color: "red", price: 0.5e4, created_at: Thu, 09 Jun 2022 08:54:45.594006000 UTC +00:00, updated_at: Thu, 09 Jun 2022 08:54:45.594006000 UTC +00:00>] 
 3.0.0 :010 > 
 
+
+creating controller
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails g controller home_page
+      create  app/controllers/home_page_controller.rb
+      invoke  erb
+      create    app/views/home_page
+      invoke  test_unit
+      create    test/controllers/home_page_controller_test.rb
+      invoke  helper
+      create    app/helpers/home_page_helper.rb
+      invoke    test_unit
+
+A self-join is a join in which a table is joined with itself using a FOREIGN KEY which references its own PRIMARY KEY. This can be viewed as a join of two copies of the same table.

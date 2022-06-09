@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_08_170817) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_09_103755) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_170817) do
     t.datetime "updated_at", null: false
     t.index ["appointments_id"], name: "index_appointments_on_appointments_id"
     t.index ["physicians_id"], name: "index_appointments_on_physicians_id"
+  end
+
+  create_table "heads", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -36,6 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_170817) do
     t.datetime "updated_at", null: false
     t.string "patient_type"
     t.bigint "patient_id"
+    t.bigint "head_id"
+    t.index ["head_id"], name: "index_physicians_on_head_id"
     t.index ["patient_type", "patient_id"], name: "index_physicians_on_patient"
   end
 
@@ -48,4 +56,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_170817) do
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id"
   end
 
+  add_foreign_key "physicians", "heads"
 end
