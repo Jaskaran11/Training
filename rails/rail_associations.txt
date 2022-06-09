@@ -1020,3 +1020,13 @@ The create_association method returns a new object of the associated type. This 
   TRANSACTION (0.4ms)  BEGIN
   RoomHotel Create (0.8ms)  INSERT INTO "room_hotels" ("name", "price", "created_at", "updated_at", "customer_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "3 bedroom"], ["price", nil], ["created_at", "2022-06-08 18:10:37.022296"], ["updated_at", "2022-06-08 18:10:37.022296"], ["customer_id", 1]]  
   TRANSACTION (6.9ms)  COMMIT  
+  
+  Choosing between has_and_belongs_to_many and has_many through
+ Has_belongs_to_many gives you a simple lookup table which references your two models.For example,stories can belong to many categories and categories can have many stories.
+ Has_many:through gives you a third model which can be used to store various other pieces of information which don't belong to either of the original models.
+  For example
+
+Person can subscribe to many magazines. Magazines can have many subscribers.
+Thus, we can have a subscription model in the middle, which gives us a similar table to the earlier example, but with additional properties.
+The simplest rule of thumb is that you should set up a has_many :through relationship if you need to work with the relationship model as an independent entity. If you don't need to do anything with the relationship model, it may be simpler to set up a has_and_belongs_to_many relationship (though you will need to to create the joining table in the database).
+You should use has_many :through if you need validations, callbacks, or extra attributes on the join model.
