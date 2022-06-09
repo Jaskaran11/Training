@@ -1030,3 +1030,59 @@ Person can subscribe to many magazines. Magazines can have many subscribers.
 Thus, we can have a subscription model in the middle, which gives us a similar table to the earlier example, but with additional properties.
 The simplest rule of thumb is that you should set up a has_many :through relationship if you need to work with the relationship model as an independent entity. If you don't need to do anything with the relationship model, it may be simpler to set up a has_and_belongs_to_many relationship (though you will need to to create the joining table in the database).
 You should use has_many :through if you need validations, callbacks, or extra attributes on the join model.
+
+
+In Single-Table Inheritance (STI), many subclasses inherit from one superclass with all the data in the same table in the database. The superclass has a “type” column to determine which subclass an object belongs to.
+STI won't work without a "type" field in the table.
+
+STI PROS:
+1.Simple to implement
+2.DRY — saves replicated code using inheritance and shared attributes
+3.Allows subclasses to have own behavior as necessary
+
+STI CONS:
+1.Doesn’t scale well: as data grows, table can become large and possibly difficult to maintain/query
+2.Requires care when adding new models or model fields that deviate from the shared fields
+3.(conditional) Allows creation of invalid objects if validations are not in place
+4.(conditional) Can be difficult to validate or query if many null values exist in table.
+
+itsacheckmate@itscheckmate:~/Training/rails/dms$ rails g model car --parent=Vehicle
+      invoke  active_record
+      create    app/models/car.rb
+      invoke    test_unit
+      create      test/models/car_test.rb
+      create      test/fixtures/cars.yml
+itsacheckmate@itscheckmate:~/Training/ra
+
+itsacheckmate@itscheckmate:~/Training/rails/dms$ rails g model bicycle --parent=Vehicle
+      invoke  active_record
+      create    app/models/bicycle.rb
+      invoke    test_unit
+      create      test/models/bicycle_test.rb
+      create      test/fixtures/bicycles.yml
+
+itsacheckmate@itscheckmate:~/Training/rails/dms$ rails g model motorcycle --parent=Vehicle
+      invoke  active_record
+      create    app/models/motorcycle.rb
+      invoke    test_unit
+      create      test/models/motorcycle_test.rb
+      create      test/fixtures/motorcycles.yml
+
+3.0.0 :003 > mustang = Car.new(price: 5000, color: "red")
+ => #<Car:0x00007faf0c2eac80 id: nil, type: "Car", color: "red", price: 0.5e4, created_at: nil, updated_at: nil> 
+3.0.0 :005 > harley = Motorcycle.new(price: 3000, color: "black")
+ => #<Motorcycle:0x000055a0c8289b78 id: nil, type: "Motorcycle", color: "black", price: 0.3e4, created_at: nil, updated_at: nil> 
+3.0.0 :006 > harley.save
+  TRANSACTION (0.3ms)  BEGIN
+  Motorcycle Create (0.3ms)  INSERT INTO "vehicles" ("type", "color", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Motorcycle"], ["color", "black"], ["price", "3000.0"], ["created_at", "2022-06-09 08:55:23.618427"], ["updated_at", "2022-06-09 08:55:23.618427"]]
+  TRANSACTION (0.5ms)  COMMIT                                              
+ => true                                                                   
+3.0.0 :007 > mustang.price
+ => 0.5e4 
+3.0.0 :008 > harley.price
+ => 0.3e4 
+3.0.0 :009 > Car.all
+  Car Load (0.2ms)  SELECT "vehicles".* FROM "vehicles" WHERE "vehicles"."type" = $1  [["type", "Car"]]
+ => [#<Car:0x00007faf0c351700 id: 1, type: "Car", color: "red", price: 0.5e4, created_at: Thu, 09 Jun 2022 08:54:45.594006000 UTC +00:00, updated_at: Thu, 09 Jun 2022 08:54:45.594006000 UTC +00:00>] 
+3.0.0 :010 > 
+
