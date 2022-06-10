@@ -1264,3 +1264,80 @@ The first method finds the first record ordered by primary key (default).
  3.0.0 :039 > Customer.find_by name: 'Ram'
   Customer Load (0.4ms)  SELECT "customers".* FROM "customers" WHERE "customers"."name" = $1 LIMIT $2  [["name", "Ram"], ["LIMIT", 1]]
  => nil 
+ 
+ Retrieving Multiple Objects in Batches - 
+ 
+ When you call #each, all records will be loaded into memory. When you call #find_each, records will be loaded into memory in batches of the given batch size.
+
+So when your query returns a number of records that would be too much memory for the server's available resources, then using #find_each would be a great choice.
+
+ActiveRecord::Batches provides public methods like find_each, find_in_batches and in_batches to work with the records in batches which helps in reducing memory consumption.
+
+1.find_Each - 
+
+3.0.0 :004 > Book.find_each do |book|
+3.0.0 :005 >   puts "#{book.title}"
+3.0.0 :006 > end
+  Book Load (0.5ms)  SELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT $1  [["LIMIT", 1000]]
+Rich Dad Poor Dad
+IT
+The Shining
+Harry Potter
+Firestarter
+ => nil 
+
+Options for find_Each - 
+1.batch_size : The :batch_size option allows you to specify the number of records to be retrieved in each batch, before being passed individually to the block.
+3.0.0 :086 > Customer.find_each(batch_size: 5) do |customer|
+3.0.0 :087 >   puts "#{customer.name}"
+3.0.0 :088 > end
+  Customer Load (0.3ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT $1  [["LIMIT", 5]]
+Jaskaran Singh                                                              
+Sam Sharma                                                                  
+Customer Name 1                                                             
+Customer Name 2                                                             
+Customer Name 3                                                             
+  Customer Load (0.2ms)  SELECT "customers".* FROM "customers" WHERE "customers"."id" > $1 ORDER BY "customers"."id" ASC LIMIT $2  [["id", 15], ["LIMIT", 5]]
+Customer Name 4                                                             
+Customer Name 5                                                             
+Customer Name 6                                                             
+Customer Name 7                                                             
+Customer Name 8                                                             
+  Customer Load (0.2ms)  SELECT "customers".* FROM "customers" WHERE "customers"."id" > $1 ORDER BY "customers"."id" ASC LIMIT $2  [["id", 20], ["LIMIT", 5]]
+Customer Name 9                                                             
+Customer Name 10
+John Doe
+Sam
+Uchiha
+  Customer Load (0.2ms)  SELECT "customers".* FROM "customers" WHERE "customers"."id" > $1 ORDER BY "customers"."id" ASC LIMIT $2  [["id", 32], ["LIMIT", 5]]
+Jas
+ => nil 
+
+2.start:
+By default, records are fetched in ascending order of the primary key. The :start option allows you to configure the first ID of the sequence whenever the lowest ID is not the one you need.
+
+3.0.0 :098 > Customer.find_each(start:30) do |customer|
+3.0.0 :099 >   puts "#{customer.name}"
+3.0.0 :100 > end
+  Customer Load (0.2ms)  SELECT "customers".* FROM "customers" WHERE "customers"."id" >= $1 ORDER BY "customers"."id" ASC LIMIT $2  [["id", 30], ["LIMIT", 1000]]
+Sam
+Uchiha
+Jas
+ => nil 
+
+3.finish - 
+3.0.0 :016 > Book.find_each(start:2, finish: 10) do |book|
+3.0.0 :017 >   puts "#{book.title}"
+3.0.0 :018 > end
+  Book Load (0.7ms)  SELECT "books".* FROM "books" WHERE "books"."id" >= $1 AND "books"."id" <= $2 ORDER BY "books"."id" ASC LIMIT $3  [["id", 2], ["id", 10], ["LIMIT", 1000]]                                                       
+Rich Dad Poor Dad                                                     
+1234                                                                  
+3242334                                                               
+                                                                      
+                                                                      
+ => nil   
+ 
+ 4.error_on_ignore - 
+ Overrides the application config to specify if an error should be raised when an order is present in the relation.
+ 
+ 
