@@ -1680,6 +1680,61 @@ If you want to call order multiple times, subsequent orders will be appended to 
   updated_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
   date_published: Thu, 22 Jun 2000,
   publisher_id: nil,
-  author_id: nil>,
+  author_id: nil>.
+  
+Selecting Specific Fields-
+3.0.0 :010 > Book.select(:title, :author_id)
+  Book Load (0.7ms)  SELECT "books"."title", "books"."author_id" FROM "books"
+ => 
+[#<Book:0x0000556ac02bb530 id: nil, title: "1234", author_id: nil>,
+ #<Book:0x0000556ac02bb2d8 id: nil, title: "3242334", author_id: nil>,
+ #<Book:0x0000556ac02bb0a8 id: nil, title: nil, author_id: nil>,
+ #<Book:0x0000556ac02bae50 id: nil, title: "", author_id: nil>,
+ #<Book:0x0000556ac02bad38 id: nil, title: "IT", author_id: nil>,
+ #<Book:0x0000556ac02bac70 id: nil, title: "The Shining", author_id: nil>,
+ #<Book:0x0000556ac02baa40 id: nil, title: "Harry Potter", author_id: 10017>,
+ #<Book:0x0000556ac02ba978 id: nil, title: "Firestarter", author_id: 10017>,
+ #<Book:0x0000556ac02ba8b0 id: nil, title: "Rich Dad Poor Dad", author_id: nil>] 
 
 
+3.0.0 :104 > Customer.select(:name).distinct
+  Customer Load (0.8ms)  SELECT DISTINCT "customers"."name" FROM "customers"
+ =>                                                                                    
+[#<Customer:0x0000562505a31b70 id: nil, name: "Customer Name 3">,                      
+ #<Customer:0x0000562505a31a58 id: nil, name: "Jaskaran Singh">,                       
+ #<Customer:0x0000562505a31968 id: nil, name: "Customer Name 1">,                      
+ #<Customer:0x0000562505a31878 id: nil, name: "Jas">,                                  
+ #<Customer:0x0000562505a31788 id: nil, name: "Customer Name 6">,                      
+ #<Customer:0x0000562505a31670 id: nil, name: "Uchiha">,                               
+ #<Customer:0x0000562505a31558 id: nil, name: "Customer Name 8">,                      
+ #<Customer:0x0000562505a31468 id: nil, name: "Sam Sharma">,                           
+ #<Customer:0x0000562505a31378 id: nil, name: "Customer Name 7">,                      
+ #<Customer:0x0000562505a31260 id: nil, name: "Customer Name 2">,                      
+ #<Customer:0x0000562505a31170 id: nil, name: "Customer Name 5">,                      
+ #<Customer:0x0000562505a31080 id: nil, name: "John Doe">,                             
+ #<Customer:0x0000562505a30f90 id: nil, name: "Sam">,                                  
+ #<Customer:0x0000562505a30e78 id: nil, name: "Customer Name 9">,
+ #<Customer:0x0000562505a30d88 id: nil, name: "Customer Name 10">,
+ #<Customer:0x0000562505a30c98 id: nil, name: "Customer Name 4">] 
+
+
+3.0.0 :106 > query.distinct(false)
+  Customer Load (0.7ms)  SELECT "customers"."name" FROM "customers"
+ =>                                                  
+[#<Customer:0x0000562505b395b8 id: nil, name: "Jaskaran Singh">,
+ #<Customer:0x0000562505b394f0 id: nil, name: "Sam Sharma">,
+ #<Customer:0x0000562505b39428 id: nil, name: "Customer Name 1">,
+ #<Customer:0x0000562505b39360 id: nil, name: "Customer Name 2">,
+ #<Customer:0x0000562505b39298 id: nil, name: "Customer Name 3">,
+ #<Customer:0x0000562505b391d0 id: nil, name: "Customer Name 4">,
+ #<Customer:0x0000562505b39108 id: nil, name: "Customer Name 5">,
+ #<Customer:0x0000562505b39040 id: nil, name: "Customer Name 6">,
+ #<Customer:0x0000562505b38f78 id: nil, name: "Customer Name 7">,
+ #<Customer:0x0000562505b38eb0 id: nil, name: "Customer Name 8">,
+ #<Customer:0x0000562505b38de8 id: nil, name: "Customer Name 9">,
+ #<Customer:0x0000562505b38d20 id: nil, name: "Customer Name 10">,
+ #<Customer:0x0000562505b38c58 id: nil, name: "John Doe">,
+ #<Customer:0x0000562505b38b90 id: nil, name: "Sam">,
+ #<Customer:0x0000562505b38ac8 id: nil, name: "Uchiha">,
+ #<Customer:0x0000562505b38a00 id: nil, name: "Jas">]
+ 
