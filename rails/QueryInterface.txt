@@ -1738,3 +1738,144 @@ Selecting Specific Fields-
  #<Customer:0x0000562505b38ac8 id: nil, name: "Uchiha">,
  #<Customer:0x0000562505b38a00 id: nil, name: "Jas">]
  
+ Limit and Offset- 
+ 3.0.0 :107 > Customer.limit(3)
+[#<Customer:0x0000562505dc0bb0                    
+  id: 1,                                          
+  name: "Jaskaran Singh",                         
+  address: "#Sector 20-A Chandigarh",             
+  gender: "Male",                                 
+  mobile: "9876573100",                           
+  check_in: Sun, 01 May 2022,                     
+  check_out: Tue, 10 May 2022,                    
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",                               
+  email: nil>,                                    
+ #<Customer:0x0000562505dc0ae8                    
+  id: 2,
+  name: "Sam Sharma",
+  address: "Sector 30,Mumbai",
+  gender: "Male",
+  mobile: "21313241",
+  check_in: Wed, 11 May 2022,
+  check_out: Sun, 22 May 2022,
+  created_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  country: "India",
+  email: nil>] 
+
+OFFSET is used to skip the number of records from the results.
+3.0.0 :135 > Customer.limit(5).offset(3)
+  Customer Load (0.7ms)  SELECT "customers".* FROM "customers" LIMIT $1 OFFSET $2  [["LIMIT", 5], ["OFFSET", 3]]
+ => 
+[#<Customer:0x0000562504fca0d8
+  id: 15,
+  name: "Customer Name 3",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.129388000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.129388000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x0000562504fc9f70
+  id: 16,
+  name: "Customer Name 4",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.130147000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.130147000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x0000562504fc9e08
+  id: 17,
+  name: "Customer Name 5",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.130879000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.130879000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x0000562504fc9ca0
+  id: 18,
+  name: "Customer Name 6",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.132452000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.132452000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x0000562504fc9ae8
+  id: 19,
+  name: "Customer Name 7",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.133470000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.133470000 UTC +00:00,
+  country: nil,
+  email: nil>] 
+3.0.0 :136 > 
+
+3.0.0 :019 > Book.select(:created_at).group(:created_at)
+  Book Load (0.9ms)  SELECT "books"."created_at" FROM "books" GROUP BY "books"."created_at"
+ =>                                                                                                   
+[#<Book:0x0000556ac00e39d8 id: nil, created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00>,      
+ #<Book:0x0000556ac00e3910 id: nil, created_at: Fri, 27 May 2022 16:57:48.367344000 UTC +00:00>,      
+ #<Book:0x0000556ac00e3848 id: nil, created_at: Tue, 07 Jun 2022 14:17:24.855374000 UTC +00:00>,      
+ #<Book:0x0000556ac00e3780 id: nil, created_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00>,      
+ #<Book:0x0000556ac00e36b8 id: nil, created_at: Fri, 27 May 2022 16:56:24.649145000 UTC +00:00>,      
+ #<Book:0x0000556ac00e35f0 id: nil, created_at: Wed, 25 May 2022 18:30:27.231538000 UTC +00:00>,      
+ #<Book:0x0000556ac00e3528 id: nil, created_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00>,      
+ #<Book:0x0000556ac00e3460 id: nil, created_at: Fri, 27 May 2022 09:48:18.925743000 UTC +00:00>,      
+ #<Book:0x0000556ac00e3398 id: nil, created_at: Fri, 27 May 2022 08:52:13.257238000 UTC +00:00>]      
+3.0.0 :020 > 
+3.0.0 :140 > Customer.select(:name).group(:name).count
+  Customer Count (0.5ms)  SELECT COUNT("customers"."name") AS "count_name", "customers"."name" AS "customers_name" FROM "customers" GROUP BY "customers"."name"
+ =>                                                                                                 
+{"Jas"=>1,                                                                                          
+ "Customer Name 6"=>1,                                                                              
+ "Uchiha"=>1,                                                                                       
+ "Customer Name 8"=>1,                                                                              
+ "Sam Sharma"=>1,                                                                                   
+ "Customer Name 7"=>1,                                                                              
+ "Customer Name 2"=>1,                                                                              
+ "Customer Name 5"=>1,                                                                              
+ "John Doe"=>1,                                                                                     
+ "Sam"=>1,                                                                                          
+ "Henry Cavill"=>1,                                                                                 
+ "Customer Name 9"=>1,                                                                              
+ "Customer Name 10"=>1,                                                                             
+ "Customer Name 4"=>1,
+ "Customer Name 3"=>1,
+ "Jaskaran Singh"=>1} 
+3.0.0 :141 > Customer.select(:name).count
+  Customer Count (0.7ms)  SELECT COUNT("customers"."name") FROM "customers"
+ => 16       
+ 
+ Having
+SQL uses the HAVING clause to specify conditions on the GROUP BY fields. You can add the HAVING clause to the SQL fired by the Model.find by adding the having method to the find.
+3.0.0 :034 > Book.select("price").group("price").having("sum(price) > ? ", 200)
+  Book Load (1.0ms)  SELECT "books"."price" FROM "books" GROUP BY "books"."price" HAVING (sum(price) > 200 )
+ =>                                                                                          
+[#<Book:0x0000556ac3e5a320 id: nil, price: 0.5234e3>,                                        
+ #<Book:0x0000556ac3e5a258 id: nil, price: 0.5005e3>,                                        
+ #<Book:0x0000556ac3e5a190 id: nil, price: 0.499e3>,                                         
+ #<Book:0x0000556ac3e5a0c8 id: nil, price: 0.42e3>]                                          
+3.0.0 :035 > 
+                                                                                             
+                            
