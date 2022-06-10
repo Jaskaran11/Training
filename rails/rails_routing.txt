@@ -1,0 +1,23 @@
+The Rails router recognizes URLs and dispatches them to a controller's action.It also generate paths and URLs. Rails router deals URLs in a different way from other language routers. It determines controller, parameters and action for the request.
+Basically a router is a way to redirect incoming requests to controllers and actions. It replaces mod_rewrite rules. One best thing is that, in Rails routing works with any web server.
+Rails handles routing via config/routes.rb file rather than relying on the web server to control URL routing. This file controls every single aspect of your URLs, like rules that try to match the URL path for a request and decides where to direct that request.
+
+Main purpose of Rails routers is explained below:
+Connecting URLs to code
+Generating paths and URLs from code
+
+Action Controller is the C in MVC. After the router has determined which controller to use for a request, the controller is responsible for making sense of the request and producing the appropriate output.
+A controller can thus be thought of as a middleman between models and views. It makes the model data available to the view, so it can display that data to the user, and it saves or updates user data to the model.
+
+Controller Naming Convention-
+The naming convention of controllers in Rails favors pluralization of the last word in the controller's name, although it is not strictly required (e.g. ApplicationController). For example, ClientsController is preferable to ClientController, SiteAdminsController is preferable to SiteAdminController or SitesAdminsController, and so on.
+
+Methods and Actions -
+A controller is a Ruby class which inherits from ApplicationController and has methods just like any other class. When your application receives a request, the routing will determine which controller and action to run, then Rails creates an instance of that controller and runs the method with the same name as the action.
+
+ApplicationController inherits from ActionController::Base, which defines a number of helpful methods.
+Only public methods are callable as actions. It is a best practice to lower the visibility of methods (with private or protected) which are not intended to be actions, like auxiliary methods or filters.
+
+Parameters - 
+You will probably want to access data sent in by the user or other parameters in your controller actions. There are two kinds of parameters possible in a web application. The first are parameters that are sent as part of the URL, called query string parameters. The query string is everything after "?" in the URL. The second type of parameter is usually referred to as POST data. This information usually comes from an HTML form which has been filled in by the user. It's called POST data because it can only be sent as part of an HTTP POST request. Rails does not make any distinction between query string parameters and POST parameters, and both are available in the params hash in your controller.
+
