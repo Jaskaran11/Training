@@ -1019,5 +1019,248 @@ order accepts arguments in one of several formats.
 3.0.0 :024 > 
 
 
+Retrieving a Single Object
+1.find -
+3.0.0 :001 > customer = Customer.find(1)
+  Customer Load (0.9ms)  SELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]                             
+ =>                                                                        
+#<Customer:0x00007fe21c77fd20                                              
+...   
 
+3.0.0 :007 > customer = Customer.find([1, 35])
+  Customer Load (0.8ms)  SELECT "customers".* FROM "customers" WHERE "customers"."id" IN ($1, $2)  [["id", 1], ["id", 35]]             
+ =>                                                    
+[#<Customer:0x00005625059da3e8
+... 
+
+2.take -
+The take method retrieves a record without any implicit ordering. 
+3.0.0 :012 > customer = Customer.take
+  Customer Load (0.7ms)  SELECT "customers".* FROM "customers" LIMIT $1  [["LIMIT", 1]]                               
+ => 
+#<Customer:0x00005625053c20a0
+... 
+3.0.0 :013 > customer
+ => 
+#<Customer:0x00005625053c20a0         
+ id: 1,
+ name: "Jaskaran Singh",
+ address: "#Sector 20-A Chandigarh",
+ gender: "Male",
+ mobile: "9876573100",
+ check_in: Sun, 01 May 2022,
+ check_out: Tue, 10 May 2022,
+ created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+ updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+ country: "India",
+ email: nil>
  
+ 3.0.0 :017 > customer = Customer.take(3)
+  Customer Load (0.6ms)  SELECT "customers".* FROM "customers" LIMIT $1  [["LIMIT", 3]]
+ => 
+[#<Customer:0x0000562505ae8578
+... 
+3.0.0 :018 > customer
+ => 
+[#<Customer:0x0000562505ae8578
+  id: 1,                      
+  name: "Jaskaran Singh",     
+  address: "#Sector 20-A Chandigarh",
+  gender: "Male",             
+  mobile: "9876573100",       
+  check_in: Sun, 01 May 2022, 
+  check_out: Tue, 10 May 2022,
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",           
+  email: nil>,                
+ #<Customer:0x0000562505ae84b0
+  id: 2,                      
+  name: "Sam Sharma",
+  address: "Sector 30,Mumbai",
+  gender: "Male",
+  mobile: "21313241",
+  check_in: Wed, 11 May 2022,
+  check_out: Sun, 22 May 2022,
+  created_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x0000562505ae83e8
+  id: 13,
+  name: "Customer Name 1",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.127119000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.127119000 UTC +00:00,
+  country: nil,
+  email: nil>] 
+
+3 first
+The first method finds the first record ordered by primary key (default). 
+ 3.0.0 :019 > customer = Customer.first
+  Customer Load (0.6ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT $1  [["LIMIT", 1]]                                      
+ =>                                                                        
+#<Customer:0x0000562505bdbf20                                              
+...                                                                        
+3.0.0 :020 > customer
+ => 
+#<Customer:0x0000562505bdbf20                                              
+ id: 1,                                                                    
+ name: "Jaskaran Singh",                                                   
+ address: "#Sector 20-A Chandigarh",                                       
+ gender: "Male",                                                           
+ mobile: "9876573100",                                                     
+ check_in: Sun, 01 May 2022,                                               
+ check_out: Tue, 10 May 2022,                                              
+ created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+ updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+ country: "India",            
+ email: nil> 
+ 
+ 3.0.0 :021 > customer = Customer.first(3)
+  Customer Load (0.4ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT $1  [["LIMIT", 3]]               
+ =>                                                 
+[#<Customer:0x00007fe21ca64400                      
+...         
+0.0 :022 > customer
+ => 
+[#<Customer:0x00007fe21ca64400
+  id: 1,                      
+  name: "Jaskaran Singh",     
+  address: "#Sector 20-A Chandigarh",
+  gender: "Male",             
+  mobile: "9876573100",       
+  check_in: Sun, 01 May 2022, 
+  check_out: Tue, 10 May 2022,
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",           
+  email: nil>,                
+ #<Customer:0x00007fe21ca64338
+  id: 2,                      
+  name: "Sam Sharma",
+  address: "Sector 30,Mumbai",
+  gender: "Male",
+  mobile: "21313241",
+  check_in: Wed, 11 May 2022,
+  check_out: Sun, 22 May 2022,
+  created_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x00007fe21ca64248
+  id: 13,
+  name: "Customer Name 1",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.127119000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.127119000 UTC +00:00,
+  country: nil,
+  email: nil>] 
+  
+  4.last - The last method finds the last record ordered by primary key (default). 
+  3.0.0 :028 > customer = Customer.last
+  Customer Load (0.7ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT $1  [["LIMIT", 1]]
+ =>                                                                        
+#<Customer:0x0000562505aeb1b0                                              
+...                                                                        
+3.0.0 :029 > customer
+ => 
+#<Customer:0x0000562505aeb1b0                                              
+ id: 35,                                                                   
+ name: "Jas",  
+ 
+ 3.0.0 :030 > customer = Customer.last(3)
+  Customer Load (0.7ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT $1  [["LIMIT", 3]]
+ =>                                   
+[#<Customer:0x00005625053c2de8
+... 
+3.0.0 :031 > customer
+ => 
+[#<Customer:0x00005625053c2de8
+  id: 31,                     
+  name: "Sam",                
+  address: "Faridabad",       
+  gender: nil,                
+  mobile: "9876573100",       
+  check_in: Tue, 10 May 2022, 
+  check_out: Sat, 14 May 2022,
+  created_at: Tue, 31 May 2022 10:57:14.180986000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 10:57:14.180986000 UTC +00:00,
+  country: "India",           
+  email: nil>,                
+ #<Customer:0x00005625053c2eb0
+  id: 32,                     
+  name: "Uchiha",
+  address: "chd",
+  gender: nil,
+  mobile: "9876573100",
+  check_in: Thu, 05 May 2022,
+  check_out: Tue, 10 May 2022,
+  created_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+  country: "india",
+  email: nil>,
+ #<Customer:0x00005625053c2f78
+  id: 35,
+  name: "Jas",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 31 May 2022 12:58:41.611610000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 12:58:41.611610000 UTC +00:00,
+  country: nil,
+  email: nil>] 
+
+3.0.0 :032 > customer = Customer.order(:name).last
+  Customer Load (0.2ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."name" DESC LIMIT $1  [["LIMIT", 1]]
+ =>                                                                                              
+#<Customer:0x00005625056a2900                                                                    
+...                                                                                              
+3.0.0 :033 > customer
+ => 
+#<Customer:0x00005625056a2900                                                                    
+ id: 32,                                                                                         
+ name: "Uchiha",                                                                                 
+ address: "chd",                                                                                 
+ gender: nil,                                                                                    
+ mobile: "9876573100",                                                                           
+ check_in: Thu, 05 May 2022,                                                                     
+ check_out: Tue, 10 May 2022,                                                                    
+ created_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,                                     
+ updated_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+ country: "india",            
+ email: nil>                  
+3.0.0 :034 > customer = Customer.order(:name).first
+  Customer Load (0.7ms)  SELECT "customers".* FROM "customers" ORDER BY "customers"."name" ASC LIMIT $1  [["LIMIT", 1]]
+ =>       
+ 
+ 5.find_by ->
+ 3.0.0 :038 > Customer.find_by name: 'Jaskaran Singh'
+  Customer Load (0.8ms)  SELECT "customers".* FROM "customers" WHERE "customers"."name" = $1 LIMIT $2  [["name", "Jaskaran Singh"], ["LIMIT", 1]]
+ =>                                                               
+#<Customer:0x0000562505b518c0                                     
+ id: 1,                                                           
+ name: "Jaskaran Singh",                                          
+ address: "#Sector 20-A Chandigarh",                              
+ gender: "Male",                                                  
+ mobile: "9876573100",                                            
+ check_in: Sun, 01 May 2022,                                      
+ check_out: Tue, 10 May 2022,                                     
+ created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,      
+ updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+ country: "India",
+ email: nil>
+ 
+ 3.0.0 :039 > Customer.find_by name: 'Ram'
+  Customer Load (0.4ms)  SELECT "customers".* FROM "customers" WHERE "customers"."name" = $1 LIMIT $2  [["name", "Ram"], ["LIMIT", 1]]
+ => nil 
