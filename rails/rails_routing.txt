@@ -21,3 +21,22 @@ Only public methods are callable as actions. It is a best practice to lower the 
 Parameters - 
 You will probably want to access data sent in by the user or other parameters in your controller actions. There are two kinds of parameters possible in a web application. The first are parameters that are sent as part of the URL, called query string parameters. The query string is everything after "?" in the URL. The second type of parameter is usually referred to as POST data. This information usually comes from an HTML form which has been filled in by the user. It's called POST data because it can only be sent as part of an HTTP POST request. Rails does not make any distinction between query string parameters and POST parameters, and both are available in the params hash in your controller.
 
+Types of HTTP request methods
+
+The application receives an HTTP request which carries along with it a method which could be:
+
+GET - Retrieve a resource. To navigate directly to a page or by using Google, get HTTP method is used.a search page should use GET to get data
+
+POST - Create a resource. form that changes your password should use POST.POST is used to insert/update remote data.POST is used to send data to a server to create/update a resource.
+
+PUT - Completely update a resource. Updating user profile on a website uses patch with web frameworks that support it.
+
+PATCH - Partially update a resource. It is used to only update the password for a user profile on a website.
+ Fields that need to be updated by the client, only that field is updated without modifying the other field.
+
+DELETE - Delete a resource. The HTTP DELETE method is used to delete a resource from the server.
+
+These methods determine which controller action method is called.
+
+
+
