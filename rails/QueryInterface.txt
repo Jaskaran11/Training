@@ -2598,3 +2598,75 @@ If you want to find both by first_name and orders_count, you can chain these fin
  lock_version: 1,
  email_address: "david@gmail.com"> 
 
+
+Find or Build a New Object
+
+It's common that you need to find a record or create it if it doesn't exist. You can do that with the find_or_create_by and find_or_create_by! methods.
+
+1 find_or_create_by
+
+The find_or_create_by method checks whether a record with the specified attributes exists. If it doesn't, then create is called.
+
+3.0.0 :023 > Author.find_or_create_by(name: "Dan Brown")
+  Author Load (0.7ms)  SELECT "authors".* FROM "authors" WHERE "authors"."name" = $1 LIMIT $2  [["name", "Dan Brown"], ["LIMIT", 1]]          
+  TRANSACTION (0.1ms)  BEGIN                                   
+  Author Create (7.5ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Dan Brown"], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-06-13 10:53:46.700881"], ["updated_at", "2022-06-13 10:53:46.700881"], ["lock_version", 0], ["email_address", nil]]                                                
+  TRANSACTION (0.8ms)  COMMIT                                  
+ =>                                                            
+#<Author:0x000055ec7b91dcd8                                    
+ id: 10018,                                                    
+ name: "Dan Brown",                                            
+ dob: nil,                                                     
+ gender: nil,
+ country: nil,
+ created_at: Mon, 13 Jun 2022 10:53:46.700881000 UTC +00:00,
+ updated_at: Mon, 13 Jun 2022 10:53:46.700881000 UTC +00:00,
+ lock_version: 0,
+ email_address: nil> 
+3.0.0 :024 > 
+
+find_or_create_by returns either the record that already exists or the new record.
+
+Suppose we want to set the 'locked' attribute to false if we're creating a new record, but we don't want to include it in the query. So we want to find the customer named "Andy", or if that customer doesn't exist, create a customer named "Andy" which is not locked.
+
+We can achieve this in two ways. The first is to use create_with:
+
+3.0.0 :015 > Publisher.create_with(lock_version: false).find_or_create_by(name: "Penguin Random House")
+  Publisher Load (0.6ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."name" = $1 LIMIT $2  [["name", "Penguin Random House"], ["LIMIT", 1]]
+  TRANSACTION (0.3ms)  BEGIN                                     
+  Publisher Create (7.8ms)  INSERT INTO "publishers" ("name", "created_at", "updated_at", "lock_version") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Penguin Random House"], ["created_at", "2022-06-13 11:06:10.926594"], ["updated_at", "2022-06-13 11:06:10.926594"], ["lock_version", 0]]
+  TRANSACTION (0.6ms)  COMMIT                                    
+ =>                                                              
+#<Publisher:0x000055c70eae6f20                                   
+ id: 5,                                                          
+ name: "Penguin Random House",                                   
+ created_at: Mon, 13 Jun 2022 11:06:10.926594000 UTC +00:00,     
+ updated_at: Mon, 13 Jun 2022 11:06:10.926594000 UTC +00:00,     
+ lock_version: 0>    
+ 
+ 3.0.0 :022 > Publisher.find_or_create_by(name: "Jon Doe") do |name|
+3.0.0 :023 >   name.lock_version = false
+3.0.0 :024 > end
+  Publisher Load (0.3ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."name" = $1 LIMIT $2  [["name", "Jon Doe"], ["LIMIT", 1]]
+ => #<Publisher:0x00007f4a4ca9bb98 id: 6, name: "Jon Doe", created_at: Mon, 13 Jun 2022 11:18:45.595332000 UTC +00:00, updated_at: Mon, 13 Jun 2022 11:18:45.595332000 UTC +00:00, lock_version: 0> 
+
+
+2 find_or_create_by!
+You can also use find_or_create_by! to raise an exception if the new record is invalid. 
+  Author Load (2.1ms)  SELECT "authors".* FROM "authors" WHERE "authors"."dob" = $1 LIMIT $2  [["dob", "1230-04-09"], ["LIMIT", 1]]
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/validations.rb:80:in `raise_validation_error': Validation failed: Name can't be blank (ActiveRecord::RecordInvalid)
+
+3.19.3 find_or_initialize_by
+
+The find_or_initialize_by method will work just like find_or_create_by but it will call new instead of create. This means that a new model instance will be created in memory but won't be saved to the database.
+3.0.0 :005 > Author.find_or_initialize_by(name: "William Shakespeare")
+  Author Load (0.2ms)  SELECT "authors".* FROM "authors" WHERE "authors"."name" = $1 LIMIT $2  [["name", "William Shakespeare"], ["LIMIT", 1]]
+ => #<Author:0x000055ec06ea5d38 id: nil, name: "William Shakespeare", dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+
+3.0.0 :012 > William_Shakespeare.persisted?
+ => false 
+3.0.0 :013 > William_Shakespeare.new_record?
+ => true 
+
+
+

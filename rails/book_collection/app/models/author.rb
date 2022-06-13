@@ -7,7 +7,7 @@ class Author < ApplicationRecord
   #validate do |author|
   # errors.add :base, :invalid, message: "This person is invalid because ..."
   # end
-  validates :name, presence: true, if: :name?
+  validates :name, presence: true
   
   #def name?
     #name =~ /[\w]+/
