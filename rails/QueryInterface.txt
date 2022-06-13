@@ -2409,4 +2409,37 @@ The rewhere method overrides an existing, named where condition.
   publisher_id: nil,
   author_id: nil>] 
 
+Calculations
+
+This section uses count as an example method in this preamble, but the options described apply to all sub-sections.
+1.count - 
+3.0.0 :004 > Author.count
+  Author Count (12.8ms)  SELECT COUNT(*) FROM "authors"
+ => 10016     
+ 
+ 2.3.0.0 :005 > Author.where(name: "David Goggins").count
+  Author Count (0.7ms)  SELECT COUNT(*) FROM "authors" WHERE "authors"."name" = $1  [["name", "David Goggins"]]                                              
+ => 1     
+ 
+2 Average - 
+3.0.0 :006 > Book.average("rating")
+  Book Average (8.0ms)  SELECT AVG("books"."rating") FROM "books"
+ => 4.4 
+ 
+ 3.Minimum - 
+ 3.0.0 :007 > Book.minimum("rating")
+  Book Minimum (0.8ms)  SELECT MIN("books"."rating") FROM "books"
+ => 3.9   
+ 
+ 4.maximum -
+ 3.0.0 :001 > Book.maximum("price")
+  Book Maximum (0.5ms)  SELECT MAX("books"."price") FROM "books"
+ => 523                                                     
+3.0.0 :0
+
+5.3.0.0 :002 > Book.sum("price")
+  Book Sum (0.8ms)  SELECT SUM("books"."price") FROM "books"
+ => 2466 
+ 
+
                  
