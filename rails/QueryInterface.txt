@@ -2668,5 +2668,115 @@ The find_or_initialize_by method will work just like find_or_create_by but it wi
 3.0.0 :013 > William_Shakespeare.new_record?
  => true 
 
+ Finding by SQL
 
+If you'd like to use your own SQL to find records in a table you can use find_by_sql. The find_by_sql method will return an array of objects even if the underlying query returns just a single record.
+3.0.0 :028 > Author.find_by_sql("SELECT * FROM authors inner join books on aut
+hors.id = books.author_id")
+  Author Load (1.7ms)  SELECT * FROM authors inner join books on authors.id = books.author_id                                                               
+ =>                                                                           
+[#<Author:0x000055ec06c44648                                                  
+  id: 16,                                                                     
+  name: "Stephen King",                                                       
+  dob: Sun, 21 Sep 1947,                                                      
+  gender: "Male",                                                             
+  country: "UK",                                                              
+  created_at: Tue, 07 Jun 2022 14:17:24.855374000 UTC +00:00,                 
+  updated_at: Wed, 08 Jun 2022 08:08:28.440667000 UTC +00:00,                 
+  lock_version: 0,                                                            
+  email_address: "stephen@gmail.com">,                                        
+ #<Author:0x000055ec06c44580                                                  
+  id: 17,                                                                
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">,
+ #<Author:0x000055ec06c444b8
+  id: 14,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 12:51:07.633126000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">] 
 
+1 select_all
+
+find_by_sql has a close relative called connection.select_all. select_all will retrieve objects from the database using custom SQL just like find_by_sql but will not instantiate them. This method will return an instance of ActiveRecord::Result class and calling to_a on this object would return you an array of hashes where each hash indicates a record.
+
+3.0.0 :109 > Author.connection.select_all("SELECT name,created_at from authors where id = '1'").to_a
+   (0.7ms)  SELECT name,created_at from authors where id = '1'
+ => [{"name"=>"David Goggins", "created_at"=>2022-05-25 11:47:49.986085 UTC}]                               
+3.0.0 :110 > 
+
+2 pluck
+
+pluck can be used to query single or multiple columns from the underlying table of a model. It accepts a list of column names as an argument and returns an array of values of the specified columns with the corresponding data type.
+
+3.0.0 :113 > Book.where(price: 523).pluck(:id)
+  Book Pluck (0.4ms)  SELECT "books"."id" FROM "books" WHERE "books"."price" = $1  [["price", 523]]                                                     
+ => [12, 14] 
+ 
+ 3.0.0 :114 > Book.distinct.pluck(:title)
+  Book Pluck (1.1ms)  SELECT DISTINCT "books"."title" FROM "books"
+ =>                                                                         
+[nil,                                                                       
+ "The Shining",                                                             
+ "3242334",                                                                 
+ "Harry Potter",                                                            
+ "",                                                                        
+ "Rich Dad Poor Dad",                                                       
+ "Firestarter",                                                             
+ "IT",                                                                      
+ "1234"]
+ 
+ 3.0.0 :116 > Book.pluck(:id, :price)
+  Book Pluck (0.7ms)  SELECT "books"."id", "books"."price" FROM "books"
+ =>                                                                         
+[[6, nil],                                                                  
+ [7, nil],                                                                  
+ [8, nil],                                                                  
+ [9, nil],                                                                  
+ [12, 523],                                                                 
+ [16, 420],                                                                 
+ [17, 501],                                                                 
+ [5, 499],                                                                  
+ [14, 523]]  
+ 
+ Unlike select, pluck directly converts a database result into a Ruby Array, without constructing ActiveRecord objects. This can mean better performance for a large or frequently-run query. However, any model method overrides will not be available. For example:
+ 
+ class Customer < ApplicationRecord
+  def name
+    "I am #{first_name}"
+  end
+end
+
+irb> Customer.select(:first_name).map &:name
+=> ["I am David", "I am Jeremy", "I am Jose"]
+
+irb> Customer.pluck(:first_name)
+=> ["David", "Jeremy", "Jose"]
+
+Furthermore, unlike select and other Relation scopes, pluck triggers an immediate query, and thus cannot be chained with any further scopes, although it can work with scopes already constructed earlier:
+
+3.0.0 :129 > Book.limit(1).pluck(:title)
+  Book Pluck (0.7ms)  SELECT "books"."title" FROM "books" LIMIT $1  [["LIMIT", 1]]                                                                      
+ => ["1234"] 
+ 
+ 3.0.0 :134 > assoc = Author.includes(:books)
+  Author Load (7.1ms)  SELECT "authors".* FROM "authors"
+
+3.0.0 :139 > assoc.unscope(:includes).pluck(:id)
+
+3 ids
+ids can be used to pluck all the IDs for the relation using the table's primary key.
+
+3.0.0 :140 > Book.ids
+  Book Pluck (0.7ms)  SELECT "books"."id" FROM "books"
+ => [6, 7, 8, 9, 12, 16, 17, 5, 14] 
