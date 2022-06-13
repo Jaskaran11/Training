@@ -2489,4 +2489,85 @@ You can also use any? and many? to check for existence on a model or relation. m
   Author Load (0.5ms)  SELECT "authors".* FROM "authors" ORDER BY "authors"."id" ASC LIMIT $1  [["LIMIT", 1]]                                                   
   Book Count (0.4ms)  SELECT COUNT(*) FROM (SELECT 1 AS one FROM "books" WHERE "books"."author_id" = $1 LIMIT $2) subquery_for_count  [["author_id", 1], ["LIMIT", 2]]                                                                          
  => false   
-                 
+        
+        
+10 Null Relation
+The none method returns a chainable relation with no records. Any subsequent conditions chained to the returned relation will continue generating empty relations. This is useful in scenarios where you need a chainable response to a method or a scope that could return zero results.      
+
+3.0.0 :002 > Book.none
+ => [] 
+3.0.0 :
+
+12 Locking Records for Update
+
+Locking is helpful for preventing race conditions when updating records in the database and ensuring atomic updates.
+
+Active Record provides two locking mechanisms:
+
+    Optimistic Locking
+    Pessimistic Locking
+
+3.0.0 :001 > p1 = Publisher.find(1)
+  Publisher Load (0.1ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+ =>                                           
+#<Publisher:0x000055ebaf1054c8                
+...                                           
+3.0.0 :002 > p2 = Publisher.find(1)
+  Publisher Load (0.6ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+ =>                                           
+#<Publisher:0x00007f30e44c34b8                
+...                                           
+3.0.0 :003 > p1.name
+ => "Lioncrest Publisher" 
+3.0.0 :004 > p1.name = "Then Lioncrest"
+ => "Then Lioncrest" 
+3.0.0 :005 > p1.save
+  TRANSACTION (0.2ms)  BEGIN
+  Publisher Update (0.3ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "Then Lioncrest"], ["updated_at", "2022-06-13 10:05:34.307749"], ["lock_version", 3], ["id", 1], ["lock_version", 2]]
+  TRANSACTION (6.8ms)  COMMIT                             
+ => true                                                  
+3.0.0 :006 > p2.name  = "Lioncrest"
+ => "Lioncrest" 
+3.0.0 :007 > p2.save
+  TRANSACTION (0.2ms)  BEGIN
+  Publisher Update (0.5ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "Lioncrest"], ["updated_at", "2022-06-13 10:05:47.739064"], ["lock_version", 3], ["id", 1], ["lock_version", 2]]
+  TRANSACTION (0.3ms)  ROLLBACK                           
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/locking/optimistic.rb:108:in `_update_row': Attempted to update a stale object: Publisher. (ActiveRecord::StaleObjectError)    
+
+
+Pessimistic Locking
+Pessimistic locking uses a locking mechanism provided by the underlying database. Using lock when building a relation obtains an exclusive lock on the selected rows. Relations using lock are usually wrapped inside a transaction for preventing deadlock conditions.   
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails c                               
+Loading development environment (Rails 7.0.3)                                                      
+3.0.0 :001 > Publisher.transaction do
+3.0.0 :002 >   publisher = Publisher.lock.first
+3.0.0 :003 >   publisher.name = "The Lioncrest"
+3.0.0 :004 >   publisher.save!
+3.0.0 :005 > end
+  TRANSACTION (0.2ms)  BEGIN
+  Publisher Load (1.1ms)  SELECT "publishers".* FROM "publishers" ORDER BY "publishers"."id" ASC LIMIT $1 FOR UPDATE  [["LIMIT", 1]]
+  Publisher Update (0.5ms)  UPDATE "publishers" SET "name" = $1, "updated_at" = $2, "lock_version" = $3 WHERE "publishers"."id" = $4 AND "publishers"."lock_version" = $5  [["name", "The Lioncrest"], ["updated_at", "2022-06-13 10:08:28.408210"], ["lock_version", 4], ["id", 1], ["lock_version", 3]]    
+  TRANSACTION (6.7ms)  COMMIT                                                                      
+ => true                                                                                           
+3.0.0 :006 > publisher.name
+(irb):6:in `<main>': undefined local variable or method `publisher' for main:Object (NameError)
+Did you mean?  public_send                                                                         
+3.0.0 :007 > Publisher.first
+  Publisher Load (0.5ms)  SELECT "publishers".* FROM "publishers" ORDER BY "publishers"."id" ASC LIMIT $1  [["LIMIT", 1]]
+ => #<Publisher:0x000055c1e1706a90 id: 1, name: "The Lioncrest", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Mon, 13 Jun 2022 10:08:28.408210000 UTC +00:00, lock_version: 4> 
+
+If you already have an instance of your model, you can start a transaction and acquire the lock in one go using the following code:
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails c
+Loading development environment (Rails 7.0.3)                                   
+3.0.0 :001 > publisher = Publisher.first
+  Publisher Load (0.3ms)  SELECT "publishers".* FROM "publishers" ORDER BY "publishers"."id" ASC LIMIT $1  [["LIMIT", 1]]
+ => #<Publisher:0x00007f74349e7820 id: 1, name: "The Lioncrest", created_at: Wed, 20 Oct 0010 00:00:00.000000000 UTC +00:00, updated_at: Mon, 13 Jun 2022 10:08:28.408210000 UTC +00:00, lock_versio... 
+3.0.0 :002 > publisher.with_lock do
+3.0.0 :003 >   publisher.name = "Lioncrest"
+3.0.0 :004 > end
+  TRANSACTION (0.2ms)  BEGIN
+  Publisher Load (0.4ms)  SELECT "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2 FOR UPDATE  [["id", 1], ["LIMIT", 1]]
+  TRANSACTION (6.7ms)  COMMIT                                      
+ => "Lioncrest" 
