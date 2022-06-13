@@ -2780,3 +2780,100 @@ ids can be used to pluck all the IDs for the relation using the table's primary 
 3.0.0 :140 > Book.ids
   Book Pluck (0.7ms)  SELECT "books"."id" FROM "books"
  => [6, 7, 8, 9, 12, 16, 17, 5, 14] 
+ 
+Joining Tables
+
+Active Record provides two finder methods for specifying JOIN clauses on the resulting SQL: joins and left_outer_joins. While joins should be used for INNER JOIN or custom queries, left_outer_joins is used for queries using LEFT OUTER JOIN.
+
+1 Using a String SQL Fragment
+You can just supply the raw SQL specifying the JOIN clause to joins:
+Loading development environment (Rails 7.0.3)               
+3.0.0 :001 > Author.joins("INNER JOIN books ON books.author_id = authors.id
+")
+  Author Load (0.4ms)  SELECT "authors".* FROM "authors" INNER JOIN books ON books.author_id = authors.id                                             
+ =>                                                                        
+[#<Author:0x000055dd41bebaa8                                               
+  id: 10017,                                                               
+  name: "Stephen King",                                                    
+  dob: Sun, 21 Sep 1947,                                                   
+  gender: "Male",                                                          
+  country: "UK",                                                           
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,              
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,              
+  lock_version: 0,                                                         
+  email_address: "stephen@gmail.com">,                                     
+ #<Author:0x000055dd41b89e98                                               
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">,
+ #<Author:0x000055dd41b89dd0
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">] 
+
+find_in_batches
+
+The find_in_batches method is similar to find_each, since both retrieve batches of records. The difference is that find_in_batches yields batches to the block as an array of models, instead of individually. 
+
+3.0.0 :005 > Book.find_in_batches do |book| 
+3.0.0 :006 >   print book.size
+3.0.0 :007 > end
+  Book Load (0.7ms)  SELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT $1  [["LIMIT", 1000]]                                            9 => nil 
+  
+  Options for find_in_batches
+
+The find_in_batches method accepts the same options as find_each:
+
+:batch_size
+
+.0.0 :011 > Book.find_in_batches(batch_size:5) do |book|
+3.0.0 :012 >   book.size
+3.0.0 :013 > end
+  Book Load (0.3ms)  SELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT $1  [["LIMIT", 5]]
+  Book Load (0.1ms)  SELECT "books".* FROM "books" WHERE "books"."id" > $1 ORDER BY "books"."id" ASC LIMIT $2  [["id", 9], ["LIMIT", 5]]
+ => nil       
+ 
+ :start
+
+The start option allows specifying the beginning ID from where records will be selected. As mentioned before, by default records are fetched in ascending order of the primary key. 
+
+3.0.0 :011 > Book.find_in_batches(batch_size:5) do |book|
+3.0.0 :012 >   book.size
+3.0.0 :013 > end
+  Book Load (0.3ms)  SELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT $1  [["LIMIT", 5]]
+  Book Load (0.1ms)  SELECT "books".* FROM "books" WHERE "books"."id" > $1 ORDER BY "books"."id" ASC LIMIT $2  [["id", 9], ["LIMIT", 5]]
+ => nil                                                                   
+3.0.0 :014 > Author.find_in_batches(batch_size: 2500, start:5000) do
+3.0.0 :015 >   |authors|
+3.0.0 :016 >   authors.size
+3.0.0 :017 > end
+  Author Load (11.7ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" >= $1 ORDER BY "authors"."id" ASC LIMIT $2  [["id", 5000], ["LIMIT", 2500]]
+  Author Load (1.3ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" >= $1 AND "authors"."id" > $2 ORDER BY "authors"."id" ASC LIMIT $3  [["id", 5000], ["id", 7499], ["LIMIT", 2500]]
+  Author Load (0.3ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" >= $1 AND "authors"."id" > $2 ORDER BY "authors"."id" ASC LIMIT $3  [["id", 5000], ["id", 9999], ["LIMIT", 2500]]
+
+3.0.0 :018 > Author.find_in_batches(finish:10) do |authors|
+3.0.0 :019 >   authors.size
+3.0.0 :020 > end
+  Author Load (0.5ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" <= $1 ORDER BY "authors"."id" ASC LIMIT $2  [["id", 10], ["LIMIT", 1000]]
+ => nil                                                                          
+3.0.0 :0
+
+:error_on_ignore
+
+The error_on_ignore option overrides the application config to specify if an error should be raised when a specific order is present in the relation.
+
+
+
+
