@@ -2874,6 +2874,40 @@ The start option allows specifying the beginning ID from where records will be s
 
 The error_on_ignore option overrides the application config to specify if an error should be raised when a specific order is present in the relation.
 
+Running EXPLAIN
+
+You can run explain on a relation. EXPLAIN output varies for each database.
+3.0.0 :003 > Author.where(id: 10017).joins(:books).explain
+  Author Load (0.8ms)  SELECT "authors".* FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" WHERE "authors"."id" = $1  [["id", 10017]]          
+ =>                                                           
+EXPLAIN for: SELECT "authors".* FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" WHERE "authors"."id" = $1 [["id", 10017]]                     
+                                    QUERY PLAN                
+-----------------------------------------------------------------------------------
+ Nested Loop  (cost=0.29..9.43 rows=1 width=89)               
+   ->  Index Scan using authors_pkey on authors  (cost=0.29..8.30 rows=1 width=89)
+         Index Cond: (id = '10017'::bigint)                   
+   ->  Seq Scan on books  (cost=0.00..1.11 rows=1 width=4)    
+         Filter: (author_id = '10017'::bigint)                
+(5 rows)                                                      
+         
+         
+           Author Load (0.6ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1  [["id", 10017]]
+  Book Load (0.3ms)  SELECT "books".* FROM "books" WHERE "books"."author_id" = $1  [["author_id", 10017]]
+ =>                                                                                           
+EXPLAIN for: SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 [["id", 10017]]      
+                                 QUERY PLAN                                                   
+-----------------------------------------------------------------------------                 
+ Index Scan using authors_pkey on authors  (cost=0.29..8.30 rows=1 width=89)                  
+   Index Cond: (id = '10017'::bigint)                                                         
+(2 rows)                                                                                      
+                                                                                              
+EXPLAIN for: SELECT "books".* FROM "books" WHERE "books"."author_id" = $1 [["author_id", 10017]]
+                      QUERY PLAN                                                              
+------------------------------------------------------                                        
+ Seq Scan on books  (cost=0.00..1.11 rows=1 width=84)                                         
+   Filter: (author_id = 10017)                                                                
+(2 rows)
+ 
 
 
 
