@@ -41,4 +41,5 @@ class Author < ApplicationRecord
   #dependent: :destroy, inverse_of: :author
   #self.primary = 'name'
   #has_and_belongs_to_many :books
+  has_many :publishers
 end

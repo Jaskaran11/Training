@@ -3425,4 +3425,357 @@ With eager_load, Active Record loads all specified associations using a LEFT OUT
   lock_version: 1,
   email_address: "david@gmail.com">] 
 
+ Joining Tables
 
+Active Record provides two finder methods for specifying JOIN clauses on the resulting SQL: joins and left_outer_joins. While joins should be used for INNER JOIN or custom queries, left_outer_joins is used for queries using LEFT OUTER JOIN.
+13.1 joins
+
+There are multiple ways to use the joins method.
+3.0.0 :057 > Author.joins("Inner join books on authors.id = books.author_id")
+3.0.0 :058 >   
+  Author Load (1.1ms)  SELECT "authors".* FROM "authors" Inner join books on authors.id = books.author_id                                                       
+ =>                                                             
+[#<Author:0x00007f39085116a0                                    
+  id: 10017,                                                    
+  name: "Stephen King",                                         
+  dob: Sun, 21 Sep 1947,                                        
+  gender: "Male",                                               
+  country: "UK",                                                
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">,
+ #<Author:0x00007f39085115d8
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">,
+ #<Author:0x00007f3908511510
+  id: 1,
+  name: "David Goggins",
+  dob: Tue, 05 May 1970,
+  gender: "Male",
+  country: "America",
+  created_at: Wed, 25 May 2022 11:47:49.986085000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 13:28:25.048096000 UTC +00:00,
+  lock_version: 1,
+  email_address: "david@gmail.com">,
+ #<Author:0x00007f3908511448
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">] 
+3.0.0 :059 > 
+
+
+2 Using Array/Hash of Named Associations
+    use the names of the associations defined on the model as a shortcut for specifying JOIN clauses for those associations when using the joins method
+    
+3.0.0 :059 > Author.joins(:books).distinct
+  Author Load (0.8ms)  SELECT DISTINCT "authors".* FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id"                                    
+ =>                                                                             
+[#<Author:0x000055e5143783f0                                                    
+  id: 1,                                                                        
+  name: "David Goggins",                                                        
+  dob: Tue, 05 May 1970,                                                        
+  gender: "Male",                                                               
+  country: "America",                                                           
+  created_at: Wed, 25 May 2022 11:47:49.986085000 UTC +00:00,                   
+  updated_at: Tue, 31 May 2022 13:28:25.048096000 UTC +00:00,                   
+  lock_version: 1,                                                              
+  email_address: "david@gmail.com">,                                            
+ #<Author:0x000055e514378328                                                    
+  id: 10017,                                                                    
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">] 
+
+3.
+  3 Joining Multiple Associations
+  
+  3.0.0 :060 > Author.joins(:books, :publishers)
+  Author Load (1.1ms)  SELECT "authors".* FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" INNER JOIN "publishers" ON "publishers"."author_id" = "authors"."id"                                                        
+ =>                                                                             
+[#<Author:0x000055e5146354a8                                                    
+  id: 10017,                                                                    
+  name: "Stephen King",                                                         
+  dob: Sun, 21 Sep 1947,                                                        
+  gender: "Male",                                                               
+  country: "UK",                                                                
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,                   
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,                   
+  lock_version: 0,                                                              
+  email_address: "stephen@gmail.com">,                                          
+ #<Author:0x000055e514635390                                                    
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">,
+ #<Author:0x000055e514635278
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">] 
+
+left_outer_joins  
+
+If you want to select a set of records whether or not they have associated records you can use the left_outer_joins method.
+
+.3.0.0 :004 > Customer.left_outer_joins(:room_hotel)
+  Customer Load (3.6ms)  SELECT "customers".* FROM "customers" LEFT OUTER JOIN "room_hotels" ON "room_hotels"."customer_id" = "customers"."id"
+ =>                                                  
+[#<Customer:0x00005613f1126be0                       
+  id: 1,                                             
+  name: "Jaskaran Singh",                            
+  address: "#Sector 20-A Chandigarh",                
+  gender: "Male",                                    
+  mobile: "9876573100",                              
+  check_in: Sun, 01 May 2022,                        
+  check_out: Tue, 10 May 2022,                       
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",                                  
+  email: nil>,                                       
+ #<Customer:0x00005613f0a97f18
+  id: 2,
+  name: "Sam Sharma",
+  address: "Sector 30,Mumbai",
+  gender: "Male",
+  mobile: "21313241",
+  check_in: Wed, 11 May 2022,
+  check_out: Sun, 22 May 2022,
+  created_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 12:49:28.509835000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x00005613f0a97c98
+  id: 1,
+  name: "Jaskaran Singh",
+  address: "#Sector 20-A Chandigarh",
+  gender: "Male",
+  mobile: "9876573100",
+  check_in: Sun, 01 May 2022,
+  check_out: Tue, 10 May 2022,
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x00005613f0a97b58
+  id: 1,
+  name: "Jaskaran Singh",
+  address: "#Sector 20-A Chandigarh",
+  gender: "Male",
+  mobile: "9876573100",
+  check_in: Sun, 01 May 2022,
+  check_out: Tue, 10 May 2022,
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x00005613f0a95dd0
+  id: 1,
+  name: "Jaskaran Singh",
+  address: "#Sector 20-A Chandigarh",
+  gender: "Male",
+  mobile: "9876573100",
+  check_in: Sun, 01 May 2022,
+  check_out: Tue, 10 May 2022,
+  created_at: Mon, 23 May 2022 10:03:11.423908000 UTC +00:00,
+  updated_at: Mon, 23 May 2022 10:05:42.660282000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x00005613f0a95ba0
+  id: 20,
+  name: "Customer Name 8",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.134360000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.134360000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a95858
+  id: 27,
+  name: "John Doe",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Fri, 27 May 2022 10:14:19.192182000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 10:14:19.192182000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a95510
+  id: 17,
+  name: "Customer Name 5",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.130879000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.130879000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a95380
+  id: 31,
+  name: "Sam",
+  address: "Faridabad",
+  gender: nil,
+  mobile: "9876573100",
+  check_in: Tue, 10 May 2022,
+  check_out: Sat, 14 May 2022,
+  created_at: Tue, 31 May 2022 10:57:14.180986000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 10:57:14.180986000 UTC +00:00,
+  country: "India",
+  email: nil>,
+ #<Customer:0x00005613f0a951a0
+  id: 18,
+  name: "Customer Name 6",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.132452000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.132452000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a95010
+  id: 15,
+  name: "Customer Name 3",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.129388000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.129388000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a94f20
+  id: 13,
+  name: "Henry Cavill",
+  address: "Sector 14",
+  gender: "Male",
+  mobile: "1234567890",
+  check_in: Sat, 11 Jun 2022,
+  check_out: Mon, 13 Jun 2022,
+  created_at: Tue, 24 May 2022 17:16:06.127119000 UTC +00:00,
+  updated_at: Fri, 10 Jun 2022 11:15:14.362509000 UTC +00:00,
+  country: "America",
+  email: "henry@gmail.com">,
+ #<Customer:0x00005613f0a94e08
+  id: 21,
+  name: "Customer Name 9",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.135231000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.135231000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a94cf0
+  id: 19,
+  name: "Customer Name 7",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.133470000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.133470000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a94c00
+  id: 32,
+  name: "Uchiha",
+  address: "chd",
+  gender: nil,
+  mobile: "9876573100",
+  check_in: Thu, 05 May 2022,
+  check_out: Tue, 10 May 2022,
+  created_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 12:50:22.377050000 UTC +00:00,
+  country: "india",
+  email: nil>,
+ #<Customer:0x00005613f0a94ae8
+  id: 16,
+  name: "Customer Name 4",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.130147000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.130147000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a949d0
+  id: 22,
+  name: "Customer Name 10",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.136111000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.136111000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a948e0
+  id: 14,
+  name: "Customer Name 2",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 24 May 2022 17:16:06.128563000 UTC +00:00,
+  updated_at: Tue, 24 May 2022 17:16:06.128563000 UTC +00:00,
+  country: nil,
+  email: nil>,
+ #<Customer:0x00005613f0a947a0
+  id: 35,
+  name: "Jas",
+  address: nil,
+  gender: nil,
+  mobile: nil,
+  check_in: nil,
+  check_out: nil,
+  created_at: Tue, 31 May 2022 12:58:41.611610000 UTC +00:00,
+  updated_at: Tue, 31 May 2022 12:58:41.611610000 UTC +00:00,
+  country: nil,
+  email: nil>] 
+
+  

@@ -22,5 +22,5 @@ class Book < ApplicationRecord
   #has_many :publishers
   
   #has_and_belongs_to_many :authors
-  
+  belongs_to :publisher
 end
