@@ -3798,3 +3798,77 @@ Retrieving specific data from multiple tables
   Author Load (0.5ms)  SELECT authors.id, authors.name,authors.dob FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" WHERE "authors"."id" = $1 LIMIT $2  [["id", 10017], ["LIMIT", 1]]
  => #<Author:0x000055e515d874d0 id: 10017, name: "Stephen King", dob: Sun, 21 Sep 1947> 
 
+
+extract_Associated - 
+[],
+ [],
+ [],
+ [],
+ [],
+ [],
+ [],
+ [#<Book:0x00005651e69276e0
+   id: 5,
+   title: "Rich Dad Poor Dad",
+   total_page: 300,
+   rating: nil,
+   price: 499,
+   created_at: Wed, 25 May 2022 18:30:27.231538000 UTC +00:00,
+   updated_at: Mon, 13 Jun 2022 13:37:26.987371000 UTC +00:00,
+   date_published: Fri, 08 May 2015,
+   publisher_id: 2,
+   author_id: 1>],
+ [],
+ [],
+ [],
+ [],
+ [#<Book:0x00005651e672e050
+   id: 16,
+   title: "Harry Potter",
+   total_page: 342,
+   rating: 4.7,
+   price: 420,
+   created_at: Tue, 07 Jun 2022 14:17:24.855374000 UTC +00:00,
+   updated_at: Wed, 08 Jun 2022 08:08:28.440667000 UTC +00:00,
+   date_published: Sun, 03 Jan 2010,
+   publisher_id: nil,
+   author_id: 10017>,
+  #<Book:0x00005651e69279b0
+   id: 17,
+   title: "Firestarter",
+   total_page: 400,
+   rating: 3.9,
+   price: 501,
+   created_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+   updated_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+   date_published: Sun, 02 May 1999,
+   publisher_id: nil,
+   author_id: 10017>,
+  #<Book:0x00005651e6927410
+   id: 14,
+   title: "The Shining",
+   total_page: 235,
+   rating: 4.5,
+   price: 10001,
+   created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+   updated_at: Mon, 13 Jun 2022 15:10:14.461971000 UTC +00:00,
+   date_published: Thu, 22 Jun 2000,
+   publisher_id: 1,
+   author_id: 10017>],
+ [],
+ [],
+ []] 
+
+ from(value, subquery_name = nil)
+Specifies the table from which the records will be fetched. For example:
+
+3.0.0 :019 > a = Author.select('title').from('books')
+  Author Load (0.4ms)  SELECT title FROM books
+ =>                                                                           
+[#<Author:0x00005651e8c66e58 id: nil>,                                        
+...                                                                           
+3.0.0 :020 > 
+3.0.0 :020 > a.first.title
+ => "1234"
+ 
+
