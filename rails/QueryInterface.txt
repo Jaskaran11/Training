@@ -3843,7 +3843,7 @@ extract_Associated -
    updated_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
    date_published: Sun, 02 May 1999,
    publisher_id: nil,
-   author_id: 10017>,
+   
   #<Book:0x00005651e6927410
    id: 14,
    title: "The Shining",
@@ -3871,4 +3871,24 @@ Specifies the table from which the records will be fetched. For example:
 3.0.0 :020 > a.first.title
  => "1234"
  
+
+ references(*table_names)
+Link
+
+Use to indicate that the given table_names are referenced by an SQL string, and should therefore be JOINed in any query rather than loaded separately. This method only works in conjunction with includes. 
+
+3.0.0 :023 > Author.includes(:books).where("books.title = 'The Shining'").references(:books)
+  SQL (0.4ms)  SELECT "authors"."id" AS t0_r0, "authors"."name" AS t0_r1, "authors"."dob" AS t0_r2, "authors"."gender" AS t0_r3, "authors"."country" AS t0_r4, "authors"."created_at" AS t0_r5, "authors"."updated_at" AS t0_r6, "authors"."lock_version" AS t0_r7, "authors"."email_address" AS t0_r8, "books"."id" AS t1_r0, "books"."title" AS t1_r1, "books"."total_page" AS t1_r2, "books"."rating" AS t1_r3, "books"."price" AS t1_r4, "books"."created_at" AS t1_r5, "books"."updated_at" AS t1_r6, "books"."date_published" AS t1_r7, "books"."publisher_id" AS t1_r8, "books"."author_id" AS t1_r9 FROM "authors" LEFT OUTER JOIN "books" ON "books"."author_id" = "authors"."id" WHERE (books.title = 'The Shining')
+ => 
+[#<Author:0x00005651e35c02c0
+  id: 10017,
+  name: "Stephen King",
+  dob: Sun, 21 Sep 1947,
+  gender: "Male",
+  country: "UK",
+  created_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:32:54.257818000 UTC +00:00,
+  lock_version: 0,
+  email_address: "stephen@gmail.com">] 
+
 
