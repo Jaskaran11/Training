@@ -3778,4 +3778,23 @@ If you want to select a set of records whether or not they have associated recor
   country: nil,
   email: nil>] 
 
-  
+  Understanding Method Chaining
+
+The Active Record pattern implements Method Chaining, which allow us to use multiple Active Record methods together in a simple and straightforward way.
+You can chain methods in a statement when the previous method called returns an ActiveRecord::Relation, like all, where, and joins. Methods that return a single object (see Retrieving a Single Object Section) have to be at the end of the statement.
+There are some examples below. This guide won't cover all the possibilities, just a few as examples. When an Active Record method is called, the query is not immediately generated and sent to the database. The query is sent only when the data is actually needed. So each example below generates a single query.
+3.0.0 :074 > Author.select('authors.name').joins(:books).where('books.price > 10
+0')
+  Author Load (0.5ms)  SELECT "authors"."name" FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" WHERE (books.price > 100)
+ => 
+[#<Author:0x000055e51944f620 id: nil, name: "Stephen King">,
+ #<Author:0x000055e51944f4e0 id: nil, name: "Stephen King">,
+ #<Author:0x000055e51944f418 id: nil, name: "David Goggins">,
+ #<Author:0x000055e51944f350 id: nil, name: "Stephen King">] 
+3.0.0 :075 > 
+
+Retrieving specific data from multiple tables
+3.0.0 :082 > Author.select("authors.id, authors.name,authors.dob").joins(:books).find(10017)
+  Author Load (0.5ms)  SELECT authors.id, authors.name,authors.dob FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" WHERE "authors"."id" = $1 LIMIT $2  [["id", 10017], ["LIMIT", 1]]
+ => #<Author:0x000055e515d874d0 id: 10017, name: "Stephen King", dob: Sun, 21 Sep 1947> 
+
