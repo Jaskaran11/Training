@@ -23,4 +23,5 @@ class Book < ApplicationRecord
   
   #has_and_belongs_to_many :authors
   belongs_to :publisher
+  scope :price, -> { where(price > 100 )}
 end

@@ -166,3 +166,51 @@ Migrating to RemoveColumn (20220613124702)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2688133649881708350)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Create (9.5ms)[0m  [1m[32mINSERT INTO "physicians" ("name", "created_at", "updated_at", "patient_type", "patient_id", "head_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "arun"], ["created_at", "2022-06-14 15:10:48.711381"], ["updated_at", "2022-06-14 15:10:48.711381"], ["patient_type", "sdr"], ["patient_id", nil], ["head_id", nil]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2688133649881708350)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumnAppointment (20220614151151)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "appointments" DROP COLUMN "physicians_id"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "appointment" ADD "physician_id" bigint[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2688133649881708350)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2688133649881708350)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumnAppointment (20220614151151)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "appointments" DROP COLUMN "physicians_id"[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "appointments" ADD "physician_id" bigint[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_appointments_on_physician_id" ON "appointments" ("physician_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "appointments" ADD CONSTRAINT "fk_rails_9c57b861f7"
+FOREIGN KEY ("physician_id")
+  REFERENCES "physicians" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220614151151"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2688133649881708350)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPatient Create (8.0ms)[0m  [1m[32mINSERT INTO "patients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manan"], ["created_at", "2022-06-14 15:14:38.305963"], ["updated_at", "2022-06-14 15:14:38.305963"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPhysician Load (0.7ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Update (0.8ms)[0m  [1m[33mUPDATE "physicians" SET "updated_at" = $1, "patient_id" = $2 WHERE "physicians"."id" = $3[0m  [["updated_at", "2022-06-14 15:15:24.577433"], ["patient_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Load (0.8ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Create (6.9ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "created_at", "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2022-06-15"], ["created_at", "2022-06-14 15:17:59.211132"], ["updated_at", "2022-06-14 15:17:59.211132"], ["status", 0], ["physician_id", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAppointment Update (0.8ms)[0m  [1m[33mUPDATE "appointments" SET "updated_at" = $1, "status" = $2 WHERE "appointments"."id" = $3[0m  [["updated_at", "2022-06-14 15:18:46.861218"], ["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m

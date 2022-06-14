@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_124702) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_151151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
-    t.bigint "physicians_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
-    t.index ["physicians_id"], name: "index_appointments_on_physicians_id"
+    t.bigint "physician_id"
+    t.index ["physician_id"], name: "index_appointments_on_physician_id"
   end
 
   create_table "heads", force: :cascade do |t|
@@ -55,5 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_124702) do
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id"
   end
 
+  add_foreign_key "appointments", "physicians"
   add_foreign_key "physicians", "heads"
 end

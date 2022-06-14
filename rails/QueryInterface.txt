@@ -3891,4 +3891,31 @@ Use to indicate that the given table_names are referenced by an SQL string, and 
   lock_version: 0,
   email_address: "stephen@gmail.com">] 
 
+Enum (short form of Enumeration) is a data type used to assign names to integral constants. The names are identifiers that behave as constants in language and makes a program easy to read and maintain.
+
+ActiveRecord::Enum was introduced in Rails 4.1. An enum is an attribute where the values map to integers in the database and can be queried by name. Enums also give us the ability to change the state of the data very quickly. This makes it easy to use enums in Rails and saves a lot of time by providing dynamic methods.
+
+3.0.0 :001 > Appointment.statuses
+ => {"pending"=>0, "active"=>1, "archived"=>2} 
+3.0.0 :002 > Appointment.statuses[:archived]
+ => 2 
+3.0.0 :003
+
+3.0.0 :005 > a.status
+ => "pending" 
+3.0.0 :006 > 
+
+3.0.0 :008 > a.save
+  TRANSACTION (0.2ms)  BEGIN
+  Appointment Update (0.8ms)  UPDATE "appointments" SET "updated_at" = $1, "status" = $2 WHERE "appointments"."id" = $3  [["updated_at", "2022-06-14 15:18:46.861218"], ["status", 1], ["id", 1]]                        
+  TRANSACTION (2.3ms)  COMMIT                            
+ => true                                                 
+3.0.0 :009 > a.status
+ => "active"
+ 
+ 3.0.0 :013 > a.archived? || a.pending?
+ => false 
+3.0.0 :014 > a.status?
+ => true 
+
 

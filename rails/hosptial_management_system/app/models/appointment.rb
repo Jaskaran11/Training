@@ -1,6 +1,6 @@
 class Appointment < ApplicationRecord
   belongs_to :physician
-  belongs_to :patient
+  #belongs_to :patient
 
   enum status: {
     pending: 0,
