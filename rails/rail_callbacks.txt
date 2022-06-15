@@ -51,4 +51,12 @@ Loading development environment (Rails 7.0.3)
  => "Harry potter" 
  
  after_validation
+3.0.0 :013 > appointment.valid?
+  Physician Load (0.4ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]               
+ => true                                                           
+3.0.0 :014 > appointment.status
+ => 1 
+3.0.0 :015 > appointment.valid?
+ => true 
+
 
