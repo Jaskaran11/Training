@@ -26,4 +26,11 @@ class Book < ApplicationRecord
   scope :expensive_books, -> { select(:title).where('price > 200') }
   scope :costs_more_than, ->(amount) { where('price > ?', amount) }
   default_scope { where(rating: true) }
+  after_create :remove_whitespaces
+
+  private
+
+  def remove_whitespaces
+    title.strip!
+  end
 end
