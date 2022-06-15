@@ -45,20 +45,20 @@ class Author < ApplicationRecord
   scope :merging, -> { where('name is not null') }
   scope :limit_num, ->(len = 1) { limit len }
   
-  def before_save_method
-    puts 'before save'
+  def before_create_callback
+    puts 'before create'
   end
 
-  def after_save_method
-    puts 'after save'
+  def after_create_callback
+    puts 'after create'
   end
 
-  def around_save_method
-    puts 'in around save'
+  def around_create_callback
+    puts 'in around create'
     yield
-    puts 'out around save'
+    puts 'out around create'
   end
-  before_save :before_save_method
-  after_save :after_save_method
-  around_save :around_save_method
+  before_create :before_create_callback
+  after_create :after_create_callback
+  around_create :around_create_callback
 end

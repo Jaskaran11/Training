@@ -33,4 +33,7 @@ class Book < ApplicationRecord
   def remove_whitespaces
     title.strip!
   end
+
+  before_create :check_published_date
+
 end

@@ -153,3 +153,29 @@ after save
  => true                                                  
 3.0.0 :004 > 
 
+ around_create(*args, &block)
+Registers a callback to be called around the creation of a record. 
+3.0.0 :011 > exit
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails c
+Loading development environment (Rails 7.0.3)             
+3.0.0 :001 > a = Author.new
+ => #<Author:0x00007f476096e200 id: nil, name: nil, dob: nil, gender: nil, country: nil, created_at: nil, updated_at: nil, lock_version: 0, email_address: nil> 
+3.0.0 :002 > a.name = "Ken Follet"
+ => "Ken Follet" 
+3.0.0 :003 > a.email_address = "kenfollet@gmail.com"
+ => "kenfollet@gmail.com" 
+3.0.0 :004 > a.country = "British"
+ => "British" 
+3.0.0 :005 > a.dob = "1950/06/05"
+ => "1950/06/05" 
+3.0.0 :006 > a
+ => #<Author:0x00007f476096e200 id: nil, name: "Ken Follet", dob: Mon, 05 Jun 1950, gender: nil, country: "British", created_at: nil, updated_at: nil, lock_version: 0, email_address: "kenfollet@gmail.com">                                           
+3.0.0 :007 > a.save
+before create
+in around create                                          
+  TRANSACTION (0.2ms)  BEGIN                              
+  Author Create (0.5ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Ken Follet"], ["dob", "1950-06-05"], ["gender", nil], ["country", "British"], ["created_at", "2022-06-15 12:49:03.238926"], ["updated_at", "2022-06-15 12:49:03.238926"], ["lock_version", 0], ["email_address", "kenfollet@gmail.com"]]                  
+out around create                                         
+after create                                              
+  TRANSACTION (6.8ms)  COMMIT                             
+ => true         
