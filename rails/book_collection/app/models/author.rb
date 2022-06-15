@@ -44,4 +44,21 @@ class Author < ApplicationRecord
   has_many :publishers
   scope :merging, -> { where('name is not null') }
   scope :limit_num, ->(len = 1) { limit len }
+  
+  def before_save_method
+    puts 'before save'
+  end
+
+  def after_save_method
+    puts 'after save'
+  end
+
+  def around_save_method
+    puts 'in around save'
+    yield
+    puts 'out around save'
+  end
+  before_save :before_save_method
+  after_save :after_save_method
+  around_save :around_save_method
 end

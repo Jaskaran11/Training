@@ -134,3 +134,22 @@ Loading development environment (Rails 7.0.3)
  date_published: Mon, 11 Jul 1960,
  publisher_id: 1,
  author_id: 10017> 
+ 
+ around_save ->
+ around_* callbacks are invoked before the action, then when you want to invoke the action itself, you yield to it, then continue execution. That's why it's called around
+ 
+ #<Author:0x0000555ffb48f5e8                               
+...                                                       
+3.0.0 :002 > a.email_address = "harper_lee@yahoo.com"
+ => "harper_lee@yahoo.com" 
+3.0.0 :003 > a.save
+before save
+in around save                                            
+  TRANSACTION (0.5ms)  BEGIN                              
+  Author Update (0.9ms)  UPDATE "authors" SET "updated_at" = $1, "email_address" = $2, "lock_version" = $3 WHERE "authors"."id" = $4 AND "authors"."lock_version" = $5  [["updated_at", "2022-06-15 12:16:51.746998"], ["email_address", "harper_lee@yahoo.com"], ["lock_version", 2], ["id", 10019], ["lock_version", 1]]
+out around save                                           
+after save                                                
+  TRANSACTION (1.7ms)  COMMIT                             
+ => true                                                  
+3.0.0 :004 > 
+
