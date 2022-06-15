@@ -7,7 +7,7 @@ class Appointment < ApplicationRecord
   #def set_status
     #self.status = errors.empty?
   # end
-  before_save :set_status
+  after_save :set_status
   def set_status
     self.status = errors.empty?
   end

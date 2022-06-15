@@ -77,3 +77,28 @@ Registers a callback to be called before a record is saved.-
 3.0.0 :005 > appointment.valid?
   Physician Load (0.2ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]               
  => true  
+ 
+ 
+  after_save(*args, &block)
+Registers a callback to be called after a record is saved. -
+itsacheckmate@itscheckmate:~/Training/rails/hosptial_management_system$ rails c                                                                  
+Loading development environment (Rails 7.0.3)                      
+3.0.0 :001 > appointment = Appointment.new
+ => 
+#<Appointment:0x00007fbcb8ac3e98                                   
+...                                                                
+3.0.0 :002 > appointment.valid?
+ => false 
+3.0.0 :003 > 
+3.0.0 :003 > appointment.date = "2022/07/14"
+ => "2022/07/14" 
+3.0.0 :004 > appointment.valid?
+ => false 
+3.0.0 :005 > appointment.save
+ => false 
+ .0.0 :006 > appointment.valid?
+, "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["date", "2022-07-14"], ["created_at", "2022-06-15 10:35:10.074773"], ["updated_at", "2022-06-15 10:35:10.074773"], ["status", 0], ["physician_id", 1]]                                                               
+  TRANSACTION (0.7ms)  COMMIT                                      
+ => true                                                           
+3.0.0 :009 > appointment.valid?
+ => true
