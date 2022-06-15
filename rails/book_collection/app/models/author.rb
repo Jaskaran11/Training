@@ -44,21 +44,9 @@ class Author < ApplicationRecord
   has_many :publishers
   scope :merging, -> { where('name is not null') }
   scope :limit_num, ->(len = 1) { limit len }
-  
-  def before_create_callback
-    puts 'before create'
+  after_commit :send_email_notifications, on: :create
+ 
+  def send_email_notifications
+    send_email_notifications.perform_later(self.id)
   end
-
-  def after_create_callback
-    puts 'after create'
-  end
-
-  def around_create_callback
-    puts 'in around create'
-    yield
-    puts 'out around create'
-  end
-  before_create :before_create_callback
-  after_create :after_create_callback
-  around_create :around_create_callback
 end

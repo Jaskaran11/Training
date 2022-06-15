@@ -178,4 +178,28 @@ in around create
 out around create                                         
 after create                                              
   TRANSACTION (6.8ms)  COMMIT                             
- => true         
+ => true      
+ 
+ 
+ Destroying an Object
+ 
+ before_destroy - 
+ 1.Registers a callback to be called before a record is destroyed. 
+ 3.0.0 :004 > a.destroy
+  TRANSACTION (0.4ms)  BEGIN
+  Appointment Destroy (0.8ms)  DELETE FROM "appointments" WHERE "appointments"."id" = $1  [["id", 3]]
+  TRANSACTION (1.0ms)  COMMIT                            
+ =>                                                      
+#<Appointment:0x0000559b732d3890                         
+ id: 3,                                                  
+ date: Mon, 20 Jun 2022,                                 
+ created_at: Wed, 15 Jun 2022 13:04:27.886654000 UTC +00:00,
+ updated_at: Wed, 15 Jun 2022 13:04:27.886654000 UTC +00:00,
+ status: 0,                                              
+ physician_id: 1>                                        
+3.0.0 :005 > a.valid?
+ => true 
+3.0.0 :006 > a
+ => 
+
+    
