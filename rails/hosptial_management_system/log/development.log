@@ -222,3 +222,15 @@ FOREIGN KEY ("physician_id")
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
   [1m[36mAppointment Create (8.7ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "created_at", "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2022-07-14"], ["created_at", "2022-06-15 10:35:10.074773"], ["updated_at", "2022-06-15 10:35:10.074773"], ["status", 0], ["physician_id", 1]]
   [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Create (0.3ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "created_at", "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2022-06-20"], ["created_at", "2022-06-15 13:04:27.886654"], ["updated_at", "2022-06-15 13:04:27.886654"], ["status", 0], ["physician_id", 1]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPhysician Load (0.2ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAppointment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
