@@ -59,4 +59,21 @@ Loading development environment (Rails 7.0.3)
 3.0.0 :015 > appointment.valid?
  => true 
 
+ before_save(*args, &block)
+Registers a callback to be called before a record is saved.-
 
+3.0.0 :001 > appointment = Appointment.new
+ => 
+#<Appointment:0x00007f1fdc9bc528                                   
+...                                                                
+3.0.0
+
+3.0.0 :002 > appointment.valid?
+ => false 
+3.0.0 :003 > appointment.date = "2022/07/01"
+ => "2022/07/01" 
+3.0.0 :004 > appointment.physician_id =1
+ => 1 
+3.0.0 :005 > appointment.valid?
+  Physician Load (0.2ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]               
+ => true  
