@@ -3919,3 +3919,266 @@ ActiveRecord::Enum was introduced in Rails 4.1. An enum is an attribute where th
  => true 
 
 
+ Scopes
+
+Scoping allows you to specify commonly-used queries which can be referenced as method calls on the association objects or models. With these scopes, you can use every method previously covered such as where, joins and includes. All scope bodies should return an ActiveRecord::Relation or nil to allow for further methods (such as other scopes) to be called on it.
+
+3.0.0 :011 > Book.name_of_books
+  Book Load (0.7ms)  SELECT "books"."title" FROM "books"
+ =>               
+[#<Book:0x0000557dc5301c98 id: nil, title: "1234">,
+ #<Book:0x0000557dc5301bd0 id: nil, title: "3242334">,
+ #<Book:0x0000557dc5301b08 id: nil, title: nil>,
+ #<Book:0x0000557dc5301a40 id: nil, title: "">,
+ #<Book:0x0000557dc5301978 id: nil, title: "IT">,
+ #<Book:0x0000557dc53018b0 id: nil, title: "Harry Potter">,
+ #<Book:0x0000557dc53017e8 id: nil, title: "Firestarter">,
+ #<Book:0x0000557dc5301720 id: nil, title: "Rich Dad Poor Dad">,
+ #<Book:0x0000557dc5301658 id: nil, title: "The Shining">] 
+3.0.0 :012 > 
+
+Loading development environment (Rails 7.0.3)
+3.0.0 :001 > Book.expensive_books
+  Book Load (0.5ms)  SELECT "books"."title" FROM "books" WHERE (price > 200)
+ =>                                                         
+[#<Book:0x00007ff9bcb18830 id: nil, title: "IT">,           
+ #<Book:0x00007ff9bcb7a648 id: nil, title: "Harry Potter">, 
+ #<Book:0x00007ff9bcb7a580 id: nil, title: "Firestarter">,  
+ #<Book:0x00007ff9bcb7a4b8 id: nil, title: "Rich Dad Poor Dad">,
+ #<Book:0x00007ff9bcb7a3f0 id: nil, title: "The Shining">]
+ 
+ 1 Passing in arguments
+
+Your scope can take arguments:
+ 3.0.0 :001 > Book.costs_more_than(100)
+  Book Load (0.8ms)  SELECT "books".* FROM "books" WHERE (price > 100)
+ =>                                                         
+[#<Book:0x0000558d9d1f3058                                  
+  id: 12,                                                   
+  title: "IT",                                              
+  total_page: 235,                                          
+  rating: 4.5,                                              
+  price: 523,                                               
+  created_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  date_published: Fri, 22 Jan 1999,                         
+  publisher_id: nil,                                        
+  author_id: nil>,                                          
+ #<Book:0x00007f64bcb20e08                                  
+  id: 16,                                                   
+  title: "Harry Potter",
+  total_page: 342,
+  rating: 4.7,
+  price: 420,
+  created_at: Tue, 07 Jun 2022 14:17:24.855374000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:08:28.440667000 UTC +00:00,
+  date_published: Sun, 03 Jan 2010,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x00007f64bcb20d40
+  id: 17,
+  title: "Firestarter",
+  total_page: 400,
+  rating: 3.9,
+  price: 501,
+  created_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  date_published: Sun, 02 May 1999,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x00007f64bcb20c78
+  id: 5,
+  title: "Rich Dad Poor Dad",
+  total_page: 300,
+  rating: nil,
+  price: 499,
+  created_at: Wed, 25 May 2022 18:30:27.231538000 UTC +00:00,
+  updated_at: Mon, 13 Jun 2022 13:37:26.987371000 UTC +00:00,
+  date_published: Fri, 08 May 2015,
+  publisher_id: 2,
+  author_id: 1>,
+ #<Book:0x00007f64bcb20bb0
+  id: 14,
+  title: "The Shining",
+  total_page: 235,
+  rating: 4.5,
+  price: 10001,
+  created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  updated_at: Mon, 13 Jun 2022 15:10:14.461971000 UTC +00:00,
+  date_published: Thu, 22 Jun 2000,
+  publisher_id: 1,
+  author_id: 10017>] 
+
+Scopes are just class methods
+Scopes are great for using methods that fetch data for you, and you need to use those methods over and over in your project.
+It’s always a good idea to use scopes for selecting, sorting, joining or filtering data through your database, and then you can use class methods to chain those scopes, or even write more complex logic. Whether you use class methods or scopes, both give flexibility to your code, and at the same time, they increase the readability of your code which in turn is the essence of writing good piece of software. 
+
+default_scope { where(rating: true) }
+
+here we want to make sure that every book has a rating
+
+3.0.0 :003 > Book.new
+ => 
+#<Book:0x00007fab3c6fab28                                   
+ id: nil,                                                   
+ title: nil,                                                
+ total_page: nil,                                           
+ rating: 1.0,                                               
+ price: nil,                                                
+ created_at: nil,                                           
+ updated_at: nil,                                           
+ date_published: nil,                                       
+ publisher_id: nil,                                         
+ author_id: nil>  
+ 
+ default_scope will affect your model initialization
+ In a newly created instance of such a model, the default_scope will be reflected.
+ 
+ Unscoped removes ALL scopes that might normally apply to your select, including (but not limited to) associations.
+
+Merging of scopes
+
+Just like where clauses, scopes are merged using AND conditions.
+
+3.0.0 :001 > Author.limit_num(3).merging
+  Author Load (0.2ms)  SELECT "authors".* FROM "authors" WHERE (name is not null) LIMIT $1  [["LIMIT", 3]] 
+ =>                         
+[#<Author:0x000055f215ce87b0
+  id: 2,                    
+  name: "Customer 0",       
+  dob: Wed, 25 May 2022,    
+  gender: nil,              
+  country: nil,             
+  created_at: Wed, 25 May 2022 13:36:45.232174000 UTC +00:00,
+  updated_at: Wed, 25 May 2022 13:36:45.232174000 UTC +00:00,
+  lock_version: 0,
+  email_address: nil>,
+ #<Author:0x00007f60a0c8ec10
+  id: 3,
+  name: "Customer 1",
+  dob: Wed, 25 May 2022,
+  gender: nil,
+  country: nil,
+  created_at: Wed, 25 May 2022 13:36:45.234744000 UTC +00:00,
+  updated_at: Wed, 25 May 2022 13:36:45.234744000 UTC +00:00,
+  lock_version: 0,
+  email_address: nil>,
+ #<Author:0x00007f60a0c8eb48
+  id: 4,
+  name: "Customer 2",
+  dob: Wed, 25 May 2022,
+  gender: nil,
+  country: nil,
+  created_at: Wed, 25 May 2022 13:36:45.236521000 UTC +00:00,
+  updated_at: Wed, 25 May 2022 13:36:45.236521000 UTC +00:00,
+  lock_version: 0,
+  email_address: nil>] 
+
+
+Removing All Scoping
+
+If we wish to remove scoping for any reason we can use the unscoped method. This is especially useful if a default_scope is specified in the model and should not be applied for this particular query.
+3.0.0 :003 > Book.unscoped.load
+  Book Load (0.9ms)  SELECT "books".* FROM "books"
+ =>                                                                            
+[#<Book:0x00007f60a0460f20                                                     
+  id: 6,                                                                       
+  title: "1234",                                                               
+  total_page: 238,                                                             
+  rating: nil,                                                                 
+  price: nil,                                                                  
+  created_at: Fri, 27 May 2022 08:52:13.257238000 UTC +00:00,                  
+  updated_at: Fri, 27 May 2022 08:54:06.162250000 UTC +00:00,                  
+  date_published: nil,                                                         
+  publisher_id: nil,                                  
+  author_id: nil>,                                    
+ #<Book:0x000055f215500318                            
+  id: 7,                                              
+  title: "3242334",
+  total_page: nil,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 09:48:18.925743000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 09:48:18.925743000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f215500250
+  id: 8,
+  title: nil,
+  total_page: nil,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 16:56:24.649145000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 16:56:24.649145000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f215500188
+  id: 9,
+  title: "",
+  total_page: nil,
+  rating: nil,
+  price: nil,
+  created_at: Fri, 27 May 2022 16:57:48.367344000 UTC +00:00,
+  updated_at: Fri, 27 May 2022 16:57:48.367344000 UTC +00:00,
+  date_published: nil,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x000055f2155000c0
+  id: 12,
+  title: "IT",
+  total_page: 235,
+  rating: 4.5,
+  price: 523,
+  created_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  updated_at: Fri, 03 Jun 2022 17:35:14.755240000 UTC +00:00,
+  date_published: Fri, 22 Jan 1999,
+  publisher_id: nil,
+  author_id: nil>,
+ #<Book:0x00007f60a0343fc0
+  id: 16,
+  title: "Harry Potter",
+  total_page: 342,
+  rating: 4.7,
+  price: 420,
+  created_at: Tue, 07 Jun 2022 14:17:24.855374000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:08:28.440667000 UTC +00:00,
+  date_published: Sun, 03 Jan 2010,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x00007f60a0343ed0
+  id: 17,
+  title: "Firestarter",
+  total_page: 400,
+  rating: 3.9,
+  price: 501,
+  created_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  updated_at: Wed, 08 Jun 2022 08:37:17.462921000 UTC +00:00,
+  date_published: Sun, 02 May 1999,
+  publisher_id: nil,
+  author_id: 10017>,
+ #<Book:0x00007f60a0343de0
+  id: 5,
+  title: "Rich Dad Poor Dad",
+  total_page: 300,
+  rating: nil,
+  price: 499,
+  created_at: Wed, 25 May 2022 18:30:27.231538000 UTC +00:00,
+  updated_at: Mon, 13 Jun 2022 13:37:26.987371000 UTC +00:00,
+  date_published: Fri, 08 May 2015,
+  publisher_id: 2,
+  author_id: 1>,
+ #<Book:0x00007f60a0343d18
+  id: 14,
+  title: "The Shining",
+  total_page: 235,
+  rating: 4.5,
+  price: 10001,
+  created_at: Fri, 03 Jun 2022 17:38:43.865831000 UTC +00:00,
+  updated_at: Mon, 13 Jun 2022 15:10:14.461971000 UTC +00:00,
+  date_published: Thu, 22 Jun 2000,
+  publisher_id: 1,
+  author_id: 10017>] 
+
+

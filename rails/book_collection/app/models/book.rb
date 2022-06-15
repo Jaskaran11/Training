@@ -20,8 +20,10 @@ class Book < ApplicationRecord
   # belongs_to :author, dependent: :delete, validate: true, inverse_of: :books, touch: true
   belongs_to :author
   #has_many :publishers
-  
   #has_and_belongs_to_many :authors
   belongs_to :publisher
-  scope :price, -> { where(price > 100 )}
+  scope :name_of_books, -> { select(:title) }
+  scope :expensive_books, -> { select(:title).where('price > 200') }
+  scope :costs_more_than, ->(amount) { where('price > ?', amount) }
+  default_scope { where(rating: true) }
 end
