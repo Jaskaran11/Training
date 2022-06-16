@@ -399,3 +399,21 @@ A class name can be used by multiple HTML elements, while an id name must only b
     The value of the id attribute is case sensitive
     The id attribute is also used to create HTML bookmarks
     JavaScript can access an element with a specific id with the getElementById() method
+
+HTML Iframe Syntax
+The HTML <iframe> tag specifies an inline frame.
+An inline frame is used to embed another document within the current HTML document.
+
+
+Syntax
+<iframe src="url" title="description"></iframe> 
+
+Iframe - Target for a Link
+An iframe can be used as the target frame for a link.
+The target attribute of the link must refer to the name attribute of the iframe:
+
+The HTML <iframe> tag specifies an inline frame
+The src attribute defines the URL of the page to embed
+Always include a title attribute (for screen readers)
+The height and width attributes specifies the size of the iframe
+Use border:none; to remove the border around the iframe
