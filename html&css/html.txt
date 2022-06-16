@@ -185,3 +185,33 @@ The text in the <cite> element usually renders in italic
 HTML <bdo> for Bi-Directional Override
 BDO stands for Bi-Directional Override.
 The HTML <bdo> tag is used to override the current text direction.
+
+HTML Comment Tag
+You can add comments to your HTML source by using the following syntax:
+<!-- Write your comments here -->
+Notice that there is an exclamation point (!) in the start tag, but not in the end tag.
+
+HTML Styles - CSS
+CSS stands for Cascading Style Sheets.
+CSS saves a lot of work. It can control the layout of multiple web pages all at once.
+What is CSS?
+Cascading Style Sheets (CSS) is used to format the layout of a webpage.
+With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes.
+
+3 ways for css -
+Inline - by using the style attribute inside HTML elements
+Internal - by using a <style> element in the <head> section
+External - by using a <link> element to link to an external CSS file
+
+CSS Colors, Fonts and Sizes
+Here, we will demonstrate some commonly used CSS properties
+The CSS color property defines the text color to be used.
+The CSS font-family property defines the font to be used.
+The CSS font-size property defines the text size to be used
+
+CSS Padding
+The CSS padding property defines a padding (space) between the text and the border.
+
+CSS Margin
+The CSS margin property defines a margin (space) outside the border.
+
