@@ -464,4 +464,27 @@ The <kbd> element defines keyboard input
 The <samp> element defines sample output from a computer program
 The <code> element defines a piece of computer code
 The <var> element defines a variable in programming or in a mathematical expression
-The <pre> element defines preformatted text
+The <pre> element defines preformatted text.
+
+Semantic elements = elements with a meaning.
+What are Semantic Elements?
+A semantic element clearly describes its meaning to both the browser and the developer.
+Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+
+any web sites contain HTML code like: <div id="nav"> <div class="header"> <div id="footer"> to indicate navigation, header, and footer.
+
+In HTML there are some semantic elements that can be used to define different parts of a web page:
+<article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+
