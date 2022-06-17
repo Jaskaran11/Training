@@ -457,3 +457,11 @@ The <meta> element is typically used to specify the character set, page descript
 The <script> element is used to define client-side JavaScripts
 The <base> element specifies the base URL and/or target for all relative URLs in a page
 
+HTML <kbd> For Keyboard Input
+The HTML <kbd> element is used to define keyboard input. The content inside is displayed in the browser's default monospace font.
+
+The <kbd> element defines keyboard input
+The <samp> element defines sample output from a computer program
+The <code> element defines a piece of computer code
+The <var> element defines a variable in programming or in a mathematical expression
+The <pre> element defines preformatted text
