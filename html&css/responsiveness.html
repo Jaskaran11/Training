@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    box-sizing: border-box;
+    }
+  .left {
+    background-color: bisque;
+    padding: 20px;
+    float: left;
+    width: 20%;
+    }
+  .main {
+    background-color: royalblue;
+    padding: 20px;
+    float: left;
+    width: 60%
+    }
+  .right {
+    background-color: blue;
+    padding: 20px;
+    float: left;
+    width: 20%;
+    }
+  @media screen and (max-width: 800px){
+    .left, .main, .right {
+      width: 100%;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!--<h1 style="font-size:10vw;">Responsive Text</h1>
+  <p style="font-size:5vw;">This text will rescale when we resuze the browser window.</p>
+  -->
+  <h2>Media queries</h2>
+  <div class="left">
+    <p>Left Menu</p>
+  </div>
+  <div class="main">
+    <p>Main content</p>
+  </div>
+  <div class="right">
+    <p>Right Content</p>
+  </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale-1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--style>
 body {
     background-color: rgb(203, 135, 123);
@@ -25,6 +25,14 @@ h6{
 <p>Hello there <span style="color:blue;font-weight:bold">this text &nsbp will be in blue.</span></p>
 <p id="demo"></p>
 
+<!--<img src="photo.jpg" style="width:100%">-->
+<!--<img src="photo.jpg" style="max-width:100%;height:auto;">-->
+<picture>
+  <source srcset="photo.jpg" media="(max-width: 600px)">
+  <source srcset="1223603.jpg" media="(max-width: 1500px)">
+  <source srcset="1223603.jpg">
+  <img src="1223603.jpg" alt="City" style="width:auto;">
+</picture>
 <script>
 function myFunction(){
 document.getElementById("demo").style.fontSize = "30px";
