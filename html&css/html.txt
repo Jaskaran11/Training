@@ -740,3 +740,26 @@ Notes on the "post" method:
     Form submissions with the "post" method cannot be bookmarked
     The "post" method is more robust and secure than "get", and "post" does not have size limitations
 
+The formaction Attribute
+The input formaction attribute specifies the URL of the file that will process the input when the form is submitted.
+Note: This attribute overrides the action attribute of the <form> element.
+The formaction attribute works with the following input types: submit and image.
+
+The formenctype Attribute
+The input formenctype attribute specifies how the form-data should be encoded when submitted (only for forms with method="post").
+Note: This attribute overrides the enctype attribute of the <form> element.
+The formenctype attribute works with the following input types: submit and image.
+
+The formtarget Attribute
+The input formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
+Note: This attribute overrides the target attribute of the <form> element.
+The formtarget attribute works with the following input types: submit and image.
+
+The formnovalidate Attribute
+The input formnovalidate attribute specifies that an <input> element should not be validated when submitted.
+Note: This attribute overrides the novalidate attribute of the <form> element.
+The formnovalidate attribute works with the following input types: submit.
+
+The novalidate Attribute
+The novalidate attribute is a <form> attribute.
+When present, novalidate specifies that all of the form-data should not be validated when submitted.
