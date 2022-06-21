@@ -825,3 +825,8 @@ URLs can only be sent over the Internet using the ASCII character-set. If a URL 
 URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.
 URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.
 URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.
+
+The img element is required as the last child tag of the picture declaration block. The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source tags matched.
+
+width: auto; will try as hard as possible to keep an element the same width as its parent container when additional space is added from margins, padding, or borders.
+width: 100%; will make the element as wide as the parent container. Extra spacing will be added to the element's size without regards to the parent. This typically causes problems.
