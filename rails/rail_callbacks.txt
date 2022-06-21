@@ -227,3 +227,29 @@ out around delete
  email_address: nil> 
 3.0.0 :004 > 
 
+after_destroy(*args, &block)
+Registers a callback to be called after a record is destroyed - 
+
+3.0.0 :001 > author = Author.find(496)
+  Author Load (0.1ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2  [["id", 496], ["LIMIT", 1]]                               
+ =>                                                                    
+#<Author:0x000055598308b948                                            
+...                                                                    
+3.0.0 :002 > author.destroy
+  TRANSACTION (0.4ms)  BEGIN
+  Author Destroy (2.0ms)  DELETE FROM "authors" WHERE "authors"."id" = $1 AND "authors"."lock_version" IS NULL  [["id", 496]]                          
+Author 496 was destroyed.                                              
+  TRANSACTION (6.8ms)  COMMIT                                          
+ =>                                                                    
+#<Author:0x000055598308b948                                    
+ id: 496,                                                      
+ name: "Author #489",                                          
+ dob: nil,                                                     
+ gender: nil,                                                  
+ country: nil,                                                 
+ created_at: Wed, 25 May 2022 18:02:11.575720000 UTC +00:00,   
+ updated_at: Wed, 25 May 2022 18:02:11.575720000 UTC +00:00,   
+ lock_version: 0,                                              
+ email_address: nil> 
+3.0.0 :003 > 
+
