@@ -1,5 +1,5 @@
 class Physician < ApplicationRecord
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   after_touch :log_when_appointments_or_physician_touched
   private
   def log_when_appointments_or_physician_touched

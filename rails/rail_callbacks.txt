@@ -333,4 +333,50 @@ The whole callback chain is wrapped in a transaction. If any callback raises an 
 3.0.0 :004 > Physician.create!(name: "Arun")
 /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/persistence.rb:648:in `save!': Failed to save the record (ActiveRecord::RecordNotSaved)
 
+Relational Callbacks
+
+Callbacks work through model relationships, and can even be defined by them. Suppose an example where a user has many articles. A user's articles should be destroyed if the user is destroyed. Let's add an after_destroy callback to the User model by way of its relationship to the Article model.
+
+3.0.0 :003 > p.appointments.create!(date: "2022/07/07")
+  TRANSACTION (0.3ms)  BEGIN
+  Appointment Create (0.6ms)  INSERT INTO "appointments" ("date", "created_at", "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["date", "2022-07-07"], ["created_at", "2022-06-21 13:30:54.672435"], ["updated_at", "2022-06-21 13:30:54.672435"], ["status", 0], ["physician_id", 1]]    
+  Physician Update (0.6ms)  UPDATE "physicians" SET "updated_at" = $1 WHERE "physicians"."id" = $2  [["updated_at", "2022-06-21 13:30:54.674782"], ["id", 1]]   
+Appointment/Physician was touched.                                              
+  TRANSACTION (1.8ms)  COMMIT                                                   
+ =>                                                                             
+#<Appointment:0x00005632dbaef330                                                
+ id: 5,
+ date: Thu, 07 Jul 2022,
+ created_at: Tue, 21 Jun 2022 13:30:54.672435000 UTC +00:00,
+ updated_at: Tue, 21 Jun 2022 13:30:54.672435000 UTC +00:00,
+ status: 0,
+ physician_id: 1> 
+ 
+ 3.0.0 :004 > p.destroy
+  TRANSACTION (0.2ms)  BEGIN
+  Appointment Load (0.3ms)  SELECT "appointments".* FROM "appointments" WHERE "appointments"."physician_id" = $1  [["physician_id", 1]]     
+  Appointment Destroy (0.3ms)  DELETE FROM "appointments" WHERE "appointments"."id" = $1  [["id", 1]]                                       
+  Physician Load (0.1ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]          
+Article destroyed                                           
+  Appointment Destroy (0.1ms)  DELETE FROM "appointments" WHERE "appointments"."id" = $1  [["id", 2]]                                       
+  Physician Load (0.1ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]          
+Article destroyed                                           
+  Appointment Destroy (0.1ms)  DELETE FROM "appointments" WHERE "appointments"."id" = $1  [["id", 4]]                                       
+  Physician Load (0.3ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+Article destroyed
+  Appointment Destroy (0.1ms)  DELETE FROM "appointments" WHERE "appointments"."id" = $1  [["id", 5]]
+  Physician Load (0.1ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+Article destroyed
+  Physician Destroy (0.2ms)  DELETE FROM "physicians" WHERE "physicians"."id" = $1  [["id", 1]]
+  TRANSACTION (6.4ms)  COMMIT
+ => 
+#<Physician:0x00007f3074a40d48
+ id: 1,
+ name: "arun",
+ created_at: Tue, 14 Jun 2022 15:10:48.711381000 UTC +00:00,
+ updated_at: Tue, 21 Jun 2022 13:31:15.282567000 UTC +00:00,
+ patient_type: "sdr",
+ patient_id: 1,
+ head_id: nil> 
+3.0.0 :005 > 
 

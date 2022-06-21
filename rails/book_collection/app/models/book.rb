@@ -59,4 +59,8 @@ class Book < ApplicationRecord
   after_touch do |author|
     puts "You have touched an object!"
   end
+  after_destroy :log_destroy_action
+  def log_destroy_action
+    puts 'Book destroyed'
+  end
 end

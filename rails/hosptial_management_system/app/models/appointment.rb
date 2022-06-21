@@ -17,4 +17,8 @@ class Appointment < ApplicationRecord
   def check_id
     self.physician_id = errors.empty?
   end
+  after_destroy :log_destroy_action
+  def log_destroy_action
+    puts 'Appointment destroyed'
+  end
 end

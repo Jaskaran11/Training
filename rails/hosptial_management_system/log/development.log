@@ -248,3 +248,20 @@ FOREIGN KEY ("physician_id")
   [1m[36mAppointment Create (7.2ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "created_at", "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2022-10-20"], ["created_at", "2022-06-21 13:10:21.012982"], ["updated_at", "2022-06-21 13:10:21.012982"], ["status", 0], ["physician_id", 1]]
   [1m[36mPhysician Update (0.2ms)[0m  [1m[33mUPDATE "physicians" SET "updated_at" = $1 WHERE "physicians"."id" = $2[0m  [["updated_at", "2022-06-21 13:10:21.021263"], ["id", 1]]
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPhysician Load (0.6ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" ORDER BY "physicians"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAppointment Create (0.6ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "created_at", "updated_at", "status", "physician_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["date", "2022-07-07"], ["created_at", "2022-06-21 13:30:54.672435"], ["updated_at", "2022-06-21 13:30:54.672435"], ["status", 0], ["physician_id", 1]]
+  [1m[36mPhysician Update (0.6ms)[0m  [1m[33mUPDATE "physicians" SET "updated_at" = $1 WHERE "physicians"."id" = $2[0m  [["updated_at", "2022-06-21 13:30:54.674782"], ["id", 1]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."physician_id" = $1[0m  [["physician_id", 1]]
+  [1m[36mAppointment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 1]]
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 2]]
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 4]]
+  [1m[36mPhysician Load (0.3ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAppointment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "appointments" WHERE "appointments"."id" = $1[0m  [["id", 5]]
+  [1m[36mPhysician Load (0.1ms)[0m  [1m[34mSELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPhysician Destroy (0.2ms)[0m  [1m[31mDELETE FROM "physicians" WHERE "physicians"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
