@@ -28,8 +28,6 @@ class Book < ApplicationRecord
   default_scope { where(rating: true) }
   after_create :remove_whitespaces
 
-  private
-
   def remove_whitespaces
     title.strip!
   end
@@ -49,9 +47,9 @@ class Book < ApplicationRecord
     puts 'out around save'
   end
 
-  before_save :before_save_method
-  after_save :after_save_method
-  around_save :around_save_method
+  #before_save :before_save_method
+  #after_save :after_save_method
+  #around_save :around_save_method
 
   #after_initialize do |book|
     #puts "You have initialized an object book!"
@@ -62,5 +60,10 @@ class Book < ApplicationRecord
   after_destroy :log_destroy_action
   def log_destroy_action
     puts 'Book destroyed'
+  end   
+  after_create_commit :log_user_saved_to_db
+  after_update_commit :log_user_saved_to_db
+  def log_user_saved_to_db
+    puts 'Book was saved to database'
   end
 end

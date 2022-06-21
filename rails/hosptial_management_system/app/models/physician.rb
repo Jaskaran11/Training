@@ -13,4 +13,8 @@ class Physician < ApplicationRecord
   def throw_abort
     throw :abort
   end
+  after_save_commit :log_user_saved_to_db
+  def log_user_saved_to_db
+   puts 'Author was saved to database'
+  end
 end

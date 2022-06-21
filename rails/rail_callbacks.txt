@@ -380,3 +380,6 @@ Article destroyed
  head_id: nil> 
 3.0.0 :005 > 
 
+Transaction Callbacks - 
+
+There are two additional callbacks that are triggered by the completion of a database transaction: after_commit and after_rollback. These callbacks are very similar to the after_save callback except that they don't execute until after database changes have either been committed or rolled back. They are most useful when your active record models need to interact with external systems which are not part of the database transaction.
