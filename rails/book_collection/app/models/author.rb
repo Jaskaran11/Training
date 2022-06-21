@@ -59,4 +59,7 @@ class Author < ApplicationRecord
     puts "Author was destroyed." 
   end
   after_commit :display_author_name, on: :destroy
+  after_find do |author|
+    puts "You have found the author.!"
+  end
 end

@@ -34,6 +34,26 @@ class Book < ApplicationRecord
     title.strip!
   end
 
-  before_create :check_published_date
+  #before_create :check_published_date
+  def before_save_method
+    puts 'before save'
+  end
 
+  def after_save_method
+    puts 'after save'
+  end
+
+  def around_save_method
+    puts 'in around save'
+    yield
+    puts 'out around save'
+  end
+
+  before_save :before_save_method
+  after_save :after_save_method
+  around_save :around_save_method
+
+  after_initialize do |book|
+    puts "You have initialized an object book!"
+  end
 end
