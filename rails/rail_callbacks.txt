@@ -324,3 +324,13 @@ Appointment/Physician was touched.
   TRANSACTION (0.4ms)  COMMIT                                      
  => true                                                           
 3.0.0 :003 
+
+Halting Execution
+
+As you start registering new callbacks for your models, they will be queued for execution. This queue will include all your model's validations, the registered callbacks, and the database operation to be executed.
+The whole callback chain is wrapped in a transaction. If any callback raises an exception, the execution chain gets halted and a ROLLBACK is issued. To intentionally stop a chain use.
+
+3.0.0 :004 > Physician.create!(name: "Arun")
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activerecord-7.0.3/lib/active_record/persistence.rb:648:in `save!': Failed to save the record (ActiveRecord::RecordNotSaved)
+
+
