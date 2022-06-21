@@ -54,5 +54,9 @@ class Author < ApplicationRecord
   def send_email_notifications
     send_email_notifications.perform_later(self.id)
   end
-  after_destroy { |author| puts "Author #{author.id} was destroyed."}
+  #after_destroy { |author| puts "Author #{author.id} was destroyed."}
+  def display_author_name
+    puts "Author was destroyed." 
+  end
+  after_commit :display_author_name, on: :destroy
 end

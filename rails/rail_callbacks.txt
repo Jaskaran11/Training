@@ -253,3 +253,25 @@ Author 496 was destroyed.
  email_address: nil> 
 3.0.0 :003 > 
 
+
+after_commit/after_rollback
+Actions that trigger it: :create, :update, :destroy
+This callback is called after an object has been created, updated or destroyed. It can replace the after_save, after_update, after_update or after_destroy callbacks. You use this method when you want to run the same method when any of these 3 actions are executed.
+
+3.0.0 :002 > author.destroy
+  TRANSACTION (0.4ms)  BEGIN
+  Author Destroy (1.0ms)  DELETE FROM "authors" WHERE "authors"."id" = $1 AND "authors"."lock_version" IS NULL  [["id", 489]]                  
+  TRANSACTION (6.9ms)  COMMIT                                  
+Author was destroyed.                                          
+ =>                                                            
+#<Author:0x00007f6058807450                                    
+ id: 489,                                                      
+ name: "Author #482",                                          
+ dob: nil,                                                     
+ gender: nil,                                                  
+ country: nil,                                                 
+ created_at: Wed, 25 May 2022 18:02:11.563702000 UTC +00:00,   
+ updated_at: Wed, 25 May 2022 18:02:11.563702000 UTC +00:00,   
+ lock_version: 0,                                              
+ email_address: nil> 
+
