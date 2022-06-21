@@ -298,3 +298,29 @@ You have found the author.!
 #<Author:0x000055cf39d947d0                                            
 ...                                                                    
 3.0.0 :
+
+after_touch
+The after_touch callback will be called whenever an Active Record object is touched.
+
+3.0.0 :016 > book.touch
+  TRANSACTION (0.4ms)  BEGIN
+  Book Update (0.9ms)  UPDATE "books" SET "updated_at" = $1 WHERE "books"."id" = $2  [["updated_at", "2022-06-21 12:19:44.949363"], ["id", 20]]
+You have touched an object!                                 
+  TRANSACTION (2.0ms)  COMMIT                               
+ => true                                                    
+3.0.0 :017 
+
+It can be used along with belongs_to:
+
+#<Appointment:0x00007feb40743398                                               
+...                                                                            
+3.0.0 :002 > appointment.touch
+  TRANSACTION (0.4ms)  BEGIN
+  Appointment Update (1.2ms)  UPDATE "appointments" SET "updated_at" = $1 WHERE "appointments"."id" = $2  [["updated_at", "2022-06-21 12:46:28.572274"], ["id", 2]]                                                                          
+  Physician Load (0.6ms)  SELECT "physicians".* FROM "physicians" WHERE "physicians"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]                            
+An Appointment was touched.                                                    
+  Physician Update (0.1ms)  UPDATE "physicians" SET "updated_at" = $1 WHERE "physicians"."id" = $2  [["updated_at", "2022-06-21 12:46:28.601580"], ["id", 1]] 
+Appointment/Physician was touched.                                 
+  TRANSACTION (0.4ms)  COMMIT                                      
+ => true                                                           
+3.0.0 :003 

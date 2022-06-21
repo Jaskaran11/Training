@@ -53,7 +53,10 @@ class Book < ApplicationRecord
   after_save :after_save_method
   around_save :around_save_method
 
-  after_initialize do |book|
-    puts "You have initialized an object book!"
+  #after_initialize do |book|
+    #puts "You have initialized an object book!"
+  #end
+  after_touch do |author|
+    puts "You have touched an object!"
   end
 end

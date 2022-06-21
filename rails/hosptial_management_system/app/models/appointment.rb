@@ -1,7 +1,9 @@
 class Appointment < ApplicationRecord
-  belongs_to :physician
+  belongs_to :physician, touch: true
   #belongs_to :patient
-
+  after_touch do
+    puts 'An Appointment was touched.'
+  end
   validates :date, presence: true
   # after_validation :set_status
   #def set_status
