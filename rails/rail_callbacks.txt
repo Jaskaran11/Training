@@ -202,4 +202,28 @@ after create
 3.0.0 :006 > a
  => 
 
-    
+around_destroy - 
+3.0.0 :002 > author = Author.find(499)
+  Author Load (0.8ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2  [["id", 499], ["LIMIT", 1]]          
+ =>                                               
+#<Author:0x00007f8fe099ae90 
+... 
+3.0.0 :003 > author.destroy
+in around delete
+  TRANSACTION (0.4ms)  BEGIN                                   
+  Author Destroy (1.9ms)  DELETE FROM "authors" WHERE "authors"."id" = $1 AND "authors"."lock_version" IS NULL  [["id", 499]]                  
+out around delete                                              
+  TRANSACTION (6.9ms)  COMMIT                                  
+ =>                                                            
+#<Author:0x00007f8fe099ae90                                    
+ id: 499,                                                      
+ name: "Author #492",                                          
+ dob: nil,                                                     
+ gender: nil,                                                  
+ country: nil,                                                 
+ created_at: Wed, 25 May 2022 18:02:11.581671000 UTC +00:00,   
+ updated_at: Wed, 25 May 2022 18:02:11.581671000 UTC +00:00,   
+ lock_version: 0,
+ email_address: nil> 
+3.0.0 :004 > 
+
