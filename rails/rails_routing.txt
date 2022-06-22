@@ -59,4 +59,47 @@ Can serve web and enterprise-based applications.
 Uses multi-threading to support multiple requests in parallel.
 Facilitates longer running processes that are very resource-intensive​.
 
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails s
+=> Booting Puma
+=> Rails 7.0.3 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.4 (ruby 3.0.0-p0) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 6468
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+Started GET "/" for 127.0.0.1 at 2022-06-22 18:45:08 +0530
+  ActiveRecord::SchemaMigration Pluck (0.5ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC
+Processing by HomePageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home_page/index.html.erb within layouts/application
+  Book Count (0.8ms)  SELECT COUNT(*) FROM "books" WHERE "books"."rating" = $1  [["rating", 1.0]]
+  ↳ app/views/home_page/index.html.erb:2
+  Author Count (2.2ms)  SELECT COUNT(*) FROM "authors"
+  ↳ app/views/home_page/index.html.erb:3
+  Rendered home_page/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3290)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 37804)
+Completed 200 OK in 58ms (Views: 35.0ms | ActiveRecord: 6.1ms | Allocations: 51830)
 
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails g controller SignInPage index
+      create  app/controllers/sign_in_page_controller.rb
+       route  get 'sign_in_page/index'
+      invoke  erb
+      create    app/views/sign_in_page
+      create    app/views/sign_in_page/index.html.erb
+      invoke  test_unit
+      create    test/controllers/sign_in_page_controller_test.rb
+      invoke  helper
+      create    app/helpers/sign_in_page_helper.rb
+      invoke    test_unit
+
+
+Different type of routes - 
+1.Simple match route
+2.Default route
+3.Root route
+4.Resourcefful routes
