@@ -102,4 +102,9 @@ Different type of routes -
 1.Simple match route
 2.Default route
 3.Root route
-4.Resourcefful routes
+4.Resourceful routes
+
+Rails link - 
+<%= link_to(text, target) %>
+
+
