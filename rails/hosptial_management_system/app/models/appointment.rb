@@ -21,4 +21,16 @@ class Appointment < ApplicationRecord
   def log_destroy_action
     puts 'Appointment destroyed'
   end
+  after_update :check_date, unless: [:date?]
+  def check_date
+    print "plz provide the date for appointment"
+  end
+
+  def date?
+    if date.blank?
+      false
+    else 
+      true
+    end
+  end
 end

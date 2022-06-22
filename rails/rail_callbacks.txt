@@ -399,3 +399,20 @@ Loading development environment (Rails 7.0.3)
 Author Name is blank!  TRANSACTION (6.7ms)  COMMIT
  => true 
 3.0.0 :003 > 
+
+
+Conditional Callbacks
+
+As with validations, we can also make the calling of a callback method conditional on the satisfaction of a given predicate. We can do this using the :if and :unless options, which can take a symbol, a Proc or an Array. You may use the :if option when you want to specify under which conditions the callback should be called. If you want to specify the conditions under which the callback should not be called, then you may use the :unless option.
+
+1 Using :if and :unless with a Symbol
+You can associate the :if and :unless options with a symbol corresponding to the name of a predicate method that will get called right before the callback. When using the :if option, the callback won't be executed if the predicate method returns false; when using the :unless option, the callback won't be executed if the predicate method returns true. This is the most common option. Using this form of registration it is also possible to register several different predicates that should be called to check if the callback should be executed.
+
+Loading development environment (Rails 7.0.3)
+3.0.0 :001 > a =  Author.create(name:"asdasd")
+  TRANSACTION (0.1ms)  BEGIN
+  Author Create (0.4ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "asdasd"], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-06-22 09:05:22.974058"], ["updated_at", "2022-06-22 09:05:22.974058"], ["lock_version", 0], ["email_address", nil]]                 
+put author name!  TRANSACTION (0.4ms)  COMMIT
+ => 
+#<Author:0x00007fe13cab7a50
+... 

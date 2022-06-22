@@ -1,6 +1,6 @@
 class Author < ApplicationRecord
-  validates :country, exclusion: { in: %w(www us ca jp),
-    message: "%{value} is reserved." }
+  #validates :country, exclusion: { in: %w(www us ca jp),
+    #message: "%{value} is reserved." }
   # validates :email_address, format: { with: /\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})/ }
   # validates :email_address, uniqueness: true, on: :create
   # validates :name, presence: true, length: { minimum: 3 }
@@ -8,7 +8,7 @@ class Author < ApplicationRecord
   # errors.add :base, :invalid, message: "This person is invalid because ..."
   # end
   #validates :name, presence: true
-  after_save CheckEmpty.new
+  #after_save CheckEmpty.new
   #def name?
     #name =~ /[\w]+/
   #end
@@ -28,7 +28,7 @@ class Author < ApplicationRecord
     #record.errors.add(attr, 'Must start with the upper case') if value =~ /\A[[:lower:]]/
   #end
   # after_create :display_author_age
-
+  validates :name, presence: true, on: :create
   #def display_author_age 
     #if self.dob.present?
       #age = Date.today.year - self.dob.year
@@ -62,5 +62,18 @@ class Author < ApplicationRecord
   after_find do |author|
     puts "You have found the author.!"
   end
-  
+  # after_update :check_name, unless: [:name?]
+  after_save :check_name,
+   if: Proc.new { |author| author.name?}
+  def check_name
+    print "put author name!"
+  end
+
+  def name?
+    if name.blank?
+      false
+    else 
+      true
+    end
+  end
 end
