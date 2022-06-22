@@ -6,7 +6,6 @@ class Book < ApplicationRecord
   validates :title, confirmation: true, unless: ->{ title.blank? }
   #validates :title_confirmation, presence: true, if: Proc.new {|book| !book.title.blank? }
   validates :total_page, presence: true, unless: :total_page?
-
   #def total_page?
     #title.blank?
   #end
@@ -46,7 +45,7 @@ class Book < ApplicationRecord
     yield
     puts 'out around save'
   end
-
+  
   #before_save :before_save_method
   #after_save :after_save_method
   #around_save :around_save_method

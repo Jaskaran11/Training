@@ -7,8 +7,8 @@ class Author < ApplicationRecord
   #validate do |author|
   # errors.add :base, :invalid, message: "This person is invalid because ..."
   # end
-  validates :name, presence: true
-  
+  #validates :name, presence: true
+  after_save CheckEmpty.new
   #def name?
     #name =~ /[\w]+/
   #end
@@ -44,16 +44,16 @@ class Author < ApplicationRecord
   has_many :publishers
   scope :merging, -> { where('name is not null') }
   scope :limit_num, ->(len = 1) { limit len }
-  after_commit :send_email_notifications, on: :create
+  #after_commit :send_email_notifications, on: :create
   #def around_destroy_method
     #puts 'in around delete'
     #yield
     #puts 'out around delete'
   #end
   #around_destroy :around_destroy_method
-  def send_email_notifications
-    send_email_notifications.perform_later(self.id)
-  end
+  #def send_email_notifications
+    #send_email_notifications.perform_later(self.id)
+  #end
   #after_destroy { |author| puts "Author #{author.id} was destroyed."}
   def display_author_name
     puts "Author was destroyed." 
@@ -62,4 +62,5 @@ class Author < ApplicationRecord
   after_find do |author|
     puts "You have found the author.!"
   end
+  
 end

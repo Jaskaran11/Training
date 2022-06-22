@@ -383,3 +383,19 @@ Article destroyed
 Transaction Callbacks - 
 
 There are two additional callbacks that are triggered by the completion of a database transaction: after_commit and after_rollback. These callbacks are very similar to the after_save callback except that they don't execute until after database changes have either been committed or rolled back. They are most useful when your active record models need to interact with external systems which are not part of the database transaction.
+
+Callback Classes
+
+Sometimes the callback methods that you'll write will be useful enough to be reused by other models. Active Record makes it possible to create classes that encapsulate the callback methods, so they can be reused.
+
+
+Loading development environment (Rails 7.0.3)
+3.0.0 :001 > author = Author.new
+ => 
+#<Author:0x00007fe1347b71a0 
+...                         
+  TRANSACTION (0.4ms)  BEGIN
+  Author Create (0.9ms)  INSERT INTO "authors" ("name", "dob", "gender", "country", "created_at", "updated_at", "lock_version", "email_address") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", nil], ["dob", nil], ["gender", nil], ["country", nil], ["created_at", "2022-06-22 07:20:08.101962"], ["updated_at", "2022-06-22 07:20:08.101962"], ["lock_version", 0], ["email_address", nil]]
+Author Name is blank!  TRANSACTION (6.7ms)  COMMIT
+ => true 
+3.0.0 :003 > 
