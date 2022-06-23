@@ -1,11 +1,11 @@
 class Book < ApplicationRecord
   # has_many :total_page
   # validates :title, absence: true
-  validates :title, length: { maximum: 100,
-    too_long: "%{count} characters is the maximum allowed"}
-  validates :title, confirmation: true, unless: ->{ title.blank? }
+  #validates :title, length: { maximum: 100,
+    #too_long: "%{count} characters is the maximum allowed"}
+  #validates :title, confirmation: true, unless: ->{ title.blank? }
   #validates :title_confirmation, presence: true, if: Proc.new {|book| !book.title.blank? }
-  validates :total_page, presence: true, unless: :total_page?
+  #validates :total_page, presence: true, unless: :total_page?
   #def total_page?
     #title.blank?
   #end
@@ -24,7 +24,7 @@ class Book < ApplicationRecord
   scope :name_of_books, -> { select(:title) }
   scope :expensive_books, -> { select(:title).where('price > 200') }
   scope :costs_more_than, ->(amount) { where('price > ?', amount) }
-  default_scope { where(rating: true) }
+  #default_scope { where(rating: true) }
   after_create :remove_whitespaces
 
   def remove_whitespaces
