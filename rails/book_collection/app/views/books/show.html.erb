@@ -1,10 +1,26 @@
-<h1>Books#show</h1>
-<p><%= link_to('Edit Book', edit_book_path(@book)) %></p>
+
+<%= link_to('Back to List', books_path, :class => 'back-link') %>
+
 
 <div class="books show">
   <h2>Show Books</h2>
-    <table summary="Book detailed view">
-    <th>Title</th>
-    
-    </table>
+
+  <table summary="Book detailed view">
+  <tr>
+    <th>Title:</th>
+    <td><%= @book.title%></td>
+  </tr>
+  <tr>
+    <th>Created</th>
+    <td><%= @book.created_at%></td>
+  </tr>
+  <tr>
+    <th>Updated</th>
+    <td><%= @book.updated_at %></td>
+  </tr>
+  <tr>
+     <th>Author Name</th>
+     <td><%= @book.author %></td>
+  </tr>
+  </table>
 </div>
