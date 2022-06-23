@@ -1,34 +1,24 @@
-<!--<h1>Books#index</h1>
-<p><%= link_to('Show Book', book_path(14)) %></p>
--->
-
 <div class="books index>
   <h2>Books</h2>
-  <h2>Hello</h2>
-
-  <%= link_to("Add New Book", "home_page/index") %>
-
+  <%= link_to("Add New Book", new_book_path, :class => 'action new') %>
   <table class="listing" summary="Book list">
     <tr class="header">
-      <th>#</th>
       <th>Book</th>
-      <th>Authors</th>
+      
       <th>Actions</th>
     </tr>
     <% @book.each do |book| %>
     <tr>
     <td><%= book.title%></td>
-    <td class="center"><%= book.author %></td>
+    
     <td class="actions">
-      <%= link_to("Show", book_path(book), :class => 'action show')%>
-      <%= link_to("Edit", '#', :class => 'action edit')%>
-      <%= link_to("Delete", '#', :class => 'action delete')%>
+      <%= link_to("Show", book_path(book), :class => 'action show') %>
+      <%= link_to("Edit", '#', :class => 'action edit') %>
+      <%= link_to("Delete", '#', :class => 'action delete') %>
     </td>
     </tr>
     <% end %>
   </table>
-   <h2>Books</h2>
-   <%= link_to("Add New Book", "home_page/index") %>
-  <h2>Hello</h2>
 </div>
 
+    
