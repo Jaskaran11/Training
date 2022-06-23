@@ -153,4 +153,16 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
 
 itsacheckmate@itscheckmate:~/Training/rails/book_collection$ 
 
+REST refers to manipulating data through HTTP commands, and an ideology for how to streamline the relationship between the data that a user is manipulating on screen and the information that is saved on the server. A programmer can create a REST API that handles basic CRUD functions, but building a CRUD application in no way insinuates the use of RESTful programming.
+CRUD describes an application's functions, not the relationship between web services, web applications, or APIs. 
+In its base form, CRUD is a way of manipulating information, describing the function of an application. REST is controlling data through HTTP commands. It is a way of creating, modifying, and deleting information for the user. CRUD functions can exist in a REST API, but REST APIs are not limited to CRUD functions.
 
+CRUD is an acronym for Create, Read, Update, and Delete, the four fundamental operations of data storage. Computer scientists use CRUD as a measure of an application's completion state. If an application can't perform CRUD operations, it is incomplete. 
+
+A RESTful API is an acronym for Representational State Transfer. REST is an architectural style which defines a set of architectural constraints for stateless communication between Application Programming Interfaces, or APIs. It is not a standard, so it allows developers some flexibility, but it acts as a mediator between users, clients, and resources. REST has become ubiquitous in API programming because it emphasizes scalability and greater interoperability.
+
+A REST API sends HTTP requests to endpoints, and receives JSON files in return. The most common requests (or HTTP verbs) are:
+    GET request - This request reads information from a record in the database.
+    PUT request - This request changes a record's information in the database.  
+    POST request - This request creates a new record in the database.  
+    DELETE request - This request removes a record from the database.  
