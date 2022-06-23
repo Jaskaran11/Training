@@ -109,8 +109,48 @@ Rails link -
 
 
 Resource routing allows you to quickly declare all of the common routes for a given resourceful controller. A single call to resources can declare all of the necessary routes for your index , show , new , edit , create , update , and destroy actions.
+
+
 Scaffolding in Ruby on Rails refers to the auto-generation of a set of a model, views and a controller usually used for a single database table.
 
+it refers to the auto-generation of a set of a model, views and a controller usually used for a single database tabl
 
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails g scaffold vendor name:string address:text
+      invoke  active_record
+      create    db/migrate/20220623084417_create_vendors.rb
+      create    app/models/vendor.rb
+      invoke    test_unit
+      create      test/models/vendor_test.rb
+      create      test/fixtures/vendors.yml
+      invoke  resource_route
+       route    resources :vendors
+      invoke  scaffold_controller
+      create    app/controllers/vendors_controller.rb
+      invoke    erb
+      create      app/views/vendors
+      create      app/views/vendors/index.html.erb
+      create      app/views/vendors/edit.html.erb
+      create      app/views/vendors/show.html.erb
+      create      app/views/vendors/new.html.erb
+      create      app/views/vendors/_form.html.erb
+      create      app/views/vendors/_vendor.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/vendors_controller_test.rb
+      create      test/system/vendors_test.rb
+      invoke    helper
+      create      app/helpers/vendors_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/vendors/index.json.jbuilder
+      create      app/views/vendors/show.json.jbuilder
+      create      app/views/vendors/_vendor.json.jbuilder
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
+== 20220623084417 CreateVendors: migrating ====================================
+-- create_table(:vendors)
+   -> 0.0121s
+== 20220623084417 CreateVendors: migrated (0.0122s) ===========================
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ 
 
 
