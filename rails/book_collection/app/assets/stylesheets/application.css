@@ -18,7 +18,8 @@
     margin: 42px;
  }
 
-
-
-
+ .action_new{
+   text-decoration: none;
+   color: chocolate;
+ }
 

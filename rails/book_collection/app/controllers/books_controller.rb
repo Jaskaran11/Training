@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  layout 'book'
   def index
     @book = Book.order('title')
   end
