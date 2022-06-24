@@ -165,4 +165,9 @@ A REST API sends HTTP requests to endpoints, and receives JSON files in return. 
     GET request - This request reads information from a record in the database.
     PUT request - This request changes a record's information in the database.  
     POST request - This request creates a new record in the database.  
-    DELETE request - This request removes a record from the database.  
+    DELETE request - This request removes a record from the database.
+    
+Helpers are methods that allow you to encapsulate tasks for reuse throughout your views. 
+
+Partial templates help you package chunks of code for reuse in your views.
+ _form - convention to tell ruby that this is a partial template  

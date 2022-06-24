@@ -1,2 +1,15 @@
-<h1>Books#delete</h1>
-<p>Find me in app/views/books/delete.html.erb</p>
+<%= link_to("<< Back to list", books_path, :class => 'back-link') %>
+
+<div class="books new">
+  <h2>Delete Book</h2>
+  
+  <%= form_for(@book, :method => 'delete') do |f| %>
+  
+  <p>Are you  sure you wanna delete this book?</p>
+  <p><%= @book.title%></p>
+  <div class="form-buttons">
+  <%= f.submit("Delete Book")%>
+</div>
+
+<% end %>
+</div>
