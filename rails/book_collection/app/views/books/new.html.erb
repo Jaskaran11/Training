@@ -4,32 +4,12 @@
   <h2>Create Book</h2>
   
   <%= form_for(@book) do |f| %>
-   
-    <table summary="Book form fields">
-    <tr>
-      <th>Title</th>
-      <td><%= f.text_field(:title) %></td>
-    </tr>
-    <tr>
-      <th>Price</th>
-      <td><%= f.text_field(:price) %></td>
-    </tr>
-    <tr>
-      <th>Rating</th>
-      <td><%= f.text_field(:rating) %></td>
-    </tr>   
-   <tr>
-     <th>Author id</th>
-     <td><%= f.text_field(:author_id)%>
-   </tr>
-   <tr>
-     <th>Publisher id</th>
-     <td><%= f.text_field(:publisher_id)%>
-   </tr>
-   </table>
-   <div class="form-buttons">
-   <%= f.submit("Create Book")%>
+
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+  <div class="form-buttons">
+  <%= f.submit("Create Book")%>
 </div>
 
- <% end %>
+<% end %>
 </div>

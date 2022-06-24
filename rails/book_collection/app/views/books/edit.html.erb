@@ -5,23 +5,9 @@
   
   <%= form_for(@book) do |f| %>
    
-    <table summary="Book form fields">
-    <tr>
-      <th>Title</th>
-      <td><%= f.text_field(:title) %></td>
-    </tr>
-    <tr>
-      <th>Price</th>
-      <td><%= f.text_field(:price) %></td>
-    </tr>
-    <tr>
-      <th>Rating</th>
-      <td><%= f.text_field(:rating) %></td>
-    </tr>   
-   </table>
- 
-   <div class="form-buttons">
-   <%= f.submit("Update Book")%>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+<div class="form-buttons">
+  <%= f.submit("Update Book")%>
 </div>
 
  <% end %>
