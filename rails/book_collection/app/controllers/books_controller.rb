@@ -12,14 +12,10 @@ class BooksController < ApplicationController
   end
 
   def create
-    #Instantiate a new object using form parameters
     @book = Book.new(book_params)
-    #Save the object
     if @book.save
-    #If save fails, redirect to the index action
       redirect_to(books_path)
-    else 
-      # If save fails, redisplay the form so user can fix problem
+    else
       render('new')
     end
   end
@@ -28,11 +24,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def update 
+  def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to(book_path(@book))
-    else 
+    else
       render('edit')
     end
   end
@@ -43,10 +39,9 @@ class BooksController < ApplicationController
   def destroy
   end
 
-  private 
+  private
 
   def book_params
-    params.require(:book).permit(:title, :price, :rating)
+    params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id)
   end
 end
-
