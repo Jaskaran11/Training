@@ -1,5 +1,7 @@
+<center>
 <div class="books index">
   <h2>Books</h2>
+  <%= image_tag("book.jpg", alt: "Book image placeholder", :style => "width: 100px;height:100px") %><br>
   <%= link_to("Add New Book", new_book_path, :class => 'action new') %>
   <table class="listing" summary="Book list">
     <tr class="header">
@@ -22,5 +24,4 @@
     <% end %>
   </table>
 </div>
-
-    
+</center>

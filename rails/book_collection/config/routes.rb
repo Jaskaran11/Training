@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   #get 'books/new'
   #get 'books/edit'
   #get 'books/delete'
-  
+
   get 'sign_in_page/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'home_page/index'
-  
+
   resources :books do
     member do
       get :delete
