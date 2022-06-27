@@ -10,7 +10,8 @@ class Book < ApplicationRecord
     #title.blank?
   #end
   #before_validation :remove_whitespaces
-
+  
+  include Validatable
   # private
   # def remove_whitespaces
     # title.strip!

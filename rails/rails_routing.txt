@@ -279,3 +279,5 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails routes | grep
                                          DELETE /admin/authors/:id(.:format)                                                                      admin/authors#destroy
 itsacheckmate@itscheckmate:~/Training/rails/book_collection$ 
 
+Concerns - A Rails concern is any module that extends ActiveSupport::Concern module.
+Using extend ActiveSupport::Concern tells Rails that we are creating a concern. The code within the included block will be executed wherever the module is included. This is best for including third party functionality
