@@ -11,6 +11,8 @@ class Book < ApplicationRecord
   #end
   #before_validation :remove_whitespaces
   
+  has_one_attached :image
+
   include Validatable
   # private
   # def remove_whitespaces

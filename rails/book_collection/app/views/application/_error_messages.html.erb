@@ -3,7 +3,7 @@
     <h2><%= pluralize(object.errors.size, "error") %> Prohibited this record from being save</h2>
     <p>There were problems with the following fields:</p>
     <ul>
-  <% object.errros.full_messages.each do |msg| %>
+  <% object.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
     </ul>

@@ -3,10 +3,12 @@
 
 
 <div class="books show">
+  <%= image_tag @book.image if @book.image.attached? %>
+  <%= render @book %>  
   <h2>Show Books</h2>
 
   <table summary="Book detailed view">
-  <tr>
+  <tr> 
     <th>Title:</th>
     <td><%= @book.title%></td>
   </tr>
@@ -19,4 +21,5 @@
     <td><%= @book.updated_at %></td>
   </tr>
   </table>
+  <%= render @book %>
 </div>
