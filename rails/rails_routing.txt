@@ -247,3 +247,19 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails routes | grep
                                          DELETE /authors/:id(.:format)                                                                            authors#destroy
 itsacheckmate@itscheckmate:~/Training/rails/book_collection$ 
 
+
+Namespace routing is used when you want to organize a group of controllers under a namespace.
+When you use namespace, it will prefix the URL path for the specified resources, and try to locate the controller under a module named in the same manner as the namespace.
+Namespaces are used to organize a group of controllers. For example, you may wish to organize a group of controllers that are only accessible by the admin of your app, under the Admin:: namespac
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails routes | grep admin
+                           admin_authors GET    /admin/authors(.:format)                                                                          admin/authors#index
+                                         POST   /admin/authors(.:format)                                                                          admin/authors#create
+                        new_admin_author GET    /admin/authors/new(.:format)                                                                      admin/authors#new
+                       edit_admin_author GET    /admin/authors/:id/edit(.:format)                                                                 admin/authors#edit
+                            admin_author GET    /admin/authors/:id(.:format)                                                                      admin/authors#show
+                                         PATCH  /admin/authors/:id(.:format)                                                                      admin/authors#update
+                                         PUT    /admin/authors/:id(.:format)                                                                      admin/authors#update
+                                         DELETE /admin/authors/:id(.:format)                                                                      admin/authors#destroy
+
+

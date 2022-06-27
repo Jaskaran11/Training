@@ -32,5 +32,8 @@ Rails.application.routes.draw do
       get :name
     end
   end
-
+  
+  namespace :admin do 
+    resources :authors
+  end
 end
