@@ -262,4 +262,20 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails routes | grep
                                          PUT    /admin/authors/:id(.:format)                                                                      admin/authors#update
                                          DELETE /admin/authors/:id(.:format)                                                                      admin/authors#destroy
 
+Both scope and namespace are scoping a set of routes to the given default options.
+Except that there are no default options for scope, and for namespace :path, :as, :module, :shallow_path and :shallow_prefix options all default to the name of the namespace. 
+
+scope supports three options: module, path and as.
+If you take a deep look into scope and namespace default behaviour, you will find that scope by default supports only :path option, where as namespace supports three options module, path and as by default.
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails routes | grep admin
+                           admin_authors GET    /admin/authors(.:format)                                                                          admin/authors#index
+                                         POST   /admin/authors(.:format)                                                                          admin/authors#create
+                        new_admin_author GET    /admin/authors/new(.:format)                                                                      admin/authors#new
+                       edit_admin_author GET    /admin/authors/:id/edit(.:format)                                                                 admin/authors#edit
+                            admin_author GET    /admin/authors/:id(.:format)                                                                      admin/authors#show
+                                         PATCH  /admin/authors/:id(.:format)                                                                      admin/authors#update
+                                         PUT    /admin/authors/:id(.:format)                                                                      admin/authors#update
+                                         DELETE /admin/authors/:id(.:format)                                                                      admin/authors#destroy
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ 
 

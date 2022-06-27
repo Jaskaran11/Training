@@ -33,7 +33,13 @@ Rails.application.routes.draw do
     end
   end
   
-  namespace :admin do 
+  #namespace :admin do 
+    #resources :authors
+  #end
+  #scope module: :admin do
+    #resources :authors
+  #end
+  scope :admin do
     resources :authors
   end
 end
