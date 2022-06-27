@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  helper_method :formatted_date 
   layout 'book'
   def index
     @book = Book.order('title')
@@ -49,4 +50,9 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id, :image)
   end
+ 
+  def formatted_date(date)
+    date.strftime('%A, %b, %d, %Y')
+  end  
+
 end

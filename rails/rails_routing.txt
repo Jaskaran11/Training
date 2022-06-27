@@ -318,5 +318,11 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails db:migrate
 Declaring Active Storage Services
 config/storage.yml
 
+helper method defined inside a controller are not treated as other action as defined in the controller.
+it has 2 advantage-
+you can use this method into the controller and still manage viewport
+this helper method keyword it makes this method makes it available for views as well.
+when you define helper method into controller, that is avalaible for the only controller it is defined in.
+
 
 
