@@ -281,3 +281,17 @@ itsacheckmate@itscheckmate:~/Training/rails/book_collection$
 
 Concerns - A Rails concern is any module that extends ActiveSupport::Concern module.
 Using extend ActiveSupport::Concern tells Rails that we are creating a concern. The code within the included block will be executed wherever the module is included. This is best for including third party functionality
+
+
+Nested Resource - 
+
+
+      author_books GET    /authors/:author_id/books(.:format)                                                               books#index
+                                         POST   /authors/:author_id/books(.:format)                                                               books#create
+                         new_author_book GET    /authors/:author_id/books/new(.:format)                                                           books#new
+                        edit_author_book GET    /authors/:author_id/books/:id/edit(.:format)                                                      books#edit
+                             author_book GET    /authors/:author_id/books/:id(.:format)                                                           books#show
+                                         PATCH  /authors/:author_id/books/:id(.:format)                                                           books#update
+                                         PUT    /authors/:author_id/books/:id(.:format)                                                           books#update
+                                         DELETE /authors/:author_id/books/:id(.:format)                                                           books#destroy
+

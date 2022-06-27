@@ -23,15 +23,19 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-
+  
   resources :authors do
-    member do
-      get :delete
-    end
-    collection do
-      get :name
-    end
+    resources :books
   end
+
+  #resources :authors do
+    #member do
+      #get :delete
+    #end
+    #collection do
+      #get :name
+    #end
+  #end
   
   #namespace :admin do 
     #resources :authors
