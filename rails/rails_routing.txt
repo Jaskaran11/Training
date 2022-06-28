@@ -373,8 +373,23 @@ Copied migration 20220628105348_create_action_text_tables.action_text.rb from ac
       create    test/fixtures/action_text/rich_texts.yml
 
 
-
+Rake utility allows you to create a job/task which uses rails environment. So say, you want to count the votes a user has given to an article and save it somewhere. You write a rake job, in which you can use Rails models and other helpers and get it done without going away from Rails.
 
 itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails custom:greet_the_user
 Hello User! Welcome to the rake world!
 
+
+rake task using rails generator
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails g task active_record_counter books_count authors_count
+      create  lib/tasks/active_record_counter.rake
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails active_record_counter:books_count
+Books Count = 16
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails active_record_counter:authors_count
+Authors Count = 10020
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails -T | grep active_record_counter 
+rails active_record_counter:authors_count  # Display the count of author model
+rails active_record_counter:books_count    # Display the count of book model
