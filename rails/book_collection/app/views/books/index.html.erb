@@ -4,15 +4,6 @@
   <%= image_tag("book.jpg", alt: "Book image placeholder", :style => "width: 100px;height:100px") %><br>
   <%= link_to("Add New Book", new_book_path, :class => 'action_new') %>
   <div class = "books show">
-  <div class = "image-body">
-  <div class ="row">
-    <%= image_tag book.image , class: 'img-fluid' if book.image.attached?  %>
-  </div>
-  <div class="col-lg-7">
-    <%= render book %>
-  </div>
-  </div>
-  </div>
   <table class="listing" summary="Book list">
     <tr class="header">
       <th>Book</th>

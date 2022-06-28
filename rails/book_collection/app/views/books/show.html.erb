@@ -2,9 +2,7 @@
 <%= link_to('Back to List', books_path, :class => 'back-link') %>
 
 
-<div class="books show">
-  <%= image_tag @book.image if @book.image.attached? %>
-  <%= render @book %>  
+<div class="books show">  
   <h2>Show Books</h2>
 
   <table summary="Book detailed view">
@@ -20,6 +18,10 @@
     <th>Updated</th>
     <td><%= @book.updated_at %></td>
   </tr>
+  <tr>
+    <th>Content</th>
+    <%= @book.content%>
+  </tr>
   </table>
-  <%= render @book %>
+  <%= image_tag(@book.image,size:"160x120") if @book.image.attached? %>
 </div>

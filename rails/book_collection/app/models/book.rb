@@ -13,6 +13,8 @@ class Book < ApplicationRecord
   
   has_one_attached :image
 
+  has_rich_text :content
+
   include Validatable
   # private
   # def remove_whitespaces

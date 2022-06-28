@@ -21,8 +21,12 @@
     <th>Publisher id</th>
     <td><%= f.text_field(:publisher_id)%>
   </tr>
+  <tr>
+    <th>Content Upload</th>
+    <td><%= f.rich_text_area(:content) %></td>
+  </tr>
 </table>
 <div class="img-1">
+  <p>Image upload</p>
   <%= f.label :image, style: "display: block" %>
-  <%= f.file_field :image %>
 </div>

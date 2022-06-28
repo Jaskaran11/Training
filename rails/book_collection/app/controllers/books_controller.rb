@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id, :image)
+    params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id, :image, :content)
   end
  
   def formatted_date(date)
