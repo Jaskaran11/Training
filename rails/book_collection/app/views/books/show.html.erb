@@ -7,7 +7,7 @@
 
   <table summary="Book detailed view">
   <tr> 
-    <%= debug @book%>
+    <%= simple_format @book.to_yaml%>
     <th>Title:</th>
     <td><%= @book.title%></td>
   </tr>

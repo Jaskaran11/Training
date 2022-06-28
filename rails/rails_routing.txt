@@ -489,3 +489,36 @@ concise_attributes:
 new_record: false
 active_record_yaml_version: 2
 
+
+Alternatively, calling to_yaml on any object converts it to YAML. You can pass this converted object into the simple_format helper method to format the output. This is how debug does its magic.
+
+--- !ruby/object:Book
+concise_attributes:
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: id
+value_before_type_cast: 9
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: title
+value_before_type_cast: ''
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: total_page
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: rating
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: price
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: created_at
+value_before_type_cast: 2022-05-27 16:57:48.367344000 Z
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: updated_at
+value_before_type_cast: 2022-05-27 16:57:48.367344000 Z
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: date_published
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: publisher_id
+- !ruby/object:ActiveModel::Attribute::FromDatabase
+name: author_id
+new_record: false
+active_record_yaml_version: 2
+
+
