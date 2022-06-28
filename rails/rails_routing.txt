@@ -325,4 +325,15 @@ this helper method keyword it makes this method makes it available for views as 
 when you define helper method into controller, that is avalaible for the only controller it is defined in.
 
 
+Webpacker - 
+Webpacker is a Rails wrapper around the webpack.
+The goal of webpack, or any front-end build system, is to allow you to write your front-end code in a way that is convenient for developers and then package that code in a way that is convenient for browsers. With webpack, you can manage JavaScript, CSS, and static assets like images or fonts. Webpack will allow you to write your code, reference other code in your application, transform your code, and combine your code into easily downloadable packs.
 
+Sprockets vs Webpacker - 
+Webpacker is better to use over Sprocket if you work with modern javascript and rails.
+
+Sprockets is better choice than webpacker if you are working with legacy application, because migration might be costly.
+In rails 7, webpacker is not default option but an optional one.
+Webpack helps us organize our JavaScript file code to avoid errors and improve a website’s performance. It organizes the code into bundles.
+Webpacker is a tool that integrates Webpack with a Rails application. It makes it easy to configure and develop JavaScript-like applications and optimize them for the production environment.
+To include Webpacker in a new project, add --webpack to the rails new command. To add Webpacker to an existing project, add the webpacker gem to the project's Gemfile, run bundle install, and then run bin/rails webpacker:install.
