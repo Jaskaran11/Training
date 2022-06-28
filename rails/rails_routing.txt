@@ -393,3 +393,67 @@ Authors Count = 10020
 itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails -T | grep active_record_counter 
 rails active_record_counter:authors_count  # Display the count of author model
 rails active_record_counter:books_count    # Display the count of book model
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ yarn add bootstrap@4.3.1 jquery popper.js
+yarn add v1.22.19
+info No lockfile found.
+[1/4] Resolving packages...
+warning popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 3 new dependencies.
+info Direct dependencies
+├─ bootstrap@4.3.1
+├─ jquery@3.6.0
+└─ popper.js@1.16.1
+info All dependencies
+├─ bootstrap@4.3.1
+├─ jquery@3.6.0
+└─ popper.js@1.16.1
+Done in 1.32s.
+
+
+itsacheckmate@itscheckmate:~/Training/rails/book_collection$ rails css:install:bootstrap
+Build into app/assets/builds
+      create  app/assets/builds
+      create  app/assets/builds/.keep
+      append  app/assets/config/manifest.js
+Stop linking stylesheets automatically
+        gsub  app/assets/config/manifest.js
+      append  .gitignore
+      append  .gitignore
+Remove app/assets/stylesheets/application.css so build output can take over
+      remove  app/assets/stylesheets/application.css
+Add stylesheet link tag in application layout
+File unchanged! The supplied flag value not found!  app/views/layouts/application.html.erb
+Add default Procfile.dev
+      create  Procfile.dev
+Ensure foreman is installed
+         run  gem install foreman from "."
+Fetching foreman-0.87.2.gem
+Successfully installed foreman-0.87.2
+Parsing documentation for foreman-0.87.2
+Installing ri documentation for foreman-0.87.2
+Done installing documentation for foreman after 0 seconds
+1 gem installed
+Add bin/dev to start foreman
+      create  bin/dev
+Install Bootstrap with Bootstrap Icons and Popperjs/core
+      create  app/assets/stylesheets/application.bootstrap.scss
+         run  yarn add sass bootstrap bootstrap-icons @popperjs/core from "."
+yarn add v1.22.19
+warning package.json: No license field
+warning No license field
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+error sass@1.53.0: The engine "node" is incompatible with this module. Expected version ">=12.0.0". Got "10.19.0"
+error Found incompatible module.
+info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.
+      insert  config/initializers/assets.rb
+Appending Bootstrap JavaScript import to default entry point
+      append  app/javascript/application.js
+Add build:css script
+Add "scripts": { "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules" } to your package.json
+
