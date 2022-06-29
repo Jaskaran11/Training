@@ -53,9 +53,8 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id, :content, :image)
   end
- 
+
   def formatted_date(date)
     date.strftime('%A, %b, %d, %Y')
-  end  
-
+  end
 end
