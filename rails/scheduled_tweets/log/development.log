@@ -1065,3 +1065,172 @@ Migrating to CreateUsers (20220629143647)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "rohit@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-06-29 15:15:01.256203"], ["updated_at", "2022-06-29 15:15:01.256203"]]
   [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5254333602139059795)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220629143647)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220629143647"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5254333602139059795)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5254333602139059795)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220629143647)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220629143647"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5254333602139059795)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2022-06-29 15:39:25.376834"], ["updated_at", "2022-06-29 15:39:25.376834"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2022-06-29 21:27:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 367)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 405)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 36202)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 41799)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:27:47 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 158)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2974)
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 1.8ms | Allocations: 9224)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:31:11 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1454)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 329)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 16098)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 1.6ms | Allocations: 19200)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:31:19 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 617)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 3096)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3428)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:35:28 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1016)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 15656)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 1.4ms | Allocations: 18747)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:38:49 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 879)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 4192)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 5229)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:39:25 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 8113)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 11425)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 12454)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:40:28 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1452)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 328)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4768)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 5798)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:41:02 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1422)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4740)
+Completed 200 OK in 5ms (Views: 4.7ms | Allocations: 5766)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:41:25 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1431)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4743)
+Completed 200 OK in 5ms (Views: 5.0ms | Allocations: 5769)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:42:28 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1675)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4986)
+Completed 200 OK in 6ms (Views: 5.4ms | Allocations: 6012)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:43:28 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1529)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4840)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 5866)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-06-29 21:44:04 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1534)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 325)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4851)
+Completed 200 OK in 6ms (Views: 5.6ms | Allocations: 5877)
+
+
