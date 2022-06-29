@@ -338,3 +338,82 @@ Processing by MainController#index as HTML
 Completed 200 OK in 4ms (Views: 3.6ms | Allocations: 3800)
 
 
+Started GET "/about" for ::1 at 2022-06-29 17:07:37 +0530
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2570)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 3428)
+
+
+Started GET "/about" for ::1 at 2022-06-29 17:37:36 +0530
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 157)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 3097)
+Completed 200 OK in 4ms (Views: 3.4ms | Allocations: 4107)
+
+
+Started GET "/about" for ::1 at 2022-06-29 17:39:18 +0530
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 142)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 3070)
+Completed 200 OK in 4ms (Views: 3.3ms | Allocations: 4081)
+
+
+Started GET "/" for ::1 at 2022-06-29 17:39:20 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 118)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2662)
+Completed 200 OK in 5ms (Views: 4.2ms | Allocations: 3498)
+
+
+Started GET "/" for ::1 at 2022-06-29 17:39:21 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2461)
+Completed 200 OK in 2ms (Views: 2.0ms | Allocations: 2780)
+
+
+Started GET "/about" for ::1 at 2022-06-29 17:39:22 +0530
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2458)
+Completed 200 OK in 3ms (Views: 2.8ms | Allocations: 2778)
+
+
+Started GET "/about" for ::1 at 2022-06-29 17:39:22 +0530
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2468)
+Completed 200 OK in 8ms (Views: 7.2ms | Allocations: 2787)
+
+
+Started GET "/" for ::1 at 2022-06-29 17:39:30 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2476)
+Completed 200 OK in 3ms (Views: 2.5ms | Allocations: 2794)
+
+
