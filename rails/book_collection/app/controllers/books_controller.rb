@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      CrudNotificationMailer.create_notification(@book).deliver_now
+      CrudNotificationMailer.create_notification(@book).deliver_later
       redirect_to(books_path)
     else
       render('new')
@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id, :image, :content)
+    params.require(:book).permit(:title, :price, :rating, :publisher_id, :author_id, :content, :image)
   end
  
   def formatted_date(date)
