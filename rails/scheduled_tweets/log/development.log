@@ -2334,3 +2334,135 @@ Processing by RegistrationsController#new as HTML
 Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 6442)
 
 
+Started GET "/" for 127.0.0.1 at 2022-06-30 16:50:36 +0530
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 5020)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5099)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.2ms | Allocations: 11994)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<ActionView::Base:0x0000000001c4f8>
+Did you mean?  root_path
+               about_path):
+    5: <% if @user %>
+    6:   Logged in as: <%= @user.email %>
+    7: 
+    8:   <%= button_to "Logout", logout_path, method: :delete %>
+    9: <% end %> 
+  
+app/views/main/index.html.erb:8
+Started GET "/" for 127.0.0.1 at 2022-06-30 16:52:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 832)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 338)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 36214)
+Completed 200 OK in 33ms (Views: 21.5ms | ActiveRecord: 2.1ms | Allocations: 49509)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-06-30 16:52:08 +0530
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 514)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-30 16:52:08 +0530
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 137)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2576)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 3117)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-30 16:52:26 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 17)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 159)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 13995)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 14923)
+
+
+Started GET "/" for ::1 at 2022-06-30 16:53:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 443)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 473)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 35660)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 41070)
+
+
+Started GET "/sign_up" for ::1 at 2022-06-30 16:53:49 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4122)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 174)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6729)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 1.5ms | Allocations: 12955)
+
+
+Started POST "/sign_up" for ::1 at 2022-06-30 16:53:59 +0530
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"rohit@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "rohit@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-06-30 11:23:59.361172"], ["updated_at", "2022-06-30 11:23:59.361172"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://[::1]:3000/
+Completed 302 Found in 166ms (ActiveRecord: 2.2ms | Allocations: 3507)
+
+
+Started GET "/" for ::1 at 2022-06-30 16:53:59 +0530
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 282)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 161)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2854)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 5814)
+
+
+Started DELETE "/logout" for ::1 at 2022-06-30 16:54:00 +0530
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://[::1]:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 439)
+
+
+Started GET "/" for ::1 at 2022-06-30 16:54:00 +0530
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 175)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 33)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2566)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 3070)
+
+
