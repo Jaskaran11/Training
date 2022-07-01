@@ -3496,3 +3496,2611 @@ Processing by PasswordResetsController#edit as HTML
 Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 8119)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:18:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 374)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 1610)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 37476)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 42745)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:18:32 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/auth/twitter"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:20:05 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 372)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 651)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4012)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 5037)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:20:07 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:23:37 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 363)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 651)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4016)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5041)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:23:39 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:23:52 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:23:55 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:24:30 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:33:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 673)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 37688)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 42957)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:34:04 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:53:08 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 673)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 37614)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 42883)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:54:01 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 368)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 651)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4008)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5033)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:54:02 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:55:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 691)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 37546)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 42815)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:55:03 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:57:27 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:57:31 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 234)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 370)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 14464)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 15284)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 14:57:32 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 214)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 257)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2825)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3149)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 14:57:34 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:00:33 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-07-01 15:01:17 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 385)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 752)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 15552)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 16650)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-07-01 15:01:19 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:02:30 +0530
+Started GET "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:02:30 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:02:34 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:03:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 691)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 37631)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.0ms | Allocations: 42900)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:03:44 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:05:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 691)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 37737)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 43006)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:05:42 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:06:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 691)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 37656)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 42926)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:06:38 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:07:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 691)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 37643)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 42912)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:07:38 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:08:11 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 234)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 376)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 14422)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 15244)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:08:13 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:09:30 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 691)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1603)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 37753)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 43022)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:09:31 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter/callback" for ::1 at 2022-07-01 15:10:46 +0530
+  
+OmniAuth::NoSessionError (Session Expired):
+  
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:45:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-01 15:11:00 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3947)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 256)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 6652)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 3.0ms | Allocations: 12657)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-01 15:11:04 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1495)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 239)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 4089)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 4437)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-01 15:11:07 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1494)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 239)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 4087)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 4432)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-01 15:11:10 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1494)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 237)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4085)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4425)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-01 15:11:12 +0530
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2644)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 252)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 5327)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 6200)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-07-01 15:11:18 +0530
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"rohit@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rohit@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 164ms (ActiveRecord: 0.5ms | Allocations: 2551)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:11:19 +0530
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 214)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 446)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 3069)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 4501)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:11:27 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter/callback" for ::1 at 2022-07-01 15:11:33 +0530
+  
+OmniAuth::NoSessionError (Session Expired):
+  
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:45:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth" for 127.0.0.1 at 2022-07-01 15:11:44 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  
+Started GET "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:11:49 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter/callback" for ::1 at 2022-07-01 15:12:04 +0530
+  
+OmniAuth::NoSessionError (Session Expired):
+  
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:45:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:15:18 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 689)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 919)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 36932)
+Completed 200 OK in 35ms (Views: 23.6ms | ActiveRecord: 2.4ms | Allocations: 50674)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:15:19 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:19:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 689)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 922)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 36958)
+Completed 200 OK in 42ms (Views: 31.8ms | ActiveRecord: 2.0ms | Allocations: 50699)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:19:06 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:19:56 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:24:41 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:25:12 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter/callback" for 127.0.0.1 at 2022-07-01 15:25:23 +0530
+  
+OmniAuth::NoSessionError (Session Expired):
+  
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:45:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:26:08 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-07-01 15:26:47 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 214)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 257)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2842)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 3167)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-07-01 15:26:48 +0530
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=Q3oxe8mFt7MNHVSjwFvJU7YO0WwVF0TJ" for ::1 at 2022-07-01 15:26:50 +0530
+  
+Zeitwerk::NameError (expected file /home/itsacheckmate/Training/rails/scheduled_tweets/app/controllers/omniauth_callbacks_controller.rb to define constant OmniauthCallbacksController, but didn't):
+  
+zeitwerk (2.6.0) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:28:in `require'
+activesupport (7.0.3) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.3) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.3) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.3) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.3) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.3) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.3) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.3) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:470:in `call_app!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:418:in `callback_phase'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:57:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-07-01 15:27:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 689)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 922)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 36991)
+Completed 200 OK in 42ms (Views: 31.4ms | ActiveRecord: 2.1ms | Allocations: 50732)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:27:27 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-01 15:27:32 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-07-01 15:27:37 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 214)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 255)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2839)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3165)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-07-01 15:27:39 +0530
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=bUecXwkke56jKMYNww4TXJET4JP6gLgT" for ::1 at 2022-07-01 15:27:40 +0530
+  
+Zeitwerk::NameError (expected file /home/itsacheckmate/Training/rails/scheduled_tweets/app/controllers/omniauth_callbacks_controller.rb to define constant OmniauthCallbacksController, but didn't):
+  
+zeitwerk (2.6.0) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:28:in `require'
+activesupport (7.0.3) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.3) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.3) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.3) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.3) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.3) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.3) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.3) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:470:in `call_app!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:418:in `callback_phase'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:57:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auth/twitter/callback" for ::1 at 2022-07-01 15:28:58 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/tokens/request_token.rb:26:in `get_access_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:56:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-07-01 15:29:04 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 214)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 253)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2837)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 3163)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-07-01 15:29:05 +0530
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=Vvgt3TmhSk1zSmk5TOpY9htkBLK7yacM" for ::1 at 2022-07-01 15:29:06 +0530
+  
+ActionController::RoutingError (uninitialized constant OmniauthCallbacksController
+Did you mean?  OmniAuthCallbacksController):
+  
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=Vvgt3TmhSk1zSmk5TOpY9htkBLK7yacM" for ::1 at 2022-07-01 15:30:31 +0530
+  
+OAuth::Unauthorized (401 Unauthorized):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/tokens/request_token.rb:26:in `get_access_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:56:in `callback_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-07-01 15:30:35 +0530
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 234)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 376)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 14469)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 15289)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-07-01 15:30:37 +0530
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=Z7UEgc2lerORb0mfUpIbx9IftwW2461L" for ::1 at 2022-07-01 15:30:38 +0530
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"Z7UEgc2lerORb0mfUpIbx9IftwW2461L"}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 826)
+
+
