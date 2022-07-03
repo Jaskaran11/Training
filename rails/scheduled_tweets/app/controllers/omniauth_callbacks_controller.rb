@@ -14,6 +14,10 @@ class OmniauthCallbacksController < ApplicationController
     redirect_to twitter_accounts_path, notice: "Successfully created your account"
   end
 
+  def twitter_accounts
+    @twitter_account = Current.user.twitter_accounts.find(params[:id])
+  end
+
   def auth
     request.env['omniauth.auth']
   end
