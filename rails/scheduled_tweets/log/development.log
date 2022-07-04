@@ -11084,3 +11084,330 @@ Processing by TwitterAccountsController#index as HTML
 Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 4767)
 
 
+Started GET "/tweets" for ::1 at 2022-07-04 16:03:21 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:4
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:9
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/index.html.erb:13
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweets/_tweet.html.erb:4
+  Rendered collection of tweets/_tweet.html.erb [1 times] (Duration: 6.5ms | Allocations: 7609)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 21066)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 939)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 57394)
+Completed 200 OK in 62ms (Views: 44.2ms | ActiveRecord: 4.9ms | Allocations: 79447)
+
+
+Started GET "/tweets/3/edit" for ::1 at 2022-07-04 16:03:22 +0530
+Processing by TweetsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1 AND "tweets"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:45:in `set_tweet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/edit.html.erb within layouts/application
+  Rendered shared/_form_errors.html.erb (Duration: 0.3ms | Allocations: 202)
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/_form.html.erb:6
+  Rendered tweets/_form.html.erb (Duration: 6.8ms | Allocations: 9064)
+  Rendered tweets/edit.html.erb within layouts/application (Duration: 7.5ms | Allocations: 9311)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 461)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 12117)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 13859)
+
+
+Started PATCH "/tweets/3" for ::1 at 2022-07-04 16:03:43 +0530
+Processing by TweetsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweet"=>{"twitter_account_id"=>"2", "body"=>"Using twitter", "publish_at(1i)"=>"2022", "publish_at(2i)"=>"10", "publish_at(3i)"=>"4", "publish_at(4i)"=>"04", "publish_at(5i)"=>"43"}, "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1 AND "tweets"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:45:in `set_tweet'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTweet Update (0.2ms)[0m  [1m[33mUPDATE "tweets" SET "body" = $1, "publish_at" = $2, "updated_at" = $3 WHERE "tweets"."id" = $4[0m  [["body", "Using twitter"], ["publish_at", "2022-10-04 04:43:00"], ["updated_at", "2022-07-04 10:33:43.832489"], ["id", 3]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+[ActiveJob] Enqueued TweetJob (Job ID: 06baa84b-d15d-44f0-8f49-d785a15b7b11) to Async(default) at 2022-10-04 04:43:00 UTC with arguments: #<GlobalID:0x00007f6974a41750 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 15ms (ActiveRecord: 7.0ms | Allocations: 6634)
+
+
+Started GET "/tweets" for ::1 at 2022-07-04 16:03:43 +0530
+Processing by TweetsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:4
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:9
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/index.html.erb:13
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweets/_tweet.html.erb:4
+  Rendered collection of tweets/_tweet.html.erb [1 times] (Duration: 1.2ms | Allocations: 889)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2953)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5791)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 6678)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-04 16:22:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 689)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 991)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 36938)
+Completed 200 OK in 40ms (Views: 26.4ms | ActiveRecord: 2.8ms | Allocations: 52831)
+
+
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] Failed enqueuing TweetJob to Sidekiq(default): Redis::CannotConnectError (Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED))
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] Enqueued TweetJob (Job ID: 30e0a891-81bf-4991-85d3-55d4fbcb0610) to Sidekiq(default) with arguments: #<GlobalID:0x00007f77cc4f4818 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+Started GET "/" for 127.0.0.1 at 2022-07-04 16:26:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 689)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 991)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 36343)
+Completed 200 OK in 40ms (Views: 27.6ms | ActiveRecord: 2.4ms | Allocations: 52232)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2022-07-04 16:26:35 +0530
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:4
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:9
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/index.html.erb:13
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweets/_tweet.html.erb:4
+  Rendered collection of tweets/_tweet.html.erb [1 times] (Duration: 5.6ms | Allocations: 7605)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 20758)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 23715)
+Completed 200 OK in 32ms (Views: 16.6ms | ActiveRecord: 3.3ms | Allocations: 31251)
+
+
+Started GET "/twitter_accounts" for 127.0.0.1 at 2022-07-04 16:26:41 +0530
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/twitter_accounts/index.html.erb:4
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2724)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 484)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 5640)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 7112)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-07-04 16:26:43 +0530
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/tweets" for 127.0.0.1 at 2022-07-04 16:26:45 +0530
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:4
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:9
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/index.html.erb:13
+  [1m[36mTwitterAccount Load (0.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweets/_tweet.html.erb:4
+  Rendered collection of tweets/_tweet.html.erb [1 times] (Duration: 1.6ms | Allocations: 889)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2904)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5752)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.8ms | Allocations: 6606)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2022-07-04 16:26:45 +0530
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:4
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:9
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/index.html.erb:13
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweets/_tweet.html.erb:4
+  Rendered collection of tweets/_tweet.html.erb [1 times] (Duration: 1.0ms | Allocations: 889)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2902)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5749)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 6583)
+
+
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] [TweetJob] [9aa5a315-9767-4041-b51c-e84e831065e8] Performing TweetJob (Job ID: 9aa5a315-9767-4041-b51c-e84e831065e8) from Sidekiq(default) enqueued at  with arguments: #<GlobalID:0x000055751da6fd78 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+[ActiveJob] [TweetJob] [9aa5a315-9767-4041-b51c-e84e831065e8] Performed TweetJob (Job ID: 9aa5a315-9767-4041-b51c-e84e831065e8) from Sidekiq(default) in 0.62ms
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] [TweetJob] [6eda1cde-6af9-49c7-90b3-378ee216200a] Performing TweetJob (Job ID: 6eda1cde-6af9-49c7-90b3-378ee216200a) from Sidekiq(default) enqueued at  with arguments: #<GlobalID:0x00007fd7188b15b8 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+[ActiveJob] [TweetJob] [6eda1cde-6af9-49c7-90b3-378ee216200a]   [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+[ActiveJob] [TweetJob] [6eda1cde-6af9-49c7-90b3-378ee216200a] [TweetJob] [b5ac7e0d-ff5e-4c85-b959-3a74a236c61f] Performing TweetJob (Job ID: b5ac7e0d-ff5e-4c85-b959-3a74a236c61f) from Sidekiq(default) enqueued at  with arguments: #<GlobalID:0x0000557dd949c300 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+[ActiveJob] [TweetJob] [6eda1cde-6af9-49c7-90b3-378ee216200a] [TweetJob] [b5ac7e0d-ff5e-4c85-b959-3a74a236c61f] Performed TweetJob (Job ID: b5ac7e0d-ff5e-4c85-b959-3a74a236c61f) from Sidekiq(default) in 34531.6ms
+Started GET "/tweets/3/edit" for 127.0.0.1 at 2022-07-04 17:03:48 +0530
+Processing by TweetsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1 AND "tweets"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:45:in `set_tweet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/edit.html.erb within layouts/application
+  Rendered shared/_form_errors.html.erb (Duration: 0.2ms | Allocations: 202)
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/_form.html.erb:6
+  Rendered tweets/_form.html.erb (Duration: 8.3ms | Allocations: 13579)
+  Rendered tweets/edit.html.erb within layouts/application (Duration: 8.7ms | Allocations: 13835)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 487)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 28168)
+Completed 200 OK in 28ms (Views: 14.8ms | ActiveRecord: 2.6ms | Allocations: 42335)
+
+
+Started PATCH "/tweets/3" for 127.0.0.1 at 2022-07-04 17:04:34 +0530
+Processing by TweetsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweet"=>{"twitter_account_id"=>"2", "body"=>"Using twitter", "publish_at(1i)"=>"2022", "publish_at(2i)"=>"7", "publish_at(3i)"=>"4", "publish_at(4i)"=>"17", "publish_at(5i)"=>"05"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1 AND "tweets"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:45:in `set_tweet'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTwitterAccount Load (0.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTweet Update (0.2ms)[0m  [1m[33mUPDATE "tweets" SET "publish_at" = $1, "updated_at" = $2 WHERE "tweets"."id" = $3[0m  [["publish_at", "2022-07-04 17:05:00"], ["updated_at", "2022-07-04 11:34:34.541498"], ["id", 3]]
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:26:in `update'
+[ActiveJob] Enqueued TweetJob (Job ID: 28ef7eac-a39f-4916-a6ad-830a89401e07) to Sidekiq(default) at 2022-07-04 17:05:00 UTC with arguments: #<GlobalID:0x00007f08811384f0 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+Redirected to http://127.0.0.1:3000/tweets
+Completed 302 Found in 23ms (ActiveRecord: 7.7ms | Allocations: 11719)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2022-07-04 17:04:34 +0530
+Processing by TweetsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:4
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:9
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/tweets/index.html.erb:13
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweets/_tweet.html.erb:4
+  Rendered collection of tweets/_tweet.html.erb [1 times] (Duration: 0.9ms | Allocations: 910)
+  Rendered tweets/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 4068)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 464)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6905)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 7793)
+
+
+[ActiveJob] [TweetJob] [30e0a891-81bf-4991-85d3-55d4fbcb0610]   [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [TweetJob] [30e0a891-81bf-4991-85d3-55d4fbcb0610] Performing TweetJob (Job ID: 30e0a891-81bf-4991-85d3-55d4fbcb0610) from Sidekiq(default) enqueued at 2022-07-04T10:55:37Z with arguments: #<GlobalID:0x00007f72585874e8 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
