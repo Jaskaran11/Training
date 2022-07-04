@@ -11411,3 +11411,83 @@ Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 7793)
 
 [ActiveJob] [TweetJob] [30e0a891-81bf-4991-85d3-55d4fbcb0610]   [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
 [ActiveJob] [TweetJob] [30e0a891-81bf-4991-85d3-55d4fbcb0610] Performing TweetJob (Job ID: 30e0a891-81bf-4991-85d3-55d4fbcb0610) from Sidekiq(default) enqueued at 2022-07-04T10:55:37Z with arguments: #<GlobalID:0x00007f72585874e8 @uri=#<URI::GID gid://scheduled-tweets/Tweet/3>>
+Started GET "/password" for 127.0.0.1 at 2022-07-04 17:10:40 +0530
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1582)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 491)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 15934)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 2.7ms | Allocations: 24385)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-04 17:10:42 +0530
+Processing by RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered shared/_form_errors.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1979)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 488)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4903)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 6350)
+
+
+Started GET "/twitter_accounts" for 127.0.0.1 at 2022-07-04 17:10:45 +0530
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/twitter_accounts/index.html.erb:4
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 4269)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 484)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 7191)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 11214)
+
+
+Started DELETE "/twitter_accounts/2" for 127.0.0.1 at 2022-07-04 17:10:47 +0530
+Processing by TwitterAccountsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 AND "twitter_accounts"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/twitter_accounts_controller.rb:18:in `set_twitter_account'
+  [1m[36mCACHE TwitterAccount Load (0.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1 AND "twitter_accounts"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/twitter_accounts_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."twitter_account_id" = $1[0m  [["twitter_account_id", 2]]
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+  [1m[36mTweet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tweets" WHERE "tweets"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+  [1m[36mTwitterAccount Destroy (0.5ms)[0m  [1m[31mDELETE FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+Redirected to http://127.0.0.1:3000/twitter_accounts
+Completed 302 Found in 19ms (ActiveRecord: 8.1ms | Allocations: 10850)
+
+
+Started GET "/twitter_accounts" for 127.0.0.1 at 2022-07-04 17:10:47 +0530
+Processing by TwitterAccountsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (0.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/twitter_accounts/index.html.erb:4
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 816)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 476)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3654)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 4495)
+
+
