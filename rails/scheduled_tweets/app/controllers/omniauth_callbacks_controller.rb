@@ -2,6 +2,7 @@ class OmniauthCallbacksController < ApplicationController
   def twitter_accounts
     @twitter_account = Current.user.twitter_accounts.find(params[:id])
   end
+  
   def twitter
     Rails.logger.info auth
 
