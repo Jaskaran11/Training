@@ -1,4 +1,7 @@
 class OmniauthCallbacksController < ApplicationController
+  def twitter_accounts
+    @twitter_account = Current.user.twitter_accounts.find(params[:id])
+  end
   def twitter
     Rails.logger.info auth
 
@@ -12,10 +15,6 @@ class OmniauthCallbacksController < ApplicationController
     )
 
     redirect_to twitter_accounts_path, notice: "Successfully created your account"
-  end
-
-  def twitter_accounts
-    @twitter_account = Current.user.twitter_accounts.find(params[:id])
   end
 
   def auth
