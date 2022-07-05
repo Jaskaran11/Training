@@ -11491,3 +11491,101 @@ Processing by TwitterAccountsController#index as TURBO_STREAM
 Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 4495)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-04 17:17:07 +0530
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 234)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 508)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 3173)
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 2.4ms | Allocations: 7233)
+
+
+[ActiveJob] [TweetJob] [30e0a891-81bf-4991-85d3-55d4fbcb0610] Performed TweetJob (Job ID: 30e0a891-81bf-4991-85d3-55d4fbcb0610) from Sidekiq(default) in 2923744.52ms
+[ActiveJob] [TweetJob] [6eda1cde-6af9-49c7-90b3-378ee216200a] Error performing TweetJob (Job ID: 6eda1cde-6af9-49c7-90b3-378ee216200a) from Sidekiq(default) in 4728761.35ms: SignalException (SIGHUP):
+<internal:kernel>:21:in `class'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/rescuable.rb:165:in `rescue_with_handler'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/execution.rb:48:in `rescue in perform_now'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/execution.rb:40:in `perform_now'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/notifications.rb:206:in `block in instrument'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/notifications.rb:206:in `instrument'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/instrumentation.rb:35:in `instrument'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/instrumentation.rb:14:in `perform_now'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/logging.rb:18:in `block in perform_now'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/tagged_logging.rb:114:in `block in tagged'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/tagged_logging.rb:38:in `tagged'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.3/lib/active_support/tagged_logging.rb:114:in `tagged'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/logging.rb:25:in `tag_logger'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/logging.rb:18:in `perform_now'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.3/lib/active_job/execution.rb:18:in `perform_now'
+(irb):1:in `<main>'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/workspace.rb:119:in `eval'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/workspace.rb:119:in `evaluate'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/context.rb:476:in `evaluate'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:577:in `block (2 levels) in eval_input'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:770:in `signal_status'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:558:in `block in eval_input'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/ruby-lex.rb:268:in `block (2 levels) in each_top_level_statement'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/ruby-lex.rb:250:in `loop'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/ruby-lex.rb:250:in `block in each_top_level_statement'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/ruby-lex.rb:249:in `catch'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb/ruby-lex.rb:249:in `each_top_level_statement'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:557:in `eval_input'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:491:in `block in run'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:490:in `catch'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:490:in `run'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/irb-1.4.1/lib/irb.rb:419:in `start'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/commands/console/console_command.rb:70:in `start'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/commands/console/console_command.rb:19:in `start'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/commands/console/console_command.rb:102:in `perform'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in `invoke_command'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/command/base.rb:87:in `perform'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/command.rb:48:in `invoke'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/commands.rb:18:in `<main>'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+bin/rails:4:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-07-05 12:58:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 717)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 1672)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 37754)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 43023)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-05 12:58:32 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered shared/_form_errors.html.erb (Duration: 0.3ms | Allocations: 203)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 4177)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 299)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 6916)
+Completed 200 OK in 22ms (Views: 11.4ms | ActiveRecord: 3.9ms | Allocations: 15066)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-05 12:58:35 +0530
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered shared/_form_errors.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1570)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 278)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4199)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4547)
+
+

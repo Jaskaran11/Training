@@ -10,6 +10,8 @@ class Book < ApplicationRecord
     #title.blank?
   #end
   #before_validation :remove_whitespaces
+
+  belongs_to :user
   
   has_one_attached :image
 

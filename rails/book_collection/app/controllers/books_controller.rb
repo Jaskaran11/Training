@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   helper_method :formatted_date 
   layout 'book'
   def index
@@ -14,7 +16,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
     if @book.save
       CrudNotificationMailer.create_notification(@book).deliver_later
       redirect_to(books_path)
