@@ -13,16 +13,16 @@ server = TCPServer.new port
 puts "Listening on port #{port}..."
 
 def render(file:)
-    body = File.binread(file)
-    Response.new(
-      code: 200,
-      body: body,
-      headers: {
-        "Content-Length" => body.length,
-        "Content-Type" => "text/html"
+  body = File.binread(file)
+  Response.new(
+    code: 200,
+    body: body,
+    headers: {
+      "Content-Length" => body.length,
+      "Content-Type" => "text/html"
       }
-    )
-  end
+  )
+end
 
 def template_exists?(path)
    File.exists?(path)
