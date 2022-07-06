@@ -11589,3 +11589,107 @@ Processing by RegistrationsController#new as HTML
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4547)
 
 
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:16:31 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::V1::TwitterAccountsController):
+  
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:18:43 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4830)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::Username):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:4:in `index'
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:18:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 4892)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::Username):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:4:in `index'
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:19:25 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2490)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::Name):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:4:in `index'
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:20:53 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2547)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::TwitterAccounts):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:4:in `index'
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:21:26 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 6486)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::UserSerializer
+Did you mean?  UserHelper):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:5:in `index'
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:24:05 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4956)
+
+
+  
+NameError (uninitialized constant Api::V1::TwitterAccountsController::UserSerializer
+Did you mean?  UserHelper):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:5:in `index'
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:24:51 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+[active_model_serializers]   [1m[36mTwitterAccount Load (0.9ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts"[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/twitter_accounts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.22ms)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 2.4ms | Allocations: 16609)
+
+
+Started GET "/api/v1/twitter_accounts/" for 127.0.0.1 at 2022-07-06 20:33:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TwitterAccountsController#index as */*
+[active_model_serializers]   [1m[36mTwitterAccount Load (0.4ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts"[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/twitter_accounts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.2ms)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 1.9ms | Allocations: 19631)
+
+
+Started GET "/api/v1/twitter_accounts/43" for 127.0.0.1 at 2022-07-06 22:30:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TwitterAccountsController#show as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mTwitterAccount Load (0.5ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/twitter_accounts_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.59ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.0ms | Allocations: 16090)
+
+
+  
+NoMethodError (undefined method `read_attribute_for_serialization' for nil:NilClass):
+  
+app/controllers/api/v1/twitter_accounts_controller.rb:10:in `show'
+Started GET "/api/v1/twitter_accounts" for 127.0.0.1 at 2022-07-06 22:31:17 +0530
+Processing by Api::V1::TwitterAccountsController#index as */*
+[active_model_serializers]   [1m[36mTwitterAccount Load (1.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts"[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/twitter_accounts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.17ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 2.6ms | Allocations: 11286)
+
+
