@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.order(:id)
   end
 
   def show 
@@ -27,15 +27,24 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to(user_path(@user))
+      redirect_to users_path(@user)
     else 
-      render('edit')
+      render :edit
     end
   end
 
+  def delete
+    @book = Book.find(params[:id])
+  end
+  
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     redirect_to(users_path)
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :gender, :about, :password, :country)
   end
 end

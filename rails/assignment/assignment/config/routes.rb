@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "users#index"
 
-  resources :user
+  resources :users
 end
