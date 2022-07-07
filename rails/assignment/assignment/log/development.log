@@ -2501,3 +2501,340 @@ Completed 500 Internal Server Error in 2ms (Allocations: 3727)
 ArgumentError (wrong number of arguments (given 0, expected 2)):
   
 app/mailers/user_mailer.rb:8:in `create_notification'
+Started GET "/" for ::1 at 2022-07-07 17:44:19 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 32044)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 46050)
+Completed 200 OK in 32ms (Views: 23.1ms | ActiveRecord: 5.0ms | Allocations: 51125)
+
+
+Started GET "/rails/mailers" for ::1 at 2022-07-07 17:44:25 +0530
+Processing by Rails::MailersController#index as HTML
+  Rendering layout /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/index.html.erb within layouts/application
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 703)
+  Rendered layout /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb (Duration: 1.1ms | Allocations: 792)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 1235)
+
+
+Started GET "/rails/mailers/user_mailer/create_notification" for ::1 at 2022-07-07 17:44:26 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/create_notification"}
+UserMailer#create_notification: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3839)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:8:in `create_notification'
+Started GET "/rails/mailers/user_mailer/create_notification" for ::1 at 2022-07-07 17:47:10 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/create_notification"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 147)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.8ms | Allocations: 378)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 125)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.4ms | Allocations: 319)
+UserMailer#create_notification: processed outbound mail in 5.9ms
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/email.html.erb (Duration: 2.1ms | Allocations: 8188)
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 23018)
+
+
+Started GET "/rails/mailers/user_mailer/create_notification?part=text%2Fhtml" for ::1 at 2022-07-07 17:47:10 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/create_notification"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 99)
+UserMailer#create_notification: processed outbound mail in 2.2ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 2)
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 10861)
+
+
+Started GET "/rails/mailers/user_mailer/create_notification" for ::1 at 2022-07-07 17:48:31 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/create_notification"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 99)
+UserMailer#create_notification: processed outbound mail in 2.3ms
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/email.html.erb (Duration: 2.2ms | Allocations: 7021)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 17854)
+
+
+Started GET "/rails/mailers/user_mailer/create_notification?part=text%2Fhtml" for ::1 at 2022-07-07 17:48:31 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/create_notification"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 99)
+UserMailer#create_notification: processed outbound mail in 2.1ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 2)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 10856)
+
+
+Started GET "/rails/mailers" for ::1 at 2022-07-07 17:49:27 +0530
+Processing by Rails::MailersController#index as HTML
+  Rendering layout /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/index.html.erb within layouts/application
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 706)
+  Rendered layout /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb (Duration: 1.1ms | Allocations: 795)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 1118)
+
+
+Started GET "/rails/mailers" for ::1 at 2022-07-07 17:49:27 +0530
+Processing by Rails::MailersController#index as HTML
+  Rendering layout /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/index.html.erb within layouts/application
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 252)
+  Rendered layout /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/layouts/application.html.erb (Duration: 0.4ms | Allocations: 341)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 663)
+
+
+Started GET "/rails/mailers/user_mailer/create_notification" for ::1 at 2022-07-07 17:51:28 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/create_notification"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 99)
+UserMailer#create_notification: processed outbound mail in 2.0ms
+  Rendering /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /home/itsacheckmate/.rvm/gems/ruby-3.0.0/gems/railties-7.0.3/lib/rails/templates/rails/mailers/email.html.erb (Duration: 1.5ms | Allocations: 7021)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 17854)
+
+
+Started GET "/rails/mailers/user_mailer/create_notification?part=text%2Fhtml" for ::1 at 2022-07-07 17:51:28 +0530
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/create_notification"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 99)
+UserMailer#create_notification: processed outbound mail in 2.1ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 2)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 10856)
+
+
+Started GET "/" for ::1 at 2022-07-07 17:57:29 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 31779)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 45580)
+Completed 200 OK in 32ms (Views: 24.1ms | ActiveRecord: 4.3ms | Allocations: 50420)
+
+
+Started GET "/users/new" for ::1 at 2022-07-07 17:57:31 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 2212)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3101)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5304)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5708)
+
+
+Started POST "/users" for ::1 at 2022-07-07 17:57:48 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"dsa", "last_name"=>"sd", "email"=>"sd@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "country"=>"India"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "dsa"], ["last_name", "sd"], ["email", "sd@gmail.com"], ["avatar", nil], ["gender", "Male"], ["about", nil], ["password", "[FILTERED]"], ["country", "India"], ["created_at", "2022-07-07 12:27:48.117667"], ["updated_at", "2022-07-07 12:27:48.117667"]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/mailers/user_mailer.rb:10:in `create_notification'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/create_notification.html.erb within layouts/mailer
+  Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 112)
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/create_notification.text.erb within layouts/mailer
+  Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 99)
+UserMailer#create_notification: processed outbound mail in 2.7ms
+Delivered mail 62c6d1441e5c6_88fe35487a5@itscheckmate.mail (1.2ms)
+Date: Thu, 07 Jul 2022 17:57:48 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c6d1441e5c6_88fe35487a5@itscheckmate.mail>
+Subject: A new entry for User has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c6d1441e105_88fe3548622";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c6d1441e105_88fe3548622
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c6d1441e105_88fe3548622
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello 
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c6d1441e105_88fe3548622--
+
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms | Allocations: 16579)
+
+
+Started GET "/users" for ::1 at 2022-07-07 17:57:48 +0530
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 29909)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 32112)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 32514)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 18:20:54 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 37383)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 72271)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 2.1ms | Allocations: 78907)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-07 18:20:56 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | Allocations: 4813)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5836)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 8040)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 8475)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-07 18:21:12 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"aD", "last_name"=>"DWA", "email"=>"GM@GMAIL.COM", "password"=>"[FILTERED]", "gender"=>"Male", "country"=>"India"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "aD"], ["last_name", "DWA"], ["email", "GM@GMAIL.COM"], ["avatar", nil], ["gender", "Male"], ["about", nil], ["password", "[FILTERED]"], ["country", "India"], ["created_at", "2022-07-07 12:51:12.019675"], ["updated_at", "2022-07-07 12:51:12.019675"]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 4804)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-07 18:21:12 +0530
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 30185)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 32389)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.3ms | Allocations: 32792)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-07 18:22:41 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 1732)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2374)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 16172)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 1.7ms | Allocations: 20060)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-07 18:22:56 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"ben", "last_name"=>"smith", "email"=>"n@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "country"=>"India"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "ben"], ["last_name", "smith"], ["email", "n@gmail.com"], ["avatar", nil], ["gender", "Male"], ["about", nil], ["password", "[FILTERED]"], ["country", "India"], ["created_at", "2022-07-07 12:52:56.231995"], ["updated_at", "2022-07-07 12:52:56.231995"]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms | Allocations: 2686)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-07 18:22:56 +0530
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 30571)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 32775)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 33191)
+
+

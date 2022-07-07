@@ -5,24 +5,15 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.create_notification.subject
   #
-  def create_notification(object)
-    @object = object
-    @object_count = object.class.count
-
-    mail to: 'jaskaran@gmail.com', subject: "A new entry for #{object.class} has been created"
+  def create_notification
+    mail to: 'jaskaran@gmail.com', subject: "A new entry for  has been created"
   end
 
-  def update_notification(object)
-    @object = object
-    @object_count = object.class.count
-
-    mail to: 'jaskaran@gmail.com', subject: "A entry for #{object.class} has been updated"
+  def update_notification
+    mail to: 'jaskaran@gmail.com', subject: "A new entry for has been updated"
   end
 
-  def delete_notification(object)
-    @object = object
-    @object_count = object.class.count
-
-    mail to: 'jaskaran@gmail.com', subject: "A entry for #{object.class} has been deleted"
+  def delete_notification
+    mail to: 'jaskaran@gmail.com', subject: "A new entry for  has been deleted"
   end
 end
