@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.order(:id)
+    if params[:search]
+      @users = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id)
+    else
+      @users = User.all.order(:id)
+    end
   end
 
   def show 
     @user = User.find(params[:id])
+  end
+
+  def search
   end
 
   def new 
@@ -49,6 +56,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :gender, :about, :password, :country)
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :gender, :about, :password, :country, :search)
   end
 end
