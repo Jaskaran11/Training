@@ -43,3 +43,610 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2721)
 
 
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 0"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 08:36:19.153719"], ["updated_at", "2022-07-07 08:36:19.153719"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 1"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 08:36:19.163479"], ["updated_at", "2022-07-07 08:36:19.163479"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 2"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 08:36:19.166306"], ["updated_at", "2022-07-07 08:36:19.166306"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 3"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 08:36:19.168736"], ["updated_at", "2022-07-07 08:36:19.168736"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 4"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 08:36:19.169945"], ["updated_at", "2022-07-07 08:36:19.169945"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 5"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.501716"], ["updated_at", "2022-07-07 09:02:46.501716"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 6"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.510523"], ["updated_at", "2022-07-07 09:02:46.510523"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 7"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.514332"], ["updated_at", "2022-07-07 09:02:46.514332"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 8"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.517898"], ["updated_at", "2022-07-07 09:02:46.517898"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 9"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.519402"], ["updated_at", "2022-07-07 09:02:46.519402"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 10"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.520672"], ["updated_at", "2022-07-07 09:02:46.520672"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 11"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.521677"], ["updated_at", "2022-07-07 09:02:46.521677"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 12"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.522854"], ["updated_at", "2022-07-07 09:02:46.522854"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 13"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.524036"], ["updated_at", "2022-07-07 09:02:46.524036"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 14"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.525051"], ["updated_at", "2022-07-07 09:02:46.525051"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 15"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.526079"], ["updated_at", "2022-07-07 09:02:46.526079"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 16"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.527032"], ["updated_at", "2022-07-07 09:02:46.527032"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 17"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.527916"], ["updated_at", "2022-07-07 09:02:46.527916"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 18"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.528761"], ["updated_at", "2022-07-07 09:02:46.528761"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 19"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.529563"], ["updated_at", "2022-07-07 09:02:46.529563"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 20"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.530375"], ["updated_at", "2022-07-07 09:02:46.530375"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 21"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.531182"], ["updated_at", "2022-07-07 09:02:46.531182"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 22"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.532017"], ["updated_at", "2022-07-07 09:02:46.532017"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 23"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.532848"], ["updated_at", "2022-07-07 09:02:46.532848"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 24"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.533640"], ["updated_at", "2022-07-07 09:02:46.533640"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 25"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.534438"], ["updated_at", "2022-07-07 09:02:46.534438"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 26"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.535264"], ["updated_at", "2022-07-07 09:02:46.535264"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 27"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.536160"], ["updated_at", "2022-07-07 09:02:46.536160"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 28"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.536954"], ["updated_at", "2022-07-07 09:02:46.536954"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 29"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.537732"], ["updated_at", "2022-07-07 09:02:46.537732"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 30"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.538508"], ["updated_at", "2022-07-07 09:02:46.538508"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 31"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.539303"], ["updated_at", "2022-07-07 09:02:46.539303"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 32"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.540104"], ["updated_at", "2022-07-07 09:02:46.540104"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 33"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.540865"], ["updated_at", "2022-07-07 09:02:46.540865"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 34"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.541634"], ["updated_at", "2022-07-07 09:02:46.541634"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 35"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.542376"], ["updated_at", "2022-07-07 09:02:46.542376"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 36"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.543127"], ["updated_at", "2022-07-07 09:02:46.543127"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 37"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.543926"], ["updated_at", "2022-07-07 09:02:46.543926"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 38"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.544691"], ["updated_at", "2022-07-07 09:02:46.544691"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 39"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.545431"], ["updated_at", "2022-07-07 09:02:46.545431"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 40"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.546181"], ["updated_at", "2022-07-07 09:02:46.546181"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 41"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.546937"], ["updated_at", "2022-07-07 09:02:46.546937"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 42"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.547781"], ["updated_at", "2022-07-07 09:02:46.547781"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 43"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.548555"], ["updated_at", "2022-07-07 09:02:46.548555"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 44"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.549319"], ["updated_at", "2022-07-07 09:02:46.549319"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 45"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.550066"], ["updated_at", "2022-07-07 09:02:46.550066"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 46"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.550847"], ["updated_at", "2022-07-07 09:02:46.550847"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 47"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.551625"], ["updated_at", "2022-07-07 09:02:46.551625"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 48"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.552449"], ["updated_at", "2022-07-07 09:02:46.552449"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 49"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.553252"], ["updated_at", "2022-07-07 09:02:46.553252"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 50"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.554203"], ["updated_at", "2022-07-07 09:02:46.554203"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 51"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.555081"], ["updated_at", "2022-07-07 09:02:46.555081"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 52"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.556079"], ["updated_at", "2022-07-07 09:02:46.556079"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 53"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.556969"], ["updated_at", "2022-07-07 09:02:46.556969"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 54"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.557826"], ["updated_at", "2022-07-07 09:02:46.557826"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 55"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.558690"], ["updated_at", "2022-07-07 09:02:46.558690"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 56"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.559538"], ["updated_at", "2022-07-07 09:02:46.559538"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 57"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.560354"], ["updated_at", "2022-07-07 09:02:46.560354"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 58"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.561162"], ["updated_at", "2022-07-07 09:02:46.561162"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 59"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.561909"], ["updated_at", "2022-07-07 09:02:46.561909"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 60"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.562671"], ["updated_at", "2022-07-07 09:02:46.562671"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 61"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.563610"], ["updated_at", "2022-07-07 09:02:46.563610"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 62"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.564411"], ["updated_at", "2022-07-07 09:02:46.564411"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 63"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.565219"], ["updated_at", "2022-07-07 09:02:46.565219"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 64"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.565997"], ["updated_at", "2022-07-07 09:02:46.565997"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 65"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.566773"], ["updated_at", "2022-07-07 09:02:46.566773"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 66"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.567552"], ["updated_at", "2022-07-07 09:02:46.567552"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 67"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.568328"], ["updated_at", "2022-07-07 09:02:46.568328"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 68"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.569126"], ["updated_at", "2022-07-07 09:02:46.569126"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 69"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.570195"], ["updated_at", "2022-07-07 09:02:46.570195"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 70"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.570974"], ["updated_at", "2022-07-07 09:02:46.570974"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 71"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.571731"], ["updated_at", "2022-07-07 09:02:46.571731"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 72"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.572493"], ["updated_at", "2022-07-07 09:02:46.572493"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 73"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.573250"], ["updated_at", "2022-07-07 09:02:46.573250"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 74"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.574051"], ["updated_at", "2022-07-07 09:02:46.574051"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 75"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.574823"], ["updated_at", "2022-07-07 09:02:46.574823"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 76"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.575603"], ["updated_at", "2022-07-07 09:02:46.575603"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 77"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.576372"], ["updated_at", "2022-07-07 09:02:46.576372"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 78"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.577131"], ["updated_at", "2022-07-07 09:02:46.577131"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 79"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.577936"], ["updated_at", "2022-07-07 09:02:46.577936"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 80"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.578704"], ["updated_at", "2022-07-07 09:02:46.578704"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 81"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.579462"], ["updated_at", "2022-07-07 09:02:46.579462"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 82"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.580265"], ["updated_at", "2022-07-07 09:02:46.580265"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 83"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.581026"], ["updated_at", "2022-07-07 09:02:46.581026"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 84"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.581811"], ["updated_at", "2022-07-07 09:02:46.581811"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 85"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.582571"], ["updated_at", "2022-07-07 09:02:46.582571"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 86"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.583341"], ["updated_at", "2022-07-07 09:02:46.583341"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 87"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.584170"], ["updated_at", "2022-07-07 09:02:46.584170"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 88"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.584939"], ["updated_at", "2022-07-07 09:02:46.584939"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 89"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.585730"], ["updated_at", "2022-07-07 09:02:46.585730"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 90"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.586986"], ["updated_at", "2022-07-07 09:02:46.586986"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 91"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.587870"], ["updated_at", "2022-07-07 09:02:46.587870"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 92"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.588748"], ["updated_at", "2022-07-07 09:02:46.588748"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 93"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.589717"], ["updated_at", "2022-07-07 09:02:46.589717"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 94"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.590552"], ["updated_at", "2022-07-07 09:02:46.590552"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 95"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.591470"], ["updated_at", "2022-07-07 09:02:46.591470"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 96"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.592470"], ["updated_at", "2022-07-07 09:02:46.592470"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 97"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.593273"], ["updated_at", "2022-07-07 09:02:46.593273"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 98"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.594059"], ["updated_at", "2022-07-07 09:02:46.594059"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["first_name", "User 99"], ["last_name", nil], ["email", nil], ["avatar", nil], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-07 09:02:46.594900"], ["updated_at", "2022-07-07 09:02:46.594900"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2022-07-07 14:36:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 363)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 35468)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 41311)
+
+
+Started GET "/" for ::1 at 2022-07-07 14:36:44 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2410)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2750)
+
+
+Started GET "/" for ::1 at 2022-07-07 14:36:44 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2387)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2725)
+
+
+Started GET "/" for ::1 at 2022-07-07 14:36:45 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 2380)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2710)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:36:49 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2381)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2719)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:00 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 13877)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 15196)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:16 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 13893)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 15214)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:17 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 2389)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2727)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:17 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2386)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2716)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:17 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2396)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2726)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:17 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2386)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2716)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:18 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2376)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 2706)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:18 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2382)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2712)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:18 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2382)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2712)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:18 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2386)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2716)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:18 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2388)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2718)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:19 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2392)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2722)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:19 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2376)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2706)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:37:19 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2390)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2722)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:39:14 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 5628)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 5707)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 7293)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<ActionView::Base:0x00000000015928>):
+    1: <h1> Listing Users </h1>
+    2: <%= link_to "New User", new_user_path %>
+    3: <table>
+    4:   <thead>
+    5:     <tr>
+  
+app/views/users/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:39:29 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 12424)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 12503)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.2ms | Allocations: 13498)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<ActionView::Base:0x00000000015cc0>):
+    14:       <tr>
+    15:         <td><%= user.first_name %></td>
+    16:         <td><%= user.last_name %></td>
+    17:         <td><%= link_to 'View', user %></td>
+    18:         <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    19:          <td><%= link_to('Delete', user_path(user), :method => 'delete') %></td>
+    20:       </tr>
+  
+app/views/users/index.html.erb:17
+app/views/users/index.html.erb:13
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:43:12 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 16469)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 30644)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 1.6ms | Allocations: 32246)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2022-07-07 14:43:17 +0530
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:43:18 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 13399)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 15762)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 16092)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:44:26 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 10113)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 12783)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 13810)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:45:00 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 10132)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 12794)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 13822)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:45:01 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 9807)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 12172)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 12503)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:45:12 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:13
+  Rendered users/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 10125)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 12773)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 13799)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-07 14:45:29 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 10135)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 12791)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 13818)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2022-07-07 14:48:30 +0530
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/user/new" for 127.0.0.1 at 2022-07-07 14:49:47 +0530
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  

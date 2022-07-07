@@ -7,5 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 10000.times do |i|
-    Author.create(name: "Author ##{i}")
+  Author.create(name: "Author ##{i}")
 end
