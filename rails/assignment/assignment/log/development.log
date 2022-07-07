@@ -3101,3 +3101,223 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 2.2ms | Allocations: 26016)
 
 
+Started GET "/" for ::1 at 2022-07-07 21:12:52 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 33711)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 68204)
+Completed 200 OK in 57ms (Views: 48.9ms | ActiveRecord: 2.5ms | Allocations: 74747)
+
+
+Started GET "/page=1" for ::1 at 2022-07-07 21:12:57 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/page=1"):
+  
+Started GET "/users?page=1" for ::1 at 2022-07-07 21:13:11 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 30676)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 32871)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.3ms | Allocations: 33239)
+
+
+Started GET "/users?page=1" for ::1 at 2022-07-07 21:17:56 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5227)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 18981)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 2.9ms | Allocations: 21591)
+
+
+Started GET "/users?search=JAS&commit=Search" for ::1 at 2022-07-07 21:18:09 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"search"=>"JAS", "commit"=>"Search"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%jas%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%jas%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1274)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3470)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.7ms | Allocations: 4419)
+
+
+Started GET "/users?search=USER&commit=Search" for ::1 at 2022-07-07 21:18:14 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"search"=>"USER", "commit"=>"Search"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2424)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4624)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 5515)
+
+
+Started GET "/users?search=USER&commit=Search" for ::1 at 2022-07-07 21:19:50 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"search"=>"USER", "commit"=>"Search"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3114)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 5584)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 7167)
+
+
+Started GET "/?page=1&search=USER" for ::1 at 2022-07-07 21:19:52 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1", "search"=>"USER"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2539)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4733)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 5624)
+
+
+Started GET "/?page=2&search=USER" for ::1 at 2022-07-07 21:19:54 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2", "search"=>"USER"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 10]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2539)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4733)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 5623)
+
+
+Started GET "/?page=1&search=USER" for ::1 at 2022-07-07 21:19:55 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1", "search"=>"USER"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2538)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4733)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.5ms | Allocations: 5638)
+
+
+Started GET "/?page=0&search=USER" for ::1 at 2022-07-07 21:19:55 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0", "search"=>"USER"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2473)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4668)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 5573)
+
+
+Started GET "/?page=1&search=USER" for ::1 at 2022-07-07 21:22:30 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1", "search"=>"USER"}
+  [1m[36mUser Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2536)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4730)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 5620)
+
+
+Started GET "/?page=0&search=USER" for ::1 at 2022-07-07 21:22:30 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0", "search"=>"USER"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2477)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4671)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 5561)
+
+
+Started GET "/?page=1&search=USER" for ::1 at 2022-07-07 21:22:31 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1", "search"=>"USER"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2542)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4736)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 5626)
+
+
+Started GET "/?page=0&search=USER" for ::1 at 2022-07-07 21:22:32 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0", "search"=>"USER"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2495)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4689)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 5580)
+
+
+Started GET "/?page=0&search=USER" for ::1 at 2022-07-07 21:24:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0", "search"=>"USER"}
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (lower(first_name) LIKE '%user%')[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(first_name) LIKE '%user%') ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 6048)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 19863)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 1.8ms | Allocations: 22452)
+
+
+Started GET "/users/new" for ::1 at 2022-07-07 21:25:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.6ms | Allocations: 4826)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 6367)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 40627)
+Completed 200 OK in 40ms (Views: 31.0ms | ActiveRecord: 1.8ms | Allocations: 53712)
+
+

@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
+  USERS_PER_PAGE = 10
+
   def index
+    @page = params.fetch(:page, 0).to_i
     if params[:search]
-      @users = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id)
+      @users_count = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").count 
+      @users = User.where('lower(first_name) LIKE ?', "%#{params[:search].downcase}%").order(:id).offset(@page * USERS_PER_PAGE).limit(USERS_PER_PAGE)
     else
-      @users = User.all.order(:id)
+      @users_count = User.all.count
+      @users = User.all.order(:id).offset(@page * USERS_PER_PAGE).limit(USERS_PER_PAGE)
     end
   end
 
   def show 
     @user = User.find(params[:id])
-  end
-
-  def search
   end
 
   def new 
