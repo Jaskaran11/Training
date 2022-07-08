@@ -1,0 +1,174 @@
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE DATABASE "myarticles_development" ENCODING = 'unicode'[0m
+  [1m[35m (25.1ms)[0m  [1m[35mCREATE DATABASE "myarticles_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7781933067041423955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20220708153044)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220708153044"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-08 15:31:37.702996"], ["updated_at", "2022-07-08 15:31:37.702996"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7781933067041423955)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Pale Kings and Princes"], ["body", "Tenetur unde qui aliquam."], ["created_at", "2022-07-08 15:37:03.711310"], ["updated_at", "2022-07-08 15:37:03.711310"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Create (0.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A Catskill Eagle"], ["body", "Earum consequatur doloremque magnam."], ["created_at", "2022-07-08 15:37:03.714926"], ["updated_at", "2022-07-08 15:37:03.714926"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Terrible Swift Sword"], ["body", "Omnis quia voluptatem rem."], ["created_at", "2022-07-08 15:37:03.717013"], ["updated_at", "2022-07-08 15:37:03.717013"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Jacob Have I Loved"], ["body", "Vel iusto voluptates omnis."], ["created_at", "2022-07-08 15:37:03.724791"], ["updated_at", "2022-07-08 15:37:03.724791"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Create (0.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "That Hideous Strength"], ["body", "Et quisquam illum ratione."], ["created_at", "2022-07-08 15:37:03.726936"], ["updated_at", "2022-07-08 15:37:03.726936"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/articles" for ::1 at 2022-07-08 21:32:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ArticlesController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 16299)
+
+
+  
+NameError (undefined local variable or method `articles' for #<Api::V1::ArticlesController:0x00000000008ea8>
+Did you mean?  @articles):
+  
+app/controllers/api/v1/articles_controller.rb:6:in `index'
+Started GET "/api/v1/articles" for ::1 at 2022-07-08 21:34:26 +0530
+Processing by Api::V1::ArticlesController#index as */*
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.9ms | Allocations: 6735)
+
+
+Started GET "/api/v1/articles/1" for ::1 at 2022-07-08 21:35:12 +0530
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::ArticlesController):
+  
+actionpack (7.0.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/articles/1" for ::1 at 2022-07-08 21:37:25 +0530
+Processing by Api::V1::ArticlesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/articles_controller.rb:10:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 3620)
+
+
+Started POST "/api/v1/articles" for ::1 at 2022-07-08 21:41:51 +0530
+Processing by Api::V1::ArticlesController#create as */*
+Completed 422 Unprocessable Entity in 91ms (Views: 87.2ms | ActiveRecord: 1.5ms | Allocations: 341489)
+
+
+Started POST "/api/v1/articles?=" for ::1 at 2022-07-08 21:44:31 +0530
+Processing by Api::V1::ArticlesController#create as */*
+  Parameters: {"title"=>"Test Article One", "body"=>"Hello There", "article"=>{"title"=>"Test Article One", "body"=>"Hello There"}}
+[31mUnpermitted parameter: :article. Context: { controller: Api::V1::ArticlesController, action: create, request: #<ActionDispatch::Request:0x00007f72340159c0>, params: {"title"=>"Test Article One", "body"=>"Hello There", "controller"=>"api/v1/articles", "action"=>"create", "article"=>{"title"=>"Test Article One", "body"=>"Hello There"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:17:in `create'
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Test Article One"], ["body", "Hello There"], ["created_at", "2022-07-08 16:14:31.650862"], ["updated_at", "2022-07-08 16:14:31.650862"]]
+  ↳ app/controllers/api/v1/articles_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:17:in `create'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 6.9ms | Allocations: 2328)
+
+
+Started DELETE "/api/v1/articles/6" for ::1 at 2022-07-08 21:46:30 +0530
+Processing by Api::V1::ArticlesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/articles_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:26:in `destroy'
+  [1m[36mArticle Destroy (0.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/articles_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:26:in `destroy'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 4294)
+
+
+Started PUT "/api/v1/articles/5" for ::1 at 2022-07-08 21:50:34 +0530
+Processing by Api::V1::ArticlesController#update as */*
+  Parameters: {"title"=>"Updated title", "body"=>"Hello there", "id"=>"5", "article"=>{"title"=>"Updated title", "body"=>"Hello there"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/articles_controller.rb:31:in `update'
+[31mUnpermitted parameters: :id, :article. Context: { controller: Api::V1::ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f7238d892b0>, params: {"title"=>"Updated title", "body"=>"Hello there", "controller"=>"api/v1/articles", "action"=>"update", "id"=>"5", "article"=>{"title"=>"Updated title", "body"=>"Hello there"}} }[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.5ms | Allocations: 4085)
+
+
+  
+NoMethodError (undefined method `update_attributes' for #<Article id: 5, title: "That Hideous Strength", body: "Et quisquam illum ratione.", created_at: "2022-07-08 15:37:03.726936000 +0000", updated_at: "2022-07-08 15:37:03.726936000 +0000">
+Did you mean?  update_attribute):
+  
+app/controllers/api/v1/articles_controller.rb:32:in `update'
+Started PUT "/api/v1/articles/5" for ::1 at 2022-07-08 21:51:33 +0530
+Processing by Api::V1::ArticlesController#update as */*
+  Parameters: {"title"=>"Updated title", "body"=>"Hello there", "id"=>"5", "article"=>{"title"=>"Updated title", "body"=>"Hello there"}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/articles_controller.rb:31:in `update'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2049)
+
+
+Started PUT "/api/v1/articles/5" for ::1 at 2022-07-08 21:53:05 +0530
+Processing by Api::V1::ArticlesController#update as */*
+  Parameters: {"title"=>"Updated title", "body"=>"Hello there", "id"=>"5", "article"=>{"title"=>"Updated title", "body"=>"Hello there"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/articles_controller.rb:31:in `update'
+[31mUnpermitted parameters: :id, :article. Context: { controller: Api::V1::ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f722d8fa010>, params: {"title"=>"Updated title", "body"=>"Hello there", "controller"=>"api/v1/articles", "action"=>"update", "id"=>"5", "article"=>{"title"=>"Updated title", "body"=>"Hello there"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:32:in `update'
+  [1m[36mArticle Update (0.1ms)[0m  [1m[33mUPDATE "articles" SET "title" = $1, "body" = $2, "updated_at" = $3 WHERE "articles"."id" = $4[0m  [["title", "Updated title"], ["body", "Hello there"], ["updated_at", "2022-07-08 16:23:05.585156"], ["id", 5]]
+  ↳ app/controllers/api/v1/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/articles_controller.rb:32:in `update'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 3792)
+
+

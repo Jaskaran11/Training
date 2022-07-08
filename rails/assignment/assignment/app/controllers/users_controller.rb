@@ -38,15 +38,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @user = User.find(params[:id])
   end
 
-  def new 
-    @user = User.new 
+  def new
+    @user = User.new
   end
 
-  def create 
+  def create
     @user = User.new user_params
     if @user.save
       Sidekiq::Client.enqueue_to_in("default", Time.now + 5.seconds, MailWorker, @user.email, @user.first_name)
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      UserMailer.update_notification(@user).deliver_now
+      #UserMailer.update_notification(@user).deliver_now
       redirect_to users_path(@user)
     else
       render :edit
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    UserMailer.delete_notification(@user).deliver_now
+    #UserMailer.delete_notification(@user).deliver_now
     @user.destroy
     redirect_to(users_path)
   end

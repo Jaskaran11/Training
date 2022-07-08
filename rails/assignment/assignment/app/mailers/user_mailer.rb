@@ -11,11 +11,5 @@ class UserMailer < ApplicationMailer
     mail to: 'jaskaran@gmail.com', subject: "A new entry for  has been created"
   end
 
-  def update_notification
-    mail to: 'jaskaran@gmail.com', subject: "A new entry for has been updated"
-  end
-
-  def delete_notification
-    mail to: 'jaskaran@gmail.com', subject: "A new entry for  has been deleted"
-  end
+  
 end
