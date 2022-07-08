@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "users#index"
 
+  get "users/api"
+
   resources :users
 
   namespace :api do

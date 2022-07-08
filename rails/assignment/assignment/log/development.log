@@ -3792,3 +3792,2188 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 19594)
 
 
+Started GET "/users" for 127.0.0.1 at 2022-07-08 13:56:50 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 4813)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7021)
+Completed 200 OK in 31ms (Views: 21.8ms | ActiveRecord: 3.1ms | Allocations: 10749)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-08 15:38:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- rest-client):
+  
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-07-08 15:38:25 +0530
+  
+LoadError (cannot load such file -- rest_client):
+  
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2022-07-08 15:41:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 14095)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 48893)
+Completed 200 OK in 38ms (Views: 31.0ms | ActiveRecord: 2.3ms | Allocations: 56330)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-08 15:41:21 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4127)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 6338)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 7194)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 15:41:25 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.9ms | Allocations: 4920)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 5871)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 8075)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 8509)
+
+
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: ae33dd06-57fd-49ce-896a-71af92e46036) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["GM@GMAIL.COM", "aD"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 1546b5eb-23cc-4acc-b52e-42d490f42d20) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["jo@gmail.com", "John"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 73b7f03d-9a7b-4e9b-9285-8bca17f1fd53) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["n@gmail.com", "ben"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 4dc8560e-ea47-437a-ab6a-6c90be0110b7) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["ben@gmail.com", "Ben"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: c86e7568-ba41-4972-a7ae-5fba331b9ae1) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["joe@gmail.com", "Joe"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53] Performing ActionMailer::MailDeliveryJob (Job ID: 73b7f03d-9a7b-4e9b-9285-8bca17f1fd53) from Async(default) enqueued at 2022-07-08T10:11:58Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["n@gmail.com", "ben"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036] Performing ActionMailer::MailDeliveryJob (Job ID: ae33dd06-57fd-49ce-896a-71af92e46036) from Async(default) enqueued at 2022-07-08T10:11:58Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["GM@GMAIL.COM", "aD"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7] Performing ActionMailer::MailDeliveryJob (Job ID: 4dc8560e-ea47-437a-ab6a-6c90be0110b7) from Async(default) enqueued at 2022-07-08T10:11:58Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["ben@gmail.com", "Ben"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1] Performing ActionMailer::MailDeliveryJob (Job ID: c86e7568-ba41-4972-a7ae-5fba331b9ae1) from Async(default) enqueued at 2022-07-08T10:11:58Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["joe@gmail.com", "Joe"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20] Performing ActionMailer::MailDeliveryJob (Job ID: 1546b5eb-23cc-4acc-b52e-42d490f42d20) from Async(default) enqueued at 2022-07-08T10:11:58Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["jo@gmail.com", "John"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 537)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.3ms | Allocations: 187)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 375)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 447)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.3ms | Allocations: 189)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendered layout layouts/mailer.html.erb (Duration: 1.7ms | Allocations: 1014)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendered layout layouts/mailer.html.erb (Duration: 1.3ms | Allocations: 725)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendered layout layouts/mailer.html.erb (Duration: 1.5ms | Allocations: 871)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendered layout layouts/mailer.html.erb (Duration: 1.9ms | Allocations: 1177)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 200)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 398)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendered layout layouts/mailer.html.erb (Duration: 1.0ms | Allocations: 516)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036]   Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | Allocations: 593)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1]   Rendered layout layouts/mailer.text.erb (Duration: 1.1ms | Allocations: 844)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036] UserMailer#create_notification: processed outbound mail in 31.1ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53]   Rendered layout layouts/mailer.text.erb (Duration: 1.5ms | Allocations: 1149)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53] UserMailer#create_notification: processed outbound mail in 38.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20]   Rendered layout layouts/mailer.text.erb (Duration: 1.0ms | Allocations: 923)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20] UserMailer#create_notification: processed outbound mail in 29.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7]   Rendered layout layouts/mailer.text.erb (Duration: 3.6ms | Allocations: 9651)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7] UserMailer#create_notification: processed outbound mail in 34.5ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1] UserMailer#create_notification: processed outbound mail in 27.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036] Delivered mail 62c802ee7a834_13210f938787a@itscheckmate.mail (16.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036] Date: Fri, 08 Jul 2022 15:41:58 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c802ee7a834_13210f938787a@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c802ee78d44_13210f93878265";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c802ee78d44_13210f93878265
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c802ee78d44_13210f93878265
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello GM@GMAIL.COM
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c802ee78d44_13210f93878265--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20] Delivered mail 62c802ee7aa4e_13210f94c790e6@itscheckmate.mail (12.4ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20] Date: Fri, 08 Jul 2022 15:41:58 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c802ee7aa4e_13210f94c790e6@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c802ee79eff_13210f94c7854";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c802ee79eff_13210f94c7854
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c802ee79eff_13210f94c7854
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello jo@gmail.com
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c802ee79eff_13210f94c7854--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1] Delivered mail 62c802ee7ac9c_13210f97479114@itscheckmate.mail (10.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1] Date: Fri, 08 Jul 2022 15:41:58 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c802ee7ac9c_13210f97479114@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c802ee7935f_13210f97478369";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c802ee7935f_13210f97478369
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c802ee7935f_13210f97478369
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello joe@gmail.com
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c802ee7935f_13210f97478369--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53] Delivered mail 62c802ee7aa06_13210f98878984@itscheckmate.mail (14.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53] Date: Fri, 08 Jul 2022 15:41:58 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c802ee7aa06_13210f98878984@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c802ee7983b_13210f988784a3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c802ee7983b_13210f988784a3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c802ee7983b_13210f988784a3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello n@gmail.com
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c802ee7983b_13210f988784a3--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c86e7568-ba41-4972-a7ae-5fba331b9ae1] Performed ActionMailer::MailDeliveryJob (Job ID: c86e7568-ba41-4972-a7ae-5fba331b9ae1) from Async(default) in 43.8ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7] Delivered mail 62c802ee7a992_13210f96078857@itscheckmate.mail (10.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7] Date: Fri, 08 Jul 2022 15:41:58 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c802ee7a992_13210f96078857@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c802ee7a40d_13210f960786f2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c802ee7a40d_13210f960786f2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c802ee7a40d_13210f960786f2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello ben@gmail.com
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c802ee7a40d_13210f960786f2--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1546b5eb-23cc-4acc-b52e-42d490f42d20] Performed ActionMailer::MailDeliveryJob (Job ID: 1546b5eb-23cc-4acc-b52e-42d490f42d20) from Async(default) in 42.27ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [73b7f03d-9a7b-4e9b-9285-8bca17f1fd53] Performed ActionMailer::MailDeliveryJob (Job ID: 73b7f03d-9a7b-4e9b-9285-8bca17f1fd53) from Async(default) in 60.14ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [ae33dd06-57fd-49ce-896a-71af92e46036] Performed ActionMailer::MailDeliveryJob (Job ID: ae33dd06-57fd-49ce-896a-71af92e46036) from Async(default) in 48.59ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [4dc8560e-ea47-437a-ab6a-6c90be0110b7] Performed ActionMailer::MailDeliveryJob (Job ID: 4dc8560e-ea47-437a-ab6a-6c90be0110b7) from Async(default) in 46.71ms
+Started GET "/?page=1" for 127.0.0.1 at 2022-07-08 15:42:34 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4145)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 6340)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 7193)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2022-07-08 15:42:35 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 20]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4155)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 6350)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 7203)
+
+
+Started GET "/?page=3" for 127.0.0.1 at 2022-07-08 15:42:35 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 30]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4147)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6341)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 7179)
+
+
+Started GET "/?page=4" for 127.0.0.1 at 2022-07-08 15:42:36 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 40]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4131)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 6325)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 7163)
+
+
+Started GET "/?page=5" for 127.0.0.1 at 2022-07-08 15:42:36 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"5"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 50]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4133)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6327)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 7174)
+
+
+Started GET "/?page=6" for 127.0.0.1 at 2022-07-08 15:42:36 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"6"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 60]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4151)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 6358)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 7196)
+
+
+Started GET "/?page=7" for 127.0.0.1 at 2022-07-08 15:42:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"7"}
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 70]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4139)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 6336)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 7174)
+
+
+Started GET "/?page=8" for 127.0.0.1 at 2022-07-08 15:42:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"8"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 80]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4139)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 6333)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 7171)
+
+
+Started GET "/?page=9" for 127.0.0.1 at 2022-07-08 15:42:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"9"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 90]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 4148)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 6342)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.3ms | Allocations: 7181)
+
+
+Started GET "/?page=10" for 127.0.0.1 at 2022-07-08 15:42:37 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"10"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 100]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 3261)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 5470)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.3ms | Allocations: 6309)
+
+
+Started GET "/?page=9" for 127.0.0.1 at 2022-07-08 15:42:40 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"9"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 90]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4152)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 6359)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 7200)
+
+
+Started GET "/users/api" for 127.0.0.1 at 2022-07-08 15:43:28 +0530
+Processing by UsersController#api as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "Bluth"], ["email", "george.bluth@reqres.in"], ["avatar", "https://reqres.in/img/faces/1-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:13:28.748771"], ["updated_at", "2022-07-08 10:13:28.748771"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Janet"], ["last_name", "Weaver"], ["email", "janet.weaver@reqres.in"], ["avatar", "https://reqres.in/img/faces/2-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:13:28.752982"], ["updated_at", "2022-07-08 10:13:28.752982"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Emma"], ["last_name", "Wong"], ["email", "emma.wong@reqres.in"], ["avatar", "https://reqres.in/img/faces/3-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:13:28.755119"], ["updated_at", "2022-07-08 10:13:28.755119"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Eve"], ["last_name", "Holt"], ["email", "eve.holt@reqres.in"], ["avatar", "https://reqres.in/img/faces/4-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:13:28.757063"], ["updated_at", "2022-07-08 10:13:28.757063"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Charles"], ["last_name", "Morris"], ["email", "charles.morris@reqres.in"], ["avatar", "https://reqres.in/img/faces/5-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:13:28.758723"], ["updated_at", "2022-07-08 10:13:28.758723"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Tracey"], ["last_name", "Ramos"], ["email", "tracey.ramos@reqres.in"], ["avatar", "https://reqres.in/img/faces/6-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:13:28.760340"], ["updated_at", "2022-07-08 10:13:28.760340"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+Completed 406 Not Acceptable in 162ms (ActiveRecord: 5.0ms | Allocations: 22829)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#api is missing a template for request formats: text/html):
+  
+actionpack (7.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.3) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 2f643d73-25e8-4984-a84e-510e7b705db5) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["charles.morris@reqres.in", "Charles"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 07a2d596-0685-4b96-9060-c93cede8f73c) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["george.bluth@reqres.in", "George"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fb1c33ab-53ca-4025-a6df-d65dd47da05c) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["emma.wong@reqres.in", "Emma"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["tracey.ramos@reqres.in", "Tracey"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 484e5e6c-dc0b-4fdf-9a50-072078d24e1d) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["janet.weaver@reqres.in", "Janet"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 27721102-a848-4ec6-b56d-520ffc466d5a) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["eve.holt@reqres.in", "Eve"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5] Performing ActionMailer::MailDeliveryJob (Job ID: 2f643d73-25e8-4984-a84e-510e7b705db5) from Async(default) enqueued at 2022-07-08T10:13:35Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["charles.morris@reqres.in", "Charles"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 8)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 121)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 95)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5] UserMailer#create_notification: processed outbound mail in 2.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5] Delivered mail 62c8034fb394b_13210f9607936d@itscheckmate.mail (1.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5] Date: Fri, 08 Jul 2022 15:43:35 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8034fb394b_13210f9607936d@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8034fb34b4_13210f960792e4";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8034fb34b4_13210f960792e4
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8034fb34b4_13210f960792e4
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello charles.morris@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8034fb34b4_13210f960792e4--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c] Performing ActionMailer::MailDeliveryJob (Job ID: 07a2d596-0685-4b96-9060-c93cede8f73c) from Async(default) enqueued at 2022-07-08T10:13:35Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["george.bluth@reqres.in", "George"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [2f643d73-25e8-4984-a84e-510e7b705db5] Performed ActionMailer::MailDeliveryJob (Job ID: 2f643d73-25e8-4984-a84e-510e7b705db5) from Async(default) in 4.82ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendered layout layouts/mailer.html.erb (Duration: 0.4ms | Allocations: 223)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 102)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c] UserMailer#create_notification: processed outbound mail in 2.7ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c] Delivered mail 62c8034fb4d89_13210fc94795cf@itscheckmate.mail (2.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c] Date: Fri, 08 Jul 2022 15:43:35 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8034fb4d89_13210fc94795cf@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8034fb46d5_13210fc9479445";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8034fb46d5_13210fc9479445
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8034fb46d5_13210fc9479445
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello george.bluth@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8034fb46d5_13210fc9479445--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [07a2d596-0685-4b96-9060-c93cede8f73c] Performed ActionMailer::MailDeliveryJob (Job ID: 07a2d596-0685-4b96-9060-c93cede8f73c) from Async(default) in 5.73ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c] Performing ActionMailer::MailDeliveryJob (Job ID: fb1c33ab-53ca-4025-a6df-d65dd47da05c) from Async(default) enqueued at 2022-07-08T10:13:35Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["emma.wong@reqres.in", "Emma"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe] Performing ActionMailer::MailDeliveryJob (Job ID: b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe) from Async(default) enqueued at 2022-07-08T10:13:35Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["tracey.ramos@reqres.in", "Tracey"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendered layout layouts/mailer.html.erb (Duration: 0.8ms | Allocations: 1225)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendered layout layouts/mailer.html.erb (Duration: 0.4ms | Allocations: 338)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 143)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c] UserMailer#create_notification: processed outbound mail in 3.0ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe]   Rendered layout layouts/mailer.text.erb (Duration: 2.3ms | Allocations: 7130)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe] UserMailer#create_notification: processed outbound mail in 4.5ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c] Delivered mail 62c8034fb6875_13210fca8797b9@itscheckmate.mail (1.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c] Date: Fri, 08 Jul 2022 15:43:35 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8034fb6875_13210fca8797b9@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8034fb63cf_13210fca879686";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8034fb63cf_13210fca879686
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8034fb63cf_13210fca879686
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello emma.wong@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8034fb63cf_13210fca879686--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb1c33ab-53ca-4025-a6df-d65dd47da05c] Performed ActionMailer::MailDeliveryJob (Job ID: fb1c33ab-53ca-4025-a6df-d65dd47da05c) from Async(default) in 7.61ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe] Delivered mail 62c8034fb712f_13210f960799ec@itscheckmate.mail (1.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe] Date: Fri, 08 Jul 2022 15:43:35 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8034fb712f_13210f960799ec@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8034fb6cef_13210f96079835";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8034fb6cef_13210f96079835
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8034fb6cef_13210f96079835
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello tracey.ramos@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8034fb6cef_13210f96079835--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe] Performed ActionMailer::MailDeliveryJob (Job ID: b6b4340b-fa2d-4a8d-920e-78c8a6f1f2fe) from Async(default) in 7.2ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a] Performing ActionMailer::MailDeliveryJob (Job ID: 27721102-a848-4ec6-b56d-520ffc466d5a) from Async(default) enqueued at 2022-07-08T10:13:35Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["eve.holt@reqres.in", "Eve"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 85)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 87)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a] UserMailer#create_notification: processed outbound mail in 1.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a] Delivered mail 62c8034fb7f31_13210fcbc801cc@itscheckmate.mail (1.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a] Date: Fri, 08 Jul 2022 15:43:35 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8034fb7f31_13210fcbc801cc@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8034fb7b2c_13210fcbc800b0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8034fb7b2c_13210fcbc800b0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8034fb7b2c_13210fcbc800b0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello eve.holt@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8034fb7b2c_13210fcbc800b0--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [27721102-a848-4ec6-b56d-520ffc466d5a] Performed ActionMailer::MailDeliveryJob (Job ID: 27721102-a848-4ec6-b56d-520ffc466d5a) from Async(default) in 2.99ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d] Performing ActionMailer::MailDeliveryJob (Job ID: 484e5e6c-dc0b-4fdf-9a50-072078d24e1d) from Async(default) enqueued at 2022-07-08T10:13:35Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["janet.weaver@reqres.in", "Janet"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 84)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 83)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d] UserMailer#create_notification: processed outbound mail in 2.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d] Delivered mail 62c8034fb930d_13210fc94803d8@itscheckmate.mail (1.5ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d] Date: Fri, 08 Jul 2022 15:43:35 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8034fb930d_13210fc94803d8@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8034fb8c91_13210fc9480281";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8034fb8c91_13210fc9480281
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8034fb8c91_13210fc9480281
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello janet.weaver@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8034fb8c91_13210fc9480281--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [484e5e6c-dc0b-4fdf-9a50-072078d24e1d] Performed ActionMailer::MailDeliveryJob (Job ID: 484e5e6c-dc0b-4fdf-9a50-072078d24e1d) from Async(default) in 4.6ms
+Started GET "/users" for 127.0.0.1 at 2022-07-08 15:44:53 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4214)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 18003)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 19374)
+
+
+Started GET "/users/api" for 127.0.0.1 at 2022-07-08 15:52:01 +0530
+Processing by UsersController#api as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "Bluth"], ["email", "george.bluth@reqres.in"], ["avatar", "https://reqres.in/img/faces/1-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:01.826959"], ["updated_at", "2022-07-08 10:22:01.826959"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Janet"], ["last_name", "Weaver"], ["email", "janet.weaver@reqres.in"], ["avatar", "https://reqres.in/img/faces/2-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:01.830826"], ["updated_at", "2022-07-08 10:22:01.830826"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Emma"], ["last_name", "Wong"], ["email", "emma.wong@reqres.in"], ["avatar", "https://reqres.in/img/faces/3-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:01.832856"], ["updated_at", "2022-07-08 10:22:01.832856"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Eve"], ["last_name", "Holt"], ["email", "eve.holt@reqres.in"], ["avatar", "https://reqres.in/img/faces/4-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:01.834642"], ["updated_at", "2022-07-08 10:22:01.834642"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Charles"], ["last_name", "Morris"], ["email", "charles.morris@reqres.in"], ["avatar", "https://reqres.in/img/faces/5-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:01.836206"], ["updated_at", "2022-07-08 10:22:01.836206"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Tracey"], ["last_name", "Ramos"], ["email", "tracey.ramos@reqres.in"], ["avatar", "https://reqres.in/img/faces/6-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:01.837923"], ["updated_at", "2022-07-08 10:22:01.837923"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+Completed 406 Not Acceptable in 199ms (ActiveRecord: 8.1ms | Allocations: 16821)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#api is missing a template for request formats: text/html):
+  
+actionpack (7.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.3) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 142a85f6-012f-43d7-ada2-ee4b607e1cb1) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["george.bluth@reqres.in", "George"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 650c25f9-dbb4-44c2-99e6-e06afcca9613) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["janet.weaver@reqres.in", "Janet"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 572dc637-fb7c-4f9f-b521-a776622fa347) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["emma.wong@reqres.in", "Emma"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 55f57471-d905-4e02-ae99-b2694a578586) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["eve.holt@reqres.in", "Eve"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 20486677-6f4c-4c0d-8252-df6126905c9f) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["charles.morris@reqres.in", "Charles"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: c09f73b2-bd00-4383-861a-995f2da342e5) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["tracey.ramos@reqres.in", "Tracey"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1] Performing ActionMailer::MailDeliveryJob (Job ID: 142a85f6-012f-43d7-ada2-ee4b607e1cb1) from Async(default) enqueued at 2022-07-08T10:22:12Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["george.bluth@reqres.in", "George"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 115)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 115)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1] UserMailer#create_notification: processed outbound mail in 1.8ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1] Delivered mail 62c80554d4395_13210fc948058b@itscheckmate.mail (1.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1] Date: Fri, 08 Jul 2022 15:52:12 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80554d4395_13210fc948058b@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c80554d3fbc_13210fc948047e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c80554d3fbc_13210fc948047e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c80554d3fbc_13210fc948047e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello george.bluth@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c80554d3fbc_13210fc948047e--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [142a85f6-012f-43d7-ada2-ee4b607e1cb1] Performed ActionMailer::MailDeliveryJob (Job ID: 142a85f6-012f-43d7-ada2-ee4b607e1cb1) from Async(default) in 3.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613] Performing ActionMailer::MailDeliveryJob (Job ID: 650c25f9-dbb4-44c2-99e6-e06afcca9613) from Async(default) enqueued at 2022-07-08T10:22:12Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["janet.weaver@reqres.in", "Janet"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 93)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 104)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613] UserMailer#create_notification: processed outbound mail in 1.5ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613] Delivered mail 62c80554d528d_13210fd7080719@itscheckmate.mail (1.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613] Date: Fri, 08 Jul 2022 15:52:12 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80554d528d_13210fd7080719@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c80554d4eb9_13210fd7080631";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c80554d4eb9_13210fd7080631
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c80554d4eb9_13210fd7080631
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello janet.weaver@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c80554d4eb9_13210fd7080631--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [650c25f9-dbb4-44c2-99e6-e06afcca9613] Performed ActionMailer::MailDeliveryJob (Job ID: 650c25f9-dbb4-44c2-99e6-e06afcca9613) from Async(default) in 3.09ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347] Performing ActionMailer::MailDeliveryJob (Job ID: 572dc637-fb7c-4f9f-b521-a776622fa347) from Async(default) enqueued at 2022-07-08T10:22:12Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["emma.wong@reqres.in", "Emma"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 98)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586] Performing ActionMailer::MailDeliveryJob (Job ID: 55f57471-d905-4e02-ae99-b2694a578586) from Async(default) enqueued at 2022-07-08T10:22:12Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["eve.holt@reqres.in", "Eve"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347]   Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | Allocations: 1246)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347] UserMailer#create_notification: processed outbound mail in 2.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 139)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347] Delivered mail 62c80554d6950_13210fd848098@itscheckmate.mail (1.5ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347] Date: Fri, 08 Jul 2022 15:52:12 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80554d6950_13210fd848098@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c80554d64a9_13210fd8480835";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c80554d64a9_13210fd8480835
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c80554d64a9_13210fd8480835
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello emma.wong@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c80554d64a9_13210fd8480835--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 176)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586] UserMailer#create_notification: processed outbound mail in 4.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [572dc637-fb7c-4f9f-b521-a776622fa347] Performed ActionMailer::MailDeliveryJob (Job ID: 572dc637-fb7c-4f9f-b521-a776622fa347) from Async(default) in 4.71ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586] Delivered mail 62c80554d73c4_13210fd988117c@itscheckmate.mail (1.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586] Date: Fri, 08 Jul 2022 15:52:12 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80554d73c4_13210fd988117c@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c80554d6f8c_13210fd9881087";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c80554d6f8c_13210fd9881087
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c80554d6f8c_13210fd9881087
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello eve.holt@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c80554d6f8c_13210fd9881087--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [55f57471-d905-4e02-ae99-b2694a578586] Performed ActionMailer::MailDeliveryJob (Job ID: 55f57471-d905-4e02-ae99-b2694a578586) from Async(default) in 6.18ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f] Performing ActionMailer::MailDeliveryJob (Job ID: 20486677-6f4c-4c0d-8252-df6126905c9f) from Async(default) enqueued at 2022-07-08T10:22:12Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["charles.morris@reqres.in", "Charles"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 6)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 90)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 89)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f] UserMailer#create_notification: processed outbound mail in 1.5ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f] Delivered mail 62c80554d829b_13210fdac813ba@itscheckmate.mail (1.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f] Date: Fri, 08 Jul 2022 15:52:12 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80554d829b_13210fdac813ba@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c80554d7e95_13210fdac8129e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c80554d7e95_13210fdac8129e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c80554d7e95_13210fdac8129e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello charles.morris@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c80554d7e95_13210fdac8129e--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [20486677-6f4c-4c0d-8252-df6126905c9f] Performed ActionMailer::MailDeliveryJob (Job ID: 20486677-6f4c-4c0d-8252-df6126905c9f) from Async(default) in 2.8ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5] Performing ActionMailer::MailDeliveryJob (Job ID: c09f73b2-bd00-4383-861a-995f2da342e5) from Async(default) enqueued at 2022-07-08T10:22:12Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["tracey.ramos@reqres.in", "Tracey"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 85)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 83)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5] UserMailer#create_notification: processed outbound mail in 7.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5] Delivered mail 62c80554dafd4_13210fdd481541@itscheckmate.mail (14.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5] Date: Fri, 08 Jul 2022 15:52:12 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80554dafd4_13210fdd481541@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c80554d89a2_13210fdd4814bc";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c80554d89a2_13210fdd4814bc
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c80554d89a2_13210fdd4814bc
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello tracey.ramos@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c80554d89a2_13210fdd4814bc--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [c09f73b2-bd00-4383-861a-995f2da342e5] Performed ActionMailer::MailDeliveryJob (Job ID: c09f73b2-bd00-4383-861a-995f2da342e5) from Async(default) in 21.86ms
+Started GET "/users/api" for 127.0.0.1 at 2022-07-08 15:52:48 +0530
+Processing by UsersController#api as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "Bluth"], ["email", "george.bluth@reqres.in"], ["avatar", "https://reqres.in/img/faces/1-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:48.309836"], ["updated_at", "2022-07-08 10:22:48.309836"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Janet"], ["last_name", "Weaver"], ["email", "janet.weaver@reqres.in"], ["avatar", "https://reqres.in/img/faces/2-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:48.323524"], ["updated_at", "2022-07-08 10:22:48.323524"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Emma"], ["last_name", "Wong"], ["email", "emma.wong@reqres.in"], ["avatar", "https://reqres.in/img/faces/3-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:48.326249"], ["updated_at", "2022-07-08 10:22:48.326249"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Eve"], ["last_name", "Holt"], ["email", "eve.holt@reqres.in"], ["avatar", "https://reqres.in/img/faces/4-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:48.327974"], ["updated_at", "2022-07-08 10:22:48.327974"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Charles"], ["last_name", "Morris"], ["email", "charles.morris@reqres.in"], ["avatar", "https://reqres.in/img/faces/5-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:48.329537"], ["updated_at", "2022-07-08 10:22:48.329537"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "favourite_music") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Tracey"], ["last_name", "Ramos"], ["email", "tracey.ramos@reqres.in"], ["avatar", "https://reqres.in/img/faces/6-image.jpg"], ["gender", nil], ["about", nil], ["password", "[FILTERED]"], ["country", nil], ["created_at", "2022-07-08 10:22:48.331199"], ["updated_at", "2022-07-08 10:22:48.331199"], ["favourite_music", "{}"]]
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:32:in `block in api'
+Completed 406 Not Acceptable in 136ms (ActiveRecord: 10.0ms | Allocations: 14043)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#api is missing a template for request formats: text/html):
+  
+actionpack (7.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.3) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: e4ef29ac-6215-4d58-9194-97c9b4f94366) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["george.bluth@reqres.in", "George"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fc82bb5a-58dc-4d48-94d2-ca859d9dfbca) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["janet.weaver@reqres.in", "Janet"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: eab74bee-2253-4487-9961-302b1a30a59a) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["emma.wong@reqres.in", "Emma"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 74fb1b2b-70a1-4307-95c3-ccaa22dfea68) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["eve.holt@reqres.in", "Eve"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: dfbd485a-d283-468c-b09b-65de3d03cca0) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["charles.morris@reqres.in", "Charles"]}
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: f662be89-9100-4c47-a2f2-21796cc37aa5) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["tracey.ramos@reqres.in", "Tracey"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366] Performing ActionMailer::MailDeliveryJob (Job ID: e4ef29ac-6215-4d58-9194-97c9b4f94366) from Async(default) enqueued at 2022-07-08T10:22:56Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["george.bluth@reqres.in", "George"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 130)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 99)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366] UserMailer#create_notification: processed outbound mail in 2.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca] Performing ActionMailer::MailDeliveryJob (Job ID: fc82bb5a-58dc-4d48-94d2-ca859d9dfbca) from Async(default) enqueued at 2022-07-08T10:22:56Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["janet.weaver@reqres.in", "Janet"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366] Delivered mail 62c805805c772_13210fdd4817e4@itscheckmate.mail (1.9ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366] Date: Fri, 08 Jul 2022 15:52:56 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c805805c772_13210fdd4817e4@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c805805c26c_13210fdd48162c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c805805c26c_13210fdd48162c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c805805c26c_13210fdd48162c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello george.bluth@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c805805c26c_13210fdd48162c--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e4ef29ac-6215-4d58-9194-97c9b4f94366] Performed ActionMailer::MailDeliveryJob (Job ID: e4ef29ac-6215-4d58-9194-97c9b4f94366) from Async(default) in 4.86ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 265)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 100)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca] UserMailer#create_notification: processed outbound mail in 2.1ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca] Delivered mail 62c805805d5fb_13210fdac81956@itscheckmate.mail (1.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca] Date: Fri, 08 Jul 2022 15:52:56 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c805805d5fb_13210fdac81956@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c805805d1d7_13210fdac818b5";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c805805d1d7_13210fdac818b5
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c805805d1d7_13210fdac818b5
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello janet.weaver@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c805805d1d7_13210fdac818b5--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fc82bb5a-58dc-4d48-94d2-ca859d9dfbca] Performed ActionMailer::MailDeliveryJob (Job ID: fc82bb5a-58dc-4d48-94d2-ca859d9dfbca) from Async(default) in 4.0ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a] Performing ActionMailer::MailDeliveryJob (Job ID: eab74bee-2253-4487-9961-302b1a30a59a) from Async(default) enqueued at 2022-07-08T10:22:56Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["emma.wong@reqres.in", "Emma"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 110)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 133)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a] UserMailer#create_notification: processed outbound mail in 1.9ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a] Delivered mail 62c805805e873_13210fd9882185@itscheckmate.mail (1.4ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a] Date: Fri, 08 Jul 2022 15:52:56 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c805805e873_13210fd9882185@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c805805e3f1_13210fd988204d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c805805e3f1_13210fd988204d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c805805e3f1_13210fd988204d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello emma.wong@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c805805e3f1_13210fd988204d--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [eab74bee-2253-4487-9961-302b1a30a59a] Performed ActionMailer::MailDeliveryJob (Job ID: eab74bee-2253-4487-9961-302b1a30a59a) from Async(default) in 3.74ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68] Performing ActionMailer::MailDeliveryJob (Job ID: 74fb1b2b-70a1-4307-95c3-ccaa22dfea68) from Async(default) enqueued at 2022-07-08T10:22:56Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["eve.holt@reqres.in", "Eve"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 90)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68]   Rendered layout layouts/mailer.text.erb (Duration: 0.1ms | Allocations: 92)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68] UserMailer#create_notification: processed outbound mail in 1.9ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68] Delivered mail 62c805805fa53_13210fd84823d0@itscheckmate.mail (1.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68] Date: Fri, 08 Jul 2022 15:52:56 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c805805fa53_13210fd84823d0@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c805805f5ae_13210fd848225e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c805805f5ae_13210fd848225e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c805805f5ae_13210fd848225e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello eve.holt@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c805805f5ae_13210fd848225e--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [74fb1b2b-70a1-4307-95c3-ccaa22dfea68] Performed ActionMailer::MailDeliveryJob (Job ID: 74fb1b2b-70a1-4307-95c3-ccaa22dfea68) from Async(default) in 3.51ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0] Performing ActionMailer::MailDeliveryJob (Job ID: dfbd485a-d283-468c-b09b-65de3d03cca0) from Async(default) enqueued at 2022-07-08T10:22:56Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["charles.morris@reqres.in", "Charles"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 6)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 93)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5] Performing ActionMailer::MailDeliveryJob (Job ID: f662be89-9100-4c47-a2f2-21796cc37aa5) from Async(default) enqueued at 2022-07-08T10:22:56Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["tracey.ramos@reqres.in", "Tracey"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 5)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0]   Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 1354)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0] UserMailer#create_notification: processed outbound mail in 2.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendered layout layouts/mailer.html.erb (Duration: 0.1ms | Allocations: 133)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.0ms | Allocations: 4)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0] Delivered mail 62c8058060ca3_13210fd708253f@itscheckmate.mail (1.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0] Date: Fri, 08 Jul 2022 15:52:56 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c8058060ca3_13210fd708253f@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c805806086f_13210fd708249f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c805806086f_13210fd708249f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c805806086f_13210fd708249f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello charles.morris@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c805806086f_13210fd708249f--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5]   Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 400)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5] UserMailer#create_notification: processed outbound mail in 3.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [dfbd485a-d283-468c-b09b-65de3d03cca0] Performed ActionMailer::MailDeliveryJob (Job ID: dfbd485a-d283-468c-b09b-65de3d03cca0) from Async(default) in 3.83ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5] Delivered mail 62c80580614c7_13210fc94827eb@itscheckmate.mail (1.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5] Date: Fri, 08 Jul 2022 15:52:56 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c80580614c7_13210fc94827eb@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c8058061105_13210fc948261c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c8058061105_13210fc948261c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c8058061105_13210fc948261c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello tracey.ramos@reqres.in
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c8058061105_13210fc948261c--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f662be89-9100-4c47-a2f2-21796cc37aa5] Performed ActionMailer::MailDeliveryJob (Job ID: f662be89-9100-4c47-a2f2-21796cc37aa5) from Async(default) in 4.95ms
+Started GET "/?page=1" for 127.0.0.1 at 2022-07-08 15:54:04 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4277)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 6487)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 7326)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2022-07-08 15:54:05 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 20]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4141)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6335)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 7173)
+
+
+Started GET "/?page=3" for 127.0.0.1 at 2022-07-08 15:54:06 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 30]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4137)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 6331)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 7169)
+
+
+Started GET "/?page=4" for 127.0.0.1 at 2022-07-08 15:54:06 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 40]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4147)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6341)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 7179)
+
+
+Started GET "/?page=5" for 127.0.0.1 at 2022-07-08 15:54:06 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"5"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 50]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 4139)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 6333)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 7171)
+
+
+Started GET "/?page=6" for 127.0.0.1 at 2022-07-08 15:54:07 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"6"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 60]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4145)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 6339)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 7177)
+
+
+Started GET "/?page=7" for 127.0.0.1 at 2022-07-08 15:54:07 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"7"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 70]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4143)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6337)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 7175)
+
+
+Started GET "/?page=8" for 127.0.0.1 at 2022-07-08 15:54:08 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"8"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 80]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4133)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6327)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 7165)
+
+
+Started GET "/?page=9" for 127.0.0.1 at 2022-07-08 15:54:08 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"9"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 90]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4150)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 6344)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 7182)
+
+
+Started GET "/?page=10" for 127.0.0.1 at 2022-07-08 15:54:10 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"10"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 100]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 4247)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 6441)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 7279)
+
+
+Started GET "/?page=11" for 127.0.0.1 at 2022-07-08 15:54:12 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"11"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 110]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4221)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 6415)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 7253)
+
+
+Started GET "/?page=12" for 127.0.0.1 at 2022-07-08 15:55:11 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"12"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 120]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2592)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4786)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 5625)
+
+
