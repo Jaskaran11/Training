@@ -18,5 +18,9 @@
   <th>Country:</th>
   <td><%= @user.country %></td>
   </tr>
+  <tr>
+    <td>Vaccinated: </td>
+    <td><%= @user.vaccinated.to_sentence %> </td>
+  </tr>
   </table>
 </div>

@@ -3321,3 +3321,474 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 40ms (Views: 31.0ms | ActiveRecord: 1.8ms | Allocations: 53712)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7390401893748458655)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToUsers (20220707155554)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "vaccinated" text[] DEFAULT '{}'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220707155554"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7390401893748458655)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-07 22:49:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 12790)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 47605)
+Completed 200 OK in 40ms (Views: 32.2ms | ActiveRecord: 2.8ms | Allocations: 55033)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-07 22:49:05 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.6ms | Allocations: 4806)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5770)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7974)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 8410)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-07 22:49:23 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Joe", "last_name"=>"doe", "email"=>"joe@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "country"=>"Brazil"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "vaccinated") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Joe"], ["last_name", "doe"], ["email", "joe@gmail.com"], ["avatar", nil], ["gender", "Male"], ["about", nil], ["password", "[FILTERED]"], ["country", "Brazil"], ["created_at", "2022-07-07 17:19:23.522541"], ["updated_at", "2022-07-07 17:19:23.522541"], ["vaccinated", "{}"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 4770)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-07 22:49:23 +0530
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3935)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 6130)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 7021)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-07 22:50:41 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.8ms | Allocations: 1732)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2378)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 16180)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 1.6ms | Allocations: 20318)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-07 22:51:00 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"John", "last_name"=>"Will", "email"=>"jo@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "country"=>"India"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "vaccinated") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Will"], ["email", "jo@gmail.com"], ["avatar", nil], ["gender", "Female"], ["about", nil], ["password", "[FILTERED]"], ["country", "India"], ["created_at", "2022-07-07 17:21:00.975769"], ["updated_at", "2022-07-07 17:21:00.975769"], ["vaccinated", "{}"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms | Allocations: 2694)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-07 22:51:00 +0530
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3996)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 6191)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 7145)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-08 12:27:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 12790)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 47531)
+Completed 200 OK in 44ms (Views: 34.9ms | ActiveRecord: 2.4ms | Allocations: 54959)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:28:10 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.9ms | Allocations: 4806)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5760)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 7964)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 8400)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-08 12:28:33 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Ben", "last_name"=>"Doe", "email"=>"ben@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "country"=>"Russia"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "vaccinated") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Ben"], ["last_name", "Doe"], ["email", "ben@gmail.com"], ["avatar", nil], ["gender", "Male"], ["about", nil], ["password", "[FILTERED]"], ["country", "Russia"], ["created_at", "2022-07-08 06:58:33.763650"], ["updated_at", "2022-07-08 06:58:33.763650"], ["vaccinated", "{}"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 4758)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-08 12:28:33 +0530
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3935)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 6130)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 7021)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:31:05 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 1732)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2372)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 16174)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 1.5ms | Allocations: 20312)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-08 12:31:25 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"WIll", "last_name"=>"smith", "email"=>"will12@gmail.co", "password"=>"[FILTERED]", "gender"=>"Male", "country"=>"India"}, "commit"=>"New User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "avatar", "gender", "about", "password", "country", "created_at", "updated_at", "vaccinated") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "WIll"], ["last_name", "smith"], ["email", "will12@gmail.co"], ["avatar", nil], ["gender", "Male"], ["about", nil], ["password", "[FILTERED]"], ["country", "India"], ["created_at", "2022-07-08 07:01:25.515892"], ["updated_at", "2022-07-08 07:01:25.515892"], ["vaccinated", "{}"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms | Allocations: 2729)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-08 12:31:25 +0530
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3998)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 6193)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 7147)
+
+
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 42d70c4b-9d19-4941-aef9-3be7253fe40d) to Async(default) with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["will12@gmail.co", "WIll"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d] Performing ActionMailer::MailDeliveryJob (Job ID: 42d70c4b-9d19-4941-aef9-3be7253fe40d) from Async(default) enqueued at 2022-07-08T07:01:31Z with arguments: "UserMailer", "create_notification", "deliver_now", {:args=>["will12@gmail.co", "WIll"]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendering user_mailer/create_notification.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendered user_mailer/create_notification.html.erb within layouts/mailer (Duration: 0.4ms | Allocations: 385)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendered layout layouts/mailer.html.erb (Duration: 0.7ms | Allocations: 623)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendering user_mailer/create_notification.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendered user_mailer/create_notification.text.erb within layouts/mailer (Duration: 0.4ms | Allocations: 117)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d]   Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | Allocations: 297)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d] UserMailer#create_notification: processed outbound mail in 27.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d] Delivered mail 62c7d64b3cd32_f4f83df4-392@itscheckmate.mail (2.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d] Date: Fri, 08 Jul 2022 12:31:31 +0530
+From: from@example.com
+To: jaskaran@gmail.com
+Message-ID: <62c7d64b3cd32_f4f83df4-392@itscheckmate.mail>
+Subject: A new entry for  has been created
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62c7d64b3c664_f4f83df4-4fd";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62c7d64b3c664_f4f83df4-4fd
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#create_notification
+
+, find me in app/views/user_mailer/create_notification.text.erb
+
+
+----==_mimepart_62c7d64b3c664_f4f83df4-4fd
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome!</h1>
+
+<p>
+  Hello will12@gmail.co
+  thanks for registering on the platform.
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_62c7d64b3c664_f4f83df4-4fd--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [42d70c4b-9d19-4941-aef9-3be7253fe40d] Performed ActionMailer::MailDeliveryJob (Job ID: 42d70c4b-9d19-4941-aef9-3be7253fe40d) from Async(default) in 30.75ms
+Started GET "/" for 127.0.0.1 at 2022-07-08 12:51:17 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 6725)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 20703)
+Completed 200 OK in 25ms (Views: 15.2ms | ActiveRecord: 3.2ms | Allocations: 26059)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-08 12:51:20 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:28
+  Rendered users/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3952)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6146)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.6ms | Allocations: 6985)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:51:26 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.2ms | Allocations: 3195)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 4063)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 6266)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 6672)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:52:15 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.3ms | Allocations: 11072)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 11575)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 11654)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 12671)
+
+
+  
+ActionView::Template::Error (undefined method `vaccinated?' for #<ActionView::Base:0x000000000169e0>
+Did you mean?  tainted?):
+    43:   <div>
+    44:   <% User::VACCINATED.each do |vaccinated| %>
+    45:     <%= form.check_box :vaccinated, {multiple: true }, vaccinated, nil %>
+    46:     <%= form.label vaccinated? %>
+    47:   <% end %>  
+    48:   </div>
+  
+app/views/users/_form.html.erb:46
+app/views/users/_form.html.erb:44:in `each'
+app/views/users/_form.html.erb:44
+app/views/users/new.html.erb:7
+app/views/users/new.html.erb:6
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:52:23 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 2745)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3633)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6130)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 7166)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:52:42 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 3461)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3962)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4041)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 5044)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Hash):
+    42:   </div>
+    43:   <div>
+    44:   <% User::VACCINATED.each do |vaccinated| %>
+    45:     <%= form.check_box :vaccinated, vaccinated, nil %>
+    46:     <%= form.label vaccinated %>
+    47:   <% end %>  
+    48:   </div>
+  
+app/views/users/_form.html.erb:45
+app/views/users/_form.html.erb:44:in `each'
+app/views/users/_form.html.erb:44
+app/views/users/new.html.erb:7
+app/views/users/new.html.erb:6
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:52:57 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.2ms | Allocations: 3455)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3956)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4035)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5036)
+
+
+  
+ActionView::Template::Error (no implicit conversion of nil into Hash):
+    42:   </div>
+    43:   <div>
+    44:   <% User::VACCINATED.each do |vaccinated| %>
+    45:     <%= form.check_box :vaccinated, nil %>
+    46:     <%= form.label vaccinated %>
+    47:   <% end %>  
+    48:   </div>
+  
+app/views/users/_form.html.erb:45
+app/views/users/_form.html.erb:44:in `each'
+app/views/users/_form.html.erb:44
+app/views/users/new.html.erb:7
+app/views/users/new.html.erb:6
+Started GET "/users/new" for 127.0.0.1 at 2022-07-08 12:53:33 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 2731)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 3623)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6120)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 7156)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7390401893748458655)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToUsersMusic (20220708073733)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7390401893748458655)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7390401893748458655)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToUsersMusic (20220708073733)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "vaccinated"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "favourite_music" text[] DEFAULT '{}'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220708073733"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7390401893748458655)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "favourite_music" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-07-08 07:41:04.634636"], ["favourite_music", "{pop}"], ["id", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "favourite_music" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-07-08 07:41:50.635563"], ["favourite_music", "{pop,hip-hop}"], ["id", 1]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "favourite_music" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-07-08 07:42:28.078389"], ["favourite_music", "{pop,hip-hop,jazz}"], ["id", 1]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."favourite_music" = $1[0m  [["favourite_music", "{jazz}"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (favourite_music && '{jazz}')[0m
+Started GET "/users" for 127.0.0.1 at 2022-07-08 13:17:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 12987)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 47830)
+Completed 200 OK in 37ms (Views: 30.3ms | ActiveRecord: 2.7ms | Allocations: 55266)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-08 13:17:24 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 5711)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 8182)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 9731)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2022-07-08 13:21:45 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 10.0ms | Allocations: 9340)
+  Rendered users/edit.html.erb within layouts/application (Duration: 10.8ms | Allocations: 9935)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 10015)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.7ms | Allocations: 16440)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `favourite_music' for #<ActionView::Base:0x000000000118c8>):
+    43:   <div>
+    44:   <% User::FAVOURITE_MUSIC.each do |music| %>
+    45:     <%= form.check_box :favourite_music, { multiple: true }, music, nil %>
+    46:     <%= form.label favourite_music %>
+    47:   <% end %>  
+    48:   </div>
+  
+app/views/users/_form.html.erb:46
+app/views/users/_form.html.erb:44:in `each'
+app/views/users/_form.html.erb:44
+app/views/users/edit.html.erb:7
+app/views/users/edit.html.erb:6
+Started GET "/users/1/edit" for 127.0.0.1 at 2022-07-08 13:22:05 +0530
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 3115)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 4089)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 18087)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 19594)
+
+

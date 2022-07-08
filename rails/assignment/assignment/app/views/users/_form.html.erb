@@ -40,6 +40,12 @@
                          'Italy',
                          ] %>
   </div>
+  <div>
+  <% User::FAVOURITE_MUSIC.each do |music| %>
+    <%= form.check_box :favourite_music, { multiple: true }, music, nil %>
+    <%= form.label music %>
+  <% end %>  
+  </div>
 
 
 

@@ -4,6 +4,6 @@ class MailWorker
   def perform(email, first_name)
     @email = email
     @first_name = first_name
-    UsersConfirmationMailer.create_notification(@email, @first_name).deliver_later
+    UserMailer.create_notification(@email, @first_name).deliver_later
   end
 end

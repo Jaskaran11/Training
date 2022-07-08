@@ -11,4 +11,5 @@ class User < ApplicationRecord
       @users = User.all  
     end 
   end
+  FAVOURITE_MUSIC = %i[hip-hop jazz pop]
 end

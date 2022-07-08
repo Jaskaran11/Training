@@ -5,7 +5,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.create_notification.subject
   #
-  def create_notification
+  def create_notification(first_name, email)
+    @first_name = first_name
+    @email = email
     mail to: 'jaskaran@gmail.com', subject: "A new entry for  has been created"
   end
 
