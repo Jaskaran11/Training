@@ -1,0 +1,2 @@
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE DATABASE "rails_jwt_development" ENCODING = 'unicode'[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE DATABASE "rails_jwt_test" ENCODING = 'unicode'[0m
