@@ -25,16 +25,16 @@ class Api::V1::UsersController <ApplicationController
     user = User.find(params[:id])
     user.update user_params
     if user.save
-      render json: {data: UserSerializer.new(user)}
+      render json: { data: UserSerializer.new(user) }
     else
-      render json: {data: user.errors}
+      render json: { data: user.errors }
     end
   end
 
   def destroy
     user = User.find(params[:id])
     user.destroy
-    render json: {data: "Successfully deleted  #{user.first_name}"}
+    render json: { data: "Successfully deleted  #{user.first_name}" }
   end
 
   private

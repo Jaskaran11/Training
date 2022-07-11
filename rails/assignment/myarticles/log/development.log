@@ -172,3 +172,7 @@ Processing by Api::V1::ArticlesController#update as */*
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 3792)
 
 
+Started GET "/users" for ::1 at 2022-07-08 23:11:57 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
