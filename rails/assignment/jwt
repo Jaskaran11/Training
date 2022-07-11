@@ -1,0 +1,8 @@
+Difference between Jwt and session cookies- 
+
+Rails session cookies are encrypted, so you cant read any information in it.
+In modern web applications, JWTs are widely used as it scales better than that of a session-cookie based because tokens are stored on the client-side while the session uses the server memory to store user data, and this might be an issue when a large number of users are accessing the application at once.
+ Since JWT is sent along with every request and contains all the user information, even though it is encoded, it is necessary to use the necessary information in JWT and sensitive information should be avoided or can be encrypted to prevent security attacks.
+In cookie sessions you dont have to be worry about security, you have to worry about people doing  malicious things because you will be always be automatically logged in until that cookie is deleted.
+
+
