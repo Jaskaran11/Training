@@ -41,5 +41,14 @@ url = "https://reqres.in/api/users/2"
 response2 = RestClient.get url
 print response1.body
 
+url = "https://reqres.in/api/users/2"
+print url,"\n"
+response1 = RestClient.delete url
+
+data_h = JSON.parse(response1)
+url = "https://reqres.in/api/users/2"
+response2 = RestClient.get url
+print response1.body
+
 
 
