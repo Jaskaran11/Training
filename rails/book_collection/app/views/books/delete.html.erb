@@ -3,12 +3,14 @@
 <div class="books new">
   <h2>Delete Book</h2>
   
+  <div class="mt-2" data-controller="post-actions" data-post-actions-user-id-value="<%= @book.user_id %>">
   <%= form_for(@book, :method => 'delete') do |f| %>
   
   <p>Are you  sure you wanna delete this book?</p>
   <p><%= @book.title%></p>
+  </div>
   <div class="form-buttons">
-  <%= f.submit("Delete Book")%>
+  <%= f.submit("Delete Book") %>
 </div>
 
 <% end %>
