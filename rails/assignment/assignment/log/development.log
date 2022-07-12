@@ -7385,3 +7385,58 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 9468)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-12 20:41:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 18365)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 53194)
+Completed 200 OK in 54ms (Views: 43.4ms | ActiveRecord: 2.6ms | Allocations: 67358)
+
+
+Started GET "/?page=1" for 127.0.0.1 at 2022-07-12 20:41:15 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4170)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 6365)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 7227)
+
+
+Started GET "/users/12" for 127.0.0.1 at 2022-07-12 20:45:31 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 658)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 35858)
+Completed 200 OK in 44ms (Views: 25.0ms | ActiveRecord: 2.2ms | Allocations: 62572)
+
+
+Started GET "/?page=0" for 127.0.0.1 at 2022-07-12 20:45:41 +0530
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"0"}
+  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 6409)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 8604)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 9615)
+
+
