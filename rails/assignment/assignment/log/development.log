@@ -7228,3 +7228,160 @@ Migrating to AddDeviseToUsers (20220712123643)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7390401893748458655)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-12 18:52:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:29
+  Rendered users/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 19362)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 54264)
+Completed 200 OK in 60ms (Views: 46.6ms | ActiveRecord: 2.8ms | Allocations: 68429)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-07-12 18:52:54 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 2509)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3067)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3147)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3577)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+     <p><%= message %></p>
+    <% end %>
+  <% end %>
+  <div>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+  </div>
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %>
+  </div>
+  <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :gender %><br>
+    <%= form.radio_button(:gender, "Male") %>
+    <%= label_tag(:gender, "Male") %>
+    <%= form.radio_button(:gender, "Female") %>
+    <%= label_tag(:gender, "Female") %>
+  </div>
+  <div>
+    <%= form.label :country %><br>
+    <%= form.select :country , ['India',
+                         'China',
+                         'United States',
+                         'Russia',
+                         'Brazil',
+                         'Mexico',
+                         'Germany',
+                         'France',
+                         'Italy',
+                         ] %>
+  </div>
+  <div>
+  <% User::FAVOURITE_MUSIC.each do |music| %>
+    <%= form.check_box :favourite_music, { multiple: true }, music, nil %>
+    <%= form.label music %>
+  <% end %>  
+  </div>
+  <div>
+  <%= form_with url: "/uploads", multipart: true do |form| %>
+    <%= file_field_tag :picture %>
+  </div>
+
+
+
+
+
+
+
+
+):
+1:    
+2:      <% if @user.errors.any? %>
+3:        <% @user.errors.full_messages.each do |message| %>
+4:         <p><%= message %></p>
+5:        <% end %>
+6:      <% end %>
+7:      <div>
+8:        <%= form.label :first_name %><br>
+9:        <%= form.text_field :first_name %>
+10:      </div>
+11:      <div>
+12:        <%= form.label :last_name %><br>
+13:        <%= form.text_field :last_name %>
+14:      </div>
+15:      <div>
+16:        <%= form.label :email %><br>
+17:        <%= form.email_field :email %>
+18:      </div>
+19:      <div>
+20:        <%= form.label :password %><br>
+21:        <%= form.password_field :password %>
+22:      </div>
+23:      <div>
+24:        <%= form.label :gender %><br>
+25:        <%= form.radio_button(:gender, "Male") %>
+26:        <%= label_tag(:gender, "Male") %>
+27:        <%= form.radio_button(:gender, "Female") %>
+28:        <%= label_tag(:gender, "Female") %>
+29:      </div>
+30:      <div>
+31:        <%= form.label :country %><br>
+32:        <%= form.select :country , ['India',
+33:                             'China',
+34:                             'United States',
+35:                             'Russia',
+36:                             'Brazil',
+37:                             'Mexico',
+38:                             'Germany',
+39:                             'France',
+40:                             'Italy',
+41:                             ] %>
+42:      </div>
+43:      <div>
+44:      <% User::FAVOURITE_MUSIC.each do |music| %>
+45:        <%= form.check_box :favourite_music, { multiple: true }, music, nil %>
+46:        <%= form.label music %>
+47:      <% end %>  
+48:      </div>
+49:      <div>
+50:      <%= form_with url: "/uploads", multipart: true do |form| %>
+51:        <%= file_field_tag :picture %>
+52:      </div>
+  
+app/views/users/_form.html.erb:62: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/_form.html.erb:62: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/_form.html.erb:62: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/_form.html.erb:62: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/_form.html.erb:62: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/_form.html.erb:62: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/new.html.erb:7
+app/views/users/new.html.erb:6
+Started GET "/users/new" for 127.0.0.1 at 2022-07-12 18:53:15 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.1ms | Allocations: 4990)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 5895)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 8393)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 9468)
+
+
