@@ -1785,3 +1785,41 @@ ActionView::Template::Error (undefined method `scrub' for :extension_allowlist:S
   
 app/views/users/sign_up.html.erb:17:in `block in _app_views_users_sign_up_html_erb__4112942307734972931_30860'
 app/views/users/sign_up.html.erb:2:in `_app_views_users_sign_up_html_erb__4112942307734972931_30860'
+Started GET "/" for ::1 at 2022-07-13 23:01:35 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (89.5ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "extension_allowlist" is not present in the asset pipeline.
+):
+    14:       <td><%= user.gender %></td>
+    15:       <td><%= user.address %></td>
+    16:       <td><%= user.profile %></td>
+    17:       <td><%= image_tag(user.profile.to_s) %></td>
+    18:       </tr>
+    19:     <% end %>
+    20:     </table>
+  
+app/views/users/index.html.erb:17:in `block in _app_views_users_index_html_erb___1693748647318440117_31400'
+app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___1693748647318440117_31400'
+Started GET "/" for ::1 at 2022-07-13 23:02:55 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-13 23:02:58 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+

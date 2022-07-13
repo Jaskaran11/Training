@@ -14,9 +14,9 @@
       <td><%= user.gender %></td>
       <td><%= user.address %></td>
       <td><%= user.profile %></td>
+      <td><%= image_tag(user.profile.to_s) %></td>
       </tr>
     <% end %>
     </table>
-    <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
   </div>
 </div>
