@@ -502,3 +502,1286 @@ Processing by UsersController#sign_up as HTML
 Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-07-13 20:40:11 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:42:34 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:44:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:44:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:44:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:44:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:46:47 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:50:06 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:24 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:51 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:54 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:55 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:56 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:52:56 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:49 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:49 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:50 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:50 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:51 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:51 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:52 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 20:53:53 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `validate_integrity' for ImageUploader:Module):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 21:06:37 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<User::ActiveRecord_Relation:0x00005639465f5ef8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.image_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_13920'
+Started GET "/" for ::1 at 2022-07-13 21:07:02 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x0000563947306070>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_14500'
+Started GET "/" for ::1 at 2022-07-13 21:07:53 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x000056394621a9a0>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_15020'
+Started GET "/users/sign_up" for ::1 at 2022-07-13 21:07:59 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 109ms (Views: 106.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-13 21:08:07 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f2a0c1c5ba0>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_15820'
+Started GET "/" for ::1 at 2022-07-13 21:08:10 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f2a00017120>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_16380'
+Started GET "/" for ::1 at 2022-07-13 21:08:12 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f2a0800c5d8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_16940'
+Started GET "/" for ::1 at 2022-07-13 21:08:17 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f2a004ab010>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_17460'
+Started GET "/" for ::1 at 2022-07-13 21:08:20 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f2a0c58e5e8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_17980'
+Started GET "/" for ::1 at 2022-07-13 21:17:42 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<User::ActiveRecord_Relation:0x00007f2a08122bc0>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.image_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_18520'
+Started GET "/" for ::1 at 2022-07-13 21:18:55 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<User::ActiveRecord_Relation:0x00007f2a0c837268>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.image_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_20480'
+Started GET "/" for ::1 at 2022-07-13 21:19:49 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<User::ActiveRecord_Relation:0x00007f2a0817ea10>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.image_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_22460'
+Started GET "/" for ::1 at 2022-07-13 21:19:50 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<User::ActiveRecord_Relation:0x00007f2a0462c2f0>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.image_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_23000'
+Started GET "/" for ::1 at 2022-07-13 21:19:50 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<User::ActiveRecord_Relation:0x00007f2a00494090>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.image_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___981187291022341831_23520'
+Started GET "/" for ::1 at 2022-07-13 22:04:04 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f4fa8bb0b08>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb__2829243304889873690_13920'
+Started GET "/" for ::1 at 2022-07-13 22:15:25 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (79.7ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x000055e6783dc430>:0x00007f6c08bc1aa8>
+Did you mean?  for
+               fork):
+    20:   </div>
+    21:   <div class="mb-3">
+    22:     Add an image..
+    23:   <%= form.file_field :profile %>
+    24:   <%= form.hidden_field :profile_cache %>
+    25:   </div>
+    26: </div>
+  
+app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__3841475261351210593_13920'
+Started GET "/" for ::1 at 2022-07-13 22:15:43 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007f6c089788c8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.to_s) if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb__3841475261351210593_14560'
+Started GET "/" for ::1 at 2022-07-13 22:17:07 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f6c085245d8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.nil.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb__3841475261351210593_15140'
+Started GET "/" for ::1 at 2022-07-13 22:18:01 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/Image_uploader/app/uploaders/profile_uploader.rb:47: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/uploaders/profile_uploader.rb:47: syntax error, unexpected end-of-input, expecting `end'
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:18:23 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f6c08df9de8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.nil.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb__3841475261351210593_19060'
+Started GET "/" for ::1 at 2022-07-13 22:20:27 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_url' for #<User::ActiveRecord_Relation:0x00007f6c0824d788>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url.nil.to_s) %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb__3841475261351210593_21040'
+Started GET "/" for ::1 at 2022-07-13 22:20:44 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/Image_uploader/app/uploaders/profile_uploader.rb:18: syntax error, unexpected '(', expecting ';' or '\n'
+    p default_url(*args)
+                 ^
+):
+  
+app/uploaders/profile_uploader.rb:18: syntax error, unexpected '(', expecting ';' or '\n'
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:21:00 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/Image_uploader/app/uploaders/profile_uploader.rb:18: syntax error, unexpected '(', expecting ';' or '\n'
+    puts default_url(*args)
+                    ^
+):
+  
+app/uploaders/profile_uploader.rb:18: syntax error, unexpected '(', expecting ';' or '\n'
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:24:44 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007f6c08df8d58>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb__3841475261351210593_26900'
+Started GET "/" for ::1 at 2022-07-13 22:28:07 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68bb3028>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_13920'
+Started GET "/" for ::1 at 2022-07-13 22:29:07 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x000055e43f79c920>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_15940'
+Started GET "/" for ::1 at 2022-07-13 22:29:07 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68d82818>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_16520'
+Started GET "/" for ::1 at 2022-07-13 22:29:07 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68bd9e30>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_17040'
+Started GET "/" for ::1 at 2022-07-13 22:29:08 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc686eaac8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_17560'
+Started GET "/" for ::1 at 2022-07-13 22:38:24 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x000055e43fd43428>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_19580'
+Started GET "/" for ::1 at 2022-07-13 22:38:24 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68ca9270>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_20120'
+Started GET "/" for ::1 at 2022-07-13 22:38:24 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68622e38>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_20640'
+Started GET "/" for ::1 at 2022-07-13 22:38:25 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x000055e440570880>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_21160'
+Started GET "/" for ::1 at 2022-07-13 22:38:25 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68d5db30>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_21680'
+Started GET "/" for ::1 at 2022-07-13 22:38:25 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68751408>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_22200'
+Started GET "/" for ::1 at 2022-07-13 22:38:25 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x000055e4403166e8>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_22760'
+Started GET "/" for ::1 at 2022-07-13 22:38:25 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68caa210>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_23280'
+Started GET "/" for ::1 at 2022-07-13 22:38:26 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc682eec58>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_23800'
+Started GET "/" for ::1 at 2022-07-13 22:38:26 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68e3e0e0>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_24320'
+Started GET "/" for ::1 at 2022-07-13 22:40:44 +0530
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/Image_uploader/app/uploaders/profile_uploader.rb:47: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/uploaders/profile_uploader.rb:47: syntax error, unexpected end-of-input, expecting `end'
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2022-07-13 22:40:53 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile?' for #<User::ActiveRecord_Relation:0x00007fcc68a86150>):
+    17:       </tr>
+    18:     <% end %>
+    19:     </table>
+    20:     <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
+    21:   </div>
+    22: </div>
+  
+app/views/users/index.html.erb:20:in `_app_views_users_index_html_erb___1693748647318440117_28200'
+Started GET "/sign_up" for ::1 at 2022-07-13 22:41:24 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2022-07-13 22:41:31 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scrub' for :extension_allowlist:Symbol):
+    14:   </div>
+    15:   <div class="mb-3">
+    16:     <%= form.label :profile %>
+    17:     <%= form.text_field :profile, class: "form-control" %>
+    18:   </div>
+    19:   <div class="mb-3">
+    20:     <%= form.submit "Sign Up", class: "btn btn-primary" %>
+  
+app/views/users/sign_up.html.erb:17:in `block in _app_views_users_sign_up_html_erb__4112942307734972931_29300'
+app/views/users/sign_up.html.erb:2:in `_app_views_users_sign_up_html_erb__4112942307734972931_29300'
+Started GET "/users/sign_up" for ::1 at 2022-07-13 22:45:27 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scrub' for :extension_allowlist:Symbol):
+    14:   </div>
+    15:   <div class="mb-3">
+    16:     <%= form.label :profile %>
+    17:     <%= form.text_field :profile, class: "form-control" %>
+    18:   </div>
+    19:   <div class="mb-3">
+    20:     <%= form.submit "Sign Up", class: "btn btn-primary" %>
+  
+app/views/users/sign_up.html.erb:17:in `block in _app_views_users_sign_up_html_erb__4112942307734972931_29820'
+app/views/users/sign_up.html.erb:2:in `_app_views_users_sign_up_html_erb__4112942307734972931_29820'
+Started GET "/users/sign_up" for ::1 at 2022-07-13 22:45:28 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scrub' for :extension_allowlist:Symbol):
+    14:   </div>
+    15:   <div class="mb-3">
+    16:     <%= form.label :profile %>
+    17:     <%= form.text_field :profile, class: "form-control" %>
+    18:   </div>
+    19:   <div class="mb-3">
+    20:     <%= form.submit "Sign Up", class: "btn btn-primary" %>
+  
+app/views/users/sign_up.html.erb:17:in `block in _app_views_users_sign_up_html_erb__4112942307734972931_30340'
+app/views/users/sign_up.html.erb:2:in `_app_views_users_sign_up_html_erb__4112942307734972931_30340'
+Started GET "/users/sign_up" for ::1 at 2022-07-13 22:46:02 +0530
+Processing by UsersController#sign_up as HTML
+  Rendering users/sign_up.html.erb within layouts/application
+  Rendered users/sign_up.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scrub' for :extension_allowlist:Symbol):
+    14:   </div>
+    15:   <div class="mb-3">
+    16:     <%= form.label :profile %>
+    17:     <%= form.text_field :profile, class: "form-control" %>
+    18:   </div>
+    19:   <div class="mb-3">
+    20:     <%= form.submit "Sign Up", class: "btn btn-primary" %>
+  
+app/views/users/sign_up.html.erb:17:in `block in _app_views_users_sign_up_html_erb__4112942307734972931_30860'
+app/views/users/sign_up.html.erb:2:in `_app_views_users_sign_up_html_erb__4112942307734972931_30860'

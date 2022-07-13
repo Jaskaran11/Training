@@ -17,5 +17,6 @@
       </tr>
     <% end %>
     </table>
+    <%= image_tag(@user.profile_url, alt: 'Image') if @user.profile? %>
   </div>
 </div>
