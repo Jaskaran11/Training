@@ -1,1 +1,21 @@
-<h1>Hi</h1>
+<div class="user_index">
+  <%= link_to("Add New User", users_sign_up_path, :class => 'action_new') %>  
+  <div class="user_show">
+    <table class="listing" summary="User list">
+      <tr class="header">
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Address:</th>
+        <th>Profile:</th>
+      </tr>
+      <% @user.each do |user| %>
+      <tr>
+      <td><%= user.name %></td>
+      <td><%= user.gender %></td>
+      <td><%= user.address %></td>
+      <td><%= user.profile %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

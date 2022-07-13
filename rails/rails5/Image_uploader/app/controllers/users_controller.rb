@@ -3,12 +3,16 @@ class UsersController < ApplicationController
     @user = User.all
   end  
 
-  def signup
+  def sign_up
+    @user = User.new
+  end 
+
+  def create
     @user = User.new(user_params)
     if @user.save 
-    redirect_to(users_path)
+    redirect_to(root_path)
     else 
-    render('new')
+    render('sign_up')
   end
 end
 
