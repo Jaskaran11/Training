@@ -164,3 +164,27 @@ result = confirm(question);
 The function confirm shows a modal window with a question and two buttons: OK and Cancel.
 The result is true if OK is pressed and false otherwise.
 
+Type Conversions
+Most of the time, operators and functions automatically convert the values given to them to the right type.
+For example, alert automatically converts any value to a string to show it. Mathematical operations convert values to numbers.
+There are also cases when we need to explicitly convert a value to the expected types.
+
+String Conversion
+String conversion happens when we need the string form of a value.
+For example, alert(value) does it to show the value.
+We can also call the String(value) function to convert a value to a string.
+
+Numeric Conversion
+Numeric conversion happens in mathematical functions and expressions automatically.
+For example, when division / is applied to non-numbers.
+
+Boolean Conversion
+Boolean conversion is the simplest one.
+
+It happens in logical operations (later we’ll meet condition tests and other similar things) but can also be performed explicitly with a call to Boolean(value).
+
+The conversion rule:
+
+Values that are intuitively “empty”, like 0, an empty string, null, undefined, and NaN, become false.
+Other values become true
+
