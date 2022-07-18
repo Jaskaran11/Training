@@ -30,3 +30,26 @@ Full integration with HTML/CSS.
 Simple things are done simply.
 Supported by all major browsers and enabled by default.
 
+The script tag-
+ JavaScript programs can be inserted almost anywhere into an HTML document using the <script> tag.
+
+The <script> tag contains JavaScript code which is automatically executed when the browser processes the tag.
+
+few attributes of script tag - 
+1.type attribute: <script type=..>
+Used to specify in old html4 . its not required anymore.Now it is used for javascript modules.
+
+2.language attribute: <script language=..>
+This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
+
+External scripts - 
+If we have a lot of JavaScript code, we can put it into a separate file.
+
+Script files are attached to HTML with the src attribute:
+
+<script src="/path/to/script.js"></script>
+
+As a rule, only the simplest scripts are put into HTML. More complex ones reside in separate files.
+The benefit of a separate file is that the browser will download it and store it in its cache.]
+Other pages that reference the same script will take it from the cache instead of downloading it, so the file is actually downloaded only once.
+That reduces traffic and makes pages faster.
