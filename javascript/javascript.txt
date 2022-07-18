@@ -253,3 +253,77 @@ Decrement -- decreases a variable by 1:
 let counter = 2;
 counter--;        // works the same as counter = counter - 1, but is shorter
 alert( counter ); // 1
+
+Comparisons - 
+In JavaScript they are written like this:
+Greater/less than: a > b, a < b.
+Greater/less than or equals: a >= b, a <= b.
+Equals: a == b, please note the double equality sign == means the equality test, while a single one a = b means an assignment.
+Not equals: In maths the notation is ≠, but in JavaScript it’s written as a != b.
+
+Boolean is the result
+All comparison operators return a boolean value:
+
+true – means “yes”, “correct” or “the truth”.
+false – means “no”, “wrong” or “not the truth”.
+
+The algorithm to compare two strings is simple:
+
+Compare the first character of both strings.
+If the first character from the first string is greater (or less) than the other string’s, then the first string is greater (or less) than the second. We’re done.
+Otherwise, if both strings’ first characters are the same, compare the second characters the same way.
+Repeat until the end of either string.
+If both strings end at the same length, then they are equal. Otherwise, the longer string is greater.
+In the first example above, the comparison 'Z' > 'A' gets to a result at the first step.
+
+The second comparison 'Glow' and 'Glee' needs more steps as strings are compared character-by-character:
+
+G is the same as G.
+l is the same as l.
+o is greater than e. Stop here. The first string is greater.
+
+Comparison of different types
+When comparing values of different types, JavaScript converts the values to numbers.
+
+Strict equality
+A regular equality check == has a problem. It cannot differentiate 0 from false:
+
+alert( 0 == false ); // true
+The same thing happens with an empty string:
+
+alert( '' == false ); // true
+This happens because operands of different types are converted to numbers by the equality operator ==. An empty string, just like false, becomes a zero.
+
+What to do if we’d like to differentiate 0 from false?
+A strict equality operator === checks the equality without type conversion.
+In other words, if a and b are of different types, then a === b immediately returns false without an attempt to convert them.
+
+Strange result: null vs 0
+Let’s compare null with a zero:
+
+alert( null > 0 );  // (1) false
+alert( null == 0 ); // (2) false
+alert( null >= 0 ); // (3) true
+Mathematically, that’s strange. The last result states that "null is greater than or equal to zero", so in one of the comparisons above it must be true, but they are both false.
+
+The reason is that an equality check == and comparisons > < >= <= work differently. Comparisons convert null to a number, treating it as 0. That’s why (3) null >= 0 is true and (1) null > 0 is false.
+
+On the other hand, the equality check == for undefined and null is defined such that, without any conversions, they equal each other and don’t equal anything else. That’s why (2) null == 0 is false.
+
+Comparison operators return a boolean value.
+Strings are compared letter-by-letter in the “dictionary” order.
+When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+The values null and undefined equal == each other and do not equal any other value.
+Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
+Tasks
+
+Treat any comparison with undefined/null except the strict equality === with exceptional care.
+Don’t use comparisons >= > < <= with a variable which may be null/undefined, unless you’re really sure of what you’re doing. If a variable can have these values, check for them separately.
+
+5 > 4 → true
+"apple" > "pineapple" → false
+"2" > "12" → true
+undefined == null → true
+undefined === null → false
+null == "\n0\n" → false
+null === +"\n0\n" → false
