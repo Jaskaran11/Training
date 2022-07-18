@@ -65,3 +65,46 @@ var declarations are globally scoped or function scoped while let and const are 
 var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
 They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
 While var and let can be declared without being initialized, const must be initialized during declaration.
+
+There are 8 basic data types in JavaScript.
+
+Seven primitive data types:
+number for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
+bigint for integer numbers of arbitrary length.
+string for strings. A string may have zero or more characters, there’s no separate single-character type.
+boolean for true/false.
+null for unknown values – a standalone type that has a single value null.
+undefined for unassigned values – a standalone type that has a single value undefined.
+symbol for unique identifiers.
+
+And one non-primitive data type:
+object for more complex data structures.
+
+
+Strict -  
+To keep the old code working, most such modifications are off by default.
+You need to explicitly enable them with a special directive: "use strict".
+
+The directive looks like a string: "use strict" or 'use strict'. When it is located at the top of a script, the whole script works the “modern” way.
+
+For example:
+"use strict";
+// this code works the modern way
+...
+Quite soon we’re going to learn functions (a way to group commands)
+
+
+The "use strict" directive was new in ECMAScript version 5.
+It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+With strict mode, you can not, for example, use undeclared variables.
+
+Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+
+Why Strict Mode?
+
+Strict mode makes it easier to write "secure" JavaScript.
+Strict mode changes previously accepted "bad syntax" into real errors.
+As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error
