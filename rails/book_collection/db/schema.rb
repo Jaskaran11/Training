@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_05_124526) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_19_144420) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -92,6 +92,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_05_124526) do
     t.datetime "updated_at", null: false
     t.bigint "book_id"
     t.index ["book_id"], name: "index_genres_on_book_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "name"
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable"
   end
 
   create_table "publishers", force: :cascade do |t|

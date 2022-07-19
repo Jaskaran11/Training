@@ -41,4 +41,6 @@ Modules give you two major benefits:
 A class may inherit from another class, but not from a module.
 When you define a class, you define a blueprint for a data type. class hold data, have method that interact with that data and are used to instantiate objects.
 
+ polymorphic associations, a model can belong to more than one other model, on a single association. For example, you might have a picture model that belongs to either an employee model or a product model.
+ polymorphic association is an Active Record association that can connect a model to multiple other models.
 

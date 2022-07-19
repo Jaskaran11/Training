@@ -37,6 +37,8 @@ class Book < ApplicationRecord
   def remove_whitespaces
     title.strip!
   end
+  
+  has_many :pictures, as: :imageable
 
   #before_create :check_published_date
   def before_save_method
@@ -72,4 +74,5 @@ class Book < ApplicationRecord
   def log_user_saved_to_db
     puts 'Book was saved to database'
   end
+
 end
