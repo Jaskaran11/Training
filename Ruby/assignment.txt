@@ -16,3 +16,29 @@ Extend to use private method in class or if we wanted to create a bunch of metho
 It adds class method.-> only avaible when a class is initialized.
 
 CLass method is a method that is available within all of the classes but it is not available in the instance of a class.
+
+Module are collection of methods,constants and classes.Unlike classes, modules dont have instances,instead, you specify that you want to add the functionality of a particular module to that of a class.
+
+Module use - Modules dont have instances.Instead, modules gets mixed in to classes,using include method or prepend method.When it is mixed this way it is referred to as a mix-in.
+
+Adding or mixing a module into a class makes the methods defined in the module available to all instances of the class.
+
+Mixing in a module bears a strong resemblance to inheriting from superclass.The main difference between inheriting from a class and mixing in a module is that you can mix in more than one module.
+
+Modules open up lots of possibilities particularly for sharing code among more than one class, because any number of classes can mix in the same module.
+The difference between include and prepend is that if you prepend a module to a class, the object looks in that module first, before it looks in the class.
+
+What is the difference between a class and a module?
+Modules are collections of methods and constants. They cannot generate instances.
+Classes may generate instances (objects), and have per-instance state (instance variables).
+
+Modules may be mixed in to classes and other modules. The mixed in module’s constants and methods blend into that class’s own, augmenting the class’s functionality. Classes, however, cannot be mixed in to anything.Modules are a way of grouping together methods, classes, and constants.
+
+Modules give you two major benefits:
+=> Modules provide a namespace and prevent name clashes. Namespace help avoid conflicts with functions and classes with the same name that have been written by someone else.
+=> Modules implement the mixin facility.             
+
+A class may inherit from another class, but not from a module.
+When you define a class, you define a blueprint for a data type. class hold data, have method that interact with that data and are used to instantiate objects.
+
+
