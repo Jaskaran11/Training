@@ -83,3 +83,24 @@ User.where("name LIKE ?", "%Person A%")
 
 One of the reasons that you may want to write raw SQL is when you are trying to access something that cannot be accessed through ActiveRecord methods, like the join table in a has_and_belongs_to_many association.
 
+Git Merge merges two branches to create a “feature” branch.	
+Git Rebase rebases the feature branch to add the feature branch to the main branch.
+Git Merge is comparatively easy. 	
+Git Rebase is comparatively harder.
+Git Merge safeguards history.	
+Git Rebase doesn’t safeguard history.
+Git Merge is more suitable for projects with the less active main branch.	
+Git Rebase is suitable for projects with frequently active main branches.
+Git Merge forms a chain-like structure.	Git Rebase forms a linear structure.
+Git Merge is preferable for large no. of people working on a project.	
+Git Rebase is preferable for small groups of people.
+
+Single line command is:
+git merge feature main
+
+Single line command is:
+git rebase main
+
+ Don’t rebase a branch that’s been published remotely…
+ unless you know you are the only one working on it (and feel safe force pushing)
+ Prior to rebasing, create a backup branch from the tip of the branch you’re about to rebase, as it will allow you to easily compare the outcome (once done) and jump back to the pre-rebase state if necessary.
