@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   def index
+    helpers.time_ago_in_words(Time.now)
   end
 
   def show
