@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    //alert( true || true );
+    //alert( false || false );
+    //alert( true || false );
+    if (1 || 0) {
+        alert( 'truthy!' );
+    }
+    /*
+    let hour = 9;
+    if(hour < 10 || hour > 18) {
+        alert( 'The office is closed.' );
+    }
+    */
+    /*
+    let firstName = "";
+    let lastName = "";
+    let nickName = "SuperCoder";
+    alert( firstName || lastName || nickName || "Anonymous");
+    true || alert("Not printed");
+    let hour = 12;
+    let min = 30;
+    if (hour == 12 && min == 30) {
+        alert( 'The time is 12:30');
+    }
+    alert( null && 5 );
+    alert( 0 && "no matter what" )
+    alert( !true );
+    alert( !!"non-empty string" );
+    */ 
+    /*
+    let age = 14;
+    if(age >=14 && age <= 90){
+        alert("Welcome");
+    } else{
+        alert("Your age is not right.");
+    }
+    */ 
+    //let age = 14;
+    //if(!(age >= 14 && age <=90));
+    let userName = prompt("Please enter who are you",'');
+    if (userName == 'Admin') {
+        let pass = prompt('Password?','');
+        if (pass == 'TheMaster') {
+            alert( 'Welcome!' );
+        } else if (pass === '' || pass === null ) {
+            alert( 'Canceled' );
+        } else {
+            alert( 'Wrong password' );
+        }
+    } else if (userName === '' || userName === null ){
+        alert( 'Canceled' );
+    } else {
+        alert( "I dont know you");
+    }
+  </script>
+</body>
+</html>
