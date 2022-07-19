@@ -1,0 +1,18 @@
+A module is a collection of methods,constants, and class variables.Module are defined as a class, but with module keyword not with class keyword.
+Points - 
+1.You cannot inherit modules or you cant create a subclass of a module.
+2.Objects cannot be created from module.
+3.all class are module but all module are not class
+4.Name of module must start with a capitial letter.
+
+
+Exlcude vs Include - 
+Include keyword does is it makes the method defined in a module available to us as instance method of a class.
+add instance methods.-> only available when a class is initialized 
+
+Instance method is a method within a class that is available once a class is initialized or once a class is created.
+
+Extend to use private method in class or if we wanted to create a bunch of method that would not be available to instances of class.
+It adds class method.-> only avaible when a class is initialized.
+
+CLass method is a method that is available within all of the classes but it is not available in the instance of a class.
