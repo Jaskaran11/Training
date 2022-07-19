@@ -67,3 +67,19 @@ Because of this, the server does not need to keep a database with the informatio
 
 session token refer to a state on server.
 jwt contain the value itself.
+
+The key difference is that ActiveRecord lets you be more productive by using a higher level abstraction which lets you write less code. It also makes your code more portable by abstracting away some of the differences between DBMS.this abstraction comes at a cost and can lead to performance problems.
+
+Active-record does not provide support for bulk import. This is one of the reasons why active-record pattern doesn't scale very well. 
+
+ActiveRecord will serve you well most of the time, but there are a few situations where you will need to write raw sql. It is worth noting that ActiveRecord queries can also be written in a sql-like way. For example, you could write:
+
+User.where(name: "Person A")
+
+Or you could write it with a slightly more SQL-like syntax:
+
+User.where("name = ?", "Person A")
+User.where("name LIKE ?", "%Person A%")
+
+One of the reasons that you may want to write raw SQL is when you are trying to access something that cannot be accessed through ActiveRecord methods, like the join table in a has_and_belongs_to_many association.
+
