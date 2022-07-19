@@ -44,3 +44,26 @@ When you define a class, you define a blueprint for a data type. class hold data
  polymorphic associations, a model can belong to more than one other model, on a single association. For example, you might have a picture model that belongs to either an employee model or a product model.
  polymorphic association is an Active Record association that can connect a model to multiple other models.
 
+
+Why OAuth - it is meant for Authorization.
+To solve this problem of services trying to access each other on behalf of the user there was a standard created called OAuth. There was also OAuth1.0 but 2 is used now.
+
+Oauth in general is an authorization mechanism where services can authorize against each other on your behalf.Once you have given them permission.
+
+OAuth Access Token - Contains user-allowed permission Trustable (cannot be tampered).
+
+The OAuth 2.0 authorization framework is a protocol that allows a user to grant a third-party web site or application access to the user's protected resources, without necessarily revealing their long-term credentials or even their identity.
+
+OAuth 2.0 allows users to share specific data with an application while keeping their usernames, passwords, and other information private. For example, an application can use OAuth 2.0 to obtain permission from users to store files in their Google Drives. This OAuth 2.0 flow is called the implicit grant flow.
+
+JWT - JSON Web Tokens
+In short, JWTs are used as a secure way to authenticate users and share information.
+
+Typically, a private key, or secret, is used by the issuer to sign the JWT. The receiver of the JWT will verify the signature to ensure that the token hasn’t been altered after it was signed by the issuer. It is difficult for unauthenticated sources to guess the signing key and attempt to change the claims within the JWT.
+
+Not all signing algorithms are created equal though. For example, some signing algorithms use a secret value that is shared between the issuer and the party that verifies the JWT. Other algorithms use a public and private key. The private key is known only to the issuer, while the public key can be widely distributed. The public key can be used to verify the signature, but only the private key can be used to create the signature. This is more secure than a shared secret because the private key only needs to exist in one place.
+
+Because of this, the server does not need to keep a database with the information needed to identify the user. For developers, this is great news — the server that issues the JWT and the server that validates it do not have to be the same. 	
+
+session token refer to a state on server.
+jwt contain the value itself.
