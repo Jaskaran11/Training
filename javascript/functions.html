@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function showMessage() {
+      let message = "Hello, I'm Javascript!";
+      alert( 'Hello everyone!' );
+    }
+    showMessage();
+    showMessage();
+
+    let userName = 'John';
+    function showMess() {
+        let message = 'Hello, ' +userName;
+        alert(message);
+    }
+    showMess();
+
+    function showText(from, text) {
+        alert(from + ':' + text);
+    }
+    showText('Julia', 'Smith!');
+    showText('Hello Smith', 'Whats up');
+
+    function sum(a, b) {
+        return a + b;
+    }
+    let result = sum(1, 2);
+    alert(result);
+  </script>
+</body>
+</html>

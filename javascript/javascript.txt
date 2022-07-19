@@ -579,3 +579,4 @@ switch (a) {
   default:
     alert('The result is strange. Really.');
 }
+
