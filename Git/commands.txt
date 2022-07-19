@@ -857,4 +857,146 @@ itsacheckmate@itsacheckmate:~/Training-Repository$ git rebase Branch2
 Successfully rebased and updated refs/heads/main.
 
 
+Git Stash - 
+itsacheckmate@itscheckmate:~/Training$ git log
+commit c1407aa618100088b056e216fafca258abde2362 (HEAD -> master, origin/master)
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Tue Jul 19 15:41:11 2022 +0530
+
+    using loops: while and for in javascript
+
+commit 5bb5d6a6bb82f1c88a62abbd4e738405f053a266
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Tue Jul 19 14:50:39 2022 +0530
+
+    Nullish coalescing operator '??' in Javascript
+
+commit af08fc27fef5453b3389c868a4ebbdfea58445ee
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Tue Jul 19 14:14:10 2022 +0530
+
+    Logical Operators in Javascript
+
+commit 6b6f612871cb287080aee2ef1cde66e88ac052bc
+Author: Jaskaran Singh <jksingh112021@gmail.com>
+Date:   Tue Jul 19 13:06:46 2022 +0530
+
+    Module - include vs extend in ruby
+
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+
+itsacheckmate@itscheckmate:~/Training$ git stash apply
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git/commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ 
+
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash apply 1
+error: Your local changes to the following files would be overwritten by merge:
+	Git/commands.txt
+Please commit your changes or stash them before you merge.
+Aborting
+itsacheckmate@itscheckmate:~/Training$ git stash
+Saved working directory and index state WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+
+itsacheckmate@itscheckmate:~/Training$ git stash apply 1
+error: Your local changes to the following files would be overwritten by merge:
+	Git/commands.txt
+Please commit your changes or stash them before you merge.
+Aborting
+itsacheckmate@itscheckmate:~/Training$ git stash
+Saved working directory and index state WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash apply 2
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git/commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+itsacheckmate@itscheckmate:~/Training$ 
+
+
+itsacheckmate@itscheckmate:~/Training$ git stash push -m "added feature"
+Saved working directory and index state On master: added feature
+
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: On master: added feature
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{3}: WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash drop 0
+Dropped refs/stash@{0} (6ffb260709af13b6f0be5d6ab44a68ad3fd72ab6)
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash apply 2
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git/commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+itsacheckmate@itscheckmate:~/Training$ git stash push -m "added feature"
+Saved working directory and index state On master: added feature
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: On master: added feature
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{3}: WIP on master: c1407aa6 using loops: while and for in javascript
+itsacheckmate@itscheckmate:~/Training$ git stash drop 0
+Dropped refs/stash@{0} (6ffb260709af13b6f0be5d6ab44a68ad3fd72ab6)
+itsacheckmate@itscheckmate:~/Training$ git stash list
+stash@{0}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{1}: WIP on master: c1407aa6 using loops: while and for in javascript
+stash@{2}: WIP on master: c1407aa6 using loops: while and for in javascript
+
+itsacheckmate@itscheckmate:~/Training$ git stash pop 0
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git/commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (8f59f0df860056bc4098c2d68cb52406d24ab242)
+
+itsacheckmate@itscheckmate:~/Training$ git stash clear
+itsacheckmate@itscheckmate:~/Training$ git stash list
+itsacheckmate@itscheckmate:~/Training$ 
 
