@@ -47,21 +47,20 @@
     */ 
     //let age = 14;
     //if(!(age >= 14 && age <=90));
-    let userName = prompt("Please enter who are you",'');
-    if (userName == 'Admin') {
-        let pass = prompt('Password?','');
-        if (pass == 'TheMaster') {
-            alert( 'Welcome!' );
-        } else if (pass === '' || pass === null ) {
-            alert( 'Canceled' );
-        } else {
-            alert( 'Wrong password' );
-        }
-    } else if (userName === '' || userName === null ){
-        alert( 'Canceled' );
-    } else {
-        alert( "I dont know you");
-    }
+    /*
+    let user;
+    alert(user ?? "Anonymous");
+    let firstName = null;
+    let lastName = null;
+    let nickName = "Supercoder";
+    alert(firstName ?? lastName ?? nickName ?? "Anonymous");
+    let height = null;
+    let width = null;
+    */
+    let height = null; 
+    let width = null;
+    let area = (height ?? 100) * (width ?? 50);
+    alert(area);
   </script>
 </body>
 </html>
