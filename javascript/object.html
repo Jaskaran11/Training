@@ -38,6 +38,7 @@
  };
  alert( bag.apple );
 */ 
+ /*
   let user = { name: "John", age: 30 };
   alert( "age" in user);
   alert( "address" in user );
@@ -62,7 +63,22 @@
 for (let code in codes) {
   alert( +code ); // 49, 41, 44, 1
 }
+*/  
+  let user = {
+    name: "John",
+    age: 27
+  }
+  let clone = {};
+  for(let key in user) {
+    clone[key] = user[key];
+  }
+  clone.name = "Raj";
+  alert(user.name);
 
+  let admin = { name: "Smith" }
+  let permissions1 = { canView: true };
+  let permissions2 = { canEdit: true };
+  Object.assign(user, permissions1, permissions2);
 </script>
 </body>
 </html>

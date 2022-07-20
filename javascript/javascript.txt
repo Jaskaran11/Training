@@ -886,3 +886,30 @@ Additional operators:
 To delete a property: delete obj.prop.
 To check if a property with the given key exists: "key" in obj.
 To iterate over an object: for (let key in obj) loop.
+
+One of the fundamental differences of objects versus primitives is that objects are stored and copied “by reference”, whereas primitive values: strings, numbers, booleans, etc – are always copied “as a whole value”.
+A variable assigned to an object stores not the object itself, but its “address in memory” – in other words “a reference” to it.
+
+The syntax is:
+
+Object.assign(dest, [src1, src2, src3...])
+The first argument dest is a target object.
+Further arguments src1, ..., srcN (can be as many as needed) are source objects.
+It copies the properties of all source objects src1, ..., srcN into the target dest. In other words, properties of all arguments starting from the second are copied into the first object.
+The call returns dest.
+For instance, we can use it to merge several objects into one:
+
+let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(user, permissions1, permissions2);
+
+// now user = { name: "John", canView: true, canEdit: true }
+Objects are assigned and copied by reference. In other words, a variable stores not the “object value”, but a “reference” (address in memory) for the value. So copying such a variable or passing it as a function argument copies that reference, not the object itself.
+
+All operations via copied references (like adding/removing properties) are performed on the same single object.
+
+To make a “real copy” (a clone) we can use Object.assign for the so-called “shallow copy” (nested objects are copied by reference) or a “deep cloning” function, such as _.cloneDeep(obj).
