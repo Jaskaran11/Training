@@ -8,6 +8,7 @@
 </head>
 <body>
   <script>
+    /*
     function showMessage() {
       let message = "Hello, I'm Javascript!";
       alert( 'Hello everyone!' );
@@ -33,6 +34,47 @@
     }
     let result = sum(1, 2);
     alert(result);
+    */ 
+   /*
+    let age = prompt("Whats your age?", 18);
+    let welcome;
+    if(age < 18) {
+      weclome = function() {
+        alert("Hello you are underage!");
+      };
+    } else {
+      welcome = function() {
+        alert("Greetings");
+      };
+    }
+    welcome();
+    */
+   /*
+    let sum = (a, b) => {
+      let result = a + b; 
+      return result; 
+    }
+    alert( sum(1, 2) );
+
+    let sayHi = () => alert("Hello there ");
+    sayHi();
+    let age = prompt("Whats your age?", "");
+    let welcome = (age < 18) ?
+      () => alert("Hello there") :
+      () => alert("Greetings");
+    welcome();
+    */  
+    function ask(question, yes, no) { 
+      if (confirm(question)) yes();
+      else no();
+    }
+
+    ask(
+      "Do you agree?",
+      () => alert("You agreed"),
+      () => alert("You canceled the execution.")
+
+    );
   </script>
 </body>
 </html>

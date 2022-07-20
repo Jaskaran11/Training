@@ -104,3 +104,12 @@ git rebase main
  Don’t rebase a branch that’s been published remotely…
  unless you know you are the only one working on it (and feel safe force pushing)
  Prior to rebasing, create a backup branch from the tip of the branch you’re about to rebase, as it will allow you to easily compare the outcome (once done) and jump back to the pre-rebase state if necessary.
+ 
+ ----------------------------------------------------------------------------
+ 
+ Database Indexing allows us to cut down the number of rows/records that need to be examined when a select query with a where clause is executed.
+ A database index is a data structure that improves the speed of data retrieval operations on a database.
+
+Indexes are used to quickly locate data without having to search every row or collection in a database table every time it is accessed. Indexes can be created using one or more columns of a database table, or keys in non-relational data bases, thereby providing the basis for both rapid random look-ups and efficient access of records.
+
+An index is a copy of selected columns of data from a table that can be searched very efficiently that also includes a low-level disk block address or direct link to the complete row of data it was copied from.
