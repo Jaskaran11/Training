@@ -726,3 +726,25 @@ Arrow functions are handy for simple actions, especially for one-liners. They co
 Without curly braces: (...args) => expression – the right side is an expression: the function evaluates it and returns the result. Parentheses can be omitted, if there’s only a single argument, e.g. n => n*2.
 With curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
 
+A function expression is created when the execution reaches it and is usable only from that moment.
+function declaration can be called earlier than it is defined.
+And after all Function Declarations are processed, the code is executed. So it has access to these functions.
+
+For example, this works:
+
+sayHi("John"); // Hello, John
+
+function sayHi(name) {
+  alert( `Hello, ${name}` );
+}
+The Function Declaration sayHi is created when JavaScript is preparing to start the script and is visible everywhere in it.
+
+…If it were a Function Expression, then it wouldn’t work:
+
+sayHi("John"); // error!
+
+let sayHi = function(name) {  // (*) no magic any more
+  alert( `Hello, ${name}` );
+};
+
+In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
