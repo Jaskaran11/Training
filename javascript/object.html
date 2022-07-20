@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+  let user = {
+    name: "Jaskaran", //key "name" store values "Jaskaran"
+    age: 22,
+    "like books" : true
+  }
+  alert( user.name );
+  alert( user.age );
+  delete user.age;
+  alert( user.age );
+
+  let admin = {};
+  admin["like birds"] = true;
+  alert(admin["like birds"]);
+
+  let user1 = {
+    name: "John",
+    age: 29,
+    gender: "Male"
+  };
+  let key = prompt("What do you want to know about the user?", "name");
+  alert( user1[key] );
+  */  
+  /*
+ let fruit = prompt("Which fruit to buy?", "apple");
+ let bag = {
+    [fruit]: 5,
+ };
+ alert( bag.apple );
+*/ 
+  let user = { name: "John", age: 30 };
+  alert( "age" in user);
+  alert( "address" in user );
+
+  let admin = {
+    name: "Rohit",
+    age: 35,
+    isAdmin: true 
+  };
+  for (let key in admin){
+    alert( key );
+    alert( admin[key] );
+  }
+  let codes = {
+  "+49": "Germany",
+  "+41": "Switzerland",
+  "+44": "Great Britain",
+  // ..,
+  "+1": "USA"
+};
+
+for (let code in codes) {
+  alert( +code ); // 49, 41, 44, 1
+}
+
+</script>
+</body>
+</html>
