@@ -748,3 +748,32 @@ let sayHi = function(name) {  // (*) no magic any more
 };
 
 In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+
+Debugging is the process of finding and fixing errors within a script.
+All modern browsers and most other environments support debugging tools – a special UI in developer tools that makes debugging much easier. It also allows to trace the code step by step to see what exactly is going on.
+The Source Panel has 3 parts - 
+1.The File navigator panel lists html css and other file including image.
+2.the code editor pane shows the source code.
+3.The Javascript Debugging pane is for debugging.
+
+A breakpoint is a point of code where the debugger will automatically pause the JavaScript execution.
+
+While the code is paused, we can examine current variables, execute commands in the console etc. In other words, we can debug it.
+
+
+Watch – shows current values for any expressions.
+
+Call Stack – shows the nested calls chain.
+
+Scope – current variables.
+
+racing the execution - After stoppin have to execute the command by “Resume”: continue the execution, hotkey F8.
+And If there are no additional breakpoints, then the execution just continues and the debugger loses control.
+“Step”: run the next command, hotkey F9.
+“Step over”: run the next command, but don’t go into a function, hotkey F10.
+“Step into”, hotkey F11. similar to “Step”, but behaves differently in case of asynchronous function calls
+“Step out”: continue the execution till the end of the current function, hotkey Shift+F11.
+
+
+Logging - To output something to console from our code, there’s console.log function.
+To see it, either open the Console panel of developer tools or press Esc while in another panel: that opens the console at the bottom
