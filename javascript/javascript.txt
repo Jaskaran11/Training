@@ -983,4 +983,18 @@ in other words, return with an object returns that object, in other cases this i
 method in constructor - using constructor functions to create objects gives a great deal of flexibility.
 constructor function have parameters that define how to construct the object.
 
+The optional chaining operator allows you to access the value of a property located deep within a chain of objects 
+without explicitly checking if each reference in the chain is null or undefined.
+If one of the references in the chain is null or undefined, the optional chaining operator(?.) 
+will short circuit and return undefined.
 
+It's best to use this check when you know that something may not have a value, such as an optional property.
+If a required value has a nullish check on, it may be silenced with undefined returned instead of returning an error to alert of this issue.
+
+The optional chaining ?. is not a operator, but a special syntax construct, that also works with functions and square brackets.
+for ex -> ?.() is used to call a function that may not exist.
+
+the optional chaining ?. syntax has three forms:
+1.obj?.prop - returns obj.prop if obj exists, otherwise undefined.
+2.obj?.[prop] - returns obj[prop] if obj exists, otherwise undefined.
+3.obj.method?.() - calls obj.method() if obj.method exists, otherwise returns undefined.

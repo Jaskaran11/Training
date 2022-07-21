@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  /*
+  let user = {};
+  alert( user?.address?.street );
+  let admin = null;
+  let x = 0;
+  user?.sayHi(x++);
+  alert(x);
+  */
+  let userAdmin = {
+    admin(){
+        alert("I am admin");
+    }
+  };
+  let userGuest= {};
+  userAdmin.admin?.();
+  userGuest.admin?.();
+  let key = "firstName";
+  let user1 = {
+    firstName: "John"
+  };
+  let user2 = null; 
+  alert( user1?.[key] );
+  alert( user2?.[key] );
+
+  delete user1?.name;
+  alert(user1.name);
+  const person = {
+    name: "Dom",
+    age: 28
+  }
+  const vehicleYear = person.vehcile?.year;
+  console.log(vehicleYear);
+</script> 
+</body>
+</html>
