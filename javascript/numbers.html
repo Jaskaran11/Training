@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    let billion = 1e9;
+    alert( billion );
+    let num = 255;
+    alert( num.toString(16) );
+    alert( num.toString(2) ); 
+    let num1 = 34.55;
+    alert( Math.floor(num1) );
+    alert( Math.ceil(num1) );
+    alert( Math.round(num1) );
+    alert( Math.trunc(num1) );
+    let num2 = 12.36
+    alert( num.toFixed(1) );
+    alert( 0.1 + 0.2 == 0.3);
+    let sum = 0.1 + 0.2;
+    alert( +sum.toFixed(2) );
+
+    alert( (0.1 * 10 + 0.2 * 10) / 10 );
+
+    alert( isNaN(NaN) );
+    alert( isNan("str") );
+    alert( isFinite("15") ); // true
+    alert( isFinite("str") ); // false, because a special value: NaN
+    alert( isFinite(Infinity) ); //
+    let num3 = +prompt("Enter a number", '');
+
+    //will be true unless you enter Infinity, -Infinity or not a number
+    alert( isFinite(num3) );
+    alert( parseInt('100px') ); // 100
+   alert( parseFloat('12.5em') ); // 12.5
+
+   alert( parseInt('12.3') ); // 12, only the integer part is returned
+   alert( parseFloat('12.3.4') ); 
+
+   alert( Math.random() ); // 0.1234567894322
+   alert( Math.random() ); // 0.5435252343232
+   alert( Math.random() ); // ... (any random numbers)
+  
+   alert( Math.max(3, 5, -10, 0, 1) ); // 5
+   alert( Math.min(1, 2) ); // 1
+
+   alert( Math.pow(2, 10) ); // 2 in power 10 = 1024
+  
+   let a = +prompt("The first number?", "");
+   let b = +prompt("The second number?", "");
+   alert( a + b );
+
+  </script>
+</body>
+</html>

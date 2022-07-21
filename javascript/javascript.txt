@@ -1121,3 +1121,87 @@ An attempt to access a property of such value would give the error:
 alert(null.test); // error
 
 Primitives except null and undefined provide many helpful methods.
+
+Numbers - In modern js, there are 2 types of number:
+1.regular number in js stored in 64-bit format also known as double precision floating point numbers.
+2.bigint number represent integers of arbitray length.
+
+e multiplies number by 1 with with given zeroes count.
+1e3 === 1 * 1000;
+1.23e6 === 1.23 * 1000000;
+
+1e-3 === 1/ 1000;
+1.23e-6 ==== 1.23 / 1000000;
+
+Hexadecimal numbers are widely used in JavaScript to represent colors, encode characters, and for many other things. So naturally, there exists a shorter way to write them: 0x and then the number.
+
+For instance:
+
+alert( 0xff ); // 255
+alert( 0xFF ); // 255 (the same, case doesn't matter)
+Binary and octal numeral systems are rarely used, but also supported using the 0b and 0o prefixes:
+
+let a = 0b11111111; // binary form of 255
+let b = 0o377; // octal form of 255
+
+alert( a == b ); // true, the same number 255 at both sides
+
+Rounding -
+1.Math.floor 
+rounds down 3.1 become 3
+
+2.math.ceil 
+rounds up 3.1 become 4 
+
+3.math.round 
+rounds to the nearest integer: 3.1 become 3
+3.6 - 4
+
+Math.trunc - remove anything after decimal 
+3.1 becomes 3
+4.5 become 4
+
+Please note that the result of toFixed is a string. If the decimal part is shorter than required, zeroes are appended to the end:
+
+let num = 12.34;
+alert( num.toFixed(5) )
+
+A number is stored in memory in its binary form, a sequence of bits - ones and zeroes.
+But fractions like 0.1 and 0.2 that look simple are unending fraction in binary form.
+
+Two special numeric values - 
+1.Infinity special numeric value that is greeater than anything
+2.Nan - represent error
+ 
+they belong to the type number, but they are not "normal" numbers.
+
+isNan = converts its arguemnt to number and test it for being Nan.
+
+Numeric conversion using a plus + or Number() is strict. If a value is not exactly a number, it fails:
+
+alert( +"100px" ); // NaN
+The sole exception is spaces at the beginning or at the end of the string, as they are ignored.
+But in real life we often have values in units, like "100px" or "12pt" in CSS. Also in many countries the currency symbol goes after the amount, so we have "19€" and would like to extract a numeric value out of that.
+
+ The function parseInt returns an integer, whilst parseFloat will return a floating-point number.
+
+ To write numbers with many zeroes:
+
+Append "e" with the zeroes count to the number. Like: 123e6 is the same as 123 with 6 zeroes 123000000.
+A negative number after "e" causes the number to be divided by 1 with given zeroes. E.g. 123e-6 means 0.000123 (123 millionths).
+For different numeral systems:
+
+Can write numbers directly in hex (0x), octal (0o) and binary (0b) systems.
+parseInt(str, base) parses the string str into an integer in numeral system with given base, 2 ≤ base ≤ 36.
+num.toString(base) converts a number to a string in the numeral system with the given base.
+For regular number tests:
+
+isNaN(value) converts its argument to a number and then tests it for being NaN
+isFinite(value) converts its argument to a number and returns true if it’s a regular number, not NaN/Infinity/-Infinity
+For converting values like 12pt and 100px to a number:
+
+Use parseInt/parseFloat for the “soft” conversion, which reads a number from a string and then returns the value they could read before the error.
+For fractions:
+
+Round using Math.floor, Math.ceil, Math.trunc, Math.round or num.toFixed(precision).
+Make sure to remember there’s a loss of precision when working with fractions.
