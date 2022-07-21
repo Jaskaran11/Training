@@ -951,3 +951,36 @@ The value of this is defined at run-time.
 When a function is declared, it may use this, but that this has no value until the function is called.
 A function can be copied between objects.
 When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+
+The regular {...} syntax allows us to create one object. But often we need to create many similar objects, like multiple users or menu items and so on.
+
+That can be done using constructor functions and the "new" operator.
+Constructor function
+Constructor functions technically are regular functions. There are two conventions though:
+They are named with capital letter first.
+They should be executed only with "new" operator.
+
+When a function is executed with new, it does the following steps:
+
+A new empty object is created and assigned to this.
+The function body executes. Usually it modifies this, adds new properties to it.
+The value of this is returned.
+
+Now if we want to create other users, we can call new User("Ann"), new User("Alice") and so on. Much shorter than using literals every time, and also easy to read.
+That’s the main purpose of constructors – to implement reusable object creation code.
+
+Inside a function, we can check whether it was called with new or without it, using a special new.target property.
+It is undefined for regular calls and equals the function if called with new.
+
+Constructors do not have a return statement.Their task is to write all necessary stuff into this,
+and it automatically becomes the result.
+But if there is a return statement, rule is simple:
+1.if return is called within an object, then object is returned instead of this.
+2.if return is called with a primitive, its ignored.
+
+in other words, return with an object returns that object, in other cases this is returned.
+
+method in constructor - using constructor functions to create objects gives a great deal of flexibility.
+constructor function have parameters that define how to construct the object.
+
+

@@ -53,6 +53,7 @@
     (login == '') ? 'No login' : 
     ''; 
     */  
+    /*
     function hello(name) {
       let phrase = `Hello, ${name}!`;
     debugger;
@@ -63,7 +64,14 @@
     for (let i=0; i < 10; i++) {
       console.log("value, ", i);
     }
-  
+    */ 
+    function User(name) {
+      this.name = name;
+      this.isAdmin = false;
+    }
+    let user = new User("Jack");
+    alert(user.name);
+    alert(user.isAdmin);
   </script>
 </body>
 </html>
