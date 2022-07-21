@@ -998,3 +998,32 @@ the optional chaining ?. syntax has three forms:
 1.obj?.prop - returns obj.prop if obj exists, otherwise undefined.
 2.obj?.[prop] - returns obj[prop] if obj exists, otherwise undefined.
 3.obj.method?.() - calls obj.method() if obj.method exists, otherwise returns undefined.
+
+Symbol type - 
+only two primitive type serve as object property keys:
+1.string type
+2.symbol type  
+
+symbol represent a unique identifier.
+A value of this type can be created using Symbol();
+
+Symbol is a “primitive unique value” with an optional description.
+Symbols allow us to create "hidden" properties of an object, that no other part 
+of code can accidentally access or overwrite.
+For instance, if we're working with user objects, that belong to third-party code.
+
+There will be no conflict between our and their identifiers, 
+because symbols are always different, even if they have the same name.
+
+Symbol is a primitive type for unique identifiers.
+Symbols are always different values, even if they have the same name. 
+If we want same-named symbols to be equal then we should use global registry: Symbol.for(key)
+
+symbol have 2 main use case - 
+1.hidden object properties => if we want to add a property into an object that belongs to another script or library,
+we can create symbol and use it as propery key.
+a symbolic property does not appear in for..in so it wont be accidentally processed together with other properties.
+also it wont be accessed directly because another script does not have our symbol.
+so the property will be protected from accidental or overwrite.
+
+2.There are many system symbols used by JavaScript which are accessible as Symbol.*. We can use them to alter some built-in behaviors. 

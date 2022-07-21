@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  /*
+  let id = Symbol("id");  
+  let id1 = Symbol("id");
+  alert(id == id1);
+  */  
+  /*
+  let user = {
+    name: "John"
+  };
+  let id = Symbol("id");
+  user[id] = 1;
+  alert( user[id] );
+
+  let id1 = Symbol("id1");
+  let user1 = {
+    name: "John",
+    [id1]: 123
+  };
+  */ 
+  /*
+  let id = Symbol("id");
+  let user = {
+    name: "Doe",
+    age: 30,
+    [id]: 123
+  };
+  for (let key in user) alert(key);
+  */  
+ //read from global registry
+ let id = Symbol.for("id");
+ //read again
+ let idAgain = Symbol.for("id");
+ alert( id === idAgain );
+ let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// get name by symbol
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) ); // id
+</script> 
+</body>
+</html>
