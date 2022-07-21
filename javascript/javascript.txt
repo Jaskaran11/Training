@@ -1105,3 +1105,19 @@ try calling obj.toString() or obj.valueOf(), whatever exists.
 Otherwise if hint is "number" or "default"
 try calling obj.valueOf() or obj.toString(), whatever exists.
 All these methods must return a primitive to work (if defined).
+
+Methods of primitives - 
+Distinctions between primitive and objects.
+A primitive - 
+1. is a value of primitive type 
+2.types - string, boolean ,number , bigint, null, undefiend, symbol 
+
+a object - 
+1.capable of storing multiple values as properties.
+2.can bee created with {}, for instance{name: "John", age:30}.Other kind of object in Javascript:functions.
+
+The special primitives null and undefined are exceptions. They have no corresponding “wrapper objects” and provide no methods. In a sense, they are “the most primitive”.
+An attempt to access a property of such value would give the error:
+alert(null.test); // error
+
+Primitives except null and undefined provide many helpful methods.
