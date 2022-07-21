@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    //arr.splice method can do everything insert, remove and replace.
+    let arr = ["I","study", "Javascript"];
+    arr.splice(1, 1);//from index 1 remove 1 element
+    alert(arr);
+    arr.splice(0,3,"Lets","Dance");
+    alert(arr);
+    let name = ["t", "e", "s", "t"];
+    alert( name.slice(1, 3));
+    alert( name.slice(-2) );
+    let name1 = "Jaskaran"
+    console.log(name1.concat("Singh"));
+
+    ["Hi","Hello","There"].forEach(alert);
+    let fruits = ['Apple', 'Orange', 'Apple']
+
+   alert( arr.indexOf('Apple') ); // 0 (first Apple)
+   alert( arr.lastIndexOf('Apple') ); // 2 (last Apple)
+
+   let users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Pete"},
+    {id: 3, name: "Mary"},
+    {id: 3, name: "John"}
+   ];
+   let user = users.find(item => item.id == 1);
+   alert(user.name);
+   let user1 = users.findIndex(user => user.name == "John");
+   console.log(user1);
+   let user2 = users.findLastIndex(user => user.name == 'John');
+   console.log(user2);
+   let someUsers = users.filter(item => item.id < 3 );
+   console.log(someUsers.length);
+
+   //Transform array
+   //map - calls function for each element and returns array of result.
+   let lengths = ["Nike","Adidas","Reebok"].map(item => item.length);
+   console.log(lengths);
+
+   //The call to arr.sort() sorts the array in place, changing its element order.
+   //It also returns the sorted array, but the returned value is usually ignored, as arr itself is modified.
+   let arr2 = [ 1, 2, 15 ];
+   arr2.sort();
+   alert( arr );
+   function compareNumeric(a, b) {
+   if (a > b) return 1;
+   if (a == b) return 0;
+   if (a < b) return -1;
+   }
+
+  let arr3 = [ 1, 2, 15 ];
+  arr3.sort(compareNumeric);
+  alert(arr3); 
+  //Reverse = the method arr.reverese reverses the order of element in arr
+  let music = ["pop","rock","band"];
+  console.log(music);
+  let nams = `Harry,Roy,Sam`;
+  let names = nams.split(', ');
+  for (let name of names) {
+    console.log( `A message to ${name}` );
+  }
+  let arr5 = [1, 2, 3, 4, 5];
+  let result = arr5.reduce((sum, current) => sum + current, 0);
+  alert(result); // 15
+  </script>
+</body>
+</html>
