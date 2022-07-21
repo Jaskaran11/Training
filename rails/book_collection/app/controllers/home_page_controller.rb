@@ -6,4 +6,11 @@ class HomePageController < ApplicationController
     @id = params['id']
     @title = params[:title]
   end
+
+  def java
+  end
+
+  def ajax_page
+    puts "he"
+  end
 end

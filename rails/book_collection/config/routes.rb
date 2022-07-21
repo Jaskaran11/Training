@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'sign_in_page/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'home_page/index'
+  get 'home_page/java'
+  get 'home_page/ajax_page', as: 'ajax_page'
   
 
   resources :books do

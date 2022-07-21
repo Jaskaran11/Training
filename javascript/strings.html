@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  function sum(a, b) {
+    return a + b;
+  }
+  alert(`1 + 2 = ${sum(1, 2)}.`)
+  alert( `The backslash: \\` );
+  let str = `Hello`;
+  alert( str[0] );
+  alert( str.charAt(0) );
+  for (let char of "Hello") {
+    alert(char);
+  }
+  let str1 = 'Hi';
+  str1 = 'h' + str[1];
+  alert( str );
+  alert( 'Interface'.toUpperCase() );
+  alert( 'Interface'.toLowerCase() );
+  let str2 = 'Widget with id';
+  alert( str2.indexOf('Widget') );
+  let str3 = 'As sly as a fox';
+  let target = 'as';
+  let pos = 0;
+  while (true) {
+    let foundPos = str.indexOf(target, pos);
+    if (foundPos == -1) break;
+
+    alert( `Found at ${foundPos}` );
+    pos = foundPos + 1;
+  }
+  alert( "Widget with id".includes("Widget") );
+  alert( "Hello".includes("Bye") );
+  let str4 = "stringify";
+  alert( str.slice(0, 5) );
+  alert( str.slice(0, 1) );
+  let str5 = "hello";
+  alert( str.substring(2, 6) );
+  alert( str.substring(6, 2) );
+  let str6 = "stringify";
+  alert( str.substr(2, 4) ); 
+</script>
+</body>
+</html>

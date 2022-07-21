@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root "users#index"
   post "users/create"
   get "users/sign_up"
+
+  get 'home/index'
+  get 'home/ajax', as: 'ajax'
 end
