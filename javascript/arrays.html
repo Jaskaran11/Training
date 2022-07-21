@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//two ways to define array
+let arr = new Array();
+let arr1 = [];
+let fruits = ["Apple","Orange","Plum"];
+console.log(fruits[2]);
+fruits[2]="Pear";
+fruits[3]="Lemon"
+console.log(fruits.length);
+let arr2 = ['Apple', {name: 'John'}, true, function() { alert('hello');} ];
+alert( arr2[1].name );
+//to access the last element
+console.log(fruits[fruits.length - 1] );
+console.log(fruits.at(-1));
+//Push - appends element to end
+//pop - takes an element from the end.
+//Arrays in Javascript can work both as queue and stack.they allow you to add/remove
+//elements both to/from beginning or end.
+
+let names = ["Harry","Ron","Sylvie"];
+console.log( names.pop());
+//both fruits.pop() and fruits.at(-1) returns the last element of the array, but fruits.pop()
+//also modifies array by removing it.
+names.push("Roy");
+console.log(names);
+
+//method that work in the beginning of the array:
+let movies = ["Avengers","Justice League","Thor"];
+console.log(movies.shift());
+console.log(movies);
+movies.unshift("Iron Man");
+console.log(movies);
+movies.push("Harry Potter","Lord of the Rings");
+
+
+//Array is technically object and behaves like object.
+//It is copied by reference
+
+let cities = ["Chandigarh"];
+let arr4 = cities;
+alert( arr4 === cities );
+
+
+//methods push/po run fast, while shift/unshift are slow
+
+for(let i=0;i < movies.length; i++) {
+    console.log( movies[i] );
+}
+for(let movie of movies) {
+    alert( movie );
+}
+//Arrays have their own implementation of toString method that returns a comma-separated list of elements.
+
+let arr5 = [1, 2, 3];
+alert(arr5);
+alert( String(arr) === '1,2,3' );
+</script>
+</body>
+</html>
