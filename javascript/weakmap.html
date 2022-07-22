@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  let weakMap = new WeakMap();
+  let obj = {};
+  weakMap.set(obj, "ok");
+  weakMap.set("test", "whoops"); //will give error because test is not an object.
+  //if we use object as a key and there are no references to that object - it will be removed from memory automatically.
+  let visitsCountMap = new WeakMap();
+  function countUser(user) {
+    let count = visitsCountMap.get(user) || 0;
+    visitsCountMap.set(user, count + 1);
+  }
+  let cache = new WeakMap();
+  function process(obj) {
+    if (!cache.has(obj)) {
+        let result = obj;
+        cache.set(obj, result);
+    }
+
+    return cache.get(obj);
+  }
+  let visitedSet = new WeakSet();
+
+  let john = { name: "John" };
+  let pete = { name: "Pete" };
+  let mary = { name: "Mary" };
+
+  visitedSet.add(john); // John visited us
+  visitedSet.add(pete); // Then Pete
+  visitedSet.add(john); // John again
+
+// visitedSet has 2 users now
+
+// check if John visited?
+  alert(visitedSet.has(john)); // true
+
+// check if Mary visited?
+  alert(visitedSet.has(mary)); // false
+
+  john = null;
+</script>
+</body>
+</html>

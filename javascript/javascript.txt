@@ -1333,4 +1333,36 @@ set.delete(value) – removes the value, returns true if value existed at the mo
 set.has(value) – returns true if the value exists in the set, otherwise false.
 set.clear() – removes everything from the set.
 set.size – is the elements count.
-Iteration over Map and Set is always in the insertion order, so we can’t say that these collections are unordered, but we can’t reorder elements or directly get an element by its numbe
+Iteration over Map and Set is always in the insertion order, so we can’t say that these collections are unordered, but we can’t reorder elements or directly get an element by its number.
+
+The first difference between Map and WeakMap is that keys must be objects, not primitive values.
+if a value exists as key of weakMap it automatically gets deleted from map.
+weakMap does not support iteration and methods keys(),value and entries 
+WeakMap has only the following methods:
+
+weakMap.get(key)
+weakMap.set(key, value)
+weakMap.delete(key)
+weakMap.has(key)
+
+The main area of application for WeakMap is an additional data storage.
+if we're working with an object that belongs to another code, maybe even a third-party library , and would like to store
+some data associated with it, that should exist while object is alive.
+we put data to weakMap using object as key, and when object is garbage collected, the data will automatically disappear.
+
+We can store cache results from a function, so that future call on same object can reuse it.
+
+WeakSet in Js is used to store collection of obects. it adapts the same properties of set
+does not store duplicate values.THe major difference of a weakset is that it is a collection of object and not values of some particular type.
+The most notable limitation of weakMap and weakSet is absence of iterations and the inability to get all current contetn.
+additional storage of daat for objects which are stored at another place.
+
+WeakMap is Map-like collection that allows only objects as keys and removes them together with associated value once they become inaccessible by other means.
+
+WeakSet is Set-like collection that stores only objects and removes them once they become inaccessible by other means.
+
+Their main advantages are that they have weak reference to objects, so they can easily be removed by garbage collector.
+
+That comes at the cost of not having support for clear, size, keys, values…
+
+WeakMap and WeakSet are used as “secondary” data structures in addition to the “primary” object storage. Once the object is removed from the primary storage, if it is only found as the key of WeakMap or in a WeakSet, it will be cleaned up automatically.
