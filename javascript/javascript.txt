@@ -1366,3 +1366,38 @@ Their main advantages are that they have weak reference to objects, so they can 
 That comes at the cost of not having support for clear, size, keys, values…
 
 WeakMap and WeakSet are used as “secondary” data structures in addition to the “primary” object storage. Once the object is removed from the primary storage, if it is only found as the key of WeakMap or in a WeakSet, it will be cleaned up automatically.
+
+Destructuring assignment
+The two most used data structures in JavaScript are Object and Array.
+
+Objects allow us to create a single entity that stores data items by key.
+Arrays allow us to gather data items into an ordered list.
+Although, when we pass those to a function, it may need not be an object/array as a whole. It may need individual pieces.
+
+Destructuring assignment is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes that’s more convenient.
+
+Destructuring also works great with complex functions that have a lot of parameters, default values, and so on
+
+Object destructuring
+The destructuring assignment also works with objects.
+
+The basic syntax is:
+
+let {var1, var2} = {var1:…, var2:…}
+We should have an existing object on the right side, that we want to split into variables. The left side contains an object-like “pattern” for corresponding properties. In the simplest case, that’s a list of variable names in {...}.
+
+Destructuring assignment allows for instantly mapping an object or array onto many variables.
+
+The full object syntax:
+
+let {prop : varName = default, ...rest} = object
+This means that property prop should go into the variable varName and, if no such property exists, then the default value should be used.
+
+Object properties that have no mapping are copied to the rest object.
+
+The full array syntax:
+
+let [item1 = default, item2, ...rest] = array
+The first item goes to item1; the second goes into item2, all the rest makes the array rest.
+
+It’s possible to extract data from 

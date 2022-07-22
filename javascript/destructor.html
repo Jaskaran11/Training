@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = ["John","smith"]
+    let [firstName, surname] = arr;
+    alert(firstName);
+    alert(surname);
+    let [name, surName] = "John Smith".split(' ');
+    alert(name);
+    alert(surName);
+    let [a, b, c] = "abc"; // ["a", "b", "c"]
+    let [one, two, three] = new Set([1, 2, 3]);
+    //ignoring elements using commas
+    let [name1 , , name2] = ["Julie","caeser","consul"];
+    alert(name2);
+
+    //looping with .entries 
+    let user = {
+        name: "John",
+        age: 30
+    };
+    for (let [key, value] of Object.entries(user)) {
+        alert(`${key}:${value}`);
+    }
+    //default values - if array is sjorter than variable on left there will be no error:
+    let [movie, song] = [];
+    alert(movie);
+    // runs only prompt for surname
+   let [Name = prompt('name?'), surname2 = prompt('surname?')] = ["Julius"];
+
+   alert(Name);    // Julius (from array)
+   alert(surname2); // whatever prompt gets
+
+   let options = {
+    title: "Menu",
+    width: 100,
+    height: 200
+   };
+   //let {title,width,height} = options;
+   //console.log(title);
+   //let {width: w, height: h, title} = options;
+   //console.log(w);
+   let {width2 = prompt("width?"), title = prompt("title?")} = options;
+   alert(title);
+   let user2 = {
+    name3: "Sam",
+    age: 28,
+    height: 200
+   };
+   let { name3 } = user2;
+   console.log(name3);
+
+   let options1 = {
+  size: {
+    width: 100,
+    height: 200
+  },
+  items: ["Cake", "Donut"],
+  extra: true
+};
+
+// destructuring assignment split in multiple lines for clarity
+let {
+  size: { // put size here
+    width,
+    height
+  },
+  items: [item1, item2], // assign items here
+  title3 = "Menu" // not present in the object (default value is used)
+} = options;
+
+alert(title3);  // Menu
+alert(width);  // 100
+alert(height); // 200
+alert(item1);  // Cake
+alert(item2);  // Donut
+</script>
+</body>
+</html>
