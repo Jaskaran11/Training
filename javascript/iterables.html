@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Text</p>
+<script>
+  //iterable objects are a generalization of arrays.
+  let range = {
+    from: 1,
+    to: 5
+  };
+  range[Symbol.iterator] = function() {
+    return {
+        current: this.from,
+        last: this.to,
+
+        next() {
+            if (this.current <= this.last) {
+                return { done: false, value: this.current++ };
+            } else {
+                return { done: true };
+            }
+        }
+    };
+  };
+  for (let num of range) {
+    alert(num);
+  }
+  //iterate over a string:
+  const name = "Jaskaran"
+  let text = "";
+  for(const x of name) {
+    text += x + "<br>";
+  }
+  document.getElementById("demo").innerHTML = text;
+  for (let char of "test") {
+    alert(char);
+  };
+  let str = "Hello";
+  let iterator = str[Symbol.iterator]();
+  while (true) {
+    let result = iterator.next();
+    if (result.done) break;
+    alert(result.value);
+  }
+  let arrayLike = {
+    0: "Hello",
+    1: "World",
+    length: 2
+  };
+  //for (let item of arrayLike) {}
+  let arr = Array.from(arrayLike);
+  alert(arr.pop());
+  let str1 = '𝒳😂';
+
+// splits str into array of characters
+  let chars = Array.from(str);
+
+  alert(chars[0]); // 𝒳
+  alert(chars[1]); // 
+  alert(chars.length); 
+</script>
+</body>
+</html>
