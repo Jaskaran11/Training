@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  let now = new Date();
+  console.log(now);
+  let Jan01_1970 = new Date(0);
+  alert( Jan01_1970 );
+  let Jan02_1970 = new Date(24 * 3600 * 1000);
+  alert( Jan02_1970);
+  //new dATE - DATE STRING  if theres a sinhle srgument and its string it will be parse automatically.
+  let date = new Date("2017-01-26");
+  console.log(date);
+  //new Date(year, month, date, hours, minutes, seconds, ms)
+  let date1 = new Date(2011, 0, 1, 2, 3, 4, 567);
+  console.log(date1);
+
+  let date2 = new Date();
+  console.log( date2.getHours() );
+  console.log( date2.getUTCHours() );
+
+  //returns the difference between utc and local time zone
+  console.log( new Date().getTimezoneOffset() );
+
+  let today = new Date();
+  today.setHours(0);
+  console.log(today);
+
+  let date3 = new Date(2016, 1, 28);
+  date3.setDate(date3.getDate() + 2);
+  alert( date3 ); // 1 Mar 2016
+
+  let date4 = new Date();
+  console.log(+date);
+
+  //Date.now - if we want to measure time, we dont need the date object.
+  //date.now() - returns the current timestamp
+
+  let start = Date.now();
+
+  for(let i = 0; i < 10000; i++) {
+    let doSomething = i * i * i;
+  }
+
+  let end = Date.now();
+  alert( `The loop took ${end - start} ms`);
+  //Date.parse from string
+  //the method date.parse can read a date from string
+  //YYYY-MM-DD
+
+  let ms = Date.parse('2012-01-26T13:51:50.417-07:00');
+  console.log(ms, " + HI");
+</script>
+</body>
+</html>
