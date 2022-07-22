@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  let map = new Map();
+  map.set('1', 'str1');
+  map.set(1, 'num1');
+  map.set(true, 'bool1');
+  //object would convert keys to string
+  //map dosent convert
+  alert( map.get(1) );
+  alert( map.get('1') );
+  alert( map.size );
+  //map can also use objects as keys.
+  let john = { name: "John" };
+  let visitsCountMap = new Map();
+  visitsCountMap.set(john, 123);
+  console.log( visitsCountMap.get(john) );
+  //using object as keys is one of the imp map features
+  //string as a key in object is fine , but we cant use another object as a key in object.
+  let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+  ]);
+
+  // iterate over keys (vegetables)
+  for (let vegetable of recipeMap.keys()) {
+    alert(vegetable); // cucumber, tomatoes, onion
+  }
+  for(let amount of recipeMap.values()) {
+    alert(amount);
+  }
+  for (let entry of recipeMap) {
+    alert(entry);
+  }
+  //map also has for each (key, value) pair
+  recipeMap.forEach( (value, key, map) => {
+    alert(`${key}: ${value}`);
+  });
+  //when map is created we can pass array with key/value pairs
+  let map1 = new Map([
+    ['1', 'str1'],
+    [1, 'num1'],
+    [true, 'bool1']
+  ]);
+
+  alert( map.get('1') );
+
+  //if we have object and create map, we can use built-in method
+  let obj = {
+    name: "Doe",
+    age: 30
+  };
+  let map2 = new Map(Object.entries(obj));
+  alert( map.get('name') );
+  
+  //object.fromentries
+  let prices = Object.fromEntries([
+    ['banana', 1],
+    ['orange', 2],
+    ['meat', 4]
+  ]);
+  alert(prices.orange);
+
+  let set = new Set();
+  let roy = { name: "Roy" };
+  let pete = { name: "Pete" };
+  let mary = { name: "Mary" };
+
+  set.add(john);
+  set.add(pete);
+  set.add(mary);
+  alert( set.size )
+  for(let user of set){
+    console.log(user.name);
+  }
+  
+  let set1 = new Set(["hi", "hello", "there"]);
+  for (let value of set1) alert(value);
+  set1.forEach((value, valueAgain, set) => {
+    alert(value);
+  });
+</script>  
+</body>
+</html>
