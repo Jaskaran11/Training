@@ -1400,4 +1400,33 @@ The full array syntax:
 let [item1 = default, item2, ...rest] = array
 The first item goes to item1; the second goes into item2, all the rest makes the array rest.
 
-It’s possible to extract data from 
+The JSON is a general format to represent values and objects.Its easy to use JSON 
+for data exchange when the client uses Javascript.
+
+Javascript provides 2 methods:
+1.JSON.stringify -> to parse object into JSON
+2.JSON.parse -> to convert JSON back to object.
+
+The method JSON.stringify(student) takes the object and converts it into a string.
+In json-encoded object:
+strings use double quotes
+object property name also become double-quoted -> age:30 becomes "age":30
+
+Json supports data type- 
+1.objects
+2.arrays 
+3.Primitives -> strings, numbers, boolean, null
+
+some object properties are skipped by JSON.stringify 
+1.Function properties (methods).
+2.Symbolic keys and values.
+3.Properties that store undefiend.
+
+the full syntax of JSON.stringify is:
+let json = JSON.stringify(value[, replacer, space])
+
+JSON is a data format that has its own independent standard and libraries for most programming languages.
+JSON supports plain objects, arrays, strings, numbers, booleans, and null.
+JavaScript provides methods JSON.stringify to serialize into JSON and JSON.parse to read from JSON.
+Both methods support transformer functions for smart reading/writing.
+If an object has toJSON, then it is called by JSON.stringify.

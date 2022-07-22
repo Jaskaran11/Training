@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+  let student = {
+    name: "John",
+    age: 30,
+    isAdmin: false,
+    courses: ['html', 'css', 'js'],
+    spouse: null  
+  };
+
+  let json = JSON.stringify(student);
+  alert(typeof json);
+  alert(json);
+  console.log( JSON.stringify('test') );
+  console.log( JSON.stringify(true) );
+
+  let user = {
+    sayHi() {
+        alert("Hello");
+    },
+    [Symbol("id")]: 123,
+    something: undefined
+  };
+
+  console.log( JSON.stringify(user) );
+  /*
+  let room = {
+  number: 23
+  };
+
+  let meetup = {
+  title: "Conference",
+  participants: ["john", "ann"]
+  };
+
+  meetup.place = room;       // meetup references room
+  room.occupiedBy = meetup; // room references meetup
+
+  JSON.stringify(meetup); // Error: Converting circular structure to JSON
+ 
+  
+  let room = {
+    number: 23 
+  };
+
+  let meetup = {
+    title: "Conference",
+    participants: [{name: "John"}, {name: "Alice"}],
+    place: room 
+  };
+  room.occupiedBy = meetup;
+  alert( JSON.stringify(meetup, ['title', 'participants']));
+  */
+
+  let numbers = "[0, 1, 2, 3]";
+  numbers = JSON.parse(numbers);
+  console.log(numbers);
+
+  let str = '{"title": "Conference","date":"2017-11-30T12:00:00.000Z"}';
+  let meetup = JSON.parse(str, function(key, value) {
+    if (key == 'date') return new Date(value);
+    return value;
+  });
+
+  alert( meetup.date.getDate() );
+  let jsonObj = {
+    name: "Rohit",
+    age: 30,
+    course: "javascript"
+  };
+  console.log(jsonObj);
+  let myJsonStr = JSON.stringify(jsonObj);
+  console.log(myJsonStr);
+
+  myJsonStr = myJsonStr.replace('Rohit', 'Roy');
+  console.log(myJsonStr);
+
+  newJsonObj = JSON.parse(myJsonStr);
+  console.log(newJsonObj);
+  </script>
+</body>
+</html>
