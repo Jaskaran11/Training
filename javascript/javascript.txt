@@ -1587,3 +1587,23 @@ Most browsers support two commands in their developer tools: console.log and con
 But for DOM elements they are different:
 console.log(elem) shows the element DOM tree.
 console.dir(elem) shows the element as a DOM object, good to explore its properties.
+
+Mouse events - 
+1.click 
+2.contextmenu - when mouse right-clicks 
+3.mouseover / mouseout  - when mouse cursor comes over / leaves element.
+4.mousedown / mouseup - when mouse butten pressed 
+5.mousemove.
+
+keyboard events - 
+1.kwydown and keyip 
+
+form elements events - 
+1.submit - when user visitor submits a form 
+2.focus - when the visitor focuses on element eg input.
+
+There are 3 ways to assign event handlers:
+
+HTML attribute: onclick="...".
+DOM property: elem.onclick = function.
+Methods: elem.addEventListener(event, handler[, phase]) to add, removeEventListener to remove.

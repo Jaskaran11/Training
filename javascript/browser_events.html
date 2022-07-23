@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<input value="Clck me" onclick="countRabbits()" type="button">
+    <button onclick="alert(this.innerHTML)">Click Me</button>
+    -->
+    <input id="elem" type="button" value="Click me"/>
+    <button id="elem1">Click me</button>
+    <button id="elem2">Button3</button>
+    <script>
+        /*
+        function countRabbits(){
+          for(let i=1; i<=3; i++ ){
+            alert("Rabbit number " +i);
+          }
+        }
+        */ 
+       function handler1(){
+        alert('Thanks!');
+       }
+       function handler2(){
+        alert('Thanks again!');
+       }
+       elem.onclick = () => alert("Hello");
+       elem.addEventListener("click", handler1);
+       elem.addEventListener("click", handler2);
+       elem.onclick = function(event) {
+    // show event type, element and coordinates of the click
+       alert(event.type + " at " + event.currentTarget);
+       alert("Coordinates: " + event.clientX + ":" + event.clientY);
+       };
+       let obj = {
+        handleEvent(event){
+            alert(event.type + " at " + event.currentTarget);
+        }
+       };
+       elem1.addEventListener('click', obj);
+
+       class Menu {
+        handleEvent(event) {
+            switch(event.type) {
+               case 'mousedown' :
+                elem2.innerHTML = "Mouse button pressed";
+                break;
+               case 'mouseup' :
+                elem2.innerHTML += "...and released."
+                break; 
+            }
+        }
+       }
+       let menu = new Menu();
+       elem2.addEventListener('mousedown', menu);
+       elem2.addEventListener('mouseup', menu);
+    </script>
+</body>
+</html>
