@@ -7,13 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="intro">Hello There!Only this line will print</p>
-    <p id="demo">.....</p>
+    <div id="elem">
+      <div class="elem-content">Element</div>
+    </div>
+    <ul>
+        <li>The</li>
+        <li>Test</li>
+    </ul>
+    <ul>
+        <li>has</li>
+        <li>passed.</li>
+    </ul>
+    <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+      </ul>
 <script>
-  document.body.style.background = 'red';
-  setTimeout(() => document.body.style.background = '', 3000);
-  const element = document.getElementById("intro");
-  document.getElementById("demo").innerHTML = "Hi :" + element.innerHTML;
+  //let elem = document.getElementById('elem');
+  //elem.style.background = 'red';
+  elem.style.background = 'green';
+  let elements = document.querySelectorAll('ul > li:last-child');
+  for (let elem of elements) {
+    alert(elem.innerHTML);
+  }
+  let chapter = document.querySelector('.chapter'); // LI
+
+  alert(chapter.closest('.book')); // UL
+  alert(chapter.closest('.contents')); // DIV
+
+  alert(chapter.closest('h1'));
 </script>  
 </body>
 </html>
