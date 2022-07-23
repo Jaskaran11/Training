@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="intro">Hello There!Only this line will print</p>
+    <p id="demo">.....</p>
+<script>
+  document.body.style.background = 'red';
+  setTimeout(() => document.body.style.background = '', 3000);
+  const element = document.getElementById("intro");
+  document.getElementById("demo").innerHTML = "Hi :" + element.innerHTML;
+</script>  
+</body>
+</html>

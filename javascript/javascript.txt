@@ -1533,3 +1533,24 @@ Days of week in getDay() are also counted from zero (that’s Sunday).
 Date auto-corrects itself when out-of-range components are set. Good for adding/subtracting days/months/hours.
 Dates can be subtracted, giving their difference in milliseconds. That’s because a Date becomes the timestamp when converted to a number.
 Use Date.now() to 
+
+Html dom - Document Object Model 
+When a web page is loaded, the browser creates a Document Object Model of the page.
+It defines the logical structure of documents and the way a document is accessed and manipulated.
+DOm is a way to represent the webpage in structured hierarchical way.
+With DOM we can easily access and manipulate tags, ID, classes, attributes, or element of html.
+using DOM , Javascrip gets access to HTML as well as CSS of the web page.
+So, Bascially Document Object MOdel is an API that represents and interacts with HTML documents.
+
+DOM is basically the representation of the same HTML document but in a different format with use of objects.
+JAVASCRIPT cannot understand <h1> and <h2> tags but can understand object h1 in DOM.
+
+Methods of Document Object:
+
+write(“string”): Writes the given string on the document.
+getElementById(): returns the element having the given id value.
+getElementsByName(): returns all the elements having the given name value.
+getElementsByTagName(): returns all the elements having the given tag name.
+getElementsByClassName(): returns all the elements having the given class name.
+
+All operations on the DOM start with the document object. That’s the main “entry point” to DOM.
