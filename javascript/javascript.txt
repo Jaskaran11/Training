@@ -1607,3 +1607,12 @@ There are 3 ways to assign event handlers:
 HTML attribute: onclick="...".
 DOM property: elem.onclick = function.
 Methods: elem.addEventListener(event, handler[, phase]) to add, removeEventListener to remove.
+
+
+A callback is a function passed as an argument to another function.This technique allows a function to call another function.
+A callback function can run after another function has finished.
+
+Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed.
+
+The benefit of using callback function is that you can wait for the result of previous function 
+and then execute another function call.
