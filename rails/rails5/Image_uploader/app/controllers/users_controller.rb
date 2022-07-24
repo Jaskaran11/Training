@@ -15,7 +15,14 @@ class UsersController < ApplicationController
     render('sign_up')
   end
 end
-
+  
+  def states 
+    @target = params[:target]
+    @states = CS.get(params[:country]).invert
+    respond_to do |format|
+      format.turbo_stream
+  end
+end
 private
 
 def user_params

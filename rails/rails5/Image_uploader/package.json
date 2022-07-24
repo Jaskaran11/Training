@@ -1,5 +1,7 @@
 {
   "name": "Image_uploader",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/request.js": "^0.0.6"
+  }
 }

@@ -19,6 +19,16 @@
   <div class="mb-3">
     <%= form.submit "Sign Up", class: "btn btn-primary" %>
   </div>
+  <div data-controller="country">
+  <div class="mb-3">
+    <%= form.label :country, class: 'form-label' %><br />
+    <%= form.select :country, CS.countries.invert , { prompt: "Select a country" }, { class: 'form-select', data: { action: "change->country#change"} } %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :state, class: 'form-label' %><br />
+    <%= form.select :state, [], {}, { class: 'form-select' } %>
+  </div>
+  </div>
   <div class="mb-3">
     Add an image..
   <%= form.file_field :profile %>

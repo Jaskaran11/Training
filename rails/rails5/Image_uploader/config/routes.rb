@@ -7,4 +7,10 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/ajax', as: 'ajax'
+
+  resources :users do 
+    collection do 
+      get :states
+    end
+  end
 end
