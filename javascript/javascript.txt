@@ -1616,3 +1616,50 @@ Callbacks make sure that a function is not going to run before a task is complet
 
 The benefit of using callback function is that you can wait for the result of previous function 
 and then execute another function call.
+
+Promises = It is a special Javascript object that links the producing code and consuming code together.
+The producing code takes whatever time it needs to produce the promised result, and the 
+promise makes that result avalaible to all of subscribed code when its ready.
+
+let promise = new Promise(function(resolve, reject) {
+  //executor
+});
+
+function passed to new promise is called the executor.when new promise is created, 
+the executor runs automatically. It contains the producing code which should eventually
+produce the result.
+resolve and reject are callbacks provided by Javascript.
+resolve(Value) - if job finished successfully, with result value.
+reject(error) - if an error has occurred, error is the error object.
+
+The promise object returned by the new Promise constructor has these internal properties:
+state — initially "pending", then changes to either "fulfilled" when resolve is called or "rejected" when reject is called.
+result — initially undefined, then changes to value when resolve(value) called or error when reject(error) is called.
+
+The executor should call only one resolve or one reject.
+
+then
+The most important, fundamental one is .then.
+
+The syntax is:
+
+promise.then(
+  function(result) { /* handle a successful result */ },
+  function(error) { /* handle an error */ }
+);
+
+Please note that finally(f) isn’t exactly an alias of then(f,f) though.
+
+There are important differences:
+
+A finally handler has no arguments. In finally we don’t know whether the promise is successful or not. That’s all right, as our task is usually to perform “general” finalizing procedures.
+
+Please take a look at the example above: as you can see, the finally handler has no arguments, and the promise outcome is handled by the next handler.
+
+A finally handler “passes through” the result or error to the next suitable handler.
+
+For instance, here the result is passed through finally to then.
+
+A finally handler doesn’t get the outcome of the previous handler (it has no arguments). This outcome is passed through instead, to the next suitable handler.
+If a finally handler returns something, it’s ignored.
+When finally throws an error, then the execution goes to the nearest error handler.
