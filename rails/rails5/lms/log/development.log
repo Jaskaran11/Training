@@ -1,0 +1,4 @@
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "lms_development" ENCODING = 'unicode'[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "lms_test" ENCODING = 'unicode'[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/bin/rake:23

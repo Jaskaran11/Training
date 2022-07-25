@@ -22,11 +22,11 @@
   <div data-controller="country">
   <div class="mb-3">
     <%= form.label :country, class: 'form-label' %><br />
-    <%= form.select :country, CS.countries.invert , { prompt: "Select a country" }, { class: 'form-select', data: { action: "change->country#change"} } %>
+    <%= form.select :country, ["India","USA"],  :onclick=>"alert('Hi');" %>
   </div>
   <div class="mb-3">
     <%= form.label :state, class: 'form-label' %><br />
-    <%= form.select :state, [], {}, { class: 'form-select' } %>
+    <%= form.select :state, [] %>
   </div>
   </div>
   <div class="mb-3">
@@ -34,6 +34,45 @@
   <%= form.file_field :profile %>
   </div>
 <% end %>
+<script>
+  let indianStates = ["Haryana", "Delhi", "UP"];
+  let usaStates = ["Hawai","Texas"];
+      function remove() {  
+            var x = document.getElementById("user_state");
+
+           for (const s of x.options){ x.remove(s.innerHTML);} 
+         }  
+
+  function selected() {
+    let country = document.forms[0].user_country.value;
+    
+    if (country == "India") {
+      remove();
+      console.log("Inside India");
+      for (const val of indianStates ){
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        document.forms[0].user_state.appendChild(option);
+      }
+    }
+    if (country == "USA") {
+      remove();
+      console.log("Inside USA");
+      for (const val of usaStates ){
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        document.forms[0].user_state.appendChild(option);
+      }
+    }
+    
+    let form = document.forms[0];
+
+    form.user_country.addEventListener("change", selected);
+
+  }
+</script>
 
 
 
