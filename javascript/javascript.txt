@@ -1707,3 +1707,9 @@ The lifecycle of an HTML page has three important events:
 DOMContentLoaded – the browser fully loaded HTML, and the DOM tree is built, but external resources like pictures <img> and stylesheets may not yet have loaded.
 load – not only HTML is loaded, but also all the external resources: images, styles etc.
 beforeunload/unload – the user is leaving the page.
+
+Synchronous code runs in sequence.That means that each operation must wait for the previous one to complete before executing.
+
+Asynchronous code runs in parallel. This means that an operation can occur while another one is still being processed.
+Asynchronous code execution is often preferable in situations where execution can be blocked indefinitely. Some examples of this are network requests, long-running calculations, file system operations etc.
+Using asynchronous code in the browser ensures the page remains responsive and the user experience is mostly unaffected.

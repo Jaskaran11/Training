@@ -14835,3 +14835,1486 @@ Processing by PeopleController#new as HTML
 Completed 200 OK in 134ms (Views: 109.1ms | ActiveRecord: 24.3ms)
 
 
+Started GET "/" for ::1 at 2022-07-26 00:29:58 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/people/new.html.erb:10
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1001]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1241]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1002]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1003]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1004]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1005]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1006]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1007]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1008]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1009]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1010]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1011]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1012]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1013]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1014]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1015]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1212]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1016]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1017]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1018]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1019]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1020]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1021]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1022]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1023]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1024]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1025]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1026]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1027]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1028]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1029]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1030]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1032]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1033]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1034]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1036]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1037]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1038]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1039]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1040]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1041]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1042]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1043]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1044]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1045]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1046]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1047]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1048]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1049]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1051]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1050]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1052]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1053]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1054]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1055]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1056]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1057]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.6ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1058]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1059]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1060]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1061]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1062]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1064]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1065]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1066]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1067]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1068]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1069]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1070]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1072]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1073]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1074]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1075]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1076]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1077]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1078]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1079]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1080]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1213]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1081]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1082]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1083]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1084]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1085]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1086]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1087]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1088]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1089]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1090]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1245]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1091]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1092]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1093]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1094]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1095]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1096]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1097]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1098]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1099]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1100]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1101]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1102]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1103]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1104]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1105]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1246]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1106]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1107]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1108]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1109]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1244]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1110]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1111]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1112]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1113]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1114]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1115]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1116]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1117]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1118]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1119]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1120]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1121]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1122]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1123]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1124]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1125]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1126]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1127]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1128]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1129]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1130]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1131]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1132]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1133]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1134]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1135]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1136]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1137]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1138]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1139]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1140]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1141]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1142]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1143]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1144]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1243]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1145]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1146]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1147]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1035]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1148]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1149]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1150]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1152]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1151]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1153]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1154]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1155]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1156]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1157]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1158]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1159]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1160]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1161]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1162]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1163]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1164]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1165]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1166]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1167]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1168]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1169]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1170]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1171]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1172]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1173]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1174]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1175]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1179]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1176]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1177]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1178]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1180]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1181]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1182]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1183]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1184]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1185]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1186]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1207]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1187]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1188]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1242]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1238]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1189]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1190]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1191]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1192]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1193]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1194]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1195]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1196]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1197]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1198]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1199]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1200]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1201]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1202]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1203]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1204]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1205]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1206]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1208]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1209]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1210]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1211]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1063]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1214]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1215]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1216]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1217]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1218]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1219]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1220]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1221]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1222]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1223]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1224]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1225]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1226]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1228]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1227]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1229]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1230]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1231]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1232]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1233]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1031]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1234]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1235]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1236]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1237]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1239]]
+  ↳ app/views/people/new.html.erb:14
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."country_id" = $1[0m  [["country_id", 1240]]
+  ↳ app/views/people/new.html.erb:14
+  Rendered people/new.html.erb within layouts/application (172.4ms)
+Completed 200 OK in 241ms (Views: 199.0ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/show" for ::1 at 2022-07-26 00:30:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/people/1" for ::1 at 2022-07-26 00:31:02 +0530
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"1"}
+Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidCrossOriginRequest (Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/request_forgery_protection.rb:266:in `verify_same_origin_request'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:247:in `block in halting'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:517:in `block in invoke_after'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:517:in `each'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:517:in `invoke_after'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:133:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/people/" for ::1 at 2022-07-26 00:31:06 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:08 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:10 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:35 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:35 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:53 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:53 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:54 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:54 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:54 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:31:54 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2022-07-26 00:32:07 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/show" for ::1 at 2022-07-26 00:32:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/poeple" for ::1 at 2022-07-26 00:32:16 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/poeple"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/people" for ::1 at 2022-07-26 00:32:20 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:32:22 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 00:35:14 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:35:16 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:35:16 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:35:17 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 00:36:15 +0530
+Processing by PeopleController#index as HTML
+Completed 406 Not Acceptable in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (PeopleController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.8.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.8.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.8.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.8.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.8.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.8.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.8.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.8.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.8.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.8.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.8.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.8.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.8.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.8.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/people" for ::1 at 2022-07-26 00:37:00 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people.42" for ::1 at 2022-07-26 00:37:02 +0530
+Processing by PeopleController#index as 
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 00:37:55 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Number alert', people_path(42), remote: true %>
+    2: 
+    3: <ul id=countries>
+    4:   <% @countries.each do |country| %>
+    5:     <li><%= country.name %></li>
+    6:   <% end %>
+    7: </ul>
+  
+app/views/people/index.html.erb:4:in `_app_views_people_index_html_erb__657019412168952532_25640'
+Started GET "/people" for ::1 at 2022-07-26 00:38:11 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 00:40:34 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (47.4ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed1e7130>:0x00007f37eca0eee0>
+Did you mean?  controller_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'remote' => true } do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_26240'
+Started GET "/people" for ::1 at 2022-07-26 00:40:56 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (50.7ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed1e7130>:0x00007f37ed8b7988>
+Did you mean?  controller_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true } do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_26880'
+Started GET "/people" for ::1 at 2022-07-26 00:42:04 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/ars/app/views/people/index.html.erb:9: syntax error, unexpected `do' for block
+...orm_with model: Country.new, do |form| @output_buffer.safe_a...
+...                             ^~
+/home/itsacheckmate/Training/rails/rails5/ars/app/views/people/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/people/index.html.erb:9: syntax error, unexpected `do' for block
+app/views/people/index.html.erb:15: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/people" for ::1 at 2022-07-26 00:43:04 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (46.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed1e7130>:0x00007f37ed3147b0>
+Did you mean?  controller_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_27940'
+Started GET "/people" for ::1 at 2022-07-26 00:43:18 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (46.3ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed80e6d0>:0x00007f37ed807060>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_31620'
+Started GET "/people" for ::1 at 2022-07-26 00:43:19 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (67.6ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed80e6d0>:0x00007f37eca7cda0>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_32160'
+Started GET "/people" for ::1 at 2022-07-26 00:43:23 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (44.6ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed058148>:0x00007f37ed04f7c8>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_35820'
+Started GET "/people" for ::1 at 2022-07-26 00:43:23 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (56.3ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed058148>:0x000055b12617a9d0>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_36360'
+Started GET "/people" for ::1 at 2022-07-26 00:43:24 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (43.2ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed058148>:0x00007f37e0fe93d0>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_36880'
+Started GET "/people" for ::1 at 2022-07-26 00:43:24 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (43.5ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed058148>:0x00007f37e2955ff8>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_37400'
+Started GET "/people" for ::1 at 2022-07-26 00:43:24 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (52.4ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed058148>:0x00007f37e0c565d8>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_37920'
+Started GET "/people" for ::1 at 2022-07-26 00:43:24 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (37.8ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ed058148>:0x00007f37e0bba1d8>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_38440'
+Started GET "/people" for ::1 at 2022-07-26 00:46:09 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Number alert', people_path(42), remote: true %>
+    2: 
+    3: <ul id=countries>
+    4:   <% @country.each do |country| %>
+    5:     <li><%= country.name %></li>
+    6:   <% end %>
+    7: </ul>
+  
+app/views/people/index.html.erb:4:in `_app_views_people_index_html_erb__657019412168952532_42100'
+Started GET "/people" for ::1 at 2022-07-26 00:46:31 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (43.1ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `countries_path' for #<#<Class:0x00007f37ec383918>:0x00007f37e08b01b8>
+Did you mean?  country_path):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: Country.new, data: {'country-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_42620'
+Started GET "/people" for ::1 at 2022-07-26 00:46:47 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::People):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: People.new, data: {'people-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_43200'
+Started GET "/people" for ::1 at 2022-07-26 00:47:15 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (82.2ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `people' for #<#<Class:0x00007f37ec383918>:0x00007f37e1302c60>
+Did you mean?  @people):
+     6:   <% end %>
+     7: </ul>
+     8: 
+     9: <%= form_with model: people.new, data: {'people-form' => true} do |form| %>
+    10: Name <%= form.text_field :name %><br>
+    11: 
+    12: <%= form.submit %>
+  
+app/views/people/index.html.erb:9:in `_app_views_people_index_html_erb__657019412168952532_43720'
+Started GET "/people" for ::1 at 2022-07-26 00:47:23 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 00:48:47 +0530
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/ars/app/controllers/people_controller.rb:17: syntax error, unexpected `end'
+  end
+  ^~~
+):
+  
+app/controllers/people_controller.rb:17: syntax error, unexpected `end'
+Started GET "/people" for ::1 at 2022-07-26 00:48:58 +0530
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/ars/app/controllers/people_controller.rb:17: syntax error, unexpected `end'
+  end
+  ^~~
+):
+  
+app/controllers/people_controller.rb:17: syntax error, unexpected `end'
+Started GET "/people" for ::1 at 2022-07-26 00:49:15 +0530
+Processing by PeopleController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant PeopleController::People):
+  
+app/controllers/people_controller.rb:12:in `index'
+Started GET "/people" for ::1 at 2022-07-26 00:49:27 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Number alert', people_path(42), remote: true %>
+    2: 
+    3: <ul id="people">
+    4:   <% @people.each do |people| %>
+    5:     <li><%= people.name %></li>
+    6:   <% end %>
+    7: </ul>
+  
+app/views/people/index.html.erb:4:in `_app_views_people_index_html_erb__657019412168952532_58200'
+Started GET "/people" for ::1 at 2022-07-26 00:49:50 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Number alert', people_path(42), remote: true %>
+    2: 
+    3: <ul id="people">
+    4:   <% @people.each do |people| %>
+    5:     <li><%= people.name %></li>
+    6:   <% end %>
+    7: </ul>
+  
+app/views/people/index.html.erb:4:in `_app_views_people_index_html_erb__657019412168952532_61860'
+Started GET "/people" for ::1 at 2022-07-26 00:49:57 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= link_to 'Number alert', people_path(42), remote: true %>
+    2: 
+    3: <ul id="people">
+    4:   <% @people.each do |people| %>
+    5:     <li><%= people.name %></li>
+    6:   <% end %>
+    7: </ul>
+  
+app/views/people/index.html.erb:4:in `_app_views_people_index_html_erb__657019412168952532_65520'
+Started GET "/people" for ::1 at 2022-07-26 00:50:08 +0530
+Processing by PeopleController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant PeopleController::People):
+  
+app/controllers/people_controller.rb:12:in `index'
+Started GET "/people" for ::1 at 2022-07-26 00:50:35 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 00:56:15 +0530
+  
+SyntaxError (/home/itsacheckmate/Training/rails/rails5/ars/app/controllers/people_controller.rb:20: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/people_controller.rb:20: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/people" for ::1 at 2022-07-26 00:56:30 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/people" for ::1 at 2022-07-26 00:56:36 +0530
+Processing by PeopleController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ONgvYwdI61ExIgAvuJuiLHO/9XMvAsnIIC6B5PkHDnWzf405GzwDHDGXAbHXQ6lIzmOwtchKBZKA/SWL1iTZYQ==", "person"=>{"name"=>"Jaskaran"}, "commit"=>"Create Person"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for nil:NilClass):
+  
+app/controllers/people_controller.rb:16:in `create'
+Started GET "/people" for ::1 at 2022-07-26 00:58:24 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/people" for ::1 at 2022-07-26 00:58:27 +0530
+Processing by PeopleController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+7M0GwmifiNarwclnD3PmPioZcTpscFdvtb+sfLwY71wFJZBFdaWbloaBrvz5cT8RXQgAg75DQceBVre3dO0qQ==", "person"=>{"name"=>"Jaskaran"}, "commit"=>"Create Person"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: people):
+  
+app/controllers/people_controller.rb:25:in `user_params'
+app/controllers/people_controller.rb:16:in `create'
+Started GET "/people" for ::1 at 2022-07-26 00:59:07 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/people" for ::1 at 2022-07-26 00:59:10 +0530
+Processing by PeopleController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U29pKD476HWmt9PgW8C8WC1m6un+XguNZKdF4ePunwzYyMtyIk8AOKYC0n40GLc8kLqvLxkWx9fEdOGOzM1IGA==", "person"=>{"name"=>"Jaskaran"}, "commit"=>"Create Person"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant PeopleController::People):
+  
+app/controllers/people_controller.rb:16:in `create'
+Started GET "/people" for ::1 at 2022-07-26 00:59:30 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/people" for ::1 at 2022-07-26 00:59:34 +0530
+Processing by PeopleController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rW7P+svPc5cNcmwMNgTQYcGP/bKkqJ85QBBm8q8RdrYmyW2g17ub2g3HbZJZ3NsFfFO4dEPgU2Pgw8KdgDKhog==", "person"=>{"name"=>"Jaskaran"}, "commit"=>"Create Person"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/people_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/people_controller.rb:17
+No template found for PeopleController#create, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/people" for ::1 at 2022-07-26 01:00:24 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:4
+  Rendered people/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 162ms (Views: 151.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/people" for ::1 at 2022-07-26 01:00:27 +0530
+Processing by PeopleController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wu6+CSBbchA6sU8QfVkBouc8gj+ErNa65Fl1doPbDQHRSRxTPC+aXToETo4SgQrGWuDH+WPkGuBEitEZrPjaFQ==", "person"=>{"name"=>"Jaskaran"}, "commit"=>"Create Person"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/people_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/people_controller.rb:17
+No template found for PeopleController#create, rendering head :no_content
+Completed 204 No Content in 27ms (ActiveRecord: 0.5ms)
+
+

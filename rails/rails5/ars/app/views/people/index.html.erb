@@ -1,0 +1,13 @@
+<%= link_to 'Number alert', people_path(42), remote: true %>
+
+<ul id="people">
+  <% @people.each do |people| %>
+    <li><%= people.name %></li>
+  <% end %>
+</ul>
+
+<%= form_with model: @people.new, data: {'people-form' => true} do |form| %>
+Name <%= form.text_field :name %><br>
+
+<%= form.submit %>
+<% end %>
