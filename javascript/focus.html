@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .error {
+        background: red;
+    }
+    .focused { outline: 1px solid red;}
+</style>
+<body>
+    Enter email: <input type="email" id="input">
+    <input type="text" style="width:220px" placeholder="email">
+    <form id="form">
+        <input type="text" name="name" value="Name">
+        <input type="text" name="surname" value="Surname">
+    </form>
+</body>
+<script>
+    input.onblur = function() {
+        if (!this.value.includes('@')) {
+            this.classList.add("error");
+            input.focus();
+        } else {
+            this.classList.remove("error");
+        }
+    }
+    form.addEventListener("focus", () => form.classList.add('focused'), true);
+    form.addEventListener("blur", () => form.classList.remove('focused'), true);
+</script>
+</html>
