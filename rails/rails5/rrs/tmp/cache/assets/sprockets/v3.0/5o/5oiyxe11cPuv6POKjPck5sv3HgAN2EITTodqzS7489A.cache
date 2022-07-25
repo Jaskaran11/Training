@@ -1,0 +1,23 @@
+I"Â(function() {
+  jQuery(function() {
+    var cities;
+    console.log("Hi");
+    $('#cities_id').parent().hide();
+    cities = $('#cities_id').html();
+    return $('#country_id').change(function() {
+      var country, escaped_country, options;
+      country = $('#country_id :selected').text();
+      escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+      options = $(cities).filter("optgroup[label='" + escaped_country + "']").html();
+      if (options) {
+        $('#cities_id').html(options);
+        return $('#cities_id').parent().show();
+      } else {
+        $('#cities_id').empty();
+        return $('#cities_id').parent().hide();
+      }
+    });
+  });
+
+}).call(this);
+:ET

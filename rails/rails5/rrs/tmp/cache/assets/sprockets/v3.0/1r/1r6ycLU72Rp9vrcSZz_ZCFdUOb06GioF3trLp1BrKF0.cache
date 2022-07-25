@@ -1,0 +1,9 @@
+I"’(function() {
+  jQuery(function() {
+    var cities;
+    cities = $('#user_city_id').html();
+    return console.log(cities);
+  });
+
+}).call(this);
+:ET

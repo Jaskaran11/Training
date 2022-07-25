@@ -1,0 +1,24 @@
+I")(function() {
+  jQuery(function() {
+    var cities;
+    console.log("Hi");
+    $('#users_city_id').parent().hide();
+    cities = $('#users_city_id').html();
+    return $('#users_country_id').change(function() {
+      var countries, escaped_countries, options;
+      countries = $('#users_country_id :selected').text();
+      escaped_countries = countries.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+      options = $(cities).filter("optgroup[label='" + escaped_countries + "']").html();
+      if (options) {
+        $('#users_city_id').html(options);
+        $('#users_city_id').parent().show();
+        return $('#users_city_id').trigger("chosen:updated");
+      } else {
+        $('#users_city_id').empty();
+        return $('#users_city_id').parent().hide();
+      }
+    });
+  });
+
+}).call(this);
+:ET

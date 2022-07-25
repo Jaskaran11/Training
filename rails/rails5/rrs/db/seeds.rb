@@ -6,10 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Country.create(name: "france")
-Country.create(name: "italy")
-  
-City.create(name: "paris", country_id: Country.find_by(name: "france").id)
-City.create(name: "nice", country_id: Country.find_by(name: "france").id)
-City.create(name: "roma", country_id: Country.find_by(name: "italy").id)
-City.create(name: "venezia", country_id: Country.find_by(name: "italy").id)
+require 'csv'
+=begin
+    
+end
+puts "Importing countries..."
+CSV.foreach(Rails.root.join("countries.csv"), headers: true) do |row|
+  Country.create! do |country|
+    country.id = row[0]
+    country.name = row[1]
+  end
+end
+=end
+
+puts "Importing cities..."
+CSV.foreach(Rails.root.join("cities.csv"), headers: true) do |row|
+  City.create! do |city|
+    city.name = row[0]
+    city.country_id = row[2]
+  end
+end
