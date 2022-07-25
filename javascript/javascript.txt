@@ -1701,3 +1701,9 @@ The onmouseover and onmouseout events can be used to trigger a function when the
 
 # The onmousedown, onmouseup and onclick Events
 The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is triggered, finally, when the mouse-click is completed, the onclick event is triggered.
+
+The lifecycle of an HTML page has three important events:
+
+DOMContentLoaded – the browser fully loaded HTML, and the DOM tree is built, but external resources like pictures <img> and stylesheets may not yet have loaded.
+load – not only HTML is loaded, but also all the external resources: images, styles etc.
+beforeunload/unload – the user is leaving the page.
