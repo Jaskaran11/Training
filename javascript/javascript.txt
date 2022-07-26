@@ -1739,3 +1739,10 @@ Both actions show alert and the form is not sent anywhere due to return false.
   First: Enter in the input field <input type="text" value="text"><br>
   Second: Click "submit": <input type="submit" value="Submit">
 </form>
+
+Asynchronous JavaScript: Asynchronous code allows the program to be executed immediately where the synchronous code will block further execution of the remaining code until it finishes the current one. This may not look like a big problem but when you see it in a bigger picture you realize that it may lead to delaying the User Interface.
+
+How ajax works?
+Ajax uses XMLHttpRequest object to achieve this
+modern website use json instead or XML for data transfer or .html, .txt
+data can be transferred in any format and protocol
