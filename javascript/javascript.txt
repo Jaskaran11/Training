@@ -1713,3 +1713,11 @@ Synchronous code runs in sequence.That means that each operation must wait for t
 Asynchronous code runs in parallel. This means that an operation can occur while another one is still being processed.
 Asynchronous code execution is often preferable in situations where execution can be blocked indefinitely. Some examples of this are network requests, long-running calculations, file system operations etc.
 Using asynchronous code in the browser ensures the page remains responsive and the user experience is mostly unaffected.
+
+Event:change - The change event triggers when the element has finished changing.
+For text inputs that means that the event occurs when it loses focus..
+
+The input event triggers every time after a value is modified by the user.
+
+Unlike keyboard events, it triggers on any value change, even those that does not involve keyboard actions: pasting with a mouse or using speech recognition to dictate the text.
+
