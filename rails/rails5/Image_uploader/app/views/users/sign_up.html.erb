@@ -16,10 +16,6 @@
     <%= form.label :profile %>
     <%= form.text_field :profile, class: "form-control" %>
   </div>
-  <div class="mb-3">
-    <%= form.submit "Sign Up", class: "btn btn-primary" %>
-  </div>
-  
   <div data-controller="country">
   <div class="mb-3">
     <%= form.label :country, class: 'form-label' %><br />
@@ -33,6 +29,12 @@
   <div class="mb-3">
     Add an image..
   <%= form.file_field :profile %>
+  </div>
+   <div class="mb-3">
+    <%= form.submit "Sign Up", class: "btn btn-primary" %>
+  </div>
+  <div class="mb-3">
+    <%= form.select :city, ["Berlin","chciago","madrid"] %>
   </div>
 <% end %>
 <script>
@@ -49,7 +51,7 @@
     
     if (country == "India") {
       remove();
-      console.log("Inside India");
+      document.getElementById("user_state").options.length=0;
       for (const val of indianStates ){
         var option = document.createElement("option");
         option.value = val;
@@ -59,7 +61,7 @@
     }
     if (country == "USA") {
       remove();
-      console.log("Inside USA");
+      document.getElementById("user_state").options.length=0;
       for (const val of usaStates ){
         var option = document.createElement("option");
         option.value = val;
@@ -67,12 +69,13 @@
         document.forms[0].user_state.appendChild(option);
       }
     }
+    }
     
     let form = document.forms[0];
+    country = document.getElementById('user_country');
+    country.addEventListener("change", selected);
 
-    form.user_country.addEventListener("change", selected);
 
-  }
 </script>
 
 

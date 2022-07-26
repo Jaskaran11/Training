@@ -49501,3 +49501,1653 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 123ms (Views: 108.0ms | ActiveRecord: 14.8ms)
 
 
+Started GET "/" for ::1 at 2022-07-26 12:30:40 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 165ms (Views: 153.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/home/index" for ::1 at 2022-07-26 12:30:52 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:30:53 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:33:09 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:33:17 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:33:17 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:33:18 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2022-07-26 12:38:07 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:38:08 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:38:09 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:38:09 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:38:10 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/ajax" for ::1 at 2022-07-26 12:38:10 +0530
+Processing by HomeController#ajax as JS
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-07-26 12:49:03 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 138ms (Views: 129.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/new" for ::1 at 2022-07-26 12:49:17 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/users/new.html.erb:17
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1001]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1241]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1002]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1003]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1004]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1005]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1006]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1007]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1008]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1009]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1010]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1011]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1012]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1013]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1014]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1015]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1212]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1016]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1017]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1018]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1019]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1020]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1021]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1022]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1023]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1024]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1025]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1026]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1027]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1028]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1029]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1030]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1032]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1033]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1034]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1036]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1037]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1038]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1039]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1040]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1041]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1042]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1043]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1044]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1045]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1046]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1047]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1048]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1049]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1051]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1050]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1052]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1053]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1054]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1055]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1056]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1057]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1058]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1059]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1060]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1061]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1062]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1064]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1065]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1066]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1067]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1068]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1069]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1070]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1072]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1073]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1074]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1075]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 3]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 5]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1076]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1077]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1078]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1079]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1080]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1213]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1081]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1082]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1083]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1084]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1085]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1086]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1087]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1088]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1089]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1090]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1245]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1091]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1092]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1093]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1094]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1095]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1096]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1097]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1098]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1099]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1100]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1101]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1102]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1103]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1104]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1105]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1246]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1106]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 4]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 6]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 2]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1107]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1108]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1109]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1244]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1110]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1111]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1112]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1113]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1114]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1115]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1116]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1117]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1118]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1119]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1120]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1121]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1122]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1123]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1124]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1125]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1126]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1127]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1128]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1129]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1130]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1131]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1132]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1133]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1134]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1135]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1136]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1137]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1138]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1139]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1140]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1141]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1142]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1143]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1144]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1243]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1145]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1146]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1147]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1035]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1148]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1149]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1150]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1152]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1151]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1153]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1154]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1155]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1156]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1157]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1158]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1159]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1160]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1161]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1162]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1163]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1164]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1165]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1166]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1167]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1168]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1169]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1170]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1171]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1172]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1173]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1174]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1175]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1179]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1176]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1177]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1178]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1180]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1181]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1182]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1183]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1184]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1185]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1186]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1207]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1187]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1188]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1242]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1238]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1189]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1190]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1191]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1192]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1193]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1194]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1195]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1196]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1197]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1198]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1199]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1200]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1201]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1202]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1203]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1204]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1205]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1206]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1208]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1209]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1210]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1211]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1063]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1214]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1215]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1216]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1217]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1218]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1219]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1220]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1221]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1222]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1223]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1224]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1225]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1226]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1228]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1227]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1229]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1230]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1231]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1232]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1233]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1031]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1234]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1235]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1236]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1237]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1239]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1240]]
+  ↳ app/views/users/new.html.erb:21
+  Rendered users/new.html.erb within layouts/application (133.0ms)
+Completed 200 OK in 141ms (Views: 121.7ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/users/new" for ::1 at 2022-07-26 12:50:45 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/users/new.html.erb:17
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1001]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1241]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1002]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1003]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1004]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1005]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1006]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1007]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1008]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1009]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1010]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1011]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1012]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1013]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1014]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1015]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1212]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1016]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1017]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1018]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1019]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1020]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1021]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1022]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1023]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1024]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1025]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1026]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1027]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1028]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1029]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1030]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1032]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1033]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1034]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1036]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1037]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1038]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1039]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1040]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1041]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1042]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1043]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1044]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1045]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1046]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1047]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1048]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1049]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1051]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1050]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1052]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1053]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1054]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1055]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1056]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1057]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1058]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1059]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1060]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1061]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1062]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1064]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1065]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1066]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1067]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1068]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1069]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1070]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1072]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1073]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1074]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1075]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 3]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 5]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1076]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1077]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1078]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1079]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1080]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1213]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1081]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1082]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1083]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1084]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1085]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1086]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1087]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1088]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1089]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1090]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1245]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1091]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1092]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1093]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1094]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1095]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1096]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1097]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1098]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1099]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1100]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1101]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1102]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1103]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1104]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1105]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1246]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1106]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 4]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 6]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 2]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1107]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1108]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1109]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1244]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1110]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1111]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1112]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1113]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1114]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1115]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1116]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1117]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1118]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1119]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1120]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1121]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1122]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1123]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1124]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1125]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1126]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1127]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1128]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1129]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1130]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1131]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1132]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1133]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1134]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1135]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1136]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1137]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1138]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1139]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1140]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1141]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1142]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1143]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1144]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1243]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1145]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1146]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1147]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1035]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1148]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1149]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1150]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1152]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1151]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1153]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1154]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1155]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1156]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1157]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1158]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1159]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1160]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1161]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1162]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1163]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1164]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1165]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1166]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1167]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1168]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1169]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1170]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1171]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1172]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1173]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1174]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1175]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1179]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1176]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1177]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1178]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1180]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1181]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1182]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1183]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1184]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1185]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1186]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1207]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1187]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1188]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1242]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1238]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1189]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1190]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1191]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1192]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1193]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1194]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1195]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1196]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1197]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1198]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1199]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1200]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1201]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1202]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1203]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1204]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1205]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1206]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1208]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1209]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1210]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1211]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1063]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1214]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1215]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1216]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1217]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1218]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1219]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1220]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1221]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1222]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1223]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1224]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1225]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1226]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1228]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1227]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1229]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1230]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1231]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1232]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1233]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1031]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1234]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1235]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1236]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1237]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1239]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1240]]
+  ↳ app/views/users/new.html.erb:21
+  Rendered users/new.html.erb within layouts/application (131.9ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 15.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `city' for #<User:0x00007f750cd14290>
+Did you mean?  city_id):
+    21:     <%= form.grouped_collection_select :id, Country.order(:name), :cities, :name, :id, :name, include_blank: true %>
+    22:   </div>
+    23:   <div>
+    24:     <%= form.select :city, ["Berlin", "Chicago", "Madrid"] %>
+    25:   </div>
+    26:     <%= form.submit "Sign Up", class: "btn btn-primary" %>
+    27:   </div>
+  
+app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb___3449955553185282595_15280'
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb___3449955553185282595_15280'
+Started GET "/users/new" for ::1 at 2022-07-26 12:51:01 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/users/new.html.erb:17
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."name" ASC[0m
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1001]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1241]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1002]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1003]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1004]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1005]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1006]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1007]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1008]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1009]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1010]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1011]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1012]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1013]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1014]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1015]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1212]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1016]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1017]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1018]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1019]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1020]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1021]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1022]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1023]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1024]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1025]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1026]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1027]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1028]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1029]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1030]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1032]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1033]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1034]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1036]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1037]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1038]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1039]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1040]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1041]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1042]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1043]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1044]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1045]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1046]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1047]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1048]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1049]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1051]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1050]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1052]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1053]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1054]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1055]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1056]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1057]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1058]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1059]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1060]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1061]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1062]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1064]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1065]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1066]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1067]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1068]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1069]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1070]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1072]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1073]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1074]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1075]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 3]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 5]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1076]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1077]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1078]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1079]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1080]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1213]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1081]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1082]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1083]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1084]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1085]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1086]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1087]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1088]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1089]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1090]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1245]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1091]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1092]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1093]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1094]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1095]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1096]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1097]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1098]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1099]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1100]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1101]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1102]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1103]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1104]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1105]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1246]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1106]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 4]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 6]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 2]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1107]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1108]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1109]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1244]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1110]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1111]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1112]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1113]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1114]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1115]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1116]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1117]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1118]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1119]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1120]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1121]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1122]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1123]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1124]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1125]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1126]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1127]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1128]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1129]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1130]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1131]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1132]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1133]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1134]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1135]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1136]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1137]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1138]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1139]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1140]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1141]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1142]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1143]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1144]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1243]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1145]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1146]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1147]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1035]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1148]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1149]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1150]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1152]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1151]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1153]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1154]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1155]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1156]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1157]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1158]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1159]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1160]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1161]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1162]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1163]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1164]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1165]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1166]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1167]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1168]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1169]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1170]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1171]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1172]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1173]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1174]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1175]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1179]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1176]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1177]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1178]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1180]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1181]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1182]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1183]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1184]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1185]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1186]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1207]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1187]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1188]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1242]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1238]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1189]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1190]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1191]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1192]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1193]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1194]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1195]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1196]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1197]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1198]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1199]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1200]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1201]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1202]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1203]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1204]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1205]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1206]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1208]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1209]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1210]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1211]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1063]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1214]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1215]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1216]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1217]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1218]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1219]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1220]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1221]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1222]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1223]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1224]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1225]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1226]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1228]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1227]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1229]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1230]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1231]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1232]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1233]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1031]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1234]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1235]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1236]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1237]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1239]]
+  ↳ app/views/users/new.html.erb:21
+  [1m[36mCity Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1240]]
+  ↳ app/views/users/new.html.erb:21
+  Rendered users/new.html.erb within layouts/application (118.0ms)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 14.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `hi' for #<User:0x00007f7520498558>):
+    21:     <%= form.grouped_collection_select :id, Country.order(:name), :cities, :name, :id, :name, include_blank: true %>
+    22:   </div>
+    23:   <div>
+    24:     <%= form.select :hi, ["Berlin", "Chicago", "Madrid"] %>
+    25:   </div>
+    26:     <%= form.submit "Sign Up", class: "btn btn-primary" %>
+    27:   </div>
+  
+app/views/users/new.html.erb:24:in `block in _app_views_users_new_html_erb___3449955553185282595_15800'
+app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb___3449955553185282595_15800'
