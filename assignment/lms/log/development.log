@@ -227,3 +227,478 @@ FOREIGN KEY ("author_id")
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveColumnFromBooks (20220727115125)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" DROP COLUMN "price"[0m
+  ↳ db/migrate/20220727115125_remove_column_from_books.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "books" ADD "genre" character varying[0m
+  ↳ db/migrate/20220727115125_remove_column_from_books.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "books" ADD "publisher" publisher[0m
+  ↳ db/migrate/20220727115125_remove_column_from_books.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveColumnFromBooks (20220727115125)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "books" DROP COLUMN "price"[0m
+  ↳ db/migrate/20220727115125_remove_column_from_books.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "books" ADD "genre" character varying[0m
+  ↳ db/migrate/20220727115125_remove_column_from_books.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "books" ADD "publisher" character varying[0m
+  ↳ db/migrate/20220727115125_remove_column_from_books.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220727115125"]]
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveColumnFromBooks (20220727115125)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemovePublishYearFromBooks (20220727115419)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "books" DROP COLUMN "publish_year"[0m
+  ↳ db/migrate/20220727115419_remove_publish_year_from_books.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220727115419"]]
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(335811360464079255)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Antoine Rohan"], ["email", "coralee_connelly@fadel-weber.biz"], ["phone_no", 0], ["dob", "2022-07-27 00:00:00"], ["hobby", "{Global,Future}"], ["skill", "{Self-motivated,Communication}"], ["created_at", "2022-07-27 11:56:47.683019"], ["updated_at", "2022-07-27 11:56:47.683019"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Mckinley Hayes VM"], ["email", "burt@west-douglas.biz"], ["phone_no", 0], ["dob", "2022-07-27 00:00:00"], ["hobby", "{Legacy,Human}"], ["skill", "{\"Technical savvy\",Proactive}"], ["created_at", "2022-07-27 11:57:06.803210"], ["updated_at", "2022-07-27 11:57:06.803210"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Burton Littel"], ["email", "ricardo@jacobi.info"], ["phone_no", 561], ["dob", "2022-07-27 00:00:00"], ["hobby", "{Central,Forward}"], ["skill", "{\"Networking skills\",\"Technical savvy\"}"], ["created_at", "2022-07-27 11:57:59.105208"], ["updated_at", "2022-07-27 11:57:59.105208"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Consider the Lilies"], ["author_id", 3], ["created_at", "2022-07-27 11:57:59.128635"], ["updated_at", "2022-07-27 11:57:59.128635"], ["genre", "Speech"], ["publisher", "McFarland & Company"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "An Evil Cradling"], ["author_id", 3], ["created_at", "2022-07-27 11:57:59.130568"], ["updated_at", "2022-07-27 11:57:59.130568"], ["genre", "Suspense/Thriller"], ["publisher", "Candlewick Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Jesting Pilate"], ["author_id", 3], ["created_at", "2022-07-27 11:57:59.131885"], ["updated_at", "2022-07-27 11:57:59.131885"], ["genre", "Horror"], ["publisher", "Shire Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Moving Finger"], ["author_id", 3], ["created_at", "2022-07-27 11:57:59.133013"], ["updated_at", "2022-07-27 11:57:59.133013"], ["genre", "Folklore"], ["publisher", "DAW Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Antic Hay"], ["author_id", 3], ["created_at", "2022-07-27 11:57:59.134009"], ["updated_at", "2022-07-27 11:57:59.134009"], ["genre", "Reference book"], ["publisher", "Macmillan Publishers"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Felicidad Huel"], ["email", "bonnie_reichert@crooks.net"], ["phone_no", 780], ["dob", "2021-07-27 00:00:00"], ["hobby", "{Chief,Global}"], ["skill", "{\"Work under pressure\",\"Problem solving\"}"], ["created_at", "2022-07-27 11:57:59.135664"], ["updated_at", "2022-07-27 11:57:59.135664"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Rosemary Sutcliff"], ["author_id", 4], ["created_at", "2022-07-27 11:57:59.136867"], ["updated_at", "2022-07-27 11:57:59.136867"], ["genre", "Realistic fiction"], ["publisher", "Blackwell Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Time to Kill"], ["author_id", 4], ["created_at", "2022-07-27 11:57:59.137828"], ["updated_at", "2022-07-27 11:57:59.137828"], ["genre", "Realistic fiction"], ["publisher", "Applewood Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Terrible Swift Sword"], ["author_id", 4], ["created_at", "2022-07-27 11:57:59.138754"], ["updated_at", "2022-07-27 11:57:59.138754"], ["genre", "Fable"], ["publisher", "Leafwood Publishers"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Antic Hay"], ["author_id", 4], ["created_at", "2022-07-27 11:57:59.139730"], ["updated_at", "2022-07-27 11:57:59.139730"], ["genre", "Humor"], ["publisher", "Golden Cockerel Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Way Through the Woods"], ["author_id", 4], ["created_at", "2022-07-27 11:57:59.140659"], ["updated_at", "2022-07-27 11:57:59.140659"], ["genre", "Tall tale"], ["publisher", "Victor Gollancz Ltd"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Marta Fadel"], ["email", "tiara.mccullough@casper-auer.org"], ["phone_no", 255], ["dob", "2020-07-27 00:00:00"], ["hobby", "{Dynamic,Product}"], ["skill", "{\"Fast learner\",\"Problem solving\"}"], ["created_at", "2022-07-27 11:57:59.142333"], ["updated_at", "2022-07-27 11:57:59.142333"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Taming a Sea Horse"], ["author_id", 5], ["created_at", "2022-07-27 11:57:59.143815"], ["updated_at", "2022-07-27 11:57:59.143815"], ["genre", "Classic"], ["publisher", "Library of America"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Heart Is a Lonely Hunter"], ["author_id", 5], ["created_at", "2022-07-27 11:57:59.145092"], ["updated_at", "2022-07-27 11:57:59.145092"], ["genre", "Horror"], ["publisher", "J. M. Dent"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "In Dubious Battle"], ["author_id", 5], ["created_at", "2022-07-27 11:57:59.146223"], ["updated_at", "2022-07-27 11:57:59.146223"], ["genre", "Narrative nonfiction"], ["publisher", "Indiana University Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "An Instant In The Wind"], ["author_id", 5], ["created_at", "2022-07-27 11:57:59.147286"], ["updated_at", "2022-07-27 11:57:59.147286"], ["genre", "Fairy tale"], ["publisher", "Kodansha"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["author_id", 5], ["created_at", "2022-07-27 11:57:59.148617"], ["updated_at", "2022-07-27 11:57:59.148617"], ["genre", "Suspense/Thriller"], ["publisher", "Sams Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Willette Stiedemann Sr."], ["email", "reita@hodkiewicz.io"], ["phone_no", 0], ["dob", "2019-07-27 00:00:00"], ["hobby", "{Customer,Legacy}"], ["skill", "{\"Fast learner\",\"Networking skills\"}"], ["created_at", "2022-07-27 11:57:59.150563"], ["updated_at", "2022-07-27 11:57:59.150563"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Moab Is My Washpot"], ["author_id", 6], ["created_at", "2022-07-27 11:57:59.151894"], ["updated_at", "2022-07-27 11:57:59.151894"], ["genre", "Textbook"], ["publisher", "Gefen Publishing House"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Tirra Lirra by the River"], ["author_id", 6], ["created_at", "2022-07-27 11:57:59.152975"], ["updated_at", "2022-07-27 11:57:59.152975"], ["genre", "Metafiction"], ["publisher", "Shambhala Publications"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Curious Incident of the Dog in the Night-Time"], ["author_id", 6], ["created_at", "2022-07-27 11:57:59.153952"], ["updated_at", "2022-07-27 11:57:59.153952"], ["genre", "Fairy tale"], ["publisher", "Gay Men's Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "His Dark Materials"], ["author_id", 6], ["created_at", "2022-07-27 11:57:59.154860"], ["updated_at", "2022-07-27 11:57:59.154860"], ["genre", "Comic/Graphic Novel"], ["publisher", "Vintage Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["author_id", 6], ["created_at", "2022-07-27 11:57:59.155837"], ["updated_at", "2022-07-27 11:57:59.155837"], ["genre", "Fiction in verse"], ["publisher", "Bloomsbury Publishing Plc"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Colby Borer"], ["email", "raye_kemmer@paucek-gerhold.name"], ["phone_no", 378], ["dob", "2018-07-27 00:00:00"], ["hobby", "{Dynamic,Senior}"], ["skill", "{Organisation,Self-motivated}"], ["created_at", "2022-07-27 11:57:59.157390"], ["updated_at", "2022-07-27 11:57:59.157390"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Rosemary Sutcliff"], ["author_id", 7], ["created_at", "2022-07-27 11:57:59.158631"], ["updated_at", "2022-07-27 11:57:59.158631"], ["genre", "Fiction in verse"], ["publisher", "Black Library"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Grapes of Wrath"], ["author_id", 7], ["created_at", "2022-07-27 11:57:59.159735"], ["updated_at", "2022-07-27 11:57:59.159735"], ["genre", "Textbook"], ["publisher", "O'Reilly Media"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Carrion Comfort"], ["author_id", 7], ["created_at", "2022-07-27 11:57:59.160826"], ["updated_at", "2022-07-27 11:57:59.160826"], ["genre", "Humor"], ["publisher", "Shoemaker & Hoard Publishers"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Monstrous Regiment of Women"], ["author_id", 7], ["created_at", "2022-07-27 11:57:59.162065"], ["updated_at", "2022-07-27 11:57:59.162065"], ["genre", "Fantasy"], ["publisher", "Manning Publications"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Those Barren Leaves, Thrones, Dominations"], ["author_id", 7], ["created_at", "2022-07-27 11:57:59.163102"], ["updated_at", "2022-07-27 11:57:59.163102"], ["genre", "Suspense/Thriller"], ["publisher", "University of Michigan Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Jasmine Beatty II"], ["email", "althea@crona.biz"], ["phone_no", 501], ["dob", "2017-07-27 00:00:00"], ["hobby", "{Dynamic,Investor}"], ["skill", "{\"Problem solving\",\"Fast learner\"}"], ["created_at", "2022-07-27 11:57:59.164710"], ["updated_at", "2022-07-27 11:57:59.164710"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "That Hideous Strength"], ["author_id", 8], ["created_at", "2022-07-27 11:57:59.165916"], ["updated_at", "2022-07-27 11:57:59.165916"], ["genre", "Suspense/Thriller"], ["publisher", "Victor Gollancz Ltd"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Skull Beneath the Skin"], ["author_id", 8], ["created_at", "2022-07-27 11:57:59.166872"], ["updated_at", "2022-07-27 11:57:59.166872"], ["genre", "Metafiction"], ["publisher", "Manchester University Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Needle's Eye"], ["author_id", 8], ["created_at", "2022-07-27 11:57:59.167828"], ["updated_at", "2022-07-27 11:57:59.167828"], ["genre", "Mythology"], ["publisher", "Penguin Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "To Sail Beyond the Sunset"], ["author_id", 8], ["created_at", "2022-07-27 11:57:59.169069"], ["updated_at", "2022-07-27 11:57:59.169069"], ["genre", "Mythology"], ["publisher", "Heyday Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Time to Kill"], ["author_id", 8], ["created_at", "2022-07-27 11:57:59.170063"], ["updated_at", "2022-07-27 11:57:59.170063"], ["genre", "Science fiction"], ["publisher", "Eerdmans Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Mrs. Harvey Cremin"], ["email", "shantell_pagac@raynor.io"], ["phone_no", 1], ["dob", "2016-07-27 00:00:00"], ["hobby", "{Central,Internal}"], ["skill", "{Communication,Confidence}"], ["created_at", "2022-07-27 11:57:59.171689"], ["updated_at", "2022-07-27 11:57:59.171689"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Such, Such Were the Joys"], ["author_id", 9], ["created_at", "2022-07-27 11:57:59.172961"], ["updated_at", "2022-07-27 11:57:59.172961"], ["genre", "Mythology"], ["publisher", "DAW Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["author_id", 9], ["created_at", "2022-07-27 11:57:59.173889"], ["updated_at", "2022-07-27 11:57:59.173889"], ["genre", "Science fiction"], ["publisher", "Bellevue Literary Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Golden Bowl"], ["author_id", 9], ["created_at", "2022-07-27 11:57:59.174824"], ["updated_at", "2022-07-27 11:57:59.174824"], ["genre", "Legend"], ["publisher", "Scholastic Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "If I Forget Thee Jerusalem"], ["author_id", 9], ["created_at", "2022-07-27 11:57:59.175834"], ["updated_at", "2022-07-27 11:57:59.175834"], ["genre", "Fiction narrative"], ["publisher", "Berkley Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cover Her Face"], ["author_id", 9], ["created_at", "2022-07-27 11:57:59.176999"], ["updated_at", "2022-07-27 11:57:59.176999"], ["genre", "Humor"], ["publisher", "Taylor & Francis"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Loria Hilll"], ["email", "lashanda_king@cole.co"], ["phone_no", 123], ["dob", "2015-07-27 00:00:00"], ["hobby", "{Human,Internal}"], ["skill", "{\"Networking skills\",\"Technical savvy\"}"], ["created_at", "2022-07-27 11:57:59.178892"], ["updated_at", "2022-07-27 11:57:59.178892"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Arms and the Man"], ["author_id", 10], ["created_at", "2022-07-27 11:57:59.180231"], ["updated_at", "2022-07-27 11:57:59.180231"], ["genre", "Comic/Graphic Novel"], ["publisher", "New Holland Publishers"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Everything is Illuminated"], ["author_id", 10], ["created_at", "2022-07-27 11:57:59.181234"], ["updated_at", "2022-07-27 11:57:59.181234"], ["genre", "Reference book"], ["publisher", "Airiti Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Wives of Bath"], ["author_id", 10], ["created_at", "2022-07-27 11:57:59.182248"], ["updated_at", "2022-07-27 11:57:59.182248"], ["genre", "Tall tale"], ["publisher", "Caister Academic Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Everything is Illuminated"], ["author_id", 10], ["created_at", "2022-07-27 11:57:59.183277"], ["updated_at", "2022-07-27 11:57:59.183277"], ["genre", "Metafiction"], ["publisher", "Manor House Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Recalled to Life"], ["author_id", 10], ["created_at", "2022-07-27 11:57:59.184203"], ["updated_at", "2022-07-27 11:57:59.184203"], ["genre", "Mythology"], ["publisher", "Black Dog Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dewitt Morar"], ["email", "jim.hane@koch.com"], ["phone_no", 542], ["dob", "2014-07-27 00:00:00"], ["hobby", "{National,Product}"], ["skill", "{Communication,Communication}"], ["created_at", "2022-07-27 11:57:59.185732"], ["updated_at", "2022-07-27 11:57:59.185732"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Skull Beneath the Skin"], ["author_id", 11], ["created_at", "2022-07-27 11:57:59.186855"], ["updated_at", "2022-07-27 11:57:59.186855"], ["genre", "Reference book"], ["publisher", "Carlton Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Wind's Twelve Quarters"], ["author_id", 11], ["created_at", "2022-07-27 11:57:59.187760"], ["updated_at", "2022-07-27 11:57:59.187760"], ["genre", "Humor"], ["publisher", "Paulist Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Skull Beneath the Skin"], ["author_id", 11], ["created_at", "2022-07-27 11:57:59.188645"], ["updated_at", "2022-07-27 11:57:59.188645"], ["genre", "Crime/Detective"], ["publisher", "Dedalus Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["author_id", 11], ["created_at", "2022-07-27 11:57:59.189515"], ["updated_at", "2022-07-27 11:57:59.189515"], ["genre", "Mystery"], ["publisher", "Vintage Books at Random House"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Death Be Not Proud"], ["author_id", 11], ["created_at", "2022-07-27 11:57:59.190442"], ["updated_at", "2022-07-27 11:57:59.190442"], ["genre", "Realistic fiction"], ["publisher", "Salt Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Cortez Flatley"], ["email", "alethea@bernhard.biz"], ["phone_no", 267], ["dob", "2013-07-27 00:00:00"], ["hobby", "{Principal,Future}"], ["skill", "{\"Networking skills\",Confidence}"], ["created_at", "2022-07-27 11:57:59.192028"], ["updated_at", "2022-07-27 11:57:59.192028"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Nectar in a Sieve"], ["author_id", 12], ["created_at", "2022-07-27 11:57:59.193500"], ["updated_at", "2022-07-27 11:57:59.193500"], ["genre", "Humor"], ["publisher", "Heyday Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Needle's Eye"], ["author_id", 12], ["created_at", "2022-07-27 11:57:59.194825"], ["updated_at", "2022-07-27 11:57:59.194825"], ["genre", "Textbook"], ["publisher", "Andrews McMeel Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Mermaids Singing"], ["author_id", 12], ["created_at", "2022-07-27 11:57:59.195958"], ["updated_at", "2022-07-27 11:57:59.195958"], ["genre", "Fiction narrative"], ["publisher", "Mandrake Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Quo Vadis"], ["author_id", 12], ["created_at", "2022-07-27 11:57:59.203949"], ["updated_at", "2022-07-27 11:57:59.203949"], ["genre", "Folklore"], ["publisher", "Burns & Oates"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "An Acceptable Time"], ["author_id", 12], ["created_at", "2022-07-27 11:57:59.205263"], ["updated_at", "2022-07-27 11:57:59.205263"], ["genre", "Fiction in verse"], ["publisher", "Oberon Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 11]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 11]]
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 11]]
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 11]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 11]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 6], ["LIMIT", 11]]
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 11]]
