@@ -1,0 +1,23 @@
+<h1>Hi</h1>
+<div class="author_index">
+  <h2>Author</h2>
+  <div>
+  <table class = "listing" summary = "Authors List">
+    <tr class = "header">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Birthday</th>
+    <th>Hobby</th>
+  <% @author.each do |author| %>
+  <tr>
+  <td><%= author.name %></td>
+  <td><%= author.email %></td>
+  </tr>
+  <% author.books.each do |book| %>
+  <tr>
+  <td><%= book.title %></td>
+  </tr>
+  <% end %>
+  <% end %>
+</div>
