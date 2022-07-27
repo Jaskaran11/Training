@@ -15,14 +15,24 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
   end
 
+  def create 
+    @author = Author.new(author_params)
+    if @author.save 
+      CrudNotificationMailer.create_notification(@author).deliver_now
+      redirect_to authors_path
+    else  
+      render :new 
+    end
+  end
+
   def update 
     @author = Author.find(params[:id])
     if @author.update(author_params)
         redirect_to authors_path(@author)
     else 
       render :edit
+    end
   end
-end
 
   def destroy
     @author.destroy 
