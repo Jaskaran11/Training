@@ -1,0 +1,18 @@
+<%= link_to('Back To Home Page', authors_path, :class => 'back-link') %>
+
+<div class="show_author">
+  <table summary="Detailed view">
+    <tr>
+      <th>Name:</th>
+      <td><%= @author.name %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @author.email %></td>
+    </tr>
+    <tr>
+      <td>Hobbies:</td>
+      <td><%= @author.hobby %></td>
+    </tr>
+  </table>
+</div>
