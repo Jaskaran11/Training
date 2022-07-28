@@ -38,6 +38,10 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def delete  
+    @author = Author.find(params[:id])
+  end
+
   def search 
     if params[:title]
       @book = Book.where('title LIKE ?', "%#{params[:title]}%")
@@ -70,8 +74,9 @@ end
 
 
   def destroy
-    @author.destroy 
-    redirect_to authors_index_path
+    @author = Author.find(params[:id])
+    @author.destroy
+    redirect_to(authors_path)
   end
 
   def authors_params

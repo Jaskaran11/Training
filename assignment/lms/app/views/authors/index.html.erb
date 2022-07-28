@@ -36,6 +36,11 @@
   <td><%= author.email %></td>
   <td><%= author.hobby %></td>
   <td><%= author.skill %></td>
+  <td class="actions">
+    <%= link_to("Show", author_path(author), :class => 'action show') %>
+    <%= link_to("Edit", edit_author_path(author), :class => 'action show') %>
+    <%= link_to("Delete", author_path(author), :method => :delete, :class => 'action show') %>
+  </td> 
   </tr>
 
   <tr><td><b>Books</b></td></tr><br>

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'homepage', to: 'home#homepage'
   get 'dashboard', to: 'home#dashboard'
   root "authors#index"
-
+ 
+  resources :authors
+  
   get 'authors/search'
 
   resources :authors do 

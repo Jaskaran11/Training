@@ -1,0 +1,17 @@
+<%= link_to("<< Back to list", authors_path, :class => 'back-link') %>
+
+<div class="author new">
+  <h2>Delete author</h2>
+  
+  <div class="mt-2" data-controller="post-actions">
+  <%= form_for(@author, :method => 'delete') do |f| %>
+  
+  <p>Are you  sure you wanna delete this author?</p>
+  <p><%= @author.name%></p>
+  </div>
+  <div class="form-buttons">
+  <%= f.submit("Delete Author") %>
+</div>
+
+<% end %>
+</div>
