@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+
   def index
     @author = Author.all
   end
@@ -28,8 +29,12 @@ class AuthorsController < ApplicationController
   def searching
     if params[:name] 
       @authors = Author.where('name LIKE ?', "%#{params[:name]}%")
+    elsif  params["@author"]
+      author = params["@author"]
+      y = author[:id].to_i
+      @authors = Author.where('id = ?', "#{y}")
     else
-      @authors = Author.all  
+    @authors = Author.all  
     end
   end
 
@@ -42,12 +47,24 @@ class AuthorsController < ApplicationController
     end
   end
 
+
+  def author_info
+    @author = Author.find(params[:id].to_i)
+
+    render json: {
+      content: render_to_string({
+        partial: 'page',
+        layout: nil
+      })
+    }
+  end
+
+
   def destroy
     @author.destroy 
     redirect_to authors_index_path
   end
 
-  private 
   def authors_params
     params.require(:author).permit(:name, :email, :phone_no, :dob, :hobby, :skill)
   end

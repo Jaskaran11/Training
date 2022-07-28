@@ -3,6 +3,23 @@
   <%= text_field_tag :name, params[:name] %>
   <%= submit_tag 'Search' %>
 <% end %>
+<br>
+<%= form_tag(search_books_path, method: :get, remote: true) do%>
+  Book
+  <%= text_field_tag :title, params[:title] %>
+  <%= submit_tag 'Search' %>
+<% end %>
+<br>
+<!--
+<%= form_with do |f| %>
+  <% f.select :author, ["Global", "Legacy", "Forward"] %>
+<% end %>
+<br>
+-->
+<%= form_tag searching_authors_path, :method => 'get', remote: true do %>
+  <%= collection_select :@author, :id, Author.all, :id, :hobby, prompt: true %> 
+   <%= submit_tag "look" %>
+<% end %>
 <%= link_to "New Author", new_author_path %>
 <div class="author_index">
   <h2>Author</h2>
@@ -31,3 +48,4 @@
   <% end %>
   </table>
 </div>
+

@@ -15,5 +15,11 @@ Rails.application.routes.draw do
       get 'searching'
     end 
   end
+
+  resources :books do 
+    collection do 
+      get 'search'
+    end
+  end
 end
 
