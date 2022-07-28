@@ -25,6 +25,14 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def searching
+    if params[:name] 
+      @authors = Author.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @authors = Author.all  
+    end
+  end
+
   def update 
     @author = Author.find(params[:id])
     if @author.update(author_params)

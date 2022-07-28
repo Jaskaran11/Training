@@ -1,0 +1,20 @@
+<thead>
+  <tr>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Phone number</th>
+  <th>Hobby</th>
+  <th>Skill</th>
+  </tr>
+</thead>
+  <tbody>
+    <% @authors.each do |author| %>
+    <tr>
+      <td><%= author.name %></td>
+      <td><%= author.email %></td>
+      <td><%= author.phone_no %></td>
+      <td><%= author.hobby %></td>
+      <td><%= author.skill %></td>
+    </tr>
+    <% end %>
+  </tbody>

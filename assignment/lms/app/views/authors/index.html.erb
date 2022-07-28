@@ -1,7 +1,12 @@
+<%= form_tag(searching_authors_path, method: :get, remote: true) do%>
+  Author 
+  <%= text_field_tag :name, params[:name] %>
+  <%= submit_tag 'Search' %>
+<% end %>
 <%= link_to "New Author", new_author_path %>
 <div class="author_index">
   <h2>Author</h2>
-  <table class = "listing" summary = "Authors List">
+<table summary = "Authors List" id="table">
     <tr class = "header">
     <th>Name</th>
     <th>Email</th>
