@@ -65,4 +65,5 @@ gem 'faker'
 
 gem "letter_opener", group: :development
 
+gem "rails_admin"
 gem 'devise'
