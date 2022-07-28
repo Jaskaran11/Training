@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end 
   end
 
-  resources :books do 
+  resources :author do 
     collection do 
       get 'search'
     end

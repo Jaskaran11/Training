@@ -38,6 +38,15 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def search 
+    if params[:title]
+      @book = Book.where('title LIKE ?', "%#{params[:title]}%")
+      #redirect_to 'authors/search.js.erb'
+    else 
+   @book = Book.all
+  end
+end
+
   def update 
     @author = Author.find(params[:id])
     if @author.update(author_params)
