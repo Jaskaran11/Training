@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'home#dashboard'
   root "authors#index"
  
-  resources :authors
-  
+  #resources :authors
+
   get 'authors/search'
 
   resources :authors do 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end 
   end
 
-  resources :author do 
+  resources :authors do 
     collection do 
       get 'search'
     end

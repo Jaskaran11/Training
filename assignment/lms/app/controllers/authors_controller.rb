@@ -28,7 +28,7 @@ class AuthorsController < ApplicationController
 
   def searching
     if params[:name] 
-      @authors = Author.where('name LIKE ?', "%#{params[:name]}%")
+      @authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
     elsif  params["@author"]
       author = params["@author"]
       y = author[:id].to_i
@@ -44,7 +44,7 @@ class AuthorsController < ApplicationController
 
   def search 
     if params[:title]
-      @book = Book.where('title LIKE ?', "%#{params[:title]}%")
+      @book = Book.where('title ILIKE ?', "%#{params[:title]}%")
       #redirect_to 'authors/search.js.erb'
     else 
    @book = Book.all
@@ -53,8 +53,8 @@ end
 
   def update 
     @author = Author.find(params[:id])
-    if @author.update(author_params)
-        redirect_to authors_path(@author)
+    if @author.update(authors_params)
+        redirect_to (author_path(@author))
     else 
       render :edit
     end
