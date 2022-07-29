@@ -1,7 +1,7 @@
 class AuthorsController < ApplicationController
 
   def index
-    @author = Author.all
+    @author = Author.paginate(page: params[:page], per_page: 2)
   end
 
   def show
@@ -41,6 +41,14 @@ class AuthorsController < ApplicationController
   def hobby 
     if params[:hobby]
       @authors = Author.include?("%#{params[:hobby]}%")
+    else  
+      @authors = Author.all
+    end
+  end
+
+  def skill 
+    if params[:skill]
+      @authors = Author.where('')
     else  
       @authors = Author.all
     end

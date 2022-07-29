@@ -67,3 +67,5 @@ gem "letter_opener", group: :development
 
 gem "rails_admin"
 gem 'devise'
+
+gem 'will_paginate', '~> 3.3'
