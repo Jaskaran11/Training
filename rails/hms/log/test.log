@@ -1,0 +1,88 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2291530039364041035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpDownReversibleAddingColumn (20220524181038)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "rooms" ADD "sku" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect * from rooms[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220524181038"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemovingForeignKey (20220524185229)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "rooms" DROP CONSTRAINT "fk_rails_33015807ee"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reservations" DROP CONSTRAINT "fk_rails_c0d73f6d92"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "payments" DROP CONSTRAINT "fk_rails_e3a64e537e"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220524185229"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProductTableUsingMethodInIt (20220524190451)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" text, "price" float, "categoryid" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" text, "description" float)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ADD "description" character varying[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "products" RENAME COLUMN "categoryid" TO "category_id"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "categories" ADD "created_at" timestamp(6) NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "categories" ADD "updated_at" timestamp(6) NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "updated_at" DROP NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "updated_at", DROP COLUMN "created_at"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" DROP CONSTRAINT "fk_rails_fb915499a4"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "categories" DROP COLUMN "updated_at", DROP COLUMN "created_at"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_categories_on_name" ON "categories" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER INDEX "index_categories_on_name" RENAME TO "index_product_categories_on_name"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX  "index_product_categories_on_name"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "description"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "categories" ADD "name_id" bigint[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_categories_on_name_id" ON "categories" ("name_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "categories" DROP COLUMN "name_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220524190451"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddForeignKey (20220525070945)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "rooms" ADD CONSTRAINT "fk_rails_33015807ee"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_c0d73f6d92"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "payments" ADD CONSTRAINT "fk_rails_e3a64e537e"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220525070945"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveColumn (20220525071555)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rooms" DROP COLUMN "sku"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rooms" DROP COLUMN "price_of_food"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rooms" DROP COLUMN "rooms_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220525071555"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFoodItems (20220525073108)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "food_items" ("id" bigserial primary key, "title" character varying, "food_items" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220525073108"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveTable (20220525073704)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "food_items"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220525073704"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveTheColumnFromRooms (20220525082355)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "rooms" DROP COLUMN "name_of_customer"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220525082355"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRevert (20220525094953)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "customers" ADD "rooms_id" bigint[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_customers_on_rooms_id" ON "customers" ("rooms_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "customers" DROP COLUMN "rooms_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220525094953"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2291530039364041035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
