@@ -16,9 +16,22 @@
 <% end %>
 <br>
 -->
+<!--
 <%= form_tag searching_authors_path, :method => 'get', remote: true do %>
   <%= collection_select :@author, :id, Author.all, :id, :hobby, prompt: true %> 
    <%= submit_tag "look" %>
+<% end %>
+-->
+<%= form_tag(hobby_authors_path, method: :get, remote: true) do %>
+Hobby
+<%= select_tag(:hobby, options_for_select(Author.pluck("hobby").flatten.uniq(), params[:hobby]), class:"select") %>
+ <%= submit_tag 'Search' %>
+<% end %>
+<br>
+<%= form_tag(skill_authors_path, method: :get, remote: true) do %>
+Hobby
+<%= select_tag(:skill, options_for_select(Author.pluck("skill").flatten.uniq()), class:"select") %>
+ <%= submit_tag 'Search' %>
 <% end %>
 <%= link_to "New Author", new_author_path %>
 <div class="author_index">

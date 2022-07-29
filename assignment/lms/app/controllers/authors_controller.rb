@@ -37,6 +37,14 @@ class AuthorsController < ApplicationController
     @authors = Author.all  
     end
   end
+  
+  def hobby 
+    if params[:hobby]
+      @authors = Author.include?("%#{params[:hobby]}%")
+    else  
+      @authors = Author.all
+    end
+  end
 
   def delete  
     @author = Author.find(params[:id])
@@ -80,6 +88,6 @@ end
   end
 
   def authors_params
-    params.require(:author).permit(:name, :email, :phone_no, :dob, :hobby, :skill)
+    params.require(:author).permit(:name, :email, :phone_no, :dob, :hobby => [], :skill => [])
   end
 end

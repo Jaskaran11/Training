@@ -11,17 +11,26 @@ Rails.application.routes.draw do
  
   #resources :authors
 
-  get 'authors/search'
+  #get 'authors/search'
 
   resources :authors do 
     collection do 
       get 'searching'
+      get 'hobby'
     end 
   end
 
   resources :authors do 
     collection do 
       get 'search'
+    end
+  end
+
+  
+
+  resources :authors do 
+    collection do 
+      get 'skill'
     end
   end
 end
