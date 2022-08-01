@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+      class Car {
+          constructor(name, year) {
+              this.name = name; 
+              this.year = year;
+          }
+      }
+      const myCar = new Car("Ford", 2014);
+      document.getElementById('demo').innerHTML = myCar.name + " " + myCar.year;
+      
+      class User {
+        constructor(name) {
+            this.name = name;
+        }
+        get name() {
+          return this._name;
+        }
+        set name(value) {
+            if(value.length < 4) {
+                alert("Name is to short");
+                return;
+            }
+            this._name = value;
+        }
+      }
+      let user = new User("John");
+      alert(user.name);
+      user = new User("");
+      class Button { 
+        constructor(value) {
+            this.value = value;
+        }
+        click = () => {
+            alert(this.value);
+        }
+      }
+      let button = new Button("hello");
+      setTimeout(button.click, 1000);
+      //Getters and Setters
+
+      class Person { 
+        constructor(name) {
+            this.name = name;
+        }
+        get personName() {
+            return this.name;
+        }
+        set personName(x) {
+          this.name = "Jaskaran";
+        }
+      }
+    </script>
+</body>
+</html>
