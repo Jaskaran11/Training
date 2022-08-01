@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'searching'
       get 'hobby'
       get 'skill'
+      get 'age'
     end 
   end
 

@@ -68,6 +68,14 @@ class AuthorsController < ApplicationController
       @authors = Author.all
     end
   end
+  
+  def age 
+    if params[:age]
+      @authors = Author.where("#{params[:age]}")
+    else
+      @authors = Author.all
+    end
+  end
 
   def delete  
     @author = Author.find(params[:id])

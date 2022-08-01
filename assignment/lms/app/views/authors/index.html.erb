@@ -35,12 +35,18 @@ Skill
 <%= select_tag(:skill, options_for_select(Author.pluck("skill").flatten.uniq(), params[:skill]), class:"select") %>
  <%= submit_tag 'Look' %>
 <% end %>
+<%= form_tag(age_authors_path, method: :get, remote: true) do %>
+Age
+<%= select_tag "age", options_for_select([" Age > 30"," Age > 40", "Age > 50"], params[:age]), class:"select" %>
+<%= submit_tag 'Look' %>
+<% end %>
 <!--
 <%= form_tag searching_authors_path, :method => 'get', remote: true do %>
   Skill<%= collection_select :@author, :id, Author.all, :id, :skill, prompt: true %> 
    <%= submit_tag "look" %>
 <% end %>
 -->
+
 <%= link_to "New Author", new_author_path %>
 <div class="author_index">
   <h2>Author</h2>
@@ -48,13 +54,16 @@ Skill
     <tr class = "header">
     <th>Name</th>
     <th>Email</th>
+    <th>Age</th>
     <th>Hobby</th>
     <th>Skills</th>
+    
     </tr>
   <% @author.each do |author| %>
   <tr>
   <td><%= author.name %></td>
   <td><%= author.email %></td>
+  <td><%= author.age %></td>
   <td><%= author.hobby %></td>
   <td><%= author.skill %></td>
   <td class="actions">

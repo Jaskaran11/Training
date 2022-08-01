@@ -4066,3 +4066,43 @@ Processing by ProductsController#index as JS
 Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2022-08-01 14:47:55 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_products.html.erb:9
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/_products.html.erb:17
+  Rendered products/_products.html.erb (118.3ms)
+  Rendered products/index.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 190ms (Views: 177.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/products?page=2&_=1659345476200" for ::1 at 2022-08-01 14:48:00 +0530
+Processing by ProductsController#index as JS
+  Parameters: {"page"=>"2", "_"=>"1659345476200"}
+  Rendering products/index.js.erb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/products/_products.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/_products.html.erb:17
+  Rendered products/_products.html.erb (3.5ms)
+  Rendered products/index.js.erb (5.0ms)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products?&page=1&_=1659345476201" for ::1 at 2022-08-01 14:48:03 +0530
+Processing by ProductsController#index as JS
+  Parameters: {"page"=>"1", "_"=>"1659345476201"}
+  Rendering products/index.js.erb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY name asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_products.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/_products.html.erb:17
+  Rendered products/_products.html.erb (2.7ms)
+  Rendered products/index.js.erb (4.3ms)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.5ms)
+
+
