@@ -26,29 +26,44 @@ class AuthorsController < ApplicationController
     end
   end
 
-  def searching
-    if params[:name] 
-      @authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
-    elsif  params["@author"]
-      author = params["@author"]
-      y = author[:id].to_i
-      @authors = Author.where('id = ?', "#{y}")
-    else
-    @authors = Author.all  
-    end
-  end
   
-  def hobby 
-    if params[:hobby]
-      @authors = Author.include?("%#{params[:hobby]}%")
+  #def searching
+    #if params[:name] 
+      #@authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
+    #elsif  params["@author"]
+      #author = params["@author"]
+      #y = author[:id].to_i
+      #@authors = Author.where('id = ?', "#{y}")
+    #else
+    #@authors = Author.all  
+    #end
+  #end
+  
+  
+
+  #def skill 
+    #if params[:name] 
+      #@authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
+    #elsif  params["@author"]
+      #author = params["@author"]
+      #y = author[:id].to_i
+      #@authors = Author.where('id = ?', "#{y}")
+    #else
+    #@authors = Author.all  
+    #end
+  #end
+  
+  def skill 
+    if params[:skill]
+      @authors = Author.where("'#{params[:skill]}' = ANY (skill)")
     else  
       @authors = Author.all
     end
   end
 
-  def skill 
-    if params[:skill]
-      @authors = Author.where('')
+  def hobby 
+    if params[:hobby]
+      @authors = Author.where("'#{params[:hobby]}' = ANY (hobby)")
     else  
       @authors = Author.all
     end

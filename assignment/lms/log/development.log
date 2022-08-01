@@ -17191,3 +17191,1441 @@ Processing by AuthorsController#searching as JS
 Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2022-07-31 23:48:01 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:34
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:47
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 4]]
+  ↳ app/views/authors/index.html.erb:61
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 5]]
+  ↳ app/views/authors/index.html.erb:61
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:71
+  Rendered authors/index.html.erb within layouts/application (175.1ms)
+Completed 200 OK in 276ms (Views: 267.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=7&commit=look" for ::1 at 2022-07-31 23:48:13 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"7"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '7')[0m
+  ↳ app/views/authors/_page.html.erb:11
+  Rendered authors/_page.html.erb (1.6ms)
+  Rendered authors/searching.js.erb (5.2ms)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mAuthor Destroy (7.9ms)[0m  [1m[31mDELETE FROM "authors"[0m
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 4]]
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 6]]
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 7]]
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 8]]
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 9]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 10]]
+  [1m[36mAuthor Destroy (0.2ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 5]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 11]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 12]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 13]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 14]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 15]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 6]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 16]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 17]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 18]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 19]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 20]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 7]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 21]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 22]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 23]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 24]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 25]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 8]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 26]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 27]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 28]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 29]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 30]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 9]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 31]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 32]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 33]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 34]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 35]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 10]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 36]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 37]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 38]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 39]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 40]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 11]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 41]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 42]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 43]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 44]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 45]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 12]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 46]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 47]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 48]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 49]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 50]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 3]]
+  [1m[36mBook Destroy (0.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 2]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 3]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 4]]
+  [1m[36mBook Destroy (0.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 5]]
+  [1m[36mAuthor Destroy (0.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "authors" WHERE "authors"."email" = $1 LIMIT $2[0m  [["email", "zachary_friesen@predovic-reilly.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "authors" WHERE "authors"."email" = $1 LIMIT $2[0m  [["email", "jonas@cronin-konopelski.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.9ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Somer Nikolaus"], ["email", "fabian_rau@rowe.biz"], ["phone_no", 524], ["dob", "2022-07-31 00:00:00"], ["hobby", "{\"Flying disc\"}"], ["skill", "{Teamwork,\"Networking skills\"}"], ["created_at", "2022-07-31 18:24:32.209515"], ["updated_at", "2022-07-31 18:24:32.209515"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Look Homeward, Angel"], ["author_id", 13], ["created_at", "2022-07-31 18:24:32.218685"], ["updated_at", "2022-07-31 18:24:32.218685"], ["genre", "Tall tale"], ["publisher", "Casemate Publishers"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "After Many a Summer Dies the Swan"], ["author_id", 13], ["created_at", "2022-07-31 18:24:32.220833"], ["updated_at", "2022-07-31 18:24:32.220833"], ["genre", "Realistic fiction"], ["publisher", "Carlton Publishing Group"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Parliament of Man"], ["author_id", 13], ["created_at", "2022-07-31 18:24:32.222137"], ["updated_at", "2022-07-31 18:24:32.222137"], ["genre", "Tall tale"], ["publisher", "HarperPrism"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Mirror Crack'd from Side to Side"], ["author_id", 13], ["created_at", "2022-07-31 18:24:32.223422"], ["updated_at", "2022-07-31 18:24:32.223422"], ["genre", "Metafiction"], ["publisher", "Harvard University Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Parliament of Man"], ["author_id", 13], ["created_at", "2022-07-31 18:24:32.224464"], ["updated_at", "2022-07-31 18:24:32.224464"], ["genre", "Folklore"], ["publisher", "Mark Batty Publisher"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Adalberto Wisozk JD"], ["email", "syble.adams@quitzon.co"], ["phone_no", 1], ["dob", "2021-07-31 00:00:00"], ["hobby", "{Sudoku}"], ["skill", "{Self-motivated,\"Problem solving\"}"], ["created_at", "2022-07-31 18:24:32.226104"], ["updated_at", "2022-07-31 18:24:32.226104"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Death Be Not Proud"], ["author_id", 14], ["created_at", "2022-07-31 18:24:32.227309"], ["updated_at", "2022-07-31 18:24:32.227309"], ["genre", "Fantasy"], ["publisher", "Signet Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Heart Is a Lonely Hunter"], ["author_id", 14], ["created_at", "2022-07-31 18:24:32.228345"], ["updated_at", "2022-07-31 18:24:32.228345"], ["genre", "Fable"], ["publisher", "Taunton Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Where Angels Fear to Tread"], ["author_id", 14], ["created_at", "2022-07-31 18:24:32.229333"], ["updated_at", "2022-07-31 18:24:32.229333"], ["genre", "Fairy tale"], ["publisher", "Hachette Book Group USA"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Waiting for the Barbarians"], ["author_id", 14], ["created_at", "2022-07-31 18:24:32.230315"], ["updated_at", "2022-07-31 18:24:32.230315"], ["genre", "Historical fiction"], ["publisher", "Godwit Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Butter In a Lordly Dish"], ["author_id", 14], ["created_at", "2022-07-31 18:24:32.231319"], ["updated_at", "2022-07-31 18:24:32.231319"], ["genre", "Mythology"], ["publisher", "Medknow Publications"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "August Kemmer"], ["email", "stefan.conroy@feeney.io"], ["phone_no", 0], ["dob", "2020-07-31 00:00:00"], ["hobby", "{\"Table tennis\"}"], ["skill", "{Confidence,Proactive}"], ["created_at", "2022-07-31 18:24:32.232872"], ["updated_at", "2022-07-31 18:24:32.232872"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Millstone"], ["author_id", 15], ["created_at", "2022-07-31 18:24:32.234031"], ["updated_at", "2022-07-31 18:24:32.234031"], ["genre", "Fiction in verse"], ["publisher", "Peace Hill Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Millstone"], ["author_id", 15], ["created_at", "2022-07-31 18:24:32.235031"], ["updated_at", "2022-07-31 18:24:32.235031"], ["genre", "Essay"], ["publisher", "Vintage Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Wings of the Dove"], ["author_id", 15], ["created_at", "2022-07-31 18:24:32.236026"], ["updated_at", "2022-07-31 18:24:32.236026"], ["genre", "Short story"], ["publisher", "Book Works"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Line of Beauty"], ["author_id", 15], ["created_at", "2022-07-31 18:24:32.237231"], ["updated_at", "2022-07-31 18:24:32.237231"], ["genre", "Metafiction"], ["publisher", "Orchard Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Darkling Plain"], ["author_id", 15], ["created_at", "2022-07-31 18:24:32.238432"], ["updated_at", "2022-07-31 18:24:32.238432"], ["genre", "Fantasy"], ["publisher", "Taunton Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gov. Cherish Grimes"], ["email", "mac.senger@green-heathcote.net"], ["phone_no", 243], ["dob", "2019-07-31 00:00:00"], ["hobby", "{\"Do it yourself\"}"], ["skill", "{Self-motivated,\"Problem solving\"}"], ["created_at", "2022-07-31 18:24:32.240163"], ["updated_at", "2022-07-31 18:24:32.240163"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dying of the Light"], ["author_id", 16], ["created_at", "2022-07-31 18:24:32.241440"], ["updated_at", "2022-07-31 18:24:32.241440"], ["genre", "Tall tale"], ["publisher", "Carnegie Mellon University Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cover Her Face"], ["author_id", 16], ["created_at", "2022-07-31 18:24:32.242491"], ["updated_at", "2022-07-31 18:24:32.242491"], ["genre", "Historical fiction"], ["publisher", "University of Nebraska Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Parliament of Man"], ["author_id", 16], ["created_at", "2022-07-31 18:24:32.243481"], ["updated_at", "2022-07-31 18:24:32.243481"], ["genre", "Tall tale"], ["publisher", "University of Minnesota Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Brandy of the Damned"], ["author_id", 16], ["created_at", "2022-07-31 18:24:32.244417"], ["updated_at", "2022-07-31 18:24:32.244417"], ["genre", "Fable"], ["publisher", "Pen and Sword Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Wealth of Nations"], ["author_id", 16], ["created_at", "2022-07-31 18:24:32.245339"], ["updated_at", "2022-07-31 18:24:32.245339"], ["genre", "Historical fiction"], ["publisher", "Bantam Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Libbie Gulgowski"], ["email", "andrea_mante@hermann.biz"], ["phone_no", 611], ["dob", "2018-07-31 00:00:00"], ["hobby", "{Singing}"], ["skill", "{Self-motivated,\"Fast learner\"}"], ["created_at", "2022-07-31 18:24:32.247032"], ["updated_at", "2022-07-31 18:24:32.247032"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "To a God Unknown"], ["author_id", 17], ["created_at", "2022-07-31 18:24:32.248177"], ["updated_at", "2022-07-31 18:24:32.248177"], ["genre", "Humor"], ["publisher", "Adis International"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "O Pioneers!"], ["author_id", 17], ["created_at", "2022-07-31 18:24:32.249137"], ["updated_at", "2022-07-31 18:24:32.249137"], ["genre", "Tall tale"], ["publisher", "Basic Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Cabbages and Kings"], ["author_id", 17], ["created_at", "2022-07-31 18:24:32.250046"], ["updated_at", "2022-07-31 18:24:32.250046"], ["genre", "Tall tale"], ["publisher", "Peace Hill Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Catskill Eagle"], ["author_id", 17], ["created_at", "2022-07-31 18:24:32.250946"], ["updated_at", "2022-07-31 18:24:32.250946"], ["genre", "Legend"], ["publisher", "Packt Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fair Stood the Wind for France"], ["author_id", 17], ["created_at", "2022-07-31 18:24:32.251886"], ["updated_at", "2022-07-31 18:24:32.251886"], ["genre", "Reference book"], ["publisher", "Blackstaff Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Qiana Smitham"], ["email", "berry_robel@adams.co"], ["phone_no", 1], ["dob", "2017-07-31 00:00:00"], ["hobby", "{Sculling}"], ["skill", "{Organisation,\"Technical savvy\"}"], ["created_at", "2022-07-31 18:24:32.253375"], ["updated_at", "2022-07-31 18:24:32.253375"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Parliament of Man"], ["author_id", 18], ["created_at", "2022-07-31 18:24:32.254505"], ["updated_at", "2022-07-31 18:24:32.254505"], ["genre", "Fairy tale"], ["publisher", "Candlewick Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Noli Me Tangere"], ["author_id", 18], ["created_at", "2022-07-31 18:24:32.255428"], ["updated_at", "2022-07-31 18:24:32.255428"], ["genre", "Narrative nonfiction"], ["publisher", "Shoemaker & Hoard Publishers"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Françoise Sagan"], ["author_id", 18], ["created_at", "2022-07-31 18:24:32.256316"], ["updated_at", "2022-07-31 18:24:32.256316"], ["genre", "Fanfiction"], ["publisher", "George H. Doran Company"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "To a God Unknown"], ["author_id", 18], ["created_at", "2022-07-31 18:24:32.257231"], ["updated_at", "2022-07-31 18:24:32.257231"], ["genre", "Realistic fiction"], ["publisher", "Parachute Publishing"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "To a God Unknown"], ["author_id", 18], ["created_at", "2022-07-31 18:24:32.258123"], ["updated_at", "2022-07-31 18:24:32.258123"], ["genre", "Essay"], ["publisher", "UCL Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Klara Langworth"], ["email", "german_jast@price.name"], ["phone_no", 1], ["dob", "2016-07-31 00:00:00"], ["hobby", "{\"Do it yourself\"}"], ["skill", "{Self-motivated,\"Work under pressure\"}"], ["created_at", "2022-07-31 18:24:32.259571"], ["updated_at", "2022-07-31 18:24:32.259571"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gone with the Wind"], ["author_id", 19], ["created_at", "2022-07-31 18:24:32.260725"], ["updated_at", "2022-07-31 18:24:32.260725"], ["genre", "Comic/Graphic Novel"], ["publisher", "Airiti Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Moving Finger"], ["author_id", 19], ["created_at", "2022-07-31 18:24:32.261650"], ["updated_at", "2022-07-31 18:24:32.261650"], ["genre", "Fairy tale"], ["publisher", "Breslov Research Institute"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "To Your Scattered Bodies Go"], ["author_id", 19], ["created_at", "2022-07-31 18:24:32.262557"], ["updated_at", "2022-07-31 18:24:32.262557"], ["genre", "Western"], ["publisher", "Breslov Research Institute"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Tiger! Tiger!"], ["author_id", 19], ["created_at", "2022-07-31 18:24:32.263461"], ["updated_at", "2022-07-31 18:24:32.263461"], ["genre", "Fanfiction"], ["publisher", "Brill"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Moving Finger"], ["author_id", 19], ["created_at", "2022-07-31 18:24:32.264342"], ["updated_at", "2022-07-31 18:24:32.264342"], ["genre", "Crime/Detective"], ["publisher", "Dalkey Archive Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dane Casper CPA"], ["email", "josef@abernathy.biz"], ["phone_no", 427], ["dob", "2015-07-31 00:00:00"], ["hobby", "{Handball}"], ["skill", "{Leadership,Confidence}"], ["created_at", "2022-07-31 18:24:32.265745"], ["updated_at", "2022-07-31 18:24:32.265745"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Moon by Night"], ["author_id", 20], ["created_at", "2022-07-31 18:24:32.266819"], ["updated_at", "2022-07-31 18:24:32.266819"], ["genre", "Fable"], ["publisher", "Farrar, Straus & Giroux"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Number the Stars"], ["author_id", 20], ["created_at", "2022-07-31 18:24:32.267726"], ["updated_at", "2022-07-31 18:24:32.267726"], ["genre", "Reference book"], ["publisher", "Ballantine Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "A Monstrous Regiment of Women"], ["author_id", 20], ["created_at", "2022-07-31 18:24:32.268678"], ["updated_at", "2022-07-31 18:24:32.268678"], ["genre", "Essay"], ["publisher", "Gay Men's Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Way of All Flesh"], ["author_id", 20], ["created_at", "2022-07-31 18:24:32.269582"], ["updated_at", "2022-07-31 18:24:32.269582"], ["genre", "Textbook"], ["publisher", "Holland Park Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "This Side of Paradise"], ["author_id", 20], ["created_at", "2022-07-31 18:24:32.270473"], ["updated_at", "2022-07-31 18:24:32.270473"], ["genre", "Mystery"], ["publisher", "NavPress"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Luci Littel"], ["email", "wilfredo_moen@lubowitz-grady.org"], ["phone_no", 418], ["dob", "2014-07-31 00:00:00"], ["hobby", "{Rafting}"], ["skill", "{\"Technical savvy\",\"Problem solving\"}"], ["created_at", "2022-07-31 18:24:32.271911"], ["updated_at", "2022-07-31 18:24:32.271911"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Monkey's Raincoat"], ["author_id", 21], ["created_at", "2022-07-31 18:24:32.272967"], ["updated_at", "2022-07-31 18:24:32.272967"], ["genre", "Science fiction"], ["publisher", "Shambhala Publications"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "To Your Scattered Bodies Go"], ["author_id", 21], ["created_at", "2022-07-31 18:24:32.273860"], ["updated_at", "2022-07-31 18:24:32.273860"], ["genre", "Short story"], ["publisher", "Atlas Press"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Line of Beauty"], ["author_id", 21], ["created_at", "2022-07-31 18:24:32.274782"], ["updated_at", "2022-07-31 18:24:32.274782"], ["genre", "Fairy tale"], ["publisher", "Voyager Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Paths of Glory"], ["author_id", 21], ["created_at", "2022-07-31 18:24:32.275691"], ["updated_at", "2022-07-31 18:24:32.275691"], ["genre", "Horror"], ["publisher", "Edupedia Publications"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Of Human Bondage"], ["author_id", 21], ["created_at", "2022-07-31 18:24:32.276574"], ["updated_at", "2022-07-31 18:24:32.276574"], ["genre", "Legend"], ["publisher", "G. P. Putnam's Sons"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAuthor Create (0.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "email", "phone_no", "dob", "hobby", "skill", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Jeremy Altenwerth"], ["email", "farah@bashirian-dooley.info"], ["phone_no", 272], ["dob", "2013-07-31 00:00:00"], ["hobby", "{\"Baton twirling\"}"], ["skill", "{\"Fast learner\",\"Technical savvy\"}"], ["created_at", "2022-07-31 18:24:32.278100"], ["updated_at", "2022-07-31 18:24:32.278100"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Far From the Madding Crowd"], ["author_id", 22], ["created_at", "2022-07-31 18:24:32.279140"], ["updated_at", "2022-07-31 18:24:32.279140"], ["genre", "Fiction narrative"], ["publisher", "Ace Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Jacob Have I Loved"], ["author_id", 22], ["created_at", "2022-07-31 18:24:32.280053"], ["updated_at", "2022-07-31 18:24:32.280053"], ["genre", "Fantasy"], ["publisher", "Shambhala Publications"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Such, Such Were the Joys"], ["author_id", 22], ["created_at", "2022-07-31 18:24:32.280941"], ["updated_at", "2022-07-31 18:24:32.280941"], ["genre", "Fiction in verse"], ["publisher", "Cloverdale Corporation"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "In Dubious Battle"], ["author_id", 22], ["created_at", "2022-07-31 18:24:32.281852"], ["updated_at", "2022-07-31 18:24:32.281852"], ["genre", "Tall tale"], ["publisher", "Vintage Books at Random House"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mBook Create (0.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author_id", "created_at", "updated_at", "genre", "publisher") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Last Temptation"], ["author_id", 22], ["created_at", "2022-07-31 18:24:32.282731"], ["updated_at", "2022-07-31 18:24:32.282731"], ["genre", "Mythopoeia"], ["publisher", "Atheneum Books"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2022-07-31 23:54:59 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:34
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:47
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:61
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:61
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:71
+  Rendered authors/index.html.erb within layouts/application (146.5ms)
+Completed 200 OK in 246ms (Views: 238.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=16&commit=look" for ::1 at 2022-07-31 23:55:03 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"16"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '16')[0m
+  ↳ app/views/authors/_page.html.erb:11
+  Rendered authors/_page.html.erb (0.9ms)
+  Rendered authors/searching.js.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2022-07-31 23:55:41 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:34
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:47
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:61
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:61
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:71
+  Rendered authors/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=&commit=look" for ::1 at 2022-07-31 23:55:43 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>""}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '0')[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.0ms)
+  Rendered authors/searching.js.erb (3.6ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=14&commit=look" for ::1 at 2022-07-31 23:55:45 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"14"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '14')[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.1ms)
+  Rendered authors/searching.js.erb (3.7ms)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2022-07-31 23:57:38 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2022-07-31 23:57:50 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2022-07-31 23:58:00 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2022-07-31 23:58:15 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 00:01:12 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&%40author%5Bid%5D=15&commit=look" for ::1 at 2022-08-01 00:01:14 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"15"}, "commit"=>"look", "id"=>"skill"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2022-08-01 00:02:17 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&%40author%5Bid%5D=14&commit=look" for ::1 at 2022-08-01 00:02:21 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"14"}, "commit"=>"look", "id"=>"skill"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2022-08-01 00:05:03 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendered authors/index.html.erb within layouts/application (309.2ms)
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `hobby_authors_path' for #<#<Class:0x00007fabd83a6e80>:0x00007fabd83a4900>):
+    22:    <%= submit_tag "look" %>
+    23: <% end %>
+    24: <!--
+    25: <%= form_tag(hobby_authors_path, method: :get, remote: true) do %>
+    26: Hobby
+    27: <%= select_tag(:hobby, options_for_select(Author.pluck("hobby").flatten.uniq(), params[:hobby]), class:"select") %>
+    28:  <%= submit_tag 'Search' %>
+  
+app/views/authors/index.html.erb:25:in `_app_views_authors_index_html_erb__506303528566909706_23080'
+Started GET "/" for ::1 at 2022-08-01 00:05:21 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 117ms (Views: 112.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&%40author%5Bid%5D=14&commit=look" for ::1 at 2022-08-01 00:05:24 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"14"}, "commit"=>"look", "id"=>"skill"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=14&commit=look" for ::1 at 2022-08-01 00:05:35 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"14"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '14')[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (0.8ms)
+  Rendered authors/searching.js.erb (2.0ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 00:07:29 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&%40author%5Bid%5D=14&commit=look" for ::1 at 2022-08-01 00:07:32 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"14"}, "commit"=>"look", "id"=>"skill"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2022-08-01 00:08:41 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&%40author%5Bid%5D=15&commit=look" for ::1 at 2022-08-01 00:08:43 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"15"}, "commit"=>"look", "id"=>"skill"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2022-08-01 00:09:35 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=16&commit=look" for ::1 at 2022-08-01 00:09:39 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"16"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '16')[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (0.8ms)
+  Rendered authors/searching.js.erb (2.1ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=13&commit=look" for ::1 at 2022-08-01 00:09:43 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"13"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '13')[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.0ms)
+  Rendered authors/searching.js.erb (2.2ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:30:00 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (180.3ms)
+Completed 200 OK in 285ms (Views: 275.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=14&commit=look" for ::1 at 2022-08-01 13:30:03 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"14"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE (id = '14')[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.2ms)
+  Rendered authors/searching.js.erb (3.5ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors/hobby?utf8=%E2%9C%93&hobby=Sculling&commit=Search" for ::1 at 2022-08-01 13:30:08 +0530
+Processing by AuthorsController#hobby as JS
+  Parameters: {"utf8"=>"✓", "hobby"=>"Sculling", "commit"=>"Search"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/controllers/authors_controller.rb:55:in `include?'
+app/controllers/authors_controller.rb:55:in `hobby'
+Started GET "/" for ::1 at 2022-08-01 13:32:57 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:53
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:67
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:77
+  Rendered authors/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/authors/searching?utf8=%E2%9C%93&%40author%5Bid%5D=17&commit=look" for ::1 at 2022-08-01 13:33:00 +0530
+Processing by AuthorsController#searching as JS
+  Parameters: {"utf8"=>"✓", "@author"=>{"id"=>"17"}, "commit"=>"look"}
+  Rendering authors/searching.js.erb
+  Rendered authors/_page.html.erb (1.6ms)
+  Rendered authors/searching.js.erb (2.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:   </tr>
+    10: </thead>
+    11:   <tbody>
+    12:     <% @authors.each do |author| %>
+    13:     <tr>
+    14:       <td><%= author.name %></td>
+    15:       <td><%= author.email %></td>
+  
+app/views/authors/_page.html.erb:12:in `_app_views_authors__page_html_erb___4329407773675899776_30920'
+app/views/authors/searching.js.erb:1:in `_app_views_authors_searching_js_erb___610693877910716488_30900'
+Started GET "/authors/hobby?utf8=%E2%9C%93&hobby=Do%20it%20yourself&commit=Search" for ::1 at 2022-08-01 13:33:04 +0530
+Processing by AuthorsController#hobby as JS
+  Parameters: {"utf8"=>"✓", "hobby"=>"Do it yourself", "commit"=>"Search"}
+  Rendering authors/hobby.js.erb
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Do it yourself' = ANY (hobby))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.7ms)
+  Rendered authors/hobby.js.erb (5.2ms)
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:34:54 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 32ms (Views: 27.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Confidence&commit=Search" for ::1 at 2022-08-01 13:34:56 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Confidence", "commit"=>"Search", "id"=>"skill"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2022-08-01 13:35:24 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Confidence&commit=Search" for ::1 at 2022-08-01 13:35:26 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Confidence", "commit"=>"Search", "id"=>"skill"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/authors/hobby?utf8=%E2%9C%93&hobby=Do%20it%20yourself&commit=Search" for ::1 at 2022-08-01 13:35:33 +0530
+Processing by AuthorsController#hobby as JS
+  Parameters: {"utf8"=>"✓", "hobby"=>"Do it yourself", "commit"=>"Search"}
+  Rendering authors/hobby.js.erb
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Do it yourself' = ANY (hobby))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.6ms)
+  Rendered authors/hobby.js.erb (4.4ms)
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Confidence&commit=Search" for ::1 at 2022-08-01 13:35:36 +0530
+Processing by AuthorsController#show as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Confidence", "commit"=>"Search", "id"=>"skill"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:8
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=skill):
+  
+app/controllers/authors_controller.rb:8:in `show'
+Started GET "/" for ::1 at 2022-08-01 13:35:39 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:36:42 +0530
+  
+SyntaxError (/home/itsacheckmate/Training/assignment/lms/config/routes.rb:31: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:31: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for ::1 at 2022-08-01 13:36:50 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Networking%20skills&commit=Search" for ::1 at 2022-08-01 13:36:52 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Networking skills", "commit"=>"Search"}
+  Rendering authors/skill.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Networking skills' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (0.7ms)
+  Rendered authors/skill.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Confidence&commit=Search" for ::1 at 2022-08-01 13:37:16 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Confidence", "commit"=>"Search"}
+  Rendering authors/skill.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Confidence' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.0ms)
+  Rendered authors/skill.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:39:49 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Organisation&commit=Search" for ::1 at 2022-08-01 13:39:52 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Organisation", "commit"=>"Search"}
+  Rendering authors/skill.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Organisation' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (0.8ms)
+  Rendered authors/skill.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:40:53 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (146.9ms)
+Completed 200 OK in 246ms (Views: 238.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Proactive&commit=Search" for ::1 at 2022-08-01 13:40:55 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Proactive", "commit"=>"Search"}
+  Rendering authors/skill.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Proactive' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.0ms)
+  Rendered authors/skill.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:41:46 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Confidence&commit=Look" for ::1 at 2022-08-01 13:41:48 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Confidence", "commit"=>"Look"}
+  Rendering authors/skill.html.erb within layouts/application
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Confidence' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.5ms)
+  Rendered authors/skill.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:42:20 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Problem%20solving&commit=Look" for ::1 at 2022-08-01 13:42:22 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Problem solving", "commit"=>"Look"}
+  Rendering authors/skill.js.erb
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Problem solving' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (0.9ms)
+  Rendered authors/skill.js.erb (2.3ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-08-01 13:47:02 +0530
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 13]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 14]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authors/skill?utf8=%E2%9C%93&skill=Self-motivated&commit=Look" for ::1 at 2022-08-01 13:47:06 +0530
+Processing by AuthorsController#skill as JS
+  Parameters: {"utf8"=>"✓", "skill"=>"Self-motivated", "commit"=>"Look"}
+  Rendering authors/skill.js.erb
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Self-motivated' = ANY (skill))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (1.0ms)
+  Rendered authors/skill.js.erb (2.4ms)
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors/hobby?utf8=%E2%9C%93&hobby=Sudoku&commit=Look" for ::1 at 2022-08-01 13:47:09 +0530
+Processing by AuthorsController#hobby as JS
+  Parameters: {"utf8"=>"✓", "hobby"=>"Sudoku", "commit"=>"Look"}
+  Rendering authors/hobby.js.erb
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE ('Sudoku' = ANY (hobby))[0m
+  ↳ app/views/authors/_page.html.erb:12
+  Rendered authors/_page.html.erb (0.8ms)
+  Rendered authors/hobby.js.erb (2.1ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?page=2" for ::1 at 2022-08-01 14:03:22 +0530
+Processing by AuthorsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."hobby" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "authors"."skill" FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:35
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:40
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/authors/index.html.erb:54
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 15]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."author_id" = $1[0m  [["author_id", 16]]
+  ↳ app/views/authors/index.html.erb:68
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:78
+  Rendered authors/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 1.0ms)
+
+
