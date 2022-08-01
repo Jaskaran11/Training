@@ -93,7 +93,8 @@ end
   def update 
     @author = Author.find(params[:id])
     if @author.update(authors_params)
-        redirect_to (author_path(@author))
+      CrudNotificationMailer.update_notification(@author).deliver_now
+      redirect_to (author_path(@author))
     else 
       render :edit
     end
@@ -112,13 +113,15 @@ end
   end
 
 
-  def destroy
+  def destroy 
+  CrudNotificationMailer.delete_notification(@author).deliver_now
     @author = Author.find(params[:id])
     @author.destroy
     redirect_to(authors_path)
   end
 
-  def authors_params
+  private
+  def author_params
     params.require(:author).permit(:name, :email, :phone_no, :dob, :hobby => [], :skill => [])
   end
 end
