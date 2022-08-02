@@ -7,7 +7,7 @@ class CrudNotificationMailer < ApplicationMailer
     mail to: 'admin@example.com', subject: "A new entry for #{object.class} has been created."
   end
 
-  def update_notification
+  def update_notification(object)
     @object = object 
     @object_count = object.class.count
 

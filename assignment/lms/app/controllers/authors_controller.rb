@@ -59,22 +59,22 @@ class AuthorsController < ApplicationController
       @book = Book.where('title ILIKE ?', "%#{params[:title]}%")
     else 
    @book = Book.all
+    end
   end
-end
 
   def searching 
     if params[:name]
       @authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
     else
-   @authors = Author.all
+      @authors = Author.all
+    end
   end
 
-  end
   def update 
     @author = Author.find(params[:id])
-    if @author.update(authors_params)
+    if @author.update(author_params)
       CrudNotificationMailer.update_notification(@author).deliver_now
-      redirect_to (author_path(@author))
+      redirect_to(authors_path)
     else 
       render :edit
     end

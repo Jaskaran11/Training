@@ -54,8 +54,8 @@ Age
     <%= link_to("Delete", author_path(author), :method => :delete, :class => 'action show') %>
   </td> 
   </tr>
-
-  <tr><td><b>Books</b></td></tr><br>
+    <th><%= "Book's of #{author.name}" %></th>
+    <th>Genre</th>
   <% author.books.each do |book| %>
   <tr>
   <td><%= book.title %></td>
