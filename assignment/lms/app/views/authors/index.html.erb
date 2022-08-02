@@ -1,33 +1,21 @@
-<%= form_tag(searching_authors_path, method: :get, remote: true) do%>
+<%= form_tag(searching_authors_path, method: :get, remote: true) do %>
   Author 
   <%= text_field_tag :name, params[:name] %>
   <%= submit_tag 'Search' %>
 <% end %>
 <br>
-<%= form_tag(search_authors_path, method: :get, remote: true) do%>
+<%= form_tag(search_authors_path, method: :get, remote: true) do %>
   Book
   <%= text_field_tag :title, params[:title] %>
   <%= submit_tag 'Search' %>
 <% end %>
 <br>
-<!--
-<%= form_with do |f| %>
-  <% f.select :author, ["Global", "Legacy", "Forward"] %>
-<% end %>
-<br>
--->
-<!--
-<%= form_tag searching_authors_path, :method => 'get', remote: true do %>
-  Hobby<%= collection_select :@author, :id, Author.all, :id, :hobby, prompt: true %> 
-   <%= submit_tag "look" %>
-<% end %>
--->
+
 <%= form_tag(hobby_authors_path, method: :get, remote: true) do %>
 Hobby
 <%= select_tag(:hobby, options_for_select(Author.pluck("hobby").flatten.uniq(), params[:hobby]), class:"select") %>
  <%= submit_tag 'Look' %>
 <% end %>
-
 
 <br>
 <%= form_tag(skill_authors_path, method: :get, remote: true) do %>
@@ -37,15 +25,9 @@ Skill
 <% end %>
 <%= form_tag(age_authors_path, method: :get, remote: true) do %>
 Age
-<%= select_tag "age", options_for_select([" Age > 30"," Age > 40", "Age > 50"], params[:age]), class:"select" %>
+<%= select_tag "age", options_for_select([["Age > 30", 30],["Age > 40", 40],["Age > 50", 50]], params[:age]), class:"select" %>
 <%= submit_tag 'Look' %>
 <% end %>
-<!--
-<%= form_tag searching_authors_path, :method => 'get', remote: true do %>
-  Skill<%= collection_select :@author, :id, Author.all, :id, :skill, prompt: true %> 
-   <%= submit_tag "look" %>
-<% end %>
--->
 
 <%= link_to "New Author", new_author_path %>
 <div class="author_index">

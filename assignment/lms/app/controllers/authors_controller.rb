@@ -25,33 +25,6 @@ class AuthorsController < ApplicationController
       render :new 
     end
   end
-
-  
-  #def searching
-    #if params[:name] 
-      #@authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
-    #elsif  params["@author"]
-      #author = params["@author"]
-      #y = author[:id].to_i
-      #@authors = Author.where('id = ?', "#{y}")
-    #else
-    #@authors = Author.all  
-    #end
-  #end
-  
-  
-
-  #def skill 
-    #if params[:name] 
-      #@authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
-    #elsif  params["@author"]
-      #author = params["@author"]
-      #y = author[:id].to_i
-      #@authors = Author.where('id = ?', "#{y}")
-    #else
-    #@authors = Author.all  
-    #end
-  #end
   
   def skill 
     if params[:skill]
@@ -71,7 +44,7 @@ class AuthorsController < ApplicationController
   
   def age 
     if params[:age]
-      @authors = Author.where("#{params[:age]}")
+      @authors = Author.where('age > ?', "#{params[:age]}")
     else
       @authors = Author.all
     end
@@ -84,12 +57,19 @@ class AuthorsController < ApplicationController
   def search 
     if params[:title]
       @book = Book.where('title ILIKE ?', "%#{params[:title]}%")
-      #redirect_to 'authors/search.js.erb'
     else 
    @book = Book.all
   end
 end
 
+  def searching 
+    if params[:name]
+      @authors = Author.where('name ILIKE ?', "%#{params[:name]}%")
+    else
+   @authors = Author.all
+  end
+
+  end
   def update 
     @author = Author.find(params[:id])
     if @author.update(authors_params)
@@ -98,18 +78,6 @@ end
     else 
       render :edit
     end
-  end
-
-
-  def author_info
-    @author = Author.find(params[:id].to_i)
-
-    render json: {
-      content: render_to_string({
-        partial: 'page',
-        layout: nil
-      })
-    }
   end
 
 
@@ -122,6 +90,6 @@ end
 
   private
   def author_params
-    params.require(:author).permit(:name, :email, :phone_no, :dob, :hobby => [], :skill => [])
+    params.require(:author).permit(:name, :email, :phone_no, :age, :dob, :hobby => [], :skill => [])
   end
 end

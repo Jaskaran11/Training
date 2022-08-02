@@ -19,14 +19,8 @@ Rails.application.routes.draw do
       get 'hobby'
       get 'skill'
       get 'age'
+      get 'search'
     end 
   end
-
-  resources :authors do 
-    collection do 
-      get 'search'
-    end
-  end
-
 end
 
