@@ -1,0 +1,22 @@
+<%= form_with model: user do |form| %>
+<% if @user.errors.any? %>
+<% @user.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+<% end %>
+<% end %>
+
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+<div>
+  <%= form.label :gender %><br>
+  <%= form.text_field :gender %>
+</div>
+<div>
+  <%= form.label :coutnry %><br>
+  <%= form.text_field :country %>
+</div>
+<%= form.submit %>
+<% end %>
+
