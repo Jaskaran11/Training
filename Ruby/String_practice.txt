@@ -1014,8 +1014,102 @@ If argument exclusive is given as a truthy object, the last value is omitted:
 3.0.0 :053 > 'a8'.upto('b6', true) {|s| print s, ' ' } 
 a8 a9 b0 b1 b2 b3 b4 b5  => "a8" 
 
+2.7.0 :001 > str = "Jaskaran"
+ => "Jaskaran" 
+2.7.0 :002 > str.each_char do |x|
+2.7.0 :003 >   puts x if ['a','e','i','o','u'].include? x.downcase
+2.7.0 :004 > end
+a
+a                                                                               
+a                                                                               
+ => "Jaskaran"   
 
 
  
+2.7.0 :011 > str.each_char.with_index do |x, i|
+2.7.0 :012 >   puts "#{x} #{i}" if ['a','e','i','o','u'].include? x.downcase
+2.7.0 :013 > end
+a 1
+a 4                                                                        
+a 6                                                                        
+ => "Jaskaran"  
+ 
+ 2.7.0 :014 > string = "Itsacheckmate".chars
+ => ["I", "t", "s", "a", "c", "h", "e", "c", "k", "m", "a", "t", "e"] 
+ 
+ 2.7.0 :015 > string.map { |x| x.downcase }.join(',')
+ => "i,t,s,a,c,h,e,c,k,m,a,t,e" 
+
+2.7.0 :019 > str.length
+ => 8 
+
+2.7.0 :020 > "look up".count("o")
+ => 2 
+
+2.7.0 :021 > str
+ => "Jaskaran" 
+2.7.0 :022 > str.reverse
+ => "naraksaJ
+ 
+ 2.7.0 :023 > "hello world".include?("h")
+ => true 
+
+2.7.0 :024 > "Red, Red and Blue".gsub("Red", "Orange")
+ => "Orange, Orange and Blue" 
+2.7.0 :025 > "Red, Red and Blue".sub("Red", "Orange")
+ => "Orange, Red and Blue" 
+ 
+ 2.7.0 :026 > sentence = "Hello There"
+ => "Hello There" 
+2.7.0 :027 > sentence.split
+ => ["Hello", "There"] 
+
+.7.0 :028 > "hello world \n\t\v\r".strip
+ => "hello world" 
+2.7.0 :029 > 
+
+2.7.0 :029 > "..hello..world".chomp(",")
+ => "..hello..world" 
+
+2.7.0 :032 > a.insert(a.length, "hi")
+ => "hellohi" 
+2.7.0 :033 > a
+ => "hellohi" 
+ 
+ 2.7.0 :034 > "Hello World".downcase
+ => "hello world" 
+2.7.0 :035 > "Hello World".upcase
+ => "HELLO WORLD" 
+2.7.0 :036 > "Hello World".downcase
+ => "hello world" 
+2.7.0 :037 > "Hello World".capitalize
+ => "Hello world" 
+
+2.7.0 :038 > str1 = "Jaskaran"
+ => "Jaskaran" 
+2.7.0 :039 > str2 = "Singh"
+ => "Singh" 
+2.7.0 :040 > str1.concat(" ").concat(str2)
+ => "Jaskaran Singh" 
+2.7.0 :041 > 
+
+2.7.0 :041 > str = "hello world"
+ => "hello world" 
+2.7.0 :042 > puts "#{str.slice(0, 5)}"
+hello
+ => nil                                                         
+2.7.0 :043 >
+
+2.7.0 :043 > name = "Harry"
+ => "Harry" 
+2.7.0 :044 > name.start_with?("H")
+ => true 
+
+2.7.0 :045 > output = ""
+ => "" 
+2.7.0 :046 > output.empty?
+ => true 
+
+
 
 
