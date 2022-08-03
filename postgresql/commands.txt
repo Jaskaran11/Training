@@ -1187,3 +1187,106 @@ AMS=# select * from company;
 AMS=# 
 
 
+book_collection_development=# select price,title from books group by price,title having price > 230;
+ price |                 title                 
+-------+---------------------------------------
+   300 | The diary of young girl
+   300 |           To Kill a Mockingbird      
+   340 | Maths
+   340 | Pride and Prejudice
+   400 | Deep Work
+   400 | The Power of habit
+   420 | Harry Potter
+   430 | 
+   450 | Rich-Dad Poor-Dad
+   499 | Rich Dad Poor Dad
+   501 | Firestarter
+   523 | IT
+ 10001 | The Shining
+(13 rows)
+
+hospital_management=# delete from appointment where id = 3;
+DELETE 2
+hospital_management=# select * from appointment;
+ id |    date    | patient_id | doctor_id 
+----+------------+------------+-----------
+  1 | 2022-05-10 |          1 |         2
+  2 | 2022-05-14 |          2 |         1
+(2 rows)
+
+                                        ^
+hospital_management=# select name from patient where name like 'S%';
+ name 
+------
+ Sam
+(1 row)
+
+hospital_management=# select name from patient where name like '%m';
+ name 
+------
+ Sam
+(1 row)
+
+
+hospital_management=# select count(*) from patient group by name;
+ count 
+-------
+     1
+     1
+     1
+     1
+(4 rows)
+
+hospital_management=# select count(name) from patient group by name;
+ count 
+-------
+     1
+     1
+     1
+     1
+(4 rows)
+
+hospital_management=# select name from doctor order by name asc;
+  name  
+--------
+ Amit
+ Gunjan
+ Steve
+(3 rows)
+
+hospital_management=# select count(*) from patient group by gender;
+ count 
+-------
+     2
+     2
+(2 rows)
+
+hospital_management=# select name from patient group by name;
+  name   
+---------
+ Rohit
+ Natasha
+ Lisa
+ Sam
+(4 rows)
+
+hospital_management=# select name,date from patient inner join appointment on patient.id = appointment.patient_id;
+ name  |    date    
+-------+------------
+ Sam   | 2022-05-10
+ Rohit | 2022-05-14
+ Lisa  | 2022-06-01
+(3 rows)
+
+hospital_management=# select doctor.name as "Doctor Name",appointment.date,patient.name as "Patient Name" from appointment inner join patient on patient.id = appointment.patient_id
+inner join doctor on doctor.id = appointment.doctor_id;
+ Doctor Name |    date    | Patient Name 
+-------------+------------+--------------
+ Gunjan      | 2022-05-10 | Sam
+ Amit        | 2022-05-14 | Rohit
+ Steve       | 2022-06-01 | Lisa
+(3 rows)
+
+
+
+
