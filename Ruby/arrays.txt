@@ -925,6 +925,61 @@ If a block is given, it is invoked for each output array, otherwise an array of 
  => [[1, 4, 7], [2, 5, 8]] 
 
 
+2.7.0 :005 > a = Array.new(40)
+ => 
+[nil,                                                  
+...                                                    
+2.7.0 :006 > a.size
+ => 40 
+2.7.0 :007 > a.length
+ => 40 
+
+2.7.0 :008 > arr = ['a','b','c']
+ => ["a", "b", "c"] 
+2.7.0 :009 > puts "#{arr}"
+["a", "b", "c"]
+ => nil                                                
+2.7.0 :010 > puts "SIze is #{arr.size}"
+SIze is 3
+ => nil   
+ 
+ 2.7.0 :011 > str = ["Chandigarh","Ambala","Ferozpur"]
+ => ["Chandigarh", "Ambala", "Ferozpur"] 
+2.7.0 :012 > puts str[1]
+Ambala
+ => nil 
+ 
+ 2.7.0 :014 > puts str[1,2]
+Ambala
+Ferozpur                                                                            
+ => nil     
+ 
+ 2.7.0 :016 > str.first
+ => "Chandigarh" 
+2.7.0 :017 > str.last
+ => "Ferozpur" 
+
+2.7.0 :018 > str.take(2)
+ => ["Chandigarh", "Ambala"]
+ 
+ 2.7.0 :020 > str.drop(1)
+ => ["Ambala", "Ferozpur"] 
+2.7.0 :021 > str
+ => ["Chandigarh", "Ambala", "Ferozpur"] 
+2.7.0 :022 > 
+
+2.7.0 :022 > str.pop(2)
+ => ["Ambala", "Ferozpur"] 
+2.7.0 :023 > str
+ => ["Chandigarh"] 
+2.7.0 :024 > 
+2.7.0 :024 > str.shift
+ => "Chandigarh" 
+
+2.7.0 :025 > str.push("Chandigarh","Ambala","Ferozpur")
+ => ["Chandigarh", "Ambala", "Ferozpur"] 
+
+
 ary |
 Set Union — Returns a new array by joining ary with other_ary, excluding any duplicates and preserving the order from the given arrays.
 It compares elements using their hash and eql? methods for efficiency.
@@ -933,4 +988,63 @@ It compares elements using their hash and eql? methods for efficiency.
  => ["a", "b", "c", "d"] 
 3.0.0 :101 > ["c","d","a"] | ["a","b","c"]
  => ["c", "d", "a", "b"] 
+
+
+ => "a" 
+2.7.0 :031 > arr.unshift(2)
+ => [2, "b"] 
+2.7.0 :032 > 
+
+2.7.0 :032 > str.reverse
+ => ["Ferozpur", "Ambala", "Chandigarh"] 
+
+2.7.0 :033 > arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+2.7.0 :034 > arr.select {|x| x > 4}
+ => [5, 6, 7, 8, 9, 10] 
+
+2.7.0 :035 > str.include?("Chandigarh")
+ => true 
+ 
+ 2.7.0 :036 > arr.join("*")
+ => "1*2*3*4*5*6*7*8*9*10" 
+
+2.7.0 :037 > str.each do |element|
+2.7.0 :038 >   puts element
+2.7.0 :039 > end
+Chandigarh
+Ambala                                                                        
+Ferozpur                                                                      
+ => ["Chandigarh", "Ambala", "Ferozpur"]         
+ 
+ 2.7.0 :043 > arr.map { |element| element * 2 }
+ => [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] 
+
+2.7.0 :046 > str = arr.map { |element| element * 2 }
+ => [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] 
+2.7.0 :047 > puts str
+2
+4                                            
+6                                            
+8                                            
+10                                           
+12                                           
+14                                           
+16                                           
+18                                           
+20                                           
+ => nil 
+ 
+ 2.7.0 :048 > arr = [1,2,3,4,5,1,2,3,4,5,6,7]
+ => [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7] 
+2.7.0 :049 > arr.uniq
+ => [1, 2, 3, 4, 5, 6, 7] 
+
+ => [0, 1, 2, 3, 4] 
+2.7.0 :051 > array.concat([5, 6, 7], [8, 9, 10])
+ => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+2.7.0 :052 > array
+ => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+2.7.0 :053 > 
+
 
