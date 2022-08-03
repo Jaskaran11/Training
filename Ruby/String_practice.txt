@@ -1111,5 +1111,72 @@ hello
  => true 
 
 
+2.7.0 :048 > while x >= 4
+2.7.0 :049 >   x = x -1
+2.7.0 :050 > end
+ => nil 
+2.7.0 :051 > x = 10
+ => 10 
+2.7.0 :052 > while x >= 4
+2.7.0 :053 >   puts "Value of x is #{x}"
+2.7.0 :054 >   x = x - 1
+2.7.0 :055 > end
+Value of x is 10
+Value of x is 9                                               
+Value of x is 8                                               
+Value of x is 7                                               
+Value of x is 6                                               
+Value of x is 5                                               
+Value of x is 4                                               
+ => nil   
 
+2.7.0 :067 > i = "Jaskaran Singh"
+ => "Jaskaran Singh" 
+2.7.0 :068 > for a in 1..5 do 
+2.7.0 :069 >   puts i 
+2.7.0 :070 > end
+Jaskaran Singh
+Jaskaran Singh                                    
+Jaskaran Singh                                    
+Jaskaran Singh                                    
+Jaskaran Singh
+ => 1..5 
+
+2.7.0 :071 > arr = ["Rohit", 1, true]
+ => ["Rohit", 1, true] 
+2.7.0 :072 > for i in arr do
+2.7.0 :073 >   puts "#{i} - #{i.class}"
+2.7.0 :074 > end
+Rohit - String
+1 - Integer                                                     
+true - TrueClass                                                
+ => ["Rohit", 1, true]      
+
+ => nil                                                         
+2.7.0 :082 > 5.times do |i|
+2.7.0 :083 >   puts "#{i} times will be executed"
+2.7.0 :084 > end
+0 times will be executed
+1 times will be executed                               
+2 times will be executed                               
+3 times will be executed                               
+4 times will be executed   
+
+2.7.0 :102 > a = 10
+ => 10 
+2.7.0 :103 > until a == 20
+2.7.0 :104 >   puts a * 10
+2.7.0 :105 >   a = a + 1
+2.7.0 :106 > end
+100
+110                                            
+120                                            
+130                                            
+140                                            
+150                                            
+160                                            
+170                                            
+180                                            
+190                                            
+ => nil  
 
