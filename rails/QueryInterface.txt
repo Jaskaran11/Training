@@ -4181,4 +4181,66 @@ If we wish to remove scoping for any reason we can use the unscoped method. This
   publisher_id: 1,
   author_id: 10017>] 
 
+2.7.0 :001 > a = Author.pluck(:name)
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/oid/specialized_string.rb:12: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+   (0.3ms)  SELECT "authors"."name" FROM "authors"
+2.7.0 :002 > a
+ => ["Jeremy Altenwerth", "Somer Nikolaus", "Adalberto Wisozk JD", "August Kemmer", "Gov. Cherish Grimes", "Libbie Gulgowski", "Qiana Smitham", "Klara Langworth", "Dane Casper CPA", "Luci Littel", "Stephen King"] 
+
+2.7.0 :016 > Author.where("name= 'Stephen King'")
+  Author Load (1.2ms)  SELECT  "authors".* FROM "authors" WHERE (name= 'Stephen King') LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Author id: 40, name: "Stephen King", email: "stephen@gmail.com", phone_no: 9876573100, dob: "2000-04-11 00:00:00", hobby: nil, skill: nil, created_at: "2022-08-02 20:48:01", updated_at: "2022-08-02 20:48:01", age: nil>]> 
+ 
+ 2.7.0 :018 > Author.where.not("name= 'Stephen King'").pluck(:id)
+   (0.8ms)  SELECT "authors"."id" FROM "authors" WHERE NOT (name= 'Stephen King')
+ => [22, 13, 14, 15, 16, 17, 18, 19, 20, 21] 
+
+  scope :minors, -> { where(age: 0..17) }
+  
+  2.7.0 :001 > Author.select(:age).distinct
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/connection_adapters/postgresql/oid/specialized_string.rb:12: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activemodel-5.2.8.1/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+  Author Load (0.3ms)  SELECT  DISTINCT "authors"."age" FROM "authors" LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Author id: nil, age: nil>, #<Author id: nil, age: 48>, #<Author id: nil, age: 30>, #<Author id: nil, age: 37>, #<Author id: nil, age: 29>, #<Author id: nil, age: 35>, #<Author id: nil, age: 50>, #<Author id: nil, age: 32>, #<Author id: nil, age: 20>, #<Author id: nil, age: 55>, ...]> 
+
+2.7.0 :002 > Author.find_by(name: "Stephen King")
+  Author Load (0.4ms)  SELECT  "authors".* FROM "authors" WHERE "authors"."name" = $1 LIMIT $2  [["name", "Stephen King"], ["LIMIT", 1]]
+ => #<Author id: 40, name: "Stephen King", email: "stephen@gmail.com", phone_no: 9876573100, dob: "2000-04-11 00:00:00", hobby: nil, skill: nil, created_at: "2022-08-02 20:48:01", updated_at: "2022-08-02 20:48:01", age: nil> 
+2.7.0 :003 > 2.7.0 :001 > Author.select(:age).distinct
+
+2.7.0 :017 > Author.select(:age).group(:age)
+  Author Load (0.4ms)  SELECT  "authors"."age" FROM "authors" GROUP BY "authors"."age" LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Author id: nil, age: nil>, #<Author id: nil, age: 48>, #<Author id: nil, age: 30>, #<Author id: nil, age: 37>, #<Author id: nil, age: 29>, #<Author id: nil, age: 35>, #<Author id: nil, age: 50>, #<Author id: nil, age: 32>, #<Author id: nil, age: 20>, #<Author id: nil, age: 55>, ...]> 
+
+2.7.0 :018 > Author.select(:age).group(:age).count
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/relation/delegation.rb:132: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/home/itsacheckmate/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.8.1/lib/active_record/relation.rb:25: warning: The called method `initialize' is defined here
+   (7.3ms)  SELECT COUNT("authors"."age") AS count_age, "authors"."age" AS authors_age FROM "authors" GROUP BY "authors"."age"
+ => {nil=>0, 48=>1, 30=>1, 37=>1, 29=>1, 35=>1, 50=>1, 32=>1, 20=>1, 55=>1, 23=>1} 
+
+2.7.0 :024 > a = Author.where(name: "Stephen King")
+2.7.0 :025 > a
+  Author Load (0.2ms)  SELECT  "authors".* FROM "authors" WHERE "authors"."name" = $1 LIMIT $2  [["name", "Stephen King"], ["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Author id: 40, name: "Stephen King", email: "stephen@gmail.com", phone_no: 9876573100, dob: "2000-04-11 00:00:00", hobby: nil, skill: nil, created_at: "2022-08-02 20:48:01", updated_at: "2022-08-02 20:48:01", age: nil>]> 
+
+2.7.0 :033 > Author.first
+  Author Load (0.5ms)  SELECT  "authors".* FROM "authors" ORDER BY "authors"."id" ASC LIMIT $1  [["LIMIT", 1]]
+ => #<Author id: 13, name: "Somer Nikolaus", email: "fabian_rau@rowe.biz", phone_no: 524, dob: "2022-07-31 00:00:00", hobby: ["Flying disc"], skill: ["Teamwork", "Networking skills"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-01 10:06:33", age: 30> 
+2.7.0 :034 > Author.last
+  Author Load (0.5ms)  SELECT  "authors".* FROM "authors" ORDER BY "authors"."id" DESC LIMIT $1  [["LIMIT", 1]]
+ => #<Author id: 40, name: "Stephen King", email: "stephen@gmail.com", phone_no: 9876573100, dob: "2000-04-11 00:00:00", hobby: nil, skill: nil, created_at: "2022-08-02 20:48:01", updated_at: "2022-08-02 20:48:01", age: nil
+ 
+ 2.7.0 :035 > Author.last(2)
+  Author Load (0.8ms)  SELECT  "authors".* FROM "authors" ORDER BY "authors"."id" DESC LIMIT $1  [["LIMIT", 2]]
+ => [#<Author id: 22, name: "Jeremy Altenwerth", email: "farah@bashirian-dooley.info", phone_no: 272, dob: "2013-07-31 00:00:00", hobby: ["Baton twirling"], skill: ["Fast learner", "Technical savvy"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-02 12:00:07", age: 32>, #<Author id: 40, name: "Stephen King", email: "stephen@gmail.com", phone_no: 9876573100, dob: "2000-04-11 00:00:00", hobby: nil, skill: nil, created_at: "2022-08-02 20:48:01", updated_at: "2022-08-02 20:48:01", age: nil>] 
+
+2.7.0 :038 > Author.joins(:books)
+  Author Load (1.7ms)  SELECT  "authors".* FROM "authors" INNER JOIN "books" ON "books"."author_id" = "authors"."id" LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Author id: 22, name: "Jeremy Altenwerth", email: "farah@bashirian-dooley.info", phone_no: 272, dob: "2013-07-31 00:00:00", hobby: ["Baton twirling"], skill: ["Fast learner", "Technical savvy"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-02 12:00:07", age: 32>, #<Author id: 22, name: "Jeremy Altenwerth", email: "farah@bashirian-dooley.info", phone_no: 272, dob: "2013-07-31 00:00:00", hobby: ["Baton twirling"], skill: ["Fast learner", "Technical savvy"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-02 12:00:07", age: 32>, #<Author id: 22, name: "Jeremy Altenwerth", email: "farah@bashirian-dooley.info", phone_no: 272, dob: "2013-07-31 00:00:00", hobby: ["Baton twirling"], skill: ["Fast learner", "Technical savvy"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-02 12:00:07", age: 32>, #<Author id: 22, name: "Jeremy Altenwerth", email: "farah@bashirian-dooley.info", phone_no: 272, dob: "2013-07-31 00:00:00", hobby: ["Baton twirling"], skill: ["Fast learner", "Technical savvy"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-02 12:00:07", age: 32>, #<Author id: 22, name: "Jeremy Altenwerth", email: "farah@bashirian-dooley.info", phone_no: 272, dob: "2013-07-31 00:00:00", hobby: ["Baton twirling"], skill: ["Fast learner", "Technical savvy"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-02 12:00:07", age: 32>, #<Author id: 13, name: "Somer Nikolaus", email: "fabian_rau@rowe.biz", phone_no: 524, dob: "2022-07-31 00:00:00", hobby: ["Flying disc"], skill: ["Teamwork", "Networking skills"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-01 10:06:33", age: 30>, #<Author id: 13, name: "Somer Nikolaus", email: "fabian_rau@rowe.biz", phone_no: 524, dob: "2022-07-31 00:00:00", hobby: ["Flying disc"], skill: ["Teamwork", "Networking skills"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-01 10:06:33", age: 30>, #<Author id: 13, name: "Somer Nikolaus", email: "fabian_rau@rowe.biz", phone_no: 524, dob: "2022-07-31 00:00:00", hobby: ["Flying disc"], skill: ["Teamwork", "Networking skills"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-01 10:06:33", age: 30>, #<Author id: 13, name: "Somer Nikolaus", email: "fabian_rau@rowe.biz", phone_no: 524, dob: "2022-07-31 00:00:00", hobby: ["Flying disc"], skill: ["Teamwork", "Networking skills"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-01 10:06:33", age: 30>, #<Author id: 13, name: "Somer Nikolaus", email: "fabian_rau@rowe.biz", phone_no: 524, dob: "2022-07-31 00:00:00", hobby: ["Flying disc"], skill: ["Teamwork", "Networking skills"], created_at: "2022-07-31 18:24:32", updated_at: "2022-08-01 10:06:33", age: 30>, ...]> 
+
 
