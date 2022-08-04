@@ -14,7 +14,22 @@
   <%= form.text_field :gender %>
 </div>
 <div>
-  <%= form.label :coutnry %><br>
+  <%= form.select :city, ["Berlin", "Chicago", "Madrid"] %>
+</div>
+<div>
+  <%= form.radio_button :age, "I am child" %>
+  <%= form.label :age_child, "I am younger than 21" %>
+  <%= form.radio_button :age, "adult" %>
+  <%= form.label :age_adult, "I am over 21" %>
+</div>
+<div class="mb-3">Hobby
+  <% User::HOBBIES.each do |hobby|%>
+    <%= form.check_box :hobbies, { multiple:true }, hobby, nil %>
+    <%= form.label hobby %>
+  <% end %>
+  </div>
+<div>
+  <%= form.label :country %><br>
   <%= form.text_field :country %>
 </div>
 <%= form.submit %>
