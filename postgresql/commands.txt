@@ -1288,5 +1288,86 @@ inner join doctor on doctor.id = appointment.doctor_id;
 (3 rows)
 
 
+hospital_management=# select * from appointment;
+ id |    date    | patient_id | doctor_id 
+----+------------+------------+-----------
+  1 | 2022-05-10 |          1 |         2
+  2 | 2022-05-14 |          2 |         1
+  3 | 2022-06-01 |          3 |         3
+(3 rows)
+
+hospital_management=# insert into appointment values(4,'2022-06-10',1,1);
+INSERT 0 1
+hospital_management=# select * from appointment;
+ id |    date    | patient_id | doctor_id 
+----+------------+------------+-----------
+  1 | 2022-05-10 |          1 |         2
+  2 | 2022-05-14 |          2 |         1
+  3 | 2022-06-01 |          3 |         3
+  4 | 2022-06-10 |          1 |         1
+(4 rows)
+
+hospital_management=# select doctor.name from patient inner join appointment on patient.id = appointment.patient_id inner join doctor on doctor.id = appointment.doctor_id group by doctor.name having count(*)>=2
+hospital_management-# ;
+ name 
+------
+ Amit
+(1 row)
+
+hospital_management=# select patient.name, doctor.name from appointment inner join patient on patient.id = appointment.patient_id inner join doctor on doctor.id = appointment.doctor_id group by patient.name, doctor.name having count(*)>=1;
+ name  |  name  
+-------+--------
+ Lisa  | Steve
+ Sam   | Gunjan
+ Rohit | Amit
+ Sam   | Amit
+(4 rows)
+
+
+hospital_management=# select max(salary) from doctor where salary < (select max(salary) from doctor);
+ max  
+------
+ 4000
+(1 row)
+
+
+hospital_management=# select salary from doctor where salary between 1000 and 2000;
+ salary 
+--------
+   2000
+(1 row)
+
+hospital_management=# select * from doctor group by salary;
+ERROR:  column "doctor.id" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select * from doctor group by salary;
+               ^
+hospital_management=# select * from doctor order by salary desc;
+ id |  name  |  address   | phone_no  | salary 
+----+--------+------------+-----------+--------
+  3 | Steve  | Chandigarh | 982323123 |   6000
+  2 | Gunjan | Faridabad  | 982323123 |   4000
+  1 | Amit   | gujarat    | 123423443 |   2000
+(3 rows)
+
+hospital_management=# select salary from doctor order by salary desc;
+ salary 
+--------
+   6000
+   4000
+   2000
+(3 rows)
+
+hospital_management=# select salary from doctor order by salary desc limit 2;
+ salary 
+--------
+   6000
+   4000
+(2 rows)
+
+hospital_management=# select salary from doctor order by salary desc limit 2 offset 1;
+ salary 
+--------
+   4000
+   2000
 
 
