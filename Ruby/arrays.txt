@@ -1557,4 +1557,61 @@ itsacheckmate/Practise/my.rb"
 Reverse is tihor
 
 
+2.7.0 :001 > class Foo
+2.7.0 :002 >   def method1
+2.7.0 :003 >     puts 1
+2.7.0 :004 >   end
+2.7.0 :005 > end
+ => :method1 
+2.7.0 :006 > foo = Foo.new
+ => #<Foo:0x00005608faf6fca8> 
+2.7.0 :007 > foo.method1
+1
+ => nil                                                
+2.7.0 :00
+
+2.7.0 :009 > def foo.method2
+2.7.0 :010 >   puts 2
+2.7.0 :011 > end
+ => :method2 
+2.7.0 :012 > foo.method1
+1
+ => nil                                              
+2.7.0 :013 > foo.method2
+2
+ => nil 
+ 
+ 2.7.0 :014 > class Vehicle
+2.7.0 :015 >   def wheels
+2.7.0 :016 >     puts "There are many wheels"
+2.7.0 :017 >   end
+2.7.0 :018 > end
+ => :wheels 
+
+2.7.0 :019 > train = Vehicle.new
+ => #<Vehicle:0x00005608fb64e600> 
+2.7.0 :020 > car = Vehicle.new
+ => #<Vehicle:0x00005608fae894b0> 
+
+2.7.0 :021 > def car.wheels
+2.7.0 :022 >   puts "There are four wheels"
+2.7.0 :023 > end
+ => :wheels 
+ 
+ 2.7.0 :027 > o1="Jaskaran"
+ => "Jaskaran" 
+2.7.0 :028 > o2 = String.new
+ => "" 
+
+2.7.0 :029 > o2 = "Itsacheckmate"
+ => "Itsacheckmate" 
+2.7.0 :030 > def o2.size
+2.7.0 :031 >   return "size does  not matter"
+2.7.0 :032 > end
+ => :size 
+2.7.0 :033 > o1.size
+ => 8 
+ 2.7.0 :034 > puts o2.size
+size does  not matter
+ => nil       
 
