@@ -1262,7 +1262,8 @@ class Mixin
   include Name
   include Animal
   def s1
-    puts "Calling method of module using mixin"
+    puts "Calling method of module
+   using mixin"
 end
 end
 
@@ -1278,3 +1279,44 @@ I have a dog
 Hello
 Hello2
 itsache
+
+
+ => ["Paul", "John", "Peter"] 
+2.7.0 :009 > names = ["paul", "john", "peter"]
+ => ["paul", "john", "peter"] 
+2.7.0 :010 > names_capitalize = names.map do |name|
+2.7.0 :011 >   name.capitalize
+2.7.0 :012 > end
+ => ["Paul", "John", "Peter"] 
+2.7.0 :013 > 
+
+
+2.7.0 :013 > products = [
+2.7.0 :014 >   {name: "Mac Book Pro", active: true, price: 1599.99 },
+2.7.0 :015 >   {name: "Iwatch", active: false, price: 59.99 },
+2.7.0 :016 >   {name: "Ipad Pro", active: true, price: 699.99 },
+2.7.0 :017 > ]
+ => 
+[{:name=>"Mac Book Pro", :active=>true, :price=>1599.99}, 
+
+2.7.0 :018 > p = products.select{ |product| product[:active] }
+ => 
+[{:name=>"Mac Book Pro", :active=>true, :price=>1599.99},                       
+...                                                                             
+2.7.0 :019 > p
+ => 
+[{:name=>"Mac Book Pro", :active=>true, :price=>1599.99},                       
+ {:name=>"Ipad Pro", :active=>true, :price=>699.99}]     
+ 
+ 2.7.0 :022 > first_axctive_product = products.detect { |product| product[:active
+]}
+ => {:name=>"Mac Book Pro", :active=>true, :price=>1599.99} 
+
+
+products = [
+    { name: 'Mac Book Pro', active: true, price: '1599.99' },
+    { name: 'iWatch', active: false, price: '599.99' },
+    { name: 'iPad Pro', active: true, price: '699.99' },
+  ]
+  nb_products = products.count { |product| product.price > 1000 }
+  puts nb_products 
