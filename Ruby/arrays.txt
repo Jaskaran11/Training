@@ -1048,3 +1048,134 @@ Ferozpur
 2.7.0 :053 > 
 
 
+2.7.0 :053 > fruits = { coconut: 1, apple: 2, banana: 3 }
+ => {:coconut=>1, :apple=>2, :banana=>3} 
+2.7.0 :054 > fruits[:orange] = 4
+ => 4 
+ 
+ 2.7.0 :055 > fruits[:orange]
+ => 4 
+2.7.0 :056 > fruits[:peach]
+ => nil 
+
+
+2.7.0 :057 > city = { Chandigarh: 1, Delhi: 2, Ambala: 3}
+ => {:Chandigarh=>1, :Delhi=>2, :Ambala=>3} 
+2.7.0 :058 > country = { India: 1, Australia: 2, Spain: 3}
+ => {:India=>1, :Australia=>2, :Spain=>3} 
+2.7.0 :059 > city.merge!(country)
+ => {:Chandigarh=>1, :Delhi=>2, :Ambala=>3, :India=>1, :Australia=>2, :Spain=>3} 
+
+
+2.7.0 :060 > dictionary = {
+2.7.0 :061 >   opportunity: [
+2.7.0 :062 >     "A set of circumstances that make it possible",
+2.7.0 :063 >     "a situation for attainment of goal"
+2.7.0 :064 >   ],
+2.7.0 :065 >   creativity: [
+2.7.0 :066 >     "ability to create",
+2.7.0 :067 >     "new ideas merge from"
+2.7.0 :068 >   ]
+2.7.0 :069 > }
+ => 
+{:opportunity=>                                                                       
+...               
+
+2.7.0 :070 > dictionary[:creativity][1]
+ => "new ideas merge from" 
+2.7.0 :071 > dictionary[:creativity][0]
+ => "ability to create" 
+
+2.7.0 :072 > {c: 1, b: 2}.sort
+ => [[:b, 2], [:c, 1]] 
+2.7.0 :073 > {c: 1, b: 2}.sort_by(&:last)
+ => [[:c, 1], [:b, 2]] 
+
+2.7.0 :084 > dictionary = {
+2.7.0 :085 >   opportunity: [
+2.7.0 :086 >     "A set of circumstances that make it possible",
+2.7.0 :087 >     "a situation for attainment of goal"
+2.7.0 :088 >   ],
+2.7.0 :089 >   creativity: [
+2.7.0 :090 >     "ability to create",
+2.7.0 :091 >     "new ideas merge from"
+2.7.0 :092 >   ]
+2.7.0 :093 > }.keys
+ => [:opportunity, :creativity] 
+2.7.0 :094 > dictionary = {
+2.7.0 :095 >   opportunity: [
+2.7.0 :096 >     "A set of circumstances that make it possible",
+2.7.0 :097 >     "a situation for attainment of goal"
+2.7.0 :098 >   ],
+2.7.0 :099 >   creativity: [
+2.7.0 :100 >     "ability to create",
+2.7.0 :101 >     "new ideas merge from"
+2.7.0 :102 >   ]
+2.7.0 :103 > }.values
+ => [["A set of circumstances that make it possible", "a situation for attainment of goal"], ["ability to create", "new ideas merge from"]] 
+
+super inheritance module eigne class singelton
+self
+
+2.7.0 :001 > proc = Proc.new{ puts "I am the proc method" }
+ => #<Proc:0x000055dc16f40068 (irb):1> 
+2.7.0 :002 > proc.call
+I am the proc method
+ => nil    
+ 
+ 2.7.0 :003 > def block_method
+2.7.0 :004 >   puts "We are in the method"
+2.7.0 :005 > end
+ => :block_method 
+2.7.0 :006 > block_method { puts "Block is called" }
+We are in the method
+ => nil      
+ 
+ 2.7.0 :007 > def my_method
+2.7.0 :008 >   puts "we are in the method"
+2.7.0 :009 >   yield 
+2.7.0 :010 >   puts "we are back in method"
+2.7.0 :011 > end
+ => :my_method 
+2.7.0 :012 > my_method { puts "Block is called"}
+we are in the method
+Block is called                                                       
+we are back in method                                                 
+ => nil      
+ 
+ 2.7.0 :014 > def my_block
+2.7.0 :015 >   yield 2 
+2.7.0 :016 >   yield 3
+2.7.0 :017 > end
+ => :my_block 
+2.7.0 :018 > my_block {|x| puts "parameter is: #{x}" }
+parameter is: 2
+parameter is: 3                                                          
+ => nil 
+ 
+ ruby introduces proc so that we can pass blocks around it.
+ 
+ 2.7.0 :024 > proc = Proc.new{|x| print x*2}
+ => #<Proc:0x000055dc178a71b0 (irb):24> 
+2.7.0 :025 > [4,3,2,1].each(&proc)
+8642 => [4, 3, 2, 1] 
+2.7.0 :026 > [4,3,2,1].each(&proc)
+
+2.7.0 :042 > l = -> {puts "This is lambda"}
+ => #<Proc:0x000055dc1727e428 (irb):42 (lambda)> 
+2.7.0 :043 > l.call
+This is lambda
+ => nil                                                       
+2.7.0 :
+
+2.7.0 :042 > l = -> {puts "This is lambda"}
+ => #<Proc:0x000055dc1727e428 (irb):42 (lambda)> 
+2.7.0 :043 > l.call
+This is lambda
+ => nil                                                       
+2.7.0 :044 > l = lambda {|n| "lambda one was called with #{n}"}
+ => #<Proc:0x000055dc17655588 (irb):44 (lambda)> 
+2.7.0 :045 > l.call(2)
+ => "lambda one was called with 2" 
+2.7.0 :046 > 
+
