@@ -1179,3 +1179,102 @@ This is lambda
  => "lambda one was called with 2" 
 2.7.0 :046 > 
 
+
+module Student
+  C = 10;
+  def Student.portal
+    puts "Welcome students!"
+  end 
+  def Student.tutorial
+    puts "Welcome to the tutorials"
+  end
+  def Student.topic
+    puts "Topic of respective topics!"
+  end
+end
+
+puts Student::C  
+Student.portal 
+Student.tutorial
+Student.topic
+
+itsacheckmate@itscheckmate:~/Practise$ r
+uby my.rb
+10
+Welcome students!
+Welcome to the tutorials
+Topic of respective topics!
+
+
+
+module Student
+  def portal
+    puts "Welcome to the portal!"
+  end
+
+  def tutorial
+    puts "Welcome to the tutorial"
+  end
+
+  def topic
+    puts "These are the respective topics"
+  end
+end
+
+class Teacher
+    include Student
+    def name
+        puts "I am teacher of the respective students"
+    end
+end
+
+ob = Teacher.new
+ob.portal
+ob.tutorial
+ob.topic
+ob.name
+
+[Running] ruby "/home/itsacheckmate/Practise/my.rb"
+Welcome to the portal!
+Welcome to the tutorial
+These are the respective topics
+I am teacher of the respective students
+
+module Name
+  def cat  
+    puts "I have a cat"
+  end
+  def dog
+    puts "I have a dog"
+  end
+end
+
+module Animal
+  def g1
+    puts "Hello"
+  end
+  def g2
+    puts "Hello2"
+  end
+end
+
+class Mixin
+  include Name
+  include Animal
+  def s1
+    puts "Calling method of module using mixin"
+end
+end
+
+obj1 = Mixin.new
+obj1.cat   
+obj1.dog 
+obj1.g1 
+obj1.g2
+
+itsacheckmate@itscheckmate:~/Practise$ ruby my.rb
+I have a cat
+I have a dog
+Hello
+Hello2
+itsache
