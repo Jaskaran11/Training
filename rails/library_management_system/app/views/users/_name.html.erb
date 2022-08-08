@@ -1,0 +1,18 @@
+<table id="users_table">
+<thead>
+  <tr>
+  <th>Name</th>
+  <th>Gender</th>
+  <th>Country</th>
+  </tr>
+</thead>
+  <tbody>
+    <% @user.each do |user| %>
+    <tr>
+      <th><%= user.name %></th>
+      <td><%= user.gender %></td>
+      <td><%= user.country %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
