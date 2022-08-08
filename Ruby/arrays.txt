@@ -1615,3 +1615,18 @@ Reverse is tihor
 size does  not matter
  => nil       
 
+2.7.0 :001 > def factorial(num)
+2.7.0 :002 >   if num == 1
+2.7.0 :003 >     return 1;
+2.7.0 :004 >   else
+2.7.0 :005 >     num * factorial(num - 1)
+2.7.0 :006 >   end
+2.7.0 :007 > end
+ => :factorial 
+2.7.0 :008 > factorial(2)
+ => 2 
+2.7.0 :009 > factorial(3)
+ => 6 
+2.7.0 :010 > factorial(5)
+ => 120 
+
