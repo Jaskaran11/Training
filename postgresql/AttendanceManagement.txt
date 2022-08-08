@@ -463,4 +463,82 @@ ams=# select * from employee where to_char(hire_date,'MM')='05';
 (1 row)
 
 
-made change using git pull .
+attendance=# select name,extract(year from age(current_date,dob)) as age from employee;
+    name    | age 
+------------+-----
+ joe Root   |  22
+ Natasha    |  24
+ Jane       |  27
+ Chris vans |  32
+ Roy        |  23
+(5 rows)
+
+attendance=# select age(dob) from employee;
+           age           
+-------------------------
+ 22 years 3 mons 27 days
+ 24 years 5 mons 26 days
+ 27 years 2 mons 19 days
+ 32 years 3 mons 18 days
+ 23 years 5 mons 25 days
+(5 rows)
+
+attendance=# select * from employee;
+attendance=# select * from employee where hire_date in
+attendance-# (select hire_date from employee where employee.id != id);
+ id | name | gender | salary | city | country | dob | hire_date | mobile 
+----+------+--------+--------+------+---------+-----+-----------+--------
+(0 rows)
+
+attendance=# select name,salary from employee order by salary desc;
+    name    | salary 
+------------+--------
+ Jane       |  20000
+ Chris vans |  16000
+ Natasha    |  10000
+ Roy        |   6000
+ joe Root   |   2000
+
+(5 rows)
+
+attendance=# select employee_id,employee.name, (Sum(end_at) - Sum(start_at)) as total_time from attendance inner join employee on attendance.employee_id = employee.id group by employee_id,employee.name;
+ employee_id |    name    | total_time 
+-------------+------------+------------
+           1 | joe Root   | 08:20:05
+           5 | Chris vans | 08:29:12
+           2 | Roy        | 08:58:58
+           3 | Natasha    | 08:20:16
+           4 | Jane       | 08:48:16
+(5 rows)
+
+
+attendance=# select count(*) from employee where country = 'India';
+ count 
+-------
+     2
+(1 row)
+
+
+attendance=# select employee.name,employee.gender,qualification.name as Degree,attendance.date,attendance.start_at,attendance.end_at,department.name as department from employee
+inner join qualification on employee.id=qualification.employee_id
+inner join attendance on employee.id=attendance.employee_id
+inner join department on employee.id=department.employee_id;
+    name    | gender |         degree          |    date    | start_at |  end_at  |        department         
+------------+--------+-------------------------+------------+----------+----------+---------------------------
+ joe Root   | Male   | Bachelor of Arts        | 2022-05-10 | 09:10:05 | 17:30:10 | Marketing Department
+ Roy        | Male   | Bachelor of Science     | 2022-05-10 | 08:11:10 | 17:10:08 | Operations Department
+ Natasha    | Female | MBA                     | 2022-05-10 | 09:00:02 | 17:20:18 | Human Resource Department
+ Jane       | Female | Bachelor of engineering | 2022-05-10 | 09:02:02 | 17:50:18 | Engineering Department
+ Chris vans | Male   | BCA                     | 2022-05-10 | 09:06:06 | 17:35:18 | Finance Department
+(5 rows)
+
+
+attendance=# select gender,count(*) from employee group by gender;
+ gender | count 
+--------+-------
+ Male   |     3
+ Female |     2
+(2 rows)
+
+
+
