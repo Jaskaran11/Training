@@ -18,3 +18,54 @@ Process of TDD -
 
 In both cases developer write test before writing code to make the test pass.
 BDD is designed to test an application's behaviour from the end user's standpoint whereas TDD is focused on testinf smaller piece of functionality in isolation.
+
+
+Testing in rails -
+a collection of classes that do not affect or alter your existing application.
+awareness of broken parts of your application
+get the desired functionality
+
+why write test - refactoring code more confidently
+add new code
+help architect the business logic
+reduce client frustation
+
+rails 5.1.0 + test-
+model
+helper
+controller
+system 
+integration
+
+model specs test-
+validations,associations,scopes,business logic
+
+controller specs - 
+status code ?
+content type?
+layout/template rendered?
+flash messages?
+insert/update/deletes?
+redirects?
+
+helper specs-
+specific to view helpers
+desired output?
+testing methods
+
+integration tests-
+feature testing(Searchin, adding to cart)
+
+system tests-
+browser testing
+happy path
+
+Frameworks - 
+minitest
+rspec
+capybara
+factorygirl
+cucumber
+
+
+interface b.w different controller
