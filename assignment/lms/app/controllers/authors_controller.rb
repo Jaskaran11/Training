@@ -85,11 +85,11 @@ class AuthorsController < ApplicationController
   CrudNotificationMailer.delete_notification(@author).deliver_now
     @author = Author.find(params[:id])
     @author.destroy
-    redirect_to(authors_path)
+    redirect_to authors_path
   end
 
   private
   def author_params
-    params.require(:author).permit(:name, :email, :phone_no, :age, :dob, :hobby => [], :skill => [])
+    params.require(:author).permit(:name, :email, :phone_no, :age, :dob, :hobby, :skill)
   end
 end
