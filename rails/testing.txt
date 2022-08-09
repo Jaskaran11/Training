@@ -1,0 +1,20 @@
+BDD(Behaviour driven development) - is a development technique which focuses more on a software application's behaviour.It creates an executable specification that fails because the respective feature dosen't exist, then writing the simplest code that can make the specification pass and as a result we get the required behaviour implemented in the system.It is a team methodology where developer,customer,qas are involved.
+
+process - 
+1.write behaviour of application
+2.write automated scripts
+3.implement the functional code.
+4.check behaviour is succesful if not fix it
+5.organize code.
+6.repeat steps for another behaviour
+
+TDD(test driven development) - is a development which focuses more on the implementation of a feature of a software application.It mainly refers to write a test case that fails because the specified functionality dosent exist and after that update the code can make the test case pass and as a result we get the feature implemented in it.
+Process of TDD -
+1.add test case
+2.run the test case and watch test case fails
+3.update the code
+4.run the test case again
+5.repeat steps for another test case
+
+In both cases developer write test before writing code to make the test pass.
+BDD is designed to test an application's behaviour from the end user's standpoint whereas TDD is focused on testinf smaller piece of functionality in isolation.
