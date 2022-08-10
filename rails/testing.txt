@@ -144,3 +144,16 @@ to have the appropriate corresponding metadata :type value:
     Job specs: type: :job
     System specs: type: :system
 
+Difference between create , build and build_stubbed in factorygirl(bot)
+
+FactoryBot.create(:profile) will create profile object and all association for it.They will all be persisted in the database.Also, it will trigger both model and database validations.
+ 
+On the other hand, factoryBot.build(:profile) wont save the object but will still make requests to a database if the factory has associations.It will trigger validation only for associated object.
+
+FactoryBot.build_stubbed(:profile) does not call database at all.It creates and assigns attributes to an object to make it behave like an instantiated object.It provides fake id and created_at.It will mnot triggger any validations.
+
+
+Using FactoryGirl.build(:factory_name) does not persist to the db and does not call save!, so your Active Record validations will not run. This is much faster, but validations might be important.
+
+Using FactoryGirl.create(:factory_name) will persist to the db and will call Active Record validations. This is obviously slower but can catch validation errors (if you care about them in your tests).
+
