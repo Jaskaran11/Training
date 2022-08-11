@@ -157,3 +157,10 @@ Using FactoryGirl.build(:factory_name) does not persist to the db and does not c
 
 Using FactoryGirl.create(:factory_name) will persist to the db and will call Active Record validations. This is obviously slower but can catch validation errors (if you care about them in your tests).
 
+
+Model specs test ActiveRecord model by themselves wherease the feature specs test the whole "stack" including model code,controller code and any html css js.
+Advantage of model specs is that they're inexpensive.Compared to feature specs, model specs are relatively fast to run and relatively fast to write.
+Disadvantage of model spec is that they dont tell you anything about whether your application works from user's perspective.If you have a rails application but dont have html/css/js plugged into model to make application work, in such case model specs could pass even though there's no working feature built on top of model code..
+
+Feature specs tell you whether all parts of your application are working together.there's a cost to this, in that feature specs are relatively "expensive".they are time-consuming because you're running more stuff than in model spec also they're time-consuming to write, because feature spec has to exercise a whole feature at a time.for example, the creation of a hair salon appointment you first have to have a salon, a stylist, a client, and maybe more. This necessity makes the feature spec slower to write and slower to run than a model spec where you could test e.g. a method on a `Stylist` class all by itself.
+
