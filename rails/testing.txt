@@ -164,3 +164,9 @@ Disadvantage of model spec is that they dont tell you anything about whether you
 
 Feature specs tell you whether all parts of your application are working together.there's a cost to this, in that feature specs are relatively "expensive".they are time-consuming because you're running more stuff than in model spec also they're time-consuming to write, because feature spec has to exercise a whole feature at a time.for example, the creation of a hair salon appointment you first have to have a salon, a stylist, a client, and maybe more. This necessity makes the feature spec slower to write and slower to run than a model spec where you could test e.g. a method on a `Stylist` class all by itself.
 
+
+End-to-end test is a test that tests all layers of an application stack under conditions that are very similar to production.
+Integration test is often defined as a test that verifies that two or more parts of an application behave correctly not only in isloation but also when used together.
+when rspec user says integration test, they mean feature spec.if we use rspec we can focus on feature spec and ignore system test.
+
+What is Integration Testing? While unit tests make sure that individual parts of your application work, integration tests are used to test that different parts of your application work together. They are normally used to test at least the most important workflows of applications.
