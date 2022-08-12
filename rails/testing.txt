@@ -268,5 +268,61 @@ describe "An example of the comparison Matchers" do
    end  
 end
 
+let - it creates lazily-evaluated local variables. It helps to DRY up your tests. you can share variables between all of your examples and you can also override them in specific tests.
+describe Thing do
+  let(:thing) { Thing.new }
+  it “does something” do
+    thing.do_something
+  end
+  describe “different case” do
+    let(:thing) { Thing.new(case: "different") }
+    it “does something else” do
+      thing.do_something_else
+    end
+  end
+end
 
+Let should not be used for local variables, which have to be saved to the database, as they will not be saved to the database unless they have already been referenced. In this case, you should use let! or before blocks.
+
+
+before(:each) -This block will run before each example,even if the example dosent use any of the instance variable defined in the bloc.it can slow down setup of instance variables
+
+class User
+  def tests
+    @tests ||= []
+  end
+end
+
+describe User do 
+  before(:each) do 
+  @user = User.new
+  end 
+
+  describe "initialized in before(:each)" do
+    it "has 0 tests" do
+      @user.should have(0).tests
+    end
+
+    it "can accept new tests" do
+      @user.tests << Object.new
+    end
+
+    it "does not share state across examples" do
+      @user.should have(0).tests
+    end
+  end
+end
+
+it is better to use let over blocks.
+use block when -
+1.there is reasonable amount of variable
+2.variable that don't need to be referenced directly but are required.
+
+before Besides being slower, one of the major problems with before blocks is that spelling errors can lead to bugs and false positives, allowing certain types of tests to pass when they shouldn't.
+  
+The biggest advantage to using let over instance variables is that instance variables can leak from test to test, which isn’t true of let.
+The difference between let and let! is that the former is lazily evaluated while the latter is immediately evaluated.
+
+before is a hook that will run before each test (by default), and thus may be run multiple times when we don't need it to.
+let is only called when a test needs the variable it creates.
 
