@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Book do
+  let(:book){Book.new(title: "hello", publisher: "hello", author_id: 22)}
   describe 'validations' do
     describe 'title' do
-      it 'must be present' do
-        book = Book.new
+      it 'author_id must be present' do
         expect(book).to_not be_valid
       end
     end
@@ -12,7 +12,7 @@ RSpec.describe Book do
 
   describe '#formatted_name' do
     it 'returns the publisher and title in a string' do
-      expect(Book.formatted_name).to eql('Casemate Publishers Look Homeward, Angel')
+      expect(book.formatted_name).to eql('hello hello')
     end
   end
 end
